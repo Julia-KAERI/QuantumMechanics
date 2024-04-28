@@ -1,0 +1,44 @@
+project:
+  type: book
+
+book:
+  title: "양자 역학"
+  author: "Norah Jones"
+  date: "2/11/2024"
+  page-navigation: true
+
+  
+  chapters:
+    - index.qmd
+    - part: src/part1/part1.qmd
+      chapters:
+      - src/part1/1.qmd
+
+    - part: src/figure/figure.qmd
+      chapters:
+      - src/figure/figure_part1_1.qmd
+      - src/figure/figure_test_01.qmd
+
+    - src/references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    title-block-banner: true
+    # include-in-header: 
+    #   - html-hacks/load-font-awesome.html
+    #   - html-hacks/load-xkcd-font.html
+    # resources: web-resources/**
+    # https://quarto.org/docs/output-formats/html-themes.html#overview
+    # theme: darkly
+    theme: cosmo
+    fontsize: 0.9em
+    toc: true
+    collapse: true
+    # css: styles.css
+    number-sections: true
+  
+
+
+
