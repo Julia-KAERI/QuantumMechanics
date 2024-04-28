@@ -1,0 +1,583 @@
+---
+title: "양자 상태"
+number-sections: true
+number-depth: 3
+crossref:
+  chapters: true
+---
+
+
+## 계와 실험
+
+### 스핀의 방향성에 관하여
+
+단 하나의 스핀 자유도 $\sigma$ 를 갖는, 그리고 $\sigma$ 는 $\pm 1$ 의 값 가운데 하나의 값만을 가질 수 있는 계(System) 를 생각하자. 물리적으로는 $\pm 1/2$ 가 맞겠지만 여기서는 간단히 $\pm 1$ 이라고 하자. 이제 이 계를 하나의 큐빗(qbit) 으로 이루어진 계로 생각 할 수 있다. 이제 시간을 추상화 한 $n$ 번째의 상태를 $\sigma (n)$ 으로 기술하자. $\sigma(n+1) = \sigma (n)$ 이라면 상태는 변화하지 않은 것이다. $\sigma(n+1) = -\sigma(n)$ 이라면 상태가 변화한 것이다.
+
+이제 이 상태, 즉 스핀을 측정하는 측정 장비 $A$ 를 생각하자. 고전역학과의 결정적인 차이점 중의 하나는 고전역학에서는 계의 상태에 영향을 주지 않고 $A$ 가 $\sigma(n)$ 을 측정 할 수 있다는 것을 가정한다. 그러나 아주 작은 세계를 탐구하는 양자역학에는 이 가정이 들어설 수 없다. 즉 $A$ 와 상태는 필연적으로 상호작용하며 따라서 $A$ 는 $\sigma(n)$ 에 영향을 끼친다.
+
+이 측정을 $x,\,y,\,z$ 축을 따라서, 혹은 그 반대로 측정할 수 있다고 하자. 이제 축에 따라 $\sigma_x,\,\sigma_y,\,\sigma_z$ 를 측정 할 수 있다. 이제 $\sigma_z$ 를 측정한다. $1$ 혹은 $-1$ 값을 가질 수 있다. 그 후 실험장비를 중립으로 재 설정 한후 다시 $\sigma_z$ 를 측정한다. 여러번 재측정해도 그 값이 변하지 않는다. 우리는 $+z$ 방향으로 측정하는 것과 $-z$ 방향으로 측정하는 것이 본질적으로 같다는 것을 알 수 있다. 또한 이 시스템이 어떤 상태로 즉 $\sigma_z=1$ 이거나 $-1$ 인 상태중의 하나로 준비되었다고 말 할 수 있다. 
+
+이제 실험장비를 $z$ 축에 대해 뒤집어 측정해보자. 그렇다면 $\pm$ 이 바뀐 결과가 나올 것을 예상 할 수 있으며, 실제로 그렇게 된다. 여기까지는 고전 물리와 양자 물리가 전혀 차이가 없다. 이제 $\sigma_z=+1$ 상태로 준비시키고 난 후 $A$ 장비를 90$^\circ$  돌려서 $x$ 축 방향으로 측정한다면 어떻게 될까? 놀랍게도 통계적으로 $\sigma_x$ 는 $\pm 1$ 값이 동등한 수로 나온다. 즉 많은 횟수로 측정하면 $\sigma_x=1$ 과 $\sigma_x=-1$ 이 같은 횟수로 측정된다. 조건부 확률에 대한 수식으로 표현하면
+
+$$
+P(\sigma_x=+1 | \sigma_z=+1) = P(\sigma_x=-1 | \sigma_z=+1) = 0.5
+$$
+
+이다. $\sigma_x$ 대신에 $\sigma_y$ 즉 $y$ 축에 대해 측정해도 마찬가지이다. 즉 $\sigma_x$ 와 $\sigma_y$ 의 평균값은 $0$ 이다. 이를 뒤에 나올 디렉 표기법을 사용하면 $\langle \sigma_x\rangle = \langle \sigma_y \rangle =0$ 이다. 이제 $\sigma_x$ 를 측정 한 후 다시 $\sigma_z$ 를 측정하면 $+1$ 값이 나올까? 답은 아니오 이다. $\sigma_x$ 를 측정한 후 $\sigma_z$ 값은 $\pm 1$ 이 같은 확률로 측정된다.
+
+
+다시 $\sigma_z=1$ 로 준비된 시스템을 생각하자. 그리고 $z$ 축과 $\theta$ 의 각도를 이루는 $\hat{\boldsymbol{n}}$ 방향으로 측정한 다고 하자. $\sigma$ 가 벡터라면 $\sigma_\theta = \cos\theta$ 가 될 것이다. 그러나 우리는 $\sigma_\theta$ 의 측정값은 $+1$ 과 $-1$ 뿐임을 안다. 놀랍게도 통계적으로 $\langle \sigma_\theta \rangle = \cos \theta$ 이다. 이제 이것을 일반화 해보 자. $\hat{\boldsymbol{n}}$ 방향에 대해 $\sigma_n=+1$ 로 시스템을 준비시켰을 때 $\hat{\boldsymbol{m}}$ 방향으로 스핀을 측정한다면 $\sigma_m$ 값은 $\pm 1$ 가운데 하나이지만 통계적인 평균값은 
+
+$$
+\mathbb{E}[\sigma_m  |\sigma_n = 1] = \hat{\boldsymbol{n}} \cdot \hat {\boldsymbol{m}}
+$$
+
+이다. 여기서 $\mathbb{E}[X| B]$ 는 $B$ 사건이 일어났을 때의 $X$ 의 기대값, 즉 조건부 확률에 대한 기대값을 의미한다. 
+
+</br>
+
+### 무작위성에 대하여
+
+자연스럽게 넘어가서 의식하지 못했을 수도 있지만 여기서 우리는 양자역학으로의 큰 도약을 수행했다. 즉 물리량에 대한 측정값이 결정되지 않고 최소한 어느정도는 무작위적으로 측정되었으며, 통계적인 평균값이 의미가 있었다. 이 무작위성은 어디에서 기인하는가 하는 것은 물리학에서 오랬동안 논쟁거리였다. 
+
+1. 이 무작위성은 어떤 우리가 알지 못하는 변수에 의해 통제되는가? 그렇다면 그 변수는 측정할 수 있는가 아니면 원리적으로 측정 할 수 없는 변수인가? 
+2. 반대로 이 무작위성은 어떤 변수에 의헤 통제되지 않는 자연의 본성인가?
+
+본질적으로 이 문제는 아직 해결되지 않은 문제이며, 많은 물리학자들은 실용적인 이유로 두번째 입장, 즉 코펜하겐 해석의 입장을 견지한다. 우리도 여기서는 두번째 입장에서 설명할 것이다. 
+
+
+</br>
+
+### 양자역학에서의 측정과 불확정성의 원리
+
+앞서 잠시 언급했지만 고전역학에서는 하나의 측정이 상태를 교란시키지 않는다는 가정을 할 수 있다. 실제로는 교란을 피할수는 없지만, 그 교란을 최소화하고, 교란의 효과를 역추적하여 교란이 없었던 측정 직전의 상태를 명확하게 밝힐 수 있다는 것을 가정한다. 그리고 그것이 거시계의 자연을 잘 설명한다. 양자역학에서는 다르다. 양자역학은 물질의 기본적인 크기, 에너지, 운동량에 가까운 값을 다루기 때문에 교란은 필연적이며, 우리가 관심있는 시스템에 대해 강력하다. 앞의 실험으로 설명하자면 $\sigma_z=1$ 로 준비된 상태에 대해 $\sigma_x$ 를 측정하면 $\sigma_z$ 로 결정된 상태가 교란되며, 따라서 $\sigma_z$ 를 다시 측정했을 때 그 값이 $\pm 1$ 이 모두 측정된다. 
+
+양자역학에서는 많은 경우 이러한 현상이 발생한다. 어떤 상태로 시스템을 준비 했을 때 다른 종류의 측정을 수행 한후 원래의 준비된 값에 대해 측정하면 원래의 준비된 값과 다른 값이 측정된다. 물론 그렇지 않은 경우도 있다. $A$ 를 측정하고(이때의 측정값을 $a$ 라고 하자) $B$ 를 측정한 후(이 때의 측정값을 $b$ 라고 하자) 다시 $A$ 를 측정한다고 하자(이 때의 측정값을 $a'$ 이라고 하자). 많은 경우 $a\ne a'$ 이다. 측정 오차의 문제가 아니라 상태가 변한것이다. $B$ 를 측정 했을 때 이미 더이상 $a$ 값에 관련된 상태가 아닌 새로운 상태로 변화한 것이다. 이것에 대해 설명하는 것이 소위 **불확정성의 원리(uncartainty principle)** 이다. 
+
+</br>
+
+::: {.callout-important icon="false"}
+
+이제부터  상태에 대한 디랙 표기법을 사용한다. 그리고 선형대수학을 사용한다.
+:::
+
+</br>
+
+### $\sigma_x,\, \sigma_y$ 에 대한 스핀의 표현
+
+우리가 양자 상태를 안다고 말할 때, 그것은 우리가 앞으로 더 진행하는데 필요한 모든 시스템에 대한 정보를 안다는 것을 의미한다. 이제 앞서 처음에 설명한 두가지 스핀값을 가질 수 있는 상태를 생각하자. 이제 진지해져야 하기 때문에 $\pm 1$ 이 아닌 $\pm 1/2$ 값을 가진다고 하자. $\sigma_z=+1$ 로 시스템이 준비되었다면 우리는 그 시스템의 양자 상태를 알고 있다고 말할 수 있다. 이제 $\sigma_z=+1$ 인 상태를 $|u\rangle$ 로 표기하며 $\sigma_z=-1$ 인 상태를 $|d\rangle$ 로 표기한다. 즉 $\sigma_z=+1$ 로 준비되어 있다면 이 상태는 $|u\rangle$ 상태이다.  $\sigma_x=+1$ 인 상태를 $|r\rangle$ 로 $\sigma_x=-1$ 인 상태를 $|l\rangle$ 로 표기한다. $\sigma_y=+1$ 인 상태를 $|i\rangle$ 로 $\sigma_x=-1$ 인 상태를 $|o\rangle$ 로 표기한다. 각각 up, down, right, left, in, out 을 의미한다.
+
+![양자 상태](images/fig-quantum_state.png){#fig_quantum_state width=250}
+
+이제 스핀 $1/2$ 상태는 두개의 값을 가질 있으므로 2차원 벡터공간에 표현 할 수 있다. 일반적인 상태 $|\phi\rangle$ 은 $|u\rangle$ 과 $|d\rangle$ 의 선형결합으로 아래와 같이 쓸 수 있다$^\ast$. [$^\ast$ $|i\rangle$ 과 $|o\rangle$ 은 어디로? 라고 질문 할 수 있을 것이다. 일단 진행 하면 자연스럽게 나온다.]{.aside}
+
+$$
+|\phi\rangle = a_u |u\rangle + a_d |d\rangle
+$$
+
+여기서 $a_u,\,a_d$ 는 복소수값으로 $|a_u|^2 = \overline{a_u}a_u$ 는 $|\phi\rangle$ 상태에 대해 실험을 수행했을 때 $\sigma_z=+1$ 가 측정될, 즉 $|u\rangle$ 상태로 측정될 확률이다. 동일하게 $|a_d|^2$ 는 $|d\rangle$ 상태로 측정될 확률이다. $a_u$ 와 $a_d$ 는 **확률 진폭(probability amplitude)** 라고 부른다. 확률의 정의에 의해 
+
+$$
+|a_u|^2 + |a_d|^2 = 1
+$$
+
+이어야 한다. 
+
+측정하기 전의 상태는 $|u\rangle$ 과 $|d\rangle$ 의 선형결합일 뿐이다. 이를 **중첩(superposition)** 이라고 한다. 즉 $|\phi\rangle$ 은 $|u\rangle$ 로도 $|d\rangle$ 로도 될 수 있는 잠재적인 상태에 있다. 만약 무수히 측정했을 때 $|u\rangle$ 만이 측정된다면 $a_d=0$ 이며 이는 측정전에 우연이든 의도적이든 계가 $|u\rangle$ 상태로 준비되었다는 것을 의미한다.
+
+또 하나 중요한 것은 $\langle d|u\rangle =0$ 이다. 수학적으로 $|u\rangle$ 벡터와 $|d\rangle$ 벡터는 직교한다는 의미이며 물리적으로는 $|u\rangle$ 상태는 $|d\rangle$ 상태로 측정될 확률진폭이 $0$ 이라는 의미이다. 양자역학에서 시스템의 두 상태 $|\phi\rangle$, $|\psi\rangle$ 에 대해 $\langle \psi | \phi \rangle$ 은 $|\phi\rangle$ 상태가 $|\psi\rangle$ 상태로 측정될 확률진폭을 의미한다. 따라서 임의의 상태 $|\phi \rangle$ 에 대해 
+
+$$
+\langle \phi | \phi\rangle = 1
+$$ {#eq-normalization_of_probability}
+
+이어야 한다. 이것은 모든 양자상태에 동일하게 적용되며, 양자상태를 이렇게 확률진폭의 제곱의 합이 $1$ 이 되도록 특정 수를 곱해주는 것을 **정규화(normalization)** 이라고 한다. 
+
+이제 $\sigma_x=+1$ 인 $|r\rangle$ 상태와 $\sigma_x=-1$ 인 $|l\rangle$ 상태를 표현해 보자. 우선 $|r\rangle$ 상태에 대해 $\sigma_z$ 를 측정 했을 때 $\pm 1$ 가 나올 확률은 각각 $\frac{1}{2}$ 이다. 따라서 다음이 성립해야 한다.
+
+$$
+|\langle u| r\rangle|^2 = |\langle d|r\rangle|^2 = \dfrac{1}{2}
+$$ {#eq-quantum_state_1}
+
+이를 만족하는 가장 간단한 표현은
+
+$$
+|r\rangle = \dfrac{1}{\sqrt{2}}|u\rangle + \dfrac{1}{\sqrt{2}}|d\rangle
+$$ {#eq-quantum_state_2}
+
+
+이다. 물론 $|r\rangle = a_u |u\rangle + a_d|d\rangle$ 에 대해 @eq-quantum_state_1 을 만족하는 $a_u,\,a_d$ 값은 복소수이므로 무수히 많다. 이 모호함은 곧 해소된다. 이제 $|l\rangle$ 을 같은 방식으로 표현해 보자. $|l\rangle$ 역시 $|u\rangle,\, |d\rangle$ 의 상태로 측정될 확률이 각각 $\frac{1}{2}$ 이며 $\langle l |r\rangle = 0$ 이어야 하므로
+
+$$
+|l \rangle = \dfrac{1}{\sqrt{2}}|u\rangle - \dfrac{1}{\sqrt{2}}|d\rangle
+$$ {#eq-quantum_state_3}
+
+로 쓸 수 있다. 물론 여기에도 모호함이 있는데 실재로 $|l'\rangle = \dfrac{e^{i\chi}}{\sqrt{2}}(|u\rangle - |d\rangle)$ 라고 하면 임의의 실수 $\chi$ 에 대해 모든 조건을 만족한다. 실제로 $|l'\rangle$ 이 $|l\rangle$ 을 대채 할 수 있을 뿐만 아니라 물리적으로 구별 할 수 없다. 
+
+어떤 상태 $|\phi\rangle$ 과 임의의 실수 $\chi$ 에 대해 $e^{i\chi}|\phi\rangle$ 과 $|\phi\rangle$ 의 차이인 $e^{i\chi}$ 를 **위상 인자(phase factor)** 라고 하며, 위상 인자는 크기가 $1$ 인 복소수이다. 위상 인자만큼의 차이가 나는 두 상태는 구별 할 수 없으며 동일한 양자상태로 간주한다. 위상 인자만큼의 모호함을 **위상적 모호함(phase ambiguity)** 라고 한다. 
+
+
+이제 $|i\rangle$ 과 $|o\rangle$ 을 $|u\rangle$, $|d\rangle$ 로 표현해보자. 아래의 조건을 만족해야 한다는 것을 이해 할 수 있을 것이다.
+
+$$
+\begin{aligned}
+\langle i|i\rangle = \langle o |o \rangle = 1,\qquad \langle i|o\rangle = \langle o |i \rangle = 0, \\
+|\langle u|i\rangle|^2 = |\langle d|i\rangle|^2 = |\langle l| i\rangle|^2 = |\langle r|i\rangle|^2 = \dfrac{1}{2}, \\
+|\langle u|o\rangle|^2 = |\langle d|o\rangle|^2 = |\langle l| o\rangle|^2 = |\langle r|o\rangle|^2 = \dfrac{1}{2}.\\
+\end{aligned}
+$$ {#eq-quantum_state_4}
+
+이제 $|i\rangle$ 과 $|o\rangle$ 을 결정 할 수 있다. 
+
+$$
+\begin{aligned}
+|i\rangle = \dfrac{1}{\sqrt{2}}|u\rangle + \dfrac{i}{\sqrt{2}}|d\rangle, \qquad |o\rangle = \dfrac{1}{\sqrt{2}}|u\rangle - \dfrac{i}{\sqrt{2}}|d\rangle
+\end{aligned}
+$$ {#eq-quantum_state_5}
+
+물론 위상적 모호함은 남아 있으며, $|i\rangle$ 과 $|o\rangle$ 이 바뀔 수는 있지만 일단 이렇게 정한다면 위상적 모호함을 제외한 다른 모호함은 사라진다.
+
+</br>
+
+## 양자 역학의 원리
+
+양자역학은 힐베르트 공간에서 기술된다. 힐베르트 공간은 우리가 익숙한 유한차원 내적 벡터공간의 성질을 모두 가지고 있는 무한차원 복소 벡터공간을 말한다. 
+
+
+::: {.callout-important icon="false"}
+
+#### 양자역학의 원리
+
+**원리 1.** 양자역학의 상태는 힐베르트 공간에서의 벡터 $|\phi\rangle$ 로 표현된다.
+
+**원리 2.** 양자역학의 측정량은 에르미트 연산자이다. ($\hat{A}$)$^1$ [$^1$ 관례적으로 양자역학에서 연산자를 $\hat{A}$ 처럼 문제 위에 $\hat{\,}$ 기호를 씌워 표기하는 경우가 많다. 물론 생략해도 상관 없다.]{.aside}
+
+**원리 3.** **2.** 의 측정에서 실제 측정되는 양은 선형연산자의 고유값(eigenvector) 이며 측정 이후에 상태 $|\phi\rangle$ 은 고유값 $a$ 에 대한 고유 벡터, 즉 고유상태(eigenstate) 중의 하나로 **붕괴(collapse)** 된다.
+
+**원리 4.** $\hat{A}$ 측정에서의 고유값 $\lambda$ 에 대한 고유공간의 정규직교기저를 $|a_1\rangle, \ldots,\, |a_n\rangle$ 이라고 할 때 $\lambda$ 값이 측정 될 확률 $P(\lambda) = \sum_{i}|\langle a_i|\phi \rangle|^2$ 이다.  
+
+:::
+
+</br>
+
+원리 4. 에 대해 부연설명을 하자면 어떤 하나의 고유값 $\lambda$ 를 가지는 벡터의 집합인 고유공간은 1차원 이상의 차원을 가질 수 있다. 따라서 고유값 $\lambda$ 에 대한 고유공간 전체를 생각해 줘야 한다는 의미이다. 
+
+
+
+</br>
+
+### 원리 1, 2 의 연습
+
+이제 앞서 다뤘던 스핀 $1/2$ 시스템에서의 $\sigma_x,\,\sigma_y,\,\sigma_z$ 연산자를 힐베르트 공간에서 구축해보자. $\hat{\sigma}_x,\, \hat{\sigma}_y,\,\hat{\sigma}_z$ 와 각각에 대한 고유상태를 $\hat{\sigma}_z$ 에 대한 고유상태 $|u\rangle,\, |d\rangle$ 을 기저로 하여 표현한다. $\hat{\sigma}_z$ 에 대해 $\hat{\sigma}_z |u\rangle = |u\rangle$,  $\hat{\sigma}_z |d\rangle = -|d\rangle$ 이며, $\langle u|d\rangle = 0$ 이므로 $\langle u | \hat{\sigma}_z | d\rangle = \langle d | \hat{\sigma}_z | u\rangle=0$ 이다. 따라서 $\hat{\sigma}_z$ 를 2차원 벡터공간의 선형연산자로 표현하면
+
+$$
+\hat{\sigma}_z= \begin{bmatrix}1 & 0 \\ 0 & -1\end{bmatrix}
+$$
+
+이며 $|u\rangle,\, |d\rangle$ 을 열벡터로 표현하면 아래와 같다.
+
+$$
+|u\rangle = \begin{bmatrix} 1 \\ 0 \end{bmatrix},\qquad |d\rangle = \begin{bmatrix} 0 \\ 1 \end{bmatrix}.
+$$
+
+@eq-quantum_state_2, @eq-quantum_state_3 로부터 $\hat{\sigma}_x$ 의 교유벡터 $|r\rangle,\, |l\rangle$ 에 대한 행렬 표현을 얻을 수 있다.
+
+$$
+|r\rangle = \frac{1}{\sqrt{2}}\left(|u\rangle + |d\rangle \right) = \frac{1}{\sqrt{2}}\begin{bmatrix} 1\\ 1 \end{bmatrix},\qquad |l\rangle = \frac{1}{\sqrt{2}}\left(|u\rangle - |d\rangle \right) = \frac{1}{\sqrt{2}}\begin{bmatrix} 1\\ -1\end{bmatrix}.
+$$
+
+$\langle r|\hat{\sigma}_x|r\rangle=+1$, $\langle l|\hat{\sigma}_x|l\rangle=-1$, $\langle r|\hat{\sigma}_x|l\rangle=\langle l|\hat{\sigma}_x|r\rangle=0$ 으로부터 
+
+$$
+\langle u|\hat{\sigma}_x|u\rangle = \langle d|\hat{\sigma}_x|u\rangle = 0,\qquad \langle u|\hat{\sigma}_x|d\rangle = \langle d|\hat{\sigma}_x|u\rangle = 1
+$$
+
+임을 알 수 있다. 따라서 
+
+$$
+\hat{\sigma}_x =\begin{bmatrix}0 & 1 \\ 1 & 0\end{bmatrix}
+$$
+
+이다. 또한 @eq-quantum_state_5 로 부터 $\hat{\sigma}_y$ 의 고유벡터 $|i\rangle,\, |o\rangle$ 에 대한 행렬표현을 얻을 수 있다.
+
+$$
+|i\rangle = \frac{1}{\sqrt{2}}\left(|u\rangle + i|d\rangle \right) = \frac{1}{\sqrt{2}}\begin{bmatrix} 1\\ i \end{bmatrix},\qquad |o\rangle = \frac{1}{\sqrt{2}}\left(|u\rangle - i|d\rangle \right) = \frac{1}{\sqrt{2}}\begin{bmatrix} 1\\ -i\end{bmatrix}.
+$$
+
+같은 방법으로 $\hat{\sigma}_y$ 에 대한 행렬표현을 아래와 같이 얻을 수있다.
+
+$$
+\hat{\sigma}_y = \begin{bmatrix} 1 & -i \\ i & 0 \end{bmatrix}.
+$$
+
+이 세 행렬 $\hat{\sigma}_x,\,\hat{\sigma}_y,\,\hat{\sigma}_z$ 를 **파울리 행렬(Pauli matrices)** 라고 한다. 
+
+$$
+\hat{\sigma}_z= \begin{bmatrix}1 & 0 \\ 0 & -1\end{bmatrix},\quad\hat{\sigma}_x =\begin{bmatrix}0 & 1 \\ 1 & 0\end{bmatrix},\quad\hat{\sigma}_y = \begin{bmatrix} 1 & -i \\ i & 0 \end{bmatrix}.
+$$ {#eq-pauli_matrices}
+
+
+</br>
+
+### 원리 3 에 대하여
+
+벡터공간 $V$ 에서 정의된 선형연산자 $\hat{A}$ 에 대해 Herimite conjugate $\hat{A}^\dagger$ 는 다음과 같이 정의된다.
+
+$$
+\forall\, |\phi\rangle,\,|\psi\rangle \in V,\qquad \langle \phi |\hat{A}^\dagger |\psi \rangle := \overline{\langle \psi |\hat{A}|\phi \rangle}.
+$$ {#eq-definition_of_hermite_conjugate}
+
+이 때 $\hat{A}^\dagger$ 역시 벡터공간 $V$ 에서 정의된 선형연산자이다. **에르미트 연산자(Hermitian operator)** 는 다음을 만족하는 연산자이다.
+
+$$
+\forall\, |\phi\rangle,\,|\psi\rangle \in V,\qquad \langle \phi | \hat{A} | \psi \rangle = \langle \phi |\hat{A}^\dagger|\psi \rangle. 
+$$ {#eq-definition_of_hermite_operator}
+
+</br>
+
+에르미트 연산자의 기본적인 성질은 다음과 같다.
+
+::: {.callout-note icon="false"}
+
+#### 에르미트 연산자의 기본적인 성질
+
+&emsp; **1.** 에르미트 연산자의 고유값은 실수이다.
+
+&emsp; **2.** 서로 다른 고유값을 갖는 에르미트 연산자의 고유벡터는 직교한다.
+
+&emsp; **3.** 에르미트 연산자에 대한 교유벡터로 벡터공간의 기저를 구성 할 수 있다.
+
+:::
+
+
+**3.** 에 의해 벡터공간, 즉 상태공간 $V$ 는 에르미트 연산자 $\hat{A}$ 의 고유벡터 $\{|a_i\rangle\}$ 를 기저로 하여 표현될 수 있다. 
+
+$$
+|\phi\rangle = \sum_i c_i |a_i\rangle,\qquad \hat{A}|a_i \rangle = \lambda_i |a_i\rangle.
+$$
+
+여기서 $|a_i\rangle$ 는 $\lambda_i$ 를 고유값으로 갖는 $\hat{A}$ 의 고유벡터이다. 수학적으로는
+
+$$
+\hat{A}|\phi\rangle = \sum_i c_i\lambda_i |a_i\rangle
+$$
+
+이 되지만 물리적으로는 측정 이후 $|\phi\rangle$ 은 $\hat{A}_i$ 의 고유벡터중의 하나만 남는다. 이것을 **붕괴(collapse)** 라고 한다. 
+
+
+</br>
+
+## 시간에 대한 변화와 해밀토니안
+
+시간 $t$ 에 양자상태 $|\Psi\rangle$ 에 있는 닫힌계를 생각하자. 양자상태는 시간에 따라 변할 수 있으며 따라서 시간 변수를 포함하녀 $|\Psi (t) \rangle$ 로 쓸 수 있다. 양자역학은 어떤 시간 $t$ 에서의 양자상태를 안다면 이후의 시간에 대해서도 양자상태를 알 수 있다고 말한다. 시간 $t=0$ 에서의 양자상태를 $|\Psi (0)\rangle$ 이라고 하고 시간 $t$ 에서의 양자상태를 $|\Psi(t)\rangle$ 이라고 하자. 시간 $0$ 에서 $t$ 까지의 변화는 어떤 연산자 $U(t)$ 를 통해 기술 할 수 있다. 즉, 
+
+$$
+|\Psi (t) \rangle = {U}(t)|\Psi(0)\rangle
+$$ {#eq-time_evolutioni_operator_1}
+
+로 기술한다. 이 때 $U(t)$ 를 **시간 전개 연산자(time evolution operator)** 혹은 **시간 변화 연산자** 라고 한다. 특정 시간 $t'$ 을 기준으로 시간전개 연산자를 표현할 경우 아래와 같은 표현도 가능하다.
+
+$$
+|\Psi (t)\rangle = U(t,\, t')|\Psi (t')\rangle
+$$ {#eq-time_evolution_operator_2}
+
+</br>
+
+### 시간 전개 연산자에 요구되는 성질
+
+시간 전개 연산자의 성질이 아니라 시간 전개 연산자에 요구되는 성질이다. 즉 우리의 양자역학을 유지하기 위해서는 $U(t)$ (혹은 $U(t,\,t')$) 이 어떤 형태든 무조건 가져야 할 성질이 존재한다. 
+
+
+#### 1. 선형성
+
+우선 시간 전개 연산자는 벡터공간에서 선형적이어야 한다. 즉 $|\Psi(0)\rangle = a_1 |\psi_1(0)\rangle + a_2 |\psi_2(0)\rangle$ 이라면, 
+
+$$
+\begin{aligned}
+|\Psi (t) \rangle &= U(t)|\Psi(0)\rangle = a_1 U(t)|\psi_1(0)\rangle + a_2 U(t)|\psi_2(0)\rangle \\
+&= a_1 |\psi_1(t)\rangle + a_2 |\psi_2(t)\rangle
+\end{aligned}
+$$ {#eq-linearlity_of_time_evolution_operator}
+
+이어야 한다. 즉 상태가 중접된 양자상태의 미래는 각 상태의 미래의 중첩이다. 
+
+</br>
+
+#### 2. 연속성
+
+자명하지만 
+
+$$
+U(t,\,t) = I
+$$ {#eq-continuity_of_time_evolution}
+
+이어야 한다. 
+
+
+</br>
+
+#### 3. Unitry
+
+$\langle \Psi(0)|\Phi (0)\rangle=0$ 이라고 하자. 그렇다면 $\langle \Psi (t) | \Phi (t) \rangle = 0$ 이어야 한다. 우리는 양자상태 $|\Phi\rangle,\, |\Psi\rangle$ 에 대해
+
+$$
+\langle \Psi(t) | \Phi(t) \rangle = \langle \Psi(0)|U^\dagger(t)U(t) |\Phi (0)\rangle
+$$
+
+임을 안다. $|\Phi\rangle,\, |\Psi\rangle$ 을 모든 서로 다른 정규직교기저벡터로 생각하면 
+
+$$
+U^\dagger U(t) = I
+$$ {#eq-unitarity_of_time_evolution} 
+
+이어야 한다는 것을 안다. 즉 $U(t)$ 는 unitary 연산자이어야 한다. 
+
+
+</br>
+
+#### 4. Composition property
+
+$|\Phi(t) \rangle = U(t,\,t_0)|\Phi(t_0)\rangle$  이라고 하자. $t<t_1<t_0$ 인 $t_1$ 을 생각하자. 우리는 다음이 성립해야 한다는 안다.
+
+$$
+\Phi (t) \rangle = U(t,\,t_0)|\Phi(t_0)\rangle = U(t,\,t_1)|\Phi(t_1)\rangle = U(t,\,t_1)U(t_1,\,t_0)|\Phi (t) \rangle
+$$
+
+즉 
+
+$$
+U (t,\,t_0) = U(t,\,t_1)U(t_1,\,t_0)
+$$ {#eq-composition_property_of_time_evolution}
+
+이어야 한다.
+
+
+</br>
+
+### 해밀토니안
+
+@eq-unitarity_of_time_evolution 와 @eq-continuity_of_time_evolution 로부터 우리는 아주 작은 시간 변화 $\varepsilon$ 에 대해 $U(t)$ 를 1차 근사로 다음과 같이 쓸 수 있다는 것을 안다.
+
+$$
+U(\varepsilon) = I - i\varepsilon\hat{K}
+$$ {#eq-unitary_hamiltonian_1}
+
+$\hat{H}$ 는 무엇인지 $i$ 는 왜 붙었는지는 일단 넘어가기로 하자. 즉 $U(t)$ 는 어떤 연산자 $\hat{K}$ 에 대해 위와 같이 표현 할 있다고 가정하자. 아니면 위와 같은 표현이 모순이 있는지 아닌지 확인해보자고 해도 무방하다. 어쨌든 @eq-unitary_hamiltonian_1 처럼 표현했다면 다음도 성립한다.
+
+$$
+U^\dagger(\varepsilon) = I + i \varepsilon \hat{K}^\dagger
+$$ {#eq-unitary_hamiltonian_2}
+
+아주 작은 시간동안에도 unitary 성질은 성립해야 한다. 따라서,
+
+$$
+I = U^\dagger(\varepsilon) U(\varepsilon) = (I +i\varepsilon \hat{K}^\dagger)(I - i \varepsilon \hat{K}) 
+$$
+
+이어야 하며, 이로부터 $\hat{K}^\dagger = \hat{K}$ 가 성립해야 한다. 즉 $\hat{K}$ 는 에르미트 연산자 여야만 한다. 이는 매우 중요한데 $\hat{K}$ 가 관측량 일 뿐만 아니라 $\hat{K}$ 의 고유벡터로 양자상태를 기술할 수 있다는 의미이기 때문이다. 
+
+이제 
+
+$$
+|\Psi(t+\varepsilon) \rangle = U(t+\varepsilon, t)|\Psi(t)\rangle = |\Psi(t)\rangle - i \varepsilon \hat{K}|\Psi(t)\rangle
+$$
+
+을 얻으며 이로부터, 
+
+$$
+\dfrac{|\Psi(t+\varepsilon)\rangle - |\Psi (t)\rangle}{\varepsilon} = - i \hat{K} |\Psi (t)\rangle
+$$
+
+을 얻는다. $\varepsilon \to 0$ 극한에 대해
+
+$$
+\dfrac{\partial |\Psi (t)\rangle}{\partial t} = -i \hat{K}|\Psi (t)\rangle
+$$
+
+을 얻는다. 이제 $\hat{K}$ 에 대해 생각해보자. $\hat{K}$ 는 시간의 역수의 차원을 가진다. 이제 플랑크 상수 $\hbar = \dfrac{h}{2\pi} = 6.62607015 \times 10^{-34}\, \text{m}^2 \,\text{kg} / \text{s}$ 에 대해 $\hat{H} = \hbar \hat{K}$ 라고 놓으면 $\hat{H}$ 는 에너지와 같은 차원을 가지며
+
+$$
+i\hbar \dfrac{\partial |\Psi (t)\rangle}{\partial t} = \hat{H}|\Psi (t)\rangle
+$$ {#eq-time_dependent_schroedinger_equation}
+
+을 얻는다. @eq-time_dependent_schroedinger_equation 을 **시간 의존 슈뢰딩거 방정식 (time-dependent Schrödinger equation)** 이라고 한다. 또한 $\hat{H}$ 를 **해밀토니안(Hamiltonian)** 이라고 한다. $\hat{H}$ 가 해밀토니안이라는 고전역학에서 에너지에 대한 물리량과 같은 이름을 갖게 되는지는 좀 더 진행해 봐야 한다. 이를 위해서 잠시 길을 돌아가기로 하자.
+
+</br>
+
+### 기댓값
+
+통계학적으로 기댓값은 표본에 대한 어떤 양의 평균값을 의미한다. 양자역학에서는 어떤 양 $A$ 에 대한 기댓값은 $A$ 에 해당하는 에르미트 연산자 $\hat{A}$ 에 대해 $\langle \hat{A}\rangle$ 로 표기하며 다음과 같이 정의된다. 
+
+$$
+\langle \hat{A} \rangle = \sum_{i} \lambda_i P(\lambda_i)
+$$
+
+여기서 $\lambda_i$ 는 $\hat{A}$ 의 고유값이며 $P(\lambda_i)$ 는 $\lambda_i$ 의 고유값을 가질 확률을 의미한다. 이제 양자상테 $|\Psi\rangle$ 를 $\hat{A}$ 의 고유벡터에 대한 정규직교기저 $\{|a_i\rangle\}$ 로 표현하면
+
+$$
+|\Psi\rangle= \sum_i c_i |a_i\rangle
+$$
+
+이다. 이제 $\langle \Psi |\hat{A}|\Psi \rangle$ 을 계산해 보자.
+
+$$
+\langle \Psi | \hat{A}|\Psi \rangle = \sum_i \lambda_i |c_i|^2 = \sum_i \lambda_i P(\lambda_i) = \langle \hat{A}\rangle.
+$$
+
+</br>
+
+### 위상 인자에 대해
+
+우리는 앞서 어떤 양자상태에 위상 인자를 곱해도 구별 할 수 없다고 했다. $|\Phi \rangle = e^{i\chi}|\Psi\rangle$ 이라고 하자. 이 때 연산자 $\hat{A}$ 에 대해
+
+$$
+\begin{aligned}
+\langle \Phi |\Phi\rangle &= \langle \Psi |\Psi \rangle, \\
+\hat{A} |\Phi\rangle = a|\Phi \rangle &\iff \hat{A}|\Psi\rangle = a|\Psi \rangle, \\
+\langle \Phi|\hat{A}|\Phi \rangle &= \langle \Psi |\hat{A}|\Psi \rangle
+\end{aligned}
+$$
+
+이 성립함을 알 수 있다. 즉 위상인자는 우리가 측정하고 계산하는 모든 실제적인 양에 영향을 끼치지 않는다.
+
+
+</br>
+
+### 해밀토니안인 이유
+
+
+이제 $\langle \hat{A}\rangle$ 이 시간에 따라 어떻게 변하는지 알아보자. @eq-time_dependent_schroedinger_equation 로부터
+
+$$
+i\hbar\dfrac{\partial |\Psi (t)\rangle}{\partial t} = \hat{H} |\Psi (t) \rangle
+$$
+
+이며, 
+
+$$
+\dfrac{\partial}{\partial t}\langle \Psi(t) |\Psi (t) \rangle = \dfrac{\partial }{\partial t} 1 = 0
+$$ 
+
+이다. 따라서, $\hat{H}^\dagger = \hat{H}$ 임을 이용하면 
+
+$$
+\begin{aligned}
+0 &= \langle \partial_t \Psi(t) |\Psi (t)\rangle + \langle \Psi(t) | \partial_t \Psi(t)\rangle \\
+& = \langle \partial_t \Psi (t) |\Psi (t)\rangle + \langle \Psi (t)| \left(- \dfrac{i}{\hbar}\hat{H} |\Psi (t)\rangle\right) \\
+&= \langle \partial_t \Psi (t) |\Psi (t)\rangle - \left(\dfrac{i}{\hbar} \langle \Psi (t)|\hat{H}\right) |\Psi (t)\rangle \\
+&= \left(\langle \partial_t \Psi (t)| - \dfrac{i}{\hbar}\langle \Psi(t) | \hat{H}\right) |\Psi (t) \rangle
+\end{aligned}
+$$
+
+이어야 하므로, 
+
+$$
+\dfrac{\partial \langle \Psi(t) | }{\partial t} = \langle \partial_t \Psi (t)| = \dfrac{i}{\hbar}\langle \Psi(t) |\hat{H}
+$$
+
+이다. 이로부터
+
+$$
+\begin{aligned}
+\dfrac{d}{dt} \langle \Psi(t)|\hat{A}|\Psi (t)\rangle &= \langle \partial_t \Psi (t) | \hat{A} |\Psi (t)\rangle + \langle \Psi (t) |\hat{A} | \partial_t \Psi (t) \rangle \\
+&= \dfrac{i}{\hbar} \langle \Psi (t)|\hat{H}\hat{A}|\Psi (t) \rangle - \dfrac{i}{\hbar} \langle \Psi (t)|\hat{A}\hat{H}|\Psi (t) \rangle \\
+&= \dfrac{i}{\hbar}\langle \Psi(t) |\left(\hat{H}\hat{A} - \hat{A}\hat{H}\right) |\Psi (t) \rangle
+\end{aligned}
+$$ {#eq-commutator_1}
+
+을 얻는다. 여기서 중요한 개념이 등장한다. 두 연산자 $\hat{A},\, \hat{B}$ 에 대해 $[\hat{A},\, \hat{B}] := \hat{A}\hat{B} - \hat{B}\hat{A}$ 를 $\hat{A}$ 와 $\hat{B}$ 에 대한 **교환자(commutator)** 라고 한다. 이를 이용하면 @eq-commutator_1 으로부터 다음을 얻는다.
+
+$$
+\dfrac{d\langle\hat{A}\rangle}{dt} = -\dfrac{i}{\hbar}\langle [\hat{A},\, \hat{H}] \rangle.
+$$ {#eq-commutator}
+
+고전역학의 **푸아송 괄호(Poisson braket)** 을 생각하자. 해밀토니안 $H$ 와 물리량 $A$, 그리고 canonical coordinate $\{q_i\}$ 와 그 conjugate momentum $\{p_i\}$ 사이에 다음의 관계가 성립한다는 것을 안다. 
+
+$$
+\dfrac{dA}{dt} = \left\{A,\, H\right\} = \sum_i \left(\dfrac{\partial A}{\partial q_i}\dfrac{\partial H}{\partial p_i} - \dfrac{\partial A}{\partial p_i}\dfrac{\partial H}{\partial q_i}\right)
+$$ {#eq-poisson_bracket}
+
+@eq-commutator 와 @eq-poisson_bracket 으로부터 고전역학과 양자역학 사이의 유사성을 발견한 사람은 디랙이다. 교환자와 푸아송 괄호의 형식적 유사성은 다음과 같이 표현 할 수 있다.
+
+$$
+[\hat{A},\, \hat{B}] \iff i\hbar \{A,\,B\}.
+$$ {#eq-commutator_and_poisson_bracket}
+
+여기에 대해서는 향후 불확정성의 원리에서 깊이 다루기로 하자. 어쨌든 @eq-commutator 와 @eq-poisson_bracket 으로부터 $\hat{H}$ 가 고전역학의 해밀토니안 $H$ 에 상응하는 것이라는 것을 알 수 있다. 이 때문에, 그리고 실제로 $\hat{H}$ 연산자가 계의 에너지를 의미하기 때문에 $\hat{H}$ 를 해밀토니안 연산자라고 한다.
+
+</br>
+
+### 양자역학에서의 보존량
+
+고전역학에서 어떤 양이 보존이라는 것은 시간에 대해 상수라는 의미이다. @eq-commutator 로 부터 $[\hat{A},\, \hat{H}]=0$ 이 되는 양 $A$ 는 시간에 대해 보존된다는 것을 알 수 있다. 양자역학에서의 보존이라는 의미는 해밀토니안에 대해 그 교환자가 $0$ 이라는 의미이다.
+
+가정 대표적인 보존량은 해밀토니안 자신이다. 우리는 $[\hat{H},\, \hat{H}]=0$ 이라는 것을 알 수 있다. 
+
+
+</br>
+
+### 슈뢰딩거 방정식
+
+우리는 시간 전개 연산자 $U(t,\,t')$ 이 궁극적으로 해밀토니안 연산자 $\hat{H}$ 에 대한 함수라는 것을 알았다. 또한 어떤 물리량 $\hat{A}$ 의 시간적 변화는 $\hat{H}$ 와의 교환자 $[\hat{A},\, \hat{H}]$ 의 기대값이라는 것도 알게 되었다. 하지만 우리가 아는 것은 해밀토니안 연산자라는 것이 존재할 수 있으며 의미있다는 것이지, 그것이 실제로 어떤 형태인지는 모른다. 해밀토니안 연산자는 유사 시스템에 대한 고전역학적인 해밀토니안으로부터 얻을 수도 있고, 시스템을 분석하여 예상할 수도 있으며, 그냥 선언 할 수도 있다. 우리가 아는 것은 다음의 시간 의존적 슈뢰딩거 방정식 뿐이다.
+
+$$
+i\hbar\dfrac{\partial |\Psi(t)\rangle}{\partial t} = \hat{H}|\Psi(t)\rangle
+$$
+
+$\hat{H}$ 는 에르미트 연산자이다. 
+
+
+
+
+## 브라켓 표기법
+
+브라켓 표기법은 양자역학에서 벡터와 선형범함수를 표기하는 표기법으로 폴 디랙에 의해 고안되었다. 양자역학은 유한차원 복소내적벡터공간, 혹은 무한차원 복소내적벡터공간인 힐베르트 공간에서 기술되며 역사적인 이유로 고유의 표기법을 사용하게 되었다. 
+
+수학에서는 두 벡터의 내적을 벡터 $a,\,b$ 에 대해 $(a,\,b)$ 나 $\langle b,\, a\rangle$ 로 표기하며 $\langle b,\,a\rangle$ 는 실제로는 $(i)$ 벡터 $a$ 와 $(ii)$ $b$ 에 대한 쌍대기저의 연산이다. 따라서 복소벡터공간에서 벡터 $a_1,\,a_2$ 와 스칼라 $c_1,\,c_2$ 에 대해
+
+$$
+\begin{aligned}
+( c_1 a_1 + c_2 a_2,\, b ) &= c_1 ( a_1,\,b ) + c_2 ( a_2,\, b), \\
+( b,\,c_1a_1+c_2a_2 ) &= \overline{c_1} ( b,\, a_1 ) + \overline{c_2} ( b,\, a_2). \\
+\end{aligned}
+$$
+
+이 성립한다. 
+
+양자역학에서는 다음과 같은 표기법을 따른다.
+
+::: {.callout-important icon="false"}
+
+#### 브라켓 표기법
+
+1. 벡터는 $|\phi\rangle$ 과 같이 표기하며 **캣(ket)** 라고 한다. $|\phi\rangle$ 에 대한 스칼라 $c$ 곱은 $c|\phi\rangle$ 과 같이 표기한다. 선형결합은 $c_1|\phi_1\rangle + c_2|\phi_2\rangle + \cdots$ 와 같이 표현한다.
+
+2. 연산자 $\hat{A}$ 에 대한 $|\phi\rangle$ 의 선형변환은 $\hat{A}|\phi\rangle$ 로 표기한다. 
+  
+3. $|\phi \rangle$ 에 대한 쌍대기저는 $\langle \phi|$ 로 표기하며 **브라(bra)** 이라고 한다. $\langle \phi| = | \phi\rangle^\dagger$ 로 쓰기도 한다. 벡터 $|\phi\rangle$ 과 $|\psi\rangle^\dagger$ 에 대한 내적은 $\langle \psi | \phi \rangle$ 로 표기한다. 브라와 캣을 합쳐서 **브라켓(bra-ket)** 이라고 한다. 
+
+4. 따라서 $(c_1 |\psi_1\rangle + c_2|\psi_2)^\dagger = \overline{c_1}\langle \psi_1| + \overline{c_2}\langle \psi_2| = \langle \psi_1| \overline{c_1} +\langle \psi_1| \overline{c}_2$ 이다. 이로부터 다음이 성립한다.  
+$$
+\begin{aligned}
+\langle \psi | \left(c_1  |\phi_1\rangle + c_2 | \phi_2\rangle\right) &= c_1 \langle \psi|\phi_1\rangle + c_2 \langle \psi|\phi_2\rangle, \\
+(c_1 |\psi_1\rangle + c_2 |\psi_2\rangle)^\dagger| \phi \rangle & = \overline{c_1}\langle \psi_1|\phi \rangle + \overline{c_2}\langle\psi_2 |\phi\rangle. 
+\end{aligned}
+$$
+
+
+5. $\langle \psi | \hat{A} |\phi \rangle = \langle \psi| (A| \phi \rangle)$ 을 의미한다. 즉 브라켓 사이의 선형연산자는 켓에 대한 선형연산자를 의미한다. 또한 $(A|\psi\rangle)^\dagger |\phi\rangle = \langle \psi|A^\dagger|\phi\rangle$ 이다. 
+
+:::
+
+
+<br>
+
+양자역학에서 캣은 양자상태를 표현하는 벡터이다. 따라서 일반적으로 $\langle \phi | \phi \rangle =1$ 인 정규벡터를 의미한다. 또한 유한차원 복소벡터공간에서 양자상태를 표현한다면 $|\phi\rangle$ 을 열벡터로, $\langle \psi |$ 를 행벡터로 표현한다. 
+
+1. 양자 상태 표현의 편의성 : 브라켓으로 벡터를 표현할 때의 가장 큰 장점은 양자상태를 표현할 때 수학적인 표기법보다 편하다는 것이다. 예를 들어 양자수 3개로 정의되는 상태에 대해 $|abc\rangle$ 과 같이 세개의 숫자를 쓴 다음에 캣으로 묶어버리는 것으로 양자상태를 표현할 수 있다. 수소원자의 경우 주양자수 $n=2$, 궤도양자수 $l=1$, 자기양자수 $m=0$ 인 상태를 $|nlm\rangle$ 표기법을 사용하여 $|210\rangle$ 으로 표기할 수있다. 또한 내적에서 사용되는 쌍대기저를 독립적인 브라 표기법으로 $\langle 210 |$ 와 같이 표현 할 수 있다. 
+
+2. 연산자와 벡터의 분리 : $\langle\phi | \hat{A} |\psi\rangle$ 형식이기 때문에 연산자의 연산을 브라와 캣 사이의 공간에서 수행 할 수 있는데 이는 수식표기가 좀 더 깔끔해진다.
+
+3. 기벼 변환 연산자 표현 : 기저의 변환을 브라켓을 사용하여 쉽게, 그리고 직관적으로 표현 할 수 있다는 것이다. 어떤 기저 $\{|1\rangle,\, |2\rangle, \ldots\}$ 를 $\{|\phi_1\rangle,\, |\phi_2\rangle, \ldots\}$ 기저로 변환시킨다고 하자. 다음과 같은 연산자 $P = \sum_j |\phi_i\rangle \langle \phi_i |$ 를 생각하자. 
+
+
