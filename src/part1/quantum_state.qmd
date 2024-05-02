@@ -13,7 +13,7 @@ crossref:
 
 단 하나의 스핀 자유도 $\sigma$ 를 갖는, 그리고 $\sigma$ 는 $\pm 1$ 의 값 가운데 하나의 값만을 가질 수 있는 계(System) 를 생각하자. 물리적으로는 $\pm 1/2$ 가 맞겠지만 여기서는 간단히 $\pm 1$ 이라고 하자. 이제 이 계를 하나의 큐빗(qbit) 으로 이루어진 계로 생각 할 수 있다. 이제 시간을 추상화 한 $n$ 번째의 상태를 $\sigma (n)$ 으로 기술하자. $\sigma(n+1) = \sigma (n)$ 이라면 상태는 변화하지 않은 것이다. $\sigma(n+1) = -\sigma(n)$ 이라면 상태가 변화한 것이다.
 
-이제 이 상태, 즉 스핀을 측정하는 측정 장비 $A$ 를 생각하자. 고전역학과의 결정적인 차이점 중의 하나는 고전역학에서는 계의 상태에 영향을 주지 않고 $A$ 가 $\sigma(n)$ 을 측정 할 수 있다는 것을 가정한다. 그러나 아주 작은 세계를 탐구하는 양자역학에는 이 가정이 들어설 수 없다. 즉 $A$ 와 상태는 필연적으로 상호작용하며 따라서 $A$ 는 $\sigma(n)$ 에 영향을 끼친다.
+이제 이 상태, 즉 스핀을 측정하는 측정 장비 $A$ 를 생각하자. 고전역학과의 결정적인 차이점 중의 하나는 고전역학에서는 계의 상태에 영향을 주지 않고 $A$ 가 $\sigma(n)$ 을 측정 할 수 있다는 것을 가정한다는 것이다. 그러나 아주 작은 세계를 탐구하는 양자역학에는 이 가정이 들어설 수 없다. 즉 $A$ 와 상태는 필연적으로 상호작용하며 따라서 $A$ 는 $\sigma(n)$ 에 영향을 끼친다.
 
 이 측정을 $x,\,y,\,z$ 축을 따라서, 혹은 그 반대로 측정할 수 있다고 하자. 이제 축에 따라 $\sigma_x,\,\sigma_y,\,\sigma_z$ 를 측정 할 수 있다. 이제 $\sigma_z$ 를 측정한다. $1$ 혹은 $-1$ 값을 가질 수 있다. 그 후 실험장비를 중립으로 재 설정 한후 다시 $\sigma_z$ 를 측정한다. 여러번 재측정해도 그 값이 변하지 않는다. 우리는 $+z$ 방향으로 측정하는 것과 $-z$ 방향으로 측정하는 것이 본질적으로 같다는 것을 알 수 있다. 또한 이 시스템이 어떤 상태로 즉 $\sigma_z=1$ 이거나 $-1$ 인 상태중의 하나로 준비되었다고 말 할 수 있다. 
 
@@ -227,7 +227,7 @@ $$
 \forall\, |\phi\rangle,\,|\psi\rangle \in V,\qquad \langle \phi |\hat{A}^\dagger |\psi \rangle := \overline{\langle \psi |\hat{A}|\phi \rangle}.
 $$ {#eq-definition_of_hermite_conjugate}
 
-이 때 $\hat{A}^\dagger$ 역시 벡터공간 $V$ 에서 정의된 선형연산자이다. **에르미트 연산자(Hermitian operator)** 는 다음을 만족하는 연산자이다.
+이 때 $\hat{A}^\dagger$ 역시 벡터공간 $V$ 에서 정의된 선형연산자이다. **에르미트 연산자(Hermitian operator)** 는 다음을 만족하는 연산자로 @sec-hermitian_operator 를 참고하라.
 
 $$
 \forall\, |\phi\rangle,\,|\psi\rangle \in V,\qquad \langle \phi | \hat{A} | \psi \rangle = \langle \phi |\hat{A}^\dagger|\psi \rangle. 
@@ -235,22 +235,7 @@ $$ {#eq-definition_of_hermite_operator}
 
 </br>
 
-에르미트 연산자의 기본적인 성질은 다음과 같다.
-
-::: {.callout-note icon="false"}
-
-#### 에르미트 연산자의 기본적인 성질
-
-&emsp; **1.** 에르미트 연산자의 고유값은 실수이다.
-
-&emsp; **2.** 서로 다른 고유값을 갖는 에르미트 연산자의 고유벡터는 직교한다.
-
-&emsp; **3.** 에르미트 연산자에 대한 교유벡터로 벡터공간의 기저를 구성 할 수 있다.
-
-:::
-
-
-**3.** 에 의해 벡터공간, 즉 상태공간 $V$ 는 에르미트 연산자 $\hat{A}$ 의 고유벡터 $\{|a_i\rangle\}$ 를 기저로 하여 표현될 수 있다. 
+**원리 3.** 에 의해 벡터공간, 즉 상태공간 $V$ 는 에르미트 연산자 $\hat{A}$ 의 고유벡터 $\{|a_i\rangle\}$ 를 기저로 하여 표현될 수 있다. 
 
 $$
 |\phi\rangle = \sum_i c_i |a_i\rangle,\qquad \hat{A}|a_i \rangle = \lambda_i |a_i\rangle.
@@ -263,66 +248,6 @@ $$
 $$
 
 이 되지만 물리적으로는 측정 이후 $|\phi\rangle$ 은 $\hat{A}_i$ 의 고유벡터중의 하나만 남는다. 이것을 **붕괴(collapse)** 라고 한다. 
-
-
-</br>
-
-## 브라켓 표기법
-
-브라켓 표기법은 양자역학에서 벡터와 선형범함수를 표기하는 표기법으로 폴 디랙에 의해 고안되었다. 양자역학은 유한차원 복소내적벡터공간, 혹은 무한차원 복소내적벡터공간인 힐베르트 공간에서 기술되며 역사적인 이유로 고유의 표기법을 사용하게 되었다. 
-
-수학에서는 두 벡터의 내적을 벡터 $a,\,b$ 에 대해 $(a,\,b)$ 나 $\langle b,\, a\rangle$ 로 표기하며 $\langle b,\,a\rangle$ 는 실제로는 $(i)$ 벡터 $a$ 와 $(ii)$ $b$ 에 대한 쌍대기저의 연산이다. 따라서 복소벡터공간에서 벡터 $a_1,\,a_2$ 와 스칼라 $c_1,\,c_2$ 에 대해
-
-$$
-\begin{aligned}
-( c_1 a_1 + c_2 a_2,\, b ) &= c_1 ( a_1,\,b ) + c_2 ( a_2,\, b), \\
-( b,\,c_1a_1+c_2a_2 ) &= \overline{c_1} ( b,\, a_1 ) + \overline{c_2} ( b,\, a_2). \\
-\end{aligned}
-$$
-
-이 성립한다. 
-
-양자역학에서는 다음과 같은 표기법을 따른다.
-
-::: {.callout-important icon="false"}
-
-#### 브라켓 표기법
-
-1. 벡터는 $|\phi\rangle$ 과 같이 표기하며 **캣(ket)** 라고 한다. $|\phi\rangle$ 에 대한 스칼라 $c$ 곱은 $c|\phi\rangle$ 과 같이 표기한다. 선형결합은 $c_1|\phi_1\rangle + c_2|\phi_2\rangle + \cdots$ 와 같이 표현한다.
-
-2. 연산자 $\hat{A}$ 에 대한 $|\phi\rangle$ 의 선형변환은 $\hat{A}|\phi\rangle$ 로 표기한다. 
-  
-3. $|\phi \rangle$ 에 대한 쌍대기저는 $\langle \phi|$ 로 표기하며 **브라(bra)** 이라고 한다. $\langle \phi| = | \phi\rangle^\dagger$ 로 쓰기도 한다. 벡터 $|\phi\rangle$ 과 $|\psi\rangle^\dagger$ 에 대한 내적은 $\langle \psi | \phi \rangle$ 로 표기한다. 브라와 캣을 합쳐서 **브라켓(bra-ket)** 이라고 한다. 
-
-4. 따라서 $(c_1 |\psi_1\rangle + c_2|\psi_2)^\dagger = \overline{c_1}\langle \psi_1| + \overline{c_2}\langle \psi_2| = \langle \psi_1| \overline{c_1} +\langle \psi_1| \overline{c}_2$ 이다. 이로부터 다음이 성립한다.  
-$$
-\begin{aligned}
-\langle \psi | \left(c_1  |\phi_1\rangle + c_2 | \phi_2\rangle\right) &= c_1 \langle \psi|\phi_1\rangle + c_2 \langle \psi|\phi_2\rangle, \\
-(c_1 |\psi_1\rangle + c_2 |\psi_2\rangle)^\dagger| \phi \rangle & = \overline{c_1}\langle \psi_1|\phi \rangle + \overline{c_2}\langle\psi_2 |\phi\rangle. 
-\end{aligned}
-$$
-
-
-5. $\langle \psi | \hat{A} |\phi \rangle = \langle \psi| (A| \phi \rangle)$ 을 의미한다. 즉 브라켓 사이의 선형연산자는 켓에 대한 선형연산자를 의미한다. 또한 $(A|\psi\rangle)^\dagger |\phi\rangle = \langle \psi|A^\dagger|\phi\rangle$ 이다. 
-
-:::
-
-
-<br>
-
-양자역학에서 캣은 양자상태를 표현하는 벡터이다. 따라서 일반적으로 $\langle \phi | \phi \rangle =1$ 인 정규벡터를 의미한다. 또한 유한차원 복소벡터공간에서 양자상태를 표현한다면 $|\phi\rangle$ 을 열벡터로, $\langle \psi |$ 를 행벡터로 표현한다. 
-
-1. 양자 상태 표현의 편의성 : 브라켓으로 벡터를 표현할 때의 가장 큰 장점은 양자상태를 표현할 때 수학적인 표기법보다 편하다는 것이다. 예를 들어 양자수 3개로 정의되는 상태에 대해 $|abc\rangle$ 과 같이 세개의 숫자를 쓴 다음에 캣으로 묶어버리는 것으로 양자상태를 표현할 수 있다. 수소원자의 경우 주양자수 $n=2$, 궤도양자수 $l=1$, 자기양자수 $m=0$ 인 상태를 $|nlm\rangle$ 표기법을 사용하여 $|210\rangle$ 으로 표기할 수있다. 또한 내적에서 사용되는 쌍대기저를 독립적인 브라 표기법으로 $\langle 210 |$ 와 같이 표현 할 수 있다. 만약 브라켓 표기법 없이 사용한다면 $|210\rangle$ 상태를 $\Psi_{210}$ 이나 $\Phi^2_{10}$ 과 같이 표현해야 할 것이다. 
-
-2. 연산자와 벡터의 분리 : $\langle\phi | \hat{A} |\psi\rangle$ 형식이기 때문에 연산자의 연산을 브라와 캣 사이의 공간에서 수행 할 수 있는데 이는 수식표기가 좀 더 깔끔해진다.
-
-3. 앞으로 다루겠지만 projection operator $|\phi\rangle\langle \psi|$ 와 내적 $\langle \psi|\phi\rangle$ 의 구분이 명확해진다. 벡터를 사용한다면 $\boldsymbol{\psi} \boldsymbol{\phi}^\ast$ 와 $\boldsymbol{\psi}^\ast\boldsymbol{\phi}$ 와 같이 구분하기 힘들다. 
-
-</br>
-
-#### 영벡터
-
-원래 벡터공간은 영벡터를 항상 포함하며 수학에서는 $0$, $\boldsymbol{0}$ 혹은 $\overrightarrow{0}$ 과 같이 표기하며 벡터의 덧셈에 대한 항등원이다. 그러나 브라켓 표기법으로 $|0\rangle$ 은 어떤 $0$ 인 양자상태나 인덱스를 표기하는데 사용 될 수 있으며 이를 섞어 사용하는 것은 혼란을 준다. 따라서 여기서는 $|\varnothing\rangle$ 로 영벡터를 표현하기로 하자. 
 
 </br>
 
@@ -375,7 +300,7 @@ $$ {#eq-continuity_of_time_evolution}
 
 </br>
 
-#### 3. Unitry
+#### 3. Unitarity
 
 $\langle \Psi(0)|\Phi (0)\rangle=0$ 이라고 하자. 그렇다면 $\langle \Psi (t) | \Phi (t) \rangle = 0$ 이어야 한다. 우리는 양자상태 $|\Phi\rangle,\, |\Psi\rangle$ 에 대해
 
@@ -635,49 +560,62 @@ $${#eq-time_evolution_of_hamiltonian_eigenvectors_2}
 
 </br>
 
-## 불확정성의 원리
+## 파동함수와 불확정성의 원리
 
 앞서 **양자역학의 원리 3.** 에서도 언급했지만 우리가 어떤 계에 대해 $\hat{A}$ 를 측정하는 실험을 하면 이 계는 $\hat{A}$ 의 고유상태중의 하나로 남는다. 이를 **파동함수의 붕괴(collapse of wave function)** 이라고 한다. 우리는 스핀 $1/2$ 시스템에서 $|u\rangle$ 로 준비된 시스템에 대해 $\hat{\sigma}_x$ 를 측정 했을 때 이 계가 $\hat{\sigma}_x$ 의 두 고유상태중의 하나만 남는다는 것을 알았다. 우리가 이 측정과 상태에 대해 이해하기 위해서는 소위 불확정성에 대해 좀 더 이해해야 한다.
 
 
-어떤 두 측정은 서로 완전히 독립적이라 하나의 측정이 다른 하나의 측정에 영향을 끼치지 않을 수 있다. 그러나 어떤 두 측정은 하나의 측정이 다른 하나의 측정에 영향을 준다. $\hat{L}$ 과 $\hat{M}$ 의 두 측정, 혹은 두 에르미트 연산자를 생각해보자. 
+어떤 두 측정은 서로 완전히 독립적이라 하나의 측정이 다른 하나의 측정에 영향을 끼치지 않을 수 있다. 그러나 어떤 두 측정은 하나의 측정이 다른 하나의 측정에 영향을 준다. $\hat{L}$ 과 $\hat{M}$ 의 두 측정, 혹은 두 에르미트 연산자를 생각해보자. 우리는 @prp-uncertainty_1 에서 $[\hat{L},\, \hat{M}]=0$ 인 것과 $\hat{L}$ 과 $\hat{M}$ 에 대한 동시 고유벡터로 이루어진 기저가 존재한다는 것이 수학적으로 동치라는 것을 보였다. 이 때 $[\hat{L},\, \hat{M}]=0$ 인 것을 두 연산자 $\hat{L},\, \hat{M}$ 이 **교환 가능하다**라고 한다.
 
 
+</br>
 
-두 연산자에 대해 동시에 고유벡터인 기저가 존재한다고 하자. 우리는 이 기저를 $\hat{L}$ 에 대한 고유값 $l$ 과 $\hat{M}$ 에 대한 고유값 $m$ 으로 구분 할 수 있다. 즉 $|lm\rangle$ 로 기저를 표현 할 수 있다. 그렇다면, 
+### 파동 함수
 
-$$
-\hat{L}\hat{M}|lm\rangle = \hat{L}\left(m|lm\rangle\right) = ml|lm\rangle = \hat{M}\hat{L}|lm\rangle
-$$
-
-임을 알 수 있다. 즉 교환자에 대해 $[\hat{L},\, \hat{M}] = 0$ 임을 알 수 있다. 
-
-
-::: {#prp-uncertainty_1}
-
-힐베르트 공간 $\mathcal{H}$ 에서 정의된 두 에르미트 연산자 $\hat{L},\, \hat{M}$ 에 대해 다음은 동치이다.
-
-&emsp; ($1$) $[\hat{L},\, \hat{M}]=0$.
-
-&emsp; ($2$) $\hat{L}$ 과 $\hat{M}$ 에 대해 동시에 고유상태인 벡터로 이루어진 $\mathcal{H}$ 의 기저가 존재한다.
-:::
-
-::: {.proof}
-
-($1 \implies 2$) $\hat{L}$ 이 에르미트 연산자이므로 $\hat{L}$ 의 고유상태로 이루어진 $\mathcal{H}$ 의 기저가 존재한다. 이를 고유값 $l_i$ 인 고유상태를 $|l_i\rangle$ 로 표기하자. 
+어떤 양자 상태 $|\Psi\rangle$ 을 생각하자. 그리고 이 계의 관측량에 대한 교환 가능한 에르미트 연산자 $\hat{A},\,\hat{B},\,\hat{C}, \ldots$ 와 그 고유값에 대한 변수 $a,\,b,\,c\ldots$ 를 생각하자. 우리는 정규 직교 기저를 이 변수들 $a,\,b,\,c\ldots$ 로 기술 할 수 있다. 즉 각각의 $a,\,b,\,c,\ldots$ 값에 대해 $|a,b,c,\dots\rangle$ 는 이 힐베르트 공간의 정규직교기저를 이룬다. 따라서 $|\Psi\rangle$ 은 이 정규직교기저의 선형결합으로 다음과 같이 표현 할 수 있다. 
 
 $$
-|\varnothing\rangle=[\hat{L},\, \hat{M}]|l_i\rangle = (\hat{L}\hat{M}- \hat{M} l_i) |l_i\rangle = (\hat{L}- l_i) \hat{M}|l_i\rangle
+|\Psi \rangle = \sum_{a,b,c,\ldots} \psi(a,\,b,\,c,\ldots) |a,\,b,\,c,\ldots\rangle.
 $$
 
-이므로 $\hat{M}|l_i\rangle$ 는 고유값 $l_i$ 를 갖는 $\hat{L}$ 의 고유상태이다. $\hat{M}$ 역시 에르미트 연산자이므로 
+이 때 $\psi(a,\,b,\,c,\ldots) = \langle a,b,c,\ldots|\Psi\rangle$ 로 수학적으로는 위의 선형결합에서의 계수(coefficients) 이며 물리적으로는 $|\Psi\rangle$ 에 대해 $\hat{A},\,\hat{B},\,\hat{C},\ldots$ 를 측정했을의 측정값이 $a,\,b,\,c,\ldots$ 가 될 확률밀도함수이다. 이 때 $\Psi(a,\,b,\ldots)$ 를 $\hat{A},\,\hat{B},\,\hat{C}$ 가 정의하는 기저에서의 $|\Psi\rangle$ 의 **파동함수(wave function)** 이라고 한다$^1$. [$^1$ 입자/파동에서의 파동과는 큰 관련은 없으며 그저 역사적인 이유로 파동함수라는 이름이 붙었다.]{.aside}
+
+파동함수가 가져야 할 가장 중요한 특징중의 하나는 확률의 총합이 $1$ 이어야 한다는 것이다. 이는 $\langle \Psi | \Psi \rangle =1$ 로부터 나오며
 
 $$
-\hat{M}|l_i\rangle = \sum_j m_j|l_i m_j\rangle
+\sum_{a,b,c,\ldots} \psi^\ast (a,b,c,\ldots) \psi(a,b,c,\ldots) = 1
 $$
 
-로 쓸 수 있다. 따라서 $\mathcal{H}$ 는 $\{|l_i m_j\rangle \}$ 를 기저로 갖는다.
+임을 의미한다. 만약 $b,\,c$ 가 연속적인 값을 갖는다면 $\sum$ 이 아닌 적분 $\int$ 가 되야 할 것이다. 예를 들어 $\hat{A},\,\hat{B},\,\hat{C},\hat{E}$ 에 대한 고유값 변수 $a,\,b,\,c,\,e$ 에 대해 $b,\,c$ 가 연속적인 값을 갖는다면
 
-($2 \implies 1$)
+$$
+1 = \sum_{a,\,e} \iint \psi^\ast (a,b,c,e) \psi(a,b,c,e) db\, dc
+$$
 
-:::
+가 된다. 
+
+우리는 양자상태($\Psi$) 와 파동함수 ($\psi$) 를 구별했다. 적지 않은 경우에는 둘을 혼용하긴 하지만 그 개념을 명확히 구분할 수는 있어야 한다. 파동함수는 특정한 측정값들이 어떤 값을 가지는지에 대한 양자상태의 확률밀도함수이다. 여기서는 양자상태는 대문자, 파동함수는 소문자로 표현하기로 하자. 
+
+</br>
+
+### 불확정성의 원리
+
+파동함수는 교환가능한 연산자의 고유값의 집합으로 기저를 구성하여 양자상태를 표현한 함수라는 것을 알았다. 그렇다면 서로 교환 가능하지 않은 연산자들에 대해 생각해보자. 두 연산자 $\hat{A},\,\hat{B}$ 가 서로 교환 가능하지 않다고 하자. 그리고 연산자 $\hat{A}$ 에 대해 $(\Delta \hat{A})^2$ 를 아래와 같이 정의하자.
+
+$$
+(\Delta \hat{A})^2 := \langle (\hat{A}-\langle \hat{A}\rangle\hat{I})^2\rangle
+$$ {#eq-square_of_uncertaintuy}
+
+라 하자. 통계학에서는 어떤 변수 $X$ 와 그 평균 $\overline{X}$ 에 대해 $(X-\overline{X})^2$ 의 평균값을 **분산(variation)** 이라 하며 그 제곱근을 **표준 편차(standard deviation)** 이라고 한다. @eq-square_of_uncertaintuy 는 관측량 $\hat{A}$ 의 측정에서의 분산, 즉 표준편차의 제곱값의 기대값이다.
+
+이제 서로 교환되지 않는 두 관측량 $\hat{A},\, \hat{B}$ 와 임의의 양자상태 $|\Psi\rangle$ 에 대해 
+
+$$
+|X\rangle = \hat{A}|\Psi\rangle,\, |Y\rangle = i\hat{B}|\Psi \rangle
+$$
+
+이라 하자. 우리는 코시-슈바르츠 부등식(Cauchy-Schwartz inequality) 
+
+$$
+|\langle X+Y| X+Y\rangle |^2 \le |\langle X|X\rangle^2 + \langle Y|Y\rangle^2|
+$$

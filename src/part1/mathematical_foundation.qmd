@@ -1,0 +1,133 @@
+---
+title: "힐베르트 공간과 브라켓 표기법"
+number-sections: true
+number-depth: 3
+crossref:
+  chapters: true
+---
+
+
+## 힐베르트 공간 {#sec-hilbert_space}
+
+양자역학은 힐베르트 공간에서 기술된다. **힐베르트 공간(Hilbert space)**은 우리가 익숙한 유한차원 내적 벡터공간의 성질을 모두 가지고 있는 무한차원 복소 벡터공간을 말한다. 보통 양자역학에서는 유한차원이든 무한차원이든 양자역학을 기술하는 수학적 공간을 힐베르트 공간이라고 한다.
+
+힐베르트 공간은 벡터공간이며 따라서 힐베르트 공간의 원소는 벡터이다. 역사적, 실용적 이유로 양자역학에서의 표기법은 보통 수학에서의 표기법과는 다른 브라켓 표기법을 사용하며 대표적으로 벡터는 $|a\rangle$ 과 같이 $|\,\rangle$ 형태로 표기하며, 선형연산자는 $\hat{L}$ 과 같이 문자 위에 $\hat{~}$ 기호를 씌워 표기한다. 양자역학에서 중요한 상태는 수학적으로 힐베르트 공간의 벡터이다. 
+
+</br>
+
+## 브라켓 표기법 {#sec-braket_notation}
+
+브라켓 표기법은 양자역학에서 벡터와 선형범함수를 표기하는 표기법으로 폴 디랙에 의해 고안되었다. 양자역학은 유한차원 복소내적벡터공간, 혹은 무한차원 복소내적벡터공간인 힐베르트 공간에서 기술되며 역사적인 이유로 고유의 표기법인 브라켓 표기법을 사용하게 되었다. 
+
+수학에서는 두 벡터의 내적을 벡터 $a,\,b$ 에 대해 $(a,\,b)$ 나 $\langle b,\, a\rangle$ 로 표기하며 $\langle b,\,a\rangle$ 는 실제로는 $(i)$ 벡터 $a$ 와 $(ii)$ $b$ 에 대한 쌍대기저의 연산이다. 따라서 복소벡터공간에서 벡터 $a_1,\,a_2$ 와 스칼라 $c_1,\,c_2$ 에 대해
+
+$$
+\begin{aligned}
+( c_1 a_1 + c_2 a_2,\, b ) &= c_1 ( a_1,\,b ) + c_2 ( a_2,\, b), \\
+( b,\,c_1a_1+c_2a_2 ) &= \overline{c_1} ( b,\, a_1 ) + \overline{c_2} ( b,\, a_2). \\
+\end{aligned}
+$$
+
+이 성립한다. 
+
+양자역학에서는 다음과 같은 표기법을 따른다.
+
+::: {.callout-important icon="false"}
+
+#### 브라켓 표기법
+
+1. 벡터는 $|\phi\rangle$ 과 같이 표기하며 **캣(ket)** 라고 한다. $|\phi\rangle$ 에 대한 스칼라 $c$ 곱은 $c|\phi\rangle$ 과 같이 표기한다. 선형결합은 $c_1|\phi_1\rangle + c_2|\phi_2\rangle + \cdots$ 와 같이 표현한다.
+
+2. 연산자 $\hat{A}$ 에 대한 $|\phi\rangle$ 의 선형변환은 $\hat{A}|\phi\rangle$ 로 표기한다. 
+  
+3. $|\phi \rangle$ 에 대한 쌍대기저는 $\langle \phi|$ 로 표기하며 **브라(bra)** 이라고 한다. $\langle \phi| = | \phi\rangle^\dagger$ 로 쓰기도 한다. 벡터 $|\phi\rangle$ 과 $|\psi\rangle^\dagger$ 에 대한 내적은 $\langle \psi | \phi \rangle$ 로 표기한다. 브라와 캣을 합쳐서 **브라켓(bra-ket)** 이라고 한다. 
+
+4. 따라서 $(c_1 |\psi_1\rangle + c_2|\psi_2)^\dagger = \overline{c_1}\langle \psi_1| + \overline{c_2}\langle \psi_2| = \langle \psi_1| \overline{c_1} +\langle \psi_1| \overline{c}_2$ 이다. 이로부터 다음이 성립한다.  
+$$
+\begin{aligned}
+\langle \psi | \left(c_1  |\phi_1\rangle + c_2 | \phi_2\rangle\right) &= c_1 \langle \psi|\phi_1\rangle + c_2 \langle \psi|\phi_2\rangle, \\
+(c_1 |\psi_1\rangle + c_2 |\psi_2\rangle)^\dagger| \phi \rangle & = \overline{c_1}\langle \psi_1|\phi \rangle + \overline{c_2}\langle\psi_2 |\phi\rangle. 
+\end{aligned}
+$$
+
+
+5. $\langle \psi | \hat{A} |\phi \rangle = \langle \psi| (A| \phi \rangle)$ 을 의미한다. 즉 브라켓 사이의 선형연산자는 켓에 대한 선형연산자를 의미한다. 또한 $(A|\psi\rangle)^\dagger |\phi\rangle = \langle \psi|A^\dagger|\phi\rangle$ 이다. 
+
+:::
+
+
+<br>
+
+양자역학에서 캣은 양자상태를 표현하는 벡터이다. 따라서 일반적으로 $\langle \phi | \phi \rangle =1$ 인 정규벡터를 의미한다. 또한 유한차원 복소벡터공간에서 양자상태를 표현한다면 $|\phi\rangle$ 을 열벡터로, $\langle \psi |$ 를 행벡터로 표현한다. 
+
+1. 양자 상태 표현의 편의성 : 브라켓으로 벡터를 표현할 때의 가장 큰 장점은 양자상태를 표현할 때 수학적인 표기법보다 편하다는 것이다. 예를 들어 양자수 3개로 정의되는 상태에 대해 $|abc\rangle$ 과 같이 세개의 숫자를 쓴 다음에 캣으로 묶어버리는 것으로 양자상태를 표현할 수 있다. 수소원자의 경우 주양자수 $n=2$, 궤도양자수 $l=1$, 자기양자수 $m=0$ 인 상태를 $|nlm\rangle$ 표기법을 사용하여 $|210\rangle$ 으로 표기할 수있다. 또한 내적에서 사용되는 쌍대기저를 독립적인 브라 표기법으로 $\langle 210 |$ 와 같이 표현 할 수 있다. 만약 브라켓 표기법 없이 사용한다면 $|210\rangle$ 상태를 $\Psi_{210}$ 이나 $\Phi^2_{10}$ 과 같이 표현해야 할 것이다. 
+
+2. 연산자와 벡터의 분리 : $\langle\phi | \hat{A} |\psi\rangle$ 형식이기 때문에 연산자의 연산을 브라와 캣 사이의 공간에서 수행 할 수 있는데 이는 수식표기가 좀 더 깔끔해진다.
+
+3. 앞으로 다루겠지만 projection operator $|\phi\rangle\langle \psi|$ 와 내적 $\langle \psi|\phi\rangle$ 의 구분이 명확해진다. 벡터를 사용한다면 $\boldsymbol{\psi} \boldsymbol{\phi}^\ast$ 와 $\boldsymbol{\psi}^\ast\boldsymbol{\phi}$ 와 같이 구분하기 힘들다. 
+
+</br>
+
+#### 영벡터
+
+원래 벡터공간은 영벡터를 항상 포함하며 수학에서는 $0$, $\boldsymbol{0}$ 혹은 $\overrightarrow{0}$ 과 같이 표기하며 벡터의 덧셈에 대한 항등원이다. 그러나 브라켓 표기법으로 $|0\rangle$ 은 어떤 $0$ 인 양자상태나 인덱스를 표기하는데 사용 될 수 있으며 이를 섞어 사용하는 것은 혼란을 준다. 따라서 여기서는 $|\varnothing\rangle$ 로 영벡터를 표현하기로 하자. 
+
+</br>
+
+
+## 에르미트 연산자 {#sec-hermitian_operator}
+
+$\hat{A}^\dagger = \hat{A}$ 인 연산자를 에르미트 연산자라고 한다. 양자역학에서 에르미트 연산자는 매우 중요하며 특별히 다룰 가치가 있다. 에르미트 연산자의 기본적인 성질은 다음과 같다.
+
+::: {.callout-note icon="false"}
+
+#### 에르미트 연산자의 기본적인 성질
+
+&emsp; **1.** 에르미트 연산자의 고유값은 실수이다.
+
+&emsp; **2.** 서로 다른 고유값을 갖는 에르미트 연산자의 고유벡터는 직교한다.
+
+&emsp; **3.** 에르미트 연산자에 대한 교유벡터로 벡터공간의 기저를 구성 할 수 있다.
+
+&emsp; **4.** 에르미트 연산자는 특정 기저에 대해 대각행렬로 표현 될 수 있다.
+
+:::
+
+</br>
+
+::: {#prp-uncertainty_1}
+
+힐베르트 공간 $\mathcal{H}$ 에서 정의된 두 에르미트 연산자 $\hat{L},\, \hat{M}$ 에 대해 다음은 동치이다.
+
+&emsp; ($1$) $[\hat{L},\, \hat{M}]= \hat{0}$.
+
+&emsp; ($2$) $\hat{L}$ 과 $\hat{M}$ 에 대해 동시에 고유상태인 벡터로 이루어진 $\mathcal{H}$ 의 기저가 존재한다.
+:::
+
+::: {.proof}
+
+($1 \implies 2$) $\hat{L}$ 과 $\hat{M}$ 이 에르미트 연산자이므로 각각의 고유상태로 이루어진 $\mathcal{H}$ 의 기저가 존재한다. 고유값 $l_i$ 인 $\hat{L}$ 의 고유상태를 $|l_i\rangle$ 로 표기하자. 
+
+$$
+|\varnothing\rangle=[\hat{L},\, \hat{M}]|l_i\rangle = (\hat{L}\hat{M}- \hat{M} l_i) |l_i\rangle = (\hat{L}- l_i) \hat{M}|l_i\rangle
+$$
+
+이므로 $\hat{M}|l_i\rangle$ 는 고유값 $l_i$ 를 갖는 $\hat{L}$ 의 고유상태이다. $\hat{M}$ 역시 에르미트 연산자이므로 
+
+$$
+\hat{M}|l_i\rangle = \sum_j m_j|l_i m_j\rangle
+$$
+
+로 쓸 수 있다. 따라서 $\mathcal{H}$ 는 $\{|l_i m_j\rangle \}$ 를 기저로 갖는다.
+
+($2 \implies 1$) $\hat{L}$ 과 $\hat{M}$ 에 대해 각각 $l,\,m$ 의 고유값을 갖는 동시에 고유상태인 기저를 $|lm\rangle$ 라고 하면 
+
+$$
+[\hat{L},\, \hat{M}]|lm\rangle = \hat{L}\hat{M}|lm\rangle - \hat{M}\hat{L}|lm\rangle = (lm-lm)|lm\rangle = |\varnothing\rangle
+$$
+
+이므로 $[\hat{L},\, \hat{M}] = \hat{0}$ 이다. $\square$
+:::
+
+</br>
+

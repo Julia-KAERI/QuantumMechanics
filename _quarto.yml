@@ -12,8 +12,8 @@ book:
     - index.qmd
     - part: src/part1/part1.qmd
       chapters:
-      - src/part1/1.qmd
-
+      - src/part1/mathematical_foundation.qmd
+      - src/part1/quantum_state.qmd
     - part: src/figure/figure.qmd
       chapters:
       - src/figure/figure_part1_1.qmd
