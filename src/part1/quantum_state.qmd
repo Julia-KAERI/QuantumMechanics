@@ -89,7 +89,7 @@ $$
 
 $$
 \langle \phi | \phi\rangle = 1
-$$ {#eq-normalization_of_probability}
+$$ {#eq-p1_normalization_of_probability}
 
 이어야 한다. 이것은 모든 양자상태에 동일하게 적용되며, 양자상태를 이렇게 확률진폭의 제곱의 합이 $1$ 이 되도록 특정 수를 곱해주는 것을 **정규화(normalization)** 이라고 한다. 
 
@@ -97,20 +97,20 @@ $$ {#eq-normalization_of_probability}
 
 $$
 |\langle u| r\rangle|^2 = |\langle d|r\rangle|^2 = \dfrac{1}{2}
-$$ {#eq-quantum_state_1}
+$$ {#eq-p1_quantum_state_1}
 
 이를 만족하는 가장 간단한 표현은
 
 $$
 |r\rangle = \dfrac{1}{\sqrt{2}}|u\rangle + \dfrac{1}{\sqrt{2}}|d\rangle
-$$ {#eq-quantum_state_2}
+$$ {#eq-p1_quantum_state_2}
 
 
-이다. 물론 $|r\rangle = a_u |u\rangle + a_d|d\rangle$ 에 대해 @eq-quantum_state_1 을 만족하는 $a_u,\,a_d$ 값은 복소수이므로 무수히 많다. 이 모호함은 곧 해소된다. 이제 $|l\rangle$ 을 같은 방식으로 표현해 보자. $|l\rangle$ 역시 $|u\rangle,\, |d\rangle$ 의 상태로 측정될 확률이 각각 $\frac{1}{2}$ 이며 $\langle l |r\rangle = 0$ 이어야 하므로
+이다. 물론 $|r\rangle = a_u |u\rangle + a_d|d\rangle$ 에 대해 @eq-p1_quantum_state_1 을 만족하는 $a_u,\,a_d$ 값은 복소수이므로 무수히 많다. 이 모호함은 곧 해소된다. 이제 $|l\rangle$ 을 같은 방식으로 표현해 보자. $|l\rangle$ 역시 $|u\rangle,\, |d\rangle$ 의 상태로 측정될 확률이 각각 $\frac{1}{2}$ 이며 $\langle l |r\rangle = 0$ 이어야 하므로
 
 $$
 |l \rangle = \dfrac{1}{\sqrt{2}}|u\rangle - \dfrac{1}{\sqrt{2}}|d\rangle
-$$ {#eq-quantum_state_3}
+$$ {#eq-p1_quantum_state_3}
 
 로 쓸 수 있다. 물론 여기에도 모호함이 있는데 실재로 $|l'\rangle = \dfrac{e^{i\chi}}{\sqrt{2}}(|u\rangle - |d\rangle)$ 라고 하면 임의의 실수 $\chi$ 에 대해 모든 조건을 만족한다. 실제로 $|l'\rangle$ 이 $|l\rangle$ 을 대채 할 수 있을 뿐만 아니라 물리적으로 구별 할 수 없다. 
 
@@ -125,7 +125,7 @@ $$
 |\langle u|i\rangle|^2 = |\langle d|i\rangle|^2 = |\langle l| i\rangle|^2 = |\langle r|i\rangle|^2 = \dfrac{1}{2}, \\
 |\langle u|o\rangle|^2 = |\langle d|o\rangle|^2 = |\langle l| o\rangle|^2 = |\langle r|o\rangle|^2 = \dfrac{1}{2}.\\
 \end{aligned}
-$$ {#eq-quantum_state_4}
+$$ {#eq-p1_quantum_state_4}
 
 이제 $|i\rangle$ 과 $|o\rangle$ 을 결정 할 수 있다. 
 
@@ -133,7 +133,7 @@ $$
 \begin{aligned}
 |i\rangle = \dfrac{1}{\sqrt{2}}|u\rangle + \dfrac{i}{\sqrt{2}}|d\rangle, \qquad |o\rangle = \dfrac{1}{\sqrt{2}}|u\rangle - \dfrac{i}{\sqrt{2}}|d\rangle
 \end{aligned}
-$$ {#eq-quantum_state_5}
+$$ {#eq-p1_quantum_state_5}
 
 물론 위상적 모호함은 남아 있으며, $|i\rangle$ 과 $|o\rangle$ 이 바뀔 수는 있지만 일단 이렇게 정한다면 위상적 모호함을 제외한 다른 모호함은 사라진다.
 
@@ -180,7 +180,7 @@ $$
 |u\rangle = \begin{bmatrix} 1 \\ 0 \end{bmatrix},\qquad |d\rangle = \begin{bmatrix} 0 \\ 1 \end{bmatrix}.
 $$
 
-@eq-quantum_state_2, @eq-quantum_state_3 로부터 $\hat{\sigma}_x$ 의 교유벡터 $|r\rangle,\, |l\rangle$ 에 대한 행렬 표현을 얻을 수 있다.
+@eq-p1_quantum_state_2, @eq-p1_quantum_state_3 로부터 $\hat{\sigma}_x$ 의 교유벡터 $|r\rangle,\, |l\rangle$ 에 대한 행렬 표현을 얻을 수 있다.
 
 $$
 |r\rangle = \frac{1}{\sqrt{2}}\left(|u\rangle + |d\rangle \right) = \frac{1}{\sqrt{2}}\begin{bmatrix} 1\\ 1 \end{bmatrix},\qquad |l\rangle = \frac{1}{\sqrt{2}}\left(|u\rangle - |d\rangle \right) = \frac{1}{\sqrt{2}}\begin{bmatrix} 1\\ -1\end{bmatrix}.
@@ -198,7 +198,7 @@ $$
 \hat{\sigma}_x =\begin{bmatrix}0 & 1 \\ 1 & 0\end{bmatrix}
 $$
 
-이다. 또한 @eq-quantum_state_5 로 부터 $\hat{\sigma}_y$ 의 고유벡터 $|i\rangle,\, |o\rangle$ 에 대한 행렬표현을 얻을 수 있다.
+이다. 또한 @eq-p1_quantum_state_5 로 부터 $\hat{\sigma}_y$ 의 고유벡터 $|i\rangle,\, |o\rangle$ 에 대한 행렬표현을 얻을 수 있다.
 
 $$
 |i\rangle = \frac{1}{\sqrt{2}}\left(|u\rangle + i|d\rangle \right) = \frac{1}{\sqrt{2}}\begin{bmatrix} 1\\ i \end{bmatrix},\qquad |o\rangle = \frac{1}{\sqrt{2}}\left(|u\rangle - i|d\rangle \right) = \frac{1}{\sqrt{2}}\begin{bmatrix} 1\\ -i\end{bmatrix}.
@@ -213,9 +213,23 @@ $$
 이 세 행렬 $\hat{\sigma}_x,\,\hat{\sigma}_y,\,\hat{\sigma}_z$ 를 **파울리 행렬(Pauli matrices)** 라고 한다. 
 
 $$
-\hat{\sigma}_z= \begin{bmatrix}1 & 0 \\ 0 & -1\end{bmatrix},\quad\hat{\sigma}_x =\begin{bmatrix}0 & 1 \\ 1 & 0\end{bmatrix},\quad\hat{\sigma}_y = \begin{bmatrix} 1 & -i \\ i & 0 \end{bmatrix}.
-$$ {#eq-pauli_matrices}
+\hat{\sigma}_z= \begin{bmatrix}1 & 0 \\ 0 & -1\end{bmatrix},\quad\hat{\sigma}_x =\begin{bmatrix}0 & 1 \\ 1 & 0\end{bmatrix},\quad\hat{\sigma}_y = \begin{bmatrix} 0 & -i \\ i & 0 \end{bmatrix}.
+$$ {#eq-p1_pauli_matrices}
 
+</br>
+
+파울리 행렬은 $\hat{\sigma}_z$ 의 고유공간에 대한 세 연산자 $\hat{\sigma}_z,\, \hat{\sigma}_x,\, \hat{\sigma}_y$ 에 대한 행렬표현이다. 여기에 $|u\rangle,\, |d\rangle$ 을 작용시키면 다음과 같은 결과를 얻는다.
+
+$$
+\begin{aligned}
+\hat{\sigma}_z|u\rangle & = |u\rangle,\\
+\hat{\sigma}_z|d\rangle & = |d\rangle,\\
+\hat{\sigma}_x|u\rangle & = |d\rangle,\\
+\hat{\sigma}_x|d\rangle & = |u\rangle,\\
+\hat{\sigma}_y|u\rangle & = -i|d\rangle,\\
+\hat{\sigma}_y|d\rangle & = i |u\rangle.
+\end{aligned}
+$$ {#eq-p1_pauli_matrix_z_state}
 
 </br>
 
@@ -225,13 +239,13 @@ $$ {#eq-pauli_matrices}
 
 $$
 \forall\, |\phi\rangle,\,|\psi\rangle \in V,\qquad \langle \phi |\hat{A}^\dagger |\psi \rangle := \overline{\langle \psi |\hat{A}|\phi \rangle}.
-$$ {#eq-definition_of_hermite_conjugate}
+$$ {#eq-p1_definition_of_hermite_conjugate}
 
 이 때 $\hat{A}^\dagger$ 역시 벡터공간 $V$ 에서 정의된 선형연산자이다. **에르미트 연산자(Hermitian operator)** 는 다음을 만족하는 연산자로 @sec-hermitian_operator 를 참고하라.
 
 $$
 \forall\, |\phi\rangle,\,|\psi\rangle \in V,\qquad \langle \phi | \hat{A} | \psi \rangle = \langle \phi |\hat{A}^\dagger|\psi \rangle. 
-$$ {#eq-definition_of_hermite_operator}
+$$ {#eq-p1_definition_of_hermite_operator}
 
 </br>
 
@@ -257,13 +271,13 @@ $$
 
 $$
 |\Psi (t) \rangle = {U}(t)|\Psi(0)\rangle
-$$ {#eq-time_evolutioni_operator_1}
+$$ {#eq-p1_time_evolutioni_operator_1}
 
 로 기술한다. 이 때 $U(t)$ 를 **시간 전개 연산자(time evolution operator)** 혹은 **시간 변화 연산자** 라고 한다. 특정 시간 $t'$ 을 기준으로 시간전개 연산자를 표현할 경우 아래와 같은 표현도 가능하다.
 
 $$
 |\Psi (t)\rangle = U(t,\, t')|\Psi (t')\rangle
-$$ {#eq-time_evolution_operator_2}
+$$ {#eq-p1_time_evolution_operator_2}
 
 </br>
 
@@ -281,7 +295,7 @@ $$
 |\Psi (t) \rangle &= U(t)|\Psi(0)\rangle = a_1 U(t)|\psi_1(0)\rangle + a_2 U(t)|\psi_2(0)\rangle \\
 &= a_1 |\psi_1(t)\rangle + a_2 |\psi_2(t)\rangle
 \end{aligned}
-$$ {#eq-linearlity_of_time_evolution_operator}
+$$ {#eq-p1_linearlity_of_time_evolution_operator}
 
 이어야 한다. 즉 상태가 중접된 양자상태의 미래는 각 상태의 미래의 중첩이다. 
 
@@ -293,7 +307,7 @@ $$ {#eq-linearlity_of_time_evolution_operator}
 
 $$
 U(t,\,t) = I
-$$ {#eq-continuity_of_time_evolution}
+$$ {#eq-p1_continuity_of_time_evolution}
 
 이어야 한다. 
 
@@ -312,7 +326,7 @@ $$
 
 $$
 U^\dagger U(t) = I
-$$ {#eq-unitarity_of_time_evolution} 
+$$ {#eq-p1_unitarity_of_time_evolution} 
 
 이어야 한다는 것을 안다. 즉 $U(t)$ 는 unitary 연산자이어야 한다. 
 
@@ -331,7 +345,7 @@ $$
 
 $$
 U (t,\,t_0) = U(t,\,t_1)U(t_1,\,t_0)
-$$ {#eq-composition_property_of_time_evolution}
+$$ {#eq-p1_composition_property_of_time_evolution}
 
 이어야 한다.
 
@@ -340,17 +354,17 @@ $$ {#eq-composition_property_of_time_evolution}
 
 ### 해밀토니안
 
-@eq-unitarity_of_time_evolution 와 @eq-continuity_of_time_evolution 로부터 우리는 아주 작은 시간 변화 $\varepsilon$ 에 대해 $U(t)$ 를 1차 근사로 다음과 같이 쓸 수 있다는 것을 안다.
+@eq-p1_unitarity_of_time_evolution 와 @eq-p1_continuity_of_time_evolution 로부터 우리는 아주 작은 시간 변화 $\varepsilon$ 에 대해 $U(t)$ 를 1차 근사로 다음과 같이 쓸 수 있다는 것을 안다.
 
 $$
 U(\varepsilon) = I - i\varepsilon\hat{K}
-$$ {#eq-unitary_hamiltonian_1}
+$$ {#eq-p1_unitary_hamiltonian_1}
 
-$\hat{H}$ 는 무엇인지 $i$ 는 왜 붙었는지는 일단 넘어가기로 하자. 즉 $U(t)$ 는 어떤 연산자 $\hat{K}$ 에 대해 위와 같이 표현 할 있다고 가정하자. 아니면 위와 같은 표현이 모순이 있는지 아닌지 확인해보자고 해도 무방하다. 어쨌든 @eq-unitary_hamiltonian_1 처럼 표현했다면 다음도 성립한다.
+$\hat{H}$ 는 무엇인지 $i$ 는 왜 붙었는지는 일단 넘어가기로 하자. 즉 $U(t)$ 는 어떤 연산자 $\hat{K}$ 에 대해 위와 같이 표현 할 있다고 가정하자. 아니면 위와 같은 표현이 모순이 있는지 아닌지 확인해보자고 해도 무방하다. 어쨌든 @eq-p1_unitary_hamiltonian_1 처럼 표현했다면 다음도 성립한다.
 
 $$
 U^\dagger(\varepsilon) = I + i \varepsilon \hat{K}^\dagger
-$$ {#eq-unitary_hamiltonian_2}
+$$ {#eq-p1_unitary_hamiltonian_2}
 
 아주 작은 시간동안에도 unitary 성질은 성립해야 한다. 따라서,
 
@@ -376,15 +390,15 @@ $$
 
 $$
 \dfrac{\partial |\Psi (t)\rangle}{\partial t} = -i \hat{K}|\Psi (t)\rangle
-$$ {#eq-hamiltonian_1}
+$$ {#eq-p1_hamiltonian_1}
 
-을 얻는다. 이제 $\hat{K}$ 에 대해 생각해보자. $\hat{K}$ 는 시간의 역수의 차원을 가진다. 이제 플랑크 상수 $\hbar = \dfrac{h}{2\pi} = 6.62607015 \times 10^{-34}\, \text{m}^2 \,\text{kg} / \text{s}$ 에 대해 $\hat{H} = \hbar \hat{K}$ 라고 놓으면 $\hat{H}$ 는 에너지와 같은 차원을 가지는 에르미트 연산자임을 안다. $\hat{K}$ 가 에르미트 연산자이므로 $\hat{H} = \hbar \hat{K}$ 가 에르미트 연산자임은 당연하다. @eq-hamiltonian_1 으로부터 
+을 얻는다. 이제 $\hat{K}$ 에 대해 생각해보자. $\hat{K}$ 는 시간의 역수의 차원을 가진다. 이제 플랑크 상수 $\hbar = \dfrac{h}{2\pi} = 6.62607015 \times 10^{-34}\, \text{m}^2 \,\text{kg} / \text{s}$ 에 대해 $\hat{H} = \hbar \hat{K}$ 라고 놓으면 $\hat{H}$ 는 에너지와 같은 차원을 가지는 에르미트 연산자임을 안다. $\hat{K}$ 가 에르미트 연산자이므로 $\hat{H} = \hbar \hat{K}$ 가 에르미트 연산자임은 당연하다. @eq-p1_hamiltonian_1 으로부터 
 
 $$
 i\hbar \dfrac{\partial |\Psi (t)\rangle}{\partial t} = \hat{H}|\Psi (t)\rangle
-$$ {#eq-time_dependent_schroedinger_equation}
+$$ {#eq-p1_time_dependent_schroedinger_equation}
 
-을 얻는다. @eq-time_dependent_schroedinger_equation 을 **시간 의존 슈뢰딩거 방정식 (time-dependent Schrödinger equation)** 이라고 한다. 또한 $\hat{H}$ 를 **해밀토니안(Hamiltonian)** 이라고 한다. $\hat{H}$ 가 해밀토니안이라는 고전역학에서 에너지에 대한 물리량과 같은 이름을 갖게 되는지는 좀 더 진행해 봐야 한다. 이를 위해서 잠시 길을 돌아가기로 하자.
+을 얻는다. @eq-p1_time_dependent_schroedinger_equation 을 **시간 의존 슈뢰딩거 방정식 (time-dependent Schrödinger equation)** 이라고 한다. 또한 $\hat{H}$ 를 **해밀토니안(Hamiltonian)** 이라고 한다. $\hat{H}$ 가 해밀토니안이라는 고전역학에서 에너지에 대한 물리량과 같은 이름을 갖게 되는지는 좀 더 진행해 봐야 한다. 이를 위해서 잠시 길을 돌아가기로 하자.
 
 </br>
 
@@ -430,7 +444,7 @@ $$
 ### 해밀토니안인 이유
 
 
-이제 $\langle \hat{A}\rangle$ 이 시간에 따라 어떻게 변하는지 알아보자. @eq-time_dependent_schroedinger_equation 로부터
+이제 $\langle \hat{A}\rangle$ 이 시간에 따라 어떻게 변하는지 알아보자. @eq-p1_time_dependent_schroedinger_equation 로부터
 
 $$
 i\hbar\dfrac{\partial |\Psi (t)\rangle}{\partial t} = \hat{H} |\Psi (t) \rangle
@@ -467,33 +481,33 @@ $$
 &= \dfrac{i}{\hbar} \langle \Psi (t)|\hat{H}\hat{A}|\Psi (t) \rangle - \dfrac{i}{\hbar} \langle \Psi (t)|\hat{A}\hat{H}|\Psi (t) \rangle \\
 &= \dfrac{i}{\hbar}\langle \Psi(t) |\left(\hat{H}\hat{A} - \hat{A}\hat{H}\right) |\Psi (t) \rangle
 \end{aligned}
-$$ {#eq-commutator_1}
+$$ {#eq-p1_commutator_1}
 
-을 얻는다. 여기서 중요한 개념이 등장한다. 두 연산자 $\hat{A},\, \hat{B}$ 에 대해 $[\hat{A},\, \hat{B}] := \hat{A}\hat{B} - \hat{B}\hat{A}$ 를 $\hat{A}$ 와 $\hat{B}$ 에 대한 **교환자(commutator)** 라고 한다. 이를 이용하면 @eq-commutator_1 으로부터 다음을 얻는다.
+을 얻는다. 여기서 중요한 개념이 등장한다. 두 연산자 $\hat{A},\, \hat{B}$ 에 대해 $[\hat{A},\, \hat{B}] := \hat{A}\hat{B} - \hat{B}\hat{A}$ 를 $\hat{A}$ 와 $\hat{B}$ 에 대한 **교환자(commutator)** 라고 한다. 이를 이용하면 @eq-p1_commutator_1 으로부터 다음을 얻는다.
 
 $$
 \dfrac{d\langle\hat{A}\rangle}{dt} = -\dfrac{i}{\hbar}\langle [\hat{A},\, \hat{H}] \rangle.
-$$ {#eq-commutator}
+$$ {#eq-p1_commutator}
 
 고전역학의 **푸아송 괄호(Poisson braket)** 을 생각하자. 해밀토니안 $H$ 와 물리량 $A$, 그리고 canonical coordinate $\{q_i\}$ 와 그 conjugate momentum $\{p_i\}$ 사이에 다음의 관계가 성립한다는 것을 안다. 
 
 $$
 \dfrac{dA}{dt} = \left\{A,\, H\right\} = \sum_i \left(\dfrac{\partial A}{\partial q_i}\dfrac{\partial H}{\partial p_i} - \dfrac{\partial A}{\partial p_i}\dfrac{\partial H}{\partial q_i}\right)
-$$ {#eq-poisson_bracket}
+$$ {#eq-p1_poisson_bracket}
 
-@eq-commutator 와 @eq-poisson_bracket 으로부터 고전역학과 양자역학 사이의 유사성을 발견한 사람은 디랙이다. 교환자와 푸아송 괄호의 형식적 유사성은 다음과 같이 표현 할 수 있다.
+@eq-p1_commutator 와 @eq-p1_poisson_bracket 으로부터 고전역학과 양자역학 사이의 유사성을 발견한 사람은 디랙이다. 교환자와 푸아송 괄호의 형식적 유사성은 다음과 같이 표현 할 수 있다.
 
 $$
 [\hat{A},\, \hat{B}] \iff i\hbar \{A,\,B\}.
-$$ {#eq-commutator_and_poisson_bracket}
+$$ {#eq-p1_commutator_and_poisson_bracket}
 
-여기에 대해서는 향후 불확정성의 원리에서 깊이 다루기로 하자. 어쨌든 @eq-commutator 와 @eq-poisson_bracket 으로부터 $\hat{H}$ 가 고전역학의 해밀토니안 $H$ 에 상응하는 것이라는 것을 알 수 있다. 이 때문에, 그리고 실제로 $\hat{H}$ 연산자가 계의 에너지를 의미하기 때문에 $\hat{H}$ 를 해밀토니안 연산자라고 한다.
+여기에 대해서는 향후 불확정성의 원리에서 깊이 다루기로 하자. 어쨌든 @eq-p1_commutator 와 @eq-p1_poisson_bracket 으로부터 $\hat{H}$ 가 고전역학의 해밀토니안 $H$ 에 상응하는 것이라는 것을 알 수 있다. 이 때문에, 그리고 실제로 $\hat{H}$ 연산자가 계의 에너지를 의미하기 때문에 $\hat{H}$ 를 해밀토니안 연산자라고 한다.
 
 </br>
 
 ### 양자역학에서의 보존량
 
-고전역학에서 어떤 양이 보존이라는 것은 시간에 대해 상수라는 의미이다. @eq-commutator 로 부터 $[\hat{A},\, \hat{H}]=0$ 이 되는 양 $A$ 는 시간에 대해 보존된다는 것을 알 수 있다. 양자역학에서의 보존이라는 의미는 해밀토니안에 대해 그 교환자가 $0$ 이라는 의미이다.
+고전역학에서 어떤 양이 보존이라는 것은 시간에 대해 상수라는 의미이다. @eq-p1_commutator 로 부터 $[\hat{A},\, \hat{H}]=0$ 이 되는 양 $A$ 는 시간에 대해 보존된다는 것을 알 수 있다. 양자역학에서의 보존이라는 의미는 해밀토니안에 대해 그 교환자가 $0$ 이라는 의미이다.
 
 가정 대표적인 보존량은 해밀토니안 자신이다. 우리는 $[\hat{H},\, \hat{H}]=0$ 이라는 것을 알 수 있다. 
 
@@ -514,9 +528,9 @@ $\hat{H}$ 가 에르미트 연산자이므로 $\hat{H}$ 에 대한 고유벡터�
 
 $$
 \hat{H}|E_i\rangle = E_i |E_i\rangle
-$$ {#eq-time_independent_schroedinger_equation}
+$$ {#eq-p1_time_independent_schroedinger_equation}
 
-을 얻는다. @eq-time_independent_schroedinger_equation 을 **시간 독립 슈뢰딩거 방정식(time-independent Schrödinger equation)** 이라고 한다. 시간 독립 슈뢰딩거 방정식으로부터 고윳값 $E_i$ 에 대한 고유공간을 구할 수 있다. 이 고유공간은 1차원 일 수도 있고, 다차원일 수도 있다. 다차원의 경우에는 서로 직교하는 고유벡터를 $|E_i^{(j)}\rangle$ 과 같이 기술 할 수 있다. 
+을 얻는다. @eq-p1_time_independent_schroedinger_equation 을 **시간 독립 슈뢰딩거 방정식(time-independent Schrödinger equation)** 이라고 한다. 시간 독립 슈뢰딩거 방정식으로부터 고윳값 $E_i$ 에 대한 고유공간을 구할 수 있다. 이 고유공간은 1차원 일 수도 있고, 다차원일 수도 있다. 다차원의 경우에는 서로 직교하는 고유벡터를 $|E_i^{(j)}\rangle$ 과 같이 기술 할 수 있다. 
 
 </br>
 
@@ -550,13 +564,13 @@ $$
 
 $$
 |\Psi(t)\rangle  = \sum_j a_j(0) e^{-\frac{i}{\hbar}E_j t}|E_j\rangle
-$$ {#eq-time_evolution_of_hamiltonian_eigenvectors}
+$$ {#eq-p1_time_evolution_of_hamiltonian_eigenvectors}
 
-이다. 여기서 $a_j(0) = \langle E_j | \Psi(0)\rangle$ 이므로 @eq-time_evolution_of_hamiltonian_eigenvectors 을 다음과 같이 쓸 수 있다.
+이다. 여기서 $a_j(0) = \langle E_j | \Psi(0)\rangle$ 이므로 @eq-p1_time_evolution_of_hamiltonian_eigenvectors 을 다음과 같이 쓸 수 있다.
 
 $$
 |\Psi(t)\rangle  = \sum_j |E_j\rangle \langle E_j| \Psi(0)\rangle  e^{-\frac{i}{\hbar}E_j t}
-$${#eq-time_evolution_of_hamiltonian_eigenvectors_2}
+$${#eq-p1_time_evolution_of_hamiltonian_eigenvectors_2}
 
 </br>
 
@@ -603,19 +617,47 @@ $$
 파동함수는 교환가능한 연산자의 고유값의 집합으로 기저를 구성하여 양자상태를 표현한 함수라는 것을 알았다. 그렇다면 서로 교환 가능하지 않은 연산자들에 대해 생각해보자. 두 연산자 $\hat{A},\,\hat{B}$ 가 서로 교환 가능하지 않다고 하자. 그리고 연산자 $\hat{A}$ 에 대해 $(\Delta \hat{A})^2$ 를 아래와 같이 정의하자.
 
 $$
-(\Delta \hat{A})^2 := \langle (\hat{A}-\langle \hat{A}\rangle\hat{I})^2\rangle
-$$ {#eq-square_of_uncertaintuy}
+(\Delta \hat{A})^2 := \langle \Psi| (\hat{A}-\langle \hat{A}\rangle\hat{I})^2|\Psi \rangle
+$$ {#eq-p1_square_of_uncertaintuy}
 
-라 하자. 통계학에서는 어떤 변수 $X$ 와 그 평균 $\overline{X}$ 에 대해 $(X-\overline{X})^2$ 의 평균값을 **분산(variation)** 이라 하며 그 제곱근을 **표준 편차(standard deviation)** 이라고 한다. @eq-square_of_uncertaintuy 는 관측량 $\hat{A}$ 의 측정에서의 분산, 즉 표준편차의 제곱값의 기대값이다.
+라 하자. 통계학에서는 어떤 변수 $X$ 와 그 평균 $\overline{X}$ 에 대해 $(X-\overline{X})^2$ 의 평균값을 **분산(variation)** 이라 하며 그 제곱근을 **표준 편차(standard deviation)** 이라고 한다. @eq-p1_square_of_uncertaintuy 는 관측량 $\hat{A}$ 의 측정에서의 분산, 즉 표준편차의 제곱값의 기대값이다.
 
 이제 서로 교환되지 않는 두 관측량 $\hat{A},\, \hat{B}$ 와 임의의 양자상태 $|\Psi\rangle$ 에 대해 
 
 $$
 |X\rangle = \hat{A}|\Psi\rangle,\, |Y\rangle = i\hat{B}|\Psi \rangle
-$$
+$$ {#eq-p1_uncertinaty-1}
 
 이라 하자. 우리는 코시-슈바르츠 부등식(Cauchy-Schwartz inequality) 
 
 $$
-|\langle X+Y| X+Y\rangle |^2 \le |\langle X|X\rangle^2 + \langle Y|Y\rangle^2|
+|\langle X|Y\rangle | \le \|X\| \|Y\|
 $$
+
+으로부터
+
+$$
+2\|X\| \|Y\| \ge | \langle X|Y\rangle | + |\langle Y|X\rangle \ge | \langle X|Y\rangle + \langle Y|X\rangle|
+$$ {#eq-p1_uncertinaty-2}
+
+을 얻는다. @eq-p1_uncertinaty-1 을 @eq-p1_uncertinaty-2 에 대입하면, 
+
+$$
+2\sqrt{\langle \hat{A}^2 \rangle \langle \hat{B}^2 \rangle }  \ge |\langle \Psi | [\hat{A},\,\hat{B}] |\Psi \rangle |
+$$ {#eq-p1_uncertainty-3}
+
+이다. 이제 $\hat{A},\,\hat{B}$ 를 각각 $\hat{A}-\langle I \hat{A}\rangle,\, \hat{B}-\langle I\hat{B}\rangle$ 로 바꾸자. 그렇다면 @eq-p1_uncertainty-3 의 우변은
+
+$$
+\begin{aligned}
+\Psi | [\hat{A} - \langle A\rangle I,\, \hat{B} - \langle B\rangle I]|\Psi \rangle = \langle \Psi | [\hat{A},\, \hat{B}] | \Psi \rangle
+\end{aligned}
+$$ 
+
+이 되기 때문에
+
+$$
+(\Delta \hat{A})(\Delta \hat{B}) \ge \dfrac{1}{2} \left|\langle \Psi | [\hat{A},\, \hat{B}]|\Psi \rangle \right|
+$$
+
+을 얻는다. 이것이 **불확정성의 원리 (Uncertianty principle)** 이다. 

@@ -14,6 +14,7 @@ book:
       chapters:
       - src/part1/mathematical_foundation.qmd
       - src/part1/quantum_state.qmd
+      - src/part1/entanglement.qmd
     - part: src/figure/figure.qmd
       chapters:
       - src/figure/figure_part1_1.qmd

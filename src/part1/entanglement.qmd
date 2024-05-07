@@ -1,0 +1,126 @@
+---
+title: "양자 얽힘"
+number-sections: true
+number-depth: 3
+crossref:
+  chapters: true
+---
+
+## 곱공간과 얽힘 상태
+
+### 곱공간과 곱상태
+
+$A$ 계(System $A$), $B$ 계(System $B$) 라고 하지 않고 앨리스 계(Alice system), 밥 계(Bob system) 이라고 하고 그 상태공간을 앨리스 공간, 밥 공간이라고 하고 각각 $S_A$, $S_B$ 라고 표기하자. 각각은 독자적인 힐베르트 공간이며 따라서 둘을 동시에 기술하는 상태공간 $S_AB = S_A \otimes S_B$ 이다. $S_{AB}$ 에 대한 기저벡터는 $S_A$ 의 기저벡터 $\{ |a\rangle_A\}$ 과 $S_B$ 의 기저벡터 $\{ |b\rangle_B \}$ 에 대해 $\{ |a\rangle_A \otimes | b\rangle_B \}$ 이며 이것을 $\{|ab\rangle\}$ 로 쓴다. 앨리스 공간의 연산자 $\hat{\sigma}_A$ 와 밥 공간의 연산자 $\hat{\sigma}_B$ 에 대해 $\hat{\sigma}_A |a\rangle_A = a|a\rangle_A$, $\hat{\sigma}_B |b\rangle_B=b|b\rangle_B$ 라고 하면 $\hat{\sigma}_A\otimes \hat{I}_B$ 는 앨리스 공간에서의 연산자 $\hat{\sigma}_A$ 를 $S_{AB}$ 로 확장한 것으로 $\hat{\sigma}_A \otimes \hat{I}_B\,|ab\rangle = a|ab\rangle$ 이다. 마찬가지 과정으로 $\hat{I}_A \otimes \hat{\sigma}_B |ab\rangle = b|ab\rangle$ 이다. 
+
+</br>
+
+### 고전적인 상관관계
+
+앨리스와 밥이 각각 $\sigma=+1$ 과 $\sigma = -1$ 을 무작위적으로 나누어 가진다고 하자. 그리고 나누어 가지자 앨리스는 4광넌 떨어진 알파센타우리로 떠나고 밥은 지구에 남아 있는다고 생각하자. 4광년 떨어진 곳에서 자신의 $\sigma$ 를 확인한 앨리스는 확인하자 마자 밥이 가진 $\sigma$ 가 얼마인지 알 수 있다. 앨리스의 $\sigma$ 값을 $\sigma_A$, 밥의 $\sigma$ 값을 $\sigma_B$ 라고 하면 우리는 다음을 알 수 있다.
+
+$$
+\langle \sigma_A\rangle = 0,\qquad \langle \sigma_B \rangle = 0,\qquad \langle \sigma_A \sigma_B \rangle = -1.
+$$
+
+우리는 이로부터 
+
+$$
+0=\langle \sigma_A\rangle \langle \sigma_B \rangle  \ne \langle \sigma_A\sigma_B \rangle
+$$
+
+임을 안다. 통계적으로
+
+$$
+\langle \sigma_A \sigma_B \rangle - \langle \sigma_A \rangle \langle \sigma_B \rangle 
+$$ {#eq-correlation_in_qm}
+
+을 두 변수 $\sigma_A,\,\sigma_B$ 사이의 상관관계(correlation) 이라고 한다$^*$. [$^*$ 정확히 말하면 @eq-correlation_in_qm 은 통계학에서의 공분산(covariance) 이다.]{.aside} 이 값이 $0$ 이 아닐 때 두 값 $\sigma_A$, $\sigma_B$ 사이에 **상관관계가 있다 (be correlated)** 라고 한다.(두 값이 $0$ 이면 상관관계가 없는 것이 아니다.) 
+
+통계학적으로 정확한 의미는 두 독립변수 $a,\,b$ 와 각각의 확률 $P_A(a),\, P_B(b)$ 에 대해 
+
+$$
+P(a,\,b)= P_A(a)P_B(b)
+$$
+
+이면 두 변수 $a,\,b$ 사이에 상관관게가 없다고 한다. 
+
+</br>
+
+### 양자적인 상관관계 {#sec-p1_product_space}
+
+이제 양자의 세계로 들어와보자. 앨리스와 밥이 각각 자신의 실험장비를 가지고 완전히 독립적으로 상태를 준비했으며 각각 $\sigma = \pm 1$ 의 값을 가질 수 있다고 하자. 앨리스의 스핀은 $\hat{\sigma}_A$, 밥의 스핀은 $\hat{\sigma}_B$ 로 측정한다. 둘의 곱상태를 $|\sigma_A\rangle_A \otimes |\sigma_B\rangle_B = |\sigma_A \sigma_B\rangle$ 로 놓으면 
+
+$$
+|uu\rangle,\, |ud\rangle,\,|du\rangle,\, |dd\rangle
+$$
+
+의 상태가 가능하다. 이를 **곱상태(product state)** 라고 한다. 앨리스의 상태 $|\Phi_A\rangle_A$ 는 $|u\rangle_A$ 와 $|d\rangle_A$ 의 중첩으로 표현 가능하며, 마찬가지로 밥의 상태 $|\Phi_B\rangle_B$ 는 $|u\rangle_B$ 와 $|d\rangle_B$ 의 중첩으로 표현 가능하다. 이 상태가 정규화 되었다면 아래와 같이 쓸 수 있다.
+
+$$
+\begin{aligned}
+|\Phi_A\rangle_A = a_u |u\rangle_A + a_d|d\rangle_A, &\qquad |\Phi_B\rangle_B = b_u |u\rangle_B + b_d|d\rangle_B,\\[0.3em]
+|a_u|^2+|a_d|^2 = 1, &\qquad |b_u|^2 + |b_d|^2 = 1.
+\end{aligned}
+$$
+
+이제 두 상태의 곱상태 $|\Phi\rangle$ 은 다음을 만족한다.
+
+$$
+|\Phi\rangle = |\Phi_A\rangle_A \otimes |\Phi_B \rangle_B = a_ub_u|uu\rangle + a_ub_d|ud\rangle + a_db_u|du\rangle + a_db_d |dd\rangle.
+$$
+
+다시한번 강조하지만 곱상태는 곱해지는 상태들이 모두 독립적으로 행동한다는 것이다. 
+
+
+이제 곱상태에는 몇개의 변수가 필요한지 알아보자. 앨리스 계를 기술하는데는 두 복소수 $a_u,\,a_d$ 가 필요하며 이는 4개의 실변수를 정해야 한다는 뜻이다. 그러나 정규화 조건 으로 하나, 위상 동등성 조건으로 하나, 이렇게 해서 실제로 2개의 자유도를 가진 계이다. 이제 곱상태의 경우 4개의 복소 변수 $a_u,\,a_d,\,b_u,\,b_d$ 가 필요한데 이는 8개의 실변수를 정해야 한다는 의미이다. 앨리스 계와 밥 계에 각각 정규화 조건과 위상 조건에 의해 제약되기 때문에 4개의 자유도를 가진 시스템이 된다. 
+
+</br>
+
+### 얽힘 상태 {#sec-p1_entangled_state}
+
+$|uu\rangle,\, |ud\rangle,\, |du\rangle,\,|dd\rangle$ 의 기저를 갖는 복합공간에서의 일반적인 벡터는 다음과 같이 표현된다.
+
+$$
+|\Psi\rangle = c_{uu}|uu\rangle + c_{ud}|ud\rangle + c_{du}|du\rangle + c_{dd}|dd\rangle
+$$
+
+그러나 우리는 단 하나의 정규화 조건($\sum_{i, j = u}^d |c_{ij}|^2=1$) 과 단 하나의 위상 조건만을 가지고 있다. 즉 이 상태는 6개의 자유도를 가진 상태이다. 우리는 @sec-p1_product_space 에서의 곱상태가 복합상태에 포함된다는 것을 보일 수 있다. 뒤에 나오겠지만 우리는 이 복합 공간의 기저를 다음과 같이 분류 할 수 있다.
+
+$$
+\begin{aligned}
+|S\rangle & = \dfrac{1}{\sqrt{2}}\left(|ud\rangle -|du\rangle\right),\\
+|T_1\rangle &= \dfrac{1}{\sqrt{2}}\left(|ud\rangle + |du\rangle\right),\\
+|T_2 \rangle &= \dfrac{1}{\sqrt{2}}\left(|uu\rangle + |dd\rangle\right),\\
+|T_3 \rangle &= \dfrac{1}{\sqrt{2}}\left(|uu\rangle - |dd\rangle\right).
+\end{aligned}
+$$
+
+<div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+::: {#exr-p1-entangled_1}
+
+$|S\rangle$ 이 곱상태로 표현될 수 없음을 보여라.
+
+:::
+
+::: {.proof}
+$|S\rangle = a_ub_u|uu\rangle + a_ub_d |ud\rangle + a_db_u|du\rangle + a_db_d|dd\rangle$ 이라면 $a_ub_u= a_db_d=0$, $a_ub_d = - a_db_u=1/\sqrt{2}$ 이어야 한데 이는 불가능하다.
+
+:::
+
+</div>
+
+</br>
+
+앞서 말했듯이 곱상태는 복합상태에 완전히 포함된다. 그러나 복합상태는 곱상태에 포함되지 않을 수 있다. @exr-p1-entangled_1 에서 보였듯이 $|S\rangle$ 은 곱상태로 표현될 수 없는데 실제로 $|S\rangle$ 은 최대 얽힘 상태라고 한다. $|S\rangle$ 이 곱상태로 표현 될 수 없다는 것은 무엇을 의미하는가?
+
+</br>
+
+우리는 @eq-p1_pauli_matrix_z_state 에서 각 스핀 연산자에 대해 $\hat{\sigma}_z$ 의 고유상테가 어떻게 되는지 보았다. 그렇다면 복합 상태에 대해서는 어떻게 될까? $2 \times 2$ 항등연산자 $\hat{I}$ 에 대해 $\hat{\sigma}_0=\hat{I}$ 라고 하자. 그리고 $i=0,\,x,\,y,\,z$ 에 대해 $\hat{\sigma}_{i}$ 를 앨리스의 상태에 대한 연산자, $\hat{\tau}_i$ 를 밥의 상태에 대한 연산자라고 하자. 그렇다면, 
+
+$$
+\hat{\sigma}_i \hat{\tau}_j |xy\rangle = (\hat{\sigma}_i |x\rangle_A) \otimes (\hat{\tau}_j |y\rangle_B)
+$$
+
+이다. 즉 앨리스에 대한 연산자는 복합상태에서 앨리스에 관련된 스핀에만, 밥에 대한 연산자는 복합상태에서 밥에 관련된 스핀에만 작용한다. 이것은 벡터공간에서의 곱공간에 대한 기본적인 연산자의 그것과 동일하다. 즉 $\hat{\sigma}_i \hat{\tau}_j := \hat{\sigma}_i \otimes \hat{\tau}_j$ 이다. 
+
+
