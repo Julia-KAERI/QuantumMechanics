@@ -81,7 +81,7 @@ $$
 $|uu\rangle,\, |ud\rangle,\, |du\rangle,\,|dd\rangle$ 의 기저를 갖는 복합공간에서의 일반적인 벡터는 다음과 같이 표현된다.
 
 $$
-|\Psi\rangle = c_{uu}|uu\rangle + c_{ud}|ud\rangle + c_{du}|du\rangle + c_{dd}|dd\rangle
+|\mathscr{\Psi}\rangle = c_{uu}|uu\rangle + c_{ud}|ud\rangle + c_{du}|du\rangle + c_{dd}|dd\rangle
 $$
 
 그러나 우리는 단 하나의 정규화 조건($\sum_{i, j = u}^d |c_{ij}|^2=1$) 과 단 하나의 위상 조건만을 가지고 있다. 즉 이 상태는 6개의 자유도를 가진 상태이다. 우리는 @sec-p1_product_space 에서의 곱상태가 복합상태에 포함된다는 것을 보일 수 있다. 뒤에 나오겠지만 우리는 이 복합 공간의 기저를 다음과 같이 분류 할 수 있다.
@@ -124,3 +124,373 @@ $$
 이다. 즉 앨리스에 대한 연산자는 복합상태에서 앨리스에 관련된 스핀에만, 밥에 대한 연산자는 복합상태에서 밥에 관련된 스핀에만 작용한다. 이것은 벡터공간에서의 곱공간에 대한 기본적인 연산자의 그것과 동일하다. 즉 $\hat{\sigma}_i \hat{\tau}_j := \hat{\sigma}_i \otimes \hat{\tau}_j$ 이다. 
 
 
+우리는 단일 스핀에 대한 기대값 이 $\hat{\sigma}_z$ 의 고유값을 기저로 했을 때 
+
+$$
+\langle \hat{\sigma}_z \rangle = 1,\, \langle  \hat{\sigma}_x \rangle = \langle \hat{\sigma}_y\rangle = 0
+$$
+
+임을 안다. $\hat{\Sigma}$ 연산자를 $\hat{\Sigma}=\hat{\sigma}_x^2 + \hat{\sigma}_y^2 + \hat{\sigma}_z^2$ 로 정의해 보자. 파울리 행렬로부터 우리는 $\hat{\Sigma}=3\hat{I}$ 임을 안다. 이 연산자가 항등행렬로 표현된다는 것은 어떤 상태에 대해서도 $\hat{\Sigma}$ 의 기대값이 $3$ 이라는 의미이다.
+
+$$
+\langle \hat{\Sigma}\rangle = 3
+$$
+
+$3$ 이라는 값이 나오는 것은 스핀이 $1/2$ 의 양자수를 갖기 때문에 나오는 값이며, 자세한 것은 뒤에 다루기로 한다. 중요한 것은 모든 스핀이 $0$ 이 되는 상태는 존재하지 않는다는 것이다. 
+
+이제 $|S\rangle$ 에 대해 $\sigma_x,\,\sigma_y,\,\sigma_z,\, \tau_x,\,\tau_y,\,\tau_z$ 의 기대값을 구해보자. @eq-p1_pauli_matrix_z_state 의 결과를 이용 할 수 있다. 
+
+$$
+\begin{aligned}
+\langle S| \hat{\sigma}_z |S\rangle &= \langle S|  \hat{\sigma}_x |S \rangle = \langle  S|\hat{\sigma}_y |S\rangle = 0, \\
+\langle S|\hat{\tau}_z |S\rangle &= \langle S| \hat{\tau}_x |S \rangle = \langle S| \hat{\tau}_y |S \rangle = 0, \\
+\end{aligned}
+$$
+
+즉 $|S\rangle$ 은 단순하나 곱상태와는 아주 많이 다르다. $\langle S|\hat{\sigma}_i |S\rangle = \langle S|\hat{\tau}_i|S\rangle = 0\, (i=x,\,y,\,z)$ 이 의미하는 것은 $|S\rangle$ 상태에 대해 두 입자의 어떤 스핀 방향에 대해서도 $+1$ 이 나올 확률과 $-1$ 이 나올 확률이 동일하다는 것이다. 즉 $|S\rangle$ 상태에 대해서는 우리는 전혀 정보를 얻을 수 없다. 숨은 변수 이론을 긍정하지 않는다면 우리가 말할 수 있는것은 우리는 원래 알 수 없다는 것 뿐이다.
+
+</br>
+
+### 복합 관측량
+
+앨리스(Alice)-밥(Bob) 이외에 챨리(Charlie)를 등장시킨다. 챨리가 $|S\rangle$ 상태를 준비한다고 하자. 찰리는 $|S\rangle$ 의 스핀을 보지 않고 한 스핀은 앨리스에게, 한 스핀은 밥에게 준다. 이 지점에서 우리는 다음의 사실을 안다.
+
+1. 앨리스의 스핀 $\hat{\sigma}_i$ 와 밥의 스핀 $\hat{\tau}_j$ 는 교환가능하다. 즉 동시에 측정 가능하며 서로 간섭하지 않는다. 심지어 $[\hat{\sigma}_z,\, \hat{\tau}_x] = \hat{0}$ 이다. 
+
+2. $\hat{\tau}_z\hat{\sigma}_z|S\rangle = -|S\rangle$ 이다.
+
+3. $\hat{\tau}_x\hat{\sigma}_x |S\rangle = -|S\rangle$ 이다. 
+
+4. $\hat{\tau}_y\hat{\sigma}_y |S\rangle = -|S\rangle$ 이다. 
+
+$|S\rangle = \frac{1}{\sqrt{2}} (|ud\rangle  - |du\rangle)$ 이므로 2. 는 예상 할 수 있었다. 그러나 3 과 4의 결론은 좀 놀랍지 않은가? 즉 앨리스와 밥이 어떤 방향으로든 같은 방향의 스핀을 측정하면 두 스핀은 항상 반대 방향을 향한다. 
+
+
+</br>
+
+<div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+::: {#exm-p1-entangled_2}
+
+여기까지 왔는데 $|T_1\rangle,\, |T_2\rangle,\, |T_3\rangle$ 에 대해 같은 계산을 꼭 해야 할 것 같지 않은가?
+
+$$
+\begin{aligned}
+\hat{\tau}_z \hat{\sigma}_z |T_1\rangle &= \dfrac{1}{\sqrt{2}}\hat{\tau}_z (|ud\rangle - |du\rangle) = \dfrac{1}{\sqrt{2}}( -|ud\rangle - |du\rangle) = - |T_1\rangle, \\
+\hat{\tau}_x \hat{\sigma}_x |T_1\rangle &= \dfrac{1}{\sqrt{2}} \hat{\tau}_z(|dd\rangle +|uu\rangle)= \dfrac{1}{\sqrt{2}} (|du\rangle + |ud\rangle) = |T_1\rangle, \\
+\hat{\tau}_y \hat{\sigma}_y |T_1\rangle &= \dfrac{1}{\sqrt{2}}\hat{\tau}_y (-i|dd\rangle + i|uu\rangle) = \dfrac{1}{\sqrt{2}}(|du\rangle + |du\rangle) = |T_1\rangle, , \\[1em]
+\hat{\tau}_z \hat{\sigma}_z |T_2\rangle &= \dfrac{1}{\sqrt{2}}\hat{\tau}_z (|uu\rangle - |dd\rangle) = \dfrac{1}{\sqrt{2}}( |uu\rangle + |dd\rangle) =  |T_2\rangle, \\
+\hat{\tau}_x \hat{\sigma}_x |T_2\rangle &= \dfrac{1}{\sqrt{2}} \hat{\tau}_z(|du\rangle +|ud\rangle)= \dfrac{1}{\sqrt{2}} (|dd\rangle + |uu\rangle) = |T_2\rangle, \\
+\hat{\tau}_y \hat{\sigma}_y |T_2\rangle &= \dfrac{1}{\sqrt{2}}\hat{\tau}_y (-i|du\rangle + i|ud\rangle) = \dfrac{1}{\sqrt{2}}(-|dd\rangle - |uu\rangle) = -|T_2\rangle, \\[1em]
+\hat{\tau}_z \hat{\sigma}_z |T_3\rangle &= \dfrac{1}{\sqrt{2}}\hat{\tau}_z (|uu\rangle + |dd\rangle) = \dfrac{1}{\sqrt{2}}( |uu\rangle - |dd\rangle) =  |T_3\rangle, \\
+\hat{\tau}_x \hat{\sigma}_x |T_3\rangle &= \dfrac{1}{\sqrt{2}} \hat{\tau}_z(|du\rangle -|ud\rangle)= \dfrac{1}{\sqrt{2}} (|dd\rangle - |uu\rangle) = -|T_3\rangle, \\
+\hat{\tau}_y \hat{\sigma}_y |T_2\rangle &= \dfrac{1}{\sqrt{2}}\hat{\tau}_y (-i|du\rangle - i|ud\rangle) = \dfrac{1}{\sqrt{2}}(-|dd\rangle + |uu\rangle) = |T_3\rangle, 
+\end{aligned} 
+$$
+
+:::
+</div>
+
+</br>
+
+
+자 그렇다면 스핀의 서로 다른 방향을 측정한다면 어떻게 될 것인가? $|S\rangle$ 에 대한 $\hat{\sigma}_x \hat{\tau}_y$ 를 계산해보자.
+
+$$
+\begin{aligned}
+\hat{\sigma}_x \hat{\tau}_y |S\rangle &= i|T_1\rangle, \\
+\end{aligned} 
+$$
+
+따라서 $\langle S|\hat{\sigma}_x \hat{\tau}_y |S\rangle=0$ 이며 상관관계의 정의에 따라
+
+$$
+\langle S|\hat{\sigma}_x \hat{\tau}_y|S\rangle - \langle S|\hat{\sigma}_x|S\rangle \langle S|\hat{\tau}_y|S\rangle = 0
+$$
+
+이므로 $\hat{\sigma}_x$ 와 $\hat{\tau}_y$ 가 상관관계가 있다고 볼 근거는 없다. (위의 값이 $0$ 이 아니라면 상관관계가 있지만 $0$ 이라고 해서 상관관계가 없다고 볼 수 없다는 것을 다시 한번 기억하라.)
+
+
+</br>
+
+이제 $\hat{J} = \hat{\boldsymbol{\sigma}}\cdot \hat{\boldsymbol{\tau}}= \hat{\sigma}_x \hat{\tau}_x + \hat{\sigma}_y \hat{\tau}_y + \hat{\sigma}_z \hat{\tau}_z$ 로 정의된 연산자 $\hat{J}$ 를 생각하자. 일단 이 연산자에 대해 $|S\rangle,\, |T_1\rangle,\, |T_2\rangle,\,|T_3\rangle$ 의 값을 계산해보자.
+
+$$
+\begin{aligned}
+\hat{J}|S\rangle &= -3|S\rangle, \\
+\hat{J}|T_1\rangle &= |T_1\rangle, \\
+\hat{J}|T_2\rangle &= |T_2\rangle, \\
+\hat{J}|T_3\rangle &= |T_3\rangle.
+\end{aligned}
+$$
+
+자 $|S\rangle$ 과 $|T_1\rangle,\,|T_2\rangle,\,|T_3\rangle$ 은 모두 $\hat{J}$ 의 고유상태이며 $|S\rangle$ 은 $-3$ 을 나머지 세 상태는 $1$ 을 고유값으로 하는 $\hat{J}$ 의 고유벡터이다. 실제로 $\hat{J}$ 는 두 스핀의 에너지에 대한 해밀토니안과 관련된 연산자이며, $|S\rangle$ 의 $S$ 는 단일 상태(singlet) 에서 $T_1$ 등의 $T$ 는 삼중상태(triplet) 에서 따온 문자이다. 
+
+</br>
+
+## 약간은 수학적인 준비
+
+### 곱공간에서의 벡터와 행렬
+
+::: {.callout-caution icon="false"}
+
+#### 연산자의 표기
+
+지금까지 $\hat{\sigma}$ 와 같이 $\hat{}$ 표기를 썼지만 지금부터는 특별히 구별이 필요한 상황이 아니면 $\hat{\,}$ 표기를 없에고 연산자도 $\sigma$ 와 같이 표기하기로 한다. 
+
+:::
+
+
+
+지금까지 우리는 스핀이 $\pm 1$ 값을 갖는 두 입자의 상태를 각각 $|a\rangle_A\otimes |b\rangle_B = |ab\rangle$ 형태로 표현하였다. 여기서 $a,\,b$ 는 각각 $u$ 혹은 $d$ 값을 가지기 때문에 총 4개의 기저 벡터가 존재한다. 이제 $\{|uu\rangle,\,|ud\rangle,\, |du\rangle,\, |dd\rangle$ 의 기저에서 상태를 다음과 같이 표기하기로 하자.
+
+$$
+|\phi\rangle = x_1 |uu\rangle + x_2 |ud\rangle + x_3|du\rangle + x_4|dd\rangle
+$$
+
+그렇다면 $|\phi\rangle$ 은 열행렬로 다음과 같이 표현 할 수 있다.
+
+$$
+|\phi\rangle = \begin{bmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \end{bmatrix}.
+$$
+
+또한 이 상태에 대한 연산자 $\Sigma$ 의 행렬표현은 다음과 같다.
+
+$$
+\begin{bmatrix} \langle uu | \Sigma|uu\rangle & \langle uu|\Sigma|ud\rangle & \langle uu |\Sigma|du\rangle & \langle uu|\Sigma|dd\rangle \\
+\langle ud|\Sigma|uu\rangle & \langle ud|\Sigma|ud\rangle & \langle ud|\Sigma|du\rangle & \langle ud|\Sigma|dd\rangle \\
+\langle du|\Sigma|uu\rangle & \langle du|\Sigma|ud\rangle & \langle du|\Sigma|du\rangle & \langle du|\Sigma|dd\rangle \\
+\langle dd|\Sigma|uu\rangle & \langle dd|\Sigma|ud\rangle & \langle dd|\Sigma|du\rangle & \langle dd|\Sigma|dd\rangle
+\end{bmatrix}.
+$$
+
+
+이 규칙은 대부분의 경우에 적용된다. $A$ 계의 기저 $\{|a_i\rangle_A\}$ 과 $B$ 계의 기저 $\{b_j\rangle_B\}$ 을 결합한 $AB$ 계의 기저를 $\{ |a_ib_j\rangle :=|a_i\rangle_A\otimes |b_j\rangle_B  : i,\,j=1,\,2,\ldots\}$ 로 정했다면 보통 순서를
+
+$$
+|a_1b_1\rangle,\,|a_1b_2\rangle, \ldots,\, |a_2b_1\rangle,\, |a_2b_2\rangle, \ldots, |a_ib_1\rangle,\,|a_i b_2\rangle,\ldots
+$$
+
+로 잡는다. 그리고 당연히 행렬도 이 기저 순서에 따라 표현한다. 
+
+</br>
+
+### Projection 
+
+계의 임의의 두 벡터 $|\phi\rangle,\, |\psi\rangle$ 에 대해
+
+$$
+|\psi\rangle \langle \phi|
+$$
+
+는 일반적인 브라켓의 사용처럼 사용하며 일종의 함수이다.
+
+$$
+\begin{aligned}
+(|\psi\rangle\langle \phi| )|a\rangle  &= |\psi\rangle (\langle \phi|a\rangle)= (\langle \phi|a\rangle) |\psi\rangle, \\[0.4em]
+\langle b | (| \psi\rangle \langle \phi|) &= (\langle b|\psi\rangle ) \langle \phi|
+\end{aligned}
+$$ {#eq-projection_1}
+
+벡터공간에 작용하는 함수다. 아래와 같이 선형 함수이므로 선형연산자이다.
+
+$$
+|\psi\rangle \langle \phi| (a|x\rangle + b|y\rangle) = a(|\psi \rangle \langle \phi|x\rangle) + (|\psi \rangle \langle \phi|y\rangle).
+$$ {#eq-projection_2}
+
+</br>
+
+
+::: {.callout-note appearance="minimal"}
+
+::: {#def-projection_operator}
+
+#### Projection 연산자
+
+정규화된 브라 $|\psi\rangle$ 에 대해 $|\psi\rangle\langle\psi|$ 를 **projection** 이라고 한다.
+
+:::
+
+:::
+
+</br>
+
+::: {#prp-properties_of_projection}
+
+Projecition $P_\psi := |\psi\rangle\langle \psi|$ 는 다음과 같은 성질을 가진다.
+
+&emsp; ($1$) ${P_\psi}^2 = P_\psi$ 이다.
+
+&emsp; ($2$) $P_\psi$ 는 에르미트 연산자이다.
+
+&emsp; ($3$) $|\psi\rangle$ 는 $|\psi\rangle$ 은 고유값 $1$ 을 갖는 $P_\psi$ 의 고유벡터이다.
+
+&emsp; ($4$) $P_\psi$ 의 고유값은 $0$ 과 $1$ 뿐이다.
+
+&emsp; ($5$) $\text{Tr}(P_\psi)=1$ 이다.
+
+&emsp; ($6$) 힐베르트 공간의 정규직교기저 $\{|i\rangle\}$ 에 대해 $\sum_{i}P_i = \sum_{i} |i\rangle \langle i\rangle = I$ 이다.
+
+:::
+
+::: {.proof}
+
+수학적으로 벡터공간에서 $P^2=P$ 인 선형연산자를 projection 이라고 한다. 여기에서의 projection 과 같은 의미이다.
+
+($1$) @eq-projection_1 을 사용하면 쉽게 보일 수 있다.
+
+($2$) ${P_\psi}^\dagger = (|\psi\rangle\langle \psi|)^\dagger=|\psi\rangle\langle \psi|$.
+
+($3$) $P_\psi |\psi\rangle = |\psi\rangle$. 
+
+($4$) $P_\psi |\psi\rangle = \lambda |\psi\rangle$ 이면 ${P_\psi}^2|\psi\rangle = \lambda^2|\psi\rangle$ 이다. $\lambda^2=\lambda$ 이어야 하므로 $\lambda$ 는 $0$ 과 $1$ 만 가능하다.
+
+($5$) $P_\psi$ 가 에르미트 연산자이므로 서로 직교하는 $P_\psi$ 의 고유벡터로 기저를 구성 할 수 있다. $|\phi\rangle$ 이 $|\psi\rangle$ 과 직교한다면 $P_\psi |\phi\rangle = |\psi\rangle \langle \psi|\phi\rangle = |\varnothing\rangle$ 이므로 $|\psi\rangle$ 을 제외한 모든 기저벡터는 고유값 $0$ 을 가진다. $P_\psi$ 가 에르미트 행렬이므로 $\operatorname{Tr}(P_\psi)$ 는 모든 고유값의 합, 즉 $1$ 이다.
+
+($6$) $|\phi\rangle = \sum_j a_j |j\rangle$ 에 대해 
+$$
+\sum_i P_i |\phi\rangle = \sum_i \sum_j |i\rangle\langle i| (a_j|j\rangle)= \sum_i \left( \sum_j \langle i|j\rangle a_j\right) |i\rangle = \sum_i a_i |i\rangle = |\phi\rangle
+$$
+
+이므로 $\sum_i P_i=I$ 이다. $\square$
+:::
+
+</br>
+
+이제 Projection 과 어떤 관측량 $L$ 의 기대값과의 관계를 알아보자.
+
+</br>
+
+::: {#thm-projection_and_expectation}
+
+연산자 $L$ 의 기대값 $\langle \psi|L|\psi\rangle$ 과 projection $P_\psi = |\psi\rangle\langle\psi|$ 사이에 다음이 성립한다.
+
+$$
+\langle \psi|L|\psi\rangle = \operatorname{Tr}|\psi\rangle\langle\psi | L .
+$${#eq-expectation_and_projection}
+
+:::
+
+
+::: {.proof}
+
+임의의 정규직교기저 $\{|i\rangle\}$ 을 생각하자. 
+
+$$
+\begin{aligned}
+\operatorname{Tr}|\psi\rangle\langle \psi | L &= \sum_i \langle i|\psi\rangle \langle \psi |L |i\rangle = \langle \psi | L \left(\sum_i | i \rangle \langle i\rangle\right) |\psi\rangle = \langle \psi | L |\psi\rangle.\qquad \square
+\end{aligned}
+$$
+
+:::
+
+</br>
+
+### 밀도 행렬
+
+::: {.callout-note appearance="minimal"}
+
+::: {#def-density_operator}
+
+#### 밀도 행렬
+
+힐베르트 공간 $\mathcal{H}$ 의 기저 $\{|\phi_i\rangle : i=1,\,2,\ldots\}$ 와 $|\phi_i\rangle$ 의 상태에 있을 확률 $p_i$ 에 대해
+
+$$
+\rho := \sum_i p_i |\phi_i\rangle \langle \phi_i|
+$$
+
+로 정의된 $\rho$ 를 **밀도 연산자(density operator)** 혹은 **밀도 행렬(density matrix)** 이라고 한다.
+
+:::
+:::
+
+
+</br>
+
+$\rho$ 가 밀도 연산자라는 이름을 갖는 이유를 알아보자. 우선 @eq-expectation_and_projection 의 밀도행렬 버젼을 알아보자.
+
+::: {#thm-density_operator_and_expectation_value}
+
+#### 밀도행렬과 기대값
+
+밀도행렬 $\rho$ 와 연산자 $L$ 에 대해 다음이 성립한다.
+$$
+\text{Tr} (\rho L) = \langle L \rangle.
+$$ {#eq-density_matrix_and_expectation_value}
+
+:::
+
+::: {.proof}
+우리가 관심 있는 측정량 $L$ 의 고유벡터를 기저 $\{|\phi_i\rangle \}$ 로 삼으면 $|\phi \rangle = \sum_i a_i |\phi_i\rangle$ 에 대해
+
+$$
+\langle L \rangle = \langle \phi |L |\phi \rangle = \sum_{i} |a_i|^2 \langle \phi_i|L|\phi_i\rangle 
+$$
+
+이다.  $\{|\phi_i\rangle\}$ 에 대한 밀도 연산자 $\rho = \sum_{i} p_i |\phi_i \rangle \langle \phi_i|$ 에 대해 
+
+$$
+\begin{aligned}
+\text{Tr}(\rho L) &= \sum_j \langle \phi_j | \rho L|\phi_j\rangle = \sum_j p_j\sum_{i} \langle \phi_j | \phi_i \rangle \langle \phi_i |L|\phi_j \rangle \\
+&=\sum_{i, j}p_j \delta_{ij}\langle \phi_i |L |\phi_j\rangle = \sum_i p_i \langle \phi_i |L|\phi_i\rangle = \sum_i |a_i|^2 \langle |\phi_i |L |\phi_i\rangle = \langle L \rangle
+\end{aligned}
+$$
+
+이다. $\square$
+:::
+
+</br>
+
+우리가 어떤 양자상태를 준비할 때 그 위상까지 정확히 준비할 수 있는 경우는 거의 없고(실제로 거의 불가능하며) 대부분 어떤 가능한 상태와, 그 상태를 가질 확률 정도만을 정보로 가질 뿐이다. 이 정보로 밀도연산자를 만들 수 있으며, 이 밀도연산자와 측정값과 관계된 연산자를 이용하여 기대값을 계산 할 수 있다. 
+
+</br>
+
+밀도 행렬을 $\{|\phi_i\rangle\}$ 기저로 구성했다고 하자. 이 기저에 대해서 $\rho$ 는 대각행렬이다. 그러나 (당연하게도) 다른 기저 $\{|\psi_i\rangle\}$ 기저에 대해
+
+$$
+\rho_{\psi_j,\, \psi_i} = \langle \psi_j | \rho|\psi_i\rangle  = \sum_{k} p_k \langle \psi_j |\phi_k\rangle \langle \phi_k |\psi_j\rangle 
+$$
+
+는 대각행렬이 아니다. 
+
+
+
+</br>
+
+### 얽힘과 밀도 행렬
+
+하나의 상태에 대해서만 확률 $1$ 일 때 밀도행렬은 projection 이며 이 경우 **순수 상태** 라고 하고, 순수 상태가 아닌 상태를 **혼합 상태** 라고 한다. 
+
+부분계 $A,\,B$ 로 구성된 복합계를 생각하자. 앞서 우리가 계속 다뤄온 2 스핀계라고 생각해도 무방하다. $A$ 계의 기저를 $\{|a_i\rangle_A:i=1,\,2,\ldots\}$, $B$ 계의 기저를 $\{|b_j\rangle_B:j=1,\,2,\ldots\}$ 라고 하자. 복합계는 
+
+$$
+|\mathscr{\Psi}\rangle = \sum_{i, j} c_{ij} |a_{i}\rangle_A \otimes |b_j\rangle_B= \sum_{i, j} c_{ij}|a_ib_j\rangle 
+$$ {#eq-entalgnement2_wavefunction}
+
+로 표현 할 수 있다. 여기서 우리는 오직 $A$ 계에 대해서만 관심이 있다고 하자. $A$ 계의 연산자 $L_A$ 에 대한 기댓값은 복합계에서 $L = L_A \otimes I_B$ 로 쓸 수 있다. $L$ 에 대한 기댓값은 $L_A$ 에 대한 기댓값과 같아야 하며 따라서, 
+
+$$
+\begin{aligned}
+\langle L\rangle &= \langle \mathscr{\Psi}|L|\mathscr{\Psi}\rangle = \sum_{i,i',j,j'} c_{ij}\overline{c_{i'j'}} \langle b_{j'}|b_j\rangle \langle a_{i'}|L|a_i\rangle \\
+&= \sum_{i,i',j,j'} c_{ij}\overline{c_{i'j'}} \delta_{jj'} \langle a_{i'}|L|a_i\rangle \\
+&= \sum_{i, i', j} c_{ij}\overline{c_{i'j}} \langle a_{i'}|L|a_i\rangle
+\end{aligned}
+$$
+
+이다. 이제 @eq-density_matrix_and_expectation_value 을 생각하면
+
+$$
+\rho_{ii'} = \sum_j c_{ij}\overline{c_{i'j}} = \sum_j \langle a_ib_j |\mathscr{\Psi}\rangle \langle \mathscr{\Psi} | a_{i'}b_j\rangle
+$$ {#eq-entanglement2_density}
+
+로서, 
+
+$$
+\langle L \rangle = \text{Tr}(\rho L)
+$$
+
+이 된다.
+
+@eq-entanglement2_density 은 순수상태의 밀도행렬이 아닌 혼합상태의 밀도행렬이다. 우리가 @eq-entalgnement2_wavefunction 에서의 계수 $c_{ij}$ 를 완벽하게 알고 있다고 하자. 그렇더라도 밀도행렬 @eq-entanglement2_density 는 순수상태의 밀도행렬이 아닌 혼함상태의 밀도형렬이다. 즉 전체계가 순수상태더라도 그 부분계는 복합상태로 기술되어야 한다.
+
+ 
