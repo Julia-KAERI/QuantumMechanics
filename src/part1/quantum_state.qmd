@@ -56,20 +56,13 @@ $$
 
 </br>
 
-::: {.callout-important icon="false"}
-
-이제부터  상태에 대한 디랙 표기법을 사용한다. 그리고 선형대수학을 사용한다.
-:::
-
-</br>
-
 ### $\sigma_x,\, \sigma_y$ 에 대한 스핀의 표현
 
-우리가 양자 상태를 안다고 말할 때, 그것은 우리가 앞으로 더 진행하는데 필요한 모든 시스템에 대한 정보를 안다는 것을 의미한다. 이제 앞서 처음에 설명한 두가지 스핀값을 가질 수 있는 상태를 생각하자. 이제 진지해져야 하기 때문에 $\pm 1$ 이 아닌 $\pm 1/2$ 값을 가진다고 하자. $\sigma_z=+1$ 로 시스템이 준비되었다면 우리는 그 시스템의 양자 상태를 알고 있다고 말할 수 있다. 이제 $\sigma_z=+1$ 인 상태를 $|u\rangle$ 로 표기하며 $\sigma_z=-1$ 인 상태를 $|d\rangle$ 로 표기한다. 즉 $\sigma_z=+1$ 로 준비되어 있다면 이 상태는 $|u\rangle$ 상태이다.  $\sigma_x=+1$ 인 상태를 $|r\rangle$ 로 $\sigma_x=-1$ 인 상태를 $|l\rangle$ 로 표기한다. $\sigma_y=+1$ 인 상태를 $|i\rangle$ 로 $\sigma_x=-1$ 인 상태를 $|o\rangle$ 로 표기한다. 각각 up, down, right, left, in, out 을 의미한다.
+우리가 양자 상태를 안다고 말할 때, 그것은 우리가 앞으로 더 진행하는데 필요한 모든 시스템에 대한 정보를 안다는 것을 의미한다. 이제 앞서 처음에 설명한 두가지 스핀값을 가질 수 있는 상태를 생각하자. $\sigma_z=+1$ 로 시스템이 준비되었다면 우리는 그 시스템의 양자 상태를 알고 있다고 말할 수 있다. 이제 $\sigma_z=+1$ 인 상태를 $|u\rangle$ 로 표기하며 $\sigma_z=-1$ 인 상태를 $|d\rangle$ 로 표기한다. 즉 $\sigma_z=+1$ 로 준비되어 있다면 이 상태는 $|u\rangle$ 상태이다.  $\sigma_x=+1$ 인 상태를 $|r\rangle$ 로 $\sigma_x=-1$ 인 상태를 $|l\rangle$ 로 표기한다. $\sigma_y=+1$ 인 상태를 $|i\rangle$ 로 $\sigma_x=-1$ 인 상태를 $|o\rangle$ 로 표기한다. 각각 up, down, right, left, in, out 을 의미한다.
 
 ![양자 상태](images/fig-quantum_state.png){#fig_quantum_state width=250}
 
-이제 스핀 $1/2$ 상태는 두개의 값을 가질 있으므로 2차원 벡터공간에 표현 할 수 있다. 일반적인 상태 $|\phi\rangle$ 은 $|u\rangle$ 과 $|d\rangle$ 의 선형결합으로 아래와 같이 쓸 수 있다$^\ast$. [$^\ast$ $|i\rangle$ 과 $|o\rangle$ 은 어디로? 라고 질문 할 수 있을 것이다. 일단 진행 하면 자연스럽게 나온다.]{.aside}
+이제 스핀 상태는 두개의 값을 가질 있으므로 2차원 벡터공간에 표현 할 수 있다. 일반적인 상태 $|\phi\rangle$ 은 $|u\rangle$ 과 $|d\rangle$ 의 선형결합으로 아래와 같이 쓸 수 있다$^\ast$. [$^\ast$ $|i\rangle$ 과 $|o\rangle$ 은 어디로? 라고 질문 할 수 있을 것이다. 일단 진행 하면 자연스럽게 나온다.]{.aside}
 
 $$
 |\phi\rangle = a_u |u\rangle + a_d |d\rangle
@@ -91,7 +84,7 @@ $$
 \langle \phi | \phi\rangle = 1
 $$ {#eq-p1_normalization_of_probability}
 
-이어야 한다. 이것은 모든 양자상태에 동일하게 적용되며, 양자상태를 이렇게 확률진폭의 제곱의 합이 $1$ 이 되도록 특정 수를 곱해주는 것을 **정규화(normalization)** 이라고 한다. 
+이어야 한다. 이것은 모든 양자상태에 동일하게 적용되며, 양자상태를 이렇게 확률진폭의 절대값의 제곱의 합이 $1$ 이 되도록 특정 수를 곱해주는 것을 **정규화(normalization)** 이라고 한다. 
 
 이제 $\sigma_x=+1$ 인 $|r\rangle$ 상태와 $\sigma_x=-1$ 인 $|l\rangle$ 상태를 표현해 보자. 우선 $|r\rangle$ 상태에 대해 $\sigma_z$ 를 측정 했을 때 $\pm 1$ 가 나올 확률은 각각 $\frac{1}{2}$ 이다. 따라서 다음이 성립해야 한다.
 
@@ -168,7 +161,7 @@ $$ {#eq-p1_quantum_state_5}
 
 ### 원리 1, 2 의 연습
 
-이제 앞서 다뤘던 스핀 $1/2$ 시스템에서의 $\sigma_x,\,\sigma_y,\,\sigma_z$ 연산자를 힐베르트 공간에서 구축해보자. $\hat{\sigma}_x,\, \hat{\sigma}_y,\,\hat{\sigma}_z$ 와 각각에 대한 고유상태를 $\hat{\sigma}_z$ 에 대한 고유상태 $|u\rangle,\, |d\rangle$ 을 기저로 하여 표현한다. $\hat{\sigma}_z$ 에 대해 $\hat{\sigma}_z |u\rangle = |u\rangle$,  $\hat{\sigma}_z |d\rangle = -|d\rangle$ 이며, $\langle u|d\rangle = 0$ 이므로 $\langle u | \hat{\sigma}_z | d\rangle = \langle d | \hat{\sigma}_z | u\rangle=0$ 이다. 따라서 $\hat{\sigma}_z$ 를 2차원 벡터공간의 선형연산자로 표현하면
+이제 앞서 다뤘던 스핀 $1/2$ 시스템에서의 $\hat{\sigma}_x,\,\hat{\sigma}_y,\,\hat{\sigma}_z$ 연산자를 힐베르트 공간에서 구축해보자. $\hat{\sigma}_x,\, \hat{\sigma}_y,\,\hat{\sigma}_z$ 와 각각에 대한 고유상태를 $\hat{\sigma}_z$ 에 대한 고유상태 $|u\rangle,\, |d\rangle$ 을 기저로 하여 표현한다. $\hat{\sigma}_z$ 에 대해 $\hat{\sigma}_z |u\rangle = |u\rangle$,  $\hat{\sigma}_z |d\rangle = -|d\rangle$ 이며, $\langle u|d\rangle = 0$ 이므로 $\langle u | \hat{\sigma}_z | d\rangle = \langle d | \hat{\sigma}_z | u\rangle=0$ 이다. 따라서 $\hat{\sigma}_z$ 를 2차원 벡터공간의 선형연산자로 표현하면
 
 $$
 \hat{\sigma}_z= \begin{bmatrix}1 & 0 \\ 0 & -1\end{bmatrix}
@@ -244,7 +237,7 @@ $$ {#eq-p1_definition_of_hermite_conjugate}
 이 때 $\hat{A}^\dagger$ 역시 벡터공간 $V$ 에서 정의된 선형연산자이다. **에르미트 연산자(Hermitian operator)** 는 다음을 만족하는 연산자로 @sec-hermitian_operator 를 참고하라.
 
 $$
-\forall\, |\phi\rangle,\,|\psi\rangle \in V,\qquad \langle \phi | \hat{A} | \psi \rangle = \langle \phi |\hat{A}^\dagger|\psi \rangle. 
+\forall\, |\phi\rangle,\,|\psi\rangle \in V,\qquad \langle \phi | \hat{A}^\dagger | \psi \rangle = \langle \phi |\hat{A}|\psi \rangle. 
 $$ {#eq-p1_definition_of_hermite_operator}
 
 </br>
@@ -267,7 +260,7 @@ $$
 
 ## 시간에 대한 변화와 해밀토니안
 
-시간 $t$ 에 양자상태 $|\mathscr{\Psi}\rangle$ 에 있는 닫힌계를 생각하자. 양자상태는 시간에 따라 변할 수 있으며 따라서 시간 변수를 포함하녀 $|\mathscr{\Psi} (t) \rangle$ 로 쓸 수 있다. 양자역학은 어떤 시간 $t$ 에서의 양자상태를 안다면 이후의 시간에 대해서도 양자상태를 알 수 있다고 말한다. 시간 $t=0$ 에서의 양자상태를 $|\mathscr{\Psi} (0)\rangle$ 이라고 하고 시간 $t$ 에서의 양자상태를 $|\mathscr{\Psi}(t)\rangle$ 이라고 하자. 시간 $0$ 에서 $t$ 까지의 변화는 어떤 연산자 $U(t)$ 를 통해 기술 할 수 있다. 즉, 
+시간 $t$ 에 양자상태 $|\mathscr{\Psi}\rangle$ 에 있는 닫힌계를 생각하자. 양자상태는 시간에 따라 변할 수 있으며 따라서 시간 변수를 포함하여 $|\mathscr{\Psi} (t) \rangle$ 로 쓸 수 있다. 양자역학은 어떤 시간 $t$ 에서의 양자상태를 안다면 이후의 시간에 대해서도 양자상태를 알 수 있다고 말한다. 시간 $t=0$ 에서의 양자상태를 $|\mathscr{\Psi} (0)\rangle$ 이라고 하고 시간 $t$ 에서의 양자상태를 $|\mathscr{\Psi}(t)\rangle$ 이라고 하자. 시간 $0$ 에서 $t$ 까지의 변화는 어떤 연산자 $U(t)$ 를 통해 기술 할 수 있다. 즉, 
 
 $$
 |\mathscr{\Psi} (t) \rangle = {U}(t)|\mathscr{\Psi}(0)\rangle
@@ -369,7 +362,7 @@ $$ {#eq-p1_unitary_hamiltonian_2}
 아주 작은 시간동안에도 unitary 성질은 성립해야 한다. 따라서,
 
 $$
-I = U^\dagger(\varepsilon) U(\varepsilon) = (I +i\varepsilon \hat{K}^\dagger)(I - i \varepsilon \hat{K}) 
+I = U^\dagger(\varepsilon) U(\varepsilon) = (I +i\varepsilon \hat{K}^\dagger)(I - i \varepsilon \hat{K}) = I -i\varepsilon (\hat{K}-\hat{K}^\dagger) + O(\varepsilon^2)
 $$
 
 이어야 하며, 이로부터 $\hat{K}^\dagger = \hat{K}$ 가 성립해야 한다. 즉 $\hat{K}$ 는 에르미트 연산자 여야만 한다. 이는 매우 중요한데 $\hat{K}$ 가 관측량 일 뿐만 아니라 $\hat{K}$ 의 고유벡터로 양자상태를 기술할 수 있다는 의미이기 때문이다. 
@@ -483,7 +476,18 @@ $$
 \end{aligned}
 $$ {#eq-p1_commutator_1}
 
-을 얻는다. 여기서 중요한 개념이 등장한다. 두 연산자 $\hat{A},\, \hat{B}$ 에 대해 $[\hat{A},\, \hat{B}] := \hat{A}\hat{B} - \hat{B}\hat{A}$ 를 $\hat{A}$ 와 $\hat{B}$ 에 대한 **교환자(commutator)** 라고 한다. 이를 이용하면 @eq-p1_commutator_1 으로부터 다음을 얻는다.
+을 얻는다. 여기서 중요한 개념이 등장한다. 
+
+::: {.callout-note appearance="minimal"}
+::: {#def-p1_commutator}
+
+두 연산자 $\hat{A},\, \hat{B}$ 에 대해 $[\hat{A},\, \hat{B}] := \hat{A}\hat{B} - \hat{B}\hat{A}$ 를 $\hat{A}$ 와 $\hat{B}$ 에 대한 **교환자(commutator)** 라고 한다. 
+
+
+:::
+:::
+
+이를 이용하면 @eq-p1_commutator_1 으로부터 다음을 얻는다.
 
 $$
 \dfrac{d\langle\hat{A}\rangle}{dt} = -\dfrac{i}{\hbar}\langle [\hat{A},\, \hat{H}] \rangle.
@@ -590,7 +594,7 @@ $${#eq-p1_time_evolution_of_hamiltonian_eigenvectors_2}
 
 $$
 |\mathscr{\Psi} \rangle = \sum_{a,b,c,\ldots} \psi(a,\,b,\,c,\ldots) |a,\,b,\,c,\ldots\rangle.
-$$
+$$ {#eq-part1_wavefunction_expansion}
 
 이 때 $\psi(a,\,b,\,c,\ldots) = \langle a,b,c,\ldots|\mathscr{\Psi}\rangle$ 로 수학적으로는 위의 선형결합에서의 계수(coefficients) 이며 물리적으로는 $|\mathscr{\Psi}\rangle$ 에 대해 $\hat{A},\,\hat{B},\,\hat{C},\ldots$ 를 측정했을의 측정값이 $a,\,b,\,c,\ldots$ 가 될 확률밀도함수이다. 이 때 $\mathscr{\Psi}(a,\,b,\ldots)$ 를 $\hat{A},\,\hat{B},\,\hat{C}$ 가 정의하는 기저에서의 $|\mathscr{\Psi}\rangle$ 의 **파동함수(wave function)** 이라고 한다$^1$. [$^1$ 입자/파동에서의 파동과는 큰 관련은 없으며 그저 역사적인 이유로 파동함수라는 이름이 붙었다.]{.aside}
 
@@ -603,12 +607,17 @@ $$
 임을 의미한다. 만약 $b,\,c$ 가 연속적인 값을 갖는다면 $\sum$ 이 아닌 적분 $\int$ 가 되야 할 것이다. 예를 들어 $\hat{A},\,\hat{B},\,\hat{C},\hat{E}$ 에 대한 고유값 변수 $a,\,b,\,c,\,e$ 에 대해 $b,\,c$ 가 연속적인 값을 갖는다면
 
 $$
-1 = \sum_{a,\,e} \iint \psi^\ast (a,b,c,e) \psi(a,b,c,e) db\, dc
+1 = \sum_{a,\,e} \iint \psi^\ast (a,b,c,e) \, \psi(a,b,c,e) db\, dc
 $$
 
-가 된다. 
+가 된다. 여기서 $\psi^\ast$ 는 $\psi$ 의 complex conjugate 이다. @eq-part1_wavefunction_expansion 으로부터 다음을 알 수 있다. [앞으로는 스칼라의 complex conjugate 는 $\overline{c}$ 처럼 쓰고, 파동함수의 complex conjugate 는 $\psi^\ast$ 와 같이 쓰기로 한다. $\overline{\psi(a,\,b,\,c,\,e, \ldots)}$ 는 개인적으로 상당히 보기 흉하다.]{.aside}
 
-우리는 양자상태($\mathscr{\Psi}$) 와 파동함수 ($\psi$) 를 구별했다. 적지 않은 경우에는 둘을 혼용하긴 하지만 그 개념을 명확히 구분할 수는 있어야 한다. 파동함수는 특정한 측정값들이 어떤 값을 가지는지에 대한 양자상태의 확률밀도함수이다. 여기서는 양자상태는 대문자, 파동함수는 소문자로 표현하기로 하자. 
+$$
+\langle \Psi | = \sum_{a,\,b,\,c} \psi^\ast (a,\,b,\,c,\ldots) \langle a,\,b,\,c |
+$${#eq-part1_wavefunction_expansion_2}
+
+
+우리는 양자상태($\mathscr{\Psi}$) 와 파동함수 ($\psi$) 를 구별했다. 적지 않은 경우에는 둘을 혼용하긴 하지만 그 개념을 명확히 구분할 수는 있어야 한다. 파동함수는 특정한 측정값들이 어떤 값을 가지는지에 대한 양자상태의 확률밀도함수이다. 
 
 </br>
 
@@ -637,7 +646,7 @@ $$
 으로부터
 
 $$
-2\|X\| \|Y\| \ge | \langle X|Y\rangle | + |\langle Y|X\rangle \ge | \langle X|Y\rangle + \langle Y|X\rangle|
+2\|X\| \|Y\| \ge | \langle X|Y\rangle | + |\langle Y|X\rangle | \ge | \langle X|Y\rangle  + \langle Y|X\rangle|
 $$ {#eq-p1_uncertinaty-2}
 
 을 얻는다. @eq-p1_uncertinaty-1 을 @eq-p1_uncertinaty-2 에 대입하면, 
@@ -646,7 +655,7 @@ $$
 2\sqrt{\langle \hat{A}^2 \rangle \langle \hat{B}^2 \rangle }  \ge |\langle \mathscr{\Psi} | [\hat{A},\,\hat{B}] |\mathscr{\Psi} \rangle |
 $$ {#eq-p1_uncertainty-3}
 
-이다. 이제 $\hat{A},\,\hat{B}$ 를 각각 $\hat{A}-\langle I \hat{A}\rangle,\, \hat{B}-\langle I\hat{B}\rangle$ 로 바꾸자. 그렇다면 @eq-p1_uncertainty-3 의 우변은
+이다. 이제 $\hat{A},\,\hat{B}$ 를 각각 $\hat{A}-\langle \hat{A}\rangle \hat{I},\, \hat{B}-\langle \hat{B}\rangle \hat{I}$ 로 바꾸자. 그렇다면 @eq-p1_uncertainty-3 의 우변은
 
 $$
 \begin{aligned}

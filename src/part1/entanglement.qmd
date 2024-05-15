@@ -10,7 +10,28 @@ crossref:
 
 ### 곱공간과 곱상태
 
-$A$ 계(System $A$), $B$ 계(System $B$) 라고 하지 않고 앨리스 계(Alice system), 밥 계(Bob system) 이라고 하고 그 상태공간을 앨리스 공간, 밥 공간이라고 하고 각각 $S_A$, $S_B$ 라고 표기하자. 각각은 독자적인 힐베르트 공간이며 따라서 둘을 동시에 기술하는 상태공간 $S_AB = S_A \otimes S_B$ 이다. $S_{AB}$ 에 대한 기저벡터는 $S_A$ 의 기저벡터 $\{ |a\rangle_A\}$ 과 $S_B$ 의 기저벡터 $\{ |b\rangle_B \}$ 에 대해 $\{ |a\rangle_A \otimes | b\rangle_B \}$ 이며 이것을 $\{|ab\rangle\}$ 로 쓴다. 앨리스 공간의 연산자 $\hat{\sigma}_A$ 와 밥 공간의 연산자 $\hat{\sigma}_B$ 에 대해 $\hat{\sigma}_A |a\rangle_A = a|a\rangle_A$, $\hat{\sigma}_B |b\rangle_B=b|b\rangle_B$ 라고 하면 $\hat{\sigma}_A\otimes \hat{I}_B$ 는 앨리스 공간에서의 연산자 $\hat{\sigma}_A$ 를 $S_{AB}$ 로 확장한 것으로 $\hat{\sigma}_A \otimes \hat{I}_B\,|ab\rangle = a|ab\rangle$ 이다. 마찬가지 과정으로 $\hat{I}_A \otimes \hat{\sigma}_B |ab\rangle = b|ab\rangle$ 이다. 
+$A$ 계(System $A$), $B$ 계(System $B$) 라고 하지 않고 앨리스 계(Alice system), 밥 계(Bob system) 이라고 하고 그 상태공간을 앨리스 공간, 밥 공간이라고 하고 각각 $S_A$, $S_B$ 라고 표기하자. 이 두 벡터 공간은 더할 수 없다. $|\phi_A\rangle_A\in S_A$ 와 $|\psi_B\rangle_B \in S_B$ 에 대해 
+
+$$
+|\phi_A \rangle_A + |\psi_B\rangle_B
+$$ 
+
+는 어떠한 의미도 없다. $S_A$ 와 $S_B$ 는 독자적인 힐베르트 공간이며 따라서 둘을 동시에 기술하는 상태공간 $S_{AB}$ 을 곱공간 $S_A \otimes S_B$ 으로 정의 할 수 있다. $S_{AB}$ 에 대한 기저벡터는 $S_A$ 의 기저벡터 $\{ |a\rangle_A\}$ 과 $S_B$ 의 기저벡터 $\{ |b\rangle_B \}$ 에 대해 $\{ |a\rangle_A \otimes | b\rangle_B \}$ 이며 이것을 $\{|ab\rangle\}$ 로 쓴다. 앨리스 공간의 연산자 $\hat{\sigma}_A$ 와 밥 공간의 연산자 $\hat{\sigma}_B$ 에 대해 $\hat{\sigma}_A |a\rangle_A = a|a\rangle_A$, $\hat{\sigma}_B |b\rangle_B=b|b\rangle_B$ 라고 하면 $\hat{\sigma}_A\otimes \hat{I}_B$ 는 앨리스 공간에서의 연산자 $\hat{\sigma}_A$ 를 $S_{AB}$ 로 확장한 것으로 $\hat{\sigma}_A \otimes \hat{I}_B\,|ab\rangle = a|ab\rangle$ 이다. 마찬가지 과정으로 $\hat{I}_A \otimes \hat{\sigma}_B |ab\rangle = b|ab\rangle$ 이다. 
+
+$|\phi\rangle_A = \sum_i \alpha_i |a_i\rangle_A \in S_A$ 이고 $|\psi\rangle_B = \sum_j \beta_j |b_j\rangle_B \in S_B$ 일 때
+
+$$
+|\phi\rangle_A \otimes |\psi \rangle_B = \sum_{i, j}\alpha_i \beta_j (|a_i\rangle_A \otimes |b_j )\rangle_B = \sum_{i, j} \alpha_i \beta_j |a_i b_j\rangle
+$$
+
+로 정의된다. 이 때 $\sum_i |\alpha_i|^2 = \sum_j |\beta_j|^2 = 1$ 이어야 하며, 
+
+$$
+\sum_{i, j} |\alpha_i \beta_j|^2 = \sum_i |\alpha_i|^2\left(\sum_j |\beta_j|^2\right) = 1
+$$
+
+이다. 즉 부분공간의 정규화된 상태들의 곱상태는 정규화되어 있다. 그렇다면 모든 $S_{AB}$ 의 상태벡터 즉 $\{|a_ib_j\rangle\}$ 의 선형결합으로 표현되는 상태벡터들은 $S_A$ 와 $S_B$ 의 곱상태로 표현 될 수 있을까? 답은 그렇지 않다이다. 여기에 대해서는 @sec-p1_entangled_state 부터 계속 알아보게 될 것이다.
+
 
 </br>
 
@@ -46,15 +67,15 @@ $$
 
 </br>
 
-### 양자적인 상관관계 {#sec-p1_product_space}
+### 양자계의 결합 {#sec-p1_product_space}
 
-이제 양자의 세계로 들어와보자. 앨리스와 밥이 각각 자신의 실험장비를 가지고 완전히 독립적으로 상태를 준비했으며 각각 $\sigma = \pm 1$ 의 값을 가질 수 있다고 하자. 앨리스의 스핀은 $\hat{\sigma}_A$, 밥의 스핀은 $\hat{\sigma}_B$ 로 측정한다. 둘의 곱상태를 $|\sigma_A\rangle_A \otimes |\sigma_B\rangle_B = |\sigma_A \sigma_B\rangle$ 로 놓으면 
+이제 양자의 세계로 들어와보자. 앨리스와 밥이 각각 자신의 실험장비를 가지고 완전히 독립적으로 상태를 준비했으며 각각 $\sigma = \pm 1$ 의 값을 가질 수 있다고 하자. 앨리스의 스핀은 $\hat{\sigma}_A$, 밥의 스핀은 $\hat{\sigma}_B$ 로 측정한다. 이 둘을 동시에 기술하는 상태를 곱상태를 $|\sigma_A\rangle_A \otimes |\sigma_B\rangle_B = |\sigma_A \sigma_B\rangle$ 로 놓으면 
 
 $$
 |uu\rangle,\, |ud\rangle,\,|du\rangle,\, |dd\rangle
 $$
 
-의 상태가 가능하다. 이를 **곱상태(product state)** 라고 한다. 앨리스의 상태 $|\Phi_A\rangle_A$ 는 $|u\rangle_A$ 와 $|d\rangle_A$ 의 중첩으로 표현 가능하며, 마찬가지로 밥의 상태 $|\Phi_B\rangle_B$ 는 $|u\rangle_B$ 와 $|d\rangle_B$ 의 중첩으로 표현 가능하다. 이 상태가 정규화 되었다면 아래와 같이 쓸 수 있다.
+의 상태가 가능하다. 앨리스의 상태 $|\Phi_A\rangle_A$ 는 $|u\rangle_A$ 와 $|d\rangle_A$ 의 중첩으로 표현 가능하며, 마찬가지로 밥의 상태 $|\Phi_B\rangle_B$ 는 $|u\rangle_B$ 와 $|d\rangle_B$ 의 중첩으로 표현 가능하다. 이 상태가 정규화 되었다면 아래와 같이 쓸 수 있다.
 
 $$
 \begin{aligned}
@@ -72,7 +93,7 @@ $$
 다시한번 강조하지만 곱상태는 곱해지는 상태들이 모두 독립적으로 행동한다는 것이다. 
 
 
-이제 곱상태에는 몇개의 변수가 필요한지 알아보자. 앨리스 계를 기술하는데는 두 복소수 $a_u,\,a_d$ 가 필요하며 이는 4개의 실변수를 정해야 한다는 뜻이다. 그러나 정규화 조건 으로 하나, 위상 동등성 조건으로 하나, 이렇게 해서 실제로 2개의 자유도를 가진 계이다. 이제 곱상태의 경우 4개의 복소 변수 $a_u,\,a_d,\,b_u,\,b_d$ 가 필요한데 이는 8개의 실변수를 정해야 한다는 의미이다. 앨리스 계와 밥 계에 각각 정규화 조건과 위상 조건에 의해 제약되기 때문에 4개의 자유도를 가진 시스템이 된다. 
+이제 곱상태에는 몇개의 변수가 필요한지 알아보자. 앨리스 계를 기술하는데는 두 복소수 $a_u,\,a_d$ 가 필요하며 이는 4개의 실변수를 정해야 한다는 뜻이다. 그러나 정규화 조건 으로 하나, 위상 동등성 조건으로 하나, 이렇게 해서 실제로 2개의 자유도를 가진 계이다. 밥의 계도 마찬가지로 2개의 자유도를 가진 계이다. 따라서 앨리스계와 밥계를 별도로 정의하는 시스템은 4개의 자유도를 가진 시스템이다. 이제 곱상태의 경우 4개의 복소 변수 $a_u,\,a_d,\,b_u,\,b_d$ 가 필요한데 이는 8개의 실변수를 정해야 한다는 의미이다. 앨리스 계와 밥 계에 각각 정규화 조건과 위상 조건에 의해 제약되기 때문에 4개의 자유도를 가진 시스템이 된다. 즉 별도로 기술하든 곱상태로 기술하든 그 계는 4개의 자유도를 가진 수학적으로 동등한 벡터공간이다. 
 
 </br>
 
@@ -326,7 +347,7 @@ Projecition $P_\psi := |\psi\rangle\langle \psi|$ 는 다음과 같은 성질을
 
 &emsp; ($4$) $P_\psi$ 의 고유값은 $0$ 과 $1$ 뿐이다.
 
-&emsp; ($5$) $\text{Tr}(P_\psi)=1$ 이다.
+&emsp; ($5$) $\text{tr}(P_\psi)=1$ 이다.
 
 &emsp; ($6$) 힐베르트 공간의 정규직교기저 $\{|i\rangle\}$ 에 대해 $\sum_{i}P_i = \sum_{i} |i\rangle \langle i\rangle = I$ 이다.
 
@@ -344,7 +365,7 @@ Projecition $P_\psi := |\psi\rangle\langle \psi|$ 는 다음과 같은 성질을
 
 ($4$) $P_\psi |\psi\rangle = \lambda |\psi\rangle$ 이면 ${P_\psi}^2|\psi\rangle = \lambda^2|\psi\rangle$ 이다. $\lambda^2=\lambda$ 이어야 하므로 $\lambda$ 는 $0$ 과 $1$ 만 가능하다.
 
-($5$) $P_\psi$ 가 에르미트 연산자이므로 서로 직교하는 $P_\psi$ 의 고유벡터로 기저를 구성 할 수 있다. $|\phi\rangle$ 이 $|\psi\rangle$ 과 직교한다면 $P_\psi |\phi\rangle = |\psi\rangle \langle \psi|\phi\rangle = |\varnothing\rangle$ 이므로 $|\psi\rangle$ 을 제외한 모든 기저벡터는 고유값 $0$ 을 가진다. $P_\psi$ 가 에르미트 행렬이므로 $\operatorname{Tr}(P_\psi)$ 는 모든 고유값의 합, 즉 $1$ 이다.
+($5$) $P_\psi$ 가 에르미트 연산자이므로 서로 직교하는 $P_\psi$ 의 고유벡터로 기저를 구성 할 수 있다. $|\phi\rangle$ 이 $|\psi\rangle$ 과 직교한다면 $P_\psi |\phi\rangle = |\psi\rangle \langle \psi|\phi\rangle = |\varnothing\rangle$ 이므로 $|\psi\rangle$ 을 제외한 모든 기저벡터는 고유값 $0$ 을 가진다. $P_\psi$ 가 에르미트 행렬이므로 $\operatorname{tr}(P_\psi)$ 는 모든 고유값의 합, 즉 $1$ 이다.
 
 ($6$) $|\phi\rangle = \sum_j a_j |j\rangle$ 에 대해 
 $$
@@ -365,7 +386,7 @@ $$
 연산자 $L$ 의 기대값 $\langle \psi|L|\psi\rangle$ 과 projection $P_\psi = |\psi\rangle\langle\psi|$ 사이에 다음이 성립한다.
 
 $$
-\langle \psi|L|\psi\rangle = \operatorname{Tr}|\psi\rangle\langle\psi | L .
+\langle \psi|L|\psi\rangle = \operatorname{tr}|\psi\rangle\langle\psi | L .
 $${#eq-expectation_and_projection}
 
 :::
@@ -377,7 +398,7 @@ $${#eq-expectation_and_projection}
 
 $$
 \begin{aligned}
-\operatorname{Tr}|\psi\rangle\langle \psi | L &= \sum_i \langle i|\psi\rangle \langle \psi |L |i\rangle = \langle \psi | L \left(\sum_i | i \rangle \langle i\rangle\right) |\psi\rangle = \langle \psi | L |\psi\rangle.\qquad \square
+\operatorname{tr}|\psi\rangle\langle \psi | L &= \sum_i \langle i|\psi\rangle \langle \psi |L |i\rangle = \langle \psi | L \left(\sum_i | i \rangle \langle i\rangle\right) |\psi\rangle = \langle \psi | L |\psi\rangle.\qquad \square
 \end{aligned}
 $$
 
@@ -415,23 +436,23 @@ $\rho$ 가 밀도 연산자라는 이름을 갖는 이유를 알아보자. 우�
 
 밀도행렬 $\rho$ 와 연산자 $L$ 에 대해 다음이 성립한다.
 $$
-\text{Tr} (\rho L) = \langle L \rangle.
+\text{tr} (\rho L) = \langle L \rangle.
 $$ {#eq-density_matrix_and_expectation_value}
 
 :::
 
 ::: {.proof}
-우리가 관심 있는 측정량 $L$ 의 고유벡터를 기저 $\{|\phi_i\rangle \}$ 로 삼으면 $|\phi \rangle = \sum_i a_i |\phi_i\rangle$ 에 대해
+우리가 관심 있는 측정량 $L$ 의 고유벡터를 기저 $\{|\phi_i\rangle \}$ 로 삼으면 $|\mathscr{\Phi} \rangle = \sum_i a_i |\phi_i\rangle$ 에 대해
 
 $$
-\langle L \rangle = \langle \phi |L |\phi \rangle = \sum_{i} |a_i|^2 \langle \phi_i|L|\phi_i\rangle 
+\langle L \rangle = \langle \mathscr{\Phi} |L |\mathscr{\Phi} \rangle = \sum_{i} |a_i|^2 \langle \phi_i|L|\phi_i\rangle 
 $$
 
 이다.  $\{|\phi_i\rangle\}$ 에 대한 밀도 연산자 $\rho = \sum_{i} p_i |\phi_i \rangle \langle \phi_i|$ 에 대해 
 
 $$
 \begin{aligned}
-\text{Tr}(\rho L) &= \sum_j \langle \phi_j | \rho L|\phi_j\rangle = \sum_j p_j\sum_{i} \langle \phi_j | \phi_i \rangle \langle \phi_i |L|\phi_j \rangle \\
+\text{tr}(\rho L) &= \sum_j \langle \phi_j | \rho L|\phi_j\rangle = \sum_j p_j\sum_{i} \langle \phi_j | \phi_i \rangle \langle \phi_i |L|\phi_j \rangle \\
 &=\sum_{i, j}p_j \delta_{ij}\langle \phi_i |L |\phi_j\rangle = \sum_i p_i \langle \phi_i |L|\phi_i\rangle = \sum_i |a_i|^2 \langle |\phi_i |L |\phi_i\rangle = \langle L \rangle
 \end{aligned}
 $$
@@ -480,17 +501,104 @@ $$
 이다. 이제 @eq-density_matrix_and_expectation_value 을 생각하면
 
 $$
-\rho_{ii'} = \sum_j c_{ij}\overline{c_{i'j}} = \sum_j \langle a_ib_j |\mathscr{\Psi}\rangle \langle \mathscr{\Psi} | a_{i'}b_j\rangle
+\rho_{ii'} = \sum_j c_{ij}\overline{c_{i'j}} = \sum_j \langle a_ib_j |\mathscr{\Psi}\rangle \langle \mathscr{\Psi} | a_{i'}b_j\rangle = \langle a_i | \mathscr{\Psi}\rangle \langle \mathscr{\Psi}|a_i\rangle
 $$ {#eq-entanglement2_density}
 
-로서, 
+이다. $\sum_j \langle b_j|b_j\rangle_B  =1$ 이므로 $\sum_j$ 는 사라질 수 있다. 따라서 
 
 $$
-\langle L \rangle = \text{Tr}(\rho L)
-$$
+\langle L \rangle = \text{tr}(\rho L)
+$$ {#eq-entanglement2_expetation_with_density}
 
 이 된다.
 
-@eq-entanglement2_density 은 순수상태의 밀도행렬이 아닌 혼합상태의 밀도행렬이다. 우리가 @eq-entalgnement2_wavefunction 에서의 계수 $c_{ij}$ 를 완벽하게 알고 있다고 하자. 그렇더라도 밀도행렬 @eq-entanglement2_density 는 순수상태의 밀도행렬이 아닌 혼함상태의 밀도형렬이다. 즉 전체계가 순수상태더라도 그 부분계는 복합상태로 기술되어야 한다.
+@eq-entanglement2_density 은 순수상태의 밀도행렬이 아닌 혼합상태의 밀도행렬이다. 우리가 @eq-entalgnement2_wavefunction 에서의 계수 $c_{ij}$ 를 완벽하게 알고 있다고 하자. 그렇더라도 밀도행렬 @eq-entanglement2_density 는 순수상태의 밀도행렬이 아닌 혼합상태의 밀도형렬이다. 즉 전체계가 순수상태더라도 그 부분계는 복합상태로 기술되어야 한다. 
 
- 
+@eq-entanglement2_density 을 보자. $A$ 계의 $a_i$ 값을 변수 $a$ 로 삼으면 @eq-entanglement2_density 식을 아래와 같이 쓸 수 있다.
+
+$$
+\rho_{aa'} = \langle \mathscr{\Psi}|a\rangle \langle a| \mathscr{\Psi}\rangle = \mathscr{\Psi}^\ast(a) \mathscr{\Psi}(a')
+$$ {#eq-entanglement2_density_2}
+
+</br>
+
+<div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+
+::: {#exm-entanglement2_density}
+
+앨리스와 밥의 2 스핀계로 다시 돌아가자. $\sigma_z$ 기저에서 $|\mathscr{\Psi}\rangle = \alpha |u\rangle + \beta|d\rangle$ 의 밀도행렬을 계산해보자. @eq-entanglement2_density_2 로 부터
+
+$$
+\rho_{ab}= \begin{bmatrix} |\alpha|^2 & \alpha \overline{\beta} \\ \overline{\alpha} \beta & |\beta|^2\end{bmatrix}
+$$
+
+이다. 또한 정규화 조건 $|\alpha|^2=|\beta|^2=1$ 을 만족해야 한다. 
+
+:::
+
+</div>
+
+</br>
+
+@eq-entanglement2_expetation_with_density 을 보자. 우리가 $A$ 시스템 에만 관심이 있다고 하자. $A$ 계에 대한 연산자 $L_A$ 를 확장하여 $L=L_A \otimes I_B$ 라는 전체 계에 대한 연산자를 만들 수 있다. 또한 우리가 $A$ 계에 대한 밀도연산자 $\rho_A$ 만을 알고 있다고 하자. 역시 같은 방법으로 전체 계에 작용하는 밀도연산자를 구성 할 수 있다.
+
+$$
+\rho = \rho_A \otimes I_B
+$$
+
+이제 $\langle L_A \rangle_A = \operatorname{tr} (\rho L)$ 임을 안다. 즉 우리가 전체 시스템이 아닌 부분계에만 관심이 있다면 우리는 부분계의 밀도행렬만을 알면 그 부분계에 대해 모든 것을 알 수 있다. 
+
+</br>
+
+이제 밀도연산자의 수학적인 성질에 대해 정리해보자.
+
+::: {#prp-entanglement2_properties_of_density_matrix}
+
+#### 밀도연산자의 수학적 성질
+
+$\rho$ 가 어떤 계의 밀도행렬일 때 다음을 만족한다.
+
+&emsp; ($1$) $\rho$ 는 에르미트 행렬이다.
+
+&emsp; ($2$) $\text{tr}(\rho)=1$.
+
+&emsp; ($3$) 순수상태에 대해 $\rho^2=\rho$, $\text{tr}(\rho^2)=1$ 이며 혼합상태에 대해 $\rho^2 \ne \rho$, $\text{tr}(\rho^2)<1$ 이다.
+
+:::
+
+::: {.proof}
+
+($1$) 정규직교기저 $\{|\phi_i\rangle\}$ 에 대해 $\rho = \sum_i p_i|\phi_i\rangle \langle \phi_i|$ 이며 $\rho^\ast = \rho$ 이다. 
+
+($2$) $\operatorname{tr}(\rho) = \sum_j \sum_i \langle \phi_j | (p_i|\phi_i\rangle \langle \phi_i|) | \phi_j\rangle = \sum_{i, j} p_i \langle \phi_j|\phi_i\rangle \langle \phi_i|\phi_j\rangle = \sum_i p_i = 1$. 
+
+($3$) 순수상태는 어떤 상태 $|\Psi\rangle$ 에 대해 $\rho = |\mathscr{\Psi}\rangle \langle \mathscr{\Psi}\rangle$ 이므로 $\rho^2 = \rho$ 이며 $\operatorname{tr}(\rho^2)= \operatorname{tr}(\rho)=1$ 이다. 복합상태라면 $\rho= \sum_j p_j |\phi_j\rangle \langle \phi_j|$, $\forall j,\, |p_j|^2<1$ 이며, 
+
+$$
+\rho^2 = \sum_{i, j}p_ip_j |\phi_j\rangle \langle \phi_j |\phi_i\rangle \langle \phi_i|= \sum_{i}(p_i)^2 |\phi_i\rangle\langle \phi_i| \ne \rho
+$$
+
+이며, 
+
+$$
+\text{tr}(\rho^2) = \sum_i p_i^2 < \sum_i p_i =1
+$$
+
+이다. $\square$
+
+:::
+
+
+</br>
+
+## 얽힘과 상관 관계
+
+$A$ 계의 앨리스와 $B$ 계의 밥을 생각하자. 또한 $A$ 계의 관측량 $L_A$ 와 $B$ 계의 관측량 $L_B$ 를 생각하자. $L_A$ 와 $L_B$ 사이의 상관관계 $C(L_A,\,L_B)$ 는 다음과 같이 정의된다.
+
+$$
+C(L_A,\, L_B) := \langle L_AL_B\rangle - \langle L_A\rangle_A \langle L_B \rangle_B
+$$
+
+곱 상태라면 당연히 $C(L_A,\,L_B)=0$ 이 된다. 만약 $C(L_A,\,L_B)\ne 0$ 인 어떤 관측량을 찾을 수 있다면 이 상태는 얽힌상태이다. 
+
+
