@@ -8,26 +8,69 @@ crossref:
 
 ## 곱공간과 얽힘 상태
 
-### 곱공간과 곱상태
+### 텐서곱 
 
-$A$ 계(System $A$), $B$ 계(System $B$) 라고 하지 않고 앨리스 계(Alice system), 밥 계(Bob system) 이라고 하고 그 상태공간을 앨리스 공간, 밥 공간이라고 하고 각각 $S_A$, $S_B$ 라고 표기하자. 이 두 벡터 공간은 더할 수 없다. $|\phi_A\rangle_A\in S_A$ 와 $|\psi_B\rangle_B \in S_B$ 에 대해 
+
+::: {.callout-note appearance="minimal"}
+
+::: {#def-tensor_product_of_vector_space}
+
+#### 벡터공간의 텐서곱
+두 힐베르트 공간 $\mathcal{H}_A$ 과 $\mathcal{H}_B$ 를 생각하자. $\mathcal{H}_A$ 의 기저 $\{|a_i\rangle_A : i\}$ 와 $\mathcal{H}_B$ 의 기저 $\{|b_j\rangle:j\}$ 에 대해 $\mathcal{H}=\text{span}(\{|a_i\rangle_A \otimes |b_j\rangle_B:i,\,j\})$ 를 아래의 세 조건과 함께 정의 할 수 있다.
+
+&emsp; ($1$) $c\in \mathbb{C}$ 에 대해 $c(|a\rangle_A \otimes |b\rangle_B) = (c|a\rangle_A)\otimes |b\rangle_B = |a\rangle_A \otimes (|b\rangle_B)$.
+
+&emsp; ($2$) $(|a\rangle_A + |a'\rangle_A) \otimes |b\rangle_B = |a\rangle_A\otimes |b\rangle_B + |a'\rangle_A \otimes |b\rangle_B$.
+
+&emsp; ($3$) $|a\rangle_A \otimes (|b\rangle_B + |b'\rangle_B)= |a\rangle_A \otimes |b\rangle_B + |a\rangle_a \otimes |b'\rangle_B$.
+
+이 때 $\mathcal{H}$ 역시 힐베르트 공간이며 $\mathcal{H}_A$ 와 $\mathcal{H}_B$ 의 **텐서곱(tensor product)** 라고 하고 $\mathcal{H}_A \otimes \mathcal{H}_B$ 로 표기한다. 
+
+텐서곱에서의 내적은 각각의 공간에서의 내적의 곱으로 정의된다. 즉,
 
 $$
-|\phi_A \rangle_A + |\psi_B\rangle_B
+( \langle a'|_A \otimes \langle b'|_B)(|a\rangle_A \otimes |b\rangle_B ) := \langle a'|a\rangle_A \langle b'|b\rangle_B
+$$
+
+이다.
+
+:::
+
+:::
+
+</br>
+
+여기서 주의해야 할 것은 일반적으로 선형대수학에서 사용하는 **곱공간(product space)** ($\mathcal{H}_A \times \mathcal{H}_B$) 과 tensor product ($\mathcal{H}_A \otimes \mathcal{H}_B$) 는 다르다는 것이다. 곱공간에서 $(3|a\rangle_A,\, |b\rangle_B) \ne (|a\rangle_A,\, 3|b\rangle_B)$ 이지만 텐서곱에서는 $((3|a\rangle_A) \otimes |b\rangle_B) = |a\rangle_A \otimes (3|b\rangle_B)$ 이다.  
+
+
+
+
+
+
+### 텐서곱과 곱상태
+
+$A$ 계(System $A$), $B$ 계(System $B$) 라고 하지 않고 앨리스 계(Alice system), 밥 계(Bob system) 라고 하자. 각각의 상태공간을 앨리스 공간, 밥 공간이라고 하고 각각 $S_A$, $S_B$ 라고 표기하자. 이 두 벡터 공간의 벡터는 그 상태로는 더할 수 없다. $|\phi\rangle_A\in S_A$ 와 $|\psi\rangle_B \in S_B$ 에 대해 
+
+$$
+|\phi \rangle_A + |\psi\rangle_B
 $$ 
 
-는 어떠한 의미도 없다. $S_A$ 와 $S_B$ 는 독자적인 힐베르트 공간이며 따라서 둘을 동시에 기술하는 상태공간 $S_{AB}$ 을 곱공간 $S_A \otimes S_B$ 으로 정의 할 수 있다. $S_{AB}$ 에 대한 기저벡터는 $S_A$ 의 기저벡터 $\{ |a\rangle_A\}$ 과 $S_B$ 의 기저벡터 $\{ |b\rangle_B \}$ 에 대해 $\{ |a\rangle_A \otimes | b\rangle_B \}$ 이며 이것을 $\{|ab\rangle\}$ 로 쓴다. 앨리스 공간의 연산자 $\hat{\sigma}_A$ 와 밥 공간의 연산자 $\hat{\sigma}_B$ 에 대해 $\hat{\sigma}_A |a\rangle_A = a|a\rangle_A$, $\hat{\sigma}_B |b\rangle_B=b|b\rangle_B$ 라고 하면 $\hat{\sigma}_A\otimes \hat{I}_B$ 는 앨리스 공간에서의 연산자 $\hat{\sigma}_A$ 를 $S_{AB}$ 로 확장한 것으로 $\hat{\sigma}_A \otimes \hat{I}_B\,|ab\rangle = a|ab\rangle$ 이다. 마찬가지 과정으로 $\hat{I}_A \otimes \hat{\sigma}_B |ab\rangle = b|ab\rangle$ 이다. 
+는 어떠한 의미도 없다. $S_A$ 와 $S_B$ 는 독자적인 힐베르트 공간이며 따라서 둘을 동시에 기술하는 상태공간 $S_{AB}$ 은 텐서곱 $S_A \otimes S_B$ 으로 표현 할 수 있다. $S_A$ 의 기저벡터 $\{ |a\rangle_A\}$ 과 $S_B$ 의 기저벡터 $\{ |b\rangle_B \}$ 에 대해 $\{ |a\rangle_A \otimes | b\rangle_B \}$ 는 $S_{AB}$ 의 기저벡터가 된다. 앞으로 $|a\rangle_A \otimes |b\rangle_B$ 를 $|ab\rangle$ 로 쓰기로 하자. 앨리스 공간의 연산자 $\hat{\sigma}_A$ 와 밥 공간의 연산자 $\hat{\sigma}_B$ 에 대해 $\hat{\sigma}_A |a\rangle_A = a|a\rangle_A$, $\hat{\sigma}_B |b\rangle_B=b|b\rangle_B$ 라고 하면 $\hat{\sigma}_A\otimes \hat{I}_B$ 는 앨리스 공간에서의 연산자 $\hat{\sigma}_A$ 를 $S_{AB}$ 로 확장한 것으로 
 
-$|\phi\rangle_A = \sum_i \alpha_i |a_i\rangle_A \in S_A$ 이고 $|\psi\rangle_B = \sum_j \beta_j |b_j\rangle_B \in S_B$ 일 때
+$$
+\left(\hat{\sigma}_A \otimes \hat{I}_B\right)|ab\rangle = \left(\hat{\sigma}_A|a\rangle_A\right) \otimes \left(\hat{I}_B|b\rangle_B\right) = a|a\rangle_A \otimes |b\rangle_B = a|ab\rangle
+$$
+
+이다. 마찬가지로 $\hat{I}_A \otimes \hat{\sigma}_B |ab\rangle = b|ab\rangle$ 이다. 이제 $S_A$ 와 $S_B$ 의 임의의 벡터에 대해 생각해보자. $|\phi\rangle_A = \sum_i \alpha_i |a_i\rangle_A$ 이고 $|\psi\rangle_B = \sum_j \beta_j |b_j\rangle_B$ 일 때
 
 $$
 |\phi\rangle_A \otimes |\psi \rangle_B = \sum_{i, j}\alpha_i \beta_j (|a_i\rangle_A \otimes |b_j )\rangle_B = \sum_{i, j} \alpha_i \beta_j |a_i b_j\rangle
 $$
 
-로 정의된다. 이 때 $\sum_i |\alpha_i|^2 = \sum_j |\beta_j|^2 = 1$ 이어야 하며, 
+이다. 이 때 정규화 조건에 따라 $\sum_i |\alpha_i|^2 = \sum_j |\beta_j|^2 = 1$ 이어야 하며, 
 
 $$
-\sum_{i, j} |\alpha_i \beta_j|^2 = \sum_i |\alpha_i|^2\left(\sum_j |\beta_j|^2\right) = 1
+\sum_{i, j} |\alpha_i \beta_j|^2 = \sum_i |\alpha_i|^2\left(\sum_j |\beta_j|^2\right) = \sum_i |\alpha_i|^2 = 1
 $$
 
 이다. 즉 부분공간의 정규화된 상태들의 곱상태는 정규화되어 있다. 그렇다면 모든 $S_{AB}$ 의 상태벡터 즉 $\{|a_ib_j\rangle\}$ 의 선형결합으로 표현되는 상태벡터들은 $S_A$ 와 $S_B$ 의 곱상태로 표현 될 수 있을까? 답은 그렇지 않다이다. 여기에 대해서는 @sec-p1_entangled_state 부터 계속 알아보게 될 것이다.
