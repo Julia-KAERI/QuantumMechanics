@@ -8,12 +8,12 @@ crossref:
 
 ## 곱공간과 얽힘 상태
 
-### 텐서곱 
+### 텐서곱 {#sec-part1_tensor_product}
 
 
 ::: {.callout-note appearance="minimal"}
 
-::: {#def-tensor_product_of_vector_space}
+::: {#def-part1_tensor_product_of_vector_space}
 
 #### 벡터공간의 텐서곱
 두 힐베르트 공간 $\mathcal{H}_A$ 과 $\mathcal{H}_B$ 를 생각하자. $\mathcal{H}_A$ 의 기저 $\{|a_i\rangle_A : i\}$ 와 $\mathcal{H}_B$ 의 기저 $\{|b_j\rangle:j\}$ 에 대해 $\mathcal{H}=\text{span}(\{|a_i\rangle_A \otimes |b_j\rangle_B:i,\,j\})$ 를 아래의 세 조건과 함께 정의 할 수 있다.
@@ -43,7 +43,7 @@ $$
 여기서 주의해야 할 것은 일반적으로 선형대수학에서 사용하는 **곱공간(product space)** ($\mathcal{H}_A \times \mathcal{H}_B$) 과 tensor product ($\mathcal{H}_A \otimes \mathcal{H}_B$) 는 다르다는 것이다. 곱공간에서 $(3|a\rangle_A,\, |b\rangle_B) \ne (|a\rangle_A,\, 3|b\rangle_B)$ 이지만 텐서곱에서는 $((3|a\rangle_A) \otimes |b\rangle_B) = |a\rangle_A \otimes (3|b\rangle_B)$ 이다.  
 
 
-### 텐서곱과 곱상태
+### 텐서곱과 곱상태 {#sec-part1_tensor_product_and_product_state}
 
 $A$ 계(System $A$), $B$ 계(System $B$) 라고 하지 않고 앨리스 계(Alice system), 밥 계(Bob system) 라고 하자. 각각의 상태공간을 앨리스 공간, 밥 공간이라고 하고 각각 $S_A$, $S_B$ 라고 표기하자. 이 두 벡터 공간의 벡터는 그 상태로는 더할 수 없다. $|\phi\rangle_A\in S_A$ 와 $|\psi\rangle_B \in S_B$ 에 대해 
 
@@ -69,12 +69,12 @@ $$
 \sum_{i, j} |\alpha_i \beta_j|^2 = \sum_i |\alpha_i|^2\left(\sum_j |\beta_j|^2\right) = \sum_i |\alpha_i|^2 = 1
 $$
 
-이다. 즉 부분공간의 정규화된 상태들의 곱상태는 정규화되어 있다. 그렇다면 모든 $S_{AB}$ 의 상태벡터 즉 $\{|a_ib_j\rangle\}$ 의 선형결합으로 표현되는 상태벡터들은 $S_A$ 와 $S_B$ 의 곱상태로 표현 될 수 있을까? 답은 그렇지 않다이다. 여기에 대해서는 @sec-p1_entangled_state 부터 계속 알아보게 될 것이다.
+이다. 즉 부분공간의 정규화된 상태들의 곱상태는 정규화되어 있다. 그렇다면 모든 $S_{AB}$ 의 상태벡터 즉 $\{|a_ib_j\rangle\}$ 의 선형결합으로 표현되는 상태벡터들은 $S_A$ 와 $S_B$ 의 곱상태로 표현 될 수 있을까? 답은 그렇지 않다이다. 여기에 대해서는 @sec-part1_entangled_state 부터 계속 알아보게 될 것이다.
 
 
 </br>
 
-### 고전적인 상관관계
+### 고전적인 상관관계 {#sec-part1_classical_correlation}
 
 앨리스와 밥이 각각 $\sigma=+1$ 과 $\sigma = -1$ 을 무작위적으로 나누어 가진다고 하자. 그리고 나누어 가지자 앨리스는 4광넌 떨어진 알파센타우리로 떠나고 밥은 지구에 남아 있는다고 생각하자. 4광년 떨어진 곳에서 자신의 $\sigma$ 를 확인한 앨리스는 확인하자 마자 밥이 가진 $\sigma$ 가 얼마인지 알 수 있다. 앨리스의 $\sigma$ 값을 $\sigma_A$, 밥의 $\sigma$ 값을 $\sigma_B$ 라고 하면 우리는 다음을 알 수 있다.
 
@@ -106,7 +106,7 @@ $$
 
 </br>
 
-### 양자계의 결합 {#sec-p1_product_space}
+### 양자계의 결합 {#sec-part1_product_space}
 
 이제 양자의 세계로 들어와보자. 앨리스와 밥이 각각 자신의 실험장비를 가지고 완전히 독립적으로 상태를 준비했으며 각각 $\sigma = \pm 1$ 의 값을 가질 수 있다고 하자. 앨리스의 스핀은 $\hat{\sigma}_A$, 밥의 스핀은 $\hat{\sigma}_B$ 로 측정한다. 이 둘을 동시에 기술하는 상태를 곱상태를 $|\sigma_A\rangle_A \otimes |\sigma_B\rangle_B = |\sigma_A \sigma_B\rangle$ 로 놓으면 
 
@@ -136,7 +136,7 @@ $$
 
 </br>
 
-### 얽힘 상태 {#sec-p1_entangled_state}
+### 얽힘 상태 {#sec-part1_entangled_state}
 
 $|uu\rangle,\, |ud\rangle,\, |du\rangle,\,|dd\rangle$ 의 기저를 갖는 복합공간에서의 일반적인 벡터는 다음과 같이 표현된다.
 
@@ -144,7 +144,7 @@ $$
 |\mathscr{\Psi}\rangle = c_{uu}|uu\rangle + c_{ud}|ud\rangle + c_{du}|du\rangle + c_{dd}|dd\rangle
 $$
 
-그러나 우리는 단 하나의 정규화 조건($\sum_{i, j = u}^d |c_{ij}|^2=1$) 과 단 하나의 위상 조건만을 가지고 있다. 즉 이 상태는 6개의 자유도를 가진 상태이다. 우리는 @sec-p1_product_space 에서의 곱상태가 복합상태에 포함된다는 것을 보일 수 있다. 뒤에 나오겠지만 우리는 이 복합 공간의 기저를 다음과 같이 분류 할 수 있다.
+그러나 우리는 단 하나의 정규화 조건($\sum_{i, j = u}^d |c_{ij}|^2=1$) 과 단 하나의 위상 조건만을 가지고 있다. 즉 이 상태는 6개의 자유도를 가진 상태이다. 우리는 @sec-part1_product_space 에서의 곱상태가 복합상태에 포함된다는 것을 보일 수 있다. 뒤에 나오겠지만 우리는 이 복합 공간의 기저를 다음과 같이 분류 할 수 있다.
 
 $$
 \begin{aligned}
@@ -211,7 +211,7 @@ $$
 
 </br>
 
-### 복합 관측량
+### 복합 관측량 {#sec-part1_entangled_observables}
 
 앨리스(Alice)-밥(Bob) 이외에 챨리(Charlie)를 등장시킨다. 챨리가 $|S\rangle$ 상태를 준비한다고 하자. 찰리는 $|S\rangle$ 의 스핀을 보지 않고 한 스핀은 앨리스에게, 한 스핀은 밥에게 준다. 이 지점에서 우리는 다음의 사실을 안다.
 
@@ -287,9 +287,9 @@ $$
 
 </br>
 
-## 약간은 수학적인 준비
+## 약간은 수학적인 준비 
 
-### 곱공간에서의 벡터와 행렬
+### 곱공간에서의 벡터와 행렬 {#sec-part1_vector_and_tensor_in_prodct_space}
 
 ::: {.callout-caution icon="false"}
 
@@ -334,7 +334,7 @@ $$
 
 </br>
 
-### Projection 
+### Projection {#sec-part1_projection}
 
 계의 임의의 두 벡터 $|\phi\rangle,\, |\psi\rangle$ 에 대해
 
@@ -445,7 +445,7 @@ $$
 
 </br>
 
-### 밀도 행렬
+### 밀도 행렬 {#sec-part1_density_matrix}
 
 ::: {.callout-note appearance="minimal"}
 
@@ -459,7 +459,7 @@ $$
 \rho := \sum_i p_i |\phi_i\rangle \langle \phi_i|
 $$
 
-로 정의된 $\rho$ 를 **밀도 연산자(density operator)** 혹은 **밀도 행렬(density matrix)** 이라고 한다.
+로 정의된 $\rho$ 를 **밀도 행렬(density matrix)** 이라고 한다.
 
 :::
 :::
@@ -467,7 +467,7 @@ $$
 
 </br>
 
-$\rho$ 가 밀도 연산자라는 이름을 갖는 이유를 알아보자. 우선 @eq-expectation_and_projection 의 밀도행렬 버젼을 알아보자.
+$\rho$ 가 밀도 행렬이라는 이름을 갖는 이유를 알아보자. 우선 @eq-expectation_and_projection 의 밀도행렬 버젼을 알아보자.
 
 ::: {#thm-density_operator_and_expectation_value}
 
@@ -491,8 +491,8 @@ $$
 
 $$
 \begin{aligned}
-\text{tr}(\rho L) &= \sum_j \langle \phi_j | \rho L|\phi_j\rangle = \sum_j p_j\sum_{i} \langle \phi_j | \phi_i \rangle \langle \phi_i |L|\phi_j \rangle \\
-&=\sum_{i, j}p_j \delta_{ij}\langle \phi_i |L |\phi_j\rangle = \sum_i p_i \langle \phi_i |L|\phi_i\rangle = \sum_i |a_i|^2 \langle |\phi_i |L |\phi_i\rangle = \langle L \rangle
+\text{tr}(\rho L) &= \sum_j \langle \phi_j | \rho L|\phi_j\rangle = \sum_i p_i\sum_{j} \langle \phi_j | \phi_i \rangle \langle \phi_i |L|\phi_j \rangle \\
+&=\sum_{i, j}p_j \delta_{ij}\langle \phi_i |L |\phi_j\rangle = \sum_i p_i \langle \phi_i |L|\phi_i\rangle = \sum_i |a_i|^2 \langle \phi_i |L |\phi_i\rangle = \langle L \rangle
 \end{aligned}
 $$
 
@@ -505,6 +505,9 @@ $$
 
 </br>
 
+<div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+
+::: {#exm-part1_density_matrix_might_be_nondiagonal}
 밀도 행렬을 $\{|\phi_i\rangle\}$ 기저로 구성했다고 하자. 이 기저에 대해서 $\rho$ 는 대각행렬이다. 그러나 (당연하게도) 다른 기저 $\{|\psi_i\rangle\}$ 기저에 대해
 
 $$
@@ -512,14 +515,16 @@ $$
 $$
 
 는 대각행렬이 아니다. 
+:::
 
+</div>
 
 
 </br>
 
-### 얽힘과 밀도 행렬
+### 얽힘과 밀도 행렬 {#sec-part1_entanglement_and_density_matrix}
 
-하나의 상태에 대해서만 확률 $1$ 일 때 밀도행렬은 projection 이며 이 경우 **순수 상태** 라고 하고, 순수 상태가 아닌 상태를 **혼합 상태** 라고 한다. 
+하나의 상태에 대해서만 확률 $1$ 일 때 밀도행렬은 projection 이며 이 경우 **순수 상태(pure state)** 라고 하고, 순수 상태가 아닌 상태를 **혼합 상태(mixed state)** 라고 한다. 
 
 부분계 $A,\,B$ 로 구성된 복합계를 생각하자. 앞서 우리가 계속 다뤄온 2 스핀계라고 생각해도 무방하다. $A$ 계의 기저를 $\{|a_i\rangle_A:i=1,\,2,\ldots\}$, $B$ 계의 기저를 $\{|b_j\rangle_B:j=1,\,2,\ldots\}$ 라고 하자. 복합계는 
 
@@ -617,7 +622,7 @@ $$
 \rho^2 = \sum_{i, j}p_ip_j |\phi_j\rangle \langle \phi_j |\phi_i\rangle \langle \phi_i|= \sum_{i}(p_i)^2 |\phi_i\rangle\langle \phi_i| \ne \rho
 $$
 
-이며, 
+이므로
 
 $$
 \text{tr}(\rho^2) = \sum_i p_i^2 < \sum_i p_i =1

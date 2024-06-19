@@ -246,4 +246,23 @@ $$
 
 </br>
 
+### 가우시안 파동함수의 경우 {#sec-part2_gaussian_wavefunction}
+
+$\psi(x) = \langle x|\psi\rangle$ 이 가우시안 함수인 경우를 살펴보자. 정규화를 생각하면
+
+$$
+\psi (x) = \dfrac{1}{(\pi \Delta^2)^{1/4}} \exp \left(-\dfrac{(x-a)^2}{2\Delta^2}\right)
+$$
+
+이어야 한다. 이 때 입자를 $[x,\,x+dx]$ 구간에서 발견할 확률 $P(x)\,dx$ 는
+
+$$
+P(x)\,dx = |\psi(x)|^2 \,dx = \dfrac{1}{(\pi \Delta^2)^{1/2}} e^{-(x-a)^2/\Delta^2}
+$$
+
+가 된다. 그리고 $X$ 의 기대값은
+
+$$
+\langle X \rangle = 
+$$
 
