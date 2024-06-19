@@ -43,10 +43,6 @@ $$
 여기서 주의해야 할 것은 일반적으로 선형대수학에서 사용하는 **곱공간(product space)** ($\mathcal{H}_A \times \mathcal{H}_B$) 과 tensor product ($\mathcal{H}_A \otimes \mathcal{H}_B$) 는 다르다는 것이다. 곱공간에서 $(3|a\rangle_A,\, |b\rangle_B) \ne (|a\rangle_A,\, 3|b\rangle_B)$ 이지만 텐서곱에서는 $((3|a\rangle_A) \otimes |b\rangle_B) = |a\rangle_A \otimes (3|b\rangle_B)$ 이다.  
 
 
-
-
-
-
 ### 텐서곱과 곱상태
 
 $A$ 계(System $A$), $B$ 계(System $B$) 라고 하지 않고 앨리스 계(Alice system), 밥 계(Bob system) 라고 하자. 각각의 상태공간을 앨리스 공간, 밥 공간이라고 하고 각각 $S_A$, $S_B$ 라고 표기하자. 이 두 벡터 공간의 벡터는 그 상태로는 더할 수 없다. $|\phi\rangle_A\in S_A$ 와 $|\psi\rangle_B \in S_B$ 에 대해 

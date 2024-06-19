@@ -1,0 +1,249 @@
+---
+title: "고전 물리학의 붕괴와 양자 원리"
+number-sections: true
+number-depth: 3
+crossref:
+  chapters: true
+---
+
+## 고전물리학의 붕괴
+
+### 입자와 파동 {#sec-part2_particle_and_wave}
+
+고전물리학에서 입자(particle) 은 운동량과 에너지의 국소화된 다발이다. 입자는 위치와 속도 $q$ 와 $\dot{q}$ (혹은 위치 $q$ 와 운동량 $p$) 를 상태 변수로 가지며 이것의 시간에 대한 변화는 운동방정식에 따른다. 초기조건이 $q(t_0),\, p(t_0)$ 가 주어진다면 어느 시간에서든 궤적 $q(t)$ 를 구할 수 있다. 파동은 이와 반대로 공간에 퍼져 있으며 파동방정식 $\psi(\boldsymbol{r},\,t)$ 로 기술된다. 전자기파의 경우 $\psi$ 는 전기장 $\boldsymbol{E}$ 의 각각의 성분이 될 수 있으며 아래와 같은 방정식을 따른다.
+
+$$
+\nabla^2 \psi = \dfrac{1}{c^2} \dfrac{\partial^2 \psi}{\partial t^2}.
+$$
+
+여기서 $c$ 는 빛의 속도이며 전자기파의 전달 속도이다. 초기조건 $\psi(\boldsymbol{r},\,0)$ 과 $\dot{\psi}(\boldsymbol{r},\, 0)$ 을 안다면 우리는 파동방정식을 풀어서 파동에 대해 완벽하게 알 수 있다.
+
+파동중에 가장 다루기 쉬운 평면파(plane wave) 는 시간과 공간 각각에 대해 주기적인 파동으로 1차원 평면파의 경우 다음과 같은 식으로 기술된다.
+
+$$
+\psi(x,t) = \psi_0 \exp (i(kx-\omega t))= \psi_0 e^{i\phi}
+$$ {#eq-part2_1d_plane_wave}
+
+여기서 $k$ 는 파수(wave number) 라고 하며 파장 $\lambda$ 에 대해 $k=2\pi/\lambda$ 이며 $\omega$ 는 각진동수(angular frequency) 로 주기 $T$ 에 대해 $\omega = 2\pi/T$ 이다. 이 때 파동의 전달 속도 $v=\omega/k$ 이다. $\psi_0$ 를 진폭(amplitude) 라고 하며 파동의 강도(intensity) $I$ 는 $I:=|\psi_0|^2$ 로 정의된다. 3차원 평면파의 경우는
+
+$$
+\psi (\boldsymbol{r},\,t) = \psi_0 \exp (i(\boldsymbol{k}\cdot \boldsymbol{r} - \omega t))
+$$ {#eq-part2_3d_plane_wave}
+
+의 파동방정식을 따른다. 이 때 $\boldsymbol{k}$ 를 **wave vector** 라고 하며 파동의 속도 $v=\|\boldsymbol{k}\|/\omega$ 이다. 
+
+</br>
+
+### 입자와 파동의 이중 슬릿 실험 {#sec-part2_double_slit_experiment_for_wave_and_particle}
+
+![파동의 이중 슬릿](figure/fig-part2_double_slit_wave.png){#fig-part2_double_slit_of_wave width=500}
+
+입자와 달리 파동은 **간섭(inteference)** 현상을 보인다. @fig-part2_double_slit_of_wave 에서와 같이 1차원 평면파가 진행하여 $S_1,\,S_2$ 의 두 슬릿을 통과할 수 있다고 하자. 두 슬릿은 $a$ 만큼 떨여져 있으며, 스크린 까지의 거리는 $d$ 이다.
+
+$S_1$ 을 열고 $S_2$ 를 닫았을 때 스크린에서의 빛의 강도를 $I_1$ 이라고 하고 $S_1$ 을 닫고 $S_2$ 를 열었을 때의 스크린에서의 빛의 강도를 $I_2$ 라고 하자. 슬릿의 크기가 파동의 파장 $\lambda$ 에 비해 충분히 작다면 각각의 슬릿은 파동의 point source 처럼 작용하여 radial 방향으로 파동이 전파한다. $S_1$ 을 통과한 파동의 방정식을 $\psi_1 = Ae^{i(kr-\omega t)}$, $S_2$ 를 통과한 파동의 방정식을 $\psi_2 = Be^{i(kr-\omega t)}$ 라고 하자. 이중슬릿의 기하학적 구조로부터 $A=B$ 라고 생각 할 수 있다.
+
+이제 두 슬릿을 모두 연다면 스크린에서의 빛의 강도 $I$ 는
+
+$$
+I = |\psi_1 + \psi_2|^2 = 4|A|^2 \cos^2 (k(d_2-d_1))
+$$ 
+
+가 되며 그림에서와 같은 간섭무늬를 보인다. 간섭무늬의 극대점은 $d_1-d_2 = n\lambda,\,n\in \mathbb{Z}$ 일 때이며 극소점은 $d_1-d_2 = (2n+1)\lambda/2,\, n\in \mathbb{Z}$ 일 때 이다. 또한 두 극대점 사이의 간격 $\Delta x$ 는 
+
+$$
+\Delta x = \dfrac{\lambda d}{a}
+$$ {#eq-part2_double_slit_spacing_of_maxima}
+
+</br>
+
+![입자의 이중 슬릿](figure/fig-part2_double_slit_particle.png){#fig_part2_double_slit_of_particle width=500}
+
+이제 입자의 경우를 생각해보자. $S$ 로부터 입자가 입사되어 $S_1,\,S_2$ 슬릿에 투과된 다고 하자. 파동의 경우와 같이 $S_1$ 과 $S_2$ 를 번갈아 열고 닫아서 $I_1(x),\,I_2(x)$ 를 검출하였다고 하자. $I_1(x),\,I_2(x)$ 는 각각 $S_1,\,S_2$ 만을 열었을 때의 $x$ 에 따른 입자 검출 갯수이다. 고전역학에 따르면 $S_1$ 과 $S_2$ 를 동시에 열었을 때 측정되는 $I_{1+2}(x)$ 는 $I_1(x)+I_2(x)$ 와 같다. 입자가 $S$ 로 부터 떠날 때 그 입자는 $S_1$ 을 통과할지 $S_2$ 를 통과하지, 혹은 벽에 부딛쳐 스크린에 도달하지 못할 지 결정된다. $S_1$ 를 지나는 입자의 궤적은 $S_2$ 가 열려있는지 닫혔는지와 전혀 무관하며 $S_2$ 를 지나는 입자도 $S_1$ 의 열리고 닫힌 여부와 전혀 무관한 궤적을 지난다. 혹시 $S_1$ 을 통과한 입자가 $S_2$ 를 통과한 입자와 부딛쳐서, 혹은 상호작용하여 궤적이 바뀐다면? 그것은 입자를 한번에 하나씩 충분한 시간 간격을 두고 발사하는 것으로 확인 할 수 있다. 그렇다면 $I_{1+2}= I_1+I_2$ 라는 것에 대해 반박할 거리가 없게 된다. 
+
+</br>
+
+### 광자의 이중슬릿 {#sec-part2_double_slit_experiment_for_photon}
+
+아안슈타인은 1905년도에 광전효과(photoelectric effect)에 관한 논문을 발표했다. 이로부터 빛은 특정한 진동수로 특정되는 입자로 간주될 수 있다는 것이 밝혀졌다. 이 빛 입자를 **광자(photon)** 이라고 부르며 광자 하나의 에너지 $E$ 와 운동량 $p$ 는 다음과 같다.
+
+$$
+\begin{aligned}
+E &= \hbar \omega, \\
+p &= \hbar k.
+\end{aligned}
+$$ {#eq-part2_energy_and_momentum_of_photon}
+
+여기서 $\hbar$ 는 플랑크 상수 $h$ 를 $2\pi$ 로 나눈 값으로 다음과 같다.
+
+$$
+\hbar := \dfrac{h}{2\pi} = 1.05457 \times 10^{−34}  \, \text{J⋅s} = 6.58212 \times 10^{−16} \,\text{eV⋅s}.
+$$
+
+
+빛을 충분한 강도로 보내면, 즉 충분히 많은 광자를 보내면 이중슬릿의 파동과 같은 모양을 띈다. 이것은 서로 다른 광자의 간섭으로 해석할 수도 있다. 그러나 빛의 강도를 충분히 낮추어 한번에 하나씩만 보낸다면 이젠 입자의 이중슬릿처럼 보일까? 답은 아니오 이다. 광자를 한번에 하나씩만 보내도 간섭무늬는 사라지지 않는다. 이것은 광자가 고전 역학의 입자와 같이 잘 정의된 경로를 따르는 것이 아니라는 것을 의미한다. 또한 이 경우 빛의 세기를 충분히 낮추어서 한번에 하나씩만 광자를 보냈기 때문에, 광자끼리의 충돌 혹은 간섭으로 인해 경로가 간섭될 가능성도 없다. 이로부터 보른은 다음과 같은 결론을 냈다.
+
+> 파동 $\psi$ 와 관련된 각각의 광자에 대해 $\psi$ 는 **확률 진폭(probability amplitude)** 이라고 불릴 수 있다. $|\psi(x)|^2$ 은 입자를 $x$ 에서 발견할 확률밀도함수이다.
+
+여기서 중요한 것은 파동으로서의 빛은 다수의 광자의 성질이 아니라 각각의 광자가 가지는 성질이다. 단색화된 빛(단일한 진동수를 가지는 광지들) 은 같은 파동함수 $\psi$ 를 가지며, 따라서 같은 확률분포를 가진다. 다수의 광자에 의해 고전 전자기학에서 예측되는 파동의 성질을 보이며 확률적인 모습은 감추어진다.
+
+</br>
+
+### 물질파 {#sec-part2_matter_wave}
+
+고전적으로 순수한 파동이라고 여겨졌던 빛은 광자들로 이루어졌다는 것을 알게되면서 드 브로이(de Broglie) 는 전자와 같은 입자도 파동과 같은 행동을 할 것이라는 과감한 가설을 생각하게 된다. 더 정확히 말하면 운동량 $p$ 를 가진 입자는 이중 슬릿 실험에서  $k=p/\hbar$ 에 상응하는 파동과 같은 행동을 할 것이라는 가정이다. 이 가정은 Davission 과 Germer 가 전자에 의한 회절 패턴을 관측함으로서 입증되었다. 이제는 입자도 확률진폭 $\psi$ 에 의해 기술된다는 것이 널리 받아들여졌으며 고전역학에서의 명확한(definite) 경로/궤적이라는 개념은 폐기되었다.
+
+그렇다면 우리 선조들이 300 념게 사용하였던 고전역학은 어떻게 정확하게 입자의 경로를 예측 할 수 있었던 것일까? 그것은 플랑크 상수 $h$(혹은 $\hbar$) 가 아주 작은 수이기 때문이다. 예를 들어 $1 \text{m/s}$ 로 움직이는 1 $\text{g}$ 짜리 입자의 파장은
+
+$$
+\lambda = \dfrac{2\pi}{k} = \dfrac{h}{p} = 6.62606 \times 10^{-31}\,\text{m}
+$$
+
+로 수소 원자의 크기보다 $10^{-22}$ 배 만큼 작고 양성자의 크기보다 $10^{-15}$ 배만큼 작다. 이중슬릿 실험에서 간섭 현상을 관찰하려면 @eq-part2_double_slit_spacing_of_maxima 의 $\Delta x$ 가 어느 정도 커야하는데 $\lambda$ 가 매우 작기 때문에 힘든 일이다. 즉 거시적으로는 물질파를 관측하기가 매우 힘들다.
+
+
+</br>
+
+### 입자-파동 이중성 {#sec-part2-wave_particle_duality}
+
+고전적으로 입자로 보았던 것들이 미시적으로 파동의 간섭 현상을 보이며, 따라서 파동방정식으로 기술 될 수 있다. 이것을 **이중성(duality)** 라고 한다. 입자를 기술하는 파동방정식 $\psi (\boldsymbol{r},\,t)$ 에 대해 $|\psi(\boldsymbol{r},t)|^2$ 는 시간 $t$ 위치 $\boldsymbol{r}$ 에서 입자를 발견할 확률분포이다. 이미 설명했듯이 입자의 상태 $|\psi\rangle$ 에 대해 $\langle \boldsymbol{r}|\psi(t)\rangle = \psi (\boldsymbol{r},\,t)$ 이다.  
+
+
+</br>
+
+## 양자역학의 원리
+
+### 양자역학의 기본 원리 Revisited
+
+우리는 1부에서 양자역학의 4가지 원리와 슈레딩거 방정식에 대해 알아보았다. 이것을 여기에 다시 기술해보자.
+
+::: {.callout-important icon="false"}
+
+#### 양자역학의 원리
+
+**원리 1.** 양자역학의 상태는 힐베르트 공간에서의 벡터 $|\phi\rangle$ 로 표현된다.
+
+**원리 2.** 양자역학의 측정량은 에르미트 연산자이다$^1$. 즉 $A^\dagger = A$ . 
+
+**원리 3.** **2.** 의 측정에서 실제 측정되는 양은 선형연산자의 고유값(eigenvector) 이며 측정 이후에 상태 $|\phi\rangle$ 은 고유값 $a$ 에 대한 고유 벡터, 즉 고유상태(eigenstate) 중의 하나로 **붕괴(collapse)** 된다.
+
+**원리 4.** $A$ 측정에서의 고유값 $\lambda$ 에 대한 고유공간의 정규직교기저를 $|a_1\rangle, \ldots,\, |a_n\rangle$ 이라고 할 때 $\lambda$ 값이 측정 될 확률 $P(\lambda) = \sum_{i}|\langle a_i|\phi \rangle|^2$ 이다.  
+
+**원리 5.** 상태벡터 $|\psi(t)\rangle$ 은 슈레딩거 방정식을 따른다.
+
+$$
+i\hbar \dfrac{\partial |\psi (t)\rangle}{\partial t} = H|\psi (t)\rangle.
+$$
+
+:::
+
+
+</br>
+
+### 위치와 운동량 {#sec-part2_position_and_momentum}
+
+많은 측정량들은 고전역학적인 측정량에서 왔으며 고전역학적인 측정량은 위치 $q$ 와 운동량 $p$ 의 함수이다. 즉 측정량 $\omega = \omega (x,\,p)$ 이다. 위치와 운동량도 힐베르트 공간에서의 에르미트 연산자이며 각각 $X$ 와 $P$ 로 표현한다. 위치에 대한 고유기저 $|x\rangle$ 에 대한 $X$ 와 $P$ 의 행렬표현은 다음과 같다.
+
+$$
+\begin{aligned}
+\langle x|X|x'\rangle &= x \delta(x-x'), \\[0.2em]
+\langle x|P|x'\rangle &= -i\hbar \delta'(x-x').
+\end{aligned}
+$${#eq-part2_matrix_representation_of_X_and_P}
+
+고전역학적인 측정량 $\omega (x,\,p)$ 에 상응햐는 양자역학의 측정량 $\Omega$ 는 에르미트 연산자로 $x,\,p$ 를 각각 $X,\,P$ 로 바꾸면 된다. 즉 $\Omega (X, P) = \omega (x \rightarrow X,\, p \rightarrow P)$ 이다. 
+
+우리는 지금까지 무한차원의 힐베르트 공간 $\mathcal{H}$ 를 생각했지만 실제로 무한차원 공간에서 사고해 본 적은 없었다 이제 그것을 시작할 때다. 위치 연산자 $X$ 를 생각해보자. 1차원에서조차도 $X$ 는 무한개의 값을 가질 수 있으며 그 값은 $\mathbb{R}$ 과 같다. $X$ 는 에르미트 연산자이므로 $X$ 의 고유벡터로 이루어진 기저를 생각할 수 있으며 이것을 $\{|x\rangle : x\in \mathbb{R}\}$ 이라고 할 수 있다. 힐베르트 공간에서의 기저이므로 다음을 만족해야 한다. 유한차원과는 다르게 크로네커 델타는 디렉 델타 함수로, $\sum$ 은 $\int$ 로 바뀐다.
+
+
+1. 직교성 (orthogonallity) : $\langle x | x' \rangle = \delta (x-x')$.
+
+2. 완비성 (completeness) : $\displaystyle  \int |x\rangle \langle x| \,dx = I$
+
+
+여기에 대해 기술하기 위애서는 디렉 델타 함수 $\delta(x)$ 에 대해 알아야 한다. 디렉 델타 함수는 다음의 두가지 성질을 가지는 함수이다.
+
+&emsp; ($1$) $\displaystyle \delta(x) = \left\{ \begin{array}{ll} +\infty \qquad &;\text{if } x= 0\\ 0 & ;\text{otherwise}.\end{array}\right.$
+
+&emsp; ($2$) $\displaystyle \int_{-\infty}^\infty f(x)\, \delta(x) = f(0)$.
+
+
+여기서는 참고를 위해 디랙 델타 함수의 성질에 대해 증명 없이 기술하기로 한다.
+
+</br>
+
+::: {.callout-important icon="false"}
+
+#### 디렉 델타 함수의 성질
+
+&emsp; ($1$) $\delta (-x) = \delta (x)$,
+
+&emsp; ($2$) $\displaystyle \int f(x) \delta (x-x')\, dx = f(x')$,
+
+&emsp; ($3$) $\delta (ax) = \dfrac{1}{|a|}\delta (x)$,
+
+&emsp; ($4$) $g(x)=0$ 의 해 $\{x_i\}$ 에 대해 모든 $x_i$ 에서 $g(x_i)\ne 0$ 일 때 $\displaystyle \delta (g(x)) = \sum_{i} \dfrac{\delta(x-x_i)}{|g'(x_i)|}$,
+
+&emsp; ($5$) $\displaystyle \int f(x)\, \delta'(x)\, dx = f'(0)$, 
+
+&emsp; ($6$) $x\,\delta'(x) = - \delta(x)$
+
+&emsp; ($7$) $\displaystyle \dfrac{1}{2\pi}\int_{-\infty}^\infty e^{ikx}\, dk = \delta (x)$. 
+
+:::
+
+</br>
+
+이제 디렉 델타 함수를 이용해 운동량 연산자 $P$ 에 대한 간단한 계산을 해 보자.
+$$
+\langle x| P |\psi\rangle = \int \langle x | P |x'\rangle \langle x'|\psi\rangle \, dx' = \int -i\hbar \delta'(x-x')\psi(x')\, dx' = -i\hbar \dfrac{d\psi(x)}{dx}
+$$
+
+
+$\langle x | P |\psi\rangle$ 은 $|\psi\rangle$ 상태를 운동량을 측정 한 후 그것을 $x$ 에 대한 함수로 나타내라는 의미이다. 이것은 계산대로 $\psi(x)$ 의 미분값에 $-i\hbar$ 를 곱한것과 같다. 이때문에 운동량 연산자를 $P=-i\hbar \dfrac{d}{dx}$ 로 표기하기도 한다. 2차원 이상의 공간에 대해서는 $P_i = -i\hbar \dfrac{\partial}{\partial x_i}$ 로 표기할 수 있다. 
+
+또한 우리는 일반적으로 두 에르미트 연산자가 commutative 하지 않는다는 것을 안다. $X$ 와 $P$ 의 경우는 어떠한가?
+
+::: {#exr-part2_uncertainty_of_X_and_P}
+
+$[X, P]=XP-PX=i\hbar I$ 임을 보여라.
+
+:::
+
+::: {.solution}
+
+$\langle x| (XP-PX) |\psi\rangle = i\hbar \psi(x)$ 임을 보이자.
+$$
+\begin{aligned}
+\langle x| & (XP-PX) |\psi\rangle = \int \langle x | (XP-PX)|x'\rangle \langle x'|\psi\rangle \, dx' \\
+&= \iint \langle x|X |x''\rangle \langle x''|P|x'\rangle\langle x'|\psi\rangle\, dx'' \, dx' - \iint \langle x|P |x''\rangle \langle x''|X|x'\rangle\langle x'|\psi\rangle\, dx'' \, dx' \\
+&= -i\hbar \left[\iint x\delta(x-x'')\, \delta'(x'-x'') \, \psi(x') dx''\, dx' \right. \\
+&\qquad \qquad\left. - \iint \delta'(x-x'') \, x'\delta(x'-x'') \, \psi(x')\, dx'' \, dx'\right]\\
+&= -i\hbar \left[\int x\delta(x-x'') \psi'(x'') \, dx''  - \int \delta'(x-x'') x'' \psi(x'')\, dx''\right] \\
+&= -i\hbar \left[x\psi'(x) - \psi(x) - x\psi'(x)\right] \\
+&= i\hbar \psi(x) = \langle x | i\hbar I | \psi\rangle
+\end{aligned}
+$$
+
+로부터 우리는 $[X, P] = XP-PX = i\hbar I$ 임을 알 수 있다. 즉 $X$ 와 $P$ 는 서로 교환되지 않으며 불확정성의 원리에 의해 $X$ 와 $P$ 는 동시에 정확하게 측정 될 수 없다는 것을 알 수 있다.
+
+:::
+
+</br>
+
+우리는 앞서 고전적인 측정량 $\omega (x,\,p)$ 를 양자 측정량 $\Omega (X, \, P)$ 로 바꿀 수 있다는 것을 알았다. 그런데 예를 들어 $\omega = xp$ 의 경우 앞서 보인 것과 같이 $XP\ne PX$ 이므로 $\Omega$ 를 정할 때 모호함이 생긴다. 이럴 경우는 대칭적으로 $\Omega = \dfrac{1}{2}(XP+PX)$ 로 변환한다. 이것이 불가능 할 경우도 있는데 $\omega = x^2p$ 와 같이 $x^k$ 나 $p^k$ 가 비대칭적으로 들어가 있을 경우이다. 이런 경우는 실험을 통해 양자역학적인 변수를 정할 수 밖에 없다.
+
+::: {#exr-part2_symmectic_form_is_hermitian}
+
+$X, P$ 가 에르미트이면 $\Omega = (XP+PX)/2$ 가 에르미트 연산자 임을 보여라. 
+:::
+
+::: {.solution}
+
+$$
+\Omega^\dagger = \dfrac{(XP+PX)^\dagger}{2} = \dfrac{(P^\dagger X^\dagger + X^\dagger P^\dagger)}{2} = \dfrac{XP+PX}{2} = \Omega
+$$ 
+:::
+
+</br>
+
+

@@ -15,11 +15,14 @@ book:
       - src/part1/mathematical_foundation.qmd
       - src/part1/quantum_state.qmd
       - src/part1/entanglement.qmd
+    - part: src/part2/part2.qmd
+      chapters:
+      - src/part2/part2_1.qmd
     - part: src/figure/figure.qmd
       chapters:
       - src/figure/figure_part1_1.qmd
+      - src/figure/figure_part2_1.qmd
       - src/figure/figure_test_01.qmd
-
     - src/references.qmd
 
 bibliography: references.bib
