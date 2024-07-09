@@ -17,7 +17,14 @@ book:
       - src/part1/entanglement.qmd
     - part: src/part2/part2.qmd
       chapters:
-      - src/part2/part2_1.qmd
+      - src/part2/part2_foundation_of_quantum_theory.qmd
+      - src/part2/part2_1d_bound_state.qmd
+      - src/part2/part2_classical_limit.qmd
+      - src/part2/part2_harmonic_oscillator.qmd
+      - src/part2/part2_1d_scattering.qmd
+    - part : src/part3/part3.qmd
+      chapters:
+      - src/part3/historical_note.qmd
     - part: src/figure/figure.qmd
       chapters:
       - src/figure/figure_part1_1.qmd
