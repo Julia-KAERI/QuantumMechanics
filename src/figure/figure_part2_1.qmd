@@ -120,3 +120,153 @@ crossref:
 
 \end{tikzpicture}
 ```
+
+```{r, engine = 'tikz'}
+#| label: fig-part2_infinite_potential_well_1
+#| code-fold: true
+#| echo: fenced
+#| output: asis
+#| fig-width: 8
+#| fig-align: center
+#| fig-cap: "무한 포텐셜 우물"
+
+
+\begin{tikzpicture}[scale=1]
+\usetikzlibrary {arrows.meta}
+\usetikzlibrary {calc}
+
+\draw[, -{Stealth[length=2mm]}] (0, 0) -- (0, 3) node [above] {$V(x)$};
+\draw[, -{Stealth[length=2mm]}] (-3, 0) -- (3, 0) node [below left] {$x$};
+\draw[red, thick, -{Stealth[length=2mm]}] (-2, 0) -- (-2, 3);
+\draw[red, thick, -{Stealth[length=2mm]}] (2, 0) -- (2, 3);
+\draw[red, thick] (-2, 0) -- (2, 0);
+\node[below] at (-2, 0) {$-L/2$};
+\node[below] at (2, 0) {$L/2$};
+
+\fill [fill=red,fill opacity=0.3] (-2,0) rectangle (-3,3);
+\node[] at (-2.5, 1) {$\rm{I}$};
+\node[] at (-0.5, 1) {$\rm{II}$};
+\node[] at (2.5, 1) {$\rm{III}$};
+
+\fill [fill=red,fill opacity=0.3] (2,0) rectangle (3,3);
+
+\begin{scope}[shift={(8,0)}]
+\draw[, -{Stealth[length=2mm]}] (0, 0) -- (0, 3) node [above] {$V(x)$};
+\draw[, -{Stealth[length=2mm]}] (-3, 0) -- (3, 0) node [below left] {$x$};
+\draw[red, thick] (-2, 0) -- (-2, 3);
+\draw[red, thick] (2, 0) -- (2, 3);
+\draw[red, thick] (-2, 0) -- (2, 0);
+\node[below] at (-2, 0) {$-L/2$};
+\node[below] at (2, 0) {$L/2$};
+
+
+\draw[teal, thick] plot[variable=\t,domain=-2:2, samples=100, smooth,thick] ({\t}, { 0.5*cos( \t * 45) + 0.5});
+\draw[] (-2, 0.5) -- (2, 0.5) node [right] {$E_2$};
+\node[above] at (1.0, 1.0) {$\psi_1$};
+
+
+\draw[teal, thick] plot[variable=\t,domain=-2:2, samples=100, smooth,thick] ({\t}, { 0.5*sin( \t * 90) + 2});
+\draw[] (-2, 2) -- (2, 2) node [right] {$E_1$};
+\node[above] at (1.0, 2.5) {$\psi_2$};
+
+\end{scope}
+\end{tikzpicture}
+```
+
+```{r, engine = 'tikz'}
+#| label: fig-part2_potential_well_1
+#| code-fold: true
+#| echo: fenced
+#| output: asis
+#| fig-width: 3
+#| fig-align: center
+#| fig-cap: "포텐셜 우물"
+
+
+\begin{tikzpicture}[scale=1]
+\usetikzlibrary {arrows.meta}
+\usetikzlibrary {calc}
+
+\draw[, -{Stealth[length=2mm]}] (0, 0) -- (0, 3) node [above] {$V(x)$};
+\draw[, -{Stealth[length=2mm]}] (-3, 0) -- (3, 0) node [below left] {$x$};
+\draw[red, thick, ] (-3, 2) -- (-2, 2) -- (-2, 0) -- (2, 0) -- (2, 2) -- (3, 2);
+\node[below] at (-2, 0) {$-a$};
+\node[below] at (2, 0) {$a$};
+
+\fill [fill=red,fill opacity=0.3] (-2,0) rectangle (-3,2);
+\fill [fill=red,fill opacity=0.3] (2,0) rectangle (3,2);
+
+\node[] at (-2.5, 1) {$\rm{I}$};
+\node[] at (-0.5, 1) {$\rm{II}$};
+\node[] at (2.5, 1) {$\rm{III}$};
+
+\end{tikzpicture}
+```
+
+```{r, engine = 'tikz'}
+#| label: fig-part2_solution_of_potential_well
+#| code-fold: true
+#| echo: fenced
+#| output: asis
+#| fig-width: 9
+#| fig-align: center
+#| fig-cap: "무한 포텐셜 우물"
+
+
+\begin{tikzpicture}[scale=1]
+\usetikzlibrary {arrows.meta}
+\usetikzlibrary {calc}
+
+\node [] at (-0.7, 5.8) {$(a)$};
+\draw[, -{Stealth[length=2mm]}] (0, -0.2) -- (0, 6) node [above] {$\kappa$} ;
+\draw[, -{Stealth[length=2mm]}] (-0.2, 0) -- (5.5, 0) node [right] {$ka$};
+\draw[teal, thick] plot[variable=\t, domain=0:0.9, samples=100, smooth,thick] ({\t}, {\t * tan( 90*\t)}) node [black, above right] {$ka \tan (ka)$};
+\draw[teal, thick] plot[variable=\t, domain=2:2.71, samples=100, smooth,thick] ({\t}, {\t * tan( 90*\t)});
+\draw[teal, thick] plot[variable=\t, domain=4:4.57, samples=100, smooth,thick] ({\t}, {\t * tan( 90*\t)}) ;
+
+\draw[thick, dotted] (1, 6) -- (1, 0);
+\node [scale=0.9] at (1, -0.2) {$\pi/2$};
+\draw[thick, dotted] (2, 6) -- (2, 0);
+\node [scale=0.9] at (2, -0.2) {$\pi$};
+\draw[thick, dotted] (3, 6) -- (3, 0);
+\node [scale=0.9] at (3, -0.2) {$3\pi/2$};
+\draw[thick, dotted] (4, 6) -- (4, 0);
+\node [scale=0.9] at (4, -0.2) {$2\pi$};
+\draw[thick, dotted] (5, 6) -- (5, 0);
+\node [scale=0.9] at (5, -0.2) {$5\pi/2$};
+
+\draw[red, thick] (1.2, 0) arc (0:90:1.2) node [black, left] {$a\sqrt{2mV_0/\hbar^2 - k^2}$};
+\draw[red, thick] (2.4, 0) arc (0:90:2.4);
+\draw[red, thick] (3.6, 0) arc (0:90:3.6);
+\draw[red, thick] (4.8, 0) arc (0:90:4.8);
+
+
+
+\begin{scope}[shift={(8.5,0)}]
+\node [] at (-0.7, 5.8) {$(b)$};
+\draw[, -{Stealth[length=2mm]}] (0, -0.2) -- (0, 6) node [above] {$\kappa$} ;
+\draw[, -{Stealth[length=2mm]}] (-0.2, 0) -- (6.2, 0) node [right] {$ka$};
+\draw[teal, thick] plot[variable=\t, domain=1:1.81, samples=100, smooth,thick] ({\t}, {-\t * cot( 90*\t)}) node[black, above] {$-ka \cot (ka)$};
+\draw[teal, thick] plot[variable=\t, domain=3:3.65, samples=100, smooth,thick] ({\t}, {-\t * cot( 90*\t)});
+\draw[teal, thick] plot[variable=\t, domain=5:5.5, samples=100, smooth,thick] ({\t}, {-\t * cot( 90*\t)});
+
+\draw[thick, dotted] (1, 6) -- (1, 0);
+\node [scale=0.9] at (1, -0.2) {$\pi/2$};
+\draw[thick, dotted] (2, 6) -- (2, 0);
+\node [scale=0.9] at (2, -0.2) {$\pi$};
+\draw[thick, dotted] (3, 6) -- (3, 0);
+\node [scale=0.9] at (3, -0.2) {$3\pi/2$};
+\draw[thick, dotted] (4, 6) -- (4, 0);
+\node [scale=0.9] at (4, -0.2) {$2\pi$};
+\draw[thick, dotted] (5, 6) -- (5, 0);
+\node [scale=0.9] at (5, -0.2) {$5\pi/2$};
+\draw[thick, dotted] (6, 6) -- (6, 0);
+\node [scale=0.9] at (6, -0.2) {$3\pi$};
+
+\draw[red, thick] (1.2, 0) arc (0:90:1.2) node[black, left] {$a\sqrt{2mV_0/\hbar^2-k^2}$};
+\draw[red, thick] (2.4, 0) arc (0:90:2.4);
+\draw[red, thick] (3.6, 0) arc (0:90:3.6);
+\draw[red, thick] (4.8, 0) arc (0:90:4.8);
+\end{scope}
+\end{tikzpicture}
+```

@@ -1,0 +1,158 @@
+---
+title: "고전적인 극한"
+number-sections: true
+number-depth: 3
+crossref:
+  chapters: true
+---
+
+양자역학의 거시적인 극한이 고전역학이어야 한다는 것은 당연하다. 여기서는 바로 이것에 다루기로 한다. 
+
+## 에렌페스트 정리 {#sec-part2_ehrenfest_theorem}
+
+연신자 $\Omega$ 에 대한 양자역학의 기대값 $\langle \Omega\rangle$ 대해 다음이 성립한다.
+
+$$
+\dfrac{d}{dt}\langle \Omega \rangle = \dfrac{d}{dt} \langle \psi |\Omega |\psi\rangle = \langle \dot{\psi}|\Omega |\psi\rangle + \langle \psi |\dot{\Omega}| \psi \rangle + \langle \psi |\Omega |\dot{\psi}\rangle
+$$ {#eq-part2_classica_limit_1}
+
+여기서 $\Omega$ 에 명시적인 시간의존성이 없다고,  $\partial \Omega/\partial t = 0$ 라고 가정하자. 슈뢰딩거 방정식
+
+$$
+i\hbar |\dot{\psi}\rangle = H |\psi\rangle,\qquad  -i\hbar \langle\dot{\psi} | = \langle \psi |H
+$$ {#eq-part2_classica_limit_2}
+
+를 적용하면, 
+
+$$
+\dfrac{d}{dt}\langle \Omega \rangle = -\dfrac{i}{\hbar} \langle \psi | (-H\Omega + \Omega H)|\psi = -\dfrac{i}{\hbar} \langle \psi | [\Omega,\, H]|\psi \rangle
+$$ {#eq-part2_classica_limit_3}
+
+을 얻는다. 이를 **에렌페스트 정리(Ehrenfest's theorem)** 이라고 한다. 고전역학에서 동역학 변수 $\omega$ 와 해밀토니안 $H$, 그리고 푸아송 브라켓 $\{\,,\,\}$ 에 대해
+
+$$
+\dfrac{d\omega}{dt} = \{ \omega,\, H\} = \sum_i \left(\dfrac{\partial \omega}{\partial q_i}\dfrac{\partial H}{\partial p_i} -\dfrac{\partial \omega}{\partial p_i}\dfrac{\partial H}{\partial q_i}  \right)
+$$
+
+가 성립한다는 것을 기억하라. 
+
+</br>
+
+### 1차원 포텐셜의 경우
+
+우선 1차원에서 생각해보자. 해밀토니안이 다음과 같다고 하자.
+
+$$
+H =\dfrac{P^2}{2m}+ V(X).
+$$ {#eq-part2_classical_limit_1d_hamiltonian}
+
+$\Omega=X$ 일 때 @eq-part2_classica_limit_3 은 다음과 같다.
+
+$$
+\dfrac{d}{dt}\langle X\rangle = -\dfrac{i}{\hbar} \langle \psi | [X,\, H]| \psi\rangle = \left(-\dfrac{i}{2m\hbar}\right) \langle [X,\,P^2]\rangle
+$$ {#eq-part2_classical_limit_dot_x_1}
+
+여기서
+
+$$
+[X,\,P^2]=P[X,\,P] + [X,\,P]P = 2i\hbar P
+$$
+
+이므로, 
+
+$$
+\dfrac{d}{dt}\langle X \rangle = \dfrac{P}{m}
+$$ {#eq-part2_classical_limit_dot_x_2}
+
+이다. 고전역학의 $\dot{x} = p/m$ 를 기억하라. 
+
+좀 다른 방식으로 접근해보자. @eq-part2_classical_limit_1d_hamiltonian 로 부터
+
+$$
+\dfrac{P}{m} = \dfrac{\partial H}{\partial P}
+$$
+
+임을 안다. 즉, 
+
+$$
+\dfrac{d}{dt}\langle X\rangle = \left \langle \dfrac{\partial H}{\partial P}\right \rangle
+$$ {#eq-part2_classical_limit_dot_x_3}
+
+이다. 이제 @eq-part2_classica_limit_3 에서 $\Omega = P$ 로 놓고 생각해보자.
+
+$$
+\dfrac{d}{dt} \langle P\rangle = \left(-\dfrac{i}{\hbar}\right) \langle [ P,\, H] \rangle = - \dfrac{i}{\hbar} \langle [P,\, V(X)]\rangle 
+$$
+
+이다. 우리는 $X$ 기저에서 $P$ 가 $-i\hbar \dfrac{d}{dx}$ 임을 안다. $V(X)$ 를 $V(x)$ 로 생각하면
+
+$$
+[P,\, V(x)]\psi(x) = \left[-i\hbar \dfrac{d}{dx},\, V(x)\right]\psi(x) = -i\hbar \left(\dfrac{dV(x)}{dx}\right)\, \psi(x)
+$$
+
+이므로, 
+
+$$
+\dfrac{d}{dt}\langle P\rangle = - \dfrac{dV(x)}{dx}= \left\langle -\dfrac{\partial H}{\partial X}\right\rangle
+$$ {#eq-part2_classical_limit_dot_p}
+
+이다. 식 @eq-part2_classical_limit_dot_x_3 과 @eq-part2_classical_limit_dot_p 은 해밀토니안 $\mathcal{H}$ 에 대한 고전적인 해밀튼 방정식 
+
+$$
+\dot{x} = \dfrac{\partial \mathcal{H}}{\partial p},\qquad\dot{q} = - \dfrac{\partial \mathcal{H}}{\partial q}
+$$ {#eq-part2_classical_hamilton_equation}
+
+와 매우 닮았다. 이제 양자역학의 방정식이 거시계에 어떻게 적용되는지 알아보기로 하자. 
+
+</br>
+
+### 거시시적인 계에서
+
+일단 질량 $1\, \text{g}$ 인 입자를 생각하자. 고전적인 극한에서 생각해야 하기 때문에 입자의 위치와 운동량이 상대적으로 잘 정의된 가우시안 웨이브 패킷을 생각하자. 이 상태를 $|x_0\,p_0\,\Delta\rangle$ 로 표기하자. 이 패킷에 대해 $\langle X\rangle = x_0$, $\langle P\rangle = p_0$, $\Delta X = \Delta,\, \Delta P \approx \hbar/\Delta$ 가 성립한다고 하자. 그리고 $\Delta$ 와 $\hbar/\Delta$ 가 각각 거시계의 기준으로 매우 작다고 생각하자. 우리는 이미 [가우시안 wavepacket 의 시간 전개](part2_1d_bound_state.qmd#sec-evolution_of_gaussian_packet) 에서 이것이 가능함을 안다. 즉 아래의 $\Psi(x,\,0)$ 은 주어진 조건을 만족한다.
+
+$$
+\Psi(x,0) = e^{ip_0x/\hbar} \dfrac{e^{-(x-x_0)^2/2\Delta^2}}{(\pi \Delta^2)^{1/4}}
+$$
+
+이 때 $\Delta \approx 10^{-15}\, \text{m}$ 이라고 하면(이 크기는 양성자의 크기와 유사하다) $\Delta P \approx 10^{-19}\, \text{kg m}/\text{sec}$ 이다. $m=1\, \text{g}$ 일 경우 속도의 uncertainty $\Delta V \approx 10^{-16}\, \text{m}/\text{sec}$ 이므로 실험에서 측정 할 수 있는 정밀도보다 크게 작다. 이 경우 거시적으로는 위치와 운동량이 $x_0,\, p_0$ 로 잘 정의되어 있다고 볼 수 있다. @eq-part2_classical_limit_dot_x_3 와 @eq-part2_classical_limit_dot_p 에서 $\langle \cdots \rangle$ 은 함수에 대한 평균인데 이것을 평균에 대한 함수로 바꾼다면 고전적인 해밀튼 방정식 @eq-part2_classical_hamilton_equation 와 같아진다. 
+
+
+$$
+\begin{aligned}
+\dot{x}_0 &= \dfrac{d}{dt}\langle X \rangle = \left \langle \dfrac{\partial H}{\partial P}\right \rangle  \approx \left.\dfrac{\partial H}{\partial P}\right|_{X=x_0,\, P=p_0} = \dfrac{\partial \mathcal{H}(x_0,\, p_0)}{\partial p_0} \\[0.4em]
+\dot{p}_0 &= \dfrac{d}{dt}\langle P\rangle = - \left\langle \dfrac{\partial H}{\partial X}\right\rangle \approx \left.\dfrac{\partial H}{\partial X}\right|_{(X=x_0,\, P=p_0)}  = - \dfrac{\partial \mathcal{H}(x_0,\, p_0)}{\partial x_0}
+\end{aligned}
+$$
+
+이제 $X$ 와 $P$ 의 함수로 주어지는 어떤 연산자 $\Omega$ 의 고전적인 대응인 $\omega (x,\,p)$ 를 생각하자. $X,\, P$ 가 충분히 잘 정의되어 있다면(즉 $\Delta X$ 와 $\Delta P$ 가 충분히 작다면) 다음이 성립한다는 것을 예상 할 수 있다.
+
+$$
+\langle \Omega (X,\, P) \rangle \approx \Omega (x_0,\, p_0) = \omega(x_0,\,p_0)
+$$
+
+그렇다면 이제 다음 관계를 끌어 낼 수 있다.
+
+$$
+\left\langle \dfrac{\partial H}{\partial X}\right \rangle = \left \langle\dfrac{dV}{dX} \right\rangle \approx  \left.\dfrac{dV}{dx}\right|_{X=x_0}
+$$
+
+여기에 $V'(x)$ 에 대한 테일러 전개를 생각하자.
+
+$$
+V'(x) = V'(x_0) + V''(x_0)(x-x_0) + \dfrac{1}{2} V'''(x_0)(x-x_0)^2 + \cdots
+$$
+
+그렇다면 $\langle X-x_0\rangle =0$ 이므로
+
+$$
+\left\langle \dfrac{\partial H}{\partial X}\right \rangle \approx V'(x_0) + \dfrac{1}{2} V'''(x_0) (\Delta X)^2
+$$
+
+이 될 것이다. $\langle \partial H/\partial X\rangle = V'(x_0)$ 는 고전적인 뉴튼 방정식의 결론이다. 양자역학에서는 여기에 high order term 이 도입되는데 이것은 양자의 입자는 자신의 위치 분만 아니라 주변의 영향도 받는다는 것을 의미한다. 물론 $\Delta X$ 가 매우 작고 $V(X)$ 가 천천히 변한다면 이 효과는 거의 무시할만 해 진다. 그러나 양자적인 효과를 고려해야 할 몇가지 경우를 생각해보자.
+
+</br>
+
+#### Wave packet spreading
+
+가우시안 패킷은 시간이 지남에 따라 $\Delta X$ 가 커진다. @exm-macroscopic_propagation 에서 보았듯이 $\Delta X=10^{-15}\,\text{m}$, $\Delta P \approx 10^{19} \, \text{kg m}/\text{sec}$ 인 경우 wave packet 이 퍼져서 $\Delta X\approx 1.0\times 10^{-3}\, \text{m}$ 가 되는데 $400,000$ 년 이상 걸리긴 하지만 말이다. 
+

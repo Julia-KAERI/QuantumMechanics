@@ -175,7 +175,7 @@ $|S\rangle = a_ub_u|uu\rangle + a_ub_d |ud\rangle + a_db_u|du\rangle + a_db_d|dd
 
 </br>
 
-우리는 @eq-p1_pauli_matrix_z_state 에서 각 스핀 연산자에 대해 $\hat{\sigma}_z$ 의 고유상테가 어떻게 되는지 보았다. 그렇다면 복합 상태에 대해서는 어떻게 될까? $2 \times 2$ 항등연산자 $\hat{I}$ 에 대해 $\hat{\sigma}_0=\hat{I}$ 라고 하자. 그리고 $i=0,\,x,\,y,\,z$ 에 대해 $\hat{\sigma}_{i}$ 를 앨리스의 상태에 대한 연산자, $\hat{\tau}_i$ 를 밥의 상태에 대한 연산자라고 하자. 그렇다면, 
+우리는 @eq-part1_pauli_matrix_z_state 에서 각 스핀 연산자에 대해 $\hat{\sigma}_z$ 의 고유상테가 어떻게 되는지 보았다. 그렇다면 복합 상태에 대해서는 어떻게 될까? $2 \times 2$ 항등연산자 $\hat{I}$ 에 대해 $\hat{\sigma}_0=\hat{I}$ 라고 하자. 그리고 $i=0,\,x,\,y,\,z$ 에 대해 $\hat{\sigma}_{i}$ 를 앨리스의 상태에 대한 연산자, $\hat{\tau}_i$ 를 밥의 상태에 대한 연산자라고 하자. 그렇다면, 
 
 $$
 \hat{\sigma}_i \hat{\tau}_j |xy\rangle = (\hat{\sigma}_i |x\rangle_A) \otimes (\hat{\tau}_j |y\rangle_B)
@@ -198,7 +198,7 @@ $$
 
 $3$ 이라는 값이 나오는 것은 스핀이 $1/2$ 의 양자수를 갖기 때문에 나오는 값이며, 자세한 것은 뒤에 다루기로 한다. 중요한 것은 모든 스핀이 $0$ 이 되는 상태는 존재하지 않는다는 것이다. 
 
-이제 $|S\rangle$ 에 대해 $\sigma_x,\,\sigma_y,\,\sigma_z,\, \tau_x,\,\tau_y,\,\tau_z$ 의 기대값을 구해보자. @eq-p1_pauli_matrix_z_state 의 결과를 이용 할 수 있다. 
+이제 $|S\rangle$ 에 대해 $\sigma_x,\,\sigma_y,\,\sigma_z,\, \tau_x,\,\tau_y,\,\tau_z$ 의 기대값을 구해보자. @eq-part1_pauli_matrix_z_state 의 결과를 이용 할 수 있다. 
 
 $$
 \begin{aligned}

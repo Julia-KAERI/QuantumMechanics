@@ -1,0 +1,1037 @@
+---
+title: "1차원 문제 I : 자유입자와 Bound state"
+number-sections: true
+number-depth: 3
+crossref:
+  chapters: true
+---
+
+
+## 자유 입자 
+
+### 자유 입자 문제의 해와 시간 전개 {#sec-part2_free_particle_and_time_evolution}
+
+가장 간단한 자유입자의 경우 슈레딩거 방정식은 다음과 같다.
+
+$$
+i\hbar \dfrac{\partial |\psi\rangle}{\partial t} = H|\psi\rangle = \dfrac{P^2}{2m}|\psi\rangle.
+$$
+
+해밀토니안이 $P$ 만의 함수이므로 $P$ 의 고유벡터 $|p\rangle$ 기저로 풀면
+
+$$
+H|p\rangle = \dfrac{p^2}{2m}|p\rangle 
+$$
+
+이다. 또한 $E$ 를 $H$ 의 고유값으로 갖는 고유벡터를 $|E\rangle$ 이라고 하면
+
+$$
+H|E\rangle = E|E\rangle
+$$
+
+이며 이로부터 $p = \pm \sqrt{2mE}$ 를 얻는다. 즉 각각의 $|E\rangle$ 상태는 $|p=+\sqrt{2mE}\rangle$ 상태와 $|p=-\sqrt{2mE}\rangle$ 상태의 선형결합으로 표현 할 수 있다. 이렇게 해밀토니안 $H$ 와 commute 한 연산자 $A$ 에 대해 $H$ 의 어떤 고유상태가 $A$ 의 서로 다른 고유상태가 섞여 있을 수 있으며 이것을 **축퇴 상태(degenerated state)** 라고 한다. 자유입자의 경우 $H$ 의 고유상태 $|E\rangle$ 은 운동량 연산지 $P$ 의 두 고유상태 $|p=\sqrt{2mE}\rangle$ 과 $|p=-\sqrt{2mE}\rangle$ 가 섞여 있으며, 따라서 아래와 같이 
+
+$$
+|E\rangle = a |p=+\sqrt{2mE}\rangle + b|p=-\sqrt{2mE}\rangle,\, \qquad a,\,b\in \mathbb{C},\, |a|^2+|b|^2=1
+$$
+
+로 표현 할 수 있다. 또한 이 때의 시간 전개 연산자는
+
+$$
+U(t) = \int_{-\infty}^\infty |p\rangle \langle p| e^{-ip^2/2m\hbar}\, dp 
+$$ {#eq-time_evolution_of_free_particle}
+
+이며 이것을 $X$ 기저로 표현하면
+
+$$
+\begin{aligned}
+U(x,\,t; x',\,0) := \langle x|U(t)|x'\rangle &= \int_{-\infty}^\infty \langle x|p\rangle \langle p|x'\rangle e^{-2p^2/2m\hbar}\, dp \\
+&= \dfrac{1}{2\pi \hbar} \int_{-\infty}^\infty e^{ip(x-x')} e^{-2p^2/2m\hbar}\, dp \\
+&= \left(\dfrac{m}{2\pi \hbar i t}\right)^{1/2} e^{im(x-x')^2/2\hbar t}
+\end{aligned}
+$$ {#eq-part2_time_evolution_of_operator_for_free_particle_in_X_basis}
+
+이다. 따라서 $t=0$ 일 때 $\psi(x',\,t=0)$ 인 상태였다면
+
+$$
+\psi(x,\,t) = \langle x|\psi(t)\rangle = \int\langle x|U(t)|x'\rangle \langle x'|\psi(0)\rangle \, dx' = \int U(x,t;x',0) \, \psi(x',\,0)\, dx'
+$$
+
+을 통해 $\psi(x,\,t)$ 를 알 수 있다. 
+
+
+</br>
+
+### 국소화된 자유입자의 시간전개 
+
+가장 단적인 예로 $\psi (x',\,0)= \delta (x'-x'_0)$ 라면, 즉 $t=0$ 일 때 $x'=x'_0$ 로 국소화 되어 있었다면
+
+$$
+\psi(x,\,t) =  U(x,t;x',0) 
+$$
+
+이다. @eq-part2_time_evolution_of_operator_for_free_particle_in_X_basis 를 통해 알 수 있듯이 $t=0$ 일 때 국소화 되어 있던 입자는 시간이 지날수록 공간상으로 넓게 퍼지게 된다. 
+
+
+</br>
+
+### 가우시안 wave packet 의 시간 전개 {#sec-evolution_of_gaussian_packet}
+
+$\Psi(x,\,0)$ 이 가우시안 wave packet 이라고 하자. 즉
+
+$$
+\Psi (x,\,0) = e^{ip_0x/\hbar} \dfrac{e^{-x^2/2\Delta^2}}{(\pi \Delta^2)^{1/4}}
+$${#eq-part2_gaussian_wave_packet_with_definite_momentum}
+
+라고 하자. 이 패킷에 대해 다음은 쉽게 알 수 있다.
+
+$$
+\begin{aligned}
+\langle X(t=0)\rangle &= 0,\\
+\Delta X(t=0) &= \Delta/\sqrt{2}, \\
+\langle P(t=0) \rangle &= p_0, \\
+\Delta P(t=0) &= \hbar/(\sqrt{2}\Delta).
+\end{aligned}
+$$
+@eq-part2_time_evolution_of_operator_for_free_particle_in_X_basis 와 @eq-part2_gaussian_wave_packet_with_definite_momentum 를 통해
+
+$$
+\begin{aligned}
+\Psi(x,\,t) &=\left[\sqrt{\pi}\left(\Delta + \dfrac{i\hbar t}{m\Delta}\right)\right]^{-1/2} \, \exp \left[\dfrac{- (x-p_0 t/m)^2}{2\Delta^2 (1+i\hbar t/m\Delta^2)}\right] \, \exp \left[\dfrac{ip_0}{\hbar} \left(x- \dfrac{p_0t}{2m}\right)\right]
+\end{aligned} 
+$$ {#eq-gaussian_wavepacket_1}
+
+을 얻으며, 확률밀도 $P(x,\,t)$ 는
+
+$$
+P(x,\,t) = |\psi(x,\,t)|^2 = \dfrac{1}{[\pi (\Delta^2 + \hbar^2 t^2/m^2\Delta^2)]^{1/2}} \exp \left[- \dfrac{(x-(p_0/m)t)^2}{\Delta^2 + \hbar^2t^2/m^2\Delta^2}\right]
+$$
+
+이다. 
+
+</br>
+
+::: {#exr-part2_gaussian_wave_packet}
+
+@eq-part2_gaussian_wave_packet_with_definite_momentum 로 주어진 웨이브 페킷에 대해 다음을 보여라.
+
+&emsp; ($1$) $\langle P\rangle = p_0,\, \langle X\rangle = \dfrac{\langle P\rangle t}{m}$. 
+
+&emsp; ($2$) 패킷의 폭 $\Delta X$ 는 시간에 대해 다음과 같이 변한다. $\Delta X(t) = \dfrac{\Delta}{\sqrt{2}} \left(1+ \dfrac{\hbar^2 t^2}{m^2\Delta^4}\right)^{1/2}$
+
+
+:::
+
+::: {.solution}
+
+@eq-gaussian_wavepacket_1 에서 맨 앞의 상수 텀을 $A$, 두번제 익스포넨셜의 $-(x-p_0t/m)^2$ 에 대한 텀을 $f(x,\,t)$, 그리고 익스포넨셜의 $(x-p_0t/2m)$ 에 대한 텀을 $g(x,\,t)$ 라고 하자. 즉 $\psi(x,\,t) = Af(x,\,t)\,g(x,\,t)$ 라고 하자. $|g(x,\,t)|=1$ 이며 $|A|^2\int |f(x,\,t)|^2\,dx=1$ 임을 안다. 
+
+($1$) $\langle P(t)\rangle$ 을 계산한다.
+
+$$
+\begin{aligned}
+\langle P(t) \rangle &= \int \psi^\ast(x,\,t) (-i\hbar)\partial_x \psi(x,\,t)\, dx  \\
+&=-i\hbar |A|^2 \int |f(x,\,t)|^2 \left[ -\dfrac{2(x-p_0t/m)}{2\Delta^2 (1+i\hbar t/m\Delta^2)} + \dfrac{ip_0}{\hbar}\right]\, dx = p_0
+\end{aligned}
+$$
+
+여기서 $c\in \mathbb{C}$ 에 대해 
+
+$$
+\int_{-\infty}^\infty  e^{-(x-x_0)^2/2c^2}(x-x_0)\, dx = 0
+$$
+
+임을 이용하면 $[\cdots]$ 의 첫번째 항과 $|f(x,\,t)|^2$ 의 곱의 적분은 $0$ 임을 알 수 있다. 따라서, 
+
+$$
+\langle P(t) \rangle = -i\hbar |A|^2 \int_{-\infty}^\infty \left(\dfrac{ip_0}{\hbar}\right) |f(x,\,t)|^2\,dx = p_0
+$$
+
+이다. 이제 $\langle X(t)\rangle$ 을 계산한다.
+
+
+$$
+\begin{aligned}
+\langle X(t)\rangle &= |A|^2 \int_{-\infty}^\infty x |f(x,\,t)|^2\, dx \\
+&= |A|^2 \int_{-\infty}^\infty \left(x-\dfrac{p_0t}{m}\right) |f(x,\,t)|^2\, dx + |A|^2 \dfrac{p_0t}{m} \int_{-\infty}^\infty |f(x,\,t)|^2\, dx
+\end{aligned}
+$$
+
+이며 첫번째 적분은 $0$ 이고 두번째 적분은 $p_0t/m$ 이다. 따라서, $\langle X(t)\rangle = \dfrac{p_0t}{m} = \dfrac{\langle P(t)\rangle t}{m}$ 이다.
+
+
+($2$) ...
+
+:::
+
+</br>
+
+@exr-part2_gaussian_wave_packet 의 ($1$) 을 보자. 우리는 고전역학에서 $t=0$ 일 때 $x=0$ 인 자유입자는 $x=pt/m$ 를 따른다는 것을 안다. 양자역학에서는 통계적으로 $X$ 의 기대값 $\langle X\rangle$ 과 $P$ 의 기대값 $\langle P\rangle$ 사이에 $\langle X\rangle = \langle P\rangle t/m$ 의 관계를 갖는데 이것은 **에렌페스트 정리(Ehrenfest theorem)** 의 결과중 하나이다. 
+
+@exr-part2_gaussian_wave_packet 의 ($2$) 는 웨이프 패킷의 폭, 즉 위치에 대한 불확정성이 시간에 따라 점점 증가함을 보여준다. 다음의 예를 보자
+
+</br>
+
+<div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+
+::: {#exm-macroscopic_propagation}
+
+질량 1 $g$ 인 입자가 $t=0$ 에서 양성자 폭 만큼인 $10^{-15}\, \text{m}$ 만큼의 폭으로 위치가 정해져있다. 이 때 속도의 불확정성 $\Delta v$ 는
+
+$$
+\Delta v(t=0) \approx \dfrac{\hbar}{\sqrt{2} m\Delta} \approx 10^{-16}\, \text{m/sec}
+$$
+
+이다. 이 때 위치의 불확정성이 $1 \, \text{mm}$ 가 되는데는
+
+$$
+t \approx 430,000 \text{ year}
+$$
+
+가 걸린다.  
+
+:::
+
+</div>
+
+</br>
+
+::: {#exr-part2_shankar_5_1_3}
+
+#### 가우시안 패킷 문제에 대한 다른 접근
+
+자유입자에 대해 $U(t) = e^{-iHt/\hbar}$ 이며 $p = -i\hbar \dfrac{d}{dx}$ 이므로
+
+$$
+U(t) = \exp \left[\dfrac{i}{\hbar} \left(\dfrac{\hbar^2 t}{2m} \dfrac{d^2}{dx^2}\right)\right] = \sum_{k=0}^\infty \dfrac{1}{k!} \left(\dfrac{i\hbar t}{2m}\right)^k\dfrac{d^{2k}}{dx^{2k}}
+$$ {#eq-part2_another_form_of_gaussian_packet}
+
+로 쓸 수 있다. 초기 상태를 @eq-part2_gaussian_wave_packet_with_definite_momentum 에서 $p_0=0$, $\Delta =1$ 로 잡으면
+
+$$
+\psi(x,\,0) = \dfrac{e^{-x^2/2}}{\pi^{1/4}}
+$$
+
+이다. @eq-part2_another_form_of_gaussian_packet 를 이용하여 $\psi(x,\,t)$ 를 구하고 @eq-gaussian_wavepacket_1 와 비교하라
+
+:::
+
+::: {.solution}
+$\psi(x,\,0)$ 를 테일러 전개하면 아래와 같다.
+$$
+\psi (x,\,0) =  \dfrac{e^{-x^2/2}}{\pi^{1/4}} = \dfrac{1}{\pi^{1/4}}\sum_{j=0}^\infty \dfrac{(-1)^j x^{2j}}{j! (2^j)}. \tag{1}
+$$ 
+
+이로부터 $\psi(x,\,t)$ 를 아래와 같이 표현할 수 있음을 안다.
+$$
+\psi(x,t) = U(t)\,\psi(x, 0) = \dfrac{1}{\pi^{1/4}}\sum_{k=0}^{\infty} \sum_{j=0}^\infty \left(\dfrac{i\hbar t}{2m}\right)^k \dfrac{1}{k!} \dfrac{d^{2k}}{dx^{2k}} \left(\dfrac{(-1)^j x^{2j}}{j! (2^j)} \right) \tag{2}
+$$
+
+여기서, $\dfrac{d^{2k}}{dx^{2k}} \left(\dfrac{(-1)^j x^{2j}}{j! (2^j)} \right)$ 를 구하면 
+
+$$
+\dfrac{d^{2k}}{dx^{2k}} \left(\dfrac{(-1)^j x^{2j}}{j! (2^j)} \right)= \left\{ \begin{array}{ll} 0 & \text{if } k > j, \\ \dfrac{(-1)^j (2j)!}{(2(j-k))! j! (2^j)} x^{2j-2k} \qquad &\text{if }k \le j  \end{array}\right. \tag{3}
+$$
+
+이다. 그렇다면 
+
+$$ 
+\begin{aligned}
+\psi(x,\,t) &= \dfrac{1}{\pi^{1/4}} \sum_{j=0}^\infty \sum_{k=0}^j \left(\dfrac{i\hbar t}{2m}\right) ^k \dfrac{1}{k!} \dfrac{(-1)^j (2j)!}{(2(j-k))! j! (2^j)} x^{2j-2k} 
+\end{aligned}
+$$
+
+이다. $n=j-k$ 라고 놓으면 $\sum_{j=0}^\infty \sum_{k=0}^j$ 를 $n$ 과 $k$ 에 대한 $\sum_{n=k}^\infty \sum_{k=0}^\infty$ 으로 바꿀 수 있다. 즉
+
+$$
+\begin{aligned}
+\psi(x,\,t) &= \dfrac{1}{\pi^{1/4}} \sum_{n=k}^\infty \sum_{k=0}^\infty \dfrac{1}{k!} \left(\dfrac{i\hbar t}{2m}\right)^k\dfrac{(-1)^{n+k} (2(n+k))!}{(2n)!(n+k)! 2^{n+k}} x^{2n}\\
+&=\dfrac{1}{\pi^{1/4}} \sum_{n=k}^\infty \sum_{k=0}^\infty \left(\dfrac{i\hbar t}{2m}\right)^k \left(-\dfrac{1}{2}\right)^{n+k} \dfrac{(2(n+k))!}{(2n)!(n+k)! k!} x^{2n} \\
+&= \dfrac{1}{\pi^{1/4}} \sum_{n=k}^\infty \sum_{k=0}^\infty \left(\dfrac{i\hbar t}{m}\right)^k \left(-\dfrac{1}{4}\right)^{n+k} \dfrac{(2(n+k))!}{(2n)!(n+k)! k!} 2^n x^{2n}
+\end{aligned}
+$$
+
+이다. 이 때 자연수 $l\ge 1$ 에 대해
+
+$$
+\dfrac{(2l)!}{l!} = 2^l(2l-1)(2l-3)\cdots 3 \cdot 1 = 2^{2l} \left(l-\dfrac{1}{2}\right) \cdots \dfrac{3}{2} \cdot \dfrac{1}{2}
+$$
+
+이므로,
+
+$$
+\begin{aligned}
+\psi(x,\, t) &= \dfrac{1}{\pi^{1/4}} \sum_{n=k}^\infty \left[\sum_{k=0}^\infty \left(\dfrac{i\hbar t}{m}\right)^k \left(-\dfrac{1}{4}\right)^{n+k} \dfrac{(2(n+k))!}{(n+k)!\,k!} \right] \dfrac{2^n x^{2n}}{(2n)!} \\
+&=\dfrac{1}{\pi^{1/4}} \sum_{n=k}^\infty \left[\sum_{k=0}^\infty \left(\dfrac{i\hbar t}{m}\right)^k(-1)^{n+k} \dfrac{\left(n+k-\frac{1}{2}\right) \left(n+k-\frac{3}{2}\right) \cdots \frac{1}{2}}{k!} \right]\dfrac{2^n x^{2n}}{(2n)!}
+\end{aligned}
+$$
+
+
+
+문제에 주어진 공식
+
+$$
+\begin{aligned}
+\left(1+ \dfrac{i\hbar t}{m}\right)^{-l-1/2} &=1- \left(l+\dfrac{1}{2}\right)\left(\dfrac{i\hbar t}{m}\right) + \dfrac{(l+1/2)(l+3/2)}{2!}\left(\dfrac{i\hbar t}{m}\right)^2 + \cdots \\
+&= \sum_{t=0}^\infty \left(-\dfrac{1}{4}\right)^t\dfrac{(2(l+t))!}{(l+t)!}\dfrac{(t)!}{(2t)!}\left(\dfrac{i\hbar t}{m}\right)^{t}
+\end{aligned}
+$$
+
+을 사용하면 
+
+$$
+\psi (x,\,t) = \dfrac{1}{\pi^{1/4}} \sum_{n=0}^\infty \left(\dfrac{i\hbar t}{m}\right)^{-n}
+$$
+
+$$
+\begin{aligned}
+\left(\dfrac{i\hbar t}{2m}\right)\dfrac{d^2}{dx^2} \left(\dfrac{(-1)^j x^{2j}}{j! (2^j)}\right) &= \left(\dfrac{i\hbar t}{2m}\right)\dfrac{(-1)^j (2j-1)x^{2j-2}}{(j-1)!2^{j-1}}, \\
+\dfrac{1}{2!} \left(\dfrac{i\hbar t}{2m} \dfrac{d^2}{dx^2}\right)^2 \left(\dfrac{(-1)^j x^{2j}}{j! (2^j)} \right) 
+\end{aligned}
+$$
+
+
+--- to be done --
+
+:::
+
+</br>
+
+::: {#exr-shankar_5_1_4}
+
+
+
+
+:::
+
+
+### 에너지 고유함수의 일반적인 특징
+
+포텐셜 $V(x)$ 에 대한 시간 독립 슈뢰딩거 방정식의 해는 다음을 만족한다.
+
+$$\
+\dfrac{d^2\psi(x)}{dx^2} = - \dfrac{2m(E-V(x))}{\hbar^2}\psi(x)
+$$
+
+만약 $\psi(x_0)$ 와 $\psi'(x_0) = \left.\dfrac{d\psi (x)}{dx}\right|_{x=x_0}$ 를 안다면 이것은 이계미분방정식의 초기값 문제이다. $V(x)$ 가 연속이라면 우리는 연속인 $\psi(x)$ 와 $\psi'(x)$ 를 얻게 된다. 어떤 $x_1$ 에서 $V(x)$ 가 불연속 이며 $|\psi(x_1^{+}) - \psi(x_1^{-})|<\infty$ 이어도 $\psi'(x)$ 와 $\psi(x)$ 는 연속이다. 그러나 $|\psi(x_1^{+}) - \psi(x_1^{-})| = \infty$ 라면 $\psi'(x)$ 는 불연속일지라도 $\psi(x)$ 는 연속이 된다.
+
+</br>
+
+## 포테셜 우물
+
+### 무한 포텐셜 우물 {#sec-part2_infinite_potential_well}
+
+![(좌) 무한 포텐셜 우물, (우) 가장 낮은 두 파동함수](figure/fig-part2_infinite_potential_well.png){#fig-part2_infinite_potential_well width=600}
+
+
+포텐셜 $V(x)$ 가 다음과 같이 주어졌다고 하자. (@fig-part2_infinite_potential_well)
+
+$$
+V(x) = \left\{\begin{array}{ll}  0, \qquad & |x|<L/2 \\ \infty, & |x|\ge L/2 \end{array} \right.
+$$
+
+이 때 $X$ 기저에서의 슈뢰딩거 방정식은 다음과 같다.
+
+$$
+\dfrac{d^2 \psi(x)}{dx^2} + \dfrac{2m[E-V(x)]}{\hbar^2}\psi(x) = 0
+$$ {#eq-part2_particle_in_box_1}
+
+구간을 $V(x)$ 의 특성에 따라 @fig-part2_infinite_potential_well 과 같이 $\rm{I},\, \rm{II},\, \rm{III}$ 으로 나누자. $\rm{I},\, \rm{III}$ 구간에서의 해 $\psi_\infty(x)$를 우선 구해보자. $V_0 >E$ 에 대해
+
+$$
+\dfrac{d^2\psi_\infty(x)}{dx^2} + \dfrac{2m(E-V_0)}{\hbar^2} \psi_\infty(x)=0
+$$
+
+의 해는 $\kappa = \sqrt{2m(V_0-E)/\hbar^2}$ 에 대해 
+
+$$
+\psi_\infty(x) = Ae^{\kappa x} + Be^{-\kappa x}
+$$ {#eq-part2_particle_in_box_2}
+
+이다. 우선 $x \ge L/2$ 인 $\rm{III}$ 구간에서의 파동함수 $\psi_{\rm{III}}(x)$ 를 생각해보자. $V_0 \to \infty$ 극한을 취하면 $A=0$ 이 되어야지만 $\psi_\rm{III}(x)$ 가 유의미한 함수가 되며 $e^{-\kappa x} \to 0$ 이 된다. 즉 $\psi_\rm{III}(x) = 0$ 이다. 마찬가지로 $\rm{I}$ 구간에서의 파동함수 $\psi_\rm{I}(x) = 0$ 이 되어야만 한다. 
+
+이제 $\rm{II}$ 구간의 파동함수 $\psi_{\rm{II}(x)}$ 를 생각해보자. $k = \sqrt{2mE/\hbar^2}$ 라고 하면 @eq-part2_particle_in_box_1 의 해는
+
+$$
+\psi_{\rm{II}}(x) = Ae^{ikx} + Be^{-ikx}
+$$
+
+이다. 앞서 언급했듯이 전체 파동함수 $\psi(x)$ 는 연속이어야 하므로 $\psi(-L/2) = \psi(L/2)=0$ 을 만족해야 한다. 즉
+
+$$
+Ae^{ikL/2} + Be^{-ikL/2} = Ae^{-ikL/2} + Be^{ikL/2}=0
+$$
+
+이어야 하며 이로부터 $e^{-ikL}-e^{ikL} = -2i \sin (kL)=0$ 과 $A=e^{ikL}B$ 을 얻는다. 즉 
+
+$$
+kL = n\pi,\qquad A= (-1)^n B \qquad ;n\in \mathbb{Z}
+$$
+
+이어야 한다. 이것을 만족시키는 $\psi(x)$ 를 구하고 정규화 ($\int |\psi(x)|^2\,dx=1$) 시키면 다음과 같은 해를 구한다. 각각의 $n$ 에 대한 해를 $\psi_n(x)$ 라고 하였다.
+
+$$
+\psi_n (x) = \left\{ \begin{array}{ll} \sqrt{\dfrac{2}{L}} \sin \left(\dfrac{n \pi x}{L}\right), \qquad &n \text{ is even} \\  \sqrt{\dfrac{2}{L}} \cos \left(\dfrac{n \pi x}{L}\right) &n \text{ is odd} \end{array}\right.
+$$ {#eq-part2_wavefunction_of_infinite_potential_wall}
+
+$n$ 이 짝수이면 $\psi_n(-x) = -\psi_n(x)$ 이며 $n$ 이 홀수이면 $\psi_n(-x) = \psi_n(x)$ 이다. 즉 $n$ 이 짝수이면 $\psi_n(x)$ 는 홀함수(odd function) 이며 $n$ 이 홀수이면 짝함수(even function) 이다. 경계조건에 의해 $k= \sqrt{2mE/\hbar^2}$ 은 $kL=n\pi$ 를 만족해야 한다. 따라서 $H$ 의 고유값은 $n\in \mathbb{Z}$ 에 대해 
+
+$$
+E_n = \dfrac{\hbar^2 \pi^2 n^2}{2mL^2}
+$$ {#eq-part2_energy_eigenvalues_of_infinite_potentail_wall}
+
+이다. 즉 박스 안의 입자가 가질 수 있는 에너지는 불연속적이다. 이렇게 어떤 동역학적인 값에 대해 불연속적인 값만 허용될 때 이를 **양자화(quantization)** 이라고 한다. 또한 파동함수는 $|x|<L/2$ 영역에서만 $0$ 이 아닌 값을 갖는다. 이렇게 파동함수 $\psi(x)$ 가 
+
+$$
+\lim_{|x| \to \infty} \psi (x) = 0
+$$
+
+일 때 이 상태를 **bound state** 라고 한다. 고전적인 bound state 는 $V(x)$ 가 $E$ 보다 작은 영역이 국소화 되어 있을 때 발생하며, 양자역학도 마찬가지다. 더군다나 양자역학에서는 bound state 의 에너지는 필연적으로 양자화된다. 
+
+</br>
+
+### 포텐셜 우물 {#sec-part2_potential_well}
+
+![포텐셜 우물](figure/fig-part2_potential_well.png){#fig-potential_well width=300}
+
+포텐셜 $V(x)$ 가 $V_0>0$ 에 대해 다음과 같이 주어졌다고 하자.
+$$
+V(x) = \left\{\begin{array}{ll}  0, \qquad & |x|<a \\ V_0, & |x|\ge a \end{array} \right.
+$$
+
+$0<E<V_0$ 인 경우를 생각해보자 이 경우 $\rm{I}$ 과 $\rm{III}$ 은 고전적으로 금지된 영역이다. 그러나 무한 포텐셜 우물에서와는 다르게 $\rm{I}$ 과 $\rm{III}$ 의 파동함수는 $0$ 이 아니며 $\kappa = \sqrt{2m(V_0-E)/\hbar^2}$, $k=\sqrt{2mE}/\hbar^2$ 에 대해 
+
+$$
+\begin{aligned}
+\psi_\rm{I}(x) &= A_1 e^{\kappa x}, \\
+\psi_{\rm{II}}(x) &= A\cos (k x) + B \sin (k x), \\
+\psi_\rm{III}(x) &= A_3 e^{-\kappa x}.
+\end{aligned}
+$$
+
+이다. 이제 파동함수와 그 도함수의 연속 조건으로부터
+
+$$
+\begin{aligned}
+A_1 e^{-\kappa a} &= A \cos (-ka) + B \sin (-k a), \\
+\kappa A_1 e^{-\kappa a} & = -kA\sin(-ka) + kB\cos (-ka), \\
+A_3 e^{-k\kappa a} &= A \cos (ka) + B \sin (k a), \\
+-\kappa A_3 e^{-\kappa a} & = -kA \sin (k a) + kB \cos (k a) 
+\end{aligned}
+$$
+
+첫번째 두 식과 마지막 두 식으로부터, 
+
+$$
+\begin{aligned}
+\kappa (A \cos (k a) - B \sin (k a)) &= k(A \sin (k a) + B \cos (k a)), \\
+-\kappa (A \cos (k a) + B \sin (k a)) &= -k (A\sin (k a) - B \cos (k a))
+\end{aligned}
+$$
+
+를 얻는다. 두 식의 양변을 빼주면 $B=0,\, \kappa \cos (ka) = k \sin (ka)$ 을 얻으며, 두 식의 양변을 더하면 $A=0,\,\kappa \sin (ka) = -k \cos (ka)$ 을 얻는다. 즉 경계조건으로부터 다음 두 조건중 하나를 만족해야 한다는 것을 안다.
+
+&emsp; ($1$) $\kappa = k \tan (ka)$, $\psi_{\rm{II}}(x) = A \cos (kx)$, 
+
+&emsp; ($2$) $\kappa = -k \cot (ka)$, $\psi_{\rm{II}}(x) = B \sin (kx)$
+
+여기서 ($1$) 은 짝함수 해이며 ($2$) 는 홀함수 해이다. 또한 우리는 $\kappa^2 + k^2 = 2mV_0/\hbar^2$ 임을 안다. $\kappa >0$ 이므로 
+
+$$
+\kappa = \sqrt{2mV_0/\hbar^2 - k^2}
+$$ 
+
+를 만족해야 한다. 아래 그림은 짝함수($(a)$) 와 홀함수($(b)$) 의 경우에 대해 허용된 $\kappa$ 값을 보여준다. 즉 무한 포텐셜 우물이 아닌 일반적인 포텐셜 우물이더라도 bound state 일 때 에너지가 양자화 된다는 것을 안다. 
+
+
+![($a$) 짝함수의 경우에서의 허용된 $\kappa$ 값 ($b$) 홀함수의 경우 허용된 $\kappa$ 값. 스케일을 위해 가로축을 $ka$ 로, 세로축을 $\kappa a$ 로 잡았다. ](figure/fig-part2_solution_of_potential_well.png){#fig-part2_energy_qunatization_of_potential_well width=800}
+
+</br>
+
+위의 그림으로부터 우리는 어떤 $V_0$ 값에 대해서도 하나의 짝함수 해는 존재한다는 것을 알수 있다. 그러나 $a\sqrt{2mV_0/\hbar^2}< \pi/2$ 인 경우, 즉 $V_0 < \dfrac{\hbar^2 \pi^2}{8ma^2}$ 인 경우는 홀함수 해는 존재하지 않는다.
+
+여기서 또 하나 중요한 것은 $\rm{I}$ 영역과 $\rm{III}$ 영역은 고전적으로 금지된 영역, 즉 입자가 존재할 수 없는 영역이지만 양자역학에서는 입자가 이 영역에서 발견될 확률분포가 $0$ 이 아니라는 것이다. 물론 이 영역에서 지수함수적으로 감소하긴 하지만 분명이 존재할 수 있다. 그러나 $\lim_{|x|\to \infty}\psi(x) = 0$ 이므로 허용된 상태는 bound state 이다.
+
+</br>
+
+지금까지 $E<V_0$ 인 경우를 살펴보았다. $E>V_0$ 인 경우는 그 해가 모두 $\sin$ 함수와 $\cos$ 함수의 중첩이기 때문에 파동함수가 전 영역에 걸쳐 있으며 에너지도 양자화 되지 않는데. 이것을 보이는것은 어렵지 않다.
+
+
+</br>
+
+### Bound state 와 에너지 양자화 {#sec-part2_bound_state_and_energy_quantization}
+
+
+앞서의 무한포텐셜 우물과 포텐셜 우물의 경우 상태가 bound state 일 경우 에너지가 양자화된다. 이것은 일반적으로 bound state 에서 성립하는데 여기서는 이것을 보이고자 한다. 정해진 $E$ 에 대해 $V(x)$ 는 다음의 성질을 가진다고 가정하자 하자.
+
+$$
+\lim_{x\to \infty} V(x) = V_+ > E,\qquad \lim_{x \to -\infty} V(x) = V_- > E.
+$$
+
+이제 $(-\infty,\, \infty)$ 구간을 양 끝을 제외하고 $V(x)$ 값이 크게 변하지 않는 범위에서 유한개로 나눌 수 있다고 하자. 그리고 $V(x) = E$ 인 $x$ 는 이 구간의 경계점에 포함된다고 하자. $V(x)$ 에 대한 양 끝단의 극한이 존재하기 때문에 $V(x)$ 는 $|x|$ 가 충분히 크면 아주 천천히 변한다고 볼 수 있다. 이 구간이 
+
+$$
+-\infty = x_0 < x_1 < \cdots < x_N = +\infty
+$$ 
+이라고 하자. 즉 $V(x_0) \approx V_-$, $V(x_N)\approx V_+$ 이며 $V(x)= E$ 인 점은 $\{x_0,\ldots,\,x_N\}$ 에 포함되어 있다. 
+
+각각의 구간에 대한 파동방정식을 보자. $[x_{i-1},\,x_{i}]$ 영역에서의 포텐셜의 대표값을 $V_i$, 파동방정식을 $\psi_i(x)$ 라고 하자. $V_i > E$ 일 때 $\kappa_i = \sqrt{2m(V_i-E)}$, $V_i \le E$ 일 때 $k_i = \sqrt{2m(E-V_i)}$ 라고 하자. 
+
+&emsp; ($1$) 양 끝단의 파동방정식은 $\kappa_1>0,\, \kappa_{N}>0$ 에 대해 $\psi_1(x) = A_1 e^{\kappa_1 x}$, $\psi_{N}(x) = A_{N}e^{-\kappa_N x}$ 이며, 
+
+&emsp; ($2$) 양 끝단이 아닌 경우 $V_i < E$ 이면 $\psi_i(x) = A_i e^{ik_i x} + B_i e^{-k_ix}$ 이다.
+
+&emsp; ($3$) 역시 양 끝단이 아닌경우 $V_i > E$ 이면 $\psi_i (x) = A_i e^{\kappa_i x}+ B_i e^{-\kappa_i x}$ 이다.
+
+
+양 끝단을 기술하는 파동함수 $\psi_1$ 과 $\psi_N$ 은 각각 하나의 미지수 $A_1,\,A_N$ 를 가진다. 그 외의 구간에서는 두개의 미지수 $A_i$ 와 $B_i$ 를 가진다. 이 미지수는 파동함수 $\psi_i(x)$ 와 그 미분인 $\psi'_i(x)$ 가 인접한 $\psi_{i-1}(x),\, \psi'_{i-1}(x)$ 그리고 $\psi_{i+1}(x),\, \psi'_{i+1}(x)$ 와 연속이어야 한다는 조건으로부터 결정 될 수 있다. 즉 우리는 $2\times (N-2)+ 2 = 2N-2$ 개의 미지수에 대해 $2N-2$ 개의 경계조건을 가진다. 그런데 여기에서 주의해야 할 것이 있다. 미지수에 대한 식은 미지수 전체에 $0$ 이 아닌 수를 곱해도 성립한다. 즉 $A_i,\,B_i$ 에 대해 중요한것은 각각의 비율이다. 여기에서 미지수의 자유도를 제한하는 조건이 하나 들어가므로 실제로 미지수의 자유도는 $2N-3$ 이며 이에 대해 $2N-2$ 개의 경계조건이 존재하게 된다. 이것이 에너지 양자화의 원인이다. 이 조건은 구간을 늘려도 확실히 성립한다. 
+
+1차원 bound state 의 양자화는 $\lim_{|x|\to \infty} V(x) > E$ 인 경우에만 성립하는 것이 아니다. 뒤에 보겠지만 $V(x) = \dfrac{1}{2}m\omega^2 x^2$ 으로 주어지는 단순조화진동자의 경우에도 에너지는 양자화 되어 있다. $V(x) \to \infty$ 이므로 파동함수는 $V(x)\le E$ 인 영역에 훨씬 더 강하게 bound 되어 있다.  
+
+
+</br>
+
+### 바닥상태 에너지 {#sec-part2_ground_state_energy}
+
+포텐셜 우물에서 또 하나의 중요한 특징중의 하나는 가장 낮은 에너지가 $0$ 이 아니라는 것이다. 고전적으로는 입자의 에너지가 $0$ 인 경우가 가능한데 이것은 입자가 정지해 있을 경우이다. 그러나 양자상태에서는 이것이 불가능한데 이는 불확정성의 원리 때문이다. 이것을 살펴 보자. 우선 해밀토니안에서 시작한다.
+
+$$
+H = \dfrac{P^2}{2m}
+$$
+
+이므로
+
+$$
+\langle H\rangle = \dfrac{\langle P^2\rangle}{2m}
+$$
+
+이다. 여기서 $\langle P \rangle =0$ 인데 이것은 실제로 모든 $\psi_n(x)$ 에 대해 구할 수도 있지만 $\langle P \rangle = p_0 \ne 0$ 라면 파동의 중심이 움직여야 하는데 모든 상태는 stationary state 이므로 움직이지 않는다는 것을 안다. 따라서 $\langle P \rangle = 0$ 이며 따라서, 
+
+$$
+\langle H \rangle = \dfrac{\langle P^2\rangle}{2m} = \dfrac{\langle (P-\langle P\rangle)^2}{2m} = \dfrac{(\Delta P)^2}{2m}
+$$
+
+이다. 불확정성의 원리로부터 $\Delta P \ge \dfrac{\hbar}{2(\Delta X)}$ 이므로, 
+
+$$
+\langle H \rangle \ge \dfrac{\hbar^2}{8m(\Delta X)^2}
+$$
+
+
+이 성립한다. 파동함수가 $|x|<L/2$ 영역에 구속되어 있으며, $\Delta X$ 가 가장 클 경우는 $|x|<L/2$ 영역에 균일하게 분포되어 있을 경우로 이 때의 $\Delta X \le L/2$ 이며, 따라서, 
+
+$$
+\langle H \rangle \ge \dfrac{\hbar^2}{2mL^2}
+$$
+
+을 만족한다. 즉 바닥상태 에너지 $E_0$ 에 대해
+
+$$
+E_0\ge \langle H\rangle \ge \dfrac{\hbar^2}{2mL^2}
+$$
+
+이다. 실제로 바닥상태 에너지는 $\hbar^2 \pi^2/2mL^2$ 로 위의 값에 비해 $\pi^2 \approx 9.87$ 배만큼 크다.
+
+</br>
+
+### 연습문제
+
+::: {#exr-part2_potential_wall_1}
+
+무한 포텐셜 우물의 파동함수 $\psi_n(x)$(@eq-part2_wavefunction_of_infinite_potential_wall) 에 대한 시간전개 연산자 $U(t)$ 를 구하고 이것을 $X$ 의 기저로 표현하라.
+
+
+:::
+
+::: {.solution}
+
+파동함수 $\psi_n(x)$ 에 대응하는 상태를 $|n\rangle$ 이라고 하자. 그렇다면, $E_n = \dfrac{n^2\hbar^2 \pi^2}{2mL^2}$ 에 대해 
+
+$$
+U (t) = \sum_{n=1}^\infty |n \rangle \langle n| \exp^{-iE_n t /\hbar}
+$$
+
+이며, 
+
+$$
+\begin{aligned}
+\langle x |U(t)|x'\rangle &= \sum_{n=1}^\infty \int \langle x|n \rangle \langle n|x'\rangle e^{-iE_nt/\hbar} \,dx,\,dx' \\
+&= \sum_{n=1}^\infty \psi_n(x)\, \psi^\ast_n(x) e^{-iE_nt/\hbar}
+\end{aligned}
+$$
+
+이다.
+
+:::
+
+
+</br>
+
+::: {#exr-shankar_5_2_2}
+
+($a$) $|\psi\rangle$ 이 정규화된 상태이고 $E_0$ 가 $H$ 의 가장 작은 고유값일 때 $\langle \psi |H |\psi\rangle \ge E_0$ 임을 보여라.
+
+($b$) 1차원에서의 attractive potential 이 있는 시스템은 최소한 하나의 bound state 를 가진다는 것을  보여라. $\lim_{|x|\to\infty} V(x) = 0$ 으로 간주하라.
+:::
+
+::: {.solution}
+
+($a$) $H$ 는 에르미트 연산자이므로 $H$ 의 고유상태의 집합이 힐베르트 공간의 정규직교기저를 이룬다. $\{ |n\rangle : n=0,\,1,\ldots\}$ 를 $H$ 의 고유상태인 정규직교기저라고 하고 $H|n\rangle = E_n |n\rangle$ 이ㅣ며 $E_0 \le E_1 \le E_2 \le \cdots$ 라고 하자. $|\psi\rangle$ 을 이 기저에 대해 전개하면
+
+$$
+|\psi \rangle = a_0|0\rangle + a_1 |1\rangle + \cdots ,\qquad \sqrt{\sum_{n=1} |a_n|^2} =1
+$$
+
+이다. 
+
+$$
+\langle \psi |H |\psi \rangle = E_0 |a_0|^2 + E_1|a_1|^2 + \cdots \ge E_0 (|a_0|^2 + |a_1|^2 + \cdots ) = E_0
+$$
+
+이다.
+
+($b$) $V(x)$ 가 attractive 이고 $\lim_{|x|\to\infty} V(x) = 0$ 이므로 $V(x)<0$ 이다. $E<0$ 에 대해 
+
+$$
+\psi_\alpha (x) = \left(\dfrac{\alpha}{\pi}\right)^{1/4} e^{-\alpha x^2/2} 
+$$
+
+를 생각하자. $\int_{-\infty}^\infty |\psi_\alpha(x)|^2\, dx = 1$ 이다. 이 때
+
+$$
+\begin{aligned}
+E(\alpha) = \langle \psi_\alpha | H |\psi_\alpha \rangle &= \left(\dfrac{\alpha}{\pi}\right)^{1/2}\int_{-\infty}^\infty e^{-\alpha x^2} \left( \dfrac{\hbar^2}{2m}(\alpha - \alpha^2 x^2) + V(x)\right) \, dx \\
+\end{aligned}
+$$
+
+를 계산해야 한다. 우리는 다음이 성립함을 안다.
+
+$$
+\int_{-\infty}^\infty e^{-\alpha x^2} \,dx = \left(\dfrac{\pi}{\alpha}\right)^{1/2}
+$$
+
+또한, (아래와 같은 적분 트릭을 파인만 트릭(Feynmann trick) 이라고 한다.)
+
+$$
+\int_{-\infty}^\infty x^2 e^{-\alpha x^2} \, dx = \int_{-\infty}^\infty \left(-\dfrac{\partial}{\partial \alpha}e^{-\alpha x^2}\right)\,dx = -\dfrac{\partial}{\partial \alpha} \left(\int_{-\infty}^\infty e^{-\alpha x^2}\right)\, dx = \dfrac{1}{2}\sqrt{\pi} \alpha^{-3/2}
+$$
+
+이다. 이로부터, 
+
+$$
+E(\alpha) = \dfrac{\hbar^2 \alpha}{4m} +  \left(\dfrac{\alpha}{\pi}\right)^{1/2} \int_{-\infty}^\infty V(x) e^{-\alpha x^2}\,dx
+$$
+
+이다. 여기서 $V(x)<0$ 이므로 $\int_{-\infty}^\infty V(x)\, e^{-\alpha x^2}\,dx = -v_0 < 0$ 으로 놓으면, 
+
+$$
+E(\alpha) = \dfrac{\hbar^2 \alpha}{4m} -\dfrac{v_0}{\sqrt{\pi}}\sqrt{\alpha}
+$$
+
+이며 $\dfrac{dE(\alpha)}{d\alpha} =0$ 인 $\alpha_0 = \dfrac{4m^2v_0^2}{\pi \hbar^4}$ 에서 최소값을 가지며 
+
+$$
+E(\alpha_0) =  - \dfrac{mv_0^2}{\pi \hbar^2} <0
+$$
+
+이다. ($a$) 에 의해 바닥상태인 고유상태의 에너지는 $E(\alpha_0)$ 보다 작거나 같으므로 bound state 가 무조건 존재한다.
+
+
+:::
+
+</br>
+
+::: {#exr-shankar_5_2_3}
+
+#### Shanker 5.2.2
+
+$V(x) = -aV_0 \delta (x)$ 인 경우를 생각하자. 이 때 에너지 $E=-\dfrac{ma^2V_0^2}{2\hbar^2}$ 인 bound state 가 존재한다는 것을 보여라. 다른 bound state 가 존재하는가?
+
+:::
+
+::: {.proof}
+
+$E<0$ 인 경우를 생각하자. 당연히 $x<0$ 인 영역의 파동함수는 $\psi_{\rm{I}}(x) = Ae^{\kappa x}$ 이며 $x>0$ 인 영역의 파동함수는 $\psi_{\rm{II}}(x) = Be^{-\kappa x}$ 이다. 
+
+시간독립적인 슈뢰딩거 방정식으로부터
+
+$$
+-\dfrac{\hbar^2}{2m}\left(\dfrac{d^2\psi(x)}{dx^2}\right) - aV_0 \delta (x) \psi(x) = E\psi(x)
+$$
+
+임을 안다. 여기서
+
+$$
+\left(\dfrac{d^2\psi(x)}{dx^2}\right) = -\dfrac{2m}{\hbar^2}\left[ aV_0 \delta (x) + E \right]\psi (x)
+$$
+
+이다. 이로부터 infinitesimal $\varepsilon > 0$ 에 대해 
+
+$$
+\begin{aligned}
+\int_{-\varepsilon}^\varepsilon \left(\dfrac{d^2\psi(x)}{dx^2}\right) \,dx = -\dfrac{2m}{\hbar^2} aV_0 \psi(0)
+\end{aligned}
+$$
+
+임을 안다. 또한
+
+$$
+\int_{-\varepsilon}^\varepsilon \left(\dfrac{d^2\psi(x)}{dx^2}\right) \,dx = \psi'(\varepsilon) - \psi'(-\varepsilon)
+$$
+
+이므로 우리는 파동함수의 도함수에 대한 경계조건이 불연속이라는 사실을 안다. 파동함수의 도함수가 $x=0$ 에서만 유한한 값 만큼 차이가 나므로 $\psi(x)$ 는 연속임을 알 수 있다. 즉 $\psi_{\rm{I}}(x)$ 와 $\psi_{\rm{II}}(x)$ 에 대해 아래의 경계조건이 성립한다.
+
+&emsp; ($1$) $\psi_{\rm{I}}(0) = \psi_{\rm{II}} (0)$
+
+&emsp; ($2$) $\psi'_{\rm{II}}(0) - \psi'_{\rm{I}}(0) = - \dfrac{2maV_0}{\hbar^2}\psi (0)$.
+
+이다. 이로부터 
+
+$$
+A=B
+$$
+
+와
+
+$$
+-2\kappa = -\dfrac{2m}{\hbar^2}aV_0 
+$$
+
+를 얻는다. 즉
+
+$$
+\kappa = \dfrac{maV_0}{\hbar^2}
+$$
+
+이며 정규화 조건으로부터, 
+
+$$
+1 = |A|^2 \left(\int_{-\infty}^0 e^{2\kappa x}\, dx + \int_{0}^\infty e^{-2\kappa x} \right) = \dfrac{|A|^2}{\kappa}
+$$
+
+이므로 $A=\sqrt{\kappa}$ 로 놓을 수 있다. 이 때의 애너지는 $x\ne 0$ 일 때의 파동함수로부터, 
+
+$$
+E=-\dfrac{\hbar^2 \kappa^2}{2m} = - \dfrac{ma^2V_0^2}{2\hbar^2}
+$$
+
+이다. 즉 디렉 포텐셜에서는 오직 하나의 bound state 만 존재한다.
+
+:::
+
+</br>
+
+::: {#exr-shankar_5_2_4}
+
+#### Shankar 5.2.4
+
+폭 $L$ 인 무한 포텐셜 우물에 입자가 $|n\rangle$ 상태에 있다고 하자. 벽을 천천히 안쪽으로 밀 때 벽이 받는 힘 $F=-\partial E/\partial L$ 을 구하라. 단 입자는 $|n\rangle$ 상태를 유지하고 있다고 가정한다. 에너지가 $E_n$ 인 고전적인 입자를 생각할 때 입자의 속도를 구하고, 주어진 벽에 충돌하는 진동수를 구하라. 그리고 각 충돌마다의 충격량과 이로부터 평균적인 힘을 구하라. 이를 앞서 계산한 $-\partial E/\partial L$ 과 비교하라.
+
+:::
+
+::: {.proof}
+
+$|n\rangle$ 상태의 입자가 존재할 때 벽이 받는 힘은 다음과 같다.
+$$
+F=-\dfrac{\partial E}{\partial L} =  \dfrac{\hbar^2 \pi^2 n^2}{mL^3}
+$$
+
+고전적인 입자의 에너지는 $\dfrac{1}{2}mv^2 = \dfrac{\hbar^2 \pi^2 n^2}{2mL^2}$ 이므로 $v= \dfrac{\hbar \pi n}{mL}$ 이다. 한쪽 벽에 부딛치는 주기 $T=\dfrac{2L}{v}$ 이므로 초당 부딛치는 횟수는 $1/T =\dfrac{v}{2L}$ 이다. 한번의 충돌에 의한 충격량은 $2mv$ 이므로 평균적으로 벽이 받는 힘 $\overline{F}$ 는
+
+$$
+\overline{F} = 2mv \dfrac{v}{2L}= \dfrac{mv^2}{L} = \dfrac{\hbar^2 \pi^2 n^2}{mL^3}  = -\dfrac{\partial E}{\partial L}
+$$
+
+이다.
+
+:::
+
+
+</br>
+
+## 확률 흐름 밀도와 연속 방정식
+
+고전 전자기학을 생각하자. 우주 전체의 전하량은 일정하다고 가정되고 있으며, 국소적인 전하량의 밀도와 전류 사이에는 다음과 같은 연속방정식(continuity equation)이 성립한다는 것을 안다. 
+
+$$
+\dfrac{\partial \rho (\boldsymbol{r},\,t)}{\partial t} = - \nabla \cdot \boldsymbol{j}
+$$ {#eq-part2_classical_continuity_equation_of_charge}
+
+여기서 $\rho$ 는 전하 밀도이고 $\boldsymbol{j}$ 는 전류 밀도이다. 이것을 표면 $S$ 로 둘러쌓인 부피 $V$ 에 대해 적분하면
+
+$$
+\dfrac{d}{dt} \int_V \rho(\boldsymbol{r},t)\, d^3 \boldsymbol{r} = - \int_V \nabla \cdot \boldsymbol{j} \, d^3 \boldsymbol{r} = -\oint_S \boldsymbol{j} \cdot d\boldsymbol{S}
+$${#eq-part2_classical_continuity_equation_of_charge_2}
+
+이다. 이 식은 부피 $V$ 안의 전하량의 시간에 대한 변화는 부피 $V$ 의 표면 $S$ 로 출입하는 전류의 흐름으로 설명된다는 의미이다. 
+
+</br>
+
+양자역학에서는 상태의 내적은 (정규화되었다면) 항상 $1$ 이다. 즉
+
+$$
+\begin{aligned}
+1 & = \langle \Psi(t) |\Psi (t)\rangle = \int \langle \Psi(t)|\boldsymbol{r}\rangle \langle \boldsymbol{r}|\Psi(t)\rangle \, d^3 \boldsymbol{r} = \int P(\boldsymbol{r},\,t)\, d^3\boldsymbol{r}
+\end{aligned}
+$$
+
+이다. 여기에 슈뢰딩거 방정식
+
+$$
+i\hbar \dfrac{\partial \Psi(\boldsymbol{r},\,t)}{\partial t} = - \dfrac{\hbar^2}{2m}\nabla^2 \Psi(\boldsymbol{r},\,t) + V(\boldsymbol{r},\, t) \Psi (\boldsymbol{r},\,t)
+$$
+
+와 그 complex conjugate
+
+$$
+-i\hbar \dfrac{\partial \Psi^\ast(\boldsymbol{r},\,t)}{\partial t} = - \dfrac{\hbar^2}{2m}\nabla^2 \Psi^\ast(\boldsymbol{r},\,t) + V(\boldsymbol{r},\, t) \Psi^\ast (\boldsymbol{r},\,t)
+$$
+
+를 생각하자. $H$ 가 에르미트 연산자이므로 $V(\boldsymbol{r},\,t)$ 는 실함수이어야 한다. 이를 이용하면,
+
+$$
+\begin{aligned}
+i\hbar \dfrac{\partial }{\partial t}(\Psi ^\ast \Psi) &= - \dfrac{\hbar^2}{2m} (\Psi^\ast \nabla^2 \Psi - \Psi \nabla^2 \Psi^\ast)
+\end{aligned}
+$$
+
+이며, $P(\boldsymbol{r},\,t) = \Psi^\ast \Psi$ 이므로, 
+
+$$
+\dfrac{\partial P}{\partial t} = -\dfrac{\hbar}{2mi} \nabla (\Psi^\ast \nabla \Psi i- \Psi \nabla \Psi^\ast)
+$$
+
+를 얻는다. @eq-part2_classical_continuity_equation_of_charge_2 와의 유사성을 생각하면 
+
+$$
+\boldsymbol{j} := \dfrac{\hbar}{2mi} (\Psi^\ast \nabla \Psi - \Psi \nabla \Psi^\ast)
+$$ {#eq-part2_definition_of_probability_current_density}
+
+에 대해
+
+$$
+\dfrac{\partial P}{\partial t} = \nabla \cdot \boldsymbol{j}
+$$ {#eq-part2_continuity_equation_of_probability}
+
+를 얻게 된다. 이 때 $\boldsymbol{j}$ **확률 흐름 밀도(probability current density)** 라고 하고 @eq-part2_continuity_equation_of_probability 를 **연속 방정식(continuity equation)** 이라고 한다.
+
+</br>
+
+::: {#exr-shankar_5_3_1}
+
+#### Shankar 5.3.1
+
+실함수 $V_r,\, V_i$ 에 대해 포텐셜 $V = V_r - iV_i$ 가 주어졌다고 하자. 그리고 $V_i$ 는 상수함수라고 하자. 이에 대한 해밀토니안 $H$ 는 에르미트인가? 이 포텐셜에 대해 연속방정식을 적용하여 입자를 발견할 총 확률(total probability) 이 $e^{-2V_it/\hbar}$ 로 감소함을 보여라. 이런 복소 포텐셜은 입자가 흠수되는 과정에 적용된다.
+
+:::
+
+::: {.solution}
+
+$H = -\dfrac{\hbar^2}{2m}\nabla^2 + V_r - iV_i$ 에 대해 
+
+$$
+H^\dagger = - \dfrac{\hbar^2}{2m}\nabla^2 + V_r -iV_i \ne H
+$$
+
+이므로 $H$ 는 에르미트 연산자가 아니다. 
+
+$$
+i\hbar \dfrac{\partial \Psi}{\partial t} = H \Psi = - \dfrac{\hbar^2}{2m}\nabla^2 \Psi + (V_r - iV_i)\Psi
+$$
+
+에 대해
+
+$$
+-i\hbar \dfrac{\partial \Psi^\ast}{\partial t} = H^\dagger \Psi^\ast = - \dfrac{\hbar^2}{2m}\nabla^2 \Psi^\ast + (V_r + iV_i)\Psi^\ast
+$$
+
+이다.
+
+$$
+\begin{aligned}
+i\hbar \dfrac{\partial |\Psi|^2}{\partial t} &= \Psi^\ast \left(-\dfrac{\hbar^2}{2m} \nabla^2 \Psi + (V_r-iV_i) \Psi \right) - \Psi \left( - \dfrac{\hbar^2}{2m}\nabla^2 \Psi^\ast + (V_r +iV_i) \Psi^\ast \right) \\
+&= - \dfrac{\hbar^2}{2m} \nabla \cdot ( \Psi^\ast \nabla \Psi - \Psi \nabla \Psi^\ast) - 2iV_i \Psi^\ast \Psi
+\end{aligned}
+$$
+
+위의 식의 양변을 충분히 큰 부피에 대해 $\int d^3 \boldsymbol{r}$ 을 해 주면 
+
+$$
+\int \nabla \cdot ( \Psi^\ast \nabla \Psi - \Psi \nabla \Psi^\ast)\, d^3\boldsymbol{r} = \oint_S  ( \Psi^\ast \nabla \Psi - \Psi \nabla \Psi^\ast) \cdot d\boldsymbol{S}
+$$
+
+이며 이 표면에서 $\Psi = \Psi^\ast = 0$ 이 된다. $P(t) = \int_V |\Psi|^2\, d^3\boldsymbol{r}$ 이므로,
+
+$$
+i\hbar \dfrac{dP(t)}{dt} = -2iV_i P(t) 
+$$
+
+이며, 따라서 $P(t) = P(0) e^{-2V_it/\hbar}$ 이다. 
+
+:::
+
+</br>
+
+::: {#exr-shankar_5_3_2}
+
+#### Shankar 5.3.2
+
+실함수 $\tilde{\Psi}$ 와 상수 $c$ 에 대해 $\Psi = c\tilde{\Psi}$ 에 대한 $\boldsymbol{j}=0$ 임을 보여라. 여기서 $c$ 는 실수이거나 복소수 일 수 있다.
+
+:::
+
+::: {.solution}
+
+$\Psi^\ast = \overline{c}\tilde{\Psi}$ 이다. 따라서
+$$
+\Psi^\ast \nabla \Psi - \Psi \nabla \Psi^\ast = |c|^2 \tilde{\Psi} \nabla \tilde{\Psi} - |c|^2 \tilde{\Psi} \nabla \tilde{\Psi} = 0.
+$$
+:::
+
+</br>
+
+::: {#exr-shankar_5_3_3}
+
+#### Shankar 5.3.3
+
+파동함수 $\Psi_\boldsymbol{p}$ 가 아래와 같이 주어졌다.
+
+$$
+\Psi_\boldsymbol{p} =  \left(\dfrac{1}{2\pi \hbar}\right)^{3/2} e^{i(\boldsymbol{p \cdot r})/\hbar}.
+$$
+
+이 때 $\boldsymbol{j}$ 와 $P$ 를 구하고 전자기 방정식 $\boldsymbol{j}= \rho \boldsymbol{v}$ 와 비교하라. 여기서 $\boldsymbol{v}$ 는 속도이다. $\rho$ 와 $\boldsymbol{j}$ 는 상수이며 따라서 @eq-part2_continuity_equation_of_probability 가 자동작으로 만족된다.
+
+:::
+
+::: {.solution}
+
+$\nabla \Psi_\boldsymbol{p} = \dfrac{i}{\hbar}\boldsymbol{p}\Psi_\boldsymbol{p}$, $\nabla \Psi^\ast_\boldsymbol{p} = -\dfrac{i}{\hbar}\boldsymbol{p}\Psi_\boldsymbol{p}$,  이므로, 
+
+$$
+\begin{aligned}
+\boldsymbol{j} &= \dfrac{\hbar}{2mi}(\Psi^\ast_\boldsymbol{p} \nabla \Psi_\boldsymbol{p} - \Psi_\boldsymbol{p}\nabla \Psi_\boldsymbol{p}) = \left(\dfrac{1}{2\pi \hbar}\right)^3 \dfrac{\boldsymbol{p}}{m} 
+\end{aligned}
+$$
+
+이다. 또한
+
+$$
+P \psi_\boldsymbol{p} = -i\hbar \nabla \Psi_\boldsymbol{p} = \boldsymbol{p}\Psi_\boldsymbol{p}
+$$
+
+이다. 즉 $P = \boldsymbol{p}$ 라고 볼 수 있다. 또한
+
+$$
+\rho = |\Psi_\boldsymbol{p}|^2 = \left(\dfrac{1}{2\pi \hbar}\right)^3
+$$
+
+이므로 $\boldsymbol{v} = P/m$ 으로 놓으면
+
+$$
+\boldsymbol{j} = \left(\dfrac{1}{2\pi \hbar}\right)^3 \dfrac{\boldsymbol{p}}{m} = \rho \dfrac{P}{m} = \rho \boldsymbol{v}
+$$
+
+이다.
+
+:::
+
+</br>
+
+::: {#exr-shankar_5_3_4}
+
+#### Shakar 5.3.4
+
+1차원에서의 $\psi = Ae^{ipx/\hbar} + Be^{-ipx/\hbar}$ 를 생각하자. $j = (|A|^2-|B|^2)p/m$ 임을 보여라. 
+
+:::
+
+::: {.solution}
+
+$\psi^\ast = \overline{A}e^{-ipx/\hbar} + \overline{B} e^{ipx/\hbar}$ 이므로
+$$
+\begin{aligned}
+j &= \dfrac{\hbar}{2mi}\left[(\overline{A}e^{-ipx/\hbar} + \overline{B}e^{ipx/\hbar})\left(\dfrac{ip}{\hbar}Ae^{ipx/\hbar} - \dfrac{ip}{\hbar}Be^{-ipx/\hbar}\right)\right] \\
+& \qquad \qquad - \dfrac{\hbar}{2mi} \left[(Ae^{ipx/\hbar} + Be^{-ipx/\hbar})\left(-\dfrac{ip}{\hbar} \overline{A}e^{-ipx/\hbar} + \dfrac{ip}{\hbar} \overline{B}e^{ipx/\hbar}\right)\right] \\
+&= \dfrac{p}{2m} \left[|A|^2-\overline{A}B + A\overline{B} -|B|^2 + |A|^2-A\overline{B}+\overline{A}B -|B|^2\right] \\
+&= \dfrac{p}{m} (|A|^2-|B|^2)
+\end{aligned}
+$$
+
+:::
+
+</br>
+
+## 중요한 정리
+
+
+::: {#thm-part2_no_degeneracy_in_1d_bound_state}
+
+1차원 bound state 에는 축퇴가 없다.
+
+:::
+
+::: {.proof}
+
+$\psi_1$ 과 $\psi_2$ 가 1차원 bound state 이며 에너지 $E$ 를 가지는 해밀토니안의 고유상태라고 하자. 슈뢰딩거 방정식은 다음과 같다.
+
+$$
+\begin{aligned}
+-\dfrac{\hbar^2}{2m}\dfrac{d^2 \psi_1(x)}{dx^2} + V(x) \psi_1(x) &= E\psi_1(x), \\
+-\dfrac{\hbar^2}{2m}\dfrac{d^2 \psi_2(x)}{dx^2} + V(x) \psi_2(x) &= E\psi_2(x)
+\end{aligned}
+$$
+
+이로부터
+
+$$
+0= \psi_2 \dfrac{d^2\psi_1}{dx^2} - \psi_1 \dfrac{d^2\psi_2}{dx^2} = \dfrac{d}{dx} \left(\psi_1 \psi'_2 - \psi_2 \psi_1'\right)
+$$
+
+을 얻으며 따라서
+
+$$
+\psi_1 \psi_2' - \psi_2 \psi_1' = C = \text{constant}
+$$
+
+이다. $\psi_1,\, \psi_2$ 가 모두 bound state 이므로 $\lim_{|x|\to\infty} \psi_1 = \lim_{|x|\to \infty} \psi_2 = 0$ 이다. 따라서 $C=0$ 임을 알 수 있다. 이로부터
+
+$$
+\dfrac{\psi'_1}{\psi_1} = \dfrac{\psi'_2} {\psi_2}
+$$
+
+이므로 어떤 상수 $d$ 에 대해
+
+$$
+\psi_1 = e^d \psi_2
+$$
+
+이므로 $\psi_1$ 과 $\psi_2$ 는 같은 상태를 의미한다. $\square$
+
+:::
+
+</br>
+
+::: {#thm-part2_eigenfunction_of_H_is_pure_real_function_in_X_basis}
+
+해밀토니안 $H$ 의 고유상태는 $X$ 기저에서 실함수로 표현 될 수 있다. 즉 실함수에 $c\in \mathbb{C}$ 를 곱한 꼴이다.
+
+:::
+
+::: {.proof}
+
+$\psi_n(\boldsymbol{r})$ 가 고유값 $E_n$ 을 갖는 $H$ 의 고유상태라고 하자.
+
+$$
+\left[-\dfrac{\hbar^2}{2m}\nabla^2 + V(\boldsymbol{r})\right] \psi_n = E_n \psi_n
+$$
+
+이며 여기에 complex conjugate 를 취하면
+
+$$
+\left[-\dfrac{\hbar^2}{2m}\nabla^2 + V(\boldsymbol{r})\right] \psi^\ast_n = E_n \psi^\ast_n
+$$
+
+이다. 즉 $\psi_n$ 과 $\psi^\ast_n$ 은 같은 고유값을 갖는 $H$ 의 고유상태이다. 그렇다면 $\psi^{(r)}_n = \dfrac{\psi_n + \psi^\ast_n}{2}$ 역시 $E_n$ 의 고유값을 갖는 $H$ 의 고유상태이며 실함수이다. $\square$
+
+:::

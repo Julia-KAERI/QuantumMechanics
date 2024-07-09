@@ -1,0 +1,570 @@
+---
+title: "단순조화진동자"
+number-sections: true
+number-depth: 3
+crossref:
+  chapters: true
+---
+
+## 단순조화진동자는 왜 중요한가
+
+어떤 시스템이 안정 평형 상태(stable equillibrium) 에서 약간 벗어날 경우, 이 fluctuation 을 진동자(들) 로 기술할 수 있다는 것은 고전역학으로부터도 잘 알려져 있다. 예를 들어 포텐셜 $V(x)$ 가 부여된 1차원 동역학을 생각하자. $V(x)$ 가 $x=x_0$ 에서 극소값을 가진다면, $V'(x_0) = 0$ 이며 따라서
+
+$$
+V(x) = V(x_0) + \dfrac{1}{2} V''(x_0)(x-x_0)^2 + \dfrac{1}{6}V'''(x_0)(x-x_0)^3 + \cdots
+$$
+
+이다. 
+
+</br>
+
+## 진동자의 양자화
+
+$V(x) = \dfrac{1}{2}m\omega^2X^2$ 으로 주어진 1차원 조화진동자를 생각하자.
+
+$$
+H = \dfrac{P^2}{2m} + \dfrac{1}{2}m\omega^2X^2
+$$ {#eq-part2_1d_sho}
+
+</br>
+
+<div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+
+::: {#exm-part2_sho_positive_energy}
+#### Non-negative 에너지 고유값
+
+우리는 $P^\dagger = P,\, X^\dagger= X$ 임을 안다. 임의의 파동함수 $|\Psi\rangle$ 에 대해
+
+$$
+\langle \Psi| H |\Psi \rangle = \dfrac{1}{2m}\langle P\Psi|P\Psi\rangle + \dfrac{m\omega^2}{2}\langle X\Psi|X\Psi\rangle \ge 0
+$$
+
+이므로 1차원 조화진동자의 에너지 고유값은 항상 non-negative 라는 것을 알 수 있다.
+:::
+
+</div>
+
+</br>
+
+이제 @eq-part2_1d_sho 로 주어진 시간독립 슈뢰딩거 방정식을 풀어보자. 여기에는 두가지 방법이 있다. 하나는 $X$ 기저에서 (혹은 $P$ 기저에서) 멱급수를 이용하여 미분방정식을 푸는 것이고 다른 하나는 아주 독특한 사다리 연산자(ladder operator) 를 도입하는 것이다. 여기서는 후자를 먼저 알아보도록 한다.
+
+</br>
+
+## 사다리 연산자를 이용한 방법
+
+
+### 사다리 연산자와 해밀토니안 {#sec-part2_ladder_operator_and_hamiltonian}
+
+$X$,\, $P$ 에 대해 연산자 $a$ 를 다음과 같이 정의한다. 
+
+$$
+a = \left(\dfrac{m\omega}{2\hbar}\right)^{1/2} X + i \left(\dfrac{1}{2m\omega \hbar}\right)^{1/2} P.
+$$ {#eq-part2_ladder_operator_a}
+
+그렇다면 $a$ 의 hermitian conjugate $a^\dagger$ 는 다음과 같다.
+
+$$
+a^\dagger = \left(\dfrac{m\omega}{2\hbar}\right)^{1/2} X - i \left(\dfrac{1}{2m\omega \hbar}\right)^{1/2} P
+$$ {#eq-part2_ladder_operator_a_dagger}
+
+우리는 $[X,\,P] = i\hbar I$ 임을 안다. 이로부터, 
+
+$$
+\begin{aligned}
+\left[a, \, a^\dagger \right] &= - i \left(\dfrac{1}{2\hbar}\right)XP + i\left(\dfrac{1}{2\hbar}\right)PX - i \left(\dfrac{1}{2\hbar}\right)XP + i \left(\dfrac{1}{2\hbar}\right)PX\\
+&= \dfrac{i}{\hbar}[PX-XP] =  I
+\end{aligned}
+$$ {#eq-part2_sho_commutator_of_ladder_operator}
+
+을 얻는다. 또한
+
+$$
+a^\dagger a = \left(\dfrac{m\omega}{2\hbar}\right)X^2 + \dfrac{1}{2m\omega \hbar} P^2 + i \left(\dfrac{1}{2\hbar}\right)[X, P] = \dfrac{H}{\hbar \omega} - \dfrac{1}{2}I
+$$
+
+이다. 즉,
+
+$$
+H = \hbar \omega\left(a^\dagger a + \dfrac{1}{2}I\right)
+$$ {#eq-part2_sho_hamiltonian_using_ladder}
+
+이다. 이 때 $a$ 와 $a^\dagger$ 를 **사다리 연산자(ladder operator)** 라고 한다. 이런 이름이 붙은 이유는 차츰 명백해질 것이다. 
+
+</br>
+
+### 사다리 연산자의 성질
+
+@eq-part2_sho_hamiltonian_using_ladder 와 @eq-part2_sho_commutator_of_ladder_operator 로부터 우리는 다음을 보일 수 있다.
+
+$$
+\begin{aligned}
+\left[ a,\, H\right] &= \hbar\omega (aa^\dagger a - a^\dagger a a) = \hbar \omega[a, a^\dagger] a = \hbar\omega a, \\[0.2em]
+\left[ a^\dagger, H\right] &=\hbar\omega (a^\dagger a^\dagger a - a^\dagger a a^\dagger) =\hbar \omega a^\dagger \left[ a^\dagger, a\right] = -\hbar \omega a^\dagger
+\end{aligned}
+$$ {#eq-part2_commutator_for_ladder_and_hamiltonian}
+
+$H$ 에 대해 에너지 $E$ 를 갖는 고유상태 $|E\rangle$ 를 생각하자. 즉 $H|E\rangle = E|E\rangle$ 이다. 이로부터,
+
+$$
+\begin{aligned}
+Ha|E\rangle &= \left(aH - \hbar \omega a\right) |E\rangle = a(E-\hbar \omega)|E\rangle, \\[0.2em]
+Ha^\dagger |E\rangle &= \left(a^\dagger H + \hbar \omega a^\dagger\right)|E\rangle = a^\dagger (E+\hbar \omega)|E\rangle
+\end{aligned}
+$$ {#eq-part2_commutator_for_ladder_and_hamiltonian_2}
+
+를 얻는다. 즉 $a|E\rangle$ 은 고유값 $E-\hbar \omega$ 를 갖는 $H$ 의 고유상태이며 $a^\dagger |E\rangle$ 은 고유값 $E+\hbar\omega$ 를 갖는 $H$ 의 고유상태이다. 여기서 $a$ 와 $a^\dagger$ 를 사다리 연산자라고 부르는 이유가 밝혀진다. $a$ 는 에너지의 고유상태를 $\hbar \omega$ 만큼 낮은 에너지의 고유상태로 보내는 연산자이고 $a^\dagger$ 는 에너지의 고유상태를 $\hbar \omega$ 만큼 높은 에너지의 고유상태로 보내는 연산자이다. 이때문에 $a$ 를 *lowering operator*, $a^\dagger$ 를 *raising operator* 라고 한다. 
+
+우리는 @exm-part2_sho_positive_energy 에서 에너지의 고유값이 non-negative 임을 보았다. 우리가 어떤 상태 $|E\rangle$ 에 있다고 하자. $a$ 연산자를 통해 계속 낮은 에너지의 고유상태로 가다 보면 어느 순간에 $0$ 보다 낮은 에너지의 상태를 취해야 할 때가 있는데 이는 불가능 하다. 따라서 어떤 상태 $|E_0\rangle$ 에서 
+
+$$
+a|E_0\rangle = |\varnothing\rangle
+$$
+
+이어야 한다. 또한
+
+$$
+a^\dagger a|E_0\rangle = a^\dagger |\varnothing\rangle = |\varnothing\rangle
+$$
+
+과 @eq-part2_sho_hamiltonian_using_ladder 로 부터
+
+
+$$
+\left(\dfrac{H}{\hbar \omega} - \dfrac{1}{2}I\right)|E_0\rangle = |\varnothing\rangle
+$$
+
+을 얻는다. 즉 $|E_0\rangle$ 는 고유값이 $\dfrac{1}{2}\hbar \omega$ 인 $H$ 의 고유상태이다. 우리는 $n=0,\,1,\ldots$ 에 대해
+
+$$
+(a^\dagger)^n |E_0\rangle
+$$
+
+이 $\hbar \omega \left(n+\dfrac{1}{2}\right)$ 를 고유값으로 갖는 $H$ 의 고유상태인 것도 알 수 있다. 즉 우리는 
+
+$$
+\hbar \omega \left(n+\dfrac{1}{2}\right),\qquad n=0,\,1,\,2,\ldots
+$$
+
+를 고유값으로 갖는 $H$ 의 고유상태를 얻을 수 있다. 이를 $|n\rangle$ 이라고 쓸 수 있을 것이다. 한가지 의문을 제시할 수 있다. $\frac{\hbar \omega}{2}$ 의 에너지를 갖는 상태는 유일한가? 우리는 이미 @thm-part2_no_degeneracy_in_1d_bound_state 에서 1차원 bound state 에는 축퇴(degeneracy) 가 없다는 것을 보였다. 즉 $\dfrac{1}{2}\hbar \omega$ 를 갖는 상태는 하나 뿐이다. 그렇다면 $\hbar\omega (n+1/2)$ 의 에너지를 갖는 상태도 하나 뿐이다. 그렇다면 우리는 정규화된 고유상태를 $|n\rangle$ 이라고 표기할 수 있을 것이다. 즉, $n=0,\,1,\,2,\ldots$ 에 대해
+
+$$
+H|n\rangle = \hbar \omega \left(a^\dagger a+ \dfrac{1}{2}I\right) |n\rangle = \hbar \omega \left(n+\dfrac{1}{2}\right) |n\rangle, 
+$$
+
+이며 
+
+$$
+\langle n |n \rangle =1
+$$
+
+인 상태 $|n\rangle$ 을 정의 할 수 있다. 이에 우리는 $N=a^\dagger a$ 를 **number operator** 라고 한다. 
+
+이제 $a|n\rangle = c_n |n-1\rangle$ 이라고 하고 $c_n$ 을 구해보자. 양 변의 hermitian conjugate 를 취하면
+
+$$
+\langle n|a^\dagger = \langle n-1|\overline{c_n} 
+$$
+
+이다. 이로부터, 
+
+$$
+\langle n|a^\dagger a|n\rangle = |c_n|^2\langle n-1 |n-1\rangle = |c_n|^2
+$$
+
+이며, 
+
+$$
+\langle n|n|n\rangle = n
+$$
+
+이므로 $|c_n|^2=n$ 을 만족해야 한다는 것을 안다. 이 경우 임의의 $\phi \in \mathbb{R}$ 에 대해 $c_n = \sqrt{n}e^{i\phi}$ 이면 된다. 보통 $\phi=0$ 으로 놓으며 이 경우, 
+
+$$
+a|n\rangle = \sqrt{n}|n-1\rangle,\qquad a^\dagger|n\rangle = \sqrt{n+1}|n+1\rangle
+$$ {#eq-part2_property_of_ladder_operator}
+
+이다. 
+
+모든 $|n\rangle$ 은 bound state 이며 1차원 bound state 는 dengeneracy 가 없다. 즉 서로 다른 에너지를 갖는 단순조화진동자의 에너지 고유상태 $|n\rangle$ 에 대해 $\langle n'|n\rangle = \delta_{nn'}$ 이 성립한다. 따라서, 
+
+$$
+\begin{aligned}
+\langle n'|a|n\rangle &= \sqrt{n}\langle n'|n-1\rangle = \sqrt{n}\delta_{n',n-1}, \\
+\langle n'|a^\dagger |n\rangle &= \sqrt{n+1} \langle n'|n+1\rangle = \sqrt{n+1}\delta_{n', n+1}
+\end{aligned}
+$$ {#eq-part2_property_of_ladder_operator_2}
+
+이 성립한다. 
+
+
+</br>
+
+### 사다리 연산자와 $X$, $P$
+
+사다리 연산자는 $X,\,P$ 에 대해 @eq-part2_ladder_operator_a 와 @eq-part2_ladder_operator_a_dagger 로 정의되었다. 그렇다면 $X,\,P$ 를 사다리 연산자에 대해 다음과 같이 표현 할 수 있다. 
+
+$$
+\begin{aligned}
+X& = \left(\dfrac{\hbar}{2m\omega}\right)^{1/2} \left( a+a^\dagger \right), \\
+P&= i \left(\dfrac{m\omega \hbar}{2}\right)^{1/2} \left(a^\dagger - a\right).
+\end{aligned}
+$$ {#eq-part2_sho_x_and_p_with_ladder_operator}
+
+
+이제 $X$ 와 $P$ 에 대한 행렬을 $\{|n\rangle :n=0,\,1,\ldots\}$ 기저에서 구해보자.
+
+$$
+\begin{aligned}
+\langle m|X|n\rangle &= \left(\dfrac{\hbar}{2m\omega}\right)^{1/2} \langle m|\left(\sqrt{n}|n-1\rangle + \sqrt{n+1}|n+1\rangle\right) \\[0.2em]
+&= \left(\dfrac{\hbar}{2m\omega}\right)^{1/2} \left(\sqrt{n}\delta_{m, n-1}+\sqrt{n+1}\delta_{m, n+1}\right). \\[0.2em]
+\langle m|P|n\rangle &= i \left(\dfrac{m\omega \hbar}{2}\right)^{1/2} \langle m|\left(\sqrt{n+1}|n+1\rangle - \sqrt{n}|n-1\rangle\right) \\
+&= i \left(\dfrac{m\omega \hbar}{2}\right)^{1/2}\left(\sqrt{n+1}\delta_{m,n+1} - \sqrt{n}\delta_{m, n-1}\right).
+\end{aligned}
+$$
+
+이렇게 동역학 변수를 사다리 연산자 $a,\,a^\dagger$ 를 이용해서 표현하는것은 계산을 엄청나게 줄여준다. 우리는 아직 $X$ 기저로 표현된 $|n\rangle$ 상태의 파동함수를 알아보지는 않았지만 어쨌든 그 파동함수를 $\Psi_n(x)$ 라고 하면, 
+
+$$
+\langle n|X^2|n\rangle = \int_{-\infty}^\infty x^2\left|\Psi_n(x)\right|^2 \, dx
+$$
+
+이다. 뒤에 보겠지만 $\Psi_n(x)$ 에 대한 적분은 실제로 쉽지 않다. 그러나 사다리 연산자를 사용하게 되면
+
+$$
+\langle n|X^2|n\rangle = \left(\dfrac{\hbar}{2m\omega}\right)\langle n| aa+a^\dagger a + aa^\dagger + a^\dagger a^\dagger |n\rangle = \left(\dfrac{\hbar}{2m\omega}\right) = \left(\dfrac{\hbar}{2m\omega}\right)(2n+1)
+$$
+
+로 간단히 계산이 된다. ($[a,\, a^\dagger]=1$ 로 부터 $aa^\dagger = a^\dagger a +1 = N+1$ 임을 안다.)
+
+
+</br>
+
+### 연습문제
+
+::: {#exr-shankar_7_4_2}
+
+#### Shankar 7.4.2
+
+단순조화진동자의 에너지 고유상태 $|n\rangle$ 에 대해 $\langle X\rangle$, $\langle P\rangle$, $\langle X^2\rangle$, $\langle P^2\rangle$, $\Delta X \cdot \Delta P$ 를 구하라.
+
+:::
+
+::: {.soluiton}
+
+@eq-part2_sho_x_and_p_with_ladder_operator 로부터 $\langle n|X|n\rangle = 0$, $\langle n|P|n\rangle=0$ 임은 쉽게 알 수 있다. 본문에서 $\langle X^2\rangle = \left(\dfrac{\hbar}{2m\omega}\right)(2n+1)$ 임을 보였다.
+
+$$
+\begin{aligned}
+\langle n|P^2|n\rangle &=-\left(\dfrac{m\omega\hbar}{2}\right)\langle n|-a^\dagger a - aa^\dagger|n\rangle = \left(\dfrac{m\omega\hbar}{2}\right)(2n+1)
+\end{aligned}
+$$
+
+이며, 따라서
+
+$$
+\Delta X\cdot \Delta P = \dfrac{\hbar}{2}(2n+1)
+$$
+
+이다. 
+
+:::
+
+</br>
+
+::: {#exr-shankar_7_4_3}
+
+#### Shankar 7.4.3
+
+고전역학에서의 Virial theorem 은 포텐셜 $V(r)$ 이 $V(r) = ar^k$ 꼴로 주어질 때 평균 운동에너지(\overline{T}) 와 평균 포텐셜 에너지($\overline{V}$) 사이에
+
+$$
+\overline{T} = \dfrac{k}{2}\overline{V}
+$$
+
+의 관계가 성립하는 것을 의미한다. 양자역학의 1차원 조화진동자에 해서는 $k=2$ 에서 위의 관계가 성립함을 보여라.
+
+:::
+
+::: {.solution}
+
+$$
+\begin{aligned}
+\langle T\rangle &= \dfrac{\langle P^2\rangle}{2m} = \dfrac{\hbar \omega}{4}(2n+1), \\
+\langle V\rangle &= \dfrac{1}{2}m\omega^2 \langle X^2\rangle = \dfrac{\hbar \omega}{4}(2n+1)
+\end{aligned}
+$$
+
+이므로 $\langle T\rangle = \langle V\rangle$ 이다. 
+
+
+:::
+
+</br>
+
+::: {#exr-shankar_7_4_4}
+
+#### Shankar 7.4.4
+
+$\langle n|X^4|n\rangle = \left(\dfrac{\hbar}{2m\omega}\right)^2(3+6n(n+1))$ 임을 보여라.
+
+
+:::
+
+::: {.solution}
+
+$$
+\begin{aligned}
+\langle n|X^4|n\rangle &=  \left(\dfrac{\hbar}{2m\omega}\right)^2\langle n |\left( a^\dagger + a\right)^2 \left( a^\dagger + a\right)^2  |n\rangle
+\end{aligned}
+$$
+
+이며 
+
+$$
+\left( a^\dagger + a\right)^2 |n\rangle = \sqrt{(n+1)(n+2)}|n+2\rangle + (2n+1)|n\rangle + +\sqrt{n(n-1)}|n-2\rangle 
+$$
+
+이며 $(a^\dagger+a)^2$ 는 에르미트연산자이므로, 
+
+$$
+\begin{aligned}
+\langle n|X^4|n\rangle =\langle X^2 n | X^2 n\rangle  = \left(\dfrac{\hbar}{2m\omega}\right)^2(6n^2+6n+3).
+\end{aligned}
+$$
+
+:::
+
+</br>
+
+::: {#exr-shankar_7_4_5}
+
+#### Shankar 7.4.5
+
+$t=0$ 일 때 입자는 $|\Psi(0)\rangle = \dfrac{1}{\sqrt{2}} \left(|0\rangle + |1\rangle\right)$ 상태 였다. 
+
+&emsp; ($1$) $|\Psi(t)\rangle$ 을 구하라.
+
+&emsp; ($2$) $\langle X(0)\rangle = \langle \Psi (0)|X|\Psi(0)\rangle$ 을 구하라. $\langle P(0)\rangle$, $\langle X(t)\rangle$, $\langle P(t)\rangle$ 을 구하라.
+
+&emsp; ($3$) 에렌페스트 정리를 이용하여 $\dfrac{d}{dt}\langle X(t)\rangle$ 과 $\dfrac{d}{dt}\langle P(t)\rangle$ 을 구하고 $\langle X(t)\rangle$ 과 $\langle P(t)\rangle$ 을 구하고 ($2$) 의 결과와 비교하라.
+
+:::
+
+::: {.solution}
+
+($1$) $|\Psi (t)\rangle = e^{-iHt/\hbar}|\Psi(0)\rangle= \dfrac{1}{\sqrt{2}} \left(e^{-i\omega t/2}|0\rangle + e^{-3i\omega t/2} |1\rangle\right)$
+
+($2$) 
+
+$$
+\begin{aligned}
+\langle X(0)\rangle &= \left(\dfrac{\hbar}{2m\omega}\right)^{1/2} \langle \Psi(0)| (a+a^\dagger)|\Psi(0)\rangle \\
+&= \left(\dfrac{\hbar}{2m\omega}\right)^{1/2} \dfrac{1}{2} (\langle 0| + \langle 1|)(|0\rangle + |1\rangle + \sqrt{2}|2\rangle ) = \left(\dfrac{\hbar}{2m\omega}\right)^{1/2} \\
+\langle P(0)\rangle &= i\left(\dfrac{m\omega \hbar}{2}\right)^{1/2} \dfrac{1}{2} (\langle 0| + \langle 1|) (|1\rangle + \sqrt{2}|2\rangle -|0\rangle) =0 \\
+\langle X(t)\rangle &= \left(\dfrac{\hbar}{2m\omega}\right)^{1/2} \dfrac{1}{2} \left(e^{i\omega t/2}\langle 0| + e^{3i\omega t/2} \langle 1|\right)\left(e^{-i\omega t/2}|1\rangle + e^{-3i\omega t/2}|0\rangle\right) \\
+&= \left(\dfrac{\hbar}{2m\omega}\right)^{1/2} \dfrac{1}{2} \left(e^{-i\omega t} + e^{i\omega t}\right) = \left(\dfrac{\hbar}{2m\omega}\right)^{1/2} \cos (\omega t)\\
+\langle P(t) \rangle &= i\left(\dfrac{m\omega \hbar}{2}\right)^{1/2} \dfrac{1}{2} \left(e^{i\omega t/2} \langle 0| + e^{3i\omega t/2}\langle 1|\right) \left( e^{-i\omega t/2} |1\rangle - e^{-3i\omega t/2} |0\rangle\right) \\
+&= i\left(\dfrac{m\omega \hbar}{2}\right)^{1/2} \dfrac{1}{2} \left(e^{i\omega t} - e^{-i\omega t}\right) = -\left(\dfrac{m\omega \hbar}{2}\right)^{1/2} \sin (\omega t)
+\end{aligned}
+$$
+
+($3$) Ehrenfest 정리 : $\dfrac{d}{dt}\langle \Omega \rangle = -\dfrac{i}{\hbar} \langle [\Omega,\, H]\rangle$. $[X, P]=i\hbar$ 를 생각하면
+
+$$
+\begin{aligned}
+\left[ X, P^2 \right] &= [X, P]P + P[X, P] = 2i\hbar P, \\
+\left[ P, X^2 \right] &=  [P, X]X + X[P, X] = -2i\hbar X
+\end{aligned}
+$$
+
+이다. 이를 이용하면, 
+$$
+\begin{aligned}
+\dfrac{d}{dt}\langle X\rangle &= -\dfrac{i}{\hbar} \left\langle \left[X,\, \dfrac{P^2}{2m} + \dfrac{1}{2}m\omega^2 X^2\right]\right\rangle = -\dfrac{i}{2m\hbar}\langle [X,\, P^2] \rangle = \dfrac{\langle P\rangle}{m}, \\
+\dfrac{d}{dt}\langle P\rangle &=  -\dfrac{i}{\hbar} \left\langle \left[P,\, \dfrac{P^2}{2m} + \dfrac{1}{2}m\omega^2 X^2\right]\right\rangle = - \dfrac{im\omega^2}{2\hbar}\langle [P, X^2] \rangle = -m\omega^2 \langle X\rangle
+\end{aligned}
+$$
+
+이다. 따라서 
+
+$$
+\dfrac{d}{dt}\langle X\rangle = -\left(\dfrac{\omega \hbar}{2m}\right)^{1/2} \sin (\omega t)
+$$
+
+이므로 
+
+$$
+\langle X(t)\rangle = \left(\dfrac{\hbar}{2m\omega}\right) \cos (\omega t)
+$$
+
+로 ($2$) 의 결과와 일치한다. 마찬가지로
+
+$$
+\dfrac{d}{dt}\langle P\rangle = - \left(\dfrac{\hbar m \omega^3}{2}\right)^{1/2} \cos (\omega t)
+$$
+
+이므로
+
+$$
+\langle P(t) \rangle = \left(\dfrac{\hbar m \omega}{2}\right)^{1/2} \sin (\omega t)
+$$
+
+로 ($2$) 의 결과와 일치한다.
+:::
+
+</br>
+
+::: {#exr-shankar_7_4_6}
+
+#### Shankar 7.4.6
+
+$\langle a(t)\rangle = e^{-i\omega t}\langle a(0)\rangle$ 이며 $\langle a^\dagger (t) \rangle = e^{i\omega t}\langle a^\dagger (0)\rangle$ 임을 보여라.
+
+:::
+
+::: {.solution}
+
+에렌페스트 정리를 이용한다. @eq-part2_commutator_for_ladder_and_hamiltonian 로부터
+$$
+\dfrac{d}{dt}\langle a(t) \rangle = -\dfrac{i}{\hbar} \langle [a,H]\rangle = -i \omega \langle a(t) \rangle
+$$
+
+이므로 $\langle a(t) \rangle = e^{-i\omega t}\langle a(0)\rangle$ 이다. 같은 방법으로 $\langle a^\dagger (t) \rangle = e^{i\omega t}\langle a^\dagger (0)\rangle$ 임을 보일 수 있다. 
+
+:::
+
+</br>
+
+::: {#exr-shankar_7_4_8}
+
+#### Shankar 7.4.8
+
+고전역학에서 세 각운동량은
+
+$$
+l_x = yp_z - zp_y,\qquad l_y = zp_x - xp_z,\qquad l_z = xp_y-yp_x
+$$
+
+이다. 
+
+&emsp; ($1$) 양자역학적인 각운동량 $L_x,\,L_y,\,L_z$ 를 구성하고 순서에 의한 모호함이 없음을 보여라.
+
+&emsp; ($2$) $\{l_x,\, l_y\}= l_z$ 임을 보여라.
+
+&emsp; ($3$) $[L_x,\,L_y] = i\hbar L_z$ 임을 보여라.
+
+:::
+
+::: {.solution}
+
+표기를 편하게 아히 위해 $X=X_1,\, Y=Y_1, Z=Z_1,\, P_x = P_1,\, P_y=P_2,\, P_z = P_3$ 라고 하자. 고전적인 각운동량에 대해서도 똑같이 $x_i,\, p_i$ 의 표기법을 사용한다. 그렇다면 불확정성의 원리는 $[X_i, P_j] = i\hbar I\delta_{ij}$ 로 표기 할 수 있다. 또한 Levi-Civita 기호 $\epsilon_{ijk}$ 를 사용하여 $l_i = \epsilon_{ijk}x_jp_k$ 로 표기 할 수 있다. 
+
+($1$) $L_i = \epsilon_{ijk} X_jP_k$ 이며 $j\ne k$ 에 대해서만 생각하므로 $X_j, P_k$ 의 순서를 바꿔도 상관 없다. 즉 순서에 의한 모호함이 없다. 
+
+($2$) $\displaystyle \{l_x,\, l_y\} = \sum_{i=1,2,3} \dfrac{\partial l_1}{\partial x_i} \dfrac{\partial l_2}{\partial p_i} - \dfrac{\partial l_1}{\partial p_i}\dfrac{\partial l_2}{\partial x_i}=xp_y-yp_x = l_3$
+:::
+
+($3$) 
+
+$$
+\begin{aligned}
+\left[ L_x,\,L_y \right] &= [YP_z-ZP_y,\, ZP_x-XP_z] = [YP_z, ZP_x - XP_z] - [ZP_y, ZP_x-XP_z] \\
+&= [YP_z, ZP_x] - [YP_z, XP_z] - [ZP_y, ZP_x] + [ZP_y, XP_z] \\
+&= YP_zZP_x - ZP_xYP_z + ZP_yXP_z - XP_z ZP_y \\
+&=YP_x[P_z, Z] + XP_y[Z, P_z] = i\hbar [X, P_y] = i\hbar L_z   
+\end{aligned}
+$$
+
+</br>
+
+::: {#exr-shankar_7_4_9}
+
+#### Shankar 7.4.9
+
+연산자를 $X$ 기저에서 아래와 같이 선택하는 것은 비록 일반적이지는 않지만 충분히 받아들여질 수 있다는 것을 보이고자 한다.
+
+$$
+\begin{aligned}
+X &\to x, \\
+P &\to -i\hbar \dfrac{d}{dx} + f(x)
+\end{aligned}
+$$
+
+($1$) canonical commutation relation 이 성립함을 보여라.
+
+($2$) 연산자를 문제처럼 바꾸는 것은 $g(x) = \int^x f(x')\, dx'$ 에 대해 $|x\rangle$ 을 $|\tilde{x} \rangle = e^{ig(x)/\hbar} |x\rangle$ 로 변환하는 유니타리 변환으로 해석 될 수 있다. 우선 
+
+$$
+\langle \tilde{x}|X|\tilde{x}'\rangle = x\delta(x-x')
+$$
+
+임을 보여라. 또한
+
+$$
+\langle \tilde{x}|P|\tilde{x}'\rangle = \left[- i\hbar \dfrac{d}{dx} + f(x)\right]\delta (x-x')
+$$
+
+임을 보여라.
+
+:::
+
+::: {.solution}
+
+($1$) $[X, P] = -i\hbar I$ 임을 보이면 된다. 
+
+$$
+\begin{aligned}
+\left[X, P\right]\Psi(x) &= (XP-PX)\Psi(x) = x(-i\hbar \psi'(x) + f(x)) - \left(-i\hbar \dfrac{d}{dx} + f(x)\right)x\psi(x) \\
+&=-i\hbar \Psi (x)
+\end{aligned}
+$$
+
+($2$) <u> 아마도 $f(x)$ 는 실함수.</u>
+
+$$
+\langle \tilde{x}|X|\tilde{x}'\rangle = e^{-ig^\ast(x)/\hbar} e^{ig(x)/\hbar}\langle x|X|x'\rangle = e^{i\text{Re}(g(x))/\hbar}x\delta(x-x')
+$$
+
+$f(x)$ 가 실함수이면 $g(x)$ 도 실함수이며 따라서 $\langle \tilde{x} |X|\tilde{x}'\rangle = x\delta(x-x')$ 이다. 또한,
+
+$$
+\begin{aligned}
+\langle \tilde {x}|P|\tilde{x}'\rangle &= \langle \tilde{x}|\left[-i\hbar \dfrac{d}{dx} + f(x)\right] |\tilde{x}'\rangle = \left[-i\hbar \dfrac{d}{dx} + f(x)\right] \langle \tilde{x}|X|\tilde{x}'\rangle\\
+& = \left[-i\hbar \dfrac{d}{dx} + f(x)\right]x \delta(x-x')
+\end{aligned}
+$$
+
+::: {.callout-important appearance="minimal"}
+
+이 연습문제는 $X$ 기저의 선택이 유일하지 않다는 것을 보여준다. 즉 주어진 기저 $|x\rangle$ 에 대해 $|\tilde{x}\rangle$ 기저를 선택 할 수 도 있다. 문제에서 보여준 것과 같이 $|\tilde{x}\rangle$ 기저도 정규직교기저이다. 
+:::
+
+:::
+
+
+</br>
+
+## $X$ 기저에서의 고유함수
+
+시간독립 슈뢰딩거 방정식 $H|\Psi\rangle = E|\Psi\rangle$ 을 $X$ 기저에서 표현하면 아래와 같다.
+
+$$
+\dfrac{d^2 \Psi(x)}{dx^2} + \dfrac{2m}{\hbar^2}\left(E-\dfrac{1}{2}m\omega^2 x^2\right)\Psi(x)=0
+$$ {#eq-part2_1dsho_time_independent_schroedinger_eq}
+
+
+여기에 $b=\left(\dfrac{\hbar}{m\omega}\right)$ 에 대해 $y=x/b$ 로 치환한다. $\varepsilon = \dfrac{E}{\hbar \omega}$ 로 놓으면 @eq-part2_1dsho_time_independent_schroedinger_eq 은 다음과 같이 좀 더 단순한 방정식으로 변한다. 
+
+$$
+\dfrac{d^2\Psi(y)}{dy^2}+ (2\varepsilon - y^2)\Psi(y) = 0
+$$ {#eq-part2_substituted_shroedinger_eq}
+
+$y\to\infty$ 극한에서 $2\varepsilon - y^2 \to -y^2$ 가 된다. 즉 $|y|$ 가 매우 큰 극한에서 $\Psi(y)$ 는
+
+$$
+\Psi''(y)-y^2 \Psi(y)=0
+$$
+
+을 만족할 것이다. 
+
+

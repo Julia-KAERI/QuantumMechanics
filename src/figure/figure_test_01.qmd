@@ -5,3 +5,35 @@ number-depth: 3
 crossref:
   chapters: true
 ---
+
+```{r, engine = 'tikz'}
+#| label: fig-part2_step_potential
+#| code-fold: true
+#| echo: fenced
+#| output: asis
+#| fig-width: 4
+#| fig-align: center
+#| fig-cap: "Single Step Potential"
+
+
+\begin{tikzpicture}[scale=1]
+\usetikzlibrary {arrows.meta}
+\usetikzlibrary {calc}
+
+
+\draw[, -{Stealth[length=2mm]}] (-3, 0) -- (4, 0) node [right] {$x$} ;
+\draw[, -{Stealth[length=2mm]}] (0, 0) -- (0, 3) node [above] {$V(x)$};
+
+\draw[teal, thick] (-3, 0) -- (0, 0) -- (0, 2) -- (3.5, 2);
+\draw[teal, thick, dashed] plot[variable=\t, domain=-3:3, samples=100, smooth,thick] ({0.3*\t}, {2/(1+exp(-3*\t))});
+
+\draw[{Stealth[length=2mm]}-{Stealth[length=2mm]}] (3,2) -- (3, 0);
+\node[right] at (3, 1) {$V_0$};
+
+\node[below] at (0, 0) {$O$};
+
+\node at (-2, 0.5) {$\rm{I}$};
+\node at (2, 0.5) {$\rm{II}$};
+
+\end{tikzpicture}
+```

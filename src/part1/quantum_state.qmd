@@ -667,6 +667,6 @@ $$
 
 $$
 (\Delta \hat{A})(\Delta \hat{B}) \ge \dfrac{1}{2} \left|\langle \mathscr{\Psi} | [\hat{A},\, \hat{B}]|\mathscr{\Psi} \rangle \right|
-$$
+$$ {#eq-part1_general_uncertainty}
 
 을 얻는다. 이것이 **불확정성의 원리 (Uncertainty principle)** 이다. 
