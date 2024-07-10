@@ -196,6 +196,20 @@ $$ {#eq-part2_property_of_ladder_operator_2}
 
 이 성립한다. 
 
+이제 우리는 사다리 연산자를 이용하여 $|0\rangle$ 로부터 임의의 $|n\rangle$ 상태를 얻을 수 있다. 
+
+$$
+\left(a^\dagger\right)^n|0\rangle = \sqrt{n!}|0\rangle
+$$
+
+이므로, 
+
+$$
+|n\rangle = \dfrac{\left(a^\dagger\right)^n |0\rangle}{\sqrt{n!}}
+$$ {#eq-part2_energy_eigenstate_from_ground_state_in_sho}
+
+이다.
+
 
 </br>
 
@@ -546,25 +560,122 @@ $$
 
 ## $X$ 기저에서의 고유함수
 
-시간독립 슈뢰딩거 방정식 $H|\Psi\rangle = E|\Psi\rangle$ 을 $X$ 기저에서 표현하면 아래와 같다.
+### $X$ 기저에서의 고유함수와 에르미트 다항식
+
+이제 사다리 연산자를 이용한 에너지 기저에서 $X$ 기저에 대한 표현으로 변환시키는 것을 알아보자. 우리는 $a|0\rangle = 0$ 임을 안다. 또한 @eq-part2_ladder_operator_a 와 @eq-part2_ladder_operator_a_dagger  에서 보았듯이
 
 $$
-\dfrac{d^2 \Psi(x)}{dx^2} + \dfrac{2m}{\hbar^2}\left(E-\dfrac{1}{2}m\omega^2 x^2\right)\Psi(x)=0
-$$ {#eq-part2_1dsho_time_independent_schroedinger_eq}
-
-
-여기에 $b=\left(\dfrac{\hbar}{m\omega}\right)$ 에 대해 $y=x/b$ 로 치환한다. $\varepsilon = \dfrac{E}{\hbar \omega}$ 로 놓으면 @eq-part2_1dsho_time_independent_schroedinger_eq 은 다음과 같이 좀 더 단순한 방정식으로 변한다. 
-
-$$
-\dfrac{d^2\Psi(y)}{dy^2}+ (2\varepsilon - y^2)\Psi(y) = 0
-$$ {#eq-part2_substituted_shroedinger_eq}
-
-$y\to\infty$ 극한에서 $2\varepsilon - y^2 \to -y^2$ 가 된다. 즉 $|y|$ 가 매우 큰 극한에서 $\Psi(y)$ 는
-
-$$
-\Psi''(y)-y^2 \Psi(y)=0
+\begin{aligned}
+a &= \left(\dfrac{m\omega}{2\hbar}\right)^{1/2} X + i \left(\dfrac{1}{2m\omega \hbar}\right)^{1/2} P, \\
+a^\dagger &= \left(\dfrac{m\omega}{2\hbar}\right)^{1/2} X -i \left(\dfrac{1}{2m\omega \hbar}\right)^{1/2} P 
+\end{aligned}
 $$
 
-을 만족할 것이다. 
+이다. $P=i\hbar \partial_x$ 이므로 다음의 미분방정식을 얻는다. $|0\rangle$ 을 $|\Psi_0\rangle$ 로 놓자.
+
+$$
+\left[\left(\dfrac{m\omega}{2\hbar}\right)^{1/2} X +  \left(\dfrac{1}{2m\omega \hbar}\right)^{1/2}\dfrac{d}{dx} \right]|\Psi_0\rangle = 0
+$$
+
+여기서
+$$
+\xi := \left(\dfrac{m\omega}{\hbar}\right)^{1/2}x
+$$ {#eq-part2_sho_xi}
+
+라고 놓고 위의 미분방정식을 $\xi$ 에 대한 미분방정식으로 바꾸면 
+
+$$
+\left(\xi + \dfrac{d}{d\xi}\right) \Psi_0(\xi) =0
+$$
+
+이며, 
+
+$$
+\dfrac{1}{\Psi_0(\xi)}\dfrac{d \Psi_0(\xi)}{d\xi} = - \xi
+$$
+
+이므로 이 미분방정식의 해는 상수 $a_0$ 에 대해
+
+$$
+\Psi_0(\xi) = a_0 e^{-\xi^2/2}
+$$
+
+이다. 여기에 $\xi$ 를 $x$ 로 바꾸고 $\int_{-\infty}^\infty |\Psi(x)|^2\,dx = 1$ 의 정규화 조건을 부여하면
+
+$$
+\Psi_0 (x) = \left(\dfrac{m\omega}{\pi \hbar}\right)^{1/4} \exp \left(- \dfrac{m\omega x^2}{2\hbar}\right)
+$$ {#eq-part2_ground_state_of_sho}
+
+이다. 우리는 또한 
+
+$$
+|n\rangle = \dfrac{\left(a^\dagger\right)^n |0\rangle}{\sqrt{n!}}
+$$
+
+임을 안다.(@eq-part2_energy_eigenstate_from_ground_state_in_sho) 이로부터 $\Psi_n(x) = \langle x|n\rangle$ 을 얻는다.
+
+$$
+\begin{aligned}
+\Psi_n(x) = \langle x|n\rangle = \dfrac{1}{\sqrt{n!}}\left[\left(\dfrac{m\omega}{2\hbar}\right)^{1/2} x - \left(\dfrac{1}{2m\omega \hbar}\right)^{1/2}\dfrac{d}{dx}\right]^n \Psi_0 (x), 
+\end{aligned}
+$$
+
+임을 안다. 이 식을 앞서 @eq-part2_sho_xi 에서 정의한 $\xi:=\left(\dfrac{m\omega}{\hbar}\right)^{1/2}x$ 에 대한 식으로 바꾸면, 
+
+$$
+\Psi_n(\xi) =\left(\dfrac{m\omega}{\pi \hbar}\right)^{1/4} \left(\xi - \dfrac{d}{d\xi}\right)^n e^{-\xi^2/2}
+$$
+
+를 얻는다. 여기서 $(\xi- d/d\xi)^n e^{-\xi^2/2}$ 는 어떤 다항식 과 $e^{-\xi^2/2}$ 의 곱이 된다는 것을 알 수 있다. 이 다항식을 $H_n(\xi)$ 라고 하면  
+
+$$
+\Psi_n(\xi) = \left(\dfrac{m\omega}{\pi \hbar}\right)^{1/4} H_n(\xi) \, e^{-\xi^2/2}
+$$
+
+로 놓을 수 있으며 $H_0(\xi) = 1$ 이다. 이 때 $H_n(\xi)$ 를 **에르미트 다항식(Hermite polynomials)** 라고 한다. 그렇다면
+
+$$
+H_n(\xi) \, e^{-\xi^2/2} = \left(\xi - \dfrac{d}{d\xi}\right)^n e^{-\xi^2/2}
+$$
+
+이므로, 
+
+$$
+H_n(\xi) = e^{\xi^2/2}\left(\xi - \dfrac{d}{d\xi}\right)^n e^{-\xi^2/2}
+$$ {#eq-part2_generator_of_hermite_polynomial}
+
+이다. 
+
+</br>
+
+### 연습문제
+
+::: {#exr-shankar_7_5_1}
+
+$P$ 기저에서의 바닥상태의 파동함수 $\Psi_0(p)$ 를 구하라.
+
+:::
 
 
+::: {.solution}
+
+@exr-part2_momentum_representation_of_position 로부터 $P$ 기저에서 $\langle p|X|p'\rangle = i\hbar \delta'(p-p')$ 임을 안다. $a$ 를 $P$ 기저에서 표현하면, 
+
+$$
+a= i\left(\dfrac{m\omega\hbar}{2}\right)^{1/2} \dfrac{d}{dp} + i\left(\dfrac{1}{2m\omega \hbar}\right)^{1/2}p
+$$
+
+이며 $a|0\rangle = 0$ 이므로, 
+
+$$
+i\left[\left(\dfrac{m\omega\hbar}{2}\right)^{1/2} \dfrac{d}{dp} + \left(\dfrac{1}{2m\omega \hbar}\right)^{1/2}p\right] |\Psi_0\rangle = 0
+$$
+
+
+을 만족한다. $\eta = \dfrac{1}{\sqrt{m\omega \hbar}} p$ 로 놓으면 위의 미분방정식은
+
+$$
+\left(\eta + \dfrac{d}{d\eta}\right) \Psi_0(\eta) = 0
+$$
+
+:::

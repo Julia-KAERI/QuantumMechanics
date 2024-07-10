@@ -241,6 +241,8 @@ $\langle x | P |\psi\rangle$ 은 $|\psi\rangle$ 상태를 운동량을 측정 �
 
 또한 우리는 일반적으로 두 에르미트 연산자가 commutative 하지 않는다는 것을 안다. $X$ 와 $P$ 의 경우는 어떠한가?
 
+</br>
+
 ::: {#exr-part2_uncertainty_of_X_and_P}
 
 $[X, P]=XP-PX=i\hbar I$ 임을 보여라.
@@ -283,6 +285,7 @@ $$
 :::
 
 </br>
+
 
 ### 가우시안 파동함수와 불확정성 {#sec-part2_gaussian_wavefunction}
 
@@ -456,6 +459,28 @@ $$
 $$
 
 이어야 한다. 가우시안 파동함수는 $\Delta X \cdot \Delta P$ 를 최소화 하는 파동함수라는 것을 알 수 있다.
+
+</br>
+
+::: {#exr-part2_momentum_representation_of_position}
+
+우리는 $\langle x|P|x\rangle = -i\hbar \delta'(x-x')$ 임을 안다. 그렇다면 $\langle p|X|p'\rangle = i\hbar \dfrac{d}{dp}\delta(p-p')$ 임을 보여라.
+
+:::
+
+::: {.solution}
+
+$[X, P]=i\hbar I$ 이므로 $[P, X]= -i\hbar I$ 이다. $\langle p|X|p'\rangle = i\hbar \delta (p-p')$ 이라고 하면, 
+
+$$
+\begin{aligned}
+\langle p|[P, X]|\Psi\rangle = i\hbar p\Psi'(p) - i\hbar (p\psi(p))' = -i\hbar \Psi (p)
+\end{aligned}
+$$
+
+이므로 $[P, X] = -i\hbar I$ 를 만족한다. 
+
+:::
 
 </br>
 
