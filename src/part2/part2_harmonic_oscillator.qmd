@@ -678,4 +678,6 @@ $$
 \left(\eta + \dfrac{d}{d\eta}\right) \Psi_0(\eta) = 0
 $$
 
+이며 $\Psi_0(\eta) = e^{-\eta^2/2}
+
 :::
