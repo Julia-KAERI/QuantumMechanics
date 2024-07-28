@@ -1,0 +1,231 @@
+---
+title: "경로적분 I"
+number-sections: true
+number-depth: 3
+crossref:
+  chapters: true
+---
+
+여기서는 파인만에 의해 고안된 양자역학을 기술하는 다른 방법, 즉 경로적분법에 대해 알아보기로 한다. 지금까지 우리는 슈뢰딩거 방정식을 이용하였는데 이것은 고전역학에서의 해밀토니안 역학에 기반한 것이다. 그러나 경로적분은 라그랑지안 역학에 기반한다. 
+
+
+</br>
+
+## 경로 적분
+
+우리는 시간전개 연산자 $U=e^{iHt/\hbar}$ 를 알면 양자역학 풀린다는 것을 안다. 이를 위해 해밀토니안 연산자에 대한 고유값과 고유벡터를 구했고 시간전개 연산자를 이 고유상태에 대해 표현했다. 경로적분법은 시간전개 연산자를 직접 구하는데 그 과정은 다음과 같다. 여기서는 1차원에 대해 다루며 다차원의 경우로 쉽게 일반화 할 수 있다. 즉 $U(x,\,t; x',\,t')$ 을 아래의 과정을 통해 구한다.
+
+&emsp; ($1$) $x-t$ 평면에서 $(x',\,t')$ 에서 $(x,\,t)$ 로의 모든 가능한 경로를 그린다. 이 경로를 $x(t)$ 라고 한다.
+
+&emsp; ($2$) 각 경로 $x(t)$ 에 대한 액션 $S[x(t)]$ 을 구한다.
+
+&emsp; ($3$) $U(x,\,t;x',\,t')$ 는 다음 식을 통해 얻을 수 있다.
+
+$$
+U(x,\,t;x',\,t') = \displaystyle A\sum_{\text{all paths}} e^{iS[x(t)]/\hbar}
+$$ {#eq-part2_propergator_using_path_integral}
+
+여기서 $A$ 는 정규화 상수이다. [혹은 $U(x,\,t;x',\,t')$ 을 *Feynmann kernel* 이라고 부르며 $K(x,\,t;x',\,t')$ 이라고 쓰기도 한다.]{.aside} 
+
+![시간전개 연산자에 기여하는 몇가지 경로](figure/fig-part2_path_integral_1.png){#fig-path_integral_1 width=300}
+
+
+이 과정의 정당성을 논하기에 앞서 일단 받아들이고 이 과정 자체에 대해 한번 생각해 보기로 하자. 여기서 우선 눈에 뜨이는 것은 모든 경로가 동일하게 기여한다는 것이다. 가능한 경로중 고전역학에서 유일하게 정해지는 경로를 $x_{cl}(t)$ 라고 하자. $x_{cl}(t)$ 는 특별하게 기여하지 않고 다른 경로와 동일하게 기여한다. 하지만 고전적인 극한에서 우리는 $x_{cl}(t)$ 가 결론이어야 한다. 어떻기 가능할까?
+
+@fig-path_integral_1 은 이를 도식화했다. 경로 $x_\alpha(t)$ 에 대해 $S[x(t)]$ 를 다음과 같이 계산 할 수 있다. 잘 알듯이 $\mathcal{L}(x,\,\dot{x},\,t)$ 는 라그랑지안이다.
+
+$$
+S[x(t)] = \int_\text{path} \mathcal{L}(x,\, \dot{x},\, t)\, dt
+$$
+
+이를 이용하여 @eq-part2_propergator_using_path_integral 을 계산하는 것은 쉽지 않은 일이다. 일단 실용적으로 접근하기 위해 경로가 이산적인 집합이라고 가정하자. 그리고 @eq-part2_propergator_using_path_integral 를 계산하는데 있어 경로 $x_\alpha(t)$ 의 기여는 $Z_\alpha = e^{iS[x_{\alpha}(t)]/\hbar}$ 이다. 경로에 따라 그 기여는 서로 다른 phase 로 기여하며 서로 다른 경로의 기여는 이 phase 를 상쇄시킬 수 있다. 결론적으로는 고전적인 경로 근처를 제외한 기여는 이 방식으로 상쇄된다. 
+
+자유전자와 질량이 1 $\text{g}$ 인 거시적인 입자에 대해 생각해보자. 속도는 $1 \text{cm/s}$ 라고 간주하자. @fig-part2_path_integral_2 에서와 같이 고전적인 경로 $x_{cl}(t)=t$ 와 $x=t^2$ 의 두 경로가 각각 경로적분에 기여하는 것을 계산해보자. 라그랑지안은 $\mathcal{L}= \dfrac{1}{2}mv^2$ 이며 전자 질량은 $m_e = 9.109 \times 10^{−31} \, \text{kg}$ 이다.
+
+![($0, 0)$ 과 $(1, 1)$ 을 잇는 두 경로](figure/fig-part2_path_integral_2.png){#fig-part2_path_integral_2 width=250}
+
+전자에 의한 $S[x_{cl}(t)]/\hbar \approx 0.43\, \text{rad}$ 이며 $S[x=t^2]/\hbar= 0.57 \, \text{rad}$ 이다. 그러나 고전적인 $1\, \text{g}$ 의 입자라면 $S[x_{cl}(t)]/\hbar \approx 4.7\times 10^{26}\,\text{rad}$ 이며 $S[x=t^2]/\hbar \approx 6.3\times 10^{26}\,\text{rad}$ 이다. 즉 거시계에서는 경로의 차이가 엄청나게 큰 phase 의 차이를 주지만 미시계에서는 phase 차이가 충분히 넓은 범위의 경로를 생각해야 할 만큼 작다.
+
+
+</br>
+
+## 자유입자의 경로적분
+
+### 고전 경로 근사
+
+자유입자의 고전 경로만을 생각했을 때의 $U(x,\,t;x',\,0)$ 을 계산해보자. $(t',\, x')$ 에서 $(t,\, x)$ 으로 가는 자유입자의 고전경로 $x_{cl}(t'')$ 은
+
+$$
+x_{cl}(t'') = x' + \dfrac{x-x'}{t-t'}(t''-t')
+$$
+
+이며,
+
+$$
+S[x_{cl}(t)] = \int_{t'}^{t} \mathcal{L}\, dt'' = \dfrac{m(x-x')^2}{2(t-t')} 
+$$
+
+이므로 $S[x_{cl}(t)]$ 에 의한 기여만을 생각했을 때의 시간전개 연산자는
+
+$$
+U(x,\,t;x',\,t') = A' \exp \left[\dfrac{im(x-x')^2}{2\hbar (t-t')}\right]
+$$
+
+이다. 우리는 $\lim_{t'\to t} U(x,\,t;x',\,t') = \delta (x-x')$ 이어야 한다는 것을 안다. 또한 
+
+$$
+\lim_{\Delta \to 0} \dfrac{1}{\sqrt{\pi \Delta^2}} \exp \left[-\dfrac{(x-x')^2}{\Delta ^2}\right] = \delta(x-x')
+$$
+
+이라는 것도 알고 있다. 따라서, 
+
+$$
+U(x,\,t;x'\,t') = \sqrt{\dfrac{m}{2\pi \hbar i (t-t')}} \exp \left[\dfrac{im(x-x')^2}{2\hbar (t-t')}\right]
+$$ {#eq-part2_time_evolution_operator_for_free_particle_1}
+
+이다. 뒤에 보게 되겠지만 고전적인 경로만을 생각한 이 시간전개연산자가 전체 경로를 고려했을 때의 시간전개 연산자이다. 또 뒤에 보겠지만 포텐셜이 $V(x) = a+bx+cx^2+d\dot{x}+ex\dot{x}$ 일 때는 고전적인 경로만을 생각해도 전체 경로를 모두 고려했을때의 시간전개연산자를 얻을 수 있다. 
+
+주의해야 할 것은 위에서 $A'$ 을 계산 한 것처럼 $U(x,\,t;x',\,t')$ 의 계수를 계산 할 때 $t-t'\to 0$ 극한에서 델타함수가 되는 조건은 일반적으로 쓸 수 없다는 것이다. $A'$ 은 $t-t'\to 0$ 극한에서 $1$ 이 되는 $t-t'$ 에 대한 무차원 함수를 포함할 수 있기 때문이다. 여기서는 $m,\,\hbar,\, t-t'$ 에 대한 극한이 $1$ 이 되는 무차원 함수를 정의 할 수 없으므로 우리가 사용한 방법이 정당화된다.
+
+</br>
+
+### 전체 계산
+
+이제 고전 경로 근사를 이용하지 않고 자유입자에 대한 제대로 된 경로적분을 해 보자. 우선 $t'$ 과 $t$ 를 $N$ 개의 등간격 구간으로 나누자. 즉 $\varepsilon_N = (t-t')/N$ 에 대해
+
+$$
+t_k = t' + k \varepsilon_N = t' + \dfrac{k(t-t')}{N},\qquad k=0,\,1,\ldots,\,
+$$
+
+라고 하자. $t_0 = t',\, t_N = t$ 가 된다. 그리고 어떤 경로 $x(t)$ 에 대해 $x_k = x(t_k)$ 라고 하자. 
+
+![경로적분의 이산 근사](figure/fig-part2_path_integral_3.png){#fig-part2_path_integral_3 width=500}
+
+
+경로적분은 다음과 같이 정의된다. 
+
+$$
+U(x,\,t; x',\,t') = \int_{x_0}^{x_N} e^{iS[x(t)]/\hbar} \,\mathcal{D}[x(t)]
+$$ {#eq-part2_time_evolution_path_integral_2}
+
+여기서
+
+$$
+\int_{x_0}^{x_N} \mathcal{D}[x(t)]
+$$
+
+는 $x_0$ 와 $x_N$ 을 잇는 모든 경로에 대한 적분을 의미한다. 여기서 우리는 고정된 $x_0$ 와 $x_N$ 에 대해 $x_1,\ldots,\,x_{N-1}$ 을 변수 하여 적분을 수행할 것이다. 그리고 $N\to \infty$ 극한을 취한다. $x_k$ 와 $x_{k+1}$ 사이 사이의 점은 직선으로 간주한다.
+
+자유전자의 라그랑지안은 $\dfrac{1}{2}m\dot{x}^2$ 이므로
+
+$$
+S=\int_{t_0}^{t_N} \mathcal{L}(t) \, dt = \int_{t_0}^{t_N}\dfrac{1}{2} m \dot{x}^2 \, dt = \sum_{k=0}^{N-1} \dfrac{1}{2}\left(\dfrac{x_{k+1}-x_k}{\varepsilon_N}\right)^2 \varepsilon_N = \sum_{k=0}^{N-1} \dfrac{1}{2}\dfrac{(x_{k+1}-x_k)^2}{\varepsilon_N} 
+$$
+
+이다. 따라서
+
+$$
+\begin{aligned}
+U(x_N,\,t_N;x_0,\,t_0) &= \int_{x_0}^{x_N}\,\exp \left[\dfrac{iS[x(t)]}{\hbar}\right] \, \mathcal{D}[x(t)], \\
+&= \lim_{N \to \infty} A \int_{-\infty}^{\infty} \int_{-\infty}^\infty \cdots \int_{\infty}^\infty\exp \left[\dfrac{i}{\hbar}\dfrac{m}{2} \sum_{k=0}^{N-1} \dfrac{(x_{k+1}-x_k)^2}{\varepsilon_N}\right] \,dx_1 \cdots dx_N
+\end{aligned}
+$$ {#eq-part2_time_evolution_path_integral_3}
+
+여기서 변수를 아래와 같이 변경한다
+
+$$
+y_i := \sqrt{\dfrac{m}{2\hbar \varepsilon_N}}x
+$$
+
+그렇다면 @eq-part2_time_evolution_path_integral_3 은 다음과 같이 변한다.
+
+$$
+\begin{aligned}
+U(y_N,\,t_N&;y_0,\,t_0) = \\
+&\lim_{N \to \infty} A\left(\dfrac{2\hbar \varepsilon_N}{m}\right)^{(N-1)/2} \int_{-\infty}^{\infty} \int_{-\infty}^\infty \cdots \int_{\infty}^\infty\exp \left[-\dfrac{1}{i}\sum_{k=0}^{N-1} \left(y_{k+1}-y_k\right)^2\right] \,dy_1 \cdots dy_N
+\end{aligned}
+$${#eq-part2_time_evolution_path_integral_4}
+
+위의 적분 계산은 일견 매우 곤혹스러워 보이지만 실제로는 그렇지 않다. $y_1$ 에 대한 적분만을 생각해보자.
+
+$$
+\int_{-\infty}^\infty \exp\left[- \dfrac{1}{i} \left\{ (y_2-y_1)^2 + (y_1-y_0)^2\right\} \right] \, dy_1 = \left(\dfrac{i\pi}{2}\right)^{1/2} e^{-(y_2-y_0)^2/2i}
+$$
+
+여기에 $y_2$ 에 대한 적분을 추가하면, 
+
+$$
+\begin{aligned}
+\left(\dfrac{i\pi}{2}\right)^{1/2} & \int_{-\infty}^\infty e^{-(y_2-y_0)^2/2i} e^{-(y_3-y_2)^2/i} \, dy_2 \\
+&=\left(\dfrac{i\pi}{2}\right)^{1/2} e^{-(2y_3^2 + y_0^2)/2i} \left(\dfrac{2\pi i}{3}\right)^{1/2} e^{(y_0+2y_3)^2/6i} \\
+&=\left[\dfrac{(i\pi)^2}{3}\right]^{1/2} e^{(-y_3^2 - y_0^2)}
+\end{aligned}
+$$
+
+이다. 이것을 게속 진행해 보면 
+
+$$
+U(y_N,\,t_N;y_0,\,t_0) = \lim_{N \to \infty} A\left(\dfrac{2\hbar \varepsilon_N}{m}\right)^{(N-1)/2} \dfrac{(i\pi)^{(N-1)/2}}{\sqrt{N}} e^{-(y_N-y_0)^2/(iN)}
+$$
+
+이며, 변수를 처음의 $x_0,\,x_N$ 으로 바꾸면,
+
+$$
+U(x_N,\,t_N;x_0,\,t_0) = \lim_{N \to \infty} A \left(\dfrac{2\pi \hbar \varepsilon_N i}{m}\right)^{N/2} \left(\dfrac{m}{2\pi \hbar i N \varepsilon_N}\right)^{1/2} \exp \left[\dfrac{im(x_N-x_0)^2}{2\hbar N \varepsilon_N}\right]
+$$ {#eq-part2_time_evolution_path_integral_5}
+
+이다. 여기서 $N\to \infty$ 극한에서 $\left(\dfrac{2\pi \hbar \varepsilon_N i}{m}\right)^{N/2} \to 0$ 이 되므로, 
+
+$$
+A = \left[\dfrac{2\pi \hbar \varepsilon_N i}{m}\right]^{-N/2} \equiv B^{-N}
+$$
+
+로 놓는다. 그렇다면, @eq-part2_time_evolution_path_integral_5 는 ($N\varepsilon_N = t_N-t_0=t-t'$ 임을 생각하면)
+
+$$
+U(x,\,t;x',\,t') = \left(\dfrac{m}{2\pi \hbar i (t-t')}\right)^{1/2} \exp \left[\dfrac{im(x-x')^2}{2\hbar (t-t')}\right]
+$$
+
+로 @eq-part2_time_evolution_operator_for_free_particle_1 과 일치한다.
+
+@eq-part2_time_evolution_path_integral_2 을 생각해보면 
+
+$$
+\int \mathcal{D}[x(t)] = \lim_{N \to \infty} \dfrac{1}{B} {\Large \int}_{-\infty}^\infty {\Large \int}_{-\infty}^\infty \cdots {\Large \int}_{-\infty}^\infty \dfrac{dx_1}{B}\cdots \dfrac{dx_{N-1}}{B}
+$$
+
+임을 알 수 있다.
+
+
+</br>
+
+## 슈뢰딩거 방정식과의 동등함
+
+해밀토니안 역학과 라그랑지안 역학이 동등한것처럼 슈뢰딩거 방정식과 경로적분은 동등해야 한다. 해밀토니안 역학과 슈뢰딩거 방정식은 어떤 특정 시간에서의 방정식으로 주어지며, 라그랑지안 역학과 경로적분은 우리가 관심 있는 전체 시간에 대한 적분으로 주어진다. 슈뢰딩거 방정식은 $t=0$ 에서의 상태 $|\Psi(0)\rangle$ 이 미소시간 $\varepsilon$ 후에 다음의 방정식을 만족하는 상태 $|\Psi(t)\rangle$ 이 된다는 것을 말한다.
+
+$$
+|\Psi (t) \rangle = |\Psi(0)\rangle - \dfrac{i\varepsilon}{\hbar} H|\Psi(0)\rangle
+$$
+
+이 식은 $X$ 기저에 대해서
+
+$$
+\Psi (x,\, \varepsilon) = \Psi (x,\,0) -\dfrac{-i\varepsilon}{\hbar} \left[-\dfrac{\hbar^2}{2m} \partial_x^2  + V(x,\,0)\right]\Psi(x,\,0)
+$$
+
+이다. 우리는 시간전개 연산자 $U(x,\,t;x,\,t')$ 에 대해
+
+$$
+\Psi(x,\,\varepsilon) = \int_{-\infty}^\infty U(x,\,\varepsilon;x') \Psi(x,\, 0)\, dx'
+$$
+
+임을 안다. $\dot{x} \approx \dfrac{x'-x}{\varepsilon}$ 이며 이 $x-t$ 공간에서의 action 은 근사적으로
+
+$$
+S = \int_0^\varepsilon \mathcal{L}(x,\, \dot{x},\,t)\, dt = \int_0^\varepsilon \left(\dfrac{1}{2}m\dot{x}^2 - V(x,\, t)\right)\, dt \approx \dfrac{1}{2} m \dfrac{(x-x')^2}{\varepsilon} - V\left(\dfrac{x+x'}{2},\,0\right)\varepsilon
+$$
+
+이다. 
+$$
+U(x,\,\varepsilon;x') = 
+$$

@@ -1,0 +1,950 @@
+---
+title: "N 자유도 시스템"
+number-sections: true
+number-depth: 3
+crossref:
+  chapters: true
+---
+
+지금까지는 그것이 $X$ 든 $P$ 든 자유도가 1 인 시스템을 주로 다루었다. 이제는 자유도가 $N > 1$ 인 시스템을 어떻게 구성하는지 알아보자.
+
+</br>
+
+## $1$ 차원 다입자 시스템
+
+1차원 2 입자 시스템을 생각하자. 고전적으로 $(x_1,\,p_1)$ 과 $(x_2,\,p_2)$ 로 각각 기술된다고 하자. 이 입자가 양자역학으로 기술되기 위해서는 연산자 $X_1,\,P_1,\,X_2,\,P_2$ 에 대해 다음과 같은 cannonical commutation relation 을 만족해야 한다.
+
+$$
+\begin{aligned}
+\left[X_i,\, P_j\right] &= i \hbar \delta_{ij}I, \\
+[X_i,\, X_j] &= \delta_{ij}I, \\
+[P_i,\, P_j] &= \delta_{ij}I.
+\end{aligned}
+$$ {#eq-part2_2_ptc_operators_1}
+
+
+첫번째 입자를 기술하는 힐베르트 공간을 $\mathcal{H}_1$ 이라고 하고 두번째 입자를 기술하는 힐베르트 공간을 $\mathcal{H}_2$ 라고 하자. $\{|x_1\rangle\}$ 을 $\mathcal{H}_1$ 에서의 좌표 기저라고 하고 $\{|x_2\rangle\}$ 을 $\mathcal{H}_2$ 의 좌표기저라고 하자. 각각의 힐베르트공간에서의 연산자를 표기하기 위헤 $X_1^{(1)}$ 과 같은 표기법을 사용한다. $X_1^{(2)}$ 는 $\mathcal{H}_2$ 에서의 첫번째 입자의 좌표 연산자이다. (의미가 그렇다는 거시 무의미하다.) 그렇다면 @eq-part2_2_ptc_operators_1 는 다음과 같이 표현 할 수 있다.
+
+$$
+\begin{aligned}
+\left[ X_1^{(1)},\, P_1^{(1)}\right] = i\hbar I^{(1)}, \qquad \left[ X_2^{(2)},\, P_2^{(2)}\right] = i\hbar I^{(2)}
+\end{aligned}
+$$ {#eq-part2_2_ptc_operators_2}
+
+</br>
+
+우리는 이제 서로 교집합이 없는 두 힐베르트 공간을 하나의 상태로 기술하는 것을 배워야 한다. 이것을 위해 추상적인 수학이 필요하다.
+
+</br>
+
+### Direct product
+
+두 벡터공간을 동시에 기술하는 벡터공간은 두 벡터공간의 **direct product** 를 통해 가능하다. $\mathcal{H}_1$ 과 $\mathcal{H}_2$ 의 direct product 는 $\mathcal{H}_1 \otimes \mathcal{H}_2$ 라고 쓰며 $|\phi_1\rangle \in \mathcal{H}_1$ 과 $|\phi_2 \rangle \in \mathcal{H}_2$ 에 대해 $|\phi_1\rangle \otimes |\phi_2\rangle$ 이라고 표기하는 벡터를 포함한다. 여기서 $|\phi_1\rangle \otimes |\phi_2\rangle$ 은 $\mathcal{H}_1$ 에서 기술되는 입자가 $|\phi_1\rangle$ 상태에 있고 $\mathcal{H}_2$ 에서 기술되는 입자는 $|\phi_2\rangle$ 상태에 있는 상태벡터이다. $\mathcal{H}_1 \otimes \mathcal{H}_2$ 가 벡터공간이 되기 위해서는 단순히 $|\phi_1\rangle \otimes |\phi_2\rangle$ 꼴의 벡터 뿐만 아니라 이런 벡터들의 선형결합도 포함해야 한다. 즉 $\mathcal{H}_1 \otimes \mathcal{H}_2$ 는 각각의 $|\phi_1\rangle \in \mathcal{H}_1$, $|\phi_2\rangle \in \mathcal{H}_2$ 에 대해 모든 $|\phi_1\rangle\otimes |\phi_2\rangle$ 벡터들의 선형결합을 포함하는 벡터공간이다. 즉
+
+
+$$
+\mathcal{H}_1 \otimes \mathcal{H}_2 = \text{span}\left(\left\{|\phi_1\rangle \otimes |\phi_2\rangle \right\}\right)
+$$
+
+이다. $\mathcal{H}_1 \otimes \mathcal{H}_2$ 가 벡터공간이기 위해 다음의 규칙이 성립한다.
+
+$$
+\begin{aligned}
+( \alpha_1 |\phi_1\rangle + \beta_1 |\psi_1\rangle) \otimes (\gamma_2 |\phi_2\rangle) &= \alpha_1 \gamma_2 |\phi_1 \rangle \otimes |\phi_2\rangle + \beta_1\gamma_2 |\psi_1\rangle \otimes |\phi_2\rangle, \\
+(\gamma_1 |\phi_1\rangle) \otimes ( \alpha_2 |\phi_2\rangle +\beta_2 |\psi_2\rangle) &= \alpha_2 \gamma_1 |\phi_1\rangle \otimes |\phi_2\rangle + \beta_2 \gamma_1 |\phi_1 \rangle \otimes |\psi_2\rangle. 
+\end{aligned}
+$$
+
+</br>
+
+이제 direct product space 의 기저에 대해 알아보자. $\left\{\left|\phi^{(1)}_i\right\rangle :i=1,\,2,\ldots\right\}$ 이 $\mathcal{H}_1$ 의 기저이고 $\left\{\left|\phi^{(2)}_j\right\rangle : j=1,\,2,\ldots\right\}$ 이 $\mathcal{H}_2$ 의 기저일 때 
+
+$$
+\left\{ \left|\phi^{(1)}_i\right\rangle \otimes \left|\phi^{(2)}_j\right\rangle \right\}
+$$
+
+이 $\mathcal{H}_1 \otimes \mathcal{H}_2$ 의 기저가 된다는 것은 쉽게 보일 수 있다. 
+
+
+</br>
+
+여기서 주의해야 할 것은 모든 $\mathcal{H}_1 \otimes \mathcal{H}_2$ 의 벡터가 $\mathcal{H}_1$ 과 $\mathcal{H}_2$ 각각의 벡터의 direct product 로 표현 될 수 있는 것은 아니라는 것이다. 
+
+
+<div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+
+::: {#exm-part2_direct_product}
+
+예를 들어 두 스핀 $1/2$ 입자의 스핀 상태를 각각 $|+\rangle,\, |-\rangle$ 로 표현한다고 하자. 이 때 
+
+$$
+|\Psi \rangle = |+\rangle \otimes |- \rangle - |- \rangle \otimes |+ \rangle
+$$
+
+를 생각하자. $|\phi_1\rangle = a_1 | + \rangle + b_1 |- \rangle \in \mathcal{H}_1$, $|\phi_2\rangle = a_2 |+\rangle + b_2 |- \rangle \in \mathcal{H}_2$ 에 대해 $|\Psi\rangle = |\psi_1\rangle \otimes |\psi_2\rangle$ 라면 
+
+$$
+\begin{aligned}
+|\Psi\rangle &= |\phi_1\rangle \otimes |\phi_2\rangle \\
+&= a_1a_2 |+\rangle \otimes |+\rangle + a_1b_2 |+\rangle \otimes |-\rangle + a_2b_1 |-\rangle \otimes |+\rangle +b_1b_2 |-\rangle \otimes |-\rangle
+\end{aligned}
+$$
+
+이어야 하므로 $a_1a_2=0$, $b_1b_2=0$, $a_1b_2=1$, $a_2b_1=-1$ 이어야 하는데 이는 불가능하다.
+
+:::
+
+</div>
+
+</br>
+
+즉 어떤 $|\psi \rangle \in \mathcal{H}_1\otimes \mathcal{H}_2$ 는 $\mathcal{H}_1$ 과 $\mathcal{H}_2$ 에서의 각각 하나의 벡터의 direct product 로 표현될 수 없을 수 있다. 
+
+</br>
+
+$\mathcal{H}_1 \otimes \mathcal{H}_2$ 가 Direct product 의 conjugate vector 는 다음과 같이 정의된다.
+
+$$
+\langle \phi_1 | \otimes \langle \phi_2 | := (|\phi_1\rangle \otimes |\phi_2\rangle)^\dagger.
+$$
+
+그리고 내적은 다음과 같이 정의된다.
+
+$$
+\left(\langle \phi_1 | \otimes \langle \phi_2 |\right) (|\psi_1 \rangle \otimes |\psi_2\rangle) := \langle \phi_1 | \psi_1\rangle \langle \phi_2 | \psi_2\rangle
+$$
+
+
+</br>
+
+### Direct product space 에서의 연산자
+
+$\mathcal{H}_1$ 에서 정의된 연산자 $A^{(1)}$ 과 $\mathcal{H}_2$ 에서 정의된 연산자 $B^{(2)}$ 에 대해 
+
+$$
+\left(A^{(1)}\otimes B^{(2)}\right) \left( |\phi_1\rangle \otimes |\phi_2\rangle\right) := \left(A^{(1)}|\phi_1\rangle\right) \otimes (\left(B^{(2)})|\phi_2\rangle\right)
+$$
+
+로 정의하는 것은 자연스럽다. 또한 선형연산자의 성질에 의해
+
+$$
+\begin{aligned}
+\left(A^{(1)}\otimes B^{(2)}\right) &\left( a|\phi_1\rangle \otimes |\phi_2\rangle + b|\psi_1\rangle \otimes |\psi_2\rangle\right) \\
+&=a\left(A^{(1)}\otimes B^{(2)}\right)\left( |\phi_1\rangle \otimes |\phi_2\rangle \right) + b\left(A^{(1)}\otimes B^{(2)}\right)\left(|\psi_1\rangle + |\psi_2\rangle\right) \\
+\end{aligned}
+$$
+
+이다. 이렇게 되면 $\mathcal{H}_1$ 에서 정의된 $A_1^{(1)}$ 에 대해 $\mathcal{H}_2$ 에서 정의된 항등연산자 $I^{(2)}$ 를 이용하여 $\mathcal{H}_1 \otimes \mathcal{H}_2$ 에서의 연산자 $A_1^{(1)\otimes (2)}$ 를 다음과 같이 정의하자. 
+
+$$
+A_1^{(1)\otimes (2)} := A_1^{(1)}\otimes I_2^{(2)}
+$$
+
+그렇다면 
+$$
+A_1^{(1)\otimes (2)} |\phi_1\rangle \otimes |\phi_2\rangle = \left(A_1^{(1)}\otimes I_2^{(2)}\right) |\phi_1\rangle \otimes |\phi_2\rangle = \left(A_1^{(1)}|\phi_1\rangle\right) \otimes |\phi_2\rangle
+$$
+
+가 된다. 즉 $\mathcal{H}_1$ 에서 $A_{1}^{(1)}$ 이 하던 일을 $\mathcal{H}_1 \otimes \mathcal{H}_2$ 에서 $A_1^{(1)\otimes (2)}$ 가 하게 된다. 마찬가지로 $\mathcal{H}_2$ 에서 정의된 연산자 $B_2^{(2)}$ 에 대해 $I_1^{(1)}\otimes B_2^{(2)}$ 연산자는 $B_2^{(2)}$ 연산자를 $\mathcal{H}_1 \otimes \mathcal{H}_2$ 공간으로 확장한 것이다.
+
+
+
+이제 $\mathcal{H}_1$ 에서 정의된 $A_1^{(1)},\, \Gamma_1^{(1)}$ 과 $\mathcal{H}_2$ 에서 정의된 $B_2^{(2)},\, \Omega_2^{(2)}$ 연산자에 대해 
+
+$$
+\begin{aligned}
+\left(A_1^{(1)}\otimes B_2^{(2)}\right) \left(\Gamma_1^{(1)}\otimes \Omega_2^{(2)}\right) |\phi_1\rangle \otimes |\phi_2\rangle &= \left(A_1^{(1)}\otimes B_2^{(2)}\right) \left[\left(\Gamma_1^{(1)}|\phi_1\rangle \right) \otimes \left(\Omega_2^{(2)}|\phi_2\rangle \right)\right] \\
+&= \left(A_1^{(1)} \Gamma_1^{(1)}|\phi_1\rangle \right) \otimes \left(B_2^{(2)} \Omega_2^{(2)}|\phi_2\rangle\right)\\
+&= \left(A_1^{(1)}\Gamma_1^{(1)} \otimes B_2^{(2)}\Omega_2^{(2)}\right)|\phi_1\rangle \otimes |\phi_2\rangle
+\end{aligned}
+$$
+
+임을 알 수 있다. 즉,
+
+$$
+\left(A^{(1)}\otimes B^{(2)}\right) \left(\Gamma^{(1)}\otimes \Omega^{(2)}\right) =  \left(A^{(1)}\Gamma^{(1)} \otimes B^{(2)}\Omega^{(2)}\right)
+$$ {#eq-pqrt2_operator_product_in_product_space}
+
+이다. 
+
+</br>
+
+<div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+
+::: {#exm-part2_commutator_in_product_space}
+
+$\left[A^{(1)}\otimes I^{(2)},\, I^{(1)}\otimes B^{(2)}\right] = 0$ 임을 보일 수 있다. 
+
+$$
+\begin{aligned}
+\left[ A^{(1)}\otimes I^{(2)},\, I^{(1)}\otimes B^{(2)}\right] |\phi_1\rangle \otimes |\phi_2\rangle = \left(A^{(1)} \otimes B^{(2)} - A^{(1)}\otimes B^{(2)}\right) |\phi_1\rangle \otimes |\phi_2\rangle = |\varnothing\rangle
+\end{aligned}
+$$
+
+
+:::
+
+</div>
+
+</br>
+
+::: {#exr-shankar_10_1_2}
+
+#### Shankar 10.1.2
+
+한 입자에 대한 힐베르트 공간이 2차원인 가상의 세계를 생각하자. 기저를 $|+\rangle$ 과 $|-\rangle$ 라고 하자. 아래에 정의된 연산자 $\sigma_1^{(1)},\,\sigma_2^{(2)}$ 가 각각 $\mathcal{H}_1$ 과 $\mathcal{H}_2$ 에서 정의된 연산자라고 하자.
+
+$$
+\begin{array}{cc} \\ \sigma_{1}^{(1)} = \end{array}  \begin{array}{c} \\ + \\ - \end{array} \begin{array}{c} \begin{array}{c} + & - \end{array} \\\begin{bmatrix} a & b \\ c & d \end{bmatrix} \end{array}, \qquad 
+\begin{array}{cc} \\ \sigma_{2}^{(2)} = \end{array}  \begin{array}{c} \\ + \\ - \end{array} \begin{array}{c} \begin{array}{c} + & - \end{array} \\\begin{bmatrix} e & f \\ g & h \end{bmatrix} \end{array}, 
+$$
+
+$\mathcal{H}_1 \otimes \mathcal{H}_2$ 가 $|+\rangle \otimes |+\rangle$, $|+\rangle \otimes |-\rangle$, $|-\rangle \otimes |+\rangle$, $|-\rangle \otimes |-\rangle$ 로 span 될 때 $\sigma_1^{(1)\otimes (2)}$, $\sigma_2^{(1)\otimes (2)}$, $\sigma_1^{(1)} \otimes \sigma_2^{(2)}$ 를 구하시오.
+
+
+:::
+
+::: {.solution}
+
+$|i\rangle \otimes |j\rangle$ 을 $|ij\rangle$ 로 표기하자. $\langle i'j'|\sigma_1^{(1)\otimes (2)}|ij\rangle = \langle i'|\sigma_1^{(1)}|i\rangle \langle j'|j\rangle$ 이므로
+
+$$
+\sigma_1^{(1)\otimes (2)} = \begin{array}{c} \\ ++ \\ +- \\ -+ \\ --\end{array} \begin{array}{c} \begin{array}{cccc} ++ & +- & -+ & -- \end{array} \\ \begin{bmatrix} \;\; a\;\; & \;\;0\;\; & \;\;b\;\; & \;\; 0\;\; \\ 0 & a & 0 & b \\ c & 0 & d & 0 \\ 0 & c & 0 & d\end{bmatrix} \end{array}
+$$
+
+이다. $\langle i'j'|\sigma_2^{(1)\otimes (2)} | ij\rangle = \langle i'|i\rangle \langle j'|\sigma_2^{(2)}|j\rangle$ 이므로 
+
+$$
+\sigma_1^{(1)\otimes (2)} = \begin{array}{c} \\ ++ \\ +- \\ -+ \\ --\end{array} \begin{array}{c} \begin{array}{cccc} ++ & +- & -+ & -- \end{array} \\ \begin{bmatrix} \;\; e\;\; & \;\;f\;\; & \;\;0\;\; & \;\; 0\;\; \\ g & h & 0 & 0 \\ 0 & 0 & e & f \\ 0 & 0 & g & h\end{bmatrix} \end{array}
+$$
+
+이며, $\langle i'j'|\sigma_1^{(1)}\otimes \sigma_2^{(2)}|i, j\rangle = \langle i'|\sigma_1^{(1)}|i\rangle \langle j'|\sigma_2^{(2)}|j\rangle$ 이므로, 
+
+$$
+\sigma_1^{(1)\otimes (2)} = \begin{array}{c} \\ ++ \\ +- \\ -+ \\ --\end{array} \begin{array}{c} \begin{array}{cccc} ++ & +- & -+ & -- \end{array} \\ \begin{bmatrix} \,\, ae\,\; & \,\,af\,\; & \,\,be\,\; & \,\, bf\,\; \\ ag & ah & bg & bh \\ ce & cf & de & df \\ cg & ch & dg & dh\end{bmatrix} \end{array}
+$$
+
+이다.
+:::
+
+</br>
+
+### 두 입자의 $X$, $P$ 기저에서의 설명
+
+이제 다시 $X$, $P$ 기저로 돌아오자. Direct product 를 이용하면 두 입자에 대해 $X_1^{(1)}$, $X_2^{(2)}$ 를 두 입자를 동시에 기술하는 힐베르트 공간에서의 연산자로 확장 할 수 있다. 이를 이용하면 commutation relation 은 다음과 같다.
+
+$$
+\begin{aligned}
+\left[X_i^{(1)\otimes (2)},\, P_j^{(1)\otimes (2)}\right] &= i\hbar \delta_{ij} I^{(1)\otimes (2)}, \\
+\left[X_i^{(1)\otimes (2)},\, X_j^{(1)\otimes (2)}\right] &= \left[P_i^{(1)\otimes (2)},\, P_j^{(1)\otimes (2)}\right] = 0.
+\end{aligned}
+$$
+
+이제 표기법을 좀 단순화하자. 우리가 어떤 힐베르트 공간에서 기술하는지 안다면 $(1) \otimes (2)$ 와 같은 첨자는 생략해도 상관 없을 것이다. 여기서는 $\mathcal{H}_1 \otimes \mathcal{H}_2$ 에서 기술하기 때문에 $X_i=X_i^{(1)\otimes (2)}$, $P_j = P_j^{(1)\otimes (2)}$ 로 줄여서 사용해도 무방할 것이다. 또한 $|x_1\rangle \otimes |x_2\rangle$ 을 $|x_1x_2\rangle$ 로 표기해도 혼란이 없을 것이다. 그렇다면
+
+$$
+X_1|x_1x_2\rangle = x_1|x_1x_2\rangle,\qquad X_2|x_1x_2\rangle = x_2|x_1x_2\rangle
+$$
+
+이며, 
+
+$$
+\langle x_1'x_2'|x_1x_2 \rangle = \delta(x_1-x_1')\,\delta(x_2-x_2')
+$$
+
+이 된다. 또한 이 기저에서 어떤 상태 $|\Psi\rangle$ 을 표현한다면 파동함수는
+
+$$
+\langle x_1x_2|\Psi\rangle = \Psi(x_1,\,x_2)
+$$
+
+이고, 
+
+$$
+X_i \to x_i,\qquad P_i \to -i\hbar \dfrac{\partial}{\partial x_i}
+$$
+
+가 된다. 또한
+
+$$
+P(x_1,\,x_2) = \left|\langle x_1x_2|\Psi\rangle\right|^2
+$$
+
+는 입자 $1$ 을 $x_1$ 에서, 입자 $2$ 를 $x_2$ 에서 발견할 확률밀도함수가 된다. 따라서, 
+
+$$
+1 = \int_{-\infty}^\infty \int_{-\infty}^\infty P(x_1,\,x_2)\,dx_1\,dx_2 = \int_{-\infty}^\infty \int_{-\infty}^\infty |\langle x_1x_2|\Psi\rangle|^2\,dx_1\,dx_2
+$$
+
+인 정규화 조건을 만족해야 한다. 
+
+
+
+이제 두 입자의 상태 $|\Psi\rangle \in \mathcal{H}_1\otimes \mathcal{H}_2$ 를 생각하자. 여기에 대한 슈뢰딩거 방정식은
+
+$$
+i\hbar |\dot{\Psi}\rangle = \left[\dfrac{P_1^2}{2m_1} + \dfrac{P_2^2}{2m_2} + V(X_1, X_2)\right] |\Psi\rangle = H|\Psi\rangle
+$$
+
+이다. 만약 $H$ 가 $(X_1,\,P_1)$ 에 대한 항과 $(X_2,\,P_2)$ 에 대한 항으로 분리 가능하다면, 즉 여기서 $V(X_1,\,X_2) = V_1(X_1)+V_2(X_2)$ 로 분리 할 수 있다면
+
+$$
+H=\left(\dfrac{P_1^2}{2m_1} + V_1(X_1)\right) + \left(\dfrac{P_2^2}{2m_2} + V_2(X_2)\right) = H_1+H_2
+$$ {#eq-part2_2_ptls_seperable_hamiltonian}
+
+이며 이것은 각각의 힐베르트 공간으로 분리하여 풀 수 있다. 물론 수소원자에서의 쿨롱 포텐셜처럼 분리되지 않을 수도 있다. 분리되는 경우가 훨씬 간단할 것이므로 여기에 대해 우선 알아보자.
+
+
+</br>
+
+### 분리가능한 해밀토니안의 경우
+
+@eq-part2_2_ptls_seperable_hamiltonian 과 같이 두 입자에 대한 해밀토니안이 $\mathcal{H}_1$ 에서의 $H_1$ 과 $\mathcal{H}_2$ 에서의 $H_2$ 로 분리가능할 경우를 생각해보자. $H_1 = H_1^{(1)} \otimes I_2^{(2)}$,  $H_2= I_1^{(1)} \otimes H_2^{(2)}$ 으로 표현 할 수 있다. 여기에서 $H_1^{(1)}$ 의 고유값 $E_1$ 인 고유상태를 $|E_1\rangle$ 이라고 하고 $H_2^{(2)}$ 의 고유값 $E_2$ 인 고유상태를 $|E_2\rangle$ 이라고 하자. 
+
+$$
+H|E_1\rangle \otimes |E_2\rangle = (H_1 + H_2)|E_1\rangle \otimes |E_2\rangle = (E_1+E_2) |E_1\rangle \otimes |E_2\rangle = E|E_1\rangle \otimes |E_2\rangle
+$$
+
+이므로 $|E_1\rangle \otimes |E_2\rangle$ 은 에너지가 $E=E_1+E_2$ 인 $H$ 의 고유상태이다. 그렇다면 $H$ 의 고유값이 $E$ 인 고유상태 $|\Psi_E\rangle$ 은
+
+$$
+|\Psi_E(t)\rangle = |E\rangle e^{-iEt/\hbar} =  |E_1\rangle e^{-iE_1/\hbar} \otimes |E_2\rangle e^{-iE_2/\hbar}
+$$
+
+를 만족한다. 이제 좌표 기저에서 확인해보자. @eq-part2_2_ptls_seperable_hamiltonian 를 좌표기저에서 표현해보면 $\Psi_E(x_1,\,x_2) = \langle x_1x_2|\Psi_E\rangle$ 에 대해 
+
+$$
+\left[-\dfrac{\hbar^2}{2m_1}\dfrac{\partial^2}{\partial x_1^2} + V_1(x_1) - \dfrac{\hbar^2}{2m_2}\dfrac{\partial^2}{\partial x_2^2} + V_2(x_2)\right] \Psi_E(x_1,\,x_2) = E\Psi_E(x_1,\,x_2)
+$$ {#eq-part2_2_ptls_schroedinger_eq_seperable}
+
+이어야 한다. 이제 $\Psi_E(x_1,\,x_2)$ 가 $x_1$ 에 대한 함수와 $x_2$ 에 대한 함수의 곱으로 표현 될 수 있다고 가정하자. 즉
+
+$$
+\Psi_E(x_1,\,x_2) = \Psi_{1}(x_1) \Psi_{2}(x_2)
+$$
+
+라면 @eq-part2_2_ptls_schroedinger_eq_seperable 는 다음과 같이 변경된다.
+
+$$
+\begin{aligned}
+\dfrac{1}{\Psi_1(x_1)} &\left[ -\dfrac{\hbar^2}{2m_1}\dfrac{\partial^2}{\partial x_1^2} + V_1(x_1) \right] \Psi_1(x_1) \\
+&+ \dfrac{1}{\Psi_2(x_2)} \left[ - \dfrac{\hbar^2}{2m_2}\dfrac{\partial^2}{\partial x_2^2} + V_2(x_2)\right] \Psi_2(x_2) = E.
+\end{aligned}
+$$ {#eq-part2_2_ptls_schroedinger_eq_seperable_2}
+
+
+위 식의 좌변은 각각 $x_1$ 에만 의존하는 항과 $x_2$ 에만 의존하는 항의 합이다. 따라서 위 식은 아래의 세 식으로 분리될 수 있다.
+
+$$
+\begin{aligned}
+\dfrac{1}{\Psi_1(x_1)} \left[ -\dfrac{\hbar^2}{2m_1}\dfrac{\partial^2}{\partial x_1^2} + V_1(x_1) \right] \Psi_1(x_1) &= E_1,\\
+\dfrac{1}{\Psi_2(x_2)} \left[ - \dfrac{\hbar^2}{2m_2}\dfrac{\partial^2}{\partial x_2^2} + V_2(x_2)\right] \Psi_2(x_2) &= E_2,\\
+E_1+E_2 &= E. 
+\end{aligned}
+$$
+
+이로부터 우리는 $\Psi_1(x_1)$ 은 $E_1$ 을 고유값으로 갖는 파동함수이며 $\Psi_2(x_2)$ 는 $E_2$ 를 고유값으로 갖는 파동함수이고, 이 때 $\Psi_1(x_1)\Psi_2(x_2)$ 는 $E_1+E_2$ 를 고유값으로 갖는 $H$ 의 고유 파동함수임을 알 수 있다. $\Psi_1(x_1)$ 을 $\Psi_{E_1}(x_1)$ 으로, $\Psi_2(x_2)$ 를 $\Psi_{E_2}(x_2)$ 로 쓸 수 있으며, 따라서 분리가능한 1차원 2 입자 시스템의 슈뢰딩거 방정식을 만족하는 고유함수는 다음과 같이 쓸 수 있다는 것을 알 수 있다.
+
+$$
+\Psi_E(x_1,\,x_2) = \Psi_E(x_1,\,x_2) e^{-iEt/\hbar} = \Psi_{E_1}(x_1) e^{-iE_1t/\hbar}\,  \Psi_{E_2}(x_2) e^{-iE_2t/\hbar}
+$$
+
+
+</br>
+
+### 분리 불가능한 해밀토니안의 경우
+
+예를 들어 $V(x_1,\,x_2) = V(x_1-x_2)$ 라고 하자. 고전역학의 2체문제에서와 같이
+
+$$
+x_{CM} := \dfrac{m_1x_1+m_2x_2}{m_1+m_2},\qquad x := x_1-x_2
+$$
+
+라고 하자. 그렇다면 각각 conjugate momentum $p_{CM},\, p$ 는 $M=m_1+m_2,\,\mu = \dfrac{m_1m_1}{m_1+m_2}$ 에 대해 
+
+$$
+p_{CM} =  M\dot{x}_{cm} = m_1\dot{x}_1 + m_2 \dot{x}_2,\qquad p = \mu \dot{x}
+$$
+
+이며 해밀토니안은 아래와 같이 $x_{CM},\, p_{CM},\, x,\, p$ 에 대해 표현 할 수 있다.
+$$
+H = H_{CM}+ H_{rel} = \left[\dfrac{p_{CM}^2}{2(m_1+m_2)}\right] + \left[\dfrac{p^2}{2\mu} + V(x)\right].
+$$
+
+새로운 변수들에 대해서도 
+
+$$
+[X_{CM},\, P_{CM}] = i\hbar I,\qquad [X,\,P] = i\hbar
+$$
+
+임을 보일 수 있다. 즉 $V(x_1-x_2)$ 와 같은 포텐셜에서는 분리 불가능한 해밀토니안을 적절한 좌표 변환을 통해 분리 가능한 해밀토니안으로 변환시킬 수 있다. 
+
+</br>
+
+### 1차원 다입자 시스템
+
+우리가 지금까지 2입자에 대해 알아본 것은 대부분 다입자 시스템에도 적용 할 수 있다. 그러나 무게중심을 이용하여 분리불가능한 해밀토니안을 분리가능한 해밀토니안으로 바꾸는 것은 다입자 시스템에는 일반적으로 적용 될 수 없다. 
+
+
+</br>
+
+### 다차원 $N$ 입자 시스템
+
+수학적으로 $1$ 차원 $N$ 입자 시스템과 $N$ 차원 $1$ 입자 시스템은 동등하다. 
+
+
+</br>
+
+## 동일 입자
+
+어떤 입자가 동일하다는 것은 차이가 나는 고유의 성질이 없다는 뜻이다. 예를 들어 두 전자는 전하, 질량, 스핀이 동일하며 두 입자의 차이를 구별 할 수 없다. 두 전자의 위치나 운동량이 다를 수 있지만 위치나 운동량은 고유의 성질은 아니다. 이 동일성의 정의는 고전 물리학이나 양자역학에서 같이 사용되지만 의미는 매우 다르다.
+
+</br>
+
+### 고전적인 경우
+
+아래 그림과 같은 당구공 충돌을 생각하자. 1번 홀과 2번 홀 근처에 각각 동일한 공이 위치하며 이를 1번공, 2번공이라고 하자. 두 공의 위치를 정확히 바꾼다고 하더라도 변화가 없을 것이다. 그러나 고전물리학에서는 이 교환이 서로 구별된다. 어떻게 구별되는지 알아보기로 하자.
+
+![동일입자 당구 충돌 실혐. $t=0$ 에서 각각 1 번과 2번 홀에서 출발하여 충돌 한 후 $t=T$ 에서 각각 3번과 4번 홀로 들어갔다고 하자.](figure/fig-part2_identical_particles.png){#fig-identical_particles_billiad width=300}
+
+$t=0$ 에서 두 당구선수가 각각의 공을 당구대의 중앙을 향해 쳤고, 중앙에서 충돌 후 $t=T$ 에서 각각 3번 홀과 4번 홀로 하나씩 들어갔다고 하자. 여기서 가능성은 1번공이 3번홀로, 2번공이 4번홀로 가는 경우와 1번공이 4번홀로 2번공이 3번홀로 가는 경우가 있다. 정확이 어떻게 가든 우리는 이 가운데 정확한 답을 알 수 있다. 그것은 고전물리학이 입자의 궤적을 정확하게 예측 할수 있다는 것을 가정하기 때문이다. 즉 1번공과 2번공 각각의 궤적을 정확히 알 수 있기 때문에, 처음부터 이 공을 관찰한 관찰자는 둘 가운데 정확한 답을 찾을 수 있다. 
+
+
+</br>
+
+### 양자역학의 경우
+
+
+동일한 두 입자의 위치를 동시에 측정하여 $a$ 와 $b$ 의 측정값을 얻었다고 하자. 이 때 $a\ne b$ 임을 가정하자. 이 상태벡터를 $|\Psi\rangle$ 이라고 하자. 각 입자를 $1$, $2$ 로 라벨을 붙이고 $\mathcal{H}_1\otimes \mathcal{H}_2$ 힐베르트 공간에서 기술할 때 이것은 $|ab\rangle$ 일 수도 있고 $|ba\rangle$ 일 수도 있다. 문제는 동일한 입자를 구별 할 수 없다는 것이다. 따라서 $|\Phi\rangle$ 은 $|ab\rangle$ 과 $|ba\rangle$ 의 중첩으로 
+
+$$
+|\Psi\rangle = \alpha |ab\rangle + \beta|ba\rangle
+$$
+
+이다. 두 입자를 교환하는 $P_{12}$ 연산을 생각해보자. 
+
+$$
+P_{12}|\Psi\rangle = \beta|ab\rangle + \alpha |ba\rangle
+$$
+
+이며, $P_{12}|\Psi\rangle$ 은 $|\Psi\rangle$ 과 구분할 수 없는 양자상태, 즉 $|\gamma|^2=1$ 인 복소수 $\gamma$ 에 대해 $\gamma |\Psi\rangle$ 이어야 한다. 즉
+
+$$
+P_{12}|\Psi\rangle = \beta |ab\rangle + \alpha |ba\rangle = \gamma \alpha |ab\rangle + \gamma \beta |ab\rangle
+$$
+
+이어야 하며, 따라서 $\alpha = \beta \gamma$, $\beta = \alpha \gamma$ 이므로, $\alpha = \pm \beta$ 이어야 한다. 이제 $P_{12}$ 에 대한 고유값은 $\pm 1$ 이며 고유값이 $1$ 인 고유상태를 $|ab,\,S\rangle$, $-1$ 인 고유상태를 $|ab,\,A\rangle$ 이라고 하면 (정규화를 고려하면)
+
+$$
+\begin{aligned}
+|ab,\,S\rangle &=\dfrac{1}{\sqrt{2}}\left[|ab\rangle + |ba\rangle\right],\\
+|ab,\,A\rangle &= \dfrac{1}{\sqrt{2}}\left[|ab\rangle - |ba\rangle\right].
+\end{aligned}
+$$
+
+$S,\,A$ 라는 라벨은 상태가 대칭(S, Symmetric) 이거나 반대칭(A, Antisymmetric) 이므로 붙여졌다. $|ab,\,S\rangle$ 대칭 상태벡터, $|ab,\,A\rangle$ 을 반대칭 상태벡터라고 한다. 위치 뿐만 아니라 힐베르트 공간의 complete set of observables 를 $\omega,\, \omega'$ 이라고 할 때
+
+$$
+\begin{aligned}
+|\omega\omega',\,S\rangle = \dfrac{1}{\sqrt{2}} [|\omega\omega'\rangle + |\omega'\omega\rangle], \\
+|\omega\omega',\, A\rangle = \dfrac{1}{\sqrt{2}} [|\omega\omega'\rangle - |\omega'\omega\rangle], \\
+\end{aligned}
+$$ {#eq-part2_symmatric_and_antisymmetric_state_vector}
+
+와 같이 대칭, 반대칭인 상태벡터를 구성 할 수 있다. 또한 여기서는 동일한 두 입자에 대해서만 다루었는데, 앞으로 보겠지만 임의의 $N$ 입자에 대해 대칭인 상태벡터와 반대칭인 상태벡터를 구성 할 수 있다. 그리고 이 대칭/반대칭 상태벡터는 단순히 상태의 대칭성을 수학적으로 보이는 것이 아니라 자연의 근본적인 성질과 밀접히 관련되어 있다.
+
+</br>
+
+### 보존, 페르미온, 배타원리
+
+놀랍게도 모든 입자는 각 입자에 따라 대칭, 혹은 반대칭 상태벡터중 하나를 따른다. 대칭인 상태벡터를 따르는 입자를 **보존(boson)** 이라고 하며 반대칭인 상태벡터를 따르는 입자를 **페르미온(fermiion)** 이라고 한다. 보존에는 파이온, 광자, 중력자가 있으며 페르미온에는 전자, 양성자, 중성자가 있다.
+
+
+페르미온의 경우 아주 흥미로운 현상이 있다. @eq-part2_symmatric_and_antisymmetric_state_vector 에서 $\omega = \omega'$ 이라면
+
+$$
+|\omega \omega,\, A\rangle = 0
+$$
+
+이 된다. 이것이 그 유명한 파울리의 **배타 원리 (exclusion principle)** 이다. 동일한 두 페르미온 입자는 동일한 상태에 있을 수 없다. 
+
+</br>
+
+어떤 입자가 보존인지 페르미온인지는 각 입자가 가진 고유의 내재적인 각운동량, 소위 스핀 각운동량(spin angular momentum) 에 따라 다르다. 양자장론에 따르면 스핀 각운동량의 크기는 각 입자의 종류마다 고유하며 $\hbar/2$ 의 배수를 가진다. $\hbar/2$ 의 짝수배인 입자는 보즈-아인슈타인 통계를 따르는 입자로 보존이며, $\hbar/2$ 의 홀수배인 입자는 페르미-디랙 통계를 따르는 입자로 페르미온이다. 그러나 이 구분은 3차원에서의 구분이며 1차원의 경우는 고전적으로도 각운동량이라는 물리량이 정의되지 않는다. 이 경우는 실험적으로 보즈-아인슈타인 통계를 따르는지, 페르미-디랙 통계를 따르는지에 따라 구분한다. [@Shankar:102017]
+
+
+</br>
+
+## 보존과 페르미온의 힐베르트 공간
+
+### 동일한 두 입자의 힐베르트 공간
+
+두 동일 보존의 상태벡터는 항상 대칭적이며 두 동일 페르미온의 상태벡터는 항상 반대칭적이다. 이제 대칭적인 힐베르트 공간, 즉 대칭적인 상태함수만을 허용하는 힐베르트 공간을 $\mathcal{H}_S$ 라고 표기하고 반대칭 적인 힐베르트 공간을 $\mathcal{H}_A$ 라고 표기하기로 하자. 
+
+두 입자의 힐베르트 공간 $\mathcal{H}_1 \otimes \mathcal{H}_2$ 를 생각하자. $|\omega_1,\,\omega_2\rangle \in \mathcal{H}_1 \otimes \mathcal{H}_2$ 일 때
+
+$$
+\begin{aligned}
+|\omega_1\omega_2\rangle &= \dfrac{|\omega_1\omega_2\rangle + |\omega_2\omega_1\rangle}{2} + \dfrac{|\omega_1\omega_2\rangle - |\omega_2\omega_1\rangle}{2} \\
+&= \dfrac{1}{\sqrt{2}}|\omega_1\omega_2,\,S\rangle + \dfrac{1}{\sqrt{2}}|\omega_1\omega_2,\, A\rangle\
+\end{aligned}
+$$
+
+이다. 즉 $\mathcal{H}_1 \otimes \mathcal{H}_2$ 의 모든 벡터는 $\mathcal{H}_S$ 와 $\mathcal{H}_A$ 의 합으로 표현 할 수 있다. 또한 우리는 $\mathcal{H}_S \cap \mathcal{H}_A = \{|\varnothing\rangle\}$ 이라는 것을 보일 수 있다. 이 경우는 소위 벡터공간의 직합(direct sum, $\otimes$) 이라는 것으로 
+
+$$
+\mathcal{H}_1 \otimes \mathcal{H}_2 = \mathcal{H}_S \oplus \mathcal{H}_A
+$$
+
+이다. 우리는 $\mathcal{H}_S$ 의 상태벡터는 시간이 지나도 $\mathcal{H}_S$ 의 상태벡터로 머무르며 $\mathcal{H}_A$ 의 상태벡터 역시 $\mathcal{H}_A$ 의 상태로 머무른다는 것을 보일 수 있다 (@exr-shankar_10_3_5). 즉 우리가 동일한 입자에 대해 생각할때는 보존이면 $\mathcal{H}_S$, 페르미온이면 $\mathcal{H}_A$ 에서만 생각하면 된다.
+
+지금까지 $\omega_1\ne \omega_2$ 인 경우에 대해 $|\omega_1\omega_2,\,S\rangle$ 이나 $|\omega_1\omega_2,\,A\rangle$ 을 생각했다. 페르미온의 경우는 배타원리에 의해 $\omega_1 = \omega_2$ 인 경우를 생각 할 필요가 없다. 보존의 경우는 $|\omega \omega\rangle$ 자체가 대칭적이므로 더 생각할 필요가 없게 된다. 즉 $|\omega\omega,\,S\rangle = |\omega\omega\rangle$ 이다.
+
+
+</br>
+
+### 보존의 경우
+
+$\mathcal{H}_S$ 의 임의의 벡터 $|\Psi_S\rangle$ 을 $\Omega$ 기저로 전개해보자. 이 경우 
+
+$$
+P_S(\omega_1,\,\omega_2) = |\langle \omega_1\omega_2,\,S|\Psi_S\rangle|^2
+$$
+
+가 $|\Psi_S\rangle$ 이 $|\omega_1\omega_2,\, S\rangle$ 에서 발견될 확률이다. $\omega$ 가 이산적일 경우 $\mathcal{H}_S$ 에서의 정규화 조건은
+
+$$
+1 = \langle \Psi_S|\Psi_S\rangle = \sum_S |\langle \omega_1\omega_2,\,S|\Psi_s\rangle|^2 = \sum_S P_S(\omega_1,\, \omega_2)
+$$
+
+이다. 여기서 $\sum_S$ 는 모든 구별되는 대칭인 $|\omega_1\omega_2,\,S\rangle$ 에 대한 합을 의미한다. 이 경우 $|\omega_1\omega_2,\, S\rangle$ 과 $|\omega_2\omega_1,\,S\rangle$ 을 따로 더하는 것을 막기 위해
+
+$$
+\sum_S = \sum_{\omega_2 = \omega_{\text{min}}}^{\omega_{\text{max}}} \sum_{\omega_1 = \omega_\text{min}}^{\omega_2}
+$$
+
+와 같이 놓을 수 있다. 이 때 $\omega_\text{min}$ 과 $\omega_\text{max}$ 는 $\omega$ 가 가질 수 있는 최소값과 최대값이다. 혹은
+
+$$
+\sum_S = \dfrac{1}{2}\sum_{\omega_1} \sum_{\omega_2}
+$$
+
+로 놓을 수도 있다. 
+
+
+</br>
+
+이제 $\Omega$ 가 연속인 측정값을 가지는 경우를 생각하자. 이제 정규화 조건은 double counting 을 피하기 위해
+
+$$
+1 = \iint |\langle \omega_1\omega_2,\, S|\Psi_S\rangle|^2 \dfrac{d\omega_1\,d\omega_2}{2}
+$$ {#eq-part2_normalization_condition_for_H_S_1}
+
+이 된다. 
+
+
+
+이 경우 파동함수를 아래와 같이 정의한다.
+
+$$
+\Psi_S (\omega_1,\,\omega_2) := \dfrac{1}{\sqrt{2}} \langle \omega_1\omega_2,\, S|\Psi_S\rangle
+$$
+
+이제 @eq-part2_normalization_condition_for_H_S_1 이 좀 더 깔끔하게 아래와 같이 된다.
+
+$$
+\int |\Psi_S(\omega_1,\omega_2)|^2\ d\omega_1\,d\omega_2 = 1
+$$
+
+하지만 $|\Psi_S\rangle$ 상태가 $|\omega_1\omega_2,\,S\rangle$ 에 존재할 확룰 $P_S(\omega_1,\, \omega_2)$ 는
+
+$$
+P_S(\omega_1,\, \omega_2) = |\langle x_1x_2,\,S|\Psi_S\rangle|^2 =2 \left|\Psi_S(\omega_1,\, \omega_2)\right|^2
+$$
+
+이 된다. 여기서 우리가 $\langle \omega_1\omega_2|\Psi_S\rangle = \langle \omega_2\omega_1|\Psi_S\rangle$ 임을 이용하면
+
+$$
+\begin{aligned}
+\Psi_S(\omega_1,\, \omega_2) &= \dfrac{1}{\sqrt{2}} \langle \omega_1\omega_2,\,S|\Psi_S\rangle = \dfrac{1}{2} \left[\langle \omega_1 \omega_2|\Psi_S\rangle + \langle \omega_2 \omega_1|\Psi_S\rangle\right] \\
+&= \langle \omega_1 \omega_2|\Psi_S\rangle
+\end{aligned}
+$$
+
+이다. 파동함수 $\Psi_S(\omega_1,\,\omega_2) = \langle \omega_1\omega_2|\Psi_S\rangle$ 에서 $\mathcal{H}_S$ 에 속하지 않는 $| \omega_1\omega_2\rangle$ 에 대한 bra 가 포함되어 있음에 유의하라. 
+
+
+</br>
+
+<div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+
+::: {#exm-part2_two_boson_wave_fucntion}
+
+#### 무한 포텐셜 우물의 동일한 두 보존 입자
+
+[무한 포텐셜 우물](part2_1d_bound_state.qmd#sec-part2_infinite_potential_well) 문제를 생각하자. 상호작용하지 않는 두 보존이 $n=2,\, n=3$ 상태로 관측되었다고 하자. 그렇다면 상태벡터 $|\Psi_S\rangle$ 는
+
+$$
+|\Psi_S\rangle = \dfrac{|23\rangle + |32\rangle}{\sqrt{2}} 
+$$
+
+이며 파동함수 $\Psi_S(x_1,\,x_2)$ 는
+
+$$
+\begin{aligned}
+\Psi_S(x_1,\,x_2) &= \dfrac{1}{\sqrt{2}}\langle x_1x_2|(|23\rangle + |32\rangle) = \dfrac{1}{\sqrt{2}} \left[\psi_2(x_1)\psi_3(x_2) + \psi_3(x_1)\psi_2(x_2)\right]
+\end{aligned}
+$$
+
+이다. 
+
+:::
+
+</div>
+
+</br>
+
+### 페르미온의 경우
+
+$$
+|\omega_1\omega_2,\,A\rangle = \dfrac{1}{\sqrt{2}}\left[|\omega_1\omega_2\rangle - |\omega_2\omega_1\rangle\right]
+$$
+
+이므로 파동함수는 $\langle \omega_2\omega_1| = \langle \omega_1\omega_2|P_{12}$ 임을 이용하면 
+
+$$
+\begin{aligned}
+\Psi_A(x_1,\,x_2) &:= \dfrac{1}{\sqrt{2}}\left[\langle \omega_1\omega_2,\,A|\Psi_A\rangle\right]\\
+&= \dfrac{1}{\sqrt{2}}\left(\langle \omega_1\omega_2| -\langle \omega_2\omega_1|\right) |\Psi_A\rangle \\
+&= \dfrac{1}{\sqrt{2}} \left( \langle \omega_1\omega_2|\Psi_A\rangle - \langle \omega_1\omega_2|P_{12}|\Psi_A\rangle \right) \\
+&= \dfrac{1}{\sqrt{2}} \langle \omega_1\omega_2|\Psi_A\rangle
+\end{aligned}
+$$
+
+이며 보존의 경우와 마찬가지로, 
+
+$$
+P_A(\omega_1,\, \omega_2) = 2|\Psi_A(\omega_1,\,\omega_2)|^2
+$$
+
+
+이다. 여기서 정규화 조건은
+
+$$
+1 = \iint P_A (\omega_1,\,\omega_2) \dfrac{d\omega_1\,d\omega_2}{2} = \iint |\Psi_A(\omega_1,\,\omega_2)|^2\, d\omega_1\,d\omega_2
+$$
+
+가 된다. 
+
+<div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+
+::: {#exm-part2_two_fermion_wave_fucntion}
+
+#### 무한 포텐셜 우물의 동일한 두 페르미온 입자
+
+보존의 경우(@exm-part2_two_boson_wave_fucntion) 와 같이[무한 포텐셜 우물](part2_1d_bound_state.qmd#sec-part2_infinite_potential_well) 문제를 생각하자. 상호작용하지 않는 두 페르미온이 $n=2,\, n=3$ 상태로 관측되었다고 하자. 그렇다면 반대칭 상태벡터 $|\Psi_A\rangle$ 는
+
+$$
+|\Psi_A\rangle = \dfrac{|23\rangle - |32\rangle}{\sqrt{2}} 
+$$
+
+이며 파동함수 $\Psi_A(x_1,\,x_2)$ 는
+
+$$
+\begin{aligned}
+\Psi_A(x_1,\,x_2) &= \dfrac{1}{\sqrt{2}}\langle x_1x_2|(|23\rangle - |32\rangle) = \dfrac{1}{\sqrt{2}} \left[\psi_2(x_1)\psi_3(x_2) - \psi_3(x_1)\psi_2(x_2)\right]
+\end{aligned}
+$$
+
+이다. 
+
+:::
+
+</div>
+
+</br>
+
+@exm-part2_two_fermion_wave_fucntion 에서 $\Psi_A(x_1,\,x_2)$ 는 행렬의 행렬식(determinant) $|A|$ 를 이용하여 
+
+$$
+\Psi_A(x_1,\,x_2) =  \dfrac{1}{\sqrt{2}} \left[\psi_2(x_1)\psi_3(x_2) - \psi_3(x_1)\psi_2(x_2)\right]= \dfrac{1}{\sqrt{2}} \left| \begin{array}{cc} \psi_2(x_1) & \psi_3 (x_1) \\ \psi_2(x_2) & \psi_3 (x_2) \end{array}\right|
+$$
+
+로 표현 할 수 있다. 이것을 일반화하면 $N$ 개의 페르미온 입자가 각각 $\omega_1,\ldots,\,\omega_N$ 상태에 있다고 할 때
+
+$$
+\Psi_A(x_1,\ldots,\,x_N) = \dfrac{1}{\sqrt{N!}}\left|\begin{array}{cccc} \psi_{\omega_1}(x_1) & \psi_{\omega_2} (x_1) & \cdots & \psi_{\omega_N}(x_1) \\\psi_{\omega_1}(x_2) & \psi_{\omega_2} (x_2) & \cdots & \psi_{\omega_N}(x_2) \\ & \vdots & & \\ \psi_{\omega_1}(x_N) & \psi_{\omega_2} (x_N) & \cdots & \psi_{\omega_N}(x_N)  \end{array}\right|
+$$ {#eq-part2_determinamt_and_antisymmetric_wavefunction}
+
+이다. 이것은 행렬식의 정의로부터 자명한데 행렬식은 $N\times N$ 행렬에 대해 아래의 성질을 갖는 함수로 정의되며, 아래의 세가지 성질을 모두 충족하는 함수는 행렬식이 유일하다.
+
+&emsp; ($1$) 항등행렬에 대해 행렬식은 $1$ 이다.
+
+&emsp; ($2$) $N$ 차원 행/열 벡터에 대해 다중선형 함수이다.
+
+&emsp; ($3$) 두 행/열 을 바꾼 행렬의 행렬식은 원래 행렬의 행렬에 $-1$ 을 곱한 값이다.
+
+
+@eq-part2_determinamt_and_antisymmetric_wavefunction 가 반대칭이라는 것은 행렬식의 성질 ($3$) 으로 부터 알 수 있다. @eq-part2_determinamt_and_antisymmetric_wavefunction 의 두 열을 바꾸는 것이 두 상태를 바꾸는 교환연산이기 때문이다. 또한 $\int |\psi_{\omega_i}(x_j)|^2\, dx_j = 1$ 이며 항의 갯수가 $N!$ 개이므로
+
+$$
+\int\int\cdots \int \left|\Psi_A(x_1,\ldots,\,x_N)\right|^2 \, dx_1 dx_2 \cdots dx_N = 1
+$$
+
+이다. 
+
+
+</br>
+
+### 입자의 보존/페르미온 여부는 어떻게 결정하는가
+
+입자가 보존인지 페르미온인지는 어떻게 결정 할 수 있을까? 예를 들어 서로 상호작용하지 않는 두 중성 파인온 입자($\pi^0$) 를 생각하자. 이것을 1차원 포텐셜 우물에 넣었고 두 입자가 $m,\,n$ 상태에 있다고 관측이 되었다면
+
+$$
+\begin{aligned}
+P_{S/A}(x_1,\,x_2) &= 2|\Psi_{S/A} (x_1,\,x_2)|^2 \\
+&= 2\left|\dfrac{1}{\sqrt{2}}\left[ \psi_m(x_1) \psi_n(x_2) \pm \psi_m(x_2) \psi_n(x_1)\right]\right|^2 \\
+&= |\psi_m(x_1)|^2|\psi_n(x_2)|^2 + |\psi_m(x_2)|^2|\psi_n(x_1)|^2 \\[0.3em]
+&\quad \pm \left[\psi_m(x_1)\psi_n(x_2)\psi_m^\ast (x_2) \psi_n^\ast(x_1) + \psi_m(x_2)\psi_n(x_1) \psi_m^\ast(x_1) \psi_n^\ast(x_2)\right]
+\end{aligned}
+$$ {#eq-part2_probability_density_of_two_identical_particle}
+
+이 된다. 위 식은 세가지 항으로 구분 할 수 있다.
+
+::: {.callout-important appearance="minimal"}
+($1$) 첫번째 항 $|\psi_m(x_1)|^2|\psi_n(x_2)|^2$ 은 첫번째 입자가 $m$ 상태, 두번째 입자가 $n$ 상태에 있을 확률분포이다.
+
+($2$) 두번째 항 $|\psi_m(x_2)|^2|\psi_n(x_1)|^2$ 은 첫번째 입자가 $n$ 상태, 두번째 입자가 $m$ 상태에 있을 확률분포이다.
+
+($3$) $\pm$ 과 뒤에 따르는 나머지 항은 소위 간섭(interference) 에 의한 항이다. 
+:::
+
+여기서 ($1$) 과 ($2$) 는 정확히 구별할수 없는 두 입자에 의한 효과이며 ($3$) 은 두 입자에 의한 간섭에 의한 효과이다. 예를 들어 두 입자가 같은 위치에서 발견될 확률을 생각해보자.
+
+$$
+\begin{aligned}
+\lim_{x_1\to x,\, x_2\to x} P_S(x_1,\,x_2) &= 4|\psi_m(x)\psi_n(x)|^2, \\
+\lim_{x_1\to x,\, x_2\to x} P_A(x_1,\,x_2) &= 0, 
+\end{aligned}
+$$ {#eq-part2_limit_of_two_particle_wavefunction_1}
+
+즉 우리가 두 중성 파이온에 대해 $P(x_1,\,x_2)$ 를 구한다면 혹은 최소한 두 입자가 같은 위치에서 발견될 확률을 구한다면 이 입자가 보존인지 페르미온인지를 확인 할 수 있다. 
+
+두 입자에 대해 $P(x_1,\,x_2)$ 를 구하는 것은 보존/페르미온 구분 이전에 두 입자가 동일한지 아닌지 여부에 대해 결정하는데도 사용 될 수 있다. $K$ 와 $\overline{K}$ 라고 불리우는 두 보존은 질량과 전하가 같고 *hypercharge* 라고 불리는 양자수가 다르다. 우선 서로 다른 두 입자가 각각 $m,\,n$ 상태에서 $x_1,\,x_2$ 에서 발견될 확률 $P_D(x_1,\,x_2)$ 는
+
+$$
+P_D(x_1,\,x_2) = |\psi_m(x_1)|^2|\psi_n(x_2)|^2 + |\psi_m(x_2)|^2|\psi_n(x_1)|^2 
+$$
+
+이며, 같은 위치에서 발견될 확률은 
+
+$$
+\lim_{x_1\to x,\, x_2\to x} P_D(x_1,\,x_2) = 2|\psi_m(x)\psi_n(x)|^2
+$$
+
+이다. 이를 @eq-part2_limit_of_two_particle_wavefunction_1 와 비교해보면 2배의 차이가 난다. 
+
+
+</br>
+
+### $N$ 동일 입자 시스템
+
+지금까지는 대부분 $N=2$ 인 경우에 대해 알아보았다. 이제 $N\ge 2$ 인 동일 입자로 이루어진 시스템에 대해 생각해보자. 선형대수학에서 행렬식을 배울 때 사용했던 개념을 도입한다. 집합 $A=\{1,\ldots,\,N\}$ 에 대해 $A\mapsto A$ 전단사 함수의 집합을 $S_N$ 이라고 한다. $S_N$ 의 갯수는 $N!$ 개이다. $\sigma\in S_N$ 일 때 $\sigma$ 는 항상 교환연산자의 합성으로 표현 할 수 있으며 몇개의 교환연산자의 합성인지는 선택에 따라 다르지만 그것이 짝수개인지 홀수개인지는 항상 정해진다. 이 때 $\text{sgn}(\sigma)$ 함는 $\sigma$ 가 짝수개의 교환연산자의 합성일경우 $+1$ 을, 홀수개의 교환연산자의 합성일경우는 $-1$ 인 함수이다. 이 경우 $N$ 개의 입자에 대한 대칭/반대칭 상태는 아래와 같이 표현된다.
+
+$$
+\begin{aligned}
+|\omega_1 \cdots \omega_N,\,S\rangle &= \dfrac{1}{\sqrt{N!}}\sum_{\sigma\in S_N} \sigma|\omega_1 \cdots \omega_N\rangle, \\
+|\omega_1 \ldots \omega_N,\,A\rangle &= \dfrac{1}{\sqrt{N!}}\sum_{\sigma\in S_N} \text{sgn}(\sigma) \sigma |\omega_1\cdots \omega_N\rangle
+\end{aligned}
+$$
+
+
+여기서 $1/\sqrt{N!}$ 은 정규화 인자이다. 이 때 파동함수는
+
+$$
+\Psi_{S/A}(x_1,\ldots,\,x_N) = \langle x_1\cdots x_N|\omega_1 \cdots \omega_N,\, S/A\rangle
+$$
+
+로 정의되며, 
+
+$$
+P_{S/A}(x_1,\ldots,\,x_N) = |\Psi_{S/A}(x_1,\ldots,\,x_N)|^2
+$$
+
+이고 
+
+$$
+\iint P_{S/A}(x_1,\ldots,\,x_N)\, dx_1 \cdots dx_N = \iint |\Psi_{S/A}(x_1,\ldots,\,x_N)|^2 \, dx_1 \cdots dx_N = 1
+$$
+
+이다. 
+
+</br>
+
+## 우주와 대칭/반대칭 파동함수 문제
+
+자연에 대한 논의에서 항상 중요한것은 우리가 실험하거나 이론적으로 계산하려고 하는 부분을 우주의 나머지 부분과 분리하는 것이다. 어떤 시스템도 엄밀하게 고립될 수 없기 때문에 우리는 적절한 근사를 사용한다. 고전역학에서는 우리가 관심있는 시스템과 나머지 우주 전체를 분리하다. 즉, 
+
+$$
+\mathcal{H}_{\text{universe}} = \mathcal{H}_{\text{system}} + \mathcal{H}_\text{rest}
+$$
+
+로 분리하며 $\mathcal{H}_{\text{system}}$ 은 우리가 관심있는 시스템의 (일반화된) 좌표와 운동량의 함수이며, 이 좌표와 운동량은 나머지 우주에 대해 독립적임을 가정한다. 이것이 좋은 근사가 되기위해서는 이 가정이 가능한 한 잘 만족되어야 한다.
+
+양자역학에서는 우리의 시스템과 나머지 우주의 파동함수를 다음과 같이 분리한다.
+
+$$
+\Psi_{\text{universe}} = \Psi_{\text{system}}\cdot \Psi_{\text{rest}}
+$$
+
+
+-- to be shotly --
+
+예를 들어 지구의 전자의 파동함수 $\psi_E(x_E)$ 와 달의 전자의 파동함수 $\psi_M(x_M)$ 을 생각하면 당연히 
+
+$$
+\begin{aligned}
+\iint \psi_E(x_E)\psi^\ast_M (x_M)\, dx_E\, dx_M &\approx 0, \\
+\int \psi_E(x_M)\, dx_M \approx \int \psi_M(x_E)\, dx_E &\approx 0
+\end{aligned}
+$$
+
+일 것이므로 $\Psi(x_E,\,x_M) \approx \psi_E(x_E)\psi_M(x_M)$ 이 되며, 이 경우 분리 할 수 있다는... 
+
+
+
+</br>
+
+## 연습문제
+
+::: {#exr-shankar_10_3_1}
+
+#### Shankar 10.3.1
+
+두 동일한 보존이 $|\phi\rangle$ 과 $|\psi\rangle$ 상태에서 발견되었다. $\langle \phi|\psi\rangle \ne 0$ 일 때 정규화된 상태벡터는 무엇인가?
+
+:::
+
+::: {.solution}
+
+$|\Psi_S\rangle = a(|\phi\psi\rangle + |\psi\phi\rangle)$ 이며 
+
+$$
+\begin{aligned}
+1 &= \langle \Psi_S|\Psi_S\rangle = |a|^2(2+ |\langle \phi|\psi\rangle|^2)
+\end{aligned}
+$$
+
+이므로, 
+
+$$
+|\Psi_S\rangle = \dfrac{1}{\sqrt{2+|\langle \phi|\psi\rangle|^2}}(|\phi \psi\rangle + |\psi \phi\rangle)
+$$
+
+이다. 
+:::
+
+</br>
+
+::: {#exr-shankar_10_3_2}
+
+#### Shankar 10.3.2
+
+3개의 보존으로 이루어진 무한 포텐셜 우물 시스템에서 $3,\,3,\,4$ 상태에서 에너지가 측정되었다. 대칭화되고 정규화된 상태벡터를 쓰시오.
+
+:::
+
+::: {.solution}
+
+
+$$
+|334,\, S\rangle = \dfrac{1}{\sqrt{3}}(|334\rangle +  |433\rangle  + |343\rangle) 
+$$
+:::
+
+</br>
+
+
+::: {#exr-shankar_10_3_5}
+
+#### Shankar 10.3.5
+
+교환연산자 $P_{12}$ 는 $X$ 기저에 대해 다음과 같이 작용한다.
+
+$$
+P_{12}|x_1x_2\rangle = |x_2x_1\rangle.
+$$
+
+($1$) $P_{12}$ 의 고유값이 $\pm 1$ 임을 보여라.
+
+($2$) 기저 캣 $|\omega_1\omega_2\rangle$ 에 대해서도 $P_{12}|\omega_1 \omega_2 \rangle = |\omega_2\omega_1\rangle$ 임을 보이고 $\mathcal{H}_S$ 와 $\mathcal{H}_A$ 가 $P_{12}$ 의 고유값 $\pm 1$ 에 대한 고유공간임을 보여라.
+
+($3$) $P_{12}X_1P_{12}=X_2$, $P_{12}X_2P_{12}=X_1$ 이며 운동량 연산자 $P_1,\, P_2$ 에 대해서도 유사하게 성립함을 보여라. 그리고 $P_{12}\Omega (X_2,P_2\;X_1,P_1) P_{12}= \Omega (X_1,P_1\;X_2,P_2)$ 임을 보여라.
+
+($4$) 두 동일 입자에 대한 해밀토니안과 시간전개 연산자가 $H\to P_{12}HP_{12}$, $U \to P_{12}UP_{12}$ 변환에 대해 불변임을 보여라. 이를 이용하여 $P_{12}$ 의 고유상태는 시간이 지나도 $P_{12}$ 의 고유상태임을 보여라. 즉 $\mathcal{H}_S$(혹은 $\mathcal{H}_A$) 에 속하는 상태벡터는 시간이 지나도 $\mathcal{H}_S$(혹은 $\mathcal{H}_A$) 에 속한다.
+
+:::
+
+::: {.solution}
+
+($1$) 우선 $P_{12}$ 에르미트 임을 보이자.
+
+$$
+\begin{aligned}
+\langle x'_1x'_2|P_{12}|x_1x_2\rangle &= \langle x'_1x'_2|x_2x_1\rangle = \delta(x_2-x'_1)\, \delta(x1-x'_2), \\
+\langle x'_1x'_2|P^\dagger_{12} |x_1x_2\rangle &= (P_{12}|x'_1x'_2 \rangle)^\dagger |x_1x_2\rangle = \langle x'_2x'_1 | x_1x_2\rangle = \delta(x_1-x'_2)\, \delta(x_2-x'_1)
+\end{aligned}
+$$
+
+이므로 $P_{12}= P^\dagger_{12}$ 이다. 즉 $P_{12}$ 는 에르미트 연산자이다. 또한 $P_{12}^2 = I = P_{12}P_{12}^\dagger$ 이므로 $P_{12}$ 는 유니타리 연산자이다. 이제 $P_{12}$ 가 에르미트 연산자이므로 $P_{12}$ 의 고유벡터로 $\mathcal{H}$ 의 기저를 구성 할 수 있다. $P_{12}$ 의 고유벡터를 $|\Pi\rangle$ 이라고 라고 하고 그 고유값을 $\lambda$ 라고 하자. $P_{12}^2 |\Pi\rangle = \lambda^2|\Pi\rangle = |\Pi\rangle$ 이므로 $\lambda = \pm 1$ 이다. 
+
+
+($2$) 
+
+$$
+\begin{aligned}
+P_{12}|\omega_1 \omega_2 \rangle &= \iint P_{12}|x_1x_2\rangle \langle x_1x_2|\omega_1\omega_2\rangle \,dx_1\,dx_2 \\
+&= \iint |x_2x_1\rangle \langle x_1 | \omega_1\rangle \langle x_2|\omega_2\rangle \,dx_1\,dx_2 \\
+&= \iint |x_2x_1\rangle \langle x_2x_1|\omega_2\omega_1\rangle \,dx_1\,dx_2 \\
+&= |\omega_2 \omega_1\rangle
+\end{aligned}
+$$
+
+($3$) 임의의 $|x_1x_2\rangle$ 기저에 대해 
+
+$$
+\langle x_1x_2|P_{12}X_1 P_{12} |x_1x_2\rangle = \langle x_2x_1|X_1|x_2x_1\rangle = x_2 = \langle x_1x_2|X_2|x_1x_2\rangle
+$$
+
+이므로 $P_{12}X_1 P_{12}=X_2$ 이다. 같은 방법으로 $P_{12}X_2P_{12}=X_1$ 임을 보일 수 있다. ($2$) 의 결과로 $P_{12}P_1 P_{12}=P_2$, $P_{12}P_2P_{12}=P_1$ 임을 보일 수 있다.  
+
+$\Omega(X_1,\, P_1,\, X_2,\,P_2)$ 가 
+
+
+:::
+
+</br>
+
+::: {#exr-shankar_10_3_6}
+
+#### Shankar 10.3.6
+
+수소 원자와 같은 복합 물질을 생각하자. 이 물질은 보존 혹은 페르미온 처럼 행동하는가? 짝수 혹은 홀수개의 페르미온으로 이루어진 입자가 보존이나 페르미온 처럼 행동할지에 대해 논하라.
+
+:::
+
+::: {.solution}
+
+수소 원자는 양성자와 전자로 이루어져 있으므로 두 수소 원자를 각각 $|n_1e_1n_2e_2\rangle$ 로 기술 할 수 있다. $n_i$ 은 핵에 대한 양자상태이며 $e_j$ 는 전자에 대한 양자상태이다. 여기에는 양성자와 전자라는 두종류의 동일 입자가 각각 존재한다. 양성자에 대한 반대칭성과 전자에 대한 반대칭성을 고려하면 
+
+$$
+\begin{aligned}
+|n_1e_1n_2e_2,\, A\rangle &= \dfrac{1}{\sqrt{2}}(|n_1n_2\rangle - |n_2n_1\rangle) \otimes \dfrac{1}{\sqrt{2}}(|e_1e_2\rangle - |e_2e_1\rangle) \\
+&= \dfrac{1}{2}(|n_1e_1n_2e_2\rangle - |n_1e_2n_2e_1\rangle - |n_2e_1n_1e_2\rangle + |n_2e_2n_1e_1\rangle)
+\end{aligned}
+$$
+
+이다. 즉 양성자나 전자의 각각에 대한 교환에 대하 반대칭성을 보이는 파동함수는 이것 뿐이다. 
+
+
+:::

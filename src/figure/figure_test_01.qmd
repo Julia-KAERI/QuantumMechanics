@@ -37,3 +37,194 @@ crossref:
 
 \end{tikzpicture}
 ```
+
+</br>
+
+
+```{r, engine = 'tikz'}
+#| label: fig-part2_path_integral_1
+#| code-fold: true
+#| echo: fenced
+#| output: asis
+#| fig-width: 4
+#| fig-align: center
+#| fig-cap: "Single Step Potential"
+
+
+\begin{tikzpicture}[scale=2]
+\usetikzlibrary {arrows.meta}
+\usetikzlibrary {calc}
+
+
+\draw[, -{Stealth[length=2mm]}] (-0.5, 0) -- (3, 0) node [right] {$t$} ;
+\draw[, -{Stealth[length=2mm]}] (0, -0.5) -- (0, 3) node [above] {$x$};
+
+\draw [blue, thick] plot [smooth, tension=0.7] coordinates { (0.4,0.4) (0.45, 0.55) (1,2) (2,2.7) (3,3)};
+\draw [black, thick] plot [smooth, tension=0.7] coordinates { (0.4,0.4)  (1,1.2) (2,1.9) (3,3)};
+\draw [teal, thick] plot [smooth, tension=0.7] coordinates { (0.4,0.4)  (1,0.5) (2.2,1.1) (3,3)};
+
+\filldraw[black] (0.4, 0.4) circle (1pt) node[below] {$(x',t')$} ;
+\filldraw[black] (3, 3) circle (1pt) node[above] {$(x,t)$} ;
+
+\draw[blue, thick, -{Stealth[length=2mm]}] (2.1,2.75) -- (2.3, 2.83) node [above] {$x_\alpha(t)$} ;
+\draw[black, thick, -{Stealth[length=2mm]}] (2.0,1.9) -- (2.2, 2.10) node [above, left] {$x_{cl}(t)$} ;
+
+\draw[teal, thick, -{Stealth[length=2mm]}] (2.2,1.1) -- (2.4, 1.4) node [below right] {$x_\lambda(t)$} ;
+\end{tikzpicture}
+```
+
+```{r, engine = 'tikz'}
+#| label: fig-part2_path_integral_2
+#| code-fold: true
+#| echo: fenced
+#| output: asis
+#| fig-width: 4
+#| fig-align: center
+#| fig-cap: "Single Step Potential"
+
+
+\begin{tikzpicture}[scale=2.5]
+\usetikzlibrary {arrows.meta}
+\usetikzlibrary {calc}
+
+
+\draw[, -{Stealth[length=2mm]}] (-0.5, 0) -- (1.5, 0) node [right] {$t$} ;
+\draw[, -{Stealth[length=2mm]}] (0, -0.5) -- (0, 1.5) node [above] {$x$};
+
+\draw[thick, -{Stealth[length=2mm]}] (0, 0) -- (0.7, 0.7); \draw[thick] (0.5, 0.5) -- (1, 1) node [right] {$(1, 1)$};
+\draw[teal, thick] plot[variable=\t, domain=0:1, samples=100, smooth,thick] ({\t}, {\t*\t});
+\draw[teal, thick, -{Stealth[length=2mm]}] (0.65, 0.4225)--(0.7, 0.49);
+
+\node [rotate=45] at (0.5, 0.7) {$x_{cl}(t)$};
+
+\node [rotate=45] at (0.7, 0.3) {$x=t^2$};
+
+\end{tikzpicture}
+```
+
+</br>
+```{r, engine = 'tikz'}
+#| label: fig-part2_path_integral_3
+#| code-fold: true
+#| echo: fenced
+#| output: asis
+#| fig-width: 8
+#| fig-align: center
+#| fig-cap: "descrete approximation of path integral"
+
+
+\begin{tikzpicture}[scale=1]
+\usetikzlibrary {arrows.meta}
+\usetikzlibrary {calc}
+
+\draw[, -{Stealth[length=2mm]}] (-0.2, 0) -- (10, 0) node [right] {$t$} ;
+\draw[, -{Stealth[length=2mm]}] (0, -0.2) -- (0, 5) node [above] {$x$};
+
+\foreach \x in {1, 2,..., 9}{
+  \draw[] (\x, 4.7) -- (\x, 0);
+}
+
+\node[below] at (1, 0) {$t_0$};
+\node[below] at (2, 0) {$t_1$};
+\node[below] at (3, 0) {$t_2$};
+\node[below] at (6, 0) {$t_i$};
+\node[below] at (9, 0) {$t_N$};
+
+\draw[thick,-{Stealth[length=2mm]}] (1, 0.7) node[left] {$x_0$}-- (1.5, 1.0); \draw[thick] (1.5, 1.0) -- (2, 1.3);
+\draw[thick,-{Stealth[length=2mm]}] (2, 1.3) -- (2.5, 1.8); \draw[thick] (2.5, 1.8) -- (3, 2.3);
+\draw[thick,-{Stealth[length=2mm]}] (3, 2.3) -- (3.5, 2.2); \draw[thick] (3.5, 2.2) -- (4, 2.1);
+\draw[thick,-{Stealth[length=2mm]}] (4, 2.1) -- (4.5, 2.3); \draw[thick] (4.5, 2.3) -- (5, 2.5);
+\draw[thick,-{Stealth[length=2mm]}] (5, 2.5) -- (5.5, 2.7); \draw[thick] (5.5, 2.7) -- (6, 2.9);
+\draw[thick,-{Stealth[length=2mm]}] (6, 2.9) -- (6.5, 2.6); \draw[thick] (6.5, 2.6) -- (7, 2.3);
+\draw[thick,-{Stealth[length=2mm]}] (7, 2.3) -- (7.5, 2.7); \draw[thick] (7.5, 2.7) -- (8, 3.1);
+\draw[thick,-{Stealth[length=2mm]}] (8, 3.1) -- (8.5, 3.15); \draw[thick] (8.5, 3.15) -- (9, 3.2) node[right] {$x_N$};
+\end{tikzpicture}
+```
+
+
+
+```{r, engine = 'tikz'}
+#| label: fig-part2_1d_sho_wavefunction
+#| code-fold: true
+#| echo: fenced
+#| output: asis
+#| fig-width: 8
+#| fig-align: center
+#| fig-cap: "descrete approximation of path integral"
+
+
+\begin{tikzpicture}[scale=1.0]
+\usetikzlibrary {arrows.meta}
+\usetikzlibrary {calc}
+
+\draw[, -{Stealth[length=2mm]}] (-5, 0) -- (5, 0) node [right] {$x$} ;
+\draw[, -{Stealth[length=2mm]}] (0, -0.2) -- (0, 11) node [above] {$E$};
+
+
+\draw[teal, thick] plot[variable=\t, domain=-3.3:3.3, samples=100, smooth,thick] ({\t}, {\t*\t});
+
+
+\draw[] plot[variable=\t, domain=-5:5, samples=100, smooth,thick] ({\t}, {0.751*exp(-(\t*\t)/2) + 1.0});
+\draw[dashed] (-3, 1) -- (3, 1);
+\node[above] at (4.5, 1) {$\Psi_0(x)$};
+
+\draw[] plot[variable=\t, domain=-5:5, samples=100, smooth,thick] ({\t}, {0.531*exp(-(\t*\t)/2) *(2*\t) + 3.0});
+\draw[dashed] (-3, 3) -- (3, 3);
+\node[above] at (4.5, 3) {$\Psi_1(x)$};
+
+\draw[] plot[variable=\t, domain=-5:5, samples=100, smooth,thick] ({\t}, {0.266 * exp(-(\t*\t)/2) *(-2*(1-2*\t*\t)) + 5.0});
+\draw[dashed] (-3, 5) -- (3, 5);
+\node[above] at (4.5, 5) {$\Psi_2(x)$};
+
+\draw[] plot[variable=\t, domain=-5:5, samples=150, smooth,thick] ({\t}, {0.108 * exp(-(\t*\t)/2) *(-12*(\t-0.666*\t*\t*\t)) + 7.0});
+\draw[dashed] (-4, 7) -- (4, 7);
+\node[above] at (4.5, 7) {$\Psi_3(x)$};
+
+\draw[] plot[variable=\t, domain=-5:5, samples=70,thick] ({\t}, {0.038 * exp(-((\t)^2)/2) *(12*(1-4*((\t)^2)+4/3*((\t)^4))) + 9.0});
+\draw[dashed] (-4.5, 9) -- (4.5, 9);
+\node[above] at (4.5, 9) {$\Psi_4(x)$};
+
+\end{tikzpicture}
+```
+
+```{r, engine = 'tikz'}
+#| label: fig-part2_identical_particles
+#| code-fold: true
+#| echo: fenced
+#| output: asis
+#| fig-width: 6
+#| fig-align: center
+#| fig-cap: "identical particle scattering"
+
+
+\begin{tikzpicture}[scale=1.0]
+\usetikzlibrary {arrows.meta}
+\usetikzlibrary {calc}
+
+\draw[thick] (0, 0)  -- (6, 0) -- (6, 8) -- (0, 8) -- cycle;
+\node [below left] at (0, 0) {$1$};
+\node [below right] at (6, 0) {$2$};
+\node [above left] at (0, 8) {$3$};
+\node [above right] at (6, 8) {$4$};
+
+\draw[very thick, red] (0.5, 0) arc (0:90:0.5);
+\draw[very thick,red] (5.5, 0) arc (180:90:0.5);
+\draw[very thick,red] (6, 7.5) arc (270:180:0.5);
+\draw[very thick,red] (0, 7.5) arc (270:360:0.5);
+
+\filldraw[teal] (0.45, 0.6) circle (3pt) ;
+\draw[dashed] (0.45, 0.6) -- (2.9, 4) -- (0.3, 7.6);
+\filldraw[teal] (0.15, 7.8) circle (3pt) ;
+
+
+\filldraw[teal] (5.55, 0.6) circle (3pt) ;
+\draw[dashed] (5.55, 0.6) -- (3.1, 4) -- (5.7, 7.6);
+\filldraw[teal] (5.85, 7.8) circle (3pt) ;
+
+\node[above, scale=0.8] at (3, 0) {$t=0$};
+\node[below, scale=0.8] at (3, 8) {$t=T$};
+
+\end{tikzpicture}
+```
+
+

@@ -571,10 +571,10 @@ a^\dagger &= \left(\dfrac{m\omega}{2\hbar}\right)^{1/2} X -i \left(\dfrac{1}{2m\
 \end{aligned}
 $$
 
-이다. $P=i\hbar \partial_x$ 이므로 다음의 미분방정식을 얻는다. $|0\rangle$ 을 $|\Psi_0\rangle$ 로 놓자.
+이다. $P=-i\hbar \partial_x$ 이므로 다음의 미분방정식을 얻는다. $|0\rangle$ 을 $|\Psi_0\rangle$ 로 놓자.
 
 $$
-\left[\left(\dfrac{m\omega}{2\hbar}\right)^{1/2} X +  \left(\dfrac{1}{2m\omega \hbar}\right)^{1/2}\dfrac{d}{dx} \right]|\Psi_0\rangle = 0
+\left[\left(\dfrac{m\omega}{2\hbar}\right)^{1/2} X  + \left(\dfrac{\hbar}{2m\omega }\right)^{1/2}\dfrac{d}{dx} \right]|\Psi_0\rangle = 0
 $$
 
 여기서
@@ -616,21 +616,21 @@ $$
 
 $$
 \begin{aligned}
-\Psi_n(x) = \langle x|n\rangle = \dfrac{1}{\sqrt{n!}}\left[\left(\dfrac{m\omega}{2\hbar}\right)^{1/2} x - \left(\dfrac{1}{2m\omega \hbar}\right)^{1/2}\dfrac{d}{dx}\right]^n \Psi_0 (x), 
+\Psi_n(x) = \langle x|n\rangle = \dfrac{1}{\sqrt{n!}}\left[\left(\dfrac{m\omega}{2\hbar}\right)^{1/2} x - \left(\dfrac{\hbar}{2m\omega}\right)^{1/2}\dfrac{d}{dx}\right]^n \Psi_0 (x), 
 \end{aligned}
 $$
 
 임을 안다. 이 식을 앞서 @eq-part2_sho_xi 에서 정의한 $\xi:=\left(\dfrac{m\omega}{\hbar}\right)^{1/2}x$ 에 대한 식으로 바꾸면, 
 
 $$
-\Psi_n(\xi) =\left(\dfrac{m\omega}{\pi \hbar}\right)^{1/4} \left(\xi - \dfrac{d}{d\xi}\right)^n e^{-\xi^2/2}
+\Psi_n(\xi) =\left(\dfrac{m\omega}{2^{2n}(n!)^2 \pi \hbar }\right)^{1/4} \left(\xi - \dfrac{d}{d\xi}\right)^n e^{-\xi^2/2}
 $$
 
 를 얻는다. 여기서 $(\xi- d/d\xi)^n e^{-\xi^2/2}$ 는 어떤 다항식 과 $e^{-\xi^2/2}$ 의 곱이 된다는 것을 알 수 있다. 이 다항식을 $H_n(\xi)$ 라고 하면  
 
 $$
-\Psi_n(\xi) = \left(\dfrac{m\omega}{\pi \hbar}\right)^{1/4} H_n(\xi) \, e^{-\xi^2/2}
-$$
+\Psi_n(\xi) = \left(\dfrac{m\omega}{2^{2n}(n!)^2 \pi \hbar }\right)^{1/4} H_n(\xi) \, e^{-\xi^2/2}
+$$ {#eq-part2_sho_energy_eigenstate_with_hermite_polynomial}
 
 로 놓을 수 있으며 $H_0(\xi) = 1$ 이다. 이 때 $H_n(\xi)$ 를 **에르미트 다항식(Hermite polynomials)** 라고 한다. 그렇다면
 
@@ -645,6 +645,107 @@ H_n(\xi) = e^{\xi^2/2}\left(\xi - \dfrac{d}{d\xi}\right)^n e^{-\xi^2/2}
 $$ {#eq-part2_generator_of_hermite_polynomial}
 
 이다. 
+
+</br>
+
+### 에르미트 다항식
+
+#### Recursion relations 
+
+에르미트 다항식에 대해 알아보자. 우선 @eq-part2_generator_of_hermite_polynomial 로 정의된 에르미트 다항식의 첫 4 함수를 정의대로 계산해보면 다음과 같다.(여기서는 변수를 $\xi$ 에서 $y$ 로 변경한다.)
+
+$$
+\begin{aligned}
+H_0(y) &= 1, \\[0.2em]
+H_1(y) &= 2y, \\
+H_2(y) &= -2 + 4y^2, \\
+H_3(y) &= -12 y + 8 y^3.
+\end{aligned}
+$$ {#eq-part2_sho_hermite_polynomial_first_4}
+
+이제 에르미트 다항식에 대해 본격적으로 알아보자.  에르미트 다항식은 @eq-part2_sho_energy_eigenstate_with_hermite_polynomial 로 정의
+
+$a$ 와 $a^\dagger$ 연산자를 $\xi=(m\omega/\hbar)^{1/2}x$ 에 대해 표현하면 다음과 같다.
+
+$$
+a = \dfrac{1}{\sqrt{2}}\left(\xi + \dfrac{d}{d\xi}\right),\qquad  a^\dagger = \dfrac{1}{\sqrt{2}}\left(\xi - \dfrac{d}{d\xi}\right)
+$$
+
+@eq-part2_sho_energy_eigenstate_with_hermite_polynomial 를 생각하자. 우리는 $a|n\rangle = \sqrt{n}|n-1\rangle$ 임을 안다. 이를 이용하면
+
+$$
+\dfrac{1}{\sqrt{2}}\left(y +\dfrac{d}{dy}\right)\Psi_n (y) = \sqrt{n} \Psi_{n-1}(y)
+$$
+
+이며, 
+
+$$
+\dfrac{1}{\sqrt{2}} \left(\dfrac{m\omega}{2^{2n}(n!)^2 \pi \hbar }\right)^{1/4} \left(y+\dfrac{d}{dy}\right)H_n(y) e^{-y^2/2} = \sqrt{n}\left(\dfrac{m\omega}{2^{2n-2}((n-1)!)^2 \pi \hbar }\right)^{1/4} H_{n-1}(y) e^{y^2/2}
+$$
+
+이다. 이는
+
+$$
+\left(y-\dfrac{d}{dy}\right) H_n(y) e^{-y^2/2} = 2n H_{n-1}(y)e^{-y^2/2}
+$$
+
+이며 다음 관계를 얻을 수 있다.
+
+$$
+H'_n(y) = 2nH_{n-1}(y).
+$$  {#eq-part2_hermite_polynomial_recurssion_relation_1}
+
+
+또한 @eq-part2_generator_of_hermite_polynomial 로부터 다음의 결과를 얻을 수 있다.
+$$
+\begin{aligned}
+H_{n+1}(y) &= e^{y^2/2} \left(y-\dfrac{d}{dy}\right)^{n+1} e^{-y^2/2} \\
+&= e^{y^2} \left(y-\dfrac{d}{dy}\right) e^{-y^2/2} e^{y^2/2}\left(y-\dfrac{d}{dy}\right)^{n} e^{-y^2/2} \\
+&= e^{y^2/2} \left(y-\dfrac{d}{dy}\right) e^{-y^2/2} H_n(y) \\
+&= 2yH_n(y) + H'_n(y)
+\end{aligned}
+$$
+
+즉, 
+
+$$
+H'_n(y) = 2yH_n(y) - H_{n+1}(y)
+$$ {#eq-part2_hermite_polynomial_recurssion_relation_2}
+
+
+그리고 @eq-part2_hermite_polynomial_recurssion_relation_1 과 @eq-part2_hermite_polynomial_recurssion_relation_2 로 부터 다음의 점화식을 얻을 수 있다.
+
+$$
+H_{n+1}(y) = 2yH_n(y) - 2nH_{n-1}(y).
+$$ {#eq-part2_hermite_polynomial_recurssion_relation_3}
+
+</br>
+
+#### 직교성
+
+우리는 $\langle n|m\rangle = \delta_{nm}$ 이라는 것을 안다. $y=\left(\dfrac{m\omega}{\hbar}\right)^{1/2}x$ 임을 고려하면 이 직교성으로부터,
+
+$$
+\begin{aligned}
+\delta_{nm} &= \int_{-\infty}^\infty \Psi^\ast_n(x)\Psi_{m}(x)\, dx \\
+&= \left(\dfrac{1}{\sqrt{\pi}2^{n/2} 2^{m/2} \sqrt{n!}\sqrt{m!}}\right) \int_{-\infty}^\infty H_n(y)\, H_{m}(y)\, dy
+\end{aligned}
+$$
+
+이다. 이를 이용하면 에르미트 다항식의 직교성을 다음과 같이 얻을 수 있다.
+
+$$
+\int_{-\infty}^\infty H_n (y)\, H_{m}(y) \, dy = (\sqrt{\pi} 2^n n!)\delta_{nm} 
+$$ {#eq-part2_orthogonality_of_hermite_polynomials}
+
+
+</br>
+
+### 1차원 단순조화진동자의 에너지 고유함수
+
+@eq-part2_sho_energy_eigenstate_with_hermite_polynomial 에서 우리는 $H_n(x)$ 를 구하는 방법을 알아보았다. 이제 이것을 에너지 고유상태에 대해 그래프를 그려보면 아래와 같다.
+
+![1차원 단순조화진동자의 파동함수](figure/fig-part2_1d_sho_wavefunction.png){#fig-part2_sho_wavefunctions width=500}
 
 </br>
 
@@ -678,6 +779,62 @@ $$
 \left(\eta + \dfrac{d}{d\eta}\right) \Psi_0(\eta) = 0
 $$
 
-이며 $\Psi_0(\eta) = e^{-\eta^2/2}
+이며 정규화 조건을 생각하면 
+
+$$
+\Psi_0(\eta) = \left(\dfrac{1}{\pi \hbar m \omega}\right)^{1/4}\,e^{-\eta^2/2}
+$$
+
+이다. 즉, 
+
+$$
+\Psi_0(p) = \left(\dfrac{1}{\pi \hbar m \omega}\right) e^{-\dfrac{p^2}{2m\omega\hbar}}
+$$
+
+이다. 
+:::
+
+</br>
+
+
+::: {#exr-shankar_7.3.6}
+
+#### Shankar 7.3.6
+
+아래의 포텐셜 $V(x)$ 에 속해 있는 입자를 생각하자.
+
+$$
+V(x) = \left\{\begin{array}{ll}\dfrac{1}{2}m\omega^2x^2, &;\qquad x>0 \\ +\infty &; x\le 0\end{array}\right.
+$$
+
+경계조건은 무엇인가? 고유값과 고유벡터를 구하라.
 
 :::
+
+::: {.solution}
+
+$x=0$ 에서의 경계조건은 $\Psi(0) = 0$ 이다. @eq-part2_sho_hermite_polynomial_first_4 과 @eq-part2_hermite_polynomial_recurssion_relation_3 로부터 에르미트 다항식의 유용한 성질을 얻을 수 있다. $H_0(y)$ 부터 $H_3(y)$ 까지 보면 $H_n(y)$ 에서 $n$ 이 짝수이면 짝함수(even function), $n$ 이 홀수 이면 홀함수 인 것 같다. 이제 @eq-part2_hermite_polynomial_recurssion_relation_3 를 이용하여 보이자. $n$ 보다 작거나 같은 정수에 대해 이 명제가 성립한다고 가정하자. @eq-part2_hermite_polynomial_recurssion_relation_3 로부터
+
+$$
+H_{n+1}(-y) = 2(-y)H_n(-y) - 2nH_{n-1}(-y)
+$$
+
+이며 $n+1$ 이 짝수이면 $n$, $n-1$ 은 각각 홀수와 짝수이고 $H_n$ 과 $H_{n-1}$ 은 각각 홀함수, 짝함수이며, $H_{n+1}(-y) = 2yH_n(y) -2nH_{n-1}(y) = H_{n+1}(y)$ 이다. 같은 방법으로 $n+1$ 이 홀수이면 $H_{n+1}(-y) = -H_{n+1}(y)$ 라는 것을 보일 수 있다. 
+
+이제 $H_{n}(y)$ 의 상수항을 생각하자. $n$ 이 홀수이면 홀함수 이므로 상수항이 $0$ 이다. 역시 @eq-part2_hermite_polynomial_recurssion_relation_3 에서
+
+$$
+H_{2n+2}(y) = 2yH_{2n+1}(y) - (4n+2)H_{2n}(y)
+$$
+
+이므로 $H_{2n}$ 의 상수항을 $c_{2n}$ 이라고 하면 $c_{2n+2} = (-2)^{n+1}(2n+1)!!$ 이다. 여기서 
+
+$$
+(2n+1)!! := 1 \times 3 \times 5 \times \cdots \times (2n+1)
+$$
+
+이다. 즉 $H_{2n}(y)$ 의 상수항은 $0$ 이 아니다. 즉 $\Psi_n(x)$ 가운데 $\Psi_n(0)=0$ 을 만족하는 경우는 $n$ 이 홀수 일 때 뿐이다. 
+
+:::
+
+
