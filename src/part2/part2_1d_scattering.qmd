@@ -8,13 +8,11 @@ crossref:
 
 ## 일차원 우물 문제와 산란
 
-
-
 </br>
 
 ## 단일 계단 포텐셜 : 산란 문제
 
-![계단 포텐셜](figure/fig-part2_step_potential.png){#fig-part2_step_potential width=350}
+![계단 포텐셜](figure/fig-part2_step_potential.png){#fig-part2_step_potential width="350"}
 
 </br>
 
@@ -24,4 +22,4 @@ $$
 V(x) = \left\{\begin{array}{ll} 0 \qquad &; x<0 \;(\rm{I} \, \text{영역}) \\ V_0 &; x>0\;(\rm{II}\, \text{영역})  \end{array}\right.
 $$
 
-이다. $\rm{I}$ 영역에서 $+x$ 방향으로 입자가 운동하는 고전적인 상황을 생각해보자. $E>V_0$ 라면 $\rm{II}$ 영역으로 계속 진행해 나가고 $E<V_0$ 라면 $\rm{II}$ 영역에 진입하지 못하고 반사될 것이다. 
+이다. $\rm{I}$ 영역에서 $+x$ 방향으로 입자가 운동하는 고전적인 상황을 생각해보자. $E>V_0$ 라면 $\rm{II}$ 영역으로 계속 진행해 나가고 $E<V_0$ 라면 $\rm{II}$ 영역에 진입하지 못하고 반사될 것이다.

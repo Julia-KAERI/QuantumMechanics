@@ -40,4 +40,6 @@ $$ {#eq-part3_equation_of_motion_for_hamiltonian}
 
 :::
 
+</div>
+
 </br>
