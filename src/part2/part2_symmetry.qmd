@@ -394,7 +394,212 @@ $$
 
 ### 수학적인 보충
 
+@prp-part3_Baker_Hausdorff_Lemma (Baker-Housdorff lemma) 에 따라 다음이 성립한다.
 
+$$
+e^{-A}Be^A = B + [B,\,A] + \dfrac{1}{2!}[[B,\,A],\,A] + \cdots
+$$
+
+이로부터, 
+
+$$
+\begin{aligned}
+T^\dagger(a) \Omega T(a) &= e^{iaP/\hbar}\Omega e^{-iaP/\hbar} \\
+&= \Omega - \dfrac{ai}{\hbar}[\Omega,\, P] - \dfrac{a^2}{2\hbar^2}[[\Omega,\, P],\,P] + \cdots 
+\end{aligned}
+$$ {#eq-part3_transformation_of_operator_by_translation}
+
+임을 안다.
+
+</br><div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+
+::: {#exm-transformation_of_lagrangian}
+
+@eq-part3_transformation_of_operator_by_translation 에서 $\Omega = X^2$ 일 경우 직관적으로 $T^\dagger(a)X^2T(a) = (X+aI)^2$ 임을 안다. 이를 수학적으로 보이자.
+
+$$
+\begin{aligned}
+\left[X^2,\, P\right] &= X[X,\,P] + [X,\,P]X = 2i\hbar X, \\
+[[X^2,\,P],\, P] &= 2i\hbar [X,\, P] = -2\hbar^2 I,\\
+[[[X^2,\,P],\,P],\,P]  &= 0
+\end{aligned}
+$$
+
+이므로 $[\cdots [[X^2,\,P],\,P], \cdots, P]$ 에서 $P$ 가 3번 이상 나타날 경우 $0$ 임을 알 수 있다. 따라서,
+
+$$
+\begin{aligned}
+T^\dagger(a) X^2 T(a) &= X^2 +2aX + a^2I = (X+aI)^2
+\end{aligned}
+$$
+
+이다. 
+:::
+
+</div></br>
+
+
+고전역학에서 infinitesimal displacement $\delta a$ 에 대해
+
+$$
+\delta \omega= \delta a\{\omega,\,p\}
+$$
+
+이다. 즉
+
+$$
+\dfrac{d\omega}{da} = \{\omega,\, p\}
+$$
+
+이다. 이 결과를 이용하면,
+
+$$
+\dfrac{d}{da}\left(\dfrac{d\omega}{da}\right) = \dfrac{d^2\omega}{da^2} = \left\{\dfrac{d\omega}{da},\, p\right\} = \{ \{ \omega,\, p\},\, p\}
+$$
+
+이며, 이를 계속 해 나가다 보면 $\delta a$ 만큼의 displacement 에 의해 $\omega$ 는 다음과 같이 변화한다는 것을 알 수 있다.
+
+$$
+\omega \to \omega+ a\{\omega,\, p\} + \dfrac{a^2}{2!} \{ \{\omega,\, p\},\,p\} + \cdots 
+$$
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-shankar_11_2_3}
+
+#### Shankar 11.2.3
+
+$(x,\,y) \mapsto (\overline{x},\, \overline{y})$ 에서의 Infinitesimal rotation 
+
+$$
+\overline{x} = x \cos \varepsilon - y \sin \varepsilon,\qquad \overline{y} = x \sin \varepsilon + y \cos \varepsilon
+$$
+
+을 생각하자. 
+
+
+
+:::
+
+::: {.solution}
+
+$l_z = xp_y -yp_x$ 에 대해 
+
+$$
+\begin{aligned}
+\{x,\,l_z\} &= -y, \\
+\{\{x,\, l_z\},\, l_z\} &= x 
+\end{aligned}
+$$
+
+이므로
+
+$$
+\begin{aligned}
+\overline{x} &= x + \theta \{x,\,l_z\} + \dfrac{\theta^2}{2!} \{\{x,\, l_z\},\, l_z\} + \cdots \\
+&= x - y\theta - \dfrac{\theta^2}{2!} x + \dfrac{\theta^3}{3!}y + \cdots \\
+&= x\left(\sum_{j=0}^\infty \dfrac{\theta^{2j}}{(2j)!}\right) - y \left(\sum_{j=0}^\infty \dfrac{\theta^{2j+1}}{(2j+1)!}\right) \\
+&= x\cos \theta - y \sin \theta
+\end{aligned}
+$$
+
+이다. 같은 방법으로
+
+$$
+\overline{y} = x\sin \theta + y \cos \theta
+$$
+
+임을 보일 수 있다.
+
+:::
+
+</div></br>
+
+### 다입자 시스템의 경우
+
+입자가 하나 이상인 시스테의 경우 infinitesimal translation $T_\varepsilon$ 을 다음과 같이 정의한다.
+
+$$
+\langle x_1,\ldots,x_N | T_\varepsilon |\Psi\rangle = \Psi (x_1-\varepsilon,\ldots,\, x_N-\varepsilon)
+$$
+
+$T_\varepsilon$ 에서 $\varepsilon \to 0$ 인 극한에서 $T=I$ 이므로 어떤 generator $P$ 를 생각하여 $\varepsilon$ 에 대한 1차항까지 고려하면 $T=I - \dfrac{i\varepsilon}{\hbar}P$ 라고 놓을 수 있다. 이제 위 식의 양변을 $\varepsilon$ 에 대한 1차항까지 비교하면
+
+
+$$
+\begin{aligned}
+\langle x_1,\ldots,\,x_N | I - \dfrac{i\varepsilon}{\hbar} P|\Psi\rangle &= \Psi (x_1,\ldots,\,x_N) - \sum_{j=1}^N \varepsilon \dfrac{\partial \Psi}{\partial x_j} \\
+&= \Psi(x_1,\ldots,,x_N) - \left(\dfrac{i\varepsilon}{\hbar}\right)\sum_{j=1}^N P_j\Psi(x)
+\end{aligned}
+$$
+
+이므로 
+
+$$
+T_\varepsilon = I - \dfrac{i\varepsilon}{\hbar} \sum_{j=1}^N P_j = I - \dfrac{i\varepsilon}{\hbar}P
+$$
+
+라 놓을 수 있다. 
+
+$$
+P = \sum_j P_j
+$$
+
+는 총 운동량(total momentum) 이라고 부를 수 있다는 것을 알 수 있다. 이로부터 $T_\varepsilon$ 에 대해 해밀토니안이 불변이면 총 각운동량이 보존된다는 것을 알 수 있다.
+
+</br>
+
+### Translational Invariance 의 의미
+
+$T(a)$ 는 유니타리이므로 translation 에 대해 해밀토니안이 불변이라면 $T(a)^\dagger HT=H$ 로부터 $T(a)H=HT(a)$ 이다. 이로부터 $T(a)U(t)=U(t)T(a)$ 임을 알 수 있다. $t=0$ 에 $|\Psi(0)\rangle$ 과 $T(a)|\Psi(0)\rangle$ 인 상태를 준비했다면 $T(a)U(t)|\Psi(0)\rangle = U(t)\left(T(a)|\Psi(0)\rangle\right)$ 이다. 즉 $x=0$ 인 관찰자가 $|\Psi(0)\rangle$ 의 시간에 대한 변화를 보는 것과 $x=a$ 에서의 관찰자가 $T(a)|\Psi(0)\rangle$ 의 시간에 대한 변화를 보는 것은 상대적인 위치의 차이를 제외하면 동일하는 것을 알 수 있다. 
+
+우리가 지금까지 발견한 모든 기본적인 상호작용은 translational invariance 의 성질을 가지며 이는 근원적인 의미에서 공간의 균일성(homogeneity) 를 의미하며, 물리적으로는 운동량 보존으로 나타난다.
+
+</br>
+
+## Time Translational invariance
+
+고전적으로 공간의 균일성이 운동량 보존으로 나타난다면 시간의 균일성은 해밀토니안의 보존으로 나타나는데 이것은 양자세계에서도 마찬가지이다. 시간에 대한 infinitesimal translation 을 생각하자. 시간 $t_1$ 에 $|\Psi_0\rangle$ 의 상태로 준비되었다고 하자. Infinitesimal time $\varepsilon$ 후의 상태는
+
+$$
+|\Psi(t_1+\varepsilon)\rangle = \left[I - \dfrac{i\varepsilon}{\hbar} H(t_1)\right] |\Psi_0\rangle
+$$
+
+
+---
+
+
+</br>
+
+## Parity Invariance
+
+고전적으로 parity 변환은 다음과 같은 변환이다.
+$$
+x \longrightarrow -x,\qquad p \longrightarrow -p
+$$ {#eq-part3_classical_parity}
+
+시간, 공간 에 대한 translation 그리고 잠시 후에 다룰 회전에 대한 변환은 연속적인 변환이지만 Parity 는 불연속적인 변환이며 이는 양자이론에서도 마찬가지이다. 양자이론에에서의 parity 변환은 $\Pi$ 연산자로 표기하며 다음과 같이 정의된다.
+
+$$
+\Pi|x\rangle = |-x\rangle.
+$$ {#eq-part3_quantum_parity}
+
+이로부터,
+
+$$
+\begin{aligned}
+\langle x|\Pi|\Psi\rangle &= \int \langle x|\Pi |x'\rangle \langle x'|\Psi\rangle\, dx' = \int \langle x|-x'\rangle\, \Psi(x') = \int \delta(x+x')\Psi(x')\, dx' \\
+&= \Psi(-x)
+\end{aligned}
+$$
+
+
+
+
+
+
+
+</br>
 
 
 ### 연습문제
