@@ -4,7 +4,7 @@ number-sections: true
 number-depth: 3
 crossref:
   chapters: true
----
+--- 
 
 ## 곱공간과 얽힘 상태
 
@@ -16,7 +16,7 @@ crossref:
 ::: {#def-part1_tensor_product_of_vector_space}
 
 #### 벡터공간의 텐서곱
-두 힐베르트 공간 $\mathcal{H}_A$ 과 $\mathcal{H}_B$ 를 생각하자. $\mathcal{H}_A$ 의 기저 $\{|a_i\rangle_A : i\}$ 와 $\mathcal{H}_B$ 의 기저 $\{|b_j\rangle:j\}$ 에 대해 $\mathcal{H}=\text{span}(\{|a_i\rangle_A \otimes |b_j\rangle_B:i,\,j\})$ 를 아래의 세 조건과 함께 정의 할 수 있다.
+두 힐베르트 공간 $\mathscr{H}_A$ 과 $\mathscr{H}_B$ 를 생각하자. $\mathscr{H}_A$ 의 기저 $\{|a_i\rangle_A : i\}$ 와 $\mathscr{H}_B$ 의 기저 $\{|b_j\rangle:j\}$ 에 대해 $\mathscr{H}=\text{span}(\{|a_i\rangle_A \otimes |b_j\rangle_B:i,\,j\})$ 를 아래의 세 조건과 함께 정의 할 수 있다.
 
 &emsp; ($1$) $c\in \mathbb{C}$ 에 대해 $c(|a\rangle_A \otimes |b\rangle_B) = (c|a\rangle_A)\otimes |b\rangle_B = |a\rangle_A \otimes (|b\rangle_B)$.
 
@@ -24,7 +24,7 @@ crossref:
 
 &emsp; ($3$) $|a\rangle_A \otimes (|b\rangle_B + |b'\rangle_B)= |a\rangle_A \otimes |b\rangle_B + |a\rangle_a \otimes |b'\rangle_B$.
 
-이 때 $\mathcal{H}$ 역시 힐베르트 공간이며 $\mathcal{H}_A$ 와 $\mathcal{H}_B$ 의 **텐서곱(tensor product)** 라고 하고 $\mathcal{H}_A \otimes \mathcal{H}_B$ 로 표기한다. 
+이 때 $\mathscr{H}$ 역시 힐베르트 공간이며 $\mathscr{H}_A$ 와 $\mathscr{H}_B$ 의 **텐서곱(tensor product)** 라고 하고 $\mathscr{H}_A \otimes \mathscr{H}_B$ 로 표기한다. 
 
 텐서곱에서의 내적은 각각의 공간에서의 내적의 곱으로 정의된다. 즉,
 
@@ -40,7 +40,7 @@ $$
 
 </br>
 
-여기서 주의해야 할 것은 일반적으로 선형대수학에서 사용하는 **곱공간(product space)** ($\mathcal{H}_A \times \mathcal{H}_B$) 과 tensor product ($\mathcal{H}_A \otimes \mathcal{H}_B$) 는 다르다는 것이다. 곱공간에서 $(3|a\rangle_A,\, |b\rangle_B) \ne (|a\rangle_A,\, 3|b\rangle_B)$ 이지만 텐서곱에서는 $((3|a\rangle_A) \otimes |b\rangle_B) = |a\rangle_A \otimes (3|b\rangle_B)$ 이다.  
+여기서 주의해야 할 것은 일반적으로 선형대수학에서 사용하는 **곱공간(product space)** ($\mathscr{H}_A \times \mathscr{H}_B$) 과 tensor product ($\mathscr{H}_A \otimes \mathscr{H}_B$) 는 다르다는 것이다. 곱공간에서 $(3|a\rangle_A,\, |b\rangle_B) \ne (|a\rangle_A,\, 3|b\rangle_B)$ 이지만 텐서곱에서는 $((3|a\rangle_A) \otimes |b\rangle_B) = |a\rangle_A \otimes (3|b\rangle_B)$ 이다.  
 
 
 ### 텐서곱과 곱상태 {#sec-part1_tensor_product_and_product_state}
@@ -453,7 +453,7 @@ $$
 
 #### 밀도 행렬
 
-힐베르트 공간 $\mathcal{H}$ 의 기저 $\{|\phi_i\rangle : i=1,\,2,\ldots\}$ 와 $|\phi_i\rangle$ 의 상태에 있을 확률 $p_i$ 에 대해
+힐베르트 공간 $\mathscr{H}$ 의 기저 $\{|\phi_i\rangle : i=1,\,2,\ldots\}$ 와 $|\phi_i\rangle$ 의 상태에 있을 확률 $p_i$ 에 대해
 
 $$
 \rho := \sum_i p_i |\phi_i\rangle \langle \phi_i|

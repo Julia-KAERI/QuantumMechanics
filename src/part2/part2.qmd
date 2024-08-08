@@ -8,6 +8,6 @@
 
 @susskind2014quantum
 
-@Shankar:102017
+@shankar1994
 
 :::

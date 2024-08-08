@@ -27,6 +27,7 @@ book:
       - src/part2/part2_symmetry.qmd
     - part : src/part3/part3.qmd
       chapters:
+      - src/part3/some_proofs.qmd
       - src/part3/symmetry_in_classical_mechanics.qmd
       - src/part3/historical_note.qmd
     - part: src/figure/figure.qmd

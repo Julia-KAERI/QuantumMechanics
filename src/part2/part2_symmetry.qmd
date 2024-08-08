@@ -339,8 +339,7 @@ $$
 
 이라면 $[H,\,P]=0$ 이며, 띠라서 에렌페스트 정리로부터 $\langle \dot{P}\rangle = 0$ 을 얻는다. 고전적으로는
 
-$$
-\delta \mathcal{H} = \varepsilon \{\mathcal{H},\, p\} = 0
+$$\delta \mathcal{H} = \varepsilon \{\mathcal{H},\, p\} = 0
 $$
 
 으로부터 $\dot{p} = \{p,\, \mathcal{H}\} = 0$ 을 얻은 것이다. 이것을 일반화 시켜 보자면 고전역학에서 $g(x,\,p)$ 에 의해 generated 되는 infinitesimal 정준 변환
@@ -355,7 +354,46 @@ $$
 \delta \Omega = -\dfrac{i\varepsilon}{\hbar} [\Omega,\, G]
 $$
 
-이다. 
+이다. @shankar1994 는 이러한 관계를 **상보성(correspondence)** 이라고 표현한다.
+
+
+이런 상보성은 고전역학에서 inifintesimal canconical transformation 이 존재하는 경우 뿐만 아니라 아래와 같은 경우에도 존재한다.
+
+- finite canonical transformation 의 경우
+- infinitesimal 버젼이 존재하지 않는 regular canonical transformation 의 경우
+
+*자세한 설명은 이후에*
+
+
+</br>
+
+### Finite Translation
+
+이제 infinitesimal 한 경우가 아닌 finite translation 의 경우를 살펴 보자. $a$ 만큼의 translation 을 $T(a)$ 라고 표기한다. $a$ 만큼의 finite translation 을 생각하고 $[0,\,a]$ 구간을 $N$ 개의 같은 크기의 부분구간으로 나누자. 즉 한 부분구간의 크기는 $a/N$ 이 된다. 그렇다면 $N \to \infty$ 극한에서 $a/N$ 만큼의 translation 은 infinitesimal translation 이 되며
+
+$$
+T\left(\dfrac{a}{N}\right) = I - \dfrac{ia}{\hbar N}P
+$$
+
+라고 쓸 수 있다. 그렇다면 
+
+$$
+T(a) = \lim_{N \to \infty} \left[T\left(\dfrac{a}{N}\right)\right]^N = \lim_{N \to \infty} \left[I - \dfrac{ia}{\hbar N}P\right]^N = e^{-iaP/\hbar}
+$$
+
+이다. 물론 $P$ 는 연산자이므로 함부로 대수적인
+
+$$
+\lim_{N \to \infty} \left(1 - \dfrac{a}{N}\right)^N =e^{-a}
+$$
+ 
+를 사용해서는 안되지만 이 경우 계산에 관련된 것이 연산자 $P$ 와 스칼라 값 뿐이며, 따라서 관계된 모든 값에 대해 $P$ 와의 commutativity 가 성립하기 때문에 $T(a) =e^{-iaP/\hbar}$ 이게 된다.
+
+
+</br>
+
+### 수학적인 보충
+
 
 
 
