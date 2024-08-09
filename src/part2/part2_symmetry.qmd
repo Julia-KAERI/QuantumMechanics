@@ -573,6 +573,8 @@ $$
 
 ## Parity Invariance
 
+### Active transformation 의 관점에서
+
 고전적으로 parity 변환은 다음과 같은 변환이다.
 $$
 x \longrightarrow -x,\qquad p \longrightarrow -p
@@ -593,14 +595,210 @@ $$
 \end{aligned}
 $$
 
+을 얻는다. 또한
+
+$$
+\begin{aligned}
+\Pi |p\rangle &= \int |x\rangle \langle x|\Pi| x'\rangle \langle x'|p\rangle \, dx\,dx' = \int |x\rangle \langle x|-x'\rangle \langle x'|p\rangle \, dx\,dx'  \\
+&= \int |x\rangle \delta (x'+x) \langle x'|p\rangle \, dx\, dx' = \int|x\rangle \langle -x|p\rangle \,dx
+\end{aligned}
+$$
+
+인데 $\langle x|p\rangle = (2\pi \hbar)^{-1/2}e^{-ipx/\hbar}$ 이므로 $\langle -x|p\rangle = \langle x|-p\rangle$ 이다. 즉,
+
+$$
+\Pi |p\rangle = \int |x\rangle \langle x|-p\rangle\,dx = |-p\rangle
+$$
+
+이다. 이로부터 우리는 $\Pi$ 연산자가 고전적인 parity 변환과 동등하다는 것을 알 수 있다.
 
 
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-properties_of_parity_operator}
+
+Parity operator $\Pi$ 는 다음의 성질을 가진다는 것을 보여라.
+
+&emsp; ($1$) $\Pi^2 = I$,
+
+&emsp; ($2$) $\Pi$ 는 에르미트이며 유니타리인 연산자이다.
+
+&emsp; ($3$) $\Pi$ 의 고유값은 $\pm 1$ 이다.
 
 
+:::
+
+::: {.solution}
+
+($1$) $\Pi^2|x\rangle = \Pi |-x\rangle = |x\rangle$ 이므로 $\Pi^2=I$ 이다.
+
+($2$) 우선 에르미트 임을 보이자.
+
+$$
+\begin{aligned}
+\langle x'|\Pi | x\rangle &= \langle x'|-x\rangle = \delta (x'+x), \\
+\overline{\langle x|\Pi|x'\rangle} &= \delta^\ast (x'+x) = \delta (x'+x)
+\end{aligned}
+$$
+
+이며 $\overline{\langle x|\Pi|x'\rangle} = \langle x'|\Pi^\dagger |x\rangle$ 이므로 $\Pi = \Pi^\dagger$ 이다. 따라서 $\Pi$ 는 에르미트 연산자이다. 그리고 $I=\Pi^2 = \Pi^\dagger \Pi$ 이므로 $\Pi$ 는 유니타리이다. 
+
+($3$) $|\pi\rangle$ 을 $\Pi$ 의 고유상태라고 하자. $\Pi^2|\pi\rangle = |\pi\rangle$ 이므로 $\Pi$ 의 고유값은 $\pm 1$ 이다.
+
+:::
+
+</div></br>
+
+위의 연습문제에서 보았듯이 parity 연산자의 고유값은 $\pm 1$ 이다. 이 경우 고유값이 $+1$ 인 고유상태를 **even parity** 라고 하고 $-1$ 인 고유상태를 **odd parity** 라고 한다. $\Psi(x)$ 에 대해 $\Psi(-x)= \Psi(x)$ 이면 even parity 파동함수이며 $\Psi(-x)=-\Psi(x)$ 이면 odd parity 파동함수이다. 
+
+
+</br><div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+
+::: {#exm-parity_in_other_basis}
+
+$|\Psi\rangle$ 이 $\Pi$ 의 고유상태라고 하자. 어떤 $\Omega$ 에 대한 기저로 표현된 파동함수 $\Psi(\omega)$ 역시 $\omega$ 에 대해 even 혹은 odd parity 를 가질까? $|\Psi\rangle$ 이 $\Pi$ 에 대해 even parity 를 갖는다고 하자. 즉 $\Psi(-x)= \Psi(x)$ 이다. 이에 대해
+
+$$
+\Psi (-\omega) = \int \langle -\omega |x\rangle \Psi(x)\, dx = -\int \langle -\omega|-x\rangle \Psi (-x)\, dx = -\int \langle -\omega |-x\rangle \Psi(x)\, dx
+$$
+
+임을 생각하자. $\langle -\omega |-x\rangle$ 와 $\langle \omega |x\rangle$ 사이에 뚜렷한 대칭성이 없다면 $\Psi(-\omega)$ 가 $\omega$ 에 대해 even/odd parity 를 갖지 않는다. 
+:::
+
+</div></br>
 
 
 </br>
 
+### Passive transform 의 관점에서
+
+이제 partiy 연산자가 상태벡터가 아닌 다른 연산자에 작용하는 경우를 알아보자. Parity 연산자를 다음과 같이 정의할 수도 있다.
+
+$$
+\begin{aligned}
+\Pi^\dagger X \Pi = -X,\qquad \Pi^\dagger P \Pi = -P.
+\end{aligned}
+$$
+
+해밀토니안 $H(X,\,P)$ 가 
+$$
+\Pi^\dagger H(X,\,P)\Pi = H(-X,\, -P) = H(X,\,P)
+$$
+
+라면, 즉 $[\Pi,\, H]=0$ 이라면 이 해밀토니안이 parity-invariant 라고 한다. 이 경우 해밀토니안 $H$ 와 $\Pi$ 의 공통 고유벡터들로 힐베르트 공간의 기저벡터를 구성 할 수 있다. 대표적으로 
+
+&emsp; ($1$) $H=\dfrac{P^2}{2m} + \dfrac{1}{2}m\omega^2X^2$ 인 단순조화진동자,
+
+&emsp; ($2$) $x=0$ 을 중심으로 대칭적인 1차원 포텐셜 우물
+
+을 들 수 있다. 또한 $H$ 가 parity invariant 라면 $[\Pi,\,U(t)]=0$ 이므로 시간이 지나도 상태의 parity 를 보존하게 된다. 
+
+</br>
+
+### Parity 붕괴
+
+자연의 근본 법칙은 공간과 시간에 대한 translation (그리고 rotation) 에 대해 invariant 하지만 Parity 에 대해서는 그렇지 않다. 핵의 $\beta$-붕괴를 설명하는 약한상호작용의 경우 어떻게 하더라도 parity-invariant 한 해밀토니안을 만들어 낼 수 없다는 것이 알려져 있다. 즉 초기상태를 $|\Psi(0)\rangle$ 과 $\Pi |\Psi(0)\rangle$ 로 준비했을 경우 $\Pi U(t)|\Psi(0)\rangle$ 은 $U(t)\Pi|\Psi(0)\rangle$ 과 다르다는 것이다. 다음과 같은 $\beta$ 붕괴 반응을 보자.
+
+$$
+{}^{60}\text{Co} \rightarrow {}^{60}\text{Ni} + e^- + \overline{\nu}
+$$
+
+여기서 $e^-$ 는 전자이고 $\overline{\nu}$ 는 반중성미자이다. 여기서 전자는 ${}^{60}\text{Co}$ 의 스핀방향과 반대방향으로 나오는 것이 관측되었는데 이것이 parity 가 보존되지 않음을 보이는 것이다. @fig-beta_decay_and_parity 를 보자 
+
+</br>
+
+![베타붕괴와 패리티 비보존](figure/fig-part2_parity.png){#fig-beta_decay_and_parity width=500}
+
+</br>
+
+$t=0$ 에서${}^{60}\text{Co}$ 의 스핀이 $z$ 방향으로 정렬되었다고 하자.(실험 $A$) 다른 관찰자는 실험 $A$ 와는 거울대칭이 되도록 실험을 설정했다고 하자. 스핀의 방향이 $A$ 와는 반대방향임에 주목하라. $M$ 은 $A$ 와 거울 대칭인 가상의 실험이다. 베타붕괴가 발생했을 때 $A$ 실험에서는 전자의 방향이 ${}^{60}\text{Co}$ 스핀과 반대방향, 즉 $-z$ 방향의 속도를 갖는다. Parity 가 보존된다면 $B$ 실험에서도 $-z$ 방향으로 전자가 나와야겠지만($M$ 실험) 실제로는 $B$ 와 같이 $+z$ 방향으로 전자가 나온다. 
+
+
+</br>
 
 ### 연습문제
 
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part2_shankar_11_4_1}
+
+#### Shankar 11.4.1
+
+$[\Pi,\,H] = 0$ 이라면 even/odd parity 를 가진 시작상태에 대해 그 패리티가 보존됨을 보여라.
+
+:::
+
+::: {.solution}
+
+$[\Pi,\,H]=0$ 이라면 힐베르트 공간 $\mathscr{H}$ 가 $\Pi,\, H$ 의 공통 고유벡터로 된 기저를 갖는다. 이를 $|\Psi_{E,\pi}\rangle$ 이라고 하자. $\Pi |\Psi_{E,\pi}(0)\rangle = \pi_{E,\,\pi}|\Psi_{E,\pi}(0)\rangle$ 이라고 하자. 
+$$
+\Pi |\Psi_{E,\pi}(t) \rangle = \Pi e^{-iHt/\hbar}|\Psi_{E,\pi}(0)\rangle = e^{-iHt/\hbar} \Pi |\Psi_{E,\pi}(0)\rangle = \pi_{E,\pi} |\Psi_{E,\pi}(t)\rangle
+$$
+
+:::
+
+</div>
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part2_shankar_11_4_2}
+
+#### Shankar 11.4.2
+
+아래와 같은 포텐셜의 입자를 생각하자.
+
+$$
+V(x) = V_0 \sin (2\pi x/a).
+$$
+
+이 포텐셜은 정수 $m$ 에 대한 $x\to x+2ma$ translation 에 대해 불변이다. 운동량이 보존되는가? 왜 안되는가?
+
+:::
+
+::: {.solution}
+
+에렌페스트 정리로부터
+
+$$
+\begin{aligned}
+i\hbar \langle \dot P\rangle =  \langle [P,\, H]\rangle = \left\langle \dfrac{-i\hbar 2\pi}{a} V_0 \cos\left(\dfrac{2\pi x}{a} \right)\right\rangle \ne 0
+\end{aligned}
+$$
+
+:::
+
+</div>
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part2_shankar_11_4_3}
+
+#### Shankar 11.4.3
+
+어떤 반응에서 전자의 스핀이 항상 운동량과 평행하다는 것을 알게 되었다. 패리티 보존이 깨진다는 것을 보여라.
+
+:::
+
+::: {.solution}
+
+see @fig-beta_decay_and_parity
+:::
+
+</div>
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part2_shankar_11_4_4}
+
+#### Shankar 11.4.4
+
+우리는 parity 를 거울 반사로 간주하였다. 1차원에서는 이것이 맞지만 고차원에서는
+
+:::
+
+::: {.solution}
+
+
+:::
+
+</div></br>
