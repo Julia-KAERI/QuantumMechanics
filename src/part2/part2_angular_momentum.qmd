@@ -1,0 +1,534 @@
+---
+title: "회전과 각운동량"
+number-sections: true
+number-depth: 3
+crossref:
+  chapters: true
+---
+
+## 2차원에서의 Translation
+
+### 임의의 방향에 대한 Translation
+
+2차원에서의 회전을 다루기에 앞서 2 차원에서의 운동량 연산자를 다루기로 하자. $x$, $y$ 축에 대한 infinitesimal translation 의 generator 로서 $P_x,\,P_y$ 는 coordinate basis 에서 각각 다음과 같이 표현된다.
+
+$$
+P_x \to -i\hbar \partial_x,\qquad P_y \to -i\hbar \partial_y
+$$
+
+이 때 벡터연산자 $\boldsymbol{P}$ 는
+
+$$
+\boldsymbol{P} = P_x \hat{\boldsymbol{e}}_1 + P_y \hat{\boldsymbol{e}}_2
+$$
+
+로 표현 될 수 있다. 실제로 $x,\,y$ 방향은 다른 방향에 비해 특별할 것이 없으므로 임의의 방향벡터 $\hat{\boldsymbol{n}}$ 에 대해
+
+$$
+P_n := \hat{\boldsymbol{n}}\cdot \boldsymbol{P}
+$$ {#eq-part3_momentum_operator_for_arbitrary_direction}
+
+로 표현된다. $P_n$ 은 $\hat{\boldsymbol{n}}$ 방향으로의 infinitesimal translation 의 generator 이다. 따라서 $\boldsymbol{a}$ 만큼의 translation $T(\boldsymbol{a})$ 는
+
+$$
+T(\boldsymbol{a}) := e^{-iaP_a/\hbar} = e^{-i\boldsymbol{a}\cdot \boldsymbol{P}/\hbar}
+$$ {#eq-part3_translation_operator_for_arbitrary_direction}
+
+</br><div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+
+::: {#exm-part2_addition_of_translation_for_arbitrary_direction}
+@eq-part3_translation_operator_for_arbitrary_direction 에서 
+
+$$
+T(\boldsymbol{a})T(\boldsymbol{b}) = e^{i\boldsymbol{a}\cdot \boldsymbol{P}/\hbar}e^{i\boldsymbol{b}\cdot \boldsymbol{P}/\hbar} = e^{i(\boldsymbol{a}+\boldsymbol{b})\cdot \boldsymbol{P}/\hbar} = T(\boldsymbol{a}+\boldsymbol{b})
+$$ {#eq-part3_addition_of_translation_for_arbitrary_diraction}
+
+이다. 
+
+:::
+
+</div></br>
+
+### 연습문제
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-shankar_12_1_1}
+
+#### Shankar 12.1.1
+
+$\hat{\boldsymbol{a}} = \boldsymbol{a}/\|\boldsymbol{a}\|$ 라고 하자. $\hat{\boldsymbol{a}}\cdot \boldsymbol{P}$ 가 $\boldsymbol{a}$ 방향으로의 infinitesimal translation 의 generator 임을 다음 관계를 이용하여 보여라.
+
+$$
+\langle x,\,y| I - \dfrac{i}{\hbar} \delta \boldsymbol{a} \cdot \boldsymbol{P}|\Psi\rangle = \Psi (x-\delta a_x,\, y-\delta a_y)
+$$
+
+:::
+
+::: {.solution}
+
+주어진 식의 우변을 $\delta \boldsymbol{a} = (\delta a_x,\, \delta a_y)$ 의 1차항까지 전개하면 
+
+$$
+\Psi (x-\delta a_x,\, y-\delta a_y) = \Psi(x,\,y) - \delta a_x \partial_x \Psi(x,\,y) - \delta a_y \partial_y \Psi (x,\,y)
+$$
+
+이다. 좌변은 
+$$
+\begin{aligned}
+\langle x,\,y| I - \dfrac{i}{\hbar} \delta \boldsymbol{a} \cdot \boldsymbol{P}|\Psi\rangle &= \Psi(x,\,y) - \dfrac{i}{\hbar} \langle x,\,y| \delta a_x P_x + \delta a_y P_y|\Psi\rangle \\
+&= \Psi(x,\,y) -\dfrac{i}{\hbar}\delta a_x \langle x,\,y|P_x|\Psi\rangle - \dfrac{i}{\hbar}\delta a_y \langle x,\,y|P_y|\Psi\rangle \\
+&= \Psi (x,\,y) - \delta a_x \partial_x\Psi(x,\,y) - \delta a_y \partial_y \Psi(x,\,y)
+\end{aligned}
+$$
+
+이다. 따라서 
+
+$$
+I - \dfrac{i}{\hbar}\delta \boldsymbol{a}\cdot \boldsymbol{P}
+$$
+
+는 $\boldsymbol{a}$ 방향의 infinitesimal translation 의 generator 이다. 
+
+:::
+
+</div></br>
+
+## 2차원에서의 회전
+
+
+3차원에서 $xy$ 평면에서의 $\phi_0$ 만큼의 회전은 $\phi_0\hat{\boldsymbol{e}}_3$ 벡터로 표현 할 수 있으며 이에 대한 연산자를 $R(\phi_0 \hat{\boldsymbol{e}}_3)$ 라고 표기하기로 하자. $T(\boldsymbol{a})$ 가 힐베르트 공간에서의 $\boldsymbol{a}$ 만큼의 translation 을 표현하듯이 힐베르트 공간에서의 $\phi_i \hat{\boldsymbol{e}}_3$ 만큼의 회전을 $U[R(\phi_0 \hat{\boldsymbol{e}}_3)]$ 라고 표기하기로 하자. 앞으로는 임의의 회전 방향을 다루게 될텐데 어쨋든 회전 각도와 방향이 정해져 있거나, 회전 각도나 방향에 무관한게 성립하는 성질을 다룰 때는 표기를 $R$ 로 하기로 하자. Active transform 관점에서 $U[R]|\Psi\rangle$ 은 $|\Psi\rangle$ 가 회전된 상태를 의미한다. 표기를 단순화 하기 위해 $|\Psi_R\rangle := U[R]|\Psi\rangle$ 로, 연산자 $A$ 에 대해 $\langle A\rangle_R := \langle \Psi_R|A|\Psi_R\rangle$ 이라고 표기하기로 하자.
+
+$|\Psi_R\rangle$ 에 대해 다음이 성립해야 한다.
+
+$$
+\begin{aligned}
+\langle X\rangle_R &= \langle X\rangle \cos \phi_0 - \langle Y\rangle \sin \phi_0, \\[0.2em]
+\langle Y\rangle_R &= \langle X\rangle \sin \phi_0 + \langle Y\rangle \cos \phi_0, \\[0.2em]
+\langle P_x\rangle_R &= \langle P_x\rangle \cos \phi_0 - \langle P_y\rangle \sin \phi_0, \\[0.2em]
+\langle P_y\rangle_R &= \langle P_x\rangle \sin \phi_0 + \langle P_y\rangle \cos \phi_0.
+\end{aligned}
+$$ {#eq-part2_change_of_expectation_for_rotation_in_d2}
+
+이제 $P$ 의 $|x\rangle$ 에 대한 작용과 유사하게 위치 캣에 대해 
+
+$$
+U[R]|x,\,y\rangle = |x \cos \phi_0-y \sin \phi_0,\, x\sin \phi_0 + y \cos \phi_0\rangle
+$$ {#eq-part2_rotation_applied_to_position_eigenket}
+
+라고 할 수 있을 것이다. 
+
+</br>
+
+### $U[R]$ 을 명시적으로 구하기
+
+Infinitesimal rotaiton $\varepsilon_z \hat{\boldsymbol{e}}_3$ 을 생각하자. 이 경우 $\varepsilon_z$ 에 대한 1차 근사로
+
+$$
+U[R(\varepsilon_z \hat{\boldsymbol{e}}_3)] = I - \dfrac{i\varepsilon_z L_z}{\hbar}
+$$ {#eq-part2_infinitesimal_rotation_operator_in_2d}
+
+로 놓을 수 있다. 여기서 $L_z$ 는 infinitesimal rotation 에 대한 generator 이며 (아직까지는!!!) 어떤 물리적 값과의 연관성도 없다. 따라서
+
+$$
+\langle x,\,y|U[R]|\Psi\rangle = \langle x,\,y| I - \dfrac{i\varepsilon_z L_z}{\hbar}|\Psi\rangle
+$$ {#eq-part2_infinitesimal_rotation_in_2d}
+
+이 $\varepsilon_z$ 에 대한 1차 근사로 성립해야 한다.
+
+또한 @eq-part2_rotation_applied_to_position_eigenket 을 infinitesimal rotation 에 적용하면, 
+
+$$
+U[R]|x,\,y\rangle = |x - \varepsilon_z y,\, \varepsilon_z x + y\rangle
+$$ {#eq-part2_infinitesimal_rotation_applied_to_position_eigenket}
+
+이다. 위 식으로부터
+
+$$
+\begin{aligned}
+\langle x,\,y|\Psi_R\rangle &= \langle x,\,y|U[R]|\Psi\rangle = \iint \langle x,\,y|U[R]|x',\,y'\rangle \langle x',\,y' |\Psi\rangle \, dx'\,dy' \\
+&=\iint \langle x,\,y|x'-\varepsilon_z y',\, \varepsilon_z x' + y'\rangle \langle x',\,y'|\Psi\rangle \, dx'\,dy' \\
+&= \iint \delta\left(x'-\dfrac{x+\varepsilon_z y}{1+\varepsilon_z^2}\right)\delta\left(y'-\dfrac{y-\varepsilon_z x}{1+\varepsilon_z^2}\right) \Psi(x',\,y')\, dx'dy' \\[0.3em]
+&=  \Psi(x+\varepsilon_z y,\, y-\varepsilon_z x)
+\end{aligned} 
+$$
+
+을 얻는다. 따라서 다음이 $\varepsilon_z$ 에 대한 1차항에 대해 성립해야 한다.
+
+$$
+\langle x,\,y | I - \dfrac{i\varepsilon_z L_z}{\hbar} |\Psi\rangle = \Psi (x+\varepsilon_z y,\, y-\varepsilon_z x).
+$$
+
+좌변은 
+
+$$
+\langle x,\,y | I - \dfrac{i\varepsilon_z L_z}{\hbar} |\Psi\rangle = \Psi (x,\,y) - \dfrac{i\varepsilon_z}{\hbar} \langle x,\,y|L_z|\Psi\rangle
+$$
+
+이며, 우변은 $\varepsilon_z$ 에 대한 1차 근사로서
+
+$$
+\Psi (x+\varepsilon_z y,\, y-\varepsilon_z x) = \Psi(x,\,y) + \varepsilon_z y \partial_x \Psi(x,\,y) - \varepsilon_z x \partial_y \Psi(x,\,y)
+$$
+
+이므로 $L_z$ 는 좌표기저에서 
+
+$$
+L_z = -i\hbar (X \partial_y - Y\partial_x) = XP_y - YP_x
+$$ {#eq-part3_Lz_in_coordinate_basis}
+
+이다. 운동량 기저에서 @eq-part3_Lz_in_coordinate_basis 는
+
+$$
+L_z = i\hbar \left(\dfrac{\partial}{\partial p_x} p_y - \dfrac{\partial}{\partial p_y}p_x\right)
+$$
+
+가 되므로
+
+$$
+-\dfrac{i\varepsilon_z}{\hbar}\langle p_x,\, p_y|L_z|\Psi\rangle = \dfrac{\partial \Psi}{\partial p_x}(p_y \varepsilon_z) + \dfrac{\partial \Psi}{\partial p_y}(-p_x \varepsilon_z)
+$$
+
+가 된다는 것을 알 수 있다. 즉
+
+$$
+\langle p_x,\,p_y|I - \dfrac{i\varepsilon_z}{\hbar}L_z|\Psi\rangle = \Psi (p_x + \varepsilon_z p_y,\, p_y - \varepsilon_z p_x)
+$$
+
+이며, 따라서 @eq-part2_change_of_expectation_for_rotation_in_d2 에서의 $\langle P_x\rangle_R$ 과 $\langle P_y\rangle_R$ 에 관한 식이 성립한다는 것을 알 수 있다. 즉 우리는 infinitesimal rotation 의 generator $L_z$ 를 구했다. 덤으로 고전역학에서의 $z$ 방향으로의 각운동량
+
+$$
+l_z = xp_y - yp_x
+$$
+
+과의 상보성도 알 수 있다.
+
+</br>
+
+### Commutation Relation
+
+이제 passive transform 의 관점으로 돌아와 보자. $\varepsilon_z$ 만큼의 infinitesimal rotation 을 생각하면, 
+
+$$
+\begin{aligned}
+U^\dagger[R] X U[R] &= X - \varepsilon_z Y,\\[0.4em]
+U^\dagger[R] Y U[R] &= Y + \varepsilon_z X,\\[0.4em]
+U^\dagger[R] P_x U[R] &= P_x - \varepsilon_z P_y, \\[0.4em]
+U^\dagger[R] P_y U[R] &= P_y + \varepsilon_z P_x,\\
+\end{aligned}
+$$ {#eq-part3_rotation_in_passive_point_of_view}
+
+이며, 
+
+$$
+U^\dagger[R]XU[R]= \left( I + \dfrac{i\varepsilon_z L_z}{\hbar}\right)X\left( I - \dfrac{i\varepsilon_z L_z}{\hbar}\right) \approx X - \dfrac{i\varepsilon}{\hbar}[X,\, L_z]
+$$
+
+와 유사한 계산을 @eq-part3_rotation_in_passive_point_of_view 에 적용하면 다음의 관계를 얻는다.
+
+$$
+\begin{aligned}
+\left[X,\, L_z\right] &= -i\hbar Y, \\[0.4em]
+[Y,\, L_z] &= i\hbar X,\\[0.4em]
+[P_x,\, L_z] & = -i\hbar P_y \\[0.4em]
+[P_y,\,L_z] &= i\hbar P_x
+\end{aligned}
+$$ {#eq-part3_commutation_relation_for_angular_momentum}
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-shankar_12_2_2}
+
+#### Shankar 12.2.2
+
+@eq-part3_commutation_relation_for_angular_momentum 를 유도하는 과정에서 우리는 $L_z = XP_y-YP_x$ 를 사용하지 않았다. @eq-part3_commutation_relation_for_angular_momentum 로부터 $L_z = XP_y-YP_x$ 를 유도하라.
+
+:::
+
+::: {.solution}
+
+일단 $L_z=XP_y-YP_x$ 라는 것이 @eq-part3_commutation_relation_for_angular_momentum 과 양립함을 보이자.
+
+$$
+\begin{aligned}
+\left[ X,\, XP_y-YP_x\right] &= [X,\, XP_y] - [X,\, YP_x] \\
+&= X[X,\,P_y] + [X,\,X]P_y - Y[X,\,P_x] - [X,\, Y]P_x \\
+&= -i\hbar Y,\\
+\left[Y,\, XP_y-YP_x\right] &= [Y,\,XP_y] - [Y,\, YP_x] \\
+&= X[Y,\,P_y] + [Y,\,X]P_y - Y[Y,\,P_x] - [Y,\,Y]P_x \\
+&= i\hbar X ,\\
+\left[P_x,\, XP_y-YP_x\right] &= [P_x,\, XP_y] - [P_x,\, YP_x] \\
+&= X[P_x,\,P_y] + [P_x,\,X]P_y - Y[P_x,\,P_x] -[P_x,\,Y]P_x\\
+&= -i\hbar P_y,\\
+\left[P_y,\, XP_y-YP_x\right] &= [P_y,\, XP_y] - [P_y,\, YP_x] \\
+&= X[P_y,\,P_y]+ [P_y,\,X]P_y - Y[P_y,\,Y] - [P_y,\,Y]P_x\\
+&= i\hbar Y.
+\end{aligned}
+$$
+
+$L_z = L_z(X,\,Y,\,P_x,\,P_y)$ 라고 하자. 첫번째 $[X,\, L_z]=-i\hbar Y$ 를 운동량 기저에서 표현하면 
+
+$$
+i\hbar \left[\dfrac{\partial}{\partial P_x},\, L_z\right] = i\hbar \dfrac{\partial L_z}{\partial P_x} = -i\hbar Y
+$$
+
+이므로
+
+
+$$
+\dfrac{\partial L_z}{\partial P_x} = -Y
+$$
+
+를 얻는다. $L_z = -YP_x + f(X,\,Y,\, P_y)$ 라 놓을 수 있다. 또한 $[Y,\, L_z]= i\hbar X$ 로부터
+
+$$
+\dfrac{\partial L_z}{\partial P_y} = X
+$$
+
+를 얻으므로 $L_z = XP_y - YP_x + g(X,\,Y)$ 임을 안다. $[P_x,\,L_z]=-i\hbar P_y$ 로부터
+$$
+\dfrac{\partial L_z}{\partial X}= P_y,
+$$
+
+를 얻으며, 따라서 $L_z = XP_y-YP_x + h(Y)$ 이고 $[P_y,\,L_z] = i\hbar P_x$ 로부터
+
+$$
+L_z = XP_y - YP_x
+$$
+
+임을 알 수 있다. 
+:::
+
+</div>
+
+</br>
+
+### 유한 회전
+
+이제 infinitesimal rotation 이 아닌 finite rotation 을 생각하자. Infinitesimal translation 으로부터 finite translation 을 얻는 것처럼 다음과 같이 하여 finite rotation $U[R(\phi_0 \hat{\boldsymbol{e}}_3)]$ 을 얻을 수 있다.
+
+$$
+U[R(\phi_0 \hat{\boldsymbol{e}}_3)] = \lim_{N \to \infty} \left(I -\dfrac{i}{\hbar} \dfrac{\phi_0}{N}L_z\right)^N = e^{-i\phi_0 L_z/\hbar}.
+$$ {#eq-part2_finite_rotation}
+
+</br>
+
+$L_z = -i\hbar (XP_y-YP_x)$ 가 어떻게 회전을 generate 하는지는 극좌표계에서 보면 쉽게 이해 할 수 있다. 다음 @exr-shankar_12_2_3 를 보자.
+
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-shankar_12_2_3}
+
+#### Shankar 12.2.3
+
+$L_z = -i\hbar \left(x \partial_y - y \partial_x\right)$ 를 극좌표계에서 표현하면
+
+
+$$
+L_z = -i\hbar \dfrac{\partial}{\partial \phi}
+$$ {#eq-part2_angular_momentum_in_polar_coordinate}
+
+임을 보여라.
+
+:::
+
+::: {.solution}
+
+극좌표계에서 $\rho = \sqrt{x^2+y^2},\, \phi = \tan^{-1}(y/x)$ 이므로 
+
+$$
+\begin{aligned}
+L_z &= -i\hbar \left[\rho \cos \phi\left(\dfrac{\partial \rho}{\partial y}\dfrac{\partial}{\partial \rho} + \dfrac{\partial \phi}{\partial y}\dfrac{\partial }{\partial \phi}\right) - \rho \sin \phi \left(\dfrac{\partial \rho}{\partial x}\dfrac{\partial}{\partial \rho} + \dfrac{\partial \phi}{\partial x}\dfrac{\partial }{\partial \phi}\right)\right] \\
+&= -i\hbar \dfrac{\partial }{\partial \phi}.
+\end{aligned}
+$$ 
+
+:::
+
+</div></br>
+
+즉 $\exp \left(-\dfrac{i\phi_0 L_z}{\hbar}\right)$ 를 극좌표계에서 표현하면 $\exp \left(-\phi_0 \dfrac{\partial}{\partial \phi}\right)$ 이 되며 테일러 전개로부터
+
+$$
+\Psi(\rho,\, \phi-\phi_0) = \sum_k^\infty \dfrac{(-\phi_0)^k}{k!}\dfrac{\partial^k \Psi}{\partial \phi^k} = \exp \left(-\phi_0 \dfrac{\partial}{\partial \phi}\right) \Psi (\rho,\, \phi)
+$$
+
+임을 안다. 또한 다음이 성립한다는 것도 알 수 있다.
+
+$$
+U[R(\phi_1\hat{\boldsymbol{e}}_3)]U[R(\phi_2\hat{\boldsymbol{e}}_3)] = U[R((\phi_1+\phi_2)\hat{\boldsymbol{e}}_3)]
+$$
+
+</br>
+
+### 물리적인 해석
+
+지금까지 $L_z$ 연산자를 구했으며 이것은 고전역학의 $z$ 방향에 대한 각운동량의 양자역학 버젼임을 알았다. 만약 $H$ 가 회전 $U[R]$ 에 대해 불변이라면, 즉 $U^\dagger [R]HU[R] = H$ 라면 $[U[R],\, H]= 0$ 이며 infinitesimal rotation 에 대해서도 성립해야 하므로 아래의 commutation relation 이 성립한다.
+
+$$
+[L_z,\, H]=0.
+$$ {#eq-part2_commutation_relation_by_rotational_invariance}
+
+누차 언급했듯이 힐베르트공간이 $L_z$ 와 $H$ 의 공통 고유상태를 기저로 갖는다는 것도 알 수 있다.
+
+
+</br>
+
+### Consistency Check
+
+-- to be fillled
+
+
+</br>
+
+### 벡터 연산자
+
+$\boldsymbol{V} = \sum_i V_i \hat{\boldsymbol{e}}_i$ 로 주어진 연산자를 생각하자. 어떤 회전 연산자 $U$ 에 대해 위치 $X_i$ 가 paasive transform 에서 다음과 같이 변환된다고 하자.
+
+$$
+U^\dagger X_i U = \sum_j R_{ij}X_j
+$$
+
+이 때 $V_i$ 역시
+
+$$
+U^\dagger V_i U = \sum_j R_{ij}V_j
+$$
+
+와 같이 변환된다면 $\boldsymbol{V}$ 를 벡터연산자라고 한다. 대표적으로 $\boldsymbol{X}=(X,\,Y,\,Z)$, $\boldsymbol{P}= (P_x,\,P_y,\,P_z)$ 연산자가 있다.
+
+</br>
+
+## $L_z$ 고유값 문제
+
+해밀토니안 $H$ 가 rotational invariant 하다면, 즉 $[L_z,\,H]=0$ 이라면 $H$ 와 $L_z$ 에 대한 공통 고유캣이 힐베르트 공간의 기저가 된다. $L_z$ 의 고유캣 $|l_z\rangle$ 이 다음을 만족한다고 하자.
+
+$$
+L_z |l_z\rangle = l_z |l_z\rangle.
+$$ {#eq-part2_eigenket_of_lz}
+
+위 식은 좌표기저에서 아래의 미분방정식으로 표현된다.
+
+$$
+-i\hbar \dfrac{\partial \Psi_{l_z}(\rho,\, \phi)}{\partial \phi} = l_z \Psi_{l_z}(\rho,\, \phi).
+$$ {#eq-part2_lz_diff_eq}
+
+위 미분방정식의 해는 다음 식으로 표현된다.
+
+$$
+\Psi_{l_z}(\rho,\,\phi) = R(\rho) e^{il_z \phi/\hbar}.
+$$ {#eq-part2_eigenfunction_of_lz_1}
+
+여기서 $R(\rho)$ 는 임의의 $\rho$ 에만 의존하는 함수이다. 일단 $R(\rho)$ 에 대해서는 접어두고 @eq-part2_eigenfunction_of_lz_1 의 $e^{il_z\phi/\hbar}$ 만 생각하기로 하자. 일견 $l_z$ 에 대한 제한조건은 없는 듯이 보인다. 심지어는 복소수 일 수도 있다. $P$ 의 고유벡터인 $e^{ipx/\hbar}$ 의 경우 파동함수가 bounded 되어야 한다는 조건으로부터 $P$ 의 고유값 $p$ 가 실수임을 주장 할 수 있었다. 그러나 $\phi$ 는 $0$ 와 $2\pi$ 사이의 값만을 가지므로 $P$ 의 경우와 같은 주장을 할 수 없다. 그러나 $X,\,Y,\,P_x,\,P_y$ 가 모두 에르미트 연산자라는 조건과 $[X_i,\,P_j] = i\hbar \delta_{ij}$ 라는 조건으로부터
+
+$$
+(L_z)^\dagger = (XP_y-YP_x)^\dagger = P_yX-P_xY = XP_y-YP_x = L_z
+$$
+
+임을 안다. 즉 $L_z$ 는 에르미트 연산자이다.
+
+$L_z$ 가 에르미트 연산자이므로 임의의 상태 $\Psi_1,\, \Psi_2$ 에 대해
+
+$$
+\langle \Psi_1 | L_z|\Psi_2 \rangle= \overline{\langle \Psi_2 | L_z|\Psi_1\rangle}
+$$
+
+이다. 즉, 
+
+$$
+\int_0^\infty \int_0^{2\pi} \Psi_1^\ast \left(-i\hbar \dfrac{\partial}{\partial \phi}\right) \Psi_2\, \rho \,d\rho\,d\phi = \left[\int_0^\infty \int_0^{2\pi} \Psi_2^\ast \left(-i\hbar \dfrac{\partial}{\partial \phi}\right) \Psi_1\, \rho \,d\rho\,d\phi\right]^\ast
+$$ {#eq-part2_conditino_for_hermiticity_of_lz}
+
+이다. 
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-shankar_12_3_1}
+
+#### Shankar 12.3.1
+
+@eq-part2_conditino_for_hermiticity_of_lz 로붜 $\Psi_1,\, \Psi_2$ 가 모두
+
+$$
+\Psi_i(\rho,\, 0) = \Psi_i(\rho,\, 2\pi)
+$$ 
+
+이어야 함을 보여라.
+
+:::
+
+::: {.solution}
+
+@eq-part2_conditino_for_hermiticity_of_lz 에서 부분적분을 이용하면
+
+$$
+\begin{aligned}
+\text{[LHS]} &= (-i\hbar)\int_0^\infty \rho \, d\rho \left[\Psi_1^\ast(\rho,\, 2\pi)\Psi_2(0,\, 2\pi) - \Psi_1^\ast(\rho,\,0) \Psi_2(\rho,\,0)\right] \\
+&\qquad \qquad  + (i\hbar) \int_0^\infty \int_0^{2\pi} \Psi_2 \dfrac{\partial \Psi_1^\ast}{\partial \phi} \, \rho\, d\rho\, d\phi \\
+&= (-i\hbar)\int_0^\infty \rho \, d\rho \left[\Psi_1(\rho,\, 2\pi)^\ast \Psi_2(0,\, 2\pi) - \Psi_1(\rho,\,0)^\ast \Psi_2(\rho,\,0)\right] + \text{[RHS]}
+\end{aligned}
+$$
+
+이다. $\text{[LHS]}= \text{[RHS]}$ 이어야 하므로
+
+$$
+\int_0^\infty \rho \, d\rho \left(\Psi_1(\rho,\, 2\pi)^\ast \Psi_2(0,\, 2\pi) - \Psi_1(\rho,\,0)^\ast \Psi_2(\rho,\,0)\right) = 0
+$$
+
+이어야 한다. 임의의 $\Psi_1,\, \Psi_2$ 에 대해 성립해야 하므로 $\Psi_2=\text{const}$ 라고 놓으면 $\Psi_1(\rho,\, 2\pi) = \Psi_2(\rho,\, 2\pi)$ 이어야 한다. $\Psi_1 = \text{const}$ 로 놓아도 마찬가지 결과를 얻는다.
+
+:::
+
+</div></br>
+
+@exr-shankar_12_3_1 로부터 $L_z$ 의 고유벡터는
+
+$$
+e^{i2\pi l_z/\hbar}=1
+$$ {#eq-part2_quantization_condition_of_lz}
+
+이어야 한다. 즉 $L_Z$ 의 고유값 $l_z$ 는 
+
+$$
+l_z = m\hbar,\qquad m\in \mathbb{Z}
+$$ {#eq-quantization_of_lz}
+
+이며 이 때 $m$ 을 *magnetic quantum number* 라고 한다. 
+
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-shankar_12_3_2}
+
+#### Shankar 12.3.2
+
+$l_z$ 에 대한 제한조건을 다른 관점에서 보자. 두 허용된 $l_z$ 값 $l_1,\,l_2$ 의 중첩을 생각하자.
+
+$$
+\Psi(\rho,\,\phi) = A(\rho) e^{i\phi l_1/\hbar} + B(\rho) e^{i\phi l_2/\hbar}.
+$$
+
+$2\pi$ 회전에 대해 우리는 같은 물리적인 상태를 얻어야 한다는 조건으로부터 $l_1-l_2 = m\hbar,\, m\in \mathbb{Z}$ 이어야 함을 보여라. 대칭에 기반하여 허용된 $l_z$ 는 $0$ 근처에서 대칭적이어야 한다는 것을 입증하라. 즉 $\ldots,\,-3\hbar/2,\, \hbar/2,\, -\hbar/2,\, 3\hbar/2,\,\ldots$ 이거나 $\ldots,\,-2\hbar,\, -\hbar,\,0,\, \hbar,\, 2\hbar,\ldots$ 이어야 한다.
+
+
+:::
+
+::: {.solution}
+
+$\Psi(\rho,\,\phi+2\pi) = \alpha \Psi (\rho ,\, \phi),\, \alpha \in \mathbb{C},\, |\alpha|=1$ 이어야 한다. 이로부터 
+
+$$
+\begin{aligned}
+\Psi(\rho,\, \phi+2\pi) &= A(\rho) e^{i\phi l_1/\hbar} e^{2\pi l_1\hbar} + B(\rho) e^{i\phi l_2/\hbar} e^{2\pi l_2/\hbar} \\
+&= e^{2\pi l_1/\hbar}\left(A(\rho)e^{i\phi l_1/\hbar} + B(\rho)e^{i\phi l_2/\hbar}e^{i2\pi (l_2-l_1)/\hbar}\right) 
+\end{aligned}
+$$
+
+이므로 $e^{2\pi (l_2-l_1)/\hbar}=1$ 이어야 한다. 따라서 $l_1-l_2 = m\hbar,\, m\in \mathbb{Z}$ 이어야 한다.
+
+-- to be added -- 
+
+:::
+
+</div></br>

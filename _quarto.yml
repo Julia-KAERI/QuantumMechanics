@@ -25,6 +25,7 @@ book:
       - src/part2/part2_path_integral_1.qmd
       - src/part2/part2_N_DoF_system.qmd
       - src/part2/part2_symmetry.qmd
+      - src/part2/part2_angular_momentum.qmd
     - part : src/part3/part3.qmd
       chapters:
       - src/part3/some_proofs.qmd
