@@ -402,6 +402,8 @@ $$
 
 ## $L_z$ 고유값 문제
 
+### $L_z$ 의 고유값과 파동함수
+
 해밀토니안 $H$ 가 rotational invariant 하다면, 즉 $[L_z,\,H]=0$ 이라면 $H$ 와 $L_z$ 에 대한 공통 고유캣이 힐베르트 공간의 기저가 된다. $L_z$ 의 고유캣 $|l_z\rangle$ 이 다음을 만족한다고 하자.
 
 $$
@@ -448,13 +450,13 @@ $$ {#eq-part2_conditino_for_hermiticity_of_lz}
 
 #### Shankar 12.3.1
 
-@eq-part2_conditino_for_hermiticity_of_lz 로붜 $\Psi_1,\, \Psi_2$ 가 모두
+$\Psi_1,\, \Psi_2$ 가 모두
 
 $$
 \Psi_i(\rho,\, 0) = \Psi_i(\rho,\, 2\pi)
 $$ 
 
-이어야 함을 보여라.
+이 이면 @eq-part2_conditino_for_hermiticity_of_lz 를 만족함을 보여라.
 
 :::
 
@@ -466,17 +468,17 @@ $$
 \begin{aligned}
 \text{[LHS]} &= (-i\hbar)\int_0^\infty \rho \, d\rho \left[\Psi_1^\ast(\rho,\, 2\pi)\Psi_2(0,\, 2\pi) - \Psi_1^\ast(\rho,\,0) \Psi_2(\rho,\,0)\right] \\
 &\qquad \qquad  + (i\hbar) \int_0^\infty \int_0^{2\pi} \Psi_2 \dfrac{\partial \Psi_1^\ast}{\partial \phi} \, \rho\, d\rho\, d\phi \\
-&= (-i\hbar)\int_0^\infty \rho \, d\rho \left[\Psi_1(\rho,\, 2\pi)^\ast \Psi_2(0,\, 2\pi) - \Psi_1(\rho,\,0)^\ast \Psi_2(\rho,\,0)\right] + \text{[RHS]}
+&= (-i\hbar)\int_0^\infty \rho \, d\rho \left[\Psi_1^\ast(\rho,\, 2\pi) \Psi_2(0,\, 2\pi) - \Psi_1^\ast(\rho,\,0) \Psi_2(\rho,\,0)\right] + \text{[RHS]}
 \end{aligned}
 $$
 
 이다. $\text{[LHS]}= \text{[RHS]}$ 이어야 하므로
 
 $$
-\int_0^\infty \rho \, d\rho \left(\Psi_1(\rho,\, 2\pi)^\ast \Psi_2(0,\, 2\pi) - \Psi_1(\rho,\,0)^\ast \Psi_2(\rho,\,0)\right) = 0
+\int_0^\infty \rho \, d\rho \left(\Psi_1^\ast(\rho,\, 2\pi) \Psi_2(0,\, 2\pi) - \Psi_1^\ast(\rho,\,0) \Psi_2(\rho,\,0)\right) = 0
 $$
 
-이어야 한다. 임의의 $\Psi_1,\, \Psi_2$ 에 대해 성립해야 하므로 $\Psi_2=\text{const}$ 라고 놓으면 $\Psi_1(\rho,\, 2\pi) = \Psi_2(\rho,\, 2\pi)$ 이어야 한다. $\Psi_1 = \text{const}$ 로 놓아도 마찬가지 결과를 얻는다.
+이어야 한다. $\Psi_i(\rho,\,0) = \Psi_i (\rho,\, 2\pi)$ 라면 위 식이 $0$ 임은 쉽게 알 수 있다.
 
 :::
 
@@ -503,32 +505,271 @@ $$ {#eq-quantization_of_lz}
 
 #### Shankar 12.3.2
 
-$l_z$ 에 대한 제한조건을 다른 관점에서 보자. 두 허용된 $l_z$ 값 $l_1,\,l_2$ 의 중첩을 생각하자.
+$l_z$ 에 대한 제한조건을 다른 관점에서 볼 수 있다. 두 허용된 $l_z$ 값 $l_1,\,l_2$ 의 중첩을 생각하자.
 
 $$
 \Psi(\rho,\,\phi) = A(\rho) e^{i\phi l_1/\hbar} + B(\rho) e^{i\phi l_2/\hbar}.
 $$
 
-$2\pi$ 회전에 대해 우리는 같은 물리적인 상태를 얻어야 한다는 조건으로부터 $l_1-l_2 = m\hbar,\, m\in \mathbb{Z}$ 이어야 함을 보여라. 대칭에 기반하여 허용된 $l_z$ 는 $0$ 근처에서 대칭적이어야 한다는 것을 입증하라. 즉 $\ldots,\,-3\hbar/2,\, \hbar/2,\, -\hbar/2,\, 3\hbar/2,\,\ldots$ 이거나 $\ldots,\,-2\hbar,\, -\hbar,\,0,\, \hbar,\, 2\hbar,\ldots$ 이어야 한다.
+$2\pi$ 회전에 대해 우리는 같은 물리적인 상태를 얻어야 한다는 조건으로부터 $l_1-l_2 = m\hbar,\, m\in \mathbb{Z}$ 이어야 함을 보여라. 허용된 $l_z$ 는 $0$ 근처에서 대칭적이어야 한다는 것으로부터 이 $m$ 값은 $\ldots,\,-3\hbar/2, \, -\hbar/2,\, \hbar/2,\, 3\hbar/2,\,\ldots$ 이거나 $\ldots,\,-2\hbar,\, -\hbar,\,0,\, \hbar,\, 2\hbar,\ldots$ 이어야 한다는 것을 보여라.
 
 
 :::
 
 ::: {.solution}
 
-$\Psi(\rho,\,\phi+2\pi) = \alpha \Psi (\rho ,\, \phi),\, \alpha \in \mathbb{C},\, |\alpha|=1$ 이어야 한다. 이로부터 
+물리적으로 같은 상태라는 것은 $\Psi(\rho,\, \phi +2 \pi) = \Psi(\rho,\, \phi)$ 가 아니라 어떤 $\alpha \in \mathbb{C},\, |c|=1$ 에 대해 $\Psi(\rho,\,\phi+2\pi) = \alpha \Psi (\rho ,\, \phi)$ 이어야 한다는 것을 의미한다. 이로부터 
 
 $$
 \begin{aligned}
-\Psi(\rho,\, \phi+2\pi) &= A(\rho) e^{i\phi l_1/\hbar} e^{2\pi l_1\hbar} + B(\rho) e^{i\phi l_2/\hbar} e^{2\pi l_2/\hbar} \\
-&= e^{2\pi l_1/\hbar}\left(A(\rho)e^{i\phi l_1/\hbar} + B(\rho)e^{i\phi l_2/\hbar}e^{i2\pi (l_2-l_1)/\hbar}\right) 
+\Psi(\rho,\, \phi+2\pi) &= A(\rho) e^{i\phi l_1/\hbar} e^{2i\pi l_1\hbar} + B(\rho) e^{i\phi l_2/\hbar} e^{2i\pi l_2/\hbar} \\
+&= e^{2i\pi l_2/\hbar}\left(A(\rho)e^{i\phi l_1/\hbar} e^{2i\pi (l_1-l_2)/\hbar} + B(\rho)e^{i\phi l_2/\hbar}\right) 
 \end{aligned}
 $$
 
-이므로 $e^{2\pi (l_2-l_1)/\hbar}=1$ 이어야 한다. 따라서 $l_1-l_2 = m\hbar,\, m\in \mathbb{Z}$ 이어야 한다.
+이므로 $e^{2\pi (l_1-l_2)/\hbar}=1$ 즉 $m\in \mathbb{Z}$ 에 대해 $l_1-l_2 = m\hbar$ 이어야 한다. 
 
--- to be added -- 
+$l_2$ 가 허용된 값이라면 $-l_2$ 도 허용된 값이며, 어떤 정수 $n$ 에 대해 $l_1+l_2 = n\hbar$ 이어야 한다. 이 경우 
+
+$$
+l_1 = \dfrac{(m+n)\hbar}{2},\qquad l_2 = \dfrac{(n-m)\hbar}{2}
+$$ 
+
+이다.
+
+
+$l_2=-l_1$ 이라면 $l_1 = \dfrac{m\hbar}{2}$ 이다. 어떤 짝수인 $m_0=2n_0$ 에 대해 $l_1=n_0\hbar$ 라고 하자. 만약 $l = m_0+1$ 이 허용된 값이라면 $l-l_1$ 이 $\hbar$ 의 정수배 이어야 하지만 $l-l_1=\hbar/2$ 로 조건에 위배된다. 이것을 확장시켜 가 보면 어떤 $l_1$ 이 $\hbar$ 의 정수배라면 허용된 $l_1$ 은 모두 $\hbar$ 의 정수배이며, $l_1$ 이 $\hbar$ 의 반정수배($-3/2,\, -1/2,/,1/2,/,3/2$ 등) 라면 허용된 $l_1$ 은 모두 $\hbar$ 의 반정수배라는 것을 알 수 있다.
 
 :::
 
 </div></br>
+
+이제 @eq-part2_eigenfunction_of_lz_1 의 $R(\rho)$ 에 대해 생각해보자. 파동함수가 $R(\rho) e^{i\phi l_z/\hbar}$ 의 선형결합이라는 것은 $L_z$ 의 고유벡터가 힐베르트 공간 전체를 span 하지 못한다는 것을 의미한다. 즉 $L_z$ 고유공간은 힐베르트 공간의 부분공간이다. $L_z$ 의 고유값 $m\hbar$ 에 대한 파동함수 $\Phi_m(\phi)$ 에 대한 정규화 조건은 
+
+$$
+\int_0^{2\pi} \Phi^\ast_m(\phi)\Phi_{m'}(\phi)\, d\phi =\delta_{mm'}
+$$ 
+
+이며 이를 고려하면 $\Phi_m(\phi)$ 를 다음과 같이 쓸 수 있다.
+
+$$
+\Phi_m(\phi) = \dfrac{1}{\sqrt{2\pi}}e^{im\phi}
+$$ {#eq-part2_wavefunction_of_lz_eigenstate}
+
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-shankar_12_3_3}
+
+#### Shankar 12.3.3
+
+입자가 아래의 파동방정식으로 기술된다고 하자.
+
+$$
+\Psi(\rho,\, \phi) = A e^{-\rho^2/2\Delta^2} \cos^2\phi
+$$
+이 때 $l_z=0,\, 2\hbar,\, -2\hbar$ 에 대해 입자가 $l_z$ 상태에서 발견될 확률 $P(l_z)$ 를 구하라.
+:::
+
+::: {.solution}
+
+$\cos^2\phi$ 를 $\Phi_m(\phi)$ 로 전개하면 상수 $c= \sqrt{2\pi}/4$ 에 대해 
+$$
+\begin{aligned}
+\cos^2\phi &= \dfrac{\cos 2\phi +1}{2} = -\dfrac{1}{2} + \dfrac{e^{2i\phi}}{4} + \dfrac{e^{-2i\phi}}{4} \\
+&= c ( -2\Phi_0(\phi) + \Phi_2(\phi) + \Phi_{-2}(\phi))
+\end{aligned}
+$$
+
+이므로, 
+
+$$
+P(l_z=0) = \dfrac{1}{3},\, P(l_z=2)= P(l_z=-2)= \dfrac{1}{6}
+$$
+
+이다.
+
+:::
+
+</div></br>
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-shankar_12_3_4}
+
+#### Shankar 12.3.4
+
+입자의 파동함수가 아래와 같다.
+
+$$
+\Psi (\rho,\,\phi) = Ae^{-\rho^2/2\Delta^2} \left(\dfrac{\rho}{\Delta} \cos \phi + \sin \phi\right).
+$$
+
+이 때 $P(l_z=\hbar) = P(l_z=-\hbar)= \dfrac{1}{2}$ 임을 보여라.
+
+:::
+
+::: {.solution}
+
+$$
+\begin{aligned}
+\dfrac{\rho}{\Delta}\cos\phi + \sin \phi &= \dfrac{\rho}{\Delta}\dfrac{e^{i\phi}+ e^{-i\phi}}{2} - \dfrac{i e^{i\phi} - ie^{-i\phi}}{2} \\
+&= \sqrt{2\pi}\left(\dfrac{\rho}{\Delta} - \dfrac{i}{2}\right) \Phi_1(\phi) + \sqrt{2\pi}\left(\dfrac{\rho}{\Delta} + \dfrac{i}{2}\right)\Phi_{-1}(\phi)  
+\end{aligned}
+$$
+
+이며 $\Phi_1$ 과 \Phi_2$ 의 계수의 절대값이 같기 때문에, 그리고 $l_z=\pm\hbar$ 만이 허용되므로 두 상태의 확률은 같다.
+
+:::
+
+</div></br>
+
+### Rotational Invariant 문제
+
+많은 경우 포텐셜은 $V(\rho,\, \phi)= V(\rho)$ 이다. 이 경우 해밀토니안 $H$ 에 대한 고유값 문제는 다음 식의 해를 구하는 문제가 된다.
+
+$$
+\left[-\dfrac{\hbar^2}{2\mu} \left(\dfrac{\partial^2}{\partial^2\rho} + \dfrac{1}{\rho}\dfrac{\partial}{\partial \rho} + \dfrac{1}{\rho^2}\dfrac{\partial^2}{\partial \phi^2} \right) + V(\rho) \right] \Psi_E(\rho,\,\phi) = E\Psi_E(\rho,\, \phi).
+$$ {#eq-part2_hamiltonian_eigenvalue_for_radial_potential}
+
+여기서 $\mu$ 는 질량이다. ($m$ 은 magnetic quantum number 로 쓰기 때문에..) $[H,\, L_z] = 0$ 이므로 $H$ 와 $L_z$ 에 대한 공통의 고유벡터가 존재한다. $L_z$ 에 대한 고유값을 $m\hbar$ 라고 하면 $L_z$ 에 대항 고유함수는 아래와 같은 꼴을 가진다.
+
+$$
+\Psi_{Em}(\rho,\, \phi) = R_{Em}(\rho) \Phi_m(\phi)
+$$
+
+여기서 @eq-part2_wavefunction_of_lz_eigenstate 의 $R(\rho),\, \Phi_m(\phi)$ 를 관계된 인덱스 $E,\,m$ 과 함께 기록했다. $R(\rho)$ 는 $E$, $m$ 과 관계가 있을 수 있으므로 두개의 인덱스를 모두 표기하기로 한다. 우리는 @eq-part2_angular_momentum_in_polar_coordinate 에서 $L_z = -i\hbar \partial/\partial \phi$ 임을 보였고 $L_z \Psi_m(\rho,\,\phi) = m \Psi_m(\rho,\,\phi)$ 임을 안다. 이를 @eq-part2_hamiltonian_eigenvalue_for_radial_potential 에 대임해보면 $\Phi_m(\phi)$ 는 $m^2$ 과 관련된 항만 남기고 소거되어 아래와 같이 된다.
+
+$$
+\left[-\dfrac{\hbar^2}{2\mu} \left(\dfrac{\partial^2}{\partial^2\rho} + \dfrac{1}{\rho}\dfrac{\partial}{\partial \rho} -\dfrac{m^2}{\rho^2} \right) + V(\rho) \right] R_{Em}(\rho,\,\phi) = E R_{Em}(\rho,\, \phi)
+$$ {#eq-part2_radial_differential_equation}
+
+즉 포텐셜이 raidal 에만 의존한다면 파동함수의 각 부분 $\Phi_m(\phi)$ 가 제외된 radial 부분만의 미분방정식만 남게 된다. 
+
+
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-shankar_12_3_5}
+
+#### Shankar 12.3.5
+
+@eq-part2_radial_differential_equation 에서 각운동량이 repulsive potential 을 생성하는 것처럼 보인다. 그 gradiant 를 계산하고 원심력과 동일함을 보여라.
+
+:::
+
+::: {.solution}
+
+각운동량과 관련 있는 부분은 $\dfrac{\hbar^2}{2\mu}\dfrac{m^2}{\rho^2} R_{Em}(\rho)$ 이다. 
+
+$$
+-\langle \Psi_{Em} | \dfrac{\partial }{\partial \rho}\left(\dfrac{\hbar^2}{2\mu}\dfrac{m^2}{\rho^2}\right) |\Psi_{Em}\rangle = \dfrac{\hbar ^2m^2}{\mu} \left\langle \dfrac{1}{\rho^3}\right\rangle \approx_{\text{classical}} \dfrac{L_z^2}{\mu\rho^3}  
+$$
+
+로 고전역학의 원심력에 상응한다.
+
+:::
+
+</div></br>
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-shankar_12_3_6}
+
+#### Shankar 12.3.6
+
+질량 $m$ 인 입자가 반지름 $a$ 인 원에 제한되어 있으며 해밀토니안은 $H=\dfrac{L_z^2}{2\mu a^2}$ 이다. $H$ 에 대한 고유값 문제를 풀고 그 deneneracy 를 논하라.
+
+:::
+
+::: {.solution}
+
+$\Phi_m(\phi)= \dfrac{1}{\sqrt{2\pi}}e^{im\phi}$ 가 고유벡터이며 절대값이 같은 각운동량을 가진 두 상태가 degenerated 된 상태이다.
+
+:::
+
+</div></br>
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-shankar_12_3_7}
+
+#### Shankar 12.3.7
+
+아래와 같은 해밀토니안이 주어졌다.
+
+$$
+H = \dfrac{P_x^2+P_y^2}{2\mu} + \dfrac{1}{2}\mu \omega^2 (X^2+Y^2).
+$$ {#eq-part2_shankar_12_3_7_1}
+
+($1$) $[H,\,L_z]=0$ 임을 보이고 $H$ 에 대한 고유값 문제를 $R_{Em}(\rho)$ 에 대한 미분방정식이 문제가 됨을 보여라
+
+($2$) $\rho \to 0$ 극한에서 $R_{Em}(\rho) \to \rho^{|m|}$ 이 됨을 보여라.
+
+($3$) 비슷한 방법으로 $\rho \to \infty$ 극한에서 $R_{Em}(\rho) \to e^{-\mu\omega \rho^2/2\hbar}$ 임을 보여라.
+
+
+이제 $R_{Em}(\rho)= e^{|m|} e^{-\mu \omega \rho^2/2\hbar} U_{Em}(\rho)$ 라고 가정한다.
+
+($4$) 무차원 변수 $\varepsilon = E/\hbar\omega$ 와 $y=\sqrt{\mu \omega/\hbar} \rho$ 로 바꾼다
+
+($5$) $R$ 에 대한 방정식을 $U$ 에 대한 방정식으로 전환하면 다음과 같다는 것을 보여라.
+
+$$
+U'' + \left[\left(\dfrac{2|m|+1}{y} \right) - 2y\right] U' + (2\varepsilon - 2|m| -2)U = 0
+$$ {#eq-part2_shankar_12_3_7_2}
+
+($6$) $U$ 를 멱급수로 $U(y) = \sum_{r=0}^\infty C_r y^r$ 과 같이 전개하면 2개의 항으로 이루어진 점화식을 얻을 수 있다는 것을 보여라.
+
+($7$) 
+
+
+
+:::
+
+::: {.solution}
+
+($1$) $U^\dagger H U = 0$ 이므로 $[H,\, L_z]=0$.
+
+($2$) @eq-part2_radial_differential_equation 을 사용하면
+
+$$
+\left[-\dfrac{\hbar^2}{2\mu} \left(\dfrac{\partial^2}{\partial^2\rho} + \dfrac{1}{\rho}\dfrac{\partial}{\partial \rho} -\dfrac{m^2}{\rho^2} \right) + \dfrac{1}{2}\mu\omega^2 \rho^2 -E \right] R_{Em}(\rho,\,\phi) =0
+$$ {#eq-part2_shankar_12_3_7_3}
+
+을 만족해야 한다. $\rho\to 0$ 인 극한에서 $R(\rho) \approx \rho^k$ 라고 하자. 파동함수는 연속이어야 하므로 $R(\rho)$ 는 원점에서 finite 해야 하며 따라서 $k>0$ 이어야 한다. 점근적으로 $\rho \approx 0$ 근처에서 $R(\rho) \approx \rho^k$ 라고 하면 위의 미분방정식은
+
+$$
+\left[-\dfrac{\hbar^2}{2m} \left(k(k-1)\rho^{k-2} +k\rho^{k-2}-m^2\rho^{k-2}\right) + \dfrac{\mu \omega^2\rho^{k+2}}{2} - E\rho^{k}\right] \approx 0
+$$
+
+이어야 한다. $\rho \approx 0$ 근처에서는 $\rho$ 애 대한 가장 낮은 차수 다항식이 dominant 하므로 $\rho^{k-2}$ 에 대한 계수만 $0$ 으로 정리하면 된다. 그렇다면
+
+$$
+0 = k(k-1) + k^2 - m^2 = (k-m)(k+m)
+$$
+
+이므로 $k= |m|$ 이어야 한다. 즉 $\rho \approx 0$ 근처에서 $R(\rho) \approx \rho^{|m|}$ 이어야 한다.
+
+($2$) $\rho \to \infty$ 극한에서 $R(\rho \to \infty) = 0$ 이어야 하며, 위의 미분방정식 @eq-part2_radial_differential_equation 은
+
+$$
+\dfrac{\partial^2 R}{\partial \rho^2} - \dfrac{\mu^2 \omega^2}{\hbar^2} \rho^2 R(\rho) + \dfrac{2\mu E}{\hbar^2}R(\rho)= 0
+$$
+
+이다. 그런데 $\rho \to \infty$ 극한에서 $|\rho^2 R(\rho) | \gg |R(\rho)|$ 이므로
+
+$$
+\dfrac{\partial^2 R}{\partial \rho^2} - \dfrac{\mu^2 \omega^2}{\hbar^2} \rho^2 R(\rho) = 0
+$$
+
+으로 생각 할 수 있다. 이 미분방정식의 해는
+
+$$
+
+$$
+
+:::
+
+</div></br>
+
