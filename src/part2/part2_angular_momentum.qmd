@@ -721,8 +721,21 @@ $$ {#eq-part2_shankar_12_3_7_2}
 
 ($6$) $U$ 를 멱급수로 $U(y) = \sum_{r=0}^\infty C_r y^r$ 과 같이 전개하면 2개의 항으로 이루어진 점화식을 얻을 수 있다는 것을 보여라.
 
-($7$) 
+($7$) 점화식을 얻고 $y \to \infty$ 극한에서 $U(y)$ 가 우리가 생각하는 미분방정식의 해가 되려면 어떤 항에서 종료되어야 한다는 것을 보여라. $\varepsilon = r+|m|+1$ 이면 $r$ 개의 항 후에 급수가 종료됨을 보여라. $r$ 이 짝수여야 한다는 것도 보여라. ($r$ 이 홀수이면 $\rho \to \infty$ 극한에서 $R$ 이 $\rho^{|m|}$ 처럼 행동하지 않는다). 최종적으로 
 
+$$
+E= (2k+|m|+1)\hbar \omega,\qquad k=0,\,1,\,2,\ldots
+$$
+
+이어야 함을 보여라. $n=2k+|m|$ 이라고 정하면
+
+$$
+E_n = (n+1)\hbar \omega
+$$
+
+이다.
+
+($8$) 주어진 $n$ 에 대해 가능한 $|m|$ 값은 무엇인가? 정해진 $n$ 에 대해 $n+1$ 개의 degeneracy 가 있음을 보여라. 이것을 데카르트 좌표계에서의 결과(@exr-shankar_10_2_2) 와 비교하라.
 
 
 :::
@@ -734,7 +747,7 @@ $$ {#eq-part2_shankar_12_3_7_2}
 ($2$) @eq-part2_radial_differential_equation 을 사용하면
 
 $$
-\left[-\dfrac{\hbar^2}{2\mu} \left(\dfrac{\partial^2}{\partial^2\rho} + \dfrac{1}{\rho}\dfrac{\partial}{\partial \rho} -\dfrac{m^2}{\rho^2} \right) + \dfrac{1}{2}\mu\omega^2 \rho^2 -E \right] R_{Em}(\rho,\,\phi) =0
+\left[-\dfrac{\hbar^2}{2\mu} \left(\dfrac{d^2}{d^2\rho} + \dfrac{1}{\rho}\dfrac{d}{d \rho} -\dfrac{m^2}{\rho^2} \right) + \dfrac{1}{2}\mu\omega^2 \rho^2 -E \right] R(\rho) =0
 $$ {#eq-part2_shankar_12_3_7_3}
 
 을 만족해야 한다. $\rho\to 0$ 인 극한에서 $R(\rho) \approx \rho^k$ 라고 하자. 파동함수는 연속이어야 하므로 $R(\rho)$ 는 원점에서 finite 해야 하며 따라서 $k>0$ 이어야 한다. $R(\rho) \approx \rho^k$ 에 대해 @eq-part2_shankar_12_3_7_3 은
@@ -754,13 +767,13 @@ $$
 ($2$) $\rho \to \infty$ 극한에서 $R(\rho \to \infty) = 0$ 이어야 하며, 위의 미분방정식 @eq-part2_shankar_12_3_7_3 은
 
 $$
-\dfrac{\partial^2 R}{\partial \rho^2} - \dfrac{\mu^2 \omega^2}{\hbar^2} \rho^2 R(\rho) + \dfrac{2\mu E}{\hbar^2}R(\rho)= 0
+\dfrac{d^2 R}{d\rho^2} - \dfrac{\mu^2 \omega^2}{\hbar^2} \rho^2 R(\rho) + \dfrac{2\mu E}{\hbar^2}R(\rho)= 0
 $$
 
 이다. 그런데 $\rho \to \infty$ 극한에서 $|\rho^2 R(\rho) | \gg |R(\rho)|$ 이므로
 
 $$
-\dfrac{\partial^2 R}{\partial \rho^2} - \dfrac{\mu^2 \omega^2}{\hbar^2} \rho^2 R(\rho) = 0
+\dfrac{d^2 R}{d \rho^2} - \dfrac{\mu^2 \omega^2}{\hbar^2} \rho^2 R(\rho) = 0
 $$ {#eq-part2_shankar_12_3_7_4}
 
 으로 생각 할 수 있다. 위 방정식은 1차원 단순조화 진동자의 미분방정식과 같은 형태이므로 1차원 단순조화진동자의 해를 참고 할 수 있다. 1차원 단순조화진동자의 해는 에르미트 다항식과 $e^{-\alpha^2x^2}$ 의 곱 형태이며 $x\to \infty$ 영역에서 $e^{-\alpha^2x^2}$ 이 dominant 하다. 따라서 
@@ -772,11 +785,67 @@ $$ {#eq-part2_shankar_12_3_7_5}
 라고 놓을 수 있다. 이 식을 @eq-part2_shankar_12_3_7_4 의 조변에 넣으면
 
 $$
-\dfrac{\partial^2 R}{\partial \rho^2} - \dfrac{\mu^2 \omega^2}{\hbar^2} \rho^2 R(\rho) - \dfrac{\mu \omega}{\hbar} R(\rho) 
+\dfrac{d^2 R}{d\rho^2} - \dfrac{\mu^2 \omega^2}{\hbar^2} \rho^2 R(\rho) - \dfrac{\mu \omega}{\hbar} R(\rho) 
 $$
 
 이 되는데 앞서 보았듯이 $\rho \to \infty$ 극한에서 $|\rho^2 R(\rho) | \gg |R(\rho)|$ 이므로 근사적으로 @eq-part2_shankar_12_3_7_4 를 만족한다고 볼 수 있다.
 
+($4$) $\varepsilon = E/\hbar\omega$ 와 $y=\sqrt{\mu \omega/\hbar} \rho$ 에 대해 @eq-part2_shankar_12_3_7_3 은
+
+$$
+\left[-\dfrac{1}{2}\left(\dfrac{d^2}{d y^2} + \dfrac{1}{y} \dfrac{d}{d y} - \dfrac{m^2}{y^2}\right) + \dfrac{y^2}{2} -\varepsilon\right] R(y) = 0
+$$ {#eq-part2_shankar_12_3_7_6}
+
+($5$) $R(y) = y^{|m|} e^{-y^2/2} U(y)$ 라고 하자. 
+
+$$
+\begin{aligned}
+R'(y) &= |m| y^{|m|-1}e^{-y^2/2}U(y)  -y^{|m|+1} e^{-y^2/2}U(y) + y^{|m|} e^{-y^2/2} U'(y), \\
+R''(y) &=|m|(|m|-1) y^{|m|-2} e^{-y^2} U(y) -|m|y^{|m|} e^{-y^2/2}U(y) + |m| y^{|m|-1}e^{-y^2} U'(y) \\
+&\qquad - (|m|+1)y^{|m|} e^{-y^2/2}U(y) + y^{|m|+2}e^{-y^2/2} U(y) -y^{|m|+1} e^{-y^2} U'(y) \\
+&\qquad +|m| y^{|m|-1} y^{-y^2} U'(y) - y^{|m|+1}e^{-y^2/2}U'(y) + y^{|m|} e^{-y^2/2} U''(y)
+\end{aligned}
+$$ 
+
+이며
+
+$$
+\begin{aligned}
+R''(y) + &\dfrac{R'(y)}{y} - \dfrac{m^2R(y)}{y^2} -y^2R(y)  \\
+&= y^{|m|}e^{-y^2/2} \left[ U''(y) + \left(\dfrac{2|m|+1}{y}-2y\right)U'(y) - (|m|+1) U(y)\right]
+\end{aligned}
+$$
+
+이므로 @eq-part2_shankar_12_3_7_6 은
+
+$$
+y^{|m|} e^{-y^2/2}\left[ U''(y) + \left(\dfrac{2|m|+1}{y}-2y\right)U'(y) + (2\varepsilon - 2|m|-2) U(y)\right] = 0
+$$
+
+이 된다. 따라서 $U$ 에 대한 미분방정식은
+
+$$
+U''(y) + \left(\dfrac{2|m|+1}{y}-2y\right)U'(y) + (2\varepsilon - 2|m|-2) U(y)= 0
+$$ {#eq-part2_shankar_12_3_7_7}
+
+이다. 
+
+($6$) $U(y) = \sum_{r=0}^{\infty} C_r y^r$ 의 멱급수 전개를 사용하면
+
+$$
+\begin{aligned}
+0 &= \sum_{r=0}^\infty \left[r(r-1)C_ry^{r-2} + r (2|m|+1) C_r y^{r-2} - 2rC_r y^{r}  + (2\varepsilon -2|m|-2)C_r y^r\right] \\
+&=\dfrac{(2|m|+1)C_1}{y} + \sum_{r=0}^\infty \left[(r+2)(2|m|+r+2)C_{r+2} + (2\varepsilon - 2|m| -2r -2 )C_r\right] y^r
+\end{aligned}
+$$
+
+이므로, 
+
+$$
+C_{r+2} =-\dfrac{2(\varepsilon - |m| -r -1)} {(r+2)(2|m|+r+2)} C_r,\qquad C_1=0
+$$
+
+의 점화식을 얻는다.
 
 :::
 
