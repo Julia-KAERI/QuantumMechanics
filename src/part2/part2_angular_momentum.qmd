@@ -737,7 +737,7 @@ $$
 \left[-\dfrac{\hbar^2}{2\mu} \left(\dfrac{\partial^2}{\partial^2\rho} + \dfrac{1}{\rho}\dfrac{\partial}{\partial \rho} -\dfrac{m^2}{\rho^2} \right) + \dfrac{1}{2}\mu\omega^2 \rho^2 -E \right] R_{Em}(\rho,\,\phi) =0
 $$ {#eq-part2_shankar_12_3_7_3}
 
-을 만족해야 한다. $\rho\to 0$ 인 극한에서 $R(\rho) \approx \rho^k$ 라고 하자. 파동함수는 연속이어야 하므로 $R(\rho)$ 는 원점에서 finite 해야 하며 따라서 $k>0$ 이어야 한다. 점근적으로 $\rho \approx 0$ 근처에서 $R(\rho) \approx \rho^k$ 라고 하면 위의 미분방정식은
+을 만족해야 한다. $\rho\to 0$ 인 극한에서 $R(\rho) \approx \rho^k$ 라고 하자. 파동함수는 연속이어야 하므로 $R(\rho)$ 는 원점에서 finite 해야 하며 따라서 $k>0$ 이어야 한다. $R(\rho) \approx \rho^k$ 에 대해 @eq-part2_shankar_12_3_7_3 은
 
 $$
 \left[-\dfrac{\hbar^2}{2m} \left(k(k-1)\rho^{k-2} +k\rho^{k-2}-m^2\rho^{k-2}\right) + \dfrac{\mu \omega^2\rho^{k+2}}{2} - E\rho^{k}\right] \approx 0
@@ -751,7 +751,7 @@ $$
 
 이므로 $k= |m|$ 이어야 한다. 즉 $\rho \approx 0$ 근처에서 $R(\rho) \approx \rho^{|m|}$ 이어야 한다.
 
-($2$) $\rho \to \infty$ 극한에서 $R(\rho \to \infty) = 0$ 이어야 하며, 위의 미분방정식 @eq-part2_radial_differential_equation 은
+($2$) $\rho \to \infty$ 극한에서 $R(\rho \to \infty) = 0$ 이어야 하며, 위의 미분방정식 @eq-part2_shankar_12_3_7_3 은
 
 $$
 \dfrac{\partial^2 R}{\partial \rho^2} - \dfrac{\mu^2 \omega^2}{\hbar^2} \rho^2 R(\rho) + \dfrac{2\mu E}{\hbar^2}R(\rho)= 0
@@ -761,13 +761,22 @@ $$
 
 $$
 \dfrac{\partial^2 R}{\partial \rho^2} - \dfrac{\mu^2 \omega^2}{\hbar^2} \rho^2 R(\rho) = 0
-$$
+$$ {#eq-part2_shankar_12_3_7_4}
 
-으로 생각 할 수 있다. 이 미분방정식의 해는
-
-$$
+으로 생각 할 수 있다. 위 방정식은 1차원 단순조화 진동자의 미분방정식과 같은 형태이므로 1차원 단순조화진동자의 해를 참고 할 수 있다. 1차원 단순조화진동자의 해는 에르미트 다항식과 $e^{-\alpha^2x^2}$ 의 곱 형태이며 $x\to \infty$ 영역에서 $e^{-\alpha^2x^2}$ 이 dominant 하다. 따라서 
 
 $$
+R(\rho) \approx e^{-\mu \omega \rho^2/\hbar}
+$$ {#eq-part2_shankar_12_3_7_5}
+
+라고 놓을 수 있다. 이 식을 @eq-part2_shankar_12_3_7_4 의 조변에 넣으면
+
+$$
+\dfrac{\partial^2 R}{\partial \rho^2} - \dfrac{\mu^2 \omega^2}{\hbar^2} \rho^2 R(\rho) - \dfrac{\mu \omega}{\hbar} R(\rho) 
+$$
+
+이 되는데 앞서 보았듯이 $\rho \to \infty$ 극한에서 $|\rho^2 R(\rho) | \gg |R(\rho)|$ 이므로 근사적으로 @eq-part2_shankar_12_3_7_4 를 만족한다고 볼 수 있다.
+
 
 :::
 
