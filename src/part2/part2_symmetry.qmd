@@ -707,7 +707,7 @@ $$
 
 </br>
 
-![베타붕괴와 패리티 비보존](figure/fig-part2_parity.png){#fig-beta_decay_and_parity width=500}
+![베타붕괴와 패리티 비보존](figures/parity.png){#fig-beta_decay_and_parity width=500}
 
 </br>
 

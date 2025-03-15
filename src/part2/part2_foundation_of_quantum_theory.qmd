@@ -6,17 +6,21 @@ crossref:
   chapters: true
 ---
 
+{{< include ../latexmacros.qmd >}}
+
+</br>
+
 ## 고전물리학의 붕괴
 
 ### 입자와 파동 {#sec-part2_particle_and_wave}
 
-고전물리학에서 입자(particle) 은 운동량과 에너지의 국소화된 다발이다. 입자는 위치와 속도 $q$ 와 $\dot{q}$ (혹은 위치 $q$ 와 운동량 $p$) 를 상태 변수로 가지며 이것의 시간에 대한 변화는 운동방정식에 따른다. 초기조건이 $q(t_0),\, p(t_0)$ 가 주어진다면 어느 시간에서든 궤적 $q(t)$ 를 구할 수 있다. 파동은 이와 반대로 공간에 퍼져 있으며 파동방정식 $\psi(\boldsymbol{r},\,t)$ 로 기술된다. 전자기파의 경우 $\psi$ 는 전기장 $\boldsymbol{E}$ 의 각각의 성분이 될 수 있으며 아래와 같은 방정식을 따른다.
+고전물리학에서 입자(particle) 은 운동량과 에너지의 국소화된 다발이다. 입자는 위치와 속도 $q$ 와 $\dot{q}$ (혹은 위치 $q$ 와 운동량 $p$) 를 상태 변수로 가지며 이것의 시간에 대한 변화는 운동방정식에 따른다. 초기조건이 $q(t_0),\, p(t_0)$ 으로 주어진다면 어느 시간에서든 입자의 궤적 $q(t)$ 를 구할 수 있다. 파동은 이와 반대로 공간에 퍼져 있으며 파동방정식 $\psi(\bf{r},\,t)$ 로 기술된다. 전자기파의 경우 $\psi$ 는 전기장 $\bf{E}$ 의 각각의 성분이 될 수 있으며 아래와 같은 방정식을 따른다.
 
 $$
 \nabla^2 \psi = \dfrac{1}{c^2} \dfrac{\partial^2 \psi}{\partial t^2}.
 $$
 
-여기서 $c$ 는 빛의 속도이며 전자기파의 전달 속도이다. 초기조건 $\psi(\boldsymbol{r},\,0)$ 과 $\dot{\psi}(\boldsymbol{r},\, 0)$ 을 안다면 우리는 파동방정식을 풀어서 파동에 대해 완벽하게 알 수 있다.
+여기서 $c$ 는 빛의 속도이며 전자기파의 전달 속도이다. 초기조건 $\psi(\bf{r},\,0)$ 과 $\dot{\psi}(\bf{r},\, 0)$ 을 안다면 우리는 파동방정식을 풀어서 파동에 대해 완벽하게 알 수 있다.
 
 파동중에 가장 다루기 쉬운 평면파(plane wave) 는 시간과 공간 각각에 대해 주기적인 파동으로 1차원 평면파의 경우 다음과 같은 식으로 기술된다.
 
@@ -24,19 +28,20 @@ $$
 \psi(x,t) = \psi_0 \exp (i(kx-\omega t))= \psi_0 e^{i\phi}
 $$ {#eq-part2_1d_plane_wave}
 
-여기서 $k$ 는 파수(wave number) 라고 하며 파장 $\lambda$ 에 대해 $k=2\pi/\lambda$ 이며 $\omega$ 는 각진동수(angular frequency) 로 주기 $T$ 에 대해 $\omega = 2\pi/T$ 이다. 이 때 파동의 전달 속도 $v=\omega/k$ 이다. $\psi_0$ 를 진폭(amplitude) 라고 하며 파동의 강도(intensity) $I$ 는 $I:=|\psi_0|^2$ 로 정의된다. 3차원 평면파의 경우는
+여기서 $k$ 는 파수(wave number) 라고 하며 파장 $\lambda$ 에 대해 $k=2\pi/\lambda$ 이다. $\omega$ 는 각진동수(angular frequency) 로 주기 $T$ 에 대해 $\omega = 2\pi/T$ 이다. 이 때 파동의 전달 속도 $v=\omega/k$ 이다. $\psi_0$ 를 진폭(amplitude) 라고 하며 파동의 강도(intensity) $I$ 는 $I:=|\psi_0|^2$ 로 정의된다. 3차원 평면파의 경우는
 
 $$
-\psi (\boldsymbol{r},\,t) = \psi_0 \exp (i(\boldsymbol{k}\cdot \boldsymbol{r} - \omega t))
+\psi (\bf{r},\,t) = \psi_0 \exp (i(\bf{k}\cdot \bf{r} - \omega t))
 $$ {#eq-part2_3d_plane_wave}
 
-의 파동방정식을 따른다. 이 때 $\boldsymbol{k}$ 를 **wave vector** 라고 하며 파동의 속도 $v=\|\boldsymbol{k}\|/\omega$ 이다. 
+의 파동방정식을 따른다. 이 때 $\bf{k}$ 를 **wave vector** 라고 하며 파동의 속도 $v=\|\bf{k}\|/\omega$ 이다. 
 
 </br>
 
 ### 입자와 파동의 이중 슬릿 실험 {#sec-part2_double_slit_experiment_for_wave_and_particle}
 
-![파동의 이중 슬릿](figure/fig-part2_double_slit_wave.png){#fig-part2_double_slit_of_wave width=500}
+![파동의 이중 슬릿](figures/double_slit_wave.png){#fig-part2_double_slit_of_wave width=500}
+
 
 입자와 달리 파동은 **간섭(inteference)** 현상을 보인다. @fig-part2_double_slit_of_wave 에서와 같이 1차원 평면파가 진행하여 $S_1,\,S_2$ 의 두 슬릿을 통과할 수 있다고 하자. 두 슬릿은 $a$ 만큼 떨여져 있으며, 스크린 까지의 거리는 $d$ 이다.
 
@@ -56,7 +61,8 @@ $$ {#eq-part2_double_slit_spacing_of_maxima}
 
 </br>
 
-![입자의 이중 슬릿](figure/fig-part2_double_slit_particle.png){#fig_part2_double_slit_of_particle width=500}
+![입자의 이중 슬릿](figures/double_slit_particle.png){#fig_part2_double_slit_of_particle width=500}
+
 
 이제 입자의 경우를 생각해보자. $S$ 로부터 입자가 입사되어 $S_1,\,S_2$ 슬릿에 투과된 다고 하자. 파동의 경우와 같이 $S_1$ 과 $S_2$ 를 번갈아 열고 닫아서 $I_1(x),\,I_2(x)$ 를 검출하였다고 하자. $I_1(x),\,I_2(x)$ 는 각각 $S_1,\,S_2$ 만을 열었을 때의 $x$ 에 따른 입자 검출 갯수이다. 고전역학에 따르면 $S_1$ 과 $S_2$ 를 동시에 열었을 때 측정되는 $I_{1+2}(x)$ 는 $I_1(x)+I_2(x)$ 와 같다. 입자가 $S$ 로 부터 떠날 때 그 입자는 $S_1$ 을 통과할지 $S_2$ 를 통과하지, 혹은 벽에 부딛쳐 스크린에 도달하지 못할 지 결정된다. $S_1$ 를 지나는 입자의 궤적은 $S_2$ 가 열려있는지 닫혔는지와 전혀 무관하며 $S_2$ 를 지나는 입자도 $S_1$ 의 열리고 닫힌 여부와 전혀 무관한 궤적을 지난다. 혹시 $S_1$ 을 통과한 입자가 $S_2$ 를 통과한 입자와 부딛쳐서, 혹은 상호작용하여 궤적이 바뀐다면? 그것은 입자를 한번에 하나씩 충분한 시간 간격을 두고 발사하는 것으로 확인 할 수 있다. 그렇다면 $I_{1+2}= I_1+I_2$ 라는 것에 대해 반박할 거리가 없게 된다. 
 
@@ -105,7 +111,7 @@ $$
 
 ### 입자-파동 이중성 {#sec-part2-wave_particle_duality}
 
-고전적으로 입자로 보았던 것들이 미시적으로 파동의 간섭 현상을 보이며, 따라서 파동방정식으로 기술 될 수 있다. 이것을 **이중성(duality)** 라고 한다. 입자를 기술하는 파동방정식 $\psi (\boldsymbol{r},\,t)$ 에 대해 $|\psi(\boldsymbol{r},t)|^2$ 는 시간 $t$ 위치 $\boldsymbol{r}$ 에서 입자를 발견할 확률분포이다. 이미 설명했듯이 입자의 상태 $|\psi\rangle$ 에 대해 $\langle \boldsymbol{r}|\psi(t)\rangle = \psi (\boldsymbol{r},\,t)$ 이다.  
+고전적으로 입자로 보았던 것들이 미시적으로 파동의 간섭 현상을 보이며, 따라서 파동방정식으로 기술 될 수 있다. 이것을 **이중성(duality)** 라고 한다. 입자를 기술하는 파동방정식 $\psi (\bf{r},\,t)$ 에 대해 $|\psi(\bf{r},t)|^2$ 는 시간 $t$ 위치 $\bf{r}$ 에서 입자를 발견할 확률분포이다. 이미 설명했듯이 입자의 상태 $|\psi\rangle$ 에 대해 $\langle \bf{r}|\psi(t)\rangle = \psi (\bf{r},\,t)$ 이다.  
 
 
 </br>
@@ -115,56 +121,137 @@ $$
 
 ### 양자역학의 기본 원리 Revisited 
 
-우리는 1부에서 양자역학의 4가지 원리와 슈레딩거 방정식에 대해 알아보았다. 이것을 여기에 다시 기술해보자.
+우리는 1부에서 비상대론적 양자역학의 4가지 원리와 슈레딩거 방정식에 대해 알아보았다. 이것을 여기에 다시 기술해보자.
 
 ::: {.callout-important icon="false"}
 
-#### 양자역학의 원리
+#### 양자역학의 기본  원리
 
-**원리 1.** 양자역학의 상태는 힐베르트 공간에서의 벡터 $|\phi\rangle$ 로 표현된다.
+**원리 1.** 양자역학의 상태는 분리가능한 힐베르트 공간에서의 벡터 $|\phi(t)\rangle$ 로 표현된다.
 
-**원리 2.** 양자역학의 측정량은 에르미트 연산자이다$^1$. 즉 $A^\dagger = A$ . 
-
-**원리 3.** **2.** 의 측정에서 실제 측정되는 양은 선형연산자의 고유값(eigenvector) 이며 측정 이후에 상태 $|\phi\rangle$ 은 고유값 $a$ 에 대한 고유 벡터, 즉 고유상태(eigenstate) 중의 하나로 **붕괴(collapse)** 된다.
-
-**원리 4.** $A$ 측정에서의 고유값 $\lambda$ 에 대한 고유공간의 정규직교기저를 $|a_1\rangle, \ldots,\, |a_n\rangle$ 이라고 할 때 $\lambda$ 값이 측정 될 확률 $P(\lambda) = \sum_{i}|\langle a_i|\phi \rangle|^2$ 이다.  
-
-**원리 5.** 상태벡터 $|\psi(t)\rangle$ 은 슈레딩거 방정식을 따른다.
+**원리 2.** 양자역학의 측정량은 에르미트 연산자이다. 위치 $x$ 와 운동량 $p$ 는 각각 $X,\,P$ 라는 에르미트 연산자로 표현되며 $X$ 기저에서 다음과 같다.
 
 $$
-i\hbar \dfrac{\partial |\psi (t)\rangle}{\partial t} = H|\psi (t)\rangle.
+\langle x|X|x'\rangle = x\delta(x-x'),\qquad \langle x|P|x'\rangle = -i\hbar \delta'(x-x').
 $$
+
+$x,\,p$ 를 변수로 갖는 연산자 $\omega(x,\,p)$ 는 $X,\,P$ 를 변수로 갖는 연산자 $\Omega(X,\, P)$ 로 기술된다.
+
+**원리 3.** $|\psi\rangle$ 상태의 입자에 대해 $\Omega$ 를 측정 할 경우 측정되는 양은 $\Omega$ 의 고유값(eigenvector) 가운데 하나이며 $\omega$ 가 측정되었을 경우 상태는 $\omega$ 를 고유값으로 갖는 고유상태 $|\omega\rangle$ 가 된다. 이를 파동함수의 **붕괴(collapse)** 라고 한다. 이 때 $|\psi\rangle$ 이 $|\omega\rangle$ 상태로 측정될 확률 $\mathcal{P}(\omega)$ 는 $|\langle \omega|\psi\rangle|^2$ 에 비례한다.   
+
+**원리 4.** 상태벡터 $|\psi(t)\rangle$ 은 슈레딩거 방정식을 따른다.
+
+$$
+\boxed{
+i\hbar \dfrac{\partial |\psi (t)\rangle}{\partial t} = H|\psi (t)\rangle.}
+$$ {#eq-part2_schroedinger_equation}
+
+이 때 $H$ 는 양자적 해밀토니안 연산자이다.
 
 :::
 
 
 </br>
 
-### 1차원 위치와 운동량 {#sec-part2_position_and_momentum}
+### 원리 1, 2, 3 에 대해
 
+**정리 1** 의 분리가능한 힐베르트 공간은 항상 가산무한개의 기저를 가질 수 있다. 즉 우리는 기저를 $|\phi_1\rangle,\, |\phi_2\rangle, \ldots$ 과 같이 표현 할 수 있다는 의미이다. 양자역학의 원리를 분리가능한 힐베르트 공간에서 구성한 것은 폰 노이만이다. 앞으로는 힐베르트 공간이라고 할 때는 분리가능한 힐베르트 공간을 의미한다.
 
+</br>
 
-많은 측정량들은 고전역학적인 측정량에서 왔으며 고전역학적인 측정량은 위치 $q$ 와 운동량 $p$ 의 함수이다. 즉 측정량 $\omega = \omega (x,\,p)$ 이다. 위치와 운동량도 힐베르트 공간에서의 에르미트 연산자이며 각각 $X$ 와 $P$ 로 표현한다. 우리는 다음을 또 하나의 기본 원리로서 받아들이자. 
+#### **중첩 원리와 사영연산자**
 
-::: {.callout-important icon="false"}
+힐베르트 공간 $\mathcal{H}$ 는 복소벡터공간이며, 따라서 $|\psi_1\rangle,\, |\psi_2\rangle \in \mathcal{H}$ 이면 임의의 스칼라 $\alpha,\, \beta\in \C$ 에 대해 $\alpha|\psi_1\rangle + \beta|\psi_2\rangle \in \mathcal{H}$ 이다. 이것을 **중첩 원리 (principle of superposition)** 이라고 한다. 중첩원리는 양자역학만의 특징은 아니다. 예를 들어 $f(0)=f(L)=g(0)=g(L)=0$ 을 만족하는 두 정상파 $f,\,g$ 를 생각해보자. $a,\,b\in \R$ 에 대해 $h(x) = af(x)+bg(x)$ 역시 이 경계조건을 만족하며, 가능한 정상파이다. 고전역학적 정상파 $h(x)$ 는 $f$ 나 $g$ 와는 다른 에너지를 가지며, 실제로 별도의 정상파이다. 그러나 양자역학적 중첩 $\alpha|\psi_1\rangle + \beta|\psi_2\rangle$ 은 측정에 대해 어떤 경우는 $|\psi_1\rangle$ 의 결과가, 다른 때는 $|\psi_2\rangle$ 의 결과가 나올 뿐이다. 
 
-#### 위치와 운동량의 행렬 표현
-
-위치에 대한 고유기저 $|x\rangle$ 에 대한 $X$ 와 $P$ 의 행렬표현은 다음과 같다.
+힐베르트 공간 $\mathcal{H}$ 위에서 정의된 연산자 $\Omega$ 를 생각하자. 이 연산자 $\Omega$ 는 에르미트 연산자이므로 $\Omega^\dagger = \Omega$ 이며 $\Omega$ 연산자에 대한 서로 직교하는 고유상태로 $\mathcal{H}$ 의 기저를 구성 할 수 있다. $\{|\omega_i\rangle\}$ 이 서로 직교하는 $\Omega$ 의 고유벡터의 집합이자 $\mathcal{H}$ 의 기저라고 하면 $|\psi\rangle$ 을 $\{|\omega_i\rangle\}$ 기저에 대해 아래와 같이 표현 할 수 있다.
 
 $$
-\begin{aligned}
-\langle x|X|x'\rangle &= x \delta(x-x'), \\[0.2em]
-\langle x|P|x'\rangle &= -i\hbar \delta'(x-x').
-\end{aligned}
-$${#eq-part2_matrix_representation_of_X_and_P}
+|\psi\rangle = \sum_i |\omega_i\rangle \langle \omega_i | \psi\rangle 
+$$
+
+
+여기에 **사영연산자(projection operator)** $P_\omega$ 를 다음과 같이 정의하자.
+
+$$
+\boxed{
+P_\omega := |\omega\rangle \langle \omega |}
+$$ {#eq-part2_projection_operator}
+
+사영연산자의 성질은 연습문제(@exr-part2_properties_of_projection_operator) 를 참고하라. 
+
+</br>
+
+#### **정규화된 상태**
+
+**윈리 3** 으로부터 $\mathcal{P}(\omega) \propto |\langle \omega |\psi\rangle |^2$ 임을 안다. 이것은 매우 중요한데 양자역학이 본질적으로 확률론적이라는 것이다. 또한 $\mathcal{P}(\omega)$ 가 확률이라는 것으로 부터 $\sum_{i} \mathcal{P}(\omega_i)=1$ 이어야 한다. 즉,
+
+$$
+P(\omega_i) = \dfrac{|\langle \omega_i|\psi\rangle|^2}{\sum_j|\langle \omega_j|\psi\rangle|^2 } =  \dfrac{|\langle \omega_i|\psi\rangle|^2}{\langle \psi|\psi\rangle}
+$$
+
+이어야 한다. 만약 $|\psi_N\rangle = \dfrac{|\psi\rangle}{\sqrt{|\langle \psi|\psi\rangle|}}$ 라고 하면
+
+$$
+P(\omega_i) = |\langle \omega_i |\psi_N\rangle|^2
+$$
+
+이다. 벡터 $|\psi\rangle$ 에 대해 $|\psi_N\rangle$ 을 **정규화되었다(be normalized)** 고 한다. 정규화된 벡터와 일반 벡터 사이에는 물리적인 차이가 없으며 단지 편의의 문제이다. 그러나 그 편의가 매우 크기 때문에 앞으로 특별한 언급이 없는 한 정규화된 벡터를 사용하기로 한다. 한가지 주의할 것은 정규화된, 그리고 직교하는 두 벡터 $|\psi_1\rangle,\, |\psi_2\rangle$ 의 선형결합 $a_1|\psi_1\rangle + a_2|\psi_2\rangle$ 은 자동으로 정규화 되지 않는다는 것, 하지만 이 벡터 역시 아래와 같이 정규화가 가능하다는 것이다. (직교 조건, 즉 $\langle \psi_1|\psi_2\rangle = 0$ 조건이 붙었다는 것에 유의하라.)
+
+$$
+|\psi_C\rangle = \dfrac{a|\psi_1\rangle + b|\psi_2\rangle}{\sqrt{|a|^2+|b|^2}}
+$$
+
+역시 마찬가지로 특별히 언급하지 않는 한 정규화된 벡터들의 선형 결합 역시 정규화된 것만을 생각하기로 한다. 이제 특별한 언급이 없는 한
+
+$$
+|\langle \psi|\psi\rangle|^2 = 1
+$$
+
+로 간주한다. 
+
+</br>
+
+#### **
+
+
+</br>
+
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part2_properties_of_projection_operator}
+
+#### 사영연산자의 성질
+
+힐베르트 공간 $\mathcal{H}$ 에서 정의된 사영연산자 $P_\omega = |\omega \rangle \langle \omega|$ 는 다음 성질을 가짐을 보여라.
+
+&emsp;($1$) $P_\omega^2 = P_\omega$,
+
+&emsp;($2$) $\theta,\, \phi$ 가 한 정규직교기저에 속하는 두 벡터일 때 $P_\omega P_\theta = \delta_{\theta,\omega}P_\theta$,
+
+&emsp;($3$) $P_\omega$ 는 에르미트연산자이다.
 
 :::
 
+</div></br>
 
-고전역학적인 측정량 $\omega (x,\,p)$ 에 상응햐는 양자역학의 측정량 $\Omega$ 는 에르미트 연산자로 $x,\,p$ 를 각각 $X,\,P$ 로 바꾸면 된다. 즉 $\Omega (X, P) = \omega (x \rightarrow X,\, p \rightarrow P)$ 이다. 
+::: {.solution}
 
-우리는 지금까지 무한차원의 힐베르트 공간 $\mathcal{H}$ 를 생각했지만 실제로 무한차원 공간에서 사고해 본 적은 없었다 이제 그것을 시작할 때다. 위치 연산자 $X$ 를 생각해보자. 1차원에서조차도 $X$ 는 무한개의 값을 가질 수 있으며 그 값은 $\mathbb{R}$ 과 같다. $X$ 는 에르미트 연산자이므로 $X$ 의 고유벡터로 이루어진 기저를 생각할 수 있으며 이것을 $\{|x\rangle : x\in \mathbb{R}\}$ 이라고 할 수 있다. 힐베르트 공간에서의 기저이므로 다음을 만족해야 한다. 유한차원과는 다르게 크로네커 델타는 디렉 델타 함수로, $\sum$ 은 $\int$ 로 바뀐다.
+($1$) $\langle \psi |P_\omega^2 |\phi\rangle = \langle \psi |\omega\rangle \langle \omega |\omega \rangle \langle \omega|\phi\rangle$ 이며 $\langle \omega|\omega\rangle = 1$ 이므로 $\langle \psi |P_\omega^2 |\phi \rangle= \langle \psi |\omega \rangle \langle \omega|\phi \rangle = \langle \psi |P_\omega |\phi\rangle$ 이다.
+
+($2$) $\langle \psi |P_\omega P_\theta |\phi\rangle = \langle \psi |\omega\rangle \langle \omega | \theta \rangle \langle \theta |\phi\rangle = \delta_{\omega,\theta}\langle \psi |P_\omega | \phi\rangle$
+
+($3$) $\langle \psi|P_\omega|\phi\rangle =\langle \psi |\omega \rangle \langle \omega |\phi\rangle = \langle \phi |\omega\rangle^\ast \langle \omega |\psi\rangle^\ast = (\langle \phi|\omega\rangle \langle \omega |\psi\rangle)^\ast = \langle \phi| P_\omega |\psi\rangle^\ast = \langle \psi|P_\omega^\dagger |\phi\rangle$. 따라서 $P_\omega = P_\omega^\dagger$ 이다. 
+
+:::
+
+</br>
+
+### 1차원 위치와 운동량 {#sec-part2_position_and_momentum}
+
+원리 2 에 부연설명을 하자면 고전역학적인 측정량 $\omega (x,\,p)$ 에 상응햐는 양자역학의 측정량 $\Omega$ 는 에르미트 연산자로 $x,\,p$ 를 각각 $X,\,P$ 로 바꾸면 된다. 즉 $\Omega (X, P) = \omega (x \rightarrow X,\, p \rightarrow P)$ 이다. 
+
+우리는 지금까지 무한차원의 힐베르트 공간 $\mathcal{H}$ 를 생각했지만 실제로 무한차원 공간에서 사고해 본 적은 없었다 이제 그것을 시작할 때다. 위치 연산자 $X$ 를 생각해보자. 1차원에서조차도 $X$ 는 $\mathbb{R}$ 의 어떤 값도 가질 수 있다. $X$ 는 에르미트 연산자이므로 $X$ 의 고유벡터로 이루어진 기저를 생각할 수 있으며 이것을 $\{|x\rangle : x\in \mathbb{R}\}$ 이라고 할 수 있다. 힐베르트 공간에서의 기저이므로 다음을 만족해야 한다. 유한차원과는 다르게 크로네커 델타는 디렉 델타 함수로, $\sum$ 은 $\int$ 로 바뀐다.
 
 
 1. 직교성 (orthogonallity) : $\langle x | x' \rangle = \delta (x-x')$.
@@ -188,17 +275,21 @@ $$
 $$
 
 
-$\langle x | P |\psi\rangle$ 은 $|\psi\rangle$ 상태를 운동량을 측정 한 후 그것을 $x$ 에 대한 함수로 나타내라는 의미이다. 이것은 계산대로 $\psi(x)$ 의 미분값에 $-i\hbar$ 를 곱한것과 같다. 이때문에 운동량 연산자를 $P=-i\hbar \dfrac{d}{dx}$ 로 표기하기도 한다. 2차원 이상의 공간에 대해서는 $P_i = -i\hbar \dfrac{\partial}{\partial x_i}$ 로 표기할 수 있다. 
+$\langle x | P |\psi\rangle$ 은 $|\psi\rangle$ 상태를 운동량을 측정 한 후 그것을 $x$ 에 대한 함수로 나타내라는 의미이다. 이것은 계산대로 $\psi(x)$ 의 미분값에 $-i\hbar$ 를 곱한것과 같다. 이때문에 운동량 연산자 $P$ 를 $P=-i\hbar \dfrac{d}{dx}$ 로 표기하기도 한다. 2차원 이상의 공간에 대해서는 $P_i = -i\hbar \dfrac{\partial}{\partial x_i}$ 로 표기할 수 있다. 
 
 또한 우리는 일반적으로 두 에르미트 연산자가 commutative 하지 않는다는 것을 안다. $X$ 와 $P$ 의 경우는 어떠한가?
 
 </br>
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-part2_uncertainty_of_X_and_P}
 
 $[X, P]=XP-PX=i\hbar I$ 임을 보여라.
 
 :::
+
+</div></br>
 
 ::: {.solution}
 
@@ -223,10 +314,15 @@ $$
 
 우리는 앞서 고전적인 측정량 $\omega (x,\,p)$ 를 양자 측정량 $\Omega (X, \, P)$ 로 바꿀 수 있다는 것을 알았다. 그런데 예를 들어 $\omega = xp$ 의 경우 앞서 보인 것과 같이 $XP\ne PX$ 이므로 $\Omega$ 를 정할 때 모호함이 생긴다. 이럴 경우는 대칭적으로 $\Omega = \dfrac{1}{2}(XP+PX)$ 로 변환한다. 이것이 불가능 할 경우도 있는데 $\omega = x^2p$ 와 같이 $x^k$ 나 $p^k$ 가 비대칭적으로 들어가 있을 경우이다. 이런 경우는 실험을 통해 양자역학적인 변수를 정할 수 밖에 없다.
 
+</br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
 ::: {#exr-part2_symmectic_form_is_hermitian}
 
 $X, P$ 가 에르미트이면 $\Omega = (XP+PX)/2$ 가 에르미트 연산자 임을 보여라. 
 :::
+
+</div></br>
 
 ::: {.solution}
 
@@ -261,6 +357,8 @@ $$
 </br>
 
 
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
 ::: {#exr-part2_uncertainty_of_gaussian_wavefunction_1}
 
 #### 가우시안 파동함수의 위치 불확정성
@@ -276,6 +374,8 @@ $$
 $$
 
 :::
+
+</div></br>
 
 ::: {.solution}
 이 때 $X$ 의 기대값 $\langle X \rangle$ 은
@@ -354,13 +454,15 @@ $$
 
 </br>
 
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
 ::: {#exr-part2_momentum_representation_of_gaussian_wavefunction}
 
 @eq-part2_gaussian_wavefunction 로 주어진 파동함수 $\psi(x)$ 에 대해 운동량 표현 $\langle p|\psi\rangle = \psi(p)$ 을 구하라.
 :::
+</div></br>
 
 ::: {.solution}
-
 
 $$
 \begin{aligned}
@@ -378,6 +480,8 @@ $$ {#eq-part2_momentum_representation_of_gaussian_wavefunction}
 
 </br>
 
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
 ::: {#exr-part2_uncertainty_of_gaussian_wavefunction_2}
 
 @exr-part2_momentum_representation_of_gaussian_wavefunction 에서 구한 $\psi(p)$ 에 대해 다음을 보여라.
@@ -390,6 +494,8 @@ $$
 \end{aligned}
 $$
 :::
+
+</div></br>
 
 ::: {.solution}
 @exr-part2_momentum_representation_of_gaussian_wavefunction 과 근본적으로 같은 계산이다.
@@ -413,11 +519,16 @@ $$
 
 </br>
 
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
 ::: {#exr-part2_momentum_representation_of_position}
 
 우리는 $\langle x|P|x\rangle = -i\hbar \delta'(x-x')$ 임을 안다. 그렇다면 $\langle p|X|p'\rangle = i\hbar \dfrac{d}{dp}\delta(p-p')$ 임을 보여라.
 
 :::
+
+</div></br>
 
 ::: {.solution}
 
@@ -455,11 +566,14 @@ $$
 
 </br>
 
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
 ::: {#exr-shankar_4_2_2}
 
 파동함수 $\psi_r(x)$ 가 실함수일 때 운동량의 기대값이 $0$ 임을 보여라. 또한 $0$ 이 아닌 복소수 $c$ 에 대해 파동함수가 $\psi (x) = c\psi_r(x)$ 일 때도 운동량의 기대값이 $0$ 임을 보여라.
 
 :::
+</div></br>
 
 ::: {.solution}
 
@@ -539,7 +653,7 @@ $$
 이 때 $\rho^2 = x_1^2+x_2^2 +x_3^2$ 이다. 일단 미분방정식을 세웠으므로 우리는 이것을 원통형 좌표계 혹은 구면좌표계로 변환시킬 수 있다. $\rho,\, \theta,\,\phi$ 에 대한 구면좌표계로 바꾸면
 
 $$
-E\psi_E(\boldsymbol{r}) = - \dfrac{\hbar^2}{2m} \left[\dfrac{1}{\rho^2}\dfrac{\partial}{\partial \rho}\left(r^2 \dfrac{\partial}{\partial \rho}\right) + \dfrac{1}{\rho^2 \sin\theta} \dfrac{\partial}{\partial \theta} \left(\sin \theta \dfrac{\partial}{\partial \theta} + \dfrac{1}{\rho^2 \sin^2\theta} \dfrac{\partial^2}{\partial \phi^2}\right)\right] \psi_E(\boldsymbol{r})
+E\psi_E(\bf{r}) = - \dfrac{\hbar^2}{2m} \left[\dfrac{1}{\rho^2}\dfrac{\partial}{\partial \rho}\left(r^2 \dfrac{\partial}{\partial \rho}\right) + \dfrac{1}{\rho^2 \sin\theta} \dfrac{\partial}{\partial \theta} \left(\sin \theta \dfrac{\partial}{\partial \theta} + \dfrac{1}{\rho^2 \sin^2\theta} \dfrac{\partial^2}{\partial \phi^2}\right)\right] \psi_E(\bf{r})
 $$
 
 </br>
@@ -643,6 +757,8 @@ $$ {#eq-part2_time_evolution_operator_for_time_dependent_hamiltonian}
 
 </br>
 
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
 ::: {#exr-time_evolution_operator_for_time_dependent-hamiltonian}
 $U(t)$ 가 시간 의존적인 해밀토니안에 대한 시간 전개 연산자라도 다음의 성질은 유지됨을 보여라.
 
@@ -652,7 +768,9 @@ $U(t)$ 가 시간 의존적인 해밀토니안에 대한 시간 전개 연산자
 
 ::: 
 
-::: {.proof}
+</div></br>
+
+::: {.solution}
 
 @eq-part2_time_evolution_operator_for_time_dependent_hamiltonian 과 @eq-part2_time_ordered_integral 으로부터 쉽게 보일 수 있다.
 

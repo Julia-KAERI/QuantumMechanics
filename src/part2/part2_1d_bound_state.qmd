@@ -319,8 +319,7 @@ $$
 
 ### 무한 포텐셜 우물 {#sec-part2_infinite_potential_well}
 
-![(좌) 무한 포텐셜 우물, (우) 가장 낮은 두 파동함수](figure/fig-part2_infinite_potential_well.png){#fig-part2_infinite_potential_well width=600}
-
+![(좌) 무한 포텐셜 우물, (우) 가장 낮은 두 파동함수](figures/infinite_potential_well.png){#fig-part2_infinite_potential_well width=600}
 
 포텐셜 $V(x)$ 가 다음과 같이 주어졌다고 하자. (@fig-part2_infinite_potential_well)
 
@@ -390,7 +389,7 @@ $$
 
 ### 포텐셜 우물 {#sec-part2_potential_well}
 
-![포텐셜 우물](figure/fig-part2_potential_well.png){#fig-potential_well width=300}
+![포텐셜 우물](figures/potential_well.png){#fig-potential_well width=300}
 
 포텐셜 $V(x)$ 가 $V_0>0$ 에 대해 다음과 같이 주어졌다고 하자.
 $$
@@ -442,7 +441,7 @@ $$
 를 만족해야 한다. 아래 그림은 짝함수($(a)$) 와 홀함수($(b)$) 의 경우에 대해 허용된 $\kappa$ 값을 보여준다. 즉 무한 포텐셜 우물이 아닌 일반적인 포텐셜 우물이더라도 bound state 일 때 에너지가 양자화 된다는 것을 안다. 
 
 
-![($a$) 짝함수의 경우에서의 허용된 $\kappa$ 값 ($b$) 홀함수의 경우 허용된 $\kappa$ 값. 스케일을 위해 가로축을 $ka$ 로, 세로축을 $\kappa a$ 로 잡았다. ](figure/fig-part2_solution_of_potential_well.png){#fig-part2_energy_qunatization_of_potential_well width=800}
+![($a$) 짝함수의 경우에서의 허용된 $\kappa$ 값 ($b$) 홀함수의 경우 허용된 $\kappa$ 값. 스케일을 위해 가로축을 $ka$ 로, 세로축을 $\kappa a$ 로 잡았다. ](figures/solution_of_potential_well.png){#fig-part2_energy_qunatization_of_potential_well width=800}
 
 </br>
 

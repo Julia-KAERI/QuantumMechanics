@@ -745,7 +745,7 @@ $$ {#eq-part2_orthogonality_of_hermite_polynomials}
 
 @eq-part2_sho_energy_eigenstate_with_hermite_polynomial 에서 우리는 $H_n(x)$ 를 구하는 방법을 알아보았다. 이제 이것을 에너지 고유상태에 대해 그래프를 그려보면 아래와 같다.
 
-![1차원 단순조화진동자의 파동함수](figure/fig-part2_1d_sho_wavefunction.png){#fig-part2_sho_wavefunctions width=500}
+![1차원 단순조화진동자의 파동함수](figures/1d_sho_wavefunctions.png){#fig-part2_sho_wavefunctions width=500}
 
 </br>
 

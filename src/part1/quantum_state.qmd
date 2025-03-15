@@ -60,7 +60,8 @@ $$
 
 우리가 양자 상태를 안다고 말할 때, 그것은 우리가 앞으로 더 진행하는데 필요한 모든 시스템에 대한 정보를 안다는 것을 의미한다. 이제 앞서 처음에 설명한 두가지 스핀값을 가질 수 있는 상태를 생각하자. $\sigma_z=+1$ 로 시스템이 준비되었다면 우리는 그 시스템의 양자 상태를 알고 있다고 말할 수 있다. 이제 $\sigma_z=+1$ 인 상태를 $|u\rangle$ 로 표기하며 $\sigma_z=-1$ 인 상태를 $|d\rangle$ 로 표기한다. 즉 $\sigma_z=+1$ 로 준비되어 있다면 이 상태는 $|u\rangle$ 상태이다.  $\sigma_x=+1$ 인 상태를 $|r\rangle$ 로 $\sigma_x=-1$ 인 상태를 $|l\rangle$ 로 표기한다. $\sigma_y=+1$ 인 상태를 $|i\rangle$ 로 $\sigma_x=-1$ 인 상태를 $|o\rangle$ 로 표기한다. 각각 up, down, right, left, in, out 을 의미한다.
 
-![양자 상태](images/fig-quantum_state.png){#fig_quantum_state width=250}
+
+![양자 상태](figures/quantum_state.png){#fig_quantum_state width=250}
 
 이제 스핀 상태는 두개의 값을 가질 있으므로 2차원 벡터공간에 표현 할 수 있다. 일반적인 상태 $|\phi\rangle$ 은 $|u\rangle$ 과 $|d\rangle$ 의 선형결합으로 아래와 같이 쓸 수 있다$^\ast$. [$^\ast$ $|i\rangle$ 과 $|o\rangle$ 은 어디로? 라고 질문 할 수 있을 것이다. 일단 진행 하면 자연스럽게 나온다.]{.aside}
 

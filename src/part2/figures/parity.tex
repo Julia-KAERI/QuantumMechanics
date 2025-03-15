@@ -1,0 +1,60 @@
+\documentclass[border=3pt,tikz]{standalone}
+\usepackage{amsmath}
+\usetikzlibrary{calc}
+\usetikzlibrary{arrows.meta} % for arrow size
+\begin{document}
+
+\begin{tikzpicture}[scale=2.0]
+    \usetikzlibrary {arrows.meta}
+    \usetikzlibrary {calc}
+    \tikzset{
+        partial ellipse/.style args={#1:#2:#3}{
+            insert path={+ (#1:#3) arc (#1:#2:#3)}
+        }
+    }
+    
+    
+    \node[left] at (-1 , 0) {initial states};
+    \draw[thick,-latex] (-1.5, -1.2) -- (-1.5, -0.8);
+    \node[right] at (-1.5, -1.0) {$\hat{z}$};
+    \node[left] at (-1 , -2) {final states};
+    
+    \node[] at (0, 1.2) {$A$};
+    \draw[thick, red, -latex] (0,0) [partial ellipse=-90:270:0.6 and 0.4];
+    \filldraw[teal] (0, 0.0) circle (3pt) ;
+    \draw[thick, -latex] (0, 0) -- (0, 0.7) node [left] {$\boldsymbol{S}$};
+    
+    \draw[dashed] (1, 0.7) -- (1, -0.7) node [below] {mirror};
+    
+    \draw[violet, very thick] (0, -2) circle (1pt) ;
+    \draw[thick, -latex] (0, -2) -- (0, -2.7) node [left] {$\boldsymbol{p}_{e^-}$};
+    \draw[dashed] (1, -1.3) -- (1, -2.7) node [below] {mirror};
+    
+    \begin{scope}[shift = {(2, 0)}] 
+    
+    \node[] at (0, 1.2) {$M$};
+    \draw[thick, red, -latex] (0,0) [partial ellipse=270:-90:0.6 and 0.4];
+    \filldraw[teal] (0, 0.0) circle (3pt) ;
+    \draw[thick, -latex] (0, 0) -- (0, -0.7) node [left] {$\boldsymbol{S}$};
+    
+    
+    
+    \draw[violet, very thick] (0, -2) circle (1pt) ;
+    \draw[thick, -latex] (0, -2) -- (0, -2.7) node [left] {$\boldsymbol{p}_{e^-}$};
+    
+    \end{scope}
+    
+    \begin{scope}[shift = {(4, 0)}] 
+    
+    \node[] at (0, 1.2) {$B$};
+    \draw[thick, red, -latex] (0,0) [partial ellipse=270:-90:0.6 and 0.4];
+    \filldraw[teal] (0, 0.0) circle (3pt) ;
+    \draw[thick, -latex] (0, 0) -- (0, -0.7) node [left] {$\boldsymbol{S}$};
+    
+    \draw[violet, very thick] (0, -2) circle (1pt) ;
+    \draw[thick, -latex] (0, -2) -- (0, -1.3) node [left] {$\boldsymbol{p}_{e^-}$};
+    
+    
+    \end{scope}
+    \end{tikzpicture}
+    \end{document}

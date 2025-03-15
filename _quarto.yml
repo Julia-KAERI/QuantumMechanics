@@ -31,11 +31,11 @@ book:
       - src/part3/some_proofs.qmd
       - src/part3/symmetry_in_classical_mechanics.qmd
       - src/part3/historical_note.qmd
-    - part: src/figure/figure.qmd
-      chapters:
-      - src/figure/figure_part1_1.qmd
-      - src/figure/figure_part2_1.qmd
-      - src/figure/figure_test_01.qmd
+    # - part: src/figure/figure.qmd
+    #   chapters:
+    #   - src/figure/figure_part1_1.qmd
+    #   - src/figure/figure_part2_1.qmd
+    #   - src/figure/figure_test_01.qmd
     - src/references.qmd
 
 bibliography: references.bib
