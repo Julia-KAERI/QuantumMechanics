@@ -25,7 +25,7 @@ $$
 \langle X \rangle &\to \langle X\rangle + \varepsilon,\\[0.3em]
 \langle P \rangle &\to \langle P \rangle
 \end{aligned}
-$$ {#eq-part2_infinitesimal_translation}
+$$ {#eq-QM_infinitesimal_translation}
 
 에 대한 것이다. Infinitesimal translation $T_{\varepsilon}$ 에 의해 상태벡터 $|\Psi \rangle$ 이 ㅣ변한 상태를 $|\Psi_\varepsilon\rangle$ 이라고 하자. 즉
 
@@ -179,16 +179,16 @@ $$
 
 $$
 T_{\varepsilon}= I-\dfrac{i\varepsilon}{\hbar}G
-$$ {#eq-part2_translation_operator}
+$$ {#eq-QM_translation_operator}
 
-라고 하자. @eq-part2_translation_operator 는 근사식이며 많은 계산에서 $\varepsilon$ 에 대한 1차식가지만의 결과가 사용되기 때문에 편리하다. 이 때 $G$ 는 translation 의 generator 라고 한다. $G$ 가 애르미트 연산자임은 쉽게 보일 수 있다.
+라고 하자. @eq-QM_translation_operator 는 근사식이며 많은 계산에서 $\varepsilon$ 에 대한 1차식가지만의 결과가 사용되기 때문에 편리하다. 이 때 $G$ 는 translation 의 generator 라고 한다. $G$ 가 애르미트 연산자임은 쉽게 보일 수 있다.
 
 </br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-shankar_11_2_2}
 #### Shankar 11.2.2
 
-$T_\varepsilon$ 이 유니타리 임을 이용하여 @eq-part2_translation_operator 의 $G$ 는 에르미트 임을 보여라.
+$T_\varepsilon$ 이 유니타리 임을 이용하여 @eq-QM_translation_operator 의 $G$ 는 에르미트 임을 보여라.
 
 :::
 
@@ -248,16 +248,16 @@ Translation $T_\varepsilon$ 이 연산자에 적용된다면
 
 $$
 T_\varepsilon^\dagger XT_\varepsilon = X + \varepsilon I,\qquad T^\dagger_\varepsilon P T = P
-$$ {#eq-part2_transilation_in_passive_transform}
+$$ {#eq-QM_transilation_in_passive_transform}
 
 
 이다. $T^\dagger_\varepsilon X T_\varepsilon$ 은 원점이 $\varepsilon$ 만큼 이동되었을 때의 위치연산자이다. 이것을 다시
 
 $$
 T_\varepsilon = I - \dfrac{i\varepsilon}{\hbar}G
-$$ {#eq-part2_translation_form_2}
+$$ {#eq-QM_translation_form_2}
 
-라고 쓰자. @eq-part2_transilation_in_passive_transform 와 @eq-part2_translation_form_2, 그리고 $G^\dagger = G$ 로부터
+라고 쓰자. @eq-QM_transilation_in_passive_transform 와 @eq-QM_translation_form_2, 그리고 $G^\dagger = G$ 로부터
 
 $$
 X+\varepsilon I = \left(I + \dfrac{i\varepsilon}{\hbar}G\right)X\left(I - \dfrac{i\varepsilon}{\hbar}G\right) = X - \dfrac{i\varepsilon}{\hbar} [X,\,G] + o(\varepsilon^2)
@@ -267,7 +267,7 @@ $$
 
 $$
 G=P+f(X)
-$$ {#eq-part2_form_of_G}
+$$ {#eq-QM_form_of_G}
 
  라는 것을 알 수 있다. 또한 $T^\dagger_\varepsilon P T = P$ 로부터
 
@@ -275,7 +275,7 @@ $$
 P = P - \dfrac{i\varepsilon}{\hbar}[P,\,G]
 $$
 
-이므로 $[P,\,G] = 0$ 임을 알 수 있다. 그렇다면 $G=P+\text{const}$ 형태이며, @eq-part2_form_of_G 에서 $f(X) = \text{const}$ 임을 알 수 있으며, 우리는 상수항을 $0$ 으로 선택하여
+이므로 $[P,\,G] = 0$ 임을 알 수 있다. 그렇다면 $G=P+\text{const}$ 형태이며, @eq-QM_form_of_G 에서 $f(X) = \text{const}$ 임을 알 수 있으며, 우리는 상수항을 $0$ 으로 선택하여
 
 $$
 T_\varepsilon = I - \dfrac{i\varepsilon}{h} P
@@ -305,7 +305,7 @@ $$
 $$
 
 
-우리는 이미 @eq-part2_transilation_in_passive_transform 로부터 다음을 안다.
+우리는 이미 @eq-QM_transilation_in_passive_transform 로부터 다음을 안다.
 
 $$
 \delta X = \varepsilon I,\qquad \delta P = 0.
@@ -354,7 +354,7 @@ $$
 \delta \Omega = -\dfrac{i\varepsilon}{\hbar} [\Omega,\, G]
 $$
 
-이다. @shankar1994 는 이러한 관계를 **상보성(correspondence)** 이라고 표현한다.
+이다. @Shankar1994 는 이러한 관계를 **상보성(correspondence)** 이라고 표현한다.
 
 
 이런 상보성은 고전역학에서 inifintesimal canconical transformation 이 존재하는 경우 뿐만 아니라 아래와 같은 경우에도 존재한다.
@@ -720,7 +720,7 @@ $t=0$ 에서${}^{60}\text{Co}$ 의 스핀이 $z$ 방향으로 정렬되었다고
 
 </br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part2_shankar_11_4_1}
+::: {#exr-QM_shankar_11_4_1}
 
 #### Shankar 11.4.1
 
@@ -741,7 +741,7 @@ $$
 
 </br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part2_shankar_11_4_2}
+::: {#exr-QM_shankar_11_4_2}
 
 #### Shankar 11.4.2
 
@@ -771,7 +771,7 @@ $$
 
 </br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part2_shankar_11_4_3}
+::: {#exr-QM_shankar_11_4_3}
 
 #### Shankar 11.4.3
 
@@ -788,7 +788,7 @@ see @fig-beta_decay_and_parity
 
 </br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part2_shankar_11_4_4}
+::: {#exr-QM_shankar_11_4_4}
 
 #### Shankar 11.4.4
 

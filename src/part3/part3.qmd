@@ -6,8 +6,8 @@ I 와 II 에서 다루지 않았던 다양한 주제애 대해 다룬다.
 ### 참고문헌
 ::: {#refs}
 
-@susskind2014quantum
+@Susskind2014quantum
 
-@shankar1994
+@Shankar1994
 
 :::

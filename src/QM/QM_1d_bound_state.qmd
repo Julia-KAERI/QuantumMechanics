@@ -9,7 +9,7 @@ crossref:
 
 ## 자유 입자 
 
-### 자유 입자 문제의 해와 시간 전개 {#sec-part2_free_particle_and_time_evolution}
+### 자유 입자 문제의 해와 시간 전개 {#sec-QM_free_particle_and_time_evolution}
 
 가장 간단한 자유입자의 경우 슈레딩거 방정식은 다음과 같다.
 
@@ -49,7 +49,7 @@ U(x,\,t; x',\,0) := \langle x|U(t)|x'\rangle &= \int_{-\infty}^\infty \langle x|
 &= \dfrac{1}{2\pi \hbar} \int_{-\infty}^\infty e^{ip(x-x')} e^{-2p^2/2m\hbar}\, dp \\
 &= \left(\dfrac{m}{2\pi \hbar i t}\right)^{1/2} e^{im(x-x')^2/2\hbar t}
 \end{aligned}
-$$ {#eq-part2_time_evolution_of_operator_for_free_particle_in_X_basis}
+$$ {#eq-QM_time_evolution_of_operator_for_free_particle_in_X_basis}
 
 이다. 따라서 $t=0$ 일 때 $\psi(x',\,t=0)$ 인 상태였다면
 
@@ -70,7 +70,7 @@ $$
 \psi(x,\,t) =  U(x,t;x',0) 
 $$
 
-이다. @eq-part2_time_evolution_of_operator_for_free_particle_in_X_basis 를 통해 알 수 있듯이 $t=0$ 일 때 국소화 되어 있던 입자는 시간이 지날수록 공간상으로 넓게 퍼지게 된다. 
+이다. @eq-QM_time_evolution_of_operator_for_free_particle_in_X_basis 를 통해 알 수 있듯이 $t=0$ 일 때 국소화 되어 있던 입자는 시간이 지날수록 공간상으로 넓게 퍼지게 된다. 
 
 
 </br>
@@ -81,7 +81,7 @@ $\Psi(x,\,0)$ 이 가우시안 wave packet 이라고 하자. 즉
 
 $$
 \Psi (x,\,0) = e^{ip_0x/\hbar} \dfrac{e^{-x^2/2\Delta^2}}{(\pi \Delta^2)^{1/4}}
-$${#eq-part2_gaussian_wave_packet_with_definite_momentum}
+$${#eq-QM_gaussian_wave_packet_with_definite_momentum}
 
 라고 하자. 이 패킷에 대해 다음은 쉽게 알 수 있다.
 
@@ -93,7 +93,7 @@ $$
 \Delta P(t=0) &= \hbar/(\sqrt{2}\Delta).
 \end{aligned}
 $$
-@eq-part2_time_evolution_of_operator_for_free_particle_in_X_basis 와 @eq-part2_gaussian_wave_packet_with_definite_momentum 를 통해
+@eq-QM_time_evolution_of_operator_for_free_particle_in_X_basis 와 @eq-QM_gaussian_wave_packet_with_definite_momentum 를 통해
 
 $$
 \begin{aligned}
@@ -111,9 +111,9 @@ $$
 
 </br>
 
-::: {#exr-part2_gaussian_wave_packet}
+::: {#exr-QM_gaussian_wave_packet}
 
-@eq-part2_gaussian_wave_packet_with_definite_momentum 로 주어진 웨이브 페킷에 대해 다음을 보여라.
+@eq-QM_gaussian_wave_packet_with_definite_momentum 로 주어진 웨이브 페킷에 대해 다음을 보여라.
 
 &emsp; ($1$) $\langle P\rangle = p_0,\, \langle X\rangle = \dfrac{\langle P\rangle t}{m}$. 
 
@@ -166,9 +166,9 @@ $$
 
 </br>
 
-@exr-part2_gaussian_wave_packet 의 ($1$) 을 보자. 우리는 고전역학에서 $t=0$ 일 때 $x=0$ 인 자유입자는 $x=pt/m$ 를 따른다는 것을 안다. 양자역학에서는 통계적으로 $X$ 의 기대값 $\langle X\rangle$ 과 $P$ 의 기대값 $\langle P\rangle$ 사이에 $\langle X\rangle = \langle P\rangle t/m$ 의 관계를 갖는데 이것은 **에렌페스트 정리(Ehrenfest theorem)** 의 결과중 하나이다. 
+@exr-QM_gaussian_wave_packet 의 ($1$) 을 보자. 우리는 고전역학에서 $t=0$ 일 때 $x=0$ 인 자유입자는 $x=pt/m$ 를 따른다는 것을 안다. 양자역학에서는 통계적으로 $X$ 의 기대값 $\langle X\rangle$ 과 $P$ 의 기대값 $\langle P\rangle$ 사이에 $\langle X\rangle = \langle P\rangle t/m$ 의 관계를 갖는데 이것은 **에렌페스트 정리(Ehrenfest theorem)** 의 결과중 하나이다. 
 
-@exr-part2_gaussian_wave_packet 의 ($2$) 는 웨이프 패킷의 폭, 즉 위치에 대한 불확정성이 시간에 따라 점점 증가함을 보여준다. 다음의 예를 보자
+@exr-QM_gaussian_wave_packet 의 ($2$) 는 웨이프 패킷의 폭, 즉 위치에 대한 불확정성이 시간에 따라 점점 증가함을 보여준다. 다음의 예를 보자
 
 </br>
 
@@ -196,7 +196,7 @@ $$
 
 </br>
 
-::: {#exr-part2_shankar_5_1_3}
+::: {#exr-QM_shankar_5_1_3}
 
 #### 가우시안 패킷 문제에 대한 다른 접근
 
@@ -204,15 +204,15 @@ $$
 
 $$
 U(t) = \exp \left[\dfrac{i}{\hbar} \left(\dfrac{\hbar^2 t}{2m} \dfrac{d^2}{dx^2}\right)\right] = \sum_{k=0}^\infty \dfrac{1}{k!} \left(\dfrac{i\hbar t}{2m}\right)^k\dfrac{d^{2k}}{dx^{2k}}
-$$ {#eq-part2_another_form_of_gaussian_packet}
+$$ {#eq-QM_another_form_of_gaussian_packet}
 
-로 쓸 수 있다. 초기 상태를 @eq-part2_gaussian_wave_packet_with_definite_momentum 에서 $p_0=0$, $\Delta =1$ 로 잡으면
+로 쓸 수 있다. 초기 상태를 @eq-QM_gaussian_wave_packet_with_definite_momentum 에서 $p_0=0$, $\Delta =1$ 로 잡으면
 
 $$
 \psi(x,\,0) = \dfrac{e^{-x^2/2}}{\pi^{1/4}}
 $$
 
-이다. @eq-part2_another_form_of_gaussian_packet 를 이용하여 $\psi(x,\,t)$ 를 구하고 @eq-gaussian_wavepacket_1 와 비교하라
+이다. @eq-QM_another_form_of_gaussian_packet 를 이용하여 $\psi(x,\,t)$ 를 구하고 @eq-gaussian_wavepacket_1 와 비교하라
 
 :::
 
@@ -317,11 +317,11 @@ $$
 
 ## 포테셜 우물
 
-### 무한 포텐셜 우물 {#sec-part2_infinite_potential_well}
+### 무한 포텐셜 우물 {#sec-QM_infinite_potential_well}
 
-![(좌) 무한 포텐셜 우물, (우) 가장 낮은 두 파동함수](figures/infinite_potential_well.png){#fig-part2_infinite_potential_well width=600}
+![(좌) 무한 포텐셜 우물, (우) 가장 낮은 두 파동함수](figures/infinite_potential_well.png){#fig-QM_infinite_potential_well width=600}
 
-포텐셜 $V(x)$ 가 다음과 같이 주어졌다고 하자. (@fig-part2_infinite_potential_well)
+포텐셜 $V(x)$ 가 다음과 같이 주어졌다고 하자. (@fig-QM_infinite_potential_well)
 
 $$
 V(x) = \left\{\begin{array}{ll}  0, \qquad & |x|<L/2 \\ \infty, & |x|\ge L/2 \end{array} \right.
@@ -331,9 +331,9 @@ $$
 
 $$
 \dfrac{d^2 \psi(x)}{dx^2} + \dfrac{2m[E-V(x)]}{\hbar^2}\psi(x) = 0
-$$ {#eq-part2_particle_in_box_1}
+$$ {#eq-QM_particle_in_box_1}
 
-구간을 $V(x)$ 의 특성에 따라 @fig-part2_infinite_potential_well 과 같이 $\rm{I},\, \rm{II},\, \rm{III}$ 으로 나누자. $\rm{I},\, \rm{III}$ 구간에서의 해 $\psi_\infty(x)$를 우선 구해보자. $V_0 >E$ 에 대해
+구간을 $V(x)$ 의 특성에 따라 @fig-QM_infinite_potential_well 과 같이 $\rm{I},\, \rm{II},\, \rm{III}$ 으로 나누자. $\rm{I},\, \rm{III}$ 구간에서의 해 $\psi_\infty(x)$를 우선 구해보자. $V_0 >E$ 에 대해
 
 $$
 \dfrac{d^2\psi_\infty(x)}{dx^2} + \dfrac{2m(E-V_0)}{\hbar^2} \psi_\infty(x)=0
@@ -343,11 +343,11 @@ $$
 
 $$
 \psi_\infty(x) = Ae^{\kappa x} + Be^{-\kappa x}
-$$ {#eq-part2_particle_in_box_2}
+$$ {#eq-QM_particle_in_box_2}
 
 이다. 우선 $x \ge L/2$ 인 $\rm{III}$ 구간에서의 파동함수 $\psi_{\rm{III}}(x)$ 를 생각해보자. $V_0 \to \infty$ 극한을 취하면 $A=0$ 이 되어야지만 $\psi_\rm{III}(x)$ 가 유의미한 함수가 되며 $e^{-\kappa x} \to 0$ 이 된다. 즉 $\psi_\rm{III}(x) = 0$ 이다. 마찬가지로 $\rm{I}$ 구간에서의 파동함수 $\psi_\rm{I}(x) = 0$ 이 되어야만 한다. 
 
-이제 $\rm{II}$ 구간의 파동함수 $\psi_{\rm{II}(x)}$ 를 생각해보자. $k = \sqrt{2mE/\hbar^2}$ 라고 하면 @eq-part2_particle_in_box_1 의 해는
+이제 $\rm{II}$ 구간의 파동함수 $\psi_{\rm{II}(x)}$ 를 생각해보자. $k = \sqrt{2mE/\hbar^2}$ 라고 하면 @eq-QM_particle_in_box_1 의 해는
 
 $$
 \psi_{\rm{II}}(x) = Ae^{ikx} + Be^{-ikx}
@@ -369,13 +369,13 @@ $$
 
 $$
 \psi_n (x) = \left\{ \begin{array}{ll} \sqrt{\dfrac{2}{L}} \sin \left(\dfrac{n \pi x}{L}\right), \qquad &n \text{ is even} \\  \sqrt{\dfrac{2}{L}} \cos \left(\dfrac{n \pi x}{L}\right) &n \text{ is odd} \end{array}\right.
-$$ {#eq-part2_wavefunction_of_infinite_potential_wall}
+$$ {#eq-QM_wavefunction_of_infinite_potential_wall}
 
 $n$ 이 짝수이면 $\psi_n(-x) = -\psi_n(x)$ 이며 $n$ 이 홀수이면 $\psi_n(-x) = \psi_n(x)$ 이다. 즉 $n$ 이 짝수이면 $\psi_n(x)$ 는 홀함수(odd function) 이며 $n$ 이 홀수이면 짝함수(even function) 이다. 경계조건에 의해 $k= \sqrt{2mE/\hbar^2}$ 은 $kL=n\pi$ 를 만족해야 한다. 따라서 $H$ 의 고유값은 $n\in \mathbb{Z}$ 에 대해 
 
 $$
 E_n = \dfrac{\hbar^2 \pi^2 n^2}{2mL^2}
-$$ {#eq-part2_energy_eigenvalues_of_infinite_potentail_wall}
+$$ {#eq-QM_energy_eigenvalues_of_infinite_potentail_wall}
 
 이다. 즉 박스 안의 입자가 가질 수 있는 에너지는 불연속적이다. 이렇게 어떤 동역학적인 값에 대해 불연속적인 값만 허용될 때 이를 **양자화(quantization)** 이라고 한다. 또한 파동함수는 $|x|<L/2$ 영역에서만 $0$ 이 아닌 값을 갖는다. 이렇게 파동함수 $\psi(x)$ 가 
 
@@ -387,7 +387,7 @@ $$
 
 </br>
 
-### 포텐셜 우물 {#sec-part2_potential_well}
+### 포텐셜 우물 {#sec-QM_potential_well}
 
 ![포텐셜 우물](figures/potential_well.png){#fig-potential_well width=300}
 
@@ -441,7 +441,7 @@ $$
 를 만족해야 한다. 아래 그림은 짝함수($(a)$) 와 홀함수($(b)$) 의 경우에 대해 허용된 $\kappa$ 값을 보여준다. 즉 무한 포텐셜 우물이 아닌 일반적인 포텐셜 우물이더라도 bound state 일 때 에너지가 양자화 된다는 것을 안다. 
 
 
-![($a$) 짝함수의 경우에서의 허용된 $\kappa$ 값 ($b$) 홀함수의 경우 허용된 $\kappa$ 값. 스케일을 위해 가로축을 $ka$ 로, 세로축을 $\kappa a$ 로 잡았다. ](figures/solution_of_potential_well.png){#fig-part2_energy_qunatization_of_potential_well width=800}
+![($a$) 짝함수의 경우에서의 허용된 $\kappa$ 값 ($b$) 홀함수의 경우 허용된 $\kappa$ 값. 스케일을 위해 가로축을 $ka$ 로, 세로축을 $\kappa a$ 로 잡았다. ](figures/solution_of_potential_well.png){#fig-QM_energy_qunatization_of_potential_well width=800}
 
 </br>
 
@@ -456,7 +456,7 @@ $$
 
 </br>
 
-### Bound state 와 에너지 양자화 {#sec-part2_bound_state_and_energy_quantization}
+### Bound state 와 에너지 양자화 {#sec-QM_bound_state_and_energy_quantization}
 
 
 앞서의 무한포텐셜 우물과 포텐셜 우물의 경우 상태가 bound state 일 경우 에너지가 양자화된다. 이것은 일반적으로 bound state 에서 성립하는데 여기서는 이것을 보이고자 한다. 정해진 $E$ 에 대해 $V(x)$ 는 다음의 성질을 가진다고 가정하자 하자.
@@ -488,7 +488,7 @@ $$
 
 </br>
 
-### 바닥상태 에너지 {#sec-part2_ground_state_energy}
+### 바닥상태 에너지 {#sec-QM_ground_state_energy}
 
 포텐셜 우물에서 또 하나의 중요한 특징중의 하나는 가장 낮은 에너지가 $0$ 이 아니라는 것이다. 고전적으로는 입자의 에너지가 $0$ 인 경우가 가능한데 이것은 입자가 정지해 있을 경우이다. 그러나 양자상태에서는 이것이 불가능한데 이는 불확정성의 원리 때문이다. 이것을 살펴 보자. 우선 해밀토니안에서 시작한다.
 
@@ -533,9 +533,9 @@ $$
 
 ### 연습문제
 
-::: {#exr-part2_potential_wall_1}
+::: {#exr-QM_potential_wall_1}
 
-무한 포텐셜 우물의 파동함수 $\psi_n(x)$(@eq-part2_wavefunction_of_infinite_potential_wall) 에 대한 시간전개 연산자 $U(t)$ 를 구하고 이것을 $X$ 의 기저로 표현하라.
+무한 포텐셜 우물의 파동함수 $\psi_n(x)$(@eq-QM_wavefunction_of_infinite_potential_wall) 에 대한 시간전개 연산자 $U(t)$ 를 구하고 이것을 $X$ 의 기저로 표현하라.
 
 
 :::
@@ -752,13 +752,13 @@ $$
 
 $$
 \dfrac{\partial \rho (\boldsymbol{r},\,t)}{\partial t} = - \nabla \cdot \boldsymbol{j}
-$$ {#eq-part2_classical_continuity_equation_of_charge}
+$$ {#eq-QM_classical_continuity_equation_of_charge}
 
 여기서 $\rho$ 는 전하 밀도이고 $\boldsymbol{j}$ 는 전류 밀도이다. 이것을 표면 $S$ 로 둘러쌓인 부피 $V$ 에 대해 적분하면
 
 $$
 \dfrac{d}{dt} \int_V \rho(\boldsymbol{r},t)\, d^3 \boldsymbol{r} = - \int_V \nabla \cdot \boldsymbol{j} \, d^3 \boldsymbol{r} = -\oint_S \boldsymbol{j} \cdot d\boldsymbol{S}
-$${#eq-part2_classical_continuity_equation_of_charge_2}
+$${#eq-QM_classical_continuity_equation_of_charge_2}
 
 이다. 이 식은 부피 $V$ 안의 전하량의 시간에 대한 변화는 부피 $V$ 의 표면 $S$ 로 출입하는 전류의 흐름으로 설명된다는 의미이다. 
 
@@ -798,19 +798,19 @@ $$
 \dfrac{\partial P}{\partial t} = -\dfrac{\hbar}{2mi} \nabla (\Psi^\ast \nabla \Psi i- \Psi \nabla \Psi^\ast)
 $$
 
-를 얻는다. @eq-part2_classical_continuity_equation_of_charge_2 와의 유사성을 생각하면 
+를 얻는다. @eq-QM_classical_continuity_equation_of_charge_2 와의 유사성을 생각하면 
 
 $$
 \boldsymbol{j} := \dfrac{\hbar}{2mi} (\Psi^\ast \nabla \Psi - \Psi \nabla \Psi^\ast)
-$$ {#eq-part2_definition_of_probability_current_density}
+$$ {#eq-QM_definition_of_probability_current_density}
 
 에 대해
 
 $$
 \dfrac{\partial P}{\partial t} = \nabla \cdot \boldsymbol{j}
-$$ {#eq-part2_continuity_equation_of_probability}
+$$ {#eq-QM_continuity_equation_of_probability}
 
-를 얻게 된다. 이 때 $\boldsymbol{j}$ **확률 흐름 밀도(probability current density)** 라고 하고 @eq-part2_continuity_equation_of_probability 를 **연속 방정식(continuity equation)** 이라고 한다.
+를 얻게 된다. 이 때 $\boldsymbol{j}$ **확률 흐름 밀도(probability current density)** 라고 하고 @eq-QM_continuity_equation_of_probability 를 **연속 방정식(continuity equation)** 이라고 한다.
 
 </br>
 
@@ -897,7 +897,7 @@ $$
 \Psi_\boldsymbol{p} =  \left(\dfrac{1}{2\pi \hbar}\right)^{3/2} e^{i(\boldsymbol{p \cdot r})/\hbar}.
 $$
 
-이 때 $\boldsymbol{j}$ 와 $P$ 를 구하고 전자기 방정식 $\boldsymbol{j}= \rho \boldsymbol{v}$ 와 비교하라. 여기서 $\boldsymbol{v}$ 는 속도이다. $\rho$ 와 $\boldsymbol{j}$ 는 상수이며 따라서 @eq-part2_continuity_equation_of_probability 가 자동작으로 만족된다.
+이 때 $\boldsymbol{j}$ 와 $P$ 를 구하고 전자기 방정식 $\boldsymbol{j}= \rho \boldsymbol{v}$ 와 비교하라. 여기서 $\boldsymbol{v}$ 는 속도이다. $\rho$ 와 $\boldsymbol{j}$ 는 상수이며 따라서 @eq-QM_continuity_equation_of_probability 가 자동작으로 만족된다.
 
 :::
 
@@ -962,7 +962,7 @@ $$
 ## 중요한 정리
 
 
-::: {#thm-part2_no_degeneracy_in_1d_bound_state}
+::: {#thm-QM_no_degeneracy_in_1d_bound_state}
 
 1차원 bound state 에는 축퇴가 없다.
 
@@ -1009,7 +1009,7 @@ $$
 
 </br>
 
-::: {#thm-part2_eigenfunction_of_H_is_pure_real_function_in_X_basis}
+::: {#thm-QM_eigenfunction_of_H_is_pure_real_function_in_X_basis}
 
 해밀토니안 $H$ 의 고유상태는 $X$ 기저에서 실함수로 표현 될 수 있다. 즉 실함수에 $c\in \mathbb{C}$ 를 곱한 꼴이다.
 

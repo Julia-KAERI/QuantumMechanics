@@ -15,17 +15,17 @@ book:
       - src/part1/mathematical_foundation.qmd
       - src/part1/quantum_state.qmd
       - src/part1/entanglement.qmd
-    - part: src/part2/part2.qmd
+    - part: src/QM/QM.qmd
       chapters:
-      - src/part2/part2_foundation_of_quantum_theory.qmd
-      - src/part2/part2_1d_bound_state.qmd
-      - src/part2/part2_classical_limit.qmd
-      - src/part2/part2_harmonic_oscillator.qmd
-      - src/part2/part2_1d_scattering.qmd
-      - src/part2/part2_path_integral_1.qmd
-      - src/part2/part2_N_DoF_system.qmd
-      - src/part2/part2_symmetry.qmd
-      - src/part2/part2_angular_momentum.qmd
+      - src/QM/QM_foundation_of_quantum_theory.qmd
+      - src/QM/QM_1d_bound_state.qmd
+      - src/QM/QM_classical_limit.qmd
+      - src/QM/QM_harmonic_oscillator.qmd
+      - src/QM/QM_1d_scattering.qmd
+      - src/QM/QM_path_integral_1.qmd
+      - src/QM/QM_N_DoF_system.qmd
+      - src/QM/QM_symmetry.qmd
+      - src/QM/QM_angular_momentum.qmd
     - part : src/part3/part3.qmd
       chapters:
       - src/part3/some_proofs.qmd

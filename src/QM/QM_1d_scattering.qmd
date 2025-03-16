@@ -12,11 +12,11 @@ crossref:
 
 ## 단일 계단 포텐셜 : 산란 문제
 
-![계단 포텐셜](figures/step_potential.png){#fig-part2_step_potential width="350"}
+![계단 포텐셜](figures/step_potential.png){#fig-QM_step_potential width="350"}
 
 </br>
 
-@fig-part2_step_potential 로 주어진 포텐셜을 생각하자. 즉
+@fig-QM_step_potential 로 주어진 포텐셜을 생각하자. 즉
 
 $$
 V(x) = \left\{\begin{array}{ll} 0 \qquad &; x<0 \;(\rm{I} \, \text{영역}) \\ V_0 &; x>0\;(\rm{II}\, \text{영역})  \end{array}\right.

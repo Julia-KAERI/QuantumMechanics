@@ -20,16 +20,16 @@ $$
 [X_i,\, X_j] &= \delta_{ij}I, \\
 [P_i,\, P_j] &= \delta_{ij}I.
 \end{aligned}
-$$ {#eq-part2_2_ptc_operators_1}
+$$ {#eq-QM_2_ptc_operators_1}
 
 
-첫번째 입자를 기술하는 힐베르트 공간을 $\mathcal{H}_1$ 이라고 하고 두번째 입자를 기술하는 힐베르트 공간을 $\mathcal{H}_2$ 라고 하자. $\{|x_1\rangle\}$ 을 $\mathcal{H}_1$ 에서의 좌표 기저라고 하고 $\{|x_2\rangle\}$ 을 $\mathcal{H}_2$ 의 좌표기저라고 하자. 각각의 힐베르트공간에서의 연산자를 표기하기 위헤 $X_1^{(1)}$ 과 같은 표기법을 사용한다. $X_1^{(2)}$ 는 $\mathcal{H}_2$ 에서의 첫번째 입자의 좌표 연산자이다. (의미가 그렇다는 거시 무의미하다.) 그렇다면 @eq-part2_2_ptc_operators_1 는 다음과 같이 표현 할 수 있다.
+첫번째 입자를 기술하는 힐베르트 공간을 $\mathcal{H}_1$ 이라고 하고 두번째 입자를 기술하는 힐베르트 공간을 $\mathcal{H}_2$ 라고 하자. $\{|x_1\rangle\}$ 을 $\mathcal{H}_1$ 에서의 좌표 기저라고 하고 $\{|x_2\rangle\}$ 을 $\mathcal{H}_2$ 의 좌표기저라고 하자. 각각의 힐베르트공간에서의 연산자를 표기하기 위헤 $X_1^{(1)}$ 과 같은 표기법을 사용한다. $X_1^{(2)}$ 는 $\mathcal{H}_2$ 에서의 첫번째 입자의 좌표 연산자이다. (의미가 그렇다는 거시 무의미하다.) 그렇다면 @eq-QM_2_ptc_operators_1 는 다음과 같이 표현 할 수 있다.
 
 $$
 \begin{aligned}
 \left[ X_1^{(1)},\, P_1^{(1)}\right] = i\hbar I^{(1)}, \qquad \left[ X_2^{(2)},\, P_2^{(2)}\right] = i\hbar I^{(2)}
 \end{aligned}
-$$ {#eq-part2_2_ptc_operators_2}
+$$ {#eq-QM_2_ptc_operators_2}
 
 </br>
 
@@ -73,7 +73,7 @@ $$
 
 <div class="border" style="background-color:#F2F4F4  ;padding:5px;">
 
-::: {#exm-part2_direct_product}
+::: {#exm-QM_direct_product}
 
 예를 들어 두 스핀 $1/2$ 입자의 스핀 상태를 각각 $|+\rangle,\, |-\rangle$ 로 표현한다고 하자. 이 때 
 
@@ -171,7 +171,7 @@ $$ {#eq-pqrt2_operator_product_in_product_space}
 
 <div class="border" style="background-color:#F2F4F4  ;padding:5px;">
 
-::: {#exm-part2_commutator_in_product_space}
+::: {#exm-QM_commutator_in_product_space}
 
 $\left[A^{(1)}\otimes I^{(2)},\, I^{(1)}\otimes B^{(2)}\right] = 0$ 임을 보일 수 있다. 
 
@@ -290,7 +290,7 @@ $$
 
 $$
 H=\left(\dfrac{P_1^2}{2m_1} + V_1(X_1)\right) + \left(\dfrac{P_2^2}{2m_2} + V_2(X_2)\right) = H_1+H_2
-$$ {#eq-part2_2_ptls_seperable_hamiltonian}
+$$ {#eq-QM_2_ptls_seperable_hamiltonian}
 
 이며 이것은 각각의 힐베르트 공간으로 분리하여 풀 수 있다. 물론 수소원자에서의 쿨롱 포텐셜처럼 분리되지 않을 수도 있다. 분리되는 경우가 훨씬 간단할 것이므로 여기에 대해 우선 알아보자.
 
@@ -299,7 +299,7 @@ $$ {#eq-part2_2_ptls_seperable_hamiltonian}
 
 ### 분리가능한 해밀토니안의 경우
 
-@eq-part2_2_ptls_seperable_hamiltonian 과 같이 두 입자에 대한 해밀토니안이 $\mathcal{H}_1$ 에서의 $H_1$ 과 $\mathcal{H}_2$ 에서의 $H_2$ 로 분리가능할 경우를 생각해보자. $H_1 = H_1^{(1)} \otimes I_2^{(2)}$,  $H_2= I_1^{(1)} \otimes H_2^{(2)}$ 으로 표현 할 수 있다. 여기에서 $H_1^{(1)}$ 의 고유값 $E_1$ 인 고유상태를 $|E_1\rangle$ 이라고 하고 $H_2^{(2)}$ 의 고유값 $E_2$ 인 고유상태를 $|E_2\rangle$ 이라고 하자. 
+@eq-QM_2_ptls_seperable_hamiltonian 과 같이 두 입자에 대한 해밀토니안이 $\mathcal{H}_1$ 에서의 $H_1$ 과 $\mathcal{H}_2$ 에서의 $H_2$ 로 분리가능할 경우를 생각해보자. $H_1 = H_1^{(1)} \otimes I_2^{(2)}$,  $H_2= I_1^{(1)} \otimes H_2^{(2)}$ 으로 표현 할 수 있다. 여기에서 $H_1^{(1)}$ 의 고유값 $E_1$ 인 고유상태를 $|E_1\rangle$ 이라고 하고 $H_2^{(2)}$ 의 고유값 $E_2$ 인 고유상태를 $|E_2\rangle$ 이라고 하자. 
 
 $$
 H|E_1\rangle \otimes |E_2\rangle = (H_1 + H_2)|E_1\rangle \otimes |E_2\rangle = (E_1+E_2) |E_1\rangle \otimes |E_2\rangle = E|E_1\rangle \otimes |E_2\rangle
@@ -311,11 +311,11 @@ $$
 |\Psi_E(t)\rangle = |E\rangle e^{-iEt/\hbar} =  |E_1\rangle e^{-iE_1/\hbar} \otimes |E_2\rangle e^{-iE_2/\hbar}
 $$
 
-를 만족한다. 이제 좌표 기저에서 확인해보자. @eq-part2_2_ptls_seperable_hamiltonian 를 좌표기저에서 표현해보면 $\Psi_E(x_1,\,x_2) = \langle x_1x_2|\Psi_E\rangle$ 에 대해 
+를 만족한다. 이제 좌표 기저에서 확인해보자. @eq-QM_2_ptls_seperable_hamiltonian 를 좌표기저에서 표현해보면 $\Psi_E(x_1,\,x_2) = \langle x_1x_2|\Psi_E\rangle$ 에 대해 
 
 $$
 \left[-\dfrac{\hbar^2}{2m_1}\dfrac{\partial^2}{\partial x_1^2} + V_1(x_1) - \dfrac{\hbar^2}{2m_2}\dfrac{\partial^2}{\partial x_2^2} + V_2(x_2)\right] \Psi_E(x_1,\,x_2) = E\Psi_E(x_1,\,x_2)
-$$ {#eq-part2_2_ptls_schroedinger_eq_seperable}
+$$ {#eq-QM_2_ptls_schroedinger_eq_seperable}
 
 이어야 한다. 이제 $\Psi_E(x_1,\,x_2)$ 가 $x_1$ 에 대한 함수와 $x_2$ 에 대한 함수의 곱으로 표현 될 수 있다고 가정하자. 즉
 
@@ -323,14 +323,14 @@ $$
 \Psi_E(x_1,\,x_2) = \Psi_{1}(x_1) \Psi_{2}(x_2)
 $$
 
-라면 @eq-part2_2_ptls_schroedinger_eq_seperable 는 다음과 같이 변경된다.
+라면 @eq-QM_2_ptls_schroedinger_eq_seperable 는 다음과 같이 변경된다.
 
 $$
 \begin{aligned}
 \dfrac{1}{\Psi_1(x_1)} &\left[ -\dfrac{\hbar^2}{2m_1}\dfrac{\partial^2}{\partial x_1^2} + V_1(x_1) \right] \Psi_1(x_1) \\
 &+ \dfrac{1}{\Psi_2(x_2)} \left[ - \dfrac{\hbar^2}{2m_2}\dfrac{\partial^2}{\partial x_2^2} + V_2(x_2)\right] \Psi_2(x_2) = E.
 \end{aligned}
-$$ {#eq-part2_2_ptls_schroedinger_eq_seperable_2}
+$$ {#eq-QM_2_ptls_schroedinger_eq_seperable_2}
 
 
 위 식의 좌변은 각각 $x_1$ 에만 의존하는 항과 $x_2$ 에만 의존하는 항의 합이다. 따라서 위 식은 아래의 세 식으로 분리될 수 있다.
@@ -451,7 +451,7 @@ $$
 |\omega\omega',\,S\rangle = \dfrac{1}{\sqrt{2}} [|\omega\omega'\rangle + |\omega'\omega\rangle], \\
 |\omega\omega',\, A\rangle = \dfrac{1}{\sqrt{2}} [|\omega\omega'\rangle - |\omega'\omega\rangle], \\
 \end{aligned}
-$$ {#eq-part2_symmatric_and_antisymmetric_state_vector}
+$$ {#eq-QM_symmatric_and_antisymmetric_state_vector}
 
 와 같이 대칭, 반대칭인 상태벡터를 구성 할 수 있다. 또한 여기서는 동일한 두 입자에 대해서만 다루었는데, 앞으로 보겠지만 임의의 $N$ 입자에 대해 대칭인 상태벡터와 반대칭인 상태벡터를 구성 할 수 있다. 그리고 이 대칭/반대칭 상태벡터는 단순히 상태의 대칭성을 수학적으로 보이는 것이 아니라 자연의 근본적인 성질과 밀접히 관련되어 있다.
 
@@ -462,7 +462,7 @@ $$ {#eq-part2_symmatric_and_antisymmetric_state_vector}
 놀랍게도 모든 입자는 각 입자에 따라 대칭, 혹은 반대칭 상태벡터중 하나를 따른다. 대칭인 상태벡터를 따르는 입자를 **보존(boson)** 이라고 하며 반대칭인 상태벡터를 따르는 입자를 **페르미온(fermiion)** 이라고 한다. 보존에는 파이온, 광자, 중력자가 있으며 페르미온에는 전자, 양성자, 중성자가 있다.
 
 
-페르미온의 경우 아주 흥미로운 현상이 있다. @eq-part2_symmatric_and_antisymmetric_state_vector 에서 $\omega = \omega'$ 이라면
+페르미온의 경우 아주 흥미로운 현상이 있다. @eq-QM_symmatric_and_antisymmetric_state_vector 에서 $\omega = \omega'$ 이라면
 
 $$
 |\omega \omega,\, A\rangle = 0
@@ -472,7 +472,7 @@ $$
 
 </br>
 
-어떤 입자가 보존인지 페르미온인지는 각 입자가 가진 고유의 내재적인 각운동량, 소위 스핀 각운동량(spin angular momentum) 에 따라 다르다. 양자장론에 따르면 스핀 각운동량의 크기는 각 입자의 종류마다 고유하며 $\hbar/2$ 의 배수를 가진다. $\hbar/2$ 의 짝수배인 입자는 보즈-아인슈타인 통계를 따르는 입자로 보존이며, $\hbar/2$ 의 홀수배인 입자는 페르미-디랙 통계를 따르는 입자로 페르미온이다. 그러나 이 구분은 3차원에서의 구분이며 1차원의 경우는 고전적으로도 각운동량이라는 물리량이 정의되지 않는다. 이 경우는 실험적으로 보즈-아인슈타인 통계를 따르는지, 페르미-디랙 통계를 따르는지에 따라 구분한다. [@shankar1994]
+어떤 입자가 보존인지 페르미온인지는 각 입자가 가진 고유의 내재적인 각운동량, 소위 스핀 각운동량(spin angular momentum) 에 따라 다르다. 양자장론에 따르면 스핀 각운동량의 크기는 각 입자의 종류마다 고유하며 $\hbar/2$ 의 배수를 가진다. $\hbar/2$ 의 짝수배인 입자는 보즈-아인슈타인 통계를 따르는 입자로 보존이며, $\hbar/2$ 의 홀수배인 입자는 페르미-디랙 통계를 따르는 입자로 페르미온이다. 그러나 이 구분은 3차원에서의 구분이며 1차원의 경우는 고전적으로도 각운동량이라는 물리량이 정의되지 않는다. 이 경우는 실험적으로 보즈-아인슈타인 통계를 따르는지, 페르미-디랙 통계를 따르는지에 따라 구분한다. [@Shankar1994]
 
 
 </br>
@@ -540,7 +540,7 @@ $$
 
 $$
 1 = \iint |\langle \omega_1\omega_2,\, S|\Psi_S\rangle|^2 \dfrac{d\omega_1\,d\omega_2}{2}
-$$ {#eq-part2_normalization_condition_for_H_S_1}
+$$ {#eq-QM_normalization_condition_for_H_S_1}
 
 이 된다. 
 
@@ -552,7 +552,7 @@ $$
 \Psi_S (\omega_1,\,\omega_2) := \dfrac{1}{\sqrt{2}} \langle \omega_1\omega_2,\, S|\Psi_S\rangle
 $$
 
-이제 @eq-part2_normalization_condition_for_H_S_1 이 좀 더 깔끔하게 아래와 같이 된다.
+이제 @eq-QM_normalization_condition_for_H_S_1 이 좀 더 깔끔하게 아래와 같이 된다.
 
 $$
 \int |\Psi_S(\omega_1,\omega_2)|^2\ d\omega_1\,d\omega_2 = 1
@@ -580,11 +580,11 @@ $$
 
 <div class="border" style="background-color:#F2F4F4  ;padding:5px;">
 
-::: {#exm-part2_two_boson_wave_fucntion}
+::: {#exm-QM_two_boson_wave_fucntion}
 
 #### 무한 포텐셜 우물의 동일한 두 보존 입자
 
-[무한 포텐셜 우물](part2_1d_bound_state.qmd#sec-part2_infinite_potential_well) 문제를 생각하자. 상호작용하지 않는 두 보존이 $n=2,\, n=3$ 상태로 관측되었다고 하자. 그렇다면 상태벡터 $|\Psi_S\rangle$ 는
+[무한 포텐셜 우물](QM_1d_bound_state.qmd#sec-QM_infinite_potential_well) 문제를 생각하자. 상호작용하지 않는 두 보존이 $n=2,\, n=3$ 상태로 관측되었다고 하자. 그렇다면 상태벡터 $|\Psi_S\rangle$ 는
 
 $$
 |\Psi_S\rangle = \dfrac{|23\rangle + |32\rangle}{\sqrt{2}} 
@@ -640,11 +640,11 @@ $$
 
 <div class="border" style="background-color:#F2F4F4  ;padding:5px;">
 
-::: {#exm-part2_two_fermion_wave_fucntion}
+::: {#exm-QM_two_fermion_wave_fucntion}
 
 #### 무한 포텐셜 우물의 동일한 두 페르미온 입자
 
-보존의 경우(@exm-part2_two_boson_wave_fucntion) 와 같이[무한 포텐셜 우물](part2_1d_bound_state.qmd#sec-part2_infinite_potential_well) 문제를 생각하자. 상호작용하지 않는 두 페르미온이 $n=2,\, n=3$ 상태로 관측되었다고 하자. 그렇다면 반대칭 상태벡터 $|\Psi_A\rangle$ 는
+보존의 경우(@exm-QM_two_boson_wave_fucntion) 와 같이[무한 포텐셜 우물](QM_1d_bound_state.qmd#sec-QM_infinite_potential_well) 문제를 생각하자. 상호작용하지 않는 두 페르미온이 $n=2,\, n=3$ 상태로 관측되었다고 하자. 그렇다면 반대칭 상태벡터 $|\Psi_A\rangle$ 는
 
 $$
 |\Psi_A\rangle = \dfrac{|23\rangle - |32\rangle}{\sqrt{2}} 
@@ -666,7 +666,7 @@ $$
 
 </br>
 
-@exm-part2_two_fermion_wave_fucntion 에서 $\Psi_A(x_1,\,x_2)$ 는 행렬의 행렬식(determinant) $|A|$ 를 이용하여 
+@exm-QM_two_fermion_wave_fucntion 에서 $\Psi_A(x_1,\,x_2)$ 는 행렬의 행렬식(determinant) $|A|$ 를 이용하여 
 
 $$
 \Psi_A(x_1,\,x_2) =  \dfrac{1}{\sqrt{2}} \left[\psi_2(x_1)\psi_3(x_2) - \psi_3(x_1)\psi_2(x_2)\right]= \dfrac{1}{\sqrt{2}} \left| \begin{array}{cc} \psi_2(x_1) & \psi_3 (x_1) \\ \psi_2(x_2) & \psi_3 (x_2) \end{array}\right|
@@ -676,7 +676,7 @@ $$
 
 $$
 \Psi_A(x_1,\ldots,\,x_N) = \dfrac{1}{\sqrt{N!}}\left|\begin{array}{cccc} \psi_{\omega_1}(x_1) & \psi_{\omega_2} (x_1) & \cdots & \psi_{\omega_N}(x_1) \\\psi_{\omega_1}(x_2) & \psi_{\omega_2} (x_2) & \cdots & \psi_{\omega_N}(x_2) \\ & \vdots & & \\ \psi_{\omega_1}(x_N) & \psi_{\omega_2} (x_N) & \cdots & \psi_{\omega_N}(x_N)  \end{array}\right|
-$$ {#eq-part2_determinamt_and_antisymmetric_wavefunction}
+$$ {#eq-QM_determinamt_and_antisymmetric_wavefunction}
 
 이다. 이것은 행렬식의 정의로부터 자명한데 행렬식은 $N\times N$ 행렬에 대해 아래의 성질을 갖는 함수로 정의되며, 아래의 세가지 성질을 모두 충족하는 함수는 행렬식이 유일하다.
 
@@ -687,7 +687,7 @@ $$ {#eq-part2_determinamt_and_antisymmetric_wavefunction}
 &emsp; ($3$) 두 행/열 을 바꾼 행렬의 행렬식은 원래 행렬의 행렬에 $-1$ 을 곱한 값이다.
 
 
-@eq-part2_determinamt_and_antisymmetric_wavefunction 가 반대칭이라는 것은 행렬식의 성질 ($3$) 으로 부터 알 수 있다. @eq-part2_determinamt_and_antisymmetric_wavefunction 의 두 열을 바꾸는 것이 두 상태를 바꾸는 교환연산이기 때문이다. 또한 $\int |\psi_{\omega_i}(x_j)|^2\, dx_j = 1$ 이며 항의 갯수가 $N!$ 개이므로
+@eq-QM_determinamt_and_antisymmetric_wavefunction 가 반대칭이라는 것은 행렬식의 성질 ($3$) 으로 부터 알 수 있다. @eq-QM_determinamt_and_antisymmetric_wavefunction 의 두 열을 바꾸는 것이 두 상태를 바꾸는 교환연산이기 때문이다. 또한 $\int |\psi_{\omega_i}(x_j)|^2\, dx_j = 1$ 이며 항의 갯수가 $N!$ 개이므로
 
 $$
 \int\int\cdots \int \left|\Psi_A(x_1,\ldots,\,x_N)\right|^2 \, dx_1 dx_2 \cdots dx_N = 1
@@ -709,7 +709,7 @@ P_{S/A}(x_1,\,x_2) &= 2|\Psi_{S/A} (x_1,\,x_2)|^2 \\
 &= |\psi_m(x_1)|^2|\psi_n(x_2)|^2 + |\psi_m(x_2)|^2|\psi_n(x_1)|^2 \\[0.3em]
 &\quad \pm \left[\psi_m(x_1)\psi_n(x_2)\psi_m^\ast (x_2) \psi_n^\ast(x_1) + \psi_m(x_2)\psi_n(x_1) \psi_m^\ast(x_1) \psi_n^\ast(x_2)\right]
 \end{aligned}
-$$ {#eq-part2_probability_density_of_two_identical_particle}
+$$ {#eq-QM_probability_density_of_two_identical_particle}
 
 이 된다. 위 식은 세가지 항으로 구분 할 수 있다.
 
@@ -728,7 +728,7 @@ $$
 \lim_{x_1\to x,\, x_2\to x} P_S(x_1,\,x_2) &= 4|\psi_m(x)\psi_n(x)|^2, \\
 \lim_{x_1\to x,\, x_2\to x} P_A(x_1,\,x_2) &= 0, 
 \end{aligned}
-$$ {#eq-part2_limit_of_two_particle_wavefunction_1}
+$$ {#eq-QM_limit_of_two_particle_wavefunction_1}
 
 즉 우리가 두 중성 파이온에 대해 $P(x_1,\,x_2)$ 를 구한다면 혹은 최소한 두 입자가 같은 위치에서 발견될 확률을 구한다면 이 입자가 보존인지 페르미온인지를 확인 할 수 있다. 
 
@@ -744,7 +744,7 @@ $$
 \lim_{x_1\to x,\, x_2\to x} P_D(x_1,\,x_2) = 2|\psi_m(x)\psi_n(x)|^2
 $$
 
-이다. 이를 @eq-part2_limit_of_two_particle_wavefunction_1 와 비교해보면 2배의 차이가 난다. 
+이다. 이를 @eq-QM_limit_of_two_particle_wavefunction_1 와 비교해보면 2배의 차이가 난다. 
 
 
 </br>

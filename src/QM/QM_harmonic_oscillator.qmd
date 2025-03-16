@@ -24,13 +24,13 @@ $V(x) = \dfrac{1}{2}m\omega^2X^2$ 으로 주어진 1차원 조화진동자를 �
 
 $$
 H = \dfrac{P^2}{2m} + \dfrac{1}{2}m\omega^2X^2
-$$ {#eq-part2_1d_sho}
+$$ {#eq-QM_1d_sho}
 
 </br>
 
 <div class="border" style="background-color:#F2F4F4  ;padding:5px;">
 
-::: {#exm-part2_sho_positive_energy}
+::: {#exm-QM_sho_positive_energy}
 #### Non-negative 에너지 고유값
 
 우리는 $P^\dagger = P,\, X^\dagger= X$ 임을 안다. 임의의 파동함수 $|\Psi\rangle$ 에 대해
@@ -46,26 +46,26 @@ $$
 
 </br>
 
-이제 @eq-part2_1d_sho 로 주어진 시간독립 슈뢰딩거 방정식을 풀어보자. 여기에는 두가지 방법이 있다. 하나는 $X$ 기저에서 (혹은 $P$ 기저에서) 멱급수를 이용하여 미분방정식을 푸는 것이고 다른 하나는 아주 독특한 사다리 연산자(ladder operator) 를 도입하는 것이다. 여기서는 후자를 먼저 알아보도록 한다.
+이제 @eq-QM_1d_sho 로 주어진 시간독립 슈뢰딩거 방정식을 풀어보자. 여기에는 두가지 방법이 있다. 하나는 $X$ 기저에서 (혹은 $P$ 기저에서) 멱급수를 이용하여 미분방정식을 푸는 것이고 다른 하나는 아주 독특한 사다리 연산자(ladder operator) 를 도입하는 것이다. 여기서는 후자를 먼저 알아보도록 한다.
 
 </br>
 
 ## 사다리 연산자를 이용한 방법
 
 
-### 사다리 연산자와 해밀토니안 {#sec-part2_ladder_operator_and_hamiltonian}
+### 사다리 연산자와 해밀토니안 {#sec-QM_ladder_operator_and_hamiltonian}
 
 $X$,\, $P$ 에 대해 연산자 $a$ 를 다음과 같이 정의한다. 
 
 $$
 a = \left(\dfrac{m\omega}{2\hbar}\right)^{1/2} X + i \left(\dfrac{1}{2m\omega \hbar}\right)^{1/2} P.
-$$ {#eq-part2_ladder_operator_a}
+$$ {#eq-QM_ladder_operator_a}
 
 그렇다면 $a$ 의 hermitian conjugate $a^\dagger$ 는 다음과 같다.
 
 $$
 a^\dagger = \left(\dfrac{m\omega}{2\hbar}\right)^{1/2} X - i \left(\dfrac{1}{2m\omega \hbar}\right)^{1/2} P
-$$ {#eq-part2_ladder_operator_a_dagger}
+$$ {#eq-QM_ladder_operator_a_dagger}
 
 우리는 $[X,\,P] = i\hbar I$ 임을 안다. 이로부터, 
 
@@ -74,7 +74,7 @@ $$
 \left[a, \, a^\dagger \right] &= - i \left(\dfrac{1}{2\hbar}\right)XP + i\left(\dfrac{1}{2\hbar}\right)PX - i \left(\dfrac{1}{2\hbar}\right)XP + i \left(\dfrac{1}{2\hbar}\right)PX\\
 &= \dfrac{i}{\hbar}[PX-XP] =  I
 \end{aligned}
-$$ {#eq-part2_sho_commutator_of_ladder_operator}
+$$ {#eq-QM_sho_commutator_of_ladder_operator}
 
 을 얻는다. 또한
 
@@ -86,7 +86,7 @@ $$
 
 $$
 H = \hbar \omega\left(a^\dagger a + \dfrac{1}{2}I\right)
-$$ {#eq-part2_sho_hamiltonian_using_ladder}
+$$ {#eq-QM_sho_hamiltonian_using_ladder}
 
 이다. 이 때 $a$ 와 $a^\dagger$ 를 **사다리 연산자(ladder operator)** 라고 한다. 이런 이름이 붙은 이유는 차츰 명백해질 것이다. 
 
@@ -94,14 +94,14 @@ $$ {#eq-part2_sho_hamiltonian_using_ladder}
 
 ### 사다리 연산자의 성질
 
-@eq-part2_sho_hamiltonian_using_ladder 와 @eq-part2_sho_commutator_of_ladder_operator 로부터 우리는 다음을 보일 수 있다.
+@eq-QM_sho_hamiltonian_using_ladder 와 @eq-QM_sho_commutator_of_ladder_operator 로부터 우리는 다음을 보일 수 있다.
 
 $$
 \begin{aligned}
 \left[ a,\, H\right] &= \hbar\omega (aa^\dagger a - a^\dagger a a) = \hbar \omega[a, a^\dagger] a = \hbar\omega a, \\[0.2em]
 \left[ a^\dagger, H\right] &=\hbar\omega (a^\dagger a^\dagger a - a^\dagger a a^\dagger) =\hbar \omega a^\dagger \left[ a^\dagger, a\right] = -\hbar \omega a^\dagger
 \end{aligned}
-$$ {#eq-part2_commutator_for_ladder_and_hamiltonian}
+$$ {#eq-QM_commutator_for_ladder_and_hamiltonian}
 
 $H$ 에 대해 에너지 $E$ 를 갖는 고유상태 $|E\rangle$ 를 생각하자. 즉 $H|E\rangle = E|E\rangle$ 이다. 이로부터,
 
@@ -110,11 +110,11 @@ $$
 Ha|E\rangle &= \left(aH - \hbar \omega a\right) |E\rangle = a(E-\hbar \omega)|E\rangle, \\[0.2em]
 Ha^\dagger |E\rangle &= \left(a^\dagger H + \hbar \omega a^\dagger\right)|E\rangle = a^\dagger (E+\hbar \omega)|E\rangle
 \end{aligned}
-$$ {#eq-part2_commutator_for_ladder_and_hamiltonian_2}
+$$ {#eq-QM_commutator_for_ladder_and_hamiltonian_2}
 
 를 얻는다. 즉 $a|E\rangle$ 은 고유값 $E-\hbar \omega$ 를 갖는 $H$ 의 고유상태이며 $a^\dagger |E\rangle$ 은 고유값 $E+\hbar\omega$ 를 갖는 $H$ 의 고유상태이다. 여기서 $a$ 와 $a^\dagger$ 를 사다리 연산자라고 부르는 이유가 밝혀진다. $a$ 는 에너지의 고유상태를 $\hbar \omega$ 만큼 낮은 에너지의 고유상태로 보내는 연산자이고 $a^\dagger$ 는 에너지의 고유상태를 $\hbar \omega$ 만큼 높은 에너지의 고유상태로 보내는 연산자이다. 이때문에 $a$ 를 *lowering operator*, $a^\dagger$ 를 *raising operator* 라고 한다. 
 
-우리는 @exm-part2_sho_positive_energy 에서 에너지의 고유값이 non-negative 임을 보았다. 우리가 어떤 상태 $|E\rangle$ 에 있다고 하자. $a$ 연산자를 통해 계속 낮은 에너지의 고유상태로 가다 보면 어느 순간에 $0$ 보다 낮은 에너지의 상태를 취해야 할 때가 있는데 이는 불가능 하다. 따라서 어떤 상태 $|E_0\rangle$ 에서 
+우리는 @exm-QM_sho_positive_energy 에서 에너지의 고유값이 non-negative 임을 보았다. 우리가 어떤 상태 $|E\rangle$ 에 있다고 하자. $a$ 연산자를 통해 계속 낮은 에너지의 고유상태로 가다 보면 어느 순간에 $0$ 보다 낮은 에너지의 상태를 취해야 할 때가 있는데 이는 불가능 하다. 따라서 어떤 상태 $|E_0\rangle$ 에서 
 
 $$
 a|E_0\rangle = |\varnothing\rangle
@@ -126,7 +126,7 @@ $$
 a^\dagger a|E_0\rangle = a^\dagger |\varnothing\rangle = |\varnothing\rangle
 $$
 
-과 @eq-part2_sho_hamiltonian_using_ladder 로 부터
+과 @eq-QM_sho_hamiltonian_using_ladder 로 부터
 
 
 $$
@@ -145,7 +145,7 @@ $$
 \hbar \omega \left(n+\dfrac{1}{2}\right),\qquad n=0,\,1,\,2,\ldots
 $$
 
-를 고유값으로 갖는 $H$ 의 고유상태를 얻을 수 있다. 이를 $|n\rangle$ 이라고 쓸 수 있을 것이다. 한가지 의문을 제시할 수 있다. $\frac{\hbar \omega}{2}$ 의 에너지를 갖는 상태는 유일한가? 우리는 이미 @thm-part2_no_degeneracy_in_1d_bound_state 에서 1차원 bound state 에는 축퇴(degeneracy) 가 없다는 것을 보였다. 즉 $\dfrac{1}{2}\hbar \omega$ 를 갖는 상태는 하나 뿐이다. 그렇다면 $\hbar\omega (n+1/2)$ 의 에너지를 갖는 상태도 하나 뿐이다. 그렇다면 우리는 정규화된 고유상태를 $|n\rangle$ 이라고 표기할 수 있을 것이다. 즉, $n=0,\,1,\,2,\ldots$ 에 대해
+를 고유값으로 갖는 $H$ 의 고유상태를 얻을 수 있다. 이를 $|n\rangle$ 이라고 쓸 수 있을 것이다. 한가지 의문을 제시할 수 있다. $\frac{\hbar \omega}{2}$ 의 에너지를 갖는 상태는 유일한가? 우리는 이미 @thm-QM_no_degeneracy_in_1d_bound_state 에서 1차원 bound state 에는 축퇴(degeneracy) 가 없다는 것을 보였다. 즉 $\dfrac{1}{2}\hbar \omega$ 를 갖는 상태는 하나 뿐이다. 그렇다면 $\hbar\omega (n+1/2)$ 의 에너지를 갖는 상태도 하나 뿐이다. 그렇다면 우리는 정규화된 고유상태를 $|n\rangle$ 이라고 표기할 수 있을 것이다. 즉, $n=0,\,1,\,2,\ldots$ 에 대해
 
 $$
 H|n\rangle = \hbar \omega \left(a^\dagger a+ \dfrac{1}{2}I\right) |n\rangle = \hbar \omega \left(n+\dfrac{1}{2}\right) |n\rangle, 
@@ -181,7 +181,7 @@ $$
 
 $$
 a|n\rangle = \sqrt{n}|n-1\rangle,\qquad a^\dagger|n\rangle = \sqrt{n+1}|n+1\rangle
-$$ {#eq-part2_property_of_ladder_operator}
+$$ {#eq-QM_property_of_ladder_operator}
 
 이다. 
 
@@ -192,7 +192,7 @@ $$
 \langle n'|a|n\rangle &= \sqrt{n}\langle n'|n-1\rangle = \sqrt{n}\delta_{n',n-1}, \\
 \langle n'|a^\dagger |n\rangle &= \sqrt{n+1} \langle n'|n+1\rangle = \sqrt{n+1}\delta_{n', n+1}
 \end{aligned}
-$$ {#eq-part2_property_of_ladder_operator_2}
+$$ {#eq-QM_property_of_ladder_operator_2}
 
 이 성립한다. 
 
@@ -206,7 +206,7 @@ $$
 
 $$
 |n\rangle = \dfrac{\left(a^\dagger\right)^n |0\rangle}{\sqrt{n!}}
-$$ {#eq-part2_energy_eigenstate_from_ground_state_in_sho}
+$$ {#eq-QM_energy_eigenstate_from_ground_state_in_sho}
 
 이다.
 
@@ -215,14 +215,14 @@ $$ {#eq-part2_energy_eigenstate_from_ground_state_in_sho}
 
 ### 사다리 연산자와 $X$, $P$
 
-사다리 연산자는 $X,\,P$ 에 대해 @eq-part2_ladder_operator_a 와 @eq-part2_ladder_operator_a_dagger 로 정의되었다. 그렇다면 $X,\,P$ 를 사다리 연산자에 대해 다음과 같이 표현 할 수 있다. 
+사다리 연산자는 $X,\,P$ 에 대해 @eq-QM_ladder_operator_a 와 @eq-QM_ladder_operator_a_dagger 로 정의되었다. 그렇다면 $X,\,P$ 를 사다리 연산자에 대해 다음과 같이 표현 할 수 있다. 
 
 $$
 \begin{aligned}
 X& = \left(\dfrac{\hbar}{2m\omega}\right)^{1/2} \left( a+a^\dagger \right), \\
 P&= i \left(\dfrac{m\omega \hbar}{2}\right)^{1/2} \left(a^\dagger - a\right).
 \end{aligned}
-$$ {#eq-part2_sho_x_and_p_with_ladder_operator}
+$$ {#eq-QM_sho_x_and_p_with_ladder_operator}
 
 
 이제 $X$ 와 $P$ 에 대한 행렬을 $\{|n\rangle :n=0,\,1,\ldots\}$ 기저에서 구해보자.
@@ -265,7 +265,7 @@ $$
 
 ::: {.soluiton}
 
-@eq-part2_sho_x_and_p_with_ladder_operator 로부터 $\langle n|X|n\rangle = 0$, $\langle n|P|n\rangle=0$ 임은 쉽게 알 수 있다. 본문에서 $\langle X^2\rangle = \left(\dfrac{\hbar}{2m\omega}\right)(2n+1)$ 임을 보였다.
+@eq-QM_sho_x_and_p_with_ladder_operator 로부터 $\langle n|X|n\rangle = 0$, $\langle n|P|n\rangle=0$ 임은 쉽게 알 수 있다. 본문에서 $\langle X^2\rangle = \left(\dfrac{\hbar}{2m\omega}\right)(2n+1)$ 임을 보였다.
 
 $$
 \begin{aligned}
@@ -438,7 +438,7 @@ $\langle a(t)\rangle = e^{-i\omega t}\langle a(0)\rangle$ 이며 $\langle a^\dag
 
 ::: {.solution}
 
-에렌페스트 정리를 이용한다. @eq-part2_commutator_for_ladder_and_hamiltonian 로부터
+에렌페스트 정리를 이용한다. @eq-QM_commutator_for_ladder_and_hamiltonian 로부터
 $$
 \dfrac{d}{dt}\langle a(t) \rangle = -\dfrac{i}{\hbar} \langle [a,H]\rangle = -i \omega \langle a(t) \rangle
 $$
@@ -562,7 +562,7 @@ $$
 
 ### $X$ 기저에서의 고유함수와 에르미트 다항식
 
-이제 사다리 연산자를 이용한 에너지 기저에서 $X$ 기저에 대한 표현으로 변환시키는 것을 알아보자. 우리는 $a|0\rangle = 0$ 임을 안다. 또한 @eq-part2_ladder_operator_a 와 @eq-part2_ladder_operator_a_dagger  에서 보았듯이
+이제 사다리 연산자를 이용한 에너지 기저에서 $X$ 기저에 대한 표현으로 변환시키는 것을 알아보자. 우리는 $a|0\rangle = 0$ 임을 안다. 또한 @eq-QM_ladder_operator_a 와 @eq-QM_ladder_operator_a_dagger  에서 보았듯이
 
 $$
 \begin{aligned}
@@ -580,7 +580,7 @@ $$
 여기서
 $$
 \xi := \left(\dfrac{m\omega}{\hbar}\right)^{1/2}x
-$$ {#eq-part2_sho_xi}
+$$ {#eq-QM_sho_xi}
 
 라고 놓고 위의 미분방정식을 $\xi$ 에 대한 미분방정식으로 바꾸면 
 
@@ -604,7 +604,7 @@ $$
 
 $$
 \Psi_0 (x) = \left(\dfrac{m\omega}{\pi \hbar}\right)^{1/4} \exp \left(- \dfrac{m\omega x^2}{2\hbar}\right)
-$$ {#eq-part2_ground_state_of_sho}
+$$ {#eq-QM_ground_state_of_sho}
 
 이다. 우리는 또한 
 
@@ -612,7 +612,7 @@ $$
 |n\rangle = \dfrac{\left(a^\dagger\right)^n |0\rangle}{\sqrt{n!}}
 $$
 
-임을 안다.(@eq-part2_energy_eigenstate_from_ground_state_in_sho) 이로부터 $\Psi_n(x) = \langle x|n\rangle$ 을 얻는다.
+임을 안다.(@eq-QM_energy_eigenstate_from_ground_state_in_sho) 이로부터 $\Psi_n(x) = \langle x|n\rangle$ 을 얻는다.
 
 $$
 \begin{aligned}
@@ -620,7 +620,7 @@ $$
 \end{aligned}
 $$
 
-임을 안다. 이 식을 앞서 @eq-part2_sho_xi 에서 정의한 $\xi:=\left(\dfrac{m\omega}{\hbar}\right)^{1/2}x$ 에 대한 식으로 바꾸면, 
+임을 안다. 이 식을 앞서 @eq-QM_sho_xi 에서 정의한 $\xi:=\left(\dfrac{m\omega}{\hbar}\right)^{1/2}x$ 에 대한 식으로 바꾸면, 
 
 $$
 \Psi_n(\xi) =\left(\dfrac{m\omega}{2^{2n}(n!)^2 \pi \hbar }\right)^{1/4} \left(\xi - \dfrac{d}{d\xi}\right)^n e^{-\xi^2/2}
@@ -630,7 +630,7 @@ $$
 
 $$
 \Psi_n(\xi) = \left(\dfrac{m\omega}{2^{2n}(n!)^2 \pi \hbar }\right)^{1/4} H_n(\xi) \, e^{-\xi^2/2}
-$$ {#eq-part2_sho_energy_eigenstate_with_hermite_polynomial}
+$$ {#eq-QM_sho_energy_eigenstate_with_hermite_polynomial}
 
 로 놓을 수 있으며 $H_0(\xi) = 1$ 이다. 이 때 $H_n(\xi)$ 를 **에르미트 다항식(Hermite polynomials)** 라고 한다. 그렇다면
 
@@ -642,7 +642,7 @@ $$
 
 $$
 H_n(\xi) = e^{\xi^2/2}\left(\xi - \dfrac{d}{d\xi}\right)^n e^{-\xi^2/2}
-$$ {#eq-part2_generator_of_hermite_polynomial}
+$$ {#eq-QM_generator_of_hermite_polynomial}
 
 이다. 
 
@@ -652,7 +652,7 @@ $$ {#eq-part2_generator_of_hermite_polynomial}
 
 #### Recursion relations 
 
-에르미트 다항식에 대해 알아보자. 우선 @eq-part2_generator_of_hermite_polynomial 로 정의된 에르미트 다항식의 첫 4 함수를 정의대로 계산해보면 다음과 같다.(여기서는 변수를 $\xi$ 에서 $y$ 로 변경한다.)
+에르미트 다항식에 대해 알아보자. 우선 @eq-QM_generator_of_hermite_polynomial 로 정의된 에르미트 다항식의 첫 4 함수를 정의대로 계산해보면 다음과 같다.(여기서는 변수를 $\xi$ 에서 $y$ 로 변경한다.)
 
 $$
 \begin{aligned}
@@ -661,9 +661,9 @@ H_1(y) &= 2y, \\
 H_2(y) &= -2 + 4y^2, \\
 H_3(y) &= -12 y + 8 y^3.
 \end{aligned}
-$$ {#eq-part2_sho_hermite_polynomial_first_4}
+$$ {#eq-QM_sho_hermite_polynomial_first_4}
 
-이제 에르미트 다항식에 대해 본격적으로 알아보자.  에르미트 다항식은 @eq-part2_sho_energy_eigenstate_with_hermite_polynomial 로 정의
+이제 에르미트 다항식에 대해 본격적으로 알아보자.  에르미트 다항식은 @eq-QM_sho_energy_eigenstate_with_hermite_polynomial 로 정의
 
 $a$ 와 $a^\dagger$ 연산자를 $\xi=(m\omega/\hbar)^{1/2}x$ 에 대해 표현하면 다음과 같다.
 
@@ -671,7 +671,7 @@ $$
 a = \dfrac{1}{\sqrt{2}}\left(\xi + \dfrac{d}{d\xi}\right),\qquad  a^\dagger = \dfrac{1}{\sqrt{2}}\left(\xi - \dfrac{d}{d\xi}\right)
 $$
 
-@eq-part2_sho_energy_eigenstate_with_hermite_polynomial 를 생각하자. 우리는 $a|n\rangle = \sqrt{n}|n-1\rangle$ 임을 안다. 이를 이용하면
+@eq-QM_sho_energy_eigenstate_with_hermite_polynomial 를 생각하자. 우리는 $a|n\rangle = \sqrt{n}|n-1\rangle$ 임을 안다. 이를 이용하면
 
 $$
 \dfrac{1}{\sqrt{2}}\left(y +\dfrac{d}{dy}\right)\Psi_n (y) = \sqrt{n} \Psi_{n-1}(y)
@@ -693,10 +693,10 @@ $$
 
 $$
 H'_n(y) = 2nH_{n-1}(y).
-$$  {#eq-part2_hermite_polynomial_recurssion_relation_1}
+$$  {#eq-QM_hermite_polynomial_recurssion_relation_1}
 
 
-또한 @eq-part2_generator_of_hermite_polynomial 로부터 다음의 결과를 얻을 수 있다.
+또한 @eq-QM_generator_of_hermite_polynomial 로부터 다음의 결과를 얻을 수 있다.
 $$
 \begin{aligned}
 H_{n+1}(y) &= e^{y^2/2} \left(y-\dfrac{d}{dy}\right)^{n+1} e^{-y^2/2} \\
@@ -710,14 +710,14 @@ $$
 
 $$
 H'_n(y) = 2yH_n(y) - H_{n+1}(y)
-$$ {#eq-part2_hermite_polynomial_recurssion_relation_2}
+$$ {#eq-QM_hermite_polynomial_recurssion_relation_2}
 
 
-그리고 @eq-part2_hermite_polynomial_recurssion_relation_1 과 @eq-part2_hermite_polynomial_recurssion_relation_2 로 부터 다음의 점화식을 얻을 수 있다.
+그리고 @eq-QM_hermite_polynomial_recurssion_relation_1 과 @eq-QM_hermite_polynomial_recurssion_relation_2 로 부터 다음의 점화식을 얻을 수 있다.
 
 $$
 H_{n+1}(y) = 2yH_n(y) - 2nH_{n-1}(y).
-$$ {#eq-part2_hermite_polynomial_recurssion_relation_3}
+$$ {#eq-QM_hermite_polynomial_recurssion_relation_3}
 
 </br>
 
@@ -736,16 +736,16 @@ $$
 
 $$
 \int_{-\infty}^\infty H_n (y)\, H_{m}(y) \, dy = (\sqrt{\pi} 2^n n!)\delta_{nm} 
-$$ {#eq-part2_orthogonality_of_hermite_polynomials}
+$$ {#eq-QM_orthogonality_of_hermite_polynomials}
 
 
 </br>
 
 ### 1차원 단순조화진동자의 에너지 고유함수
 
-@eq-part2_sho_energy_eigenstate_with_hermite_polynomial 에서 우리는 $H_n(x)$ 를 구하는 방법을 알아보았다. 이제 이것을 에너지 고유상태에 대해 그래프를 그려보면 아래와 같다.
+@eq-QM_sho_energy_eigenstate_with_hermite_polynomial 에서 우리는 $H_n(x)$ 를 구하는 방법을 알아보았다. 이제 이것을 에너지 고유상태에 대해 그래프를 그려보면 아래와 같다.
 
-![1차원 단순조화진동자의 파동함수](figures/1d_sho_wavefunctions.png){#fig-part2_sho_wavefunctions width=500}
+![1차원 단순조화진동자의 파동함수](figures/1d_sho_wavefunctions.png){#fig-QM_sho_wavefunctions width=500}
 
 </br>
 
@@ -760,7 +760,7 @@ $P$ 기저에서의 바닥상태의 파동함수 $\Psi_0(p)$ 를 구하라.
 
 ::: {.solution}
 
-@exr-part2_momentum_representation_of_position 로부터 $P$ 기저에서 $\langle p|X|p'\rangle = i\hbar \delta'(p-p')$ 임을 안다. $a$ 를 $P$ 기저에서 표현하면, 
+@exr-QM_momentum_representation_of_position 로부터 $P$ 기저에서 $\langle p|X|p'\rangle = i\hbar \delta'(p-p')$ 임을 안다. $a$ 를 $P$ 기저에서 표현하면, 
 
 $$
 a= i\left(\dfrac{m\omega\hbar}{2}\right)^{1/2} \dfrac{d}{dp} + i\left(\dfrac{1}{2m\omega \hbar}\right)^{1/2}p
@@ -813,7 +813,7 @@ $$
 
 ::: {.solution}
 
-$x=0$ 에서의 경계조건은 $\Psi(0) = 0$ 이다. @eq-part2_sho_hermite_polynomial_first_4 과 @eq-part2_hermite_polynomial_recurssion_relation_3 로부터 에르미트 다항식의 유용한 성질을 얻을 수 있다. $H_0(y)$ 부터 $H_3(y)$ 까지 보면 $H_n(y)$ 에서 $n$ 이 짝수이면 짝함수(even function), $n$ 이 홀수 이면 홀함수 인 것 같다. 이제 @eq-part2_hermite_polynomial_recurssion_relation_3 를 이용하여 보이자. $n$ 보다 작거나 같은 정수에 대해 이 명제가 성립한다고 가정하자. @eq-part2_hermite_polynomial_recurssion_relation_3 로부터
+$x=0$ 에서의 경계조건은 $\Psi(0) = 0$ 이다. @eq-QM_sho_hermite_polynomial_first_4 과 @eq-QM_hermite_polynomial_recurssion_relation_3 로부터 에르미트 다항식의 유용한 성질을 얻을 수 있다. $H_0(y)$ 부터 $H_3(y)$ 까지 보면 $H_n(y)$ 에서 $n$ 이 짝수이면 짝함수(even function), $n$ 이 홀수 이면 홀함수 인 것 같다. 이제 @eq-QM_hermite_polynomial_recurssion_relation_3 를 이용하여 보이자. $n$ 보다 작거나 같은 정수에 대해 이 명제가 성립한다고 가정하자. @eq-QM_hermite_polynomial_recurssion_relation_3 로부터
 
 $$
 H_{n+1}(-y) = 2(-y)H_n(-y) - 2nH_{n-1}(-y)
@@ -821,7 +821,7 @@ $$
 
 이며 $n+1$ 이 짝수이면 $n$, $n-1$ 은 각각 홀수와 짝수이고 $H_n$ 과 $H_{n-1}$ 은 각각 홀함수, 짝함수이며, $H_{n+1}(-y) = 2yH_n(y) -2nH_{n-1}(y) = H_{n+1}(y)$ 이다. 같은 방법으로 $n+1$ 이 홀수이면 $H_{n+1}(-y) = -H_{n+1}(y)$ 라는 것을 보일 수 있다. 
 
-이제 $H_{n}(y)$ 의 상수항을 생각하자. $n$ 이 홀수이면 홀함수 이므로 상수항이 $0$ 이다. 역시 @eq-part2_hermite_polynomial_recurssion_relation_3 에서
+이제 $H_{n}(y)$ 의 상수항을 생각하자. $n$ 이 홀수이면 홀함수 이므로 상수항이 $0$ 이다. 역시 @eq-QM_hermite_polynomial_recurssion_relation_3 에서
 
 $$
 H_{2n+2}(y) = 2yH_{2n+1}(y) - (4n+2)H_{2n}(y)

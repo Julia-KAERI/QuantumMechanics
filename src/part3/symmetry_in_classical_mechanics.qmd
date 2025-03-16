@@ -7,7 +7,7 @@ crossref:
 ---
 
 ::: {.callout-tip appearance="minimal"}
-@shankar1994 의 2장 *Review of Classical Mechanics* 의 2절 *The Hamiltonian formalism* 부터 정리한다.
+@Shankar1994 의 2장 *Review of Classical Mechanics* 의 2절 *The Hamiltonian formalism* 부터 정리한다.
 :::
 
 </br>

@@ -36,7 +36,7 @@ $$ {#eq-part3_translation_operator_for_arbitrary_direction}
 
 </br><div class="border" style="background-color:#F2F4F4  ;padding:5px;">
 
-::: {#exm-part2_addition_of_translation_for_arbitrary_direction}
+::: {#exm-QM_addition_of_translation_for_arbitrary_direction}
 @eq-part3_translation_operator_for_arbitrary_direction 에서 
 
 $$
@@ -108,13 +108,13 @@ $$
 \langle P_x\rangle_R &= \langle P_x\rangle \cos \phi_0 - \langle P_y\rangle \sin \phi_0, \\[0.2em]
 \langle P_y\rangle_R &= \langle P_x\rangle \sin \phi_0 + \langle P_y\rangle \cos \phi_0.
 \end{aligned}
-$$ {#eq-part2_change_of_expectation_for_rotation_in_d2}
+$$ {#eq-QM_change_of_expectation_for_rotation_in_d2}
 
 이제 $P$ 의 $|x\rangle$ 에 대한 작용과 유사하게 위치 캣에 대해 
 
 $$
 U[R]|x,\,y\rangle = |x \cos \phi_0-y \sin \phi_0,\, x\sin \phi_0 + y \cos \phi_0\rangle
-$$ {#eq-part2_rotation_applied_to_position_eigenket}
+$$ {#eq-QM_rotation_applied_to_position_eigenket}
 
 라고 할 수 있을 것이다. 
 
@@ -126,21 +126,21 @@ Infinitesimal rotaiton $\varepsilon_z \hat{\boldsymbol{e}}_3$ 을 생각하자. 
 
 $$
 U[R(\varepsilon_z \hat{\boldsymbol{e}}_3)] = I - \dfrac{i\varepsilon_z L_z}{\hbar}
-$$ {#eq-part2_infinitesimal_rotation_operator_in_2d}
+$$ {#eq-QM_infinitesimal_rotation_operator_in_2d}
 
 로 놓을 수 있다. 여기서 $L_z$ 는 infinitesimal rotation 에 대한 generator 이며 (아직까지는!!!) 어떤 물리적 값과의 연관성도 없다. 따라서
 
 $$
 \langle x,\,y|U[R]|\Psi\rangle = \langle x,\,y| I - \dfrac{i\varepsilon_z L_z}{\hbar}|\Psi\rangle
-$$ {#eq-part2_infinitesimal_rotation_in_2d}
+$$ {#eq-QM_infinitesimal_rotation_in_2d}
 
 이 $\varepsilon_z$ 에 대한 1차 근사로 성립해야 한다.
 
-또한 @eq-part2_rotation_applied_to_position_eigenket 을 infinitesimal rotation 에 적용하면, 
+또한 @eq-QM_rotation_applied_to_position_eigenket 을 infinitesimal rotation 에 적용하면, 
 
 $$
 U[R]|x,\,y\rangle = |x - \varepsilon_z y,\, \varepsilon_z x + y\rangle
-$$ {#eq-part2_infinitesimal_rotation_applied_to_position_eigenket}
+$$ {#eq-QM_infinitesimal_rotation_applied_to_position_eigenket}
 
 이다. 위 식으로부터
 
@@ -195,7 +195,7 @@ $$
 \langle p_x,\,p_y|I - \dfrac{i\varepsilon_z}{\hbar}L_z|\Psi\rangle = \Psi (p_x + \varepsilon_z p_y,\, p_y - \varepsilon_z p_x)
 $$
 
-이며, 따라서 @eq-part2_change_of_expectation_for_rotation_in_d2 에서의 $\langle P_x\rangle_R$ 과 $\langle P_y\rangle_R$ 에 관한 식이 성립한다는 것을 알 수 있다. 즉 우리는 infinitesimal rotation 의 generator $L_z$ 를 구했다. 덤으로 고전역학에서의 $z$ 방향으로의 각운동량
+이며, 따라서 @eq-QM_change_of_expectation_for_rotation_in_d2 에서의 $\langle P_x\rangle_R$ 과 $\langle P_y\rangle_R$ 에 관한 식이 성립한다는 것을 알 수 있다. 즉 우리는 infinitesimal rotation 의 generator $L_z$ 를 구했다. 덤으로 고전역학에서의 $z$ 방향으로의 각운동량
 
 $$
 l_z = xp_y - yp_x
@@ -309,7 +309,7 @@ $$
 
 $$
 U[R(\phi_0 \hat{\boldsymbol{e}}_3)] = \lim_{N \to \infty} \left(I -\dfrac{i}{\hbar} \dfrac{\phi_0}{N}L_z\right)^N = e^{-i\phi_0 L_z/\hbar}.
-$$ {#eq-part2_finite_rotation}
+$$ {#eq-QM_finite_rotation}
 
 </br>
 
@@ -327,7 +327,7 @@ $L_z = -i\hbar \left(x \partial_y - y \partial_x\right)$ 를 극좌표계에서 
 
 $$
 L_z = -i\hbar \dfrac{\partial}{\partial \phi}
-$$ {#eq-part2_angular_momentum_in_polar_coordinate}
+$$ {#eq-QM_angular_momentum_in_polar_coordinate}
 
 임을 보여라.
 
@@ -368,7 +368,7 @@ $$
 
 $$
 [L_z,\, H]=0.
-$$ {#eq-part2_commutation_relation_by_rotational_invariance}
+$$ {#eq-QM_commutation_relation_by_rotational_invariance}
 
 누차 언급했듯이 힐베르트공간이 $L_z$ 와 $H$ 의 공통 고유상태를 기저로 갖는다는 것도 알 수 있다.
 
@@ -408,21 +408,21 @@ $$
 
 $$
 L_z |l_z\rangle = l_z |l_z\rangle.
-$$ {#eq-part2_eigenket_of_lz}
+$$ {#eq-QM_eigenket_of_lz}
 
 위 식은 좌표기저에서 아래의 미분방정식으로 표현된다.
 
 $$
 -i\hbar \dfrac{\partial \Psi_{l_z}(\rho,\, \phi)}{\partial \phi} = l_z \Psi_{l_z}(\rho,\, \phi).
-$$ {#eq-part2_lz_diff_eq}
+$$ {#eq-QM_lz_diff_eq}
 
 위 미분방정식의 해는 다음 식으로 표현된다.
 
 $$
 \Psi_{l_z}(\rho,\,\phi) = R(\rho) e^{il_z \phi/\hbar}.
-$$ {#eq-part2_eigenfunction_of_lz_1}
+$$ {#eq-QM_eigenfunction_of_lz_1}
 
-여기서 $R(\rho)$ 는 임의의 $\rho$ 에만 의존하는 함수이다. 일단 $R(\rho)$ 에 대해서는 접어두고 @eq-part2_eigenfunction_of_lz_1 의 $e^{il_z\phi/\hbar}$ 만 생각하기로 하자. 일견 $l_z$ 에 대한 제한조건은 없는 듯이 보인다. 심지어는 복소수 일 수도 있다. $P$ 의 고유벡터인 $e^{ipx/\hbar}$ 의 경우 파동함수가 bounded 되어야 한다는 조건으로부터 $P$ 의 고유값 $p$ 가 실수임을 주장 할 수 있었다. 그러나 $\phi$ 는 $0$ 와 $2\pi$ 사이의 값만을 가지므로 $P$ 의 경우와 같은 주장을 할 수 없다. 그러나 $X,\,Y,\,P_x,\,P_y$ 가 모두 에르미트 연산자라는 조건과 $[X_i,\,P_j] = i\hbar \delta_{ij}$ 라는 조건으로부터
+여기서 $R(\rho)$ 는 임의의 $\rho$ 에만 의존하는 함수이다. 일단 $R(\rho)$ 에 대해서는 접어두고 @eq-QM_eigenfunction_of_lz_1 의 $e^{il_z\phi/\hbar}$ 만 생각하기로 하자. 일견 $l_z$ 에 대한 제한조건은 없는 듯이 보인다. 심지어는 복소수 일 수도 있다. $P$ 의 고유벡터인 $e^{ipx/\hbar}$ 의 경우 파동함수가 bounded 되어야 한다는 조건으로부터 $P$ 의 고유값 $p$ 가 실수임을 주장 할 수 있었다. 그러나 $\phi$ 는 $0$ 와 $2\pi$ 사이의 값만을 가지므로 $P$ 의 경우와 같은 주장을 할 수 없다. 그러나 $X,\,Y,\,P_x,\,P_y$ 가 모두 에르미트 연산자라는 조건과 $[X_i,\,P_j] = i\hbar \delta_{ij}$ 라는 조건으로부터
 
 $$
 (L_z)^\dagger = (XP_y-YP_x)^\dagger = P_yX-P_xY = XP_y-YP_x = L_z
@@ -440,7 +440,7 @@ $$
 
 $$
 \int_0^\infty \int_0^{2\pi} \Psi_1^\ast \left(-i\hbar \dfrac{\partial}{\partial \phi}\right) \Psi_2\, \rho \,d\rho\,d\phi = \left[\int_0^\infty \int_0^{2\pi} \Psi_2^\ast \left(-i\hbar \dfrac{\partial}{\partial \phi}\right) \Psi_1\, \rho \,d\rho\,d\phi\right]^\ast
-$$ {#eq-part2_conditino_for_hermiticity_of_lz}
+$$ {#eq-QM_conditino_for_hermiticity_of_lz}
 
 이다. 
 
@@ -456,13 +456,13 @@ $$
 \Psi_i(\rho,\, 0) = \Psi_i(\rho,\, 2\pi)
 $$ 
 
-이 이면 @eq-part2_conditino_for_hermiticity_of_lz 를 만족함을 보여라.
+이 이면 @eq-QM_conditino_for_hermiticity_of_lz 를 만족함을 보여라.
 
 :::
 
 ::: {.solution}
 
-@eq-part2_conditino_for_hermiticity_of_lz 에서 부분적분을 이용하면
+@eq-QM_conditino_for_hermiticity_of_lz 에서 부분적분을 이용하면
 
 $$
 \begin{aligned}
@@ -488,7 +488,7 @@ $$
 
 $$
 e^{i2\pi l_z/\hbar}=1
-$$ {#eq-part2_quantization_condition_of_lz}
+$$ {#eq-QM_quantization_condition_of_lz}
 
 이어야 한다. 즉 $L_Z$ 의 고유값 $l_z$ 는 
 
@@ -544,7 +544,7 @@ $l_2=-l_1$ 이라면 $l_1 = \dfrac{m\hbar}{2}$ 이다. 어떤 짝수인 $m_0=2n_
 
 </div></br>
 
-이제 @eq-part2_eigenfunction_of_lz_1 의 $R(\rho)$ 에 대해 생각해보자. 파동함수가 $R(\rho) e^{i\phi l_z/\hbar}$ 의 선형결합이라는 것은 $L_z$ 의 고유벡터가 힐베르트 공간 전체를 span 하지 못한다는 것을 의미한다. 즉 $L_z$ 고유공간은 힐베르트 공간의 부분공간이다. $L_z$ 의 고유값 $m\hbar$ 에 대한 파동함수 $\Phi_m(\phi)$ 에 대한 정규화 조건은 
+이제 @eq-QM_eigenfunction_of_lz_1 의 $R(\rho)$ 에 대해 생각해보자. 파동함수가 $R(\rho) e^{i\phi l_z/\hbar}$ 의 선형결합이라는 것은 $L_z$ 의 고유벡터가 힐베르트 공간 전체를 span 하지 못한다는 것을 의미한다. 즉 $L_z$ 고유공간은 힐베르트 공간의 부분공간이다. $L_z$ 의 고유값 $m\hbar$ 에 대한 파동함수 $\Phi_m(\phi)$ 에 대한 정규화 조건은 
 
 $$
 \int_0^{2\pi} \Phi^\ast_m(\phi)\Phi_{m'}(\phi)\, d\phi =\delta_{mm'}
@@ -554,7 +554,7 @@ $$
 
 $$
 \Phi_m(\phi) = \dfrac{1}{\sqrt{2\pi}}e^{im\phi}
-$$ {#eq-part2_wavefunction_of_lz_eigenstate}
+$$ {#eq-QM_wavefunction_of_lz_eigenstate}
 
 
 </br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
@@ -630,7 +630,7 @@ $$
 
 $$
 \left[-\dfrac{\hbar^2}{2\mu} \left(\dfrac{\partial^2}{\partial^2\rho} + \dfrac{1}{\rho}\dfrac{\partial}{\partial \rho} + \dfrac{1}{\rho^2}\dfrac{\partial^2}{\partial \phi^2} \right) + V(\rho) \right] \Psi_E(\rho,\,\phi) = E\Psi_E(\rho,\, \phi).
-$$ {#eq-part2_hamiltonian_eigenvalue_for_radial_potential}
+$$ {#eq-QM_hamiltonian_eigenvalue_for_radial_potential}
 
 여기서 $\mu$ 는 질량이다. ($m$ 은 magnetic quantum number 로 쓰기 때문에..) $[H,\, L_z] = 0$ 이므로 $H$ 와 $L_z$ 에 대한 공통의 고유벡터가 존재한다. $L_z$ 에 대한 고유값을 $m\hbar$ 라고 하면 $L_z$ 에 대항 고유함수는 아래와 같은 꼴을 가진다.
 
@@ -638,11 +638,11 @@ $$
 \Psi_{Em}(\rho,\, \phi) = R_{Em}(\rho) \Phi_m(\phi)
 $$
 
-여기서 @eq-part2_wavefunction_of_lz_eigenstate 의 $R(\rho),\, \Phi_m(\phi)$ 를 관계된 인덱스 $E,\,m$ 과 함께 기록했다. $R(\rho)$ 는 $E$, $m$ 과 관계가 있을 수 있으므로 두개의 인덱스를 모두 표기하기로 한다. 우리는 @eq-part2_angular_momentum_in_polar_coordinate 에서 $L_z = -i\hbar \partial/\partial \phi$ 임을 보였고 $L_z \Psi_m(\rho,\,\phi) = m \Psi_m(\rho,\,\phi)$ 임을 안다. 이를 @eq-part2_hamiltonian_eigenvalue_for_radial_potential 에 대임해보면 $\Phi_m(\phi)$ 는 $m^2$ 과 관련된 항만 남기고 소거되어 아래와 같이 된다.
+여기서 @eq-QM_wavefunction_of_lz_eigenstate 의 $R(\rho),\, \Phi_m(\phi)$ 를 관계된 인덱스 $E,\,m$ 과 함께 기록했다. $R(\rho)$ 는 $E$, $m$ 과 관계가 있을 수 있으므로 두개의 인덱스를 모두 표기하기로 한다. 우리는 @eq-QM_angular_momentum_in_polar_coordinate 에서 $L_z = -i\hbar \partial/\partial \phi$ 임을 보였고 $L_z \Psi_m(\rho,\,\phi) = m \Psi_m(\rho,\,\phi)$ 임을 안다. 이를 @eq-QM_hamiltonian_eigenvalue_for_radial_potential 에 대임해보면 $\Phi_m(\phi)$ 는 $m^2$ 과 관련된 항만 남기고 소거되어 아래와 같이 된다.
 
 $$
 \left[-\dfrac{\hbar^2}{2\mu} \left(\dfrac{\partial^2}{\partial^2\rho} + \dfrac{1}{\rho}\dfrac{\partial}{\partial \rho} -\dfrac{m^2}{\rho^2} \right) + V(\rho) \right] R_{Em}(\rho,\,\phi) = E R_{Em}(\rho,\, \phi)
-$$ {#eq-part2_radial_differential_equation}
+$$ {#eq-QM_radial_differential_equation}
 
 즉 포텐셜이 raidal 에만 의존한다면 파동함수의 각 부분 $\Phi_m(\phi)$ 가 제외된 radial 부분만의 미분방정식만 남게 된다. 
 
@@ -654,7 +654,7 @@ $$ {#eq-part2_radial_differential_equation}
 
 #### Shankar 12.3.5
 
-@eq-part2_radial_differential_equation 에서 각운동량이 repulsive potential 을 생성하는 것처럼 보인다. 그 gradiant 를 계산하고 원심력과 동일함을 보여라.
+@eq-QM_radial_differential_equation 에서 각운동량이 repulsive potential 을 생성하는 것처럼 보인다. 그 gradiant 를 계산하고 원심력과 동일함을 보여라.
 
 :::
 
@@ -700,7 +700,7 @@ $\Phi_m(\phi)= \dfrac{1}{\sqrt{2\pi}}e^{im\phi}$ 가 고유벡터이며 절대�
 
 $$
 H = \dfrac{P_x^2+P_y^2}{2\mu} + \dfrac{1}{2}\mu \omega^2 (X^2+Y^2).
-$$ {#eq-part2_shankar_12_3_7_1}
+$$ {#eq-QM_shankar_12_3_7_1}
 
 ($1$) $[H,\,L_z]=0$ 임을 보이고 $H$ 에 대한 고유값 문제를 $R_{Em}(\rho)$ 에 대한 미분방정식이 문제가 됨을 보여라
 
@@ -717,7 +717,7 @@ $$ {#eq-part2_shankar_12_3_7_1}
 
 $$
 U'' + \left[\left(\dfrac{2|m|+1}{y} \right) - 2y\right] U' + (2\varepsilon - 2|m| -2)U = 0
-$$ {#eq-part2_shankar_12_3_7_2}
+$$ {#eq-QM_shankar_12_3_7_2}
 
 ($6$) $U$ 를 멱급수로 $U(y) = \sum_{r=0}^\infty C_r y^r$ 과 같이 전개하면 2개의 항으로 이루어진 점화식을 얻을 수 있다는 것을 보여라.
 
@@ -744,13 +744,13 @@ $$
 
 ($1$) $U^\dagger H U = 0$ 이므로 $[H,\, L_z]=0$.
 
-($2$) @eq-part2_radial_differential_equation 을 사용하면
+($2$) @eq-QM_radial_differential_equation 을 사용하면
 
 $$
 \left[-\dfrac{\hbar^2}{2\mu} \left(\dfrac{d^2}{d^2\rho} + \dfrac{1}{\rho}\dfrac{d}{d \rho} -\dfrac{m^2}{\rho^2} \right) + \dfrac{1}{2}\mu\omega^2 \rho^2 -E \right] R(\rho) =0
-$$ {#eq-part2_shankar_12_3_7_3}
+$$ {#eq-QM_shankar_12_3_7_3}
 
-을 만족해야 한다. $\rho\to 0$ 인 극한에서 $R(\rho) \approx \rho^k$ 라고 하자. 파동함수는 연속이어야 하므로 $R(\rho)$ 는 원점에서 finite 해야 하며 따라서 $k>0$ 이어야 한다. $R(\rho) \approx \rho^k$ 에 대해 @eq-part2_shankar_12_3_7_3 은
+을 만족해야 한다. $\rho\to 0$ 인 극한에서 $R(\rho) \approx \rho^k$ 라고 하자. 파동함수는 연속이어야 하므로 $R(\rho)$ 는 원점에서 finite 해야 하며 따라서 $k>0$ 이어야 한다. $R(\rho) \approx \rho^k$ 에 대해 @eq-QM_shankar_12_3_7_3 은
 
 $$
 \left[-\dfrac{\hbar^2}{2m} \left(k(k-1)\rho^{k-2} +k\rho^{k-2}-m^2\rho^{k-2}\right) + \dfrac{\mu \omega^2\rho^{k+2}}{2} - E\rho^{k}\right] \approx 0
@@ -764,7 +764,7 @@ $$
 
 이므로 $k= |m|$ 이어야 한다. 즉 $\rho \approx 0$ 근처에서 $R(\rho) \approx \rho^{|m|}$ 이어야 한다.
 
-($2$) $\rho \to \infty$ 극한에서 $R(\rho \to \infty) = 0$ 이어야 하며, 위의 미분방정식 @eq-part2_shankar_12_3_7_3 은
+($2$) $\rho \to \infty$ 극한에서 $R(\rho \to \infty) = 0$ 이어야 하며, 위의 미분방정식 @eq-QM_shankar_12_3_7_3 은
 
 $$
 \dfrac{d^2 R}{d\rho^2} - \dfrac{\mu^2 \omega^2}{\hbar^2} \rho^2 R(\rho) + \dfrac{2\mu E}{\hbar^2}R(\rho)= 0
@@ -774,27 +774,27 @@ $$
 
 $$
 \dfrac{d^2 R}{d \rho^2} - \dfrac{\mu^2 \omega^2}{\hbar^2} \rho^2 R(\rho) = 0
-$$ {#eq-part2_shankar_12_3_7_4}
+$$ {#eq-QM_shankar_12_3_7_4}
 
 으로 생각 할 수 있다. 위 방정식은 1차원 단순조화 진동자의 미분방정식과 같은 형태이므로 1차원 단순조화진동자의 해를 참고 할 수 있다. 1차원 단순조화진동자의 해는 에르미트 다항식과 $e^{-\alpha^2x^2}$ 의 곱 형태이며 $x\to \infty$ 영역에서 $e^{-\alpha^2x^2}$ 이 dominant 하다. 따라서 
 
 $$
 R(\rho) \approx e^{-\mu \omega \rho^2/\hbar}
-$$ {#eq-part2_shankar_12_3_7_5}
+$$ {#eq-QM_shankar_12_3_7_5}
 
-라고 놓을 수 있다. 이 식을 @eq-part2_shankar_12_3_7_4 의 조변에 넣으면
+라고 놓을 수 있다. 이 식을 @eq-QM_shankar_12_3_7_4 의 조변에 넣으면
 
 $$
 \dfrac{d^2 R}{d\rho^2} - \dfrac{\mu^2 \omega^2}{\hbar^2} \rho^2 R(\rho) - \dfrac{\mu \omega}{\hbar} R(\rho) 
 $$
 
-이 되는데 앞서 보았듯이 $\rho \to \infty$ 극한에서 $|\rho^2 R(\rho) | \gg |R(\rho)|$ 이므로 근사적으로 @eq-part2_shankar_12_3_7_4 를 만족한다고 볼 수 있다.
+이 되는데 앞서 보았듯이 $\rho \to \infty$ 극한에서 $|\rho^2 R(\rho) | \gg |R(\rho)|$ 이므로 근사적으로 @eq-QM_shankar_12_3_7_4 를 만족한다고 볼 수 있다.
 
-($4$) $\varepsilon = E/\hbar\omega$ 와 $y=\sqrt{\mu \omega/\hbar} \rho$ 에 대해 @eq-part2_shankar_12_3_7_3 은
+($4$) $\varepsilon = E/\hbar\omega$ 와 $y=\sqrt{\mu \omega/\hbar} \rho$ 에 대해 @eq-QM_shankar_12_3_7_3 은
 
 $$
 \left[-\dfrac{1}{2}\left(\dfrac{d^2}{d y^2} + \dfrac{1}{y} \dfrac{d}{d y} - \dfrac{m^2}{y^2}\right) + \dfrac{y^2}{2} -\varepsilon\right] R(y) = 0
-$$ {#eq-part2_shankar_12_3_7_6}
+$$ {#eq-QM_shankar_12_3_7_6}
 
 ($5$) $R(y) = y^{|m|} e^{-y^2/2} U(y)$ 라고 하자. 
 
@@ -816,7 +816,7 @@ R''(y) + &\dfrac{R'(y)}{y} - \dfrac{m^2R(y)}{y^2} -y^2R(y)  \\
 \end{aligned}
 $$
 
-이므로 @eq-part2_shankar_12_3_7_6 은
+이므로 @eq-QM_shankar_12_3_7_6 은
 
 $$
 y^{|m|} e^{-y^2/2}\left[ U''(y) + \left(\dfrac{2|m|+1}{y}-2y\right)U'(y) + (2\varepsilon - 2|m|-2) U(y)\right] = 0
@@ -826,7 +826,7 @@ $$
 
 $$
 U''(y) + \left(\dfrac{2|m|+1}{y}-2y\right)U'(y) + (2\varepsilon - 2|m|-2) U(y)= 0
-$$ {#eq-part2_shankar_12_3_7_7}
+$$ {#eq-QM_shankar_12_3_7_7}
 
 이다. 
 

@@ -6,8 +6,8 @@
 ### 참고문헌
 ::: {#refs}
 
-@susskind2014quantum
+@Susskind2014quantum
 
-@shankar1994
+@Shankar1994
 
 :::
