@@ -503,7 +503,7 @@ $$
 
 ### 가우시안 파동함수와 불확정성 {#sec-QM_gaussian_wavefunction}
 
-@sec-part1_wavefunction 의 [파동함수](../part1/quantum_state.qmd#sec-part1_wavefunction) 을 생각하자. $\psi(x) = \langle x|\psi\rangle$ 는 상태 $|\psi\rangle$ 을 에르미트 연산자 $X$ 의 고유값의 함수로 표현한 것이다. 따라서 $|\psi(x)|^2\,dx$ 는 $|\psi\rangle$ 상태의 입자를 $[x,\,x+dx]$ 구간에서 발견할 확률이다. 여기서는 $\psi(x)$ 가 가우시안 함수인 경우를 살펴보자. 정규화를 생각하면
+@sec-part1_wavefunction 의 [파동함수](../AUX/quantum_state.qmd#sec-part1_wavefunction) 을 생각하자. $\psi(x) = \langle x|\psi\rangle$ 는 상태 $|\psi\rangle$ 을 에르미트 연산자 $X$ 의 고유값의 함수로 표현한 것이다. 따라서 $|\psi(x)|^2\,dx$ 는 $|\psi\rangle$ 상태의 입자를 $[x,\,x+dx]$ 구간에서 발견할 확률이다. 여기서는 $\psi(x)$ 가 가우시안 함수인 경우를 살펴보자. 정규화를 생각하면
 
 $$
 \psi (x) = \dfrac{1}{(\pi \Delta^2)^{1/4}} \exp \left(-\dfrac{(x-a)^2}{2\Delta^2}\right)
@@ -605,7 +605,7 @@ $$
 \psi_p (x) = A e^{ipx/\hbar}
 $$
 
-를 얻는다. 정규화 조건 $\langle p'|p\rangle = \delta (p-p')$ 과 @prp-part1_properties_of_dirac_delta_function 의 ($7$) 로부터
+를 얻는다. 정규화 조건 $\langle p'|p\rangle = \delta (p-p')$ 과 @prp-CHM_properties_of_dirac_delta_function 의 ($7$) 로부터
 
 $$
 \delta(p-p') = \int_{-\infty}^\infty \psi_{p'}^\ast (x) \, \psi_p(x) dx = |A|^2\int_{-\infty}^\infty e^{i(p-p')/\hbar}\, dx =2\pi \hbar^2 {|A|^2}\delta(p-p')
@@ -676,7 +676,7 @@ $$
 \Delta X \cdot \Delta P = \dfrac{\hbar}{2}
 $$
 
-를 얻었다. [불확정성 원리](../part1/quantum_state.qmd#sec-part1_uncertainty_principle) 에서 얻은 @eq-part1_general_uncertainty 와 @exr-QM_uncertainty_of_X_and_P 부터 얻은 결과를 생각하면 임의의 파동함수에 대해 
+를 얻었다. [불확정성 원리](../AUX/quantum_state.qmd#sec-part1_uncertainty_principle) 에서 얻은 @eq-part1_general_uncertainty 와 @exr-QM_uncertainty_of_X_and_P 부터 얻은 결과를 생각하면 임의의 파동함수에 대해 
 
 $$
 \Delta X \cdot \Delta P \ge \dfrac{\hbar}{2}

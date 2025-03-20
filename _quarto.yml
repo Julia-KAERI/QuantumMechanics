@@ -10,11 +10,11 @@ book:
   
   chapters:
     - index.qmd
-    - part: src/part1/part1.qmd
+    - part: src/CHM/CHM.qmd
       chapters:
-      - src/part1/mathematical_foundation.qmd
-      - src/part1/quantum_state.qmd
-      - src/part1/entanglement.qmd
+      - src/CHM/mathematical_foundation.qmd
+      - src/CHM/symmetry_in_classical_mechanics.qmd
+      - src/CHM/some_proofs.qmd
     - part: src/QM/QM.qmd
       chapters:
       - src/QM/QM_foundation_of_quantum_theory.qmd
@@ -26,11 +26,15 @@ book:
       - src/QM/QM_N_DoF_system.qmd
       - src/QM/QM_symmetry.qmd
       - src/QM/QM_angular_momentum.qmd
-    - part : src/part3/part3.qmd
+    # - part : src/part3/part3.qmd
+    #   chapters:
+    #   - src/part3/some_proofs.qmd
+    #   - src/part3/symmetry_in_classical_mechanics.qmd
+    #   - src/part3/historical_note.qmd
+    - part : src/AUX/AUX.qmd
       chapters:
-      - src/part3/some_proofs.qmd
-      - src/part3/symmetry_in_classical_mechanics.qmd
-      - src/part3/historical_note.qmd
+      - src/AUX/entanglement.qmd
+      - src/AUX/quantum_state.qmd
     # - part: src/figure/figure.qmd
     #   chapters:
     #   - src/figure/figure_part1_1.qmd
