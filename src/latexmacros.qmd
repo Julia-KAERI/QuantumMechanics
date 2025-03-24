@@ -5,7 +5,7 @@ format: html
 ::: {.hidden}
 
 %\newcommand*{\e}{\mathrm{e}}
-%\renewcommand{\P}{\mathrm{P}}
+
 
 %\newcommand{\bf}[1]{\boldsymbol{#1}}
 
@@ -14,9 +14,12 @@ format: html
 \newcommand{\C}{\mathbb{C}}
 \newcommand{\Q}{\mathbb{Q}}
 \newcommand{\Z}{\mathbb{Z}}
+\newcommand{\P}{\mathbb{P}}
+
 \newcommand{\im}{\operatorname{im}}
 \newcommand{\tr}{\operatorname{tr}}
 \newcommand{\rank}{\operatorname{rank}}
+
 
 <!-- \newcommand{\hom}{\text{Hom}}
 \newcommand{\iso}{\text{Iso}}
@@ -33,6 +36,7 @@ format: html
      \vcenter{\hbox{$#2#3$}}\kern-.5\wd0}}
 \def\ddashint{\Xint=}
 \def\dashint{\Xint-}
+
 
 
 $$

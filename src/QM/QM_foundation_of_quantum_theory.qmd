@@ -90,7 +90,7 @@ $$
 
 > 파동 $\psi$ 와 관련된 각각의 광자에 대해 $\psi$ 는 **확률 진폭(probability amplitude)** 이라고 불릴 수 있다. $|\psi(x)|^2$ 은 입자를 $x$ 에서 발견할 확률밀도함수이다.
 
-여기서 중요한 것은 파동으로서의 빛은 다수의 광자의 성질이 아니라 각각의 광자가 가지는 성질이다. 단색화된 빛(단일한 진동수를 가지는 광지들) 은 같은 파동함수 $\psi$ 를 가지며, 따라서 같은 확률분포를 가진다. 다수의 광자에 의해 고전 전자기학에서 예측되는 파동의 성질을 보이며 확률적인 모습은 감추어진다.
+여기서 중요한 것은 파동으로서의 빛은 다수의 광자의 성질이 아니라 각각의 광자가 가지는 성질이다. 단색화된 빛(단일한 진동수를 가지는 광지들) 은 같은 파동함수 $\psi(x)$ 를 가지며, 따라서 같은 확률분포를 가진다. 다수의 광자에 의해 고전 전자기학에서 예측되는 파동의 성질을 보이며 확률적인 모습은 감추어진다.
 
 </br>
 
@@ -128,11 +128,11 @@ $$
 
 $$
 \langle x|X|x'\rangle = x\delta(x-x'),\qquad \langle x|P|x'\rangle = -i\hbar \delta'(x-x').
-$$
+$$ {#eq-QM_position_and_momentum_operator}
 
 $x,\,p$ 를 변수로 갖는 연산자 $\omega(x,\,p)$ 는 $X,\,P$ 를 변수로 갖는 연산자 $\Omega(X,\, P)$ 로 기술된다.
 
-**원리 3.** $|\psi\rangle$ 상태의 입자에 대해 $\Omega$ 를 측정 할 경우 측정되는 양은 $\Omega$ 의 고유값(eigenvector) 가운데 하나이며 $\omega$ 가 측정되었을 경우 상태는 $\omega$ 를 고유값으로 갖는 고유상태 $|\omega\rangle$ 가 된다. 이를 파동함수의 **붕괴(collapse)** 라고 한다. 이 때 $|\psi\rangle$ 이 $|\omega\rangle$ 상태로 측정될 확률 $\mathcal{P}(\omega)$ 는 $|\langle \omega|\psi\rangle|^2$ 에 비례한다.   
+**원리 3.** $|\psi\rangle$ 상태의 입자에 대해 $\Omega$ 를 측정 할 경우 측정되는 양은 $\Omega$ 의 고유값(eigenvalue) 가운데 하나이며 $\omega$ 가 측정되었을 경우 상태는 $\omega$ 를 고유값으로 갖는 고유상태 $|\omega\rangle$ 가 된다. 이를 상태 혹은 상태벡터의 **붕괴(collapse)** 라고 한다. 이 때 $|\psi\rangle$ 이 $|\omega\rangle$ 상태로 측정될 확률 $P(\omega)$ 는 $|\langle \omega|\psi\rangle|^2$ 에 비례한다.   
 
 **원리 4.** 상태벡터 $|\psi(t)\rangle$ 은 슈레딩거 방정식을 따른다.
 
@@ -150,67 +150,74 @@ $$ {#eq-QM_schroedinger_equation}
 
 ## 원리 1, 2, 3 에 대해
 
+### 분리 가능한 힐베르트 공간 {#sec-QM_separable_hilbert_space}
+
 **원리 1** 의 분리가능한 힐베르트 공간은 항상 가산무한개의 기저를 가질 수 있다. 즉 우리는 기저를 $|\phi_1\rangle,\, |\phi_2\rangle, \ldots$ 과 같이 표현 할 수 있다는 의미이다. 양자역학의 원리를 분리가능한 힐베르트 공간에서 구성한 것은 폰 노이만이다. 앞으로는 힐베르트 공간이라고 할 때는 분리가능한 힐베르트 공간을 의미한다.
 
 </br>
 
 ### 중첩 원리 {#sec-QM_superposition}
 
-힐베르트 공간 $\mathcal{H}$ 는 복소벡터공간이며, 따라서 $|\psi_1\rangle,\, |\psi_2\rangle \in \mathcal{H}$ 이면 임의의 스칼라 $\alpha,\, \beta\in \C$ 에 대해 $\alpha|\psi_1\rangle + \beta|\psi_2\rangle \in \mathcal{H}$ 이다. 이것을 **중첩 원리 (principle of superposition)** 이라고 한다. 중첩원리는 양자역학만의 특징은 아니다. 예를 들어 $f(0)=f(L)=g(0)=g(L)=0$ 을 만족하는 두 정상파 $f,\,g$ 를 생각해보자. $a,\,b\in \R$ 에 대해 $h(x) = af(x)+bg(x)$ 역시 이 경계조건을 만족하며, 가능한 정상파이다. 고전역학적 정상파 $h(x)$ 는 $f$ 나 $g$ 와는 다른 에너지를 가지며, 실제로 별도의 정상파이다. 그러나 양자역학적 중첩 $\alpha|\psi_1\rangle + \beta|\psi_2\rangle$ 은 측정에 대해 어떤 경우는 $|\psi_1\rangle$ 의 결과가, 다른 때는 $|\psi_2\rangle$ 의 결과가 나올 뿐이다. 
+힐베르트 공간 $\mathcal{H}$ 는 복소벡터공간이며, 따라서 $|\psi_1\rangle,\, |\psi_2\rangle \in \mathcal{H}$ 이면 임의의 스칼라 $\alpha,\, \beta\in \C$ 에 대해 $\alpha|\psi_1\rangle + \beta|\psi_2\rangle \in \mathcal{H}$ 이다. 이것을 **중첩 원리 (principle of superposition)** 라고 한다. 중첩원리는 양자역학만의 특징은 아니다. 예를 들어 $f(0)=f(L)=g(0)=g(L)=0$ 을 만족하는 두 정상파 $f,\,g$ 를 생각해보자. $a,\,b\in \R$ 에 대해 $h(x) = af(x)+bg(x)$ 역시 이 경계조건을 만족하며, 가능한 정상파이다. 고전역학적 정상파 $h(x)$ 는 $f$ 나 $g$ 와는 다른 에너지를 가지며, 실제로 별도의 정상파이다. 그러나 양자역학적 중첩 $\alpha|\psi_1\rangle + \beta|\psi_2\rangle$ 은 측정에 대해 어떤 경우는 $|\psi_1\rangle$ 의 결과가, 다른 때는 $|\psi_2\rangle$ 의 결과가 나올 뿐이다. 
 
 </br>
 
 ### 사영 연산자 {#sec-QM_projection_operator}
 
-힐베르트 공간 $\mathcal{H}$ 위에서 정의된 연산자 $\Omega$ 를 생각하자. 이 연산자 $\Omega$ 는 에르미트 연산자이므로 $\Omega^\dagger = \Omega$ 이며 $\Omega$ 연산자에 대한 서로 직교하는 고유상태로 $\mathcal{H}$ 의 기저를 구성 할 수 있다. $\{|\omega_i\rangle\}$ 이 서로 직교하는 $\Omega$ 의 고유벡터의 집합이자 $\mathcal{H}$ 의 기저라고 하면 $|\psi\rangle$ 을 $\{|\omega_i\rangle\}$ 기저에 대해 아래와 같이 표현 할 수 있다.
+힐베르트 공간 $\mathcal{H}$ 위에서 정의된 에르미트 연산자 $\Omega$ 는 $\Omega^\dagger = \Omega$ 이며 $\Omega$ 연산자에 대한 서로 직교하는 고유상태로 $\mathcal{H}$ 의 기저를 구성 할 수 있다. $\{|\omega_i\rangle\}$ 이 서로 직교하는 $\Omega$ 의 고유벡터의 집합이자 $\mathcal{H}$ 의 기저라고 하면 $|\psi\rangle$ 을 $\{|\omega_i\rangle\}$ 기저에 대해 아래와 같이 표현 할 수 있다.
 
 $$
 |\psi\rangle = \sum_i |\omega_i\rangle \langle \omega_i | \psi\rangle 
 $$
 
 
-여기에 **사영연산자(projection operator)** $P_\omega$ 를 다음과 같이 정의하자.
+여기에 **사영연산자(projection operator)** $\P{}_\omega$ 를 다음과 같이 정의하자.
 
 $$
 \boxed{
-P_\omega := |\omega\rangle \langle \omega |}
+\P_\omega := |\omega\rangle \langle \omega |}
 $$ {#eq-QM_projection_operator}
-
-사영연산자의 다음과 같은 특성을 가진다.
-
-&emsp;($1$) $P_\omega^2 = P_\omega$,
-
-&emsp;($2$) $\theta,\, \phi$ 가 한 정규직교기저에 속하는 두 벡터일 때 $P_\omega P_\theta = \delta_{\theta,\omega}P_\theta$,
-
-&emsp;($3$) $P_\omega$ 는 에르미트연산자이다.
 
 </br>
 
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-<div class="border" style="background-color:#F2F4F4  ;padding:5px;">
 
-
-::: {#exm-QM_properties_of_projection_operator}
+::: {#prp-QM_properties_of_projection_operator}
 
 #### 사영연산자의 성질
 
-힐베르트 공간 $\mathcal{H}$ 에서 정의된 사영연산자 $P_\omega = |\omega \rangle \langle \omega|$ 가 위의 성질 ($1$), ($2$), ($3$) 을 가짐을 보이자.
+벡터 $|\omega\rangle$ 에 대한 사영연산자를 $\P_\omega$ 라고 할 때 다음이 성랍한다.
 
+&emsp;($1$) $\P_\omega^2 = \P_\omega$,
 
-($1$) $\langle \psi |P_\omega^2 |\phi\rangle = \langle \psi |\omega\rangle \langle \omega |\omega \rangle \langle \omega|\phi\rangle$ 이며 $\langle \omega|\omega\rangle = 1$ 이므로 $\langle \psi |P_\omega^2 |\phi \rangle= \langle \psi |\omega \rangle \langle \omega|\phi \rangle = \langle \psi |P_\omega |\phi\rangle$ 이다.
+&emsp;($2$) $\theta,\, \phi$ 가 한 정규직교기저에 속하는 두 벡터일 때 $\P_\omega P_\theta = \delta_{\theta,\omega}\P_\theta$,
 
-($2$) $\langle \psi |P_\omega P_\theta |\phi\rangle = \langle \psi |\omega\rangle \langle \omega | \theta \rangle \langle \theta |\phi\rangle = \delta_{\omega,\theta}\langle \psi |P_\omega | \phi\rangle$
-
-($3$) $\langle \psi|P_\omega|\phi\rangle =\langle \psi |\omega \rangle \langle \omega |\phi\rangle = \langle \phi |\omega\rangle^\ast \langle \omega |\psi\rangle^\ast = (\langle \phi|\omega\rangle \langle \omega |\psi\rangle)^\ast = \langle \phi| P_\omega |\psi\rangle^\ast = \langle \psi|P_\omega^\dagger |\phi\rangle$. 따라서 $P_\omega = P_\omega^\dagger$ 이다. 
+&emsp;($3$) $\P_\omega$ 는 에르미트연산자이다.
 
 :::
+
 </div>
+
 </br>
+
+::: {.proof}
+
+($1$) $\langle \omega|\omega\rangle=1$ 임을 이용한다. $\langle \psi |\P_\omega^2 |\phi\rangle = \langle \psi |\omega\rangle \langle \omega |\omega \rangle \langle \omega|\phi\rangle = \langle \psi |\omega \rangle \langle \omega|\phi \rangle = \langle \psi |\P_\omega |\phi\rangle$.
+
+($2$) $\langle \psi |\P_\omega \P_\theta |\phi\rangle = \langle \psi |\omega\rangle \langle \omega | \theta \rangle \langle \theta |\phi\rangle = \delta_{\omega,\theta}\langle \psi |\P_\omega | \phi\rangle$
+
+($3$) $\langle \psi|\P_\omega|\phi\rangle =\langle \psi |\omega \rangle \langle \omega |\phi\rangle = \langle \phi |\omega\rangle^\ast \langle \omega |\psi\rangle^\ast = (\langle \phi|\omega\rangle \langle \omega |\psi\rangle)^\ast = \langle \phi| \P_\omega |\psi\rangle^\ast = \langle \psi|\P_\omega^\dagger |\phi\rangle$. 따라서 $\P_\omega = \P_\omega^\dagger$ 이다. 
+
+:::
+
+</br>
+
 
 
 ### 상태의 정규화 {#sec-QM_normalization_of_state}
 
-**윈리 3** 으로부터 $\mathcal{P}(\omega) \propto |\langle \omega |\psi\rangle |^2$ 임을 안다. 이것은 매우 중요한데 양자역학이 본질적으로 확률론적이라는 것이다. 또한 $\mathcal{P}(\omega)$ 가 확률이라는 것으로 부터 $\sum_{i} \mathcal{P}(\omega_i)=1$ 이어야 한다. 즉,
+**윈리 3** 으로부터 $P(\omega) \propto |\langle \omega |\psi\rangle |^2$ 임을 안다. 이것은 매우 중요한데 양자역학이 본질적으로 확률론적이라는 것이다. 또한 $P(\omega)$ 가 확률이라는 것으로 부터 $\sum_{i} P(\omega_i)=1$ 이어야 함을 안다. 이것은 확률의 공리이다. 즉,
 
 $$
 P(\omega_i) = \dfrac{|\langle \omega_i|\psi\rangle|^2}{\sum_j|\langle \omega_j|\psi\rangle|^2 } =  \dfrac{|\langle \omega_i|\psi\rangle|^2}{\langle \psi|\psi\rangle}
@@ -222,13 +229,13 @@ $$
 P(\omega_i) = |\langle \omega_i |\psi_N\rangle|^2
 $$
 
-이다. 벡터 $|\psi\rangle$ 에 대해 $|\psi_N\rangle$ 을 **정규화되었다(be normalized)** 고 한다. 정규화된 벡터와 일반 벡터 사이에는 물리적인 차이가 없으며 단지 편의의 문제이다. 그러나 그 편의가 매우 크기 때문에 앞으로 특별한 언급이 없는 한 정규화된 벡터를 사용하기로 한다. 한가지 주의할 것은 정규화된, 그리고 직교하는 두 벡터 $|\psi_1\rangle,\, |\psi_2\rangle$ 의 선형결합 $a_1|\psi_1\rangle + a_2|\psi_2\rangle$ 은 자동으로 정규화 되지 않는다는 것, 하지만 이 벡터 역시 아래와 같이 정규화가 가능하다는 것이다. (직교 조건, 즉 $\langle \psi_1|\psi_2\rangle = 0$ 조건이 붙었다는 것에 유의하라.)
+이다. 벡터 $|\psi\rangle$ 에 대해 $|\psi_N\rangle$ 을 **정규화되었다(be normalized)** 고 한다. 양자역학에서는 정규화된 벡터와 일반 벡터 사이에는 물리적인 차이가 없으며 단지 편의의 문제이다. 그러나 그 편의가 매우 크기 때문에 앞으로 특별한 언급이 없는 한 정규화된 벡터를 사용하기로 한다. 한가지 주의할 것은 정규화된, 그리고 직교하는 두 벡터 $|\psi_1\rangle,\, |\psi_2\rangle$ 의 선형결합 $a_1|\psi_1\rangle + a_2|\psi_2\rangle$ 은 자동으로 정규화 되지 않는다는 것, 하지만 이 벡터 역시 아래와 같이 정규화가 가능하다는 것이다. (직교 조건, 즉 $\langle \psi_1|\psi_2\rangle = 0$ 조건이 붙었다는 것에 유의하라.)
 
 $$
 |\psi_C\rangle = \dfrac{a|\psi_1\rangle + b|\psi_2\rangle}{\sqrt{|a|^2+|b|^2}}
 $$
 
-역시 마찬가지로 특별히 언급하지 않는 한 정규화된 벡터들의 선형 결합 역시 정규화된 것만을 생각하기로 한다. 이제 특별한 언급이 없는 한
+역시 마찬가지로 특별히 언급하지 않는 한 정규화된 벡터들의 선형 결합 역시 정규화된 것만을 생각하기로 한다. 이제부터 특별한 언급이 없는 한 상티 $|\psi\rangle$ 에 대해 
 
 $$
 |\langle \psi|\psi\rangle|^2 = 1
@@ -240,13 +247,13 @@ $$
 
 ### 고유상태와 측정 {#sec-QM_eigenstate_and_measurement}
 
-만약 $|\psi\rangle$ 이 연산자 $\Omega$ 의 고유값 $\omega_i$ 를 갖는 고유상태 $|\omega_i \rangle$ 라면 $\Omega$ 를 측정 했을 때 $\omega_i$ 의 값치 검출된다. 그러나 $|\omega_1\rangle$ 과 $|\omega_2\rangle$ 이 중첩된 상태로 $|\psi\rangle = a |\omega_i\rangle + b|\omega_2\rangle$ 라면 $\Omega$ 를 측정 했을 때 $\omega_1$ 혹은 $\omega_2$ 값이 측정되며 그 확률은
+만약 $|\psi\rangle$ 이 연산자 $\Omega$ 의 고유값 $\omega_i$ 를 갖는 고유상태 $|\omega_i \rangle$ 라면 $\Omega$ 를 측정 했을 때 $\omega_i$ 의 값이 검출된다. 그러나 $|\omega_1\rangle$ 과 $|\omega_2\rangle$ 이 중첩된 상태, 즉 $|\psi\rangle = a |\omega_i\rangle + b|\omega_2\rangle$ 라면 $\Omega$ 를 측정 했을 때 $\omega_1$ 혹은 $\omega_2$ 값이 측정되며 그 확률은
 
 $$
-\mathcal{P}(\omega_1) = \dfrac{|a|^2}{\sqrt{|a|^2+|b|^2}},\qquad \mathcal{P}(\omega_2) = \dfrac{|b|^2}{\sqrt{|a|^2+|b|^2}}
+P(\omega_1) = \dfrac{|a|^2}{\sqrt{|a|^2+|b|^2}},\qquad P(\omega_2) = \dfrac{|b|^2}{\sqrt{|a|^2+|b|^2}}
 $$
 
-이다. 정규화된 상태라면 $|a|^2+|b|^2=1$ 이므로 $\mathcal{P}(\omega_1)=|a|^2,\, \mathcal{P}(\omega_2)=|b|^2$ 가 된다. 이것은 고전역학과 급격하게 달라지는 지점으로 고전여각이라면 당연히 평균값이 나오기 때문이다. 
+이다. 정규화된 상태라면 $|a|^2+|b|^2=1$ 이므로 $P(\omega_1)=|a|^2,\, P(\omega_2)=|b|^2$ 가 된다. 이것은 고전역학과 급격하게 달라지는 지점으로 고전여각이라면 당연히 평균값이 나오기 때문이다. 
 
 </br>
 
@@ -272,7 +279,7 @@ $$
 
 ### 위치, 운동량의 연산자 변환의 모호성 {#sec_QM_ambituity_of_classica_to_quantum_transforam_of_variables}
 
-**원리 2** 에서 우리는 고전적인 측정값 $\omega (x,\,p)$ 가 양자 역학에서는 연산자 $\Omega(X,\,P)$ 가 된다고 했다. 그렇다면 $omega = xp$ 는? $XP$ 인가 아니면 $PX$ 인가? 이 경우는 조작하여 대칭이 되도록 한다. 즉 $\Omega = \dfrac{1}{2}(XP+PX)$ 로 정한다. 이 경우 $XP$ 도 $PX$ 도 에르미트 연산자가 아니지만 $\dfrac{1}{2}(XP+PX)$ 는 에르미트 연산자가 된다. 하지만 $\omega = x^3p^2$ 와 같은 경우라면 어떨까? 이런 경우는 실험을 통해 실제 연산자를 결정한다. 
+**원리 2** 에서 우리는 고전적인 측정값 $\omega (x,\,p)$ 가 양자 역학에서는 연산자 $\Omega(X,\,P)$ 가 된다고 했다. 그렇다면 $\omega = xp$ 는? $XP$ 인가 아니면 $PX$ 인가? 이 경우는 조작하여 대칭이 되도록 한다. 즉 $\Omega = \dfrac{1}{2}(XP+PX)$ 로 정한다. 이 경우 $XP$ 도 $PX$ 도 에르미트 연산자가 아니지만 $\dfrac{1}{2}(XP+PX)$ 는 에르미트 연산자가 된다. 하지만 $\omega = x^3p^2$ 와 같은 경우라면 어떨까? 이런 경우는 실험을 통해 실제 연산자를 결정한다.
 
 </br>
 
@@ -281,20 +288,20 @@ $$
 에르미트 연산자의 특징으로서 서로 다른 고유값을 가진 두 고유상태는 서로 직교한다. 즉 $\Omega$ 의 두 고유값 $\omega,\, \omega'$ 에 대해 $\omega \ne \omega'$ 일 때 $\langle \omega |\omega'\rangle = 0$ 이다. 그렇다면 $\omega = \omega'$ 이라면 어떨까? 수학적으로 말하자면 $\omega$ 의 값을 갖는 고유상태가 $n(\ge 2)$ 차원인 경우를 말한다. 이 경우 $n$ 개의 서로 직교하는 벡터 $|\omega,\,1\rangle ,\ldots,\,|\omega,\,n\rangle$ 을 항상 찾을 수 있으며, $\omega$ 의 고유값을 갖는 벡터는 이 기저들의 선형결합으로 표현한다. $\Omega$ 에 대한 여러 고유값 가운데 $\omega$ 값을 가질 확률은
 
 $$
-\mathcal{P}(\omega) = \sum_{k=1}^n |\langle \omega,\, k|\psi\rangle|^2
+P(\omega) = \sum_{k=1}^n |\langle \omega,\, k|\psi\rangle|^2
 $$ {#eq-QM_probability_amplitude_for_degenerated_eigenspace}
 
-이며, 사영연산자 $P_\omega$ 는
+이며, 사영연산자 $\P_\omega$ 는
 
 $$
-P_\omega = \sum_{k=1}^n  |\omega,\,k\rangle \langle \omega, k|
+\P_\omega = \sum_{k=1}^n  |\omega,\,k\rangle \langle \omega, k|
 $${#eq-QM_projection_operator_for_degenerated_eigenspace}
 
 이다. 
 
 </br>
 
-#### 고유값이 연속인 경우 {#sec-QM_case_of_continuous_eigenvalue}
+### 고유값이 연속인 경우 {#sec-QM_case_of_continuous_eigenvalue}
 
 $\Omega$ 에 대한 고유값이 연속인 경우 다음과 같이 표현한다.
 
@@ -308,10 +315,10 @@ $$
 \psi(\omega) := \langle \omega | \psi\rangle
 $$
 
-로 정의하여 사용하며 $\psi(\omega)$ 를 **$\omega$ 공간에서의 $\psi$ 의 파동함수(wave fucntion)** 이라고 한다. $\omega$ 가 연속이라면 $\Omega$ 를 측정했을 때의 측정값이 $\omega$ 일 확률은 의미가 없으며, $[\omega,\, \omega+d\omega]$ 구간에서 발견할 확률 $\mathcal{P}(\omega)\,d\omega$ 가 의미가 있다. 이 때 $\mathcal{P}(\omega)$ 는 확률이므로
+로 정의하여 사용하며 $\psi(\omega)$ 를 **$\omega$ 공간에서의 $\psi$ 의 파동함수(wave fucntion)** 이라고 한다. $\omega$ 가 연속이라면 $\Omega$ 를 측정했을 때의 측정값이 $\omega$ 일 확률은 의미가 없으며, $[\omega,\, \omega+d\omega]$ 구간에서 발견할 확률 $P(\omega)\,d\omega$ 가 의미가 있다. 이 때 $P(\omega)$ 는 확률이므로
 
 $$
-\int \mathcal{P}(\omega)\,d\omega =1
+\int P(\omega)\,d\omega =1
 $$
 
 이어야 한다. 이산적인 경우와 같이 $P(\omega) = |\langle \omega|\psi\rangle|^2$ 로 잡으면
@@ -345,7 +352,7 @@ $$
 이런 중첩 현상은 완전히 양자역학 이전의 고전물리와는 완전히 동떨어져 있는데 고전물리에서는 어떤 물리량도 상태에 변화를 주지 않고 측정될 수 있다는 가정 내지는 신조를 포함한다. 그러냐 양자역학에서는 그 측정이 아무리 세밀하고 세심하더라도 이런 붕괘를 피할 수 없다. 
 
 $$
-|\psi\rangle \xrightarrow[\qquad \Omega \text{ measurement, }\omega_i\text{ measured} \qquad]{} |\psi_F\rangle =\dfrac{P_{\omega_i} |\psi\rangle}{\langle P_{\omega_i} \psi | P_{\omega_i}\psi\rangle^{1/2}}.
+|\psi\rangle \xrightarrow[\qquad \Omega \text{ measurement, }\omega_i\text{ measured} \qquad]{} |\psi_F\rangle =\dfrac{\P_{\omega_i} |\psi\rangle}{\langle \P_{\omega_i} \psi | \P_{\omega_i}\psi\rangle^{1/2}}.
 $$ {#eq-QM_state_vector_after_measurement}
 
 만약 우리가 초기 상태 $|\psi\rangle$ 을 모른다면, 그리고 $\Omega$ 측정 이후 측정값 $\omega_i$ 를 얻었다면, 우리가 알 수있는 것은 단지 측정 후의 상태는 $\omega_i$ 에 대한 고유공간의 어떤 벡터라는 것 뿐이다. 우리가 측정 전의 상태 $|\psi\rangle$ 을 안다면 측정 후의 상태는 @eq-QM_state_vector_after_measurement 의 $|\psi_F\rangle$ 이다. 
@@ -395,46 +402,180 @@ $$ {#eq-QM_expectation_value}
 
 ### 연산자의 불확정성 {#sec-QM_uncertainty_of_operator}
 
-$\Omega$ 에 대한 측정이 확률로서 얻어지므로 우리는 불확정성 $\Delta \Omega$ 을 다음과 같이 정의 할 수 있다.
+양자역학에서는 연산자 $\Omega$ 에 대한 측정값이 확률로서 얻어지므로 표준편차를 생각 할 수 있다. 이 표준편차를 $\Omega$ 연산자에 대한 **불확정성(uncertainty)** 라고 한다.
 
 $$
 \boxed{\Delta \Omega := \left\langle (\Omega - \langle \Omega \rangle)^2 \right \rangle^{1/2}.}
 $$ {#eq-QM_uncertainty_of_observable}
 
-즉 $\Delta \Omega$ 는 $P(\omega)$ 에 의한 확률분포의 표준편차이다. 
+이를 좀 더 계산하기 쉬운 식으로 바꿔보자.
 
+$$
+\begin{aligned}
+(\Delta \Omega)^2 &= \langle (\Omega - \langle \Omega \rangle)^2\rangle = \langle \Omega^2 - 2\Omega \langle \Omega \rangle + \langle \Omega\rangle^2\rangle \\
+&= \langle \Omega^2 \rangle - \langle \Omega \rangle^2
+\end{aligned}
+$$
+
+즉
+
+$$
+\boxed{\Delta \Omega= \left(\langle \Omega^2 \rangle - \langle \Omega \rangle^2\right)^{1/2}}
+$${#eq-QM_uncertainty_of_observable_2}
+
+이다. @eq-QM_uncertainty_of_observable 보다 실용적인 식이다.
 
 </br>
 
 ### 연산자의 교환관계 {#sec-QM_commutativity_and_noncommutativity_of_operator}
 
-우리가 $\Omega$ 를 측정하고 곧바로 $\Lambda$ 를 측정했을 때와 $\Lambda$ 를 측정하고 $\Omega$ 를 측정 했을 때 같은 결과를 기대 할 수 있을까? 답을 먼저 말하자면 일반적으로 그렇지 않다는 것이다.
+우리가 $\Omega$ 를 측정하고 곧바로 $\Lambda$ 를 측정했을 때와 $\Lambda$ 를 측정하고 $\Omega$ 를 측정 했을 때 같은 결과를 기대 할 수 있을까? 답을 먼저 말하자면 일반적으로 그렇지 않다는 것이다. 이것은 양자역학이 기술되는 벡터공간의 일반적인 특징이다. [Compatible operators](../CHM/mathematical_foundation.qmd#sec-CHM_compatible_operators) 와 @prp-CHM_uncertainty_1 를 보라.
 
+두 연산자 $\Omega,\, \Lambda$ 에 대해 $[\Omega,\, \Lambda] := \Omega \Lambda - \Lambda \Omega$ 로 정의되는 $[\,,\,]: \mathscr{H}\times \mathscr{H} \to \mathscr{H}$ 를 **교환자(commutator)** 라고 한다. $[\Omega,\, \Lambda]=0$ 일 때 두 연산자 $\Omega,\, \Lambda$ 는 **compatible** 하다고 하고 그렇지 않을 경우 **incompatible** 하다고 한다. 
 
+</br>
+
+#### **두가지 경우**
+
+**Compatible case** : 두 연산자가 compatible 할 경우 두 연산자의 공통의 고유상태가 존재하며, $\Omega$ 에 대한 고유값 $\omega$ 와 $\Lambda$ 에 대한 고유값으로 이 상태를 기술 할 수 있다. 이를 $|\omega,\, \lambda\rangle$ 이라고 하면 
+
+$$
+\Omega\Lambda|\omega,\, \lambda\rangle = \Lambda\Omega |\omega,\, \lambda\rangle = \omega\lambda |\omega,\, \lambda\rangle
+$$
+
+이다. 
+
+</br>
+
+**Incompatible case** : 가장 대표적으로 $[X,\,P] = i\hbar$ 가 존재한다. 이것이 그 유명한 **하이젠베르그의 불확정성의 원리 (Heisenberg uncertainty principle)** 의 근원이다. 앞으로 자세히 다루기로 한다. 힐베르트 공간에서의 기저 $\{|i\rangle :i=1,\ldots\}$ 에 대해 $[\Omega,\, \Lambda]|1\rangle = 0$ 이지만 $[\Omega,\, \Lambda]|2\rangle \ne 0$ 일 수 있다. 이것은 그냥 incompatible case 이며, $[\Omega,\, \Lambda]|1\rangle = 0$ 인 것은 우연힐 뿐으로 특별한 물리적 의미는 없다. 
+
+</br>
+
+**Compatible case** : Degeneracy 가 존재하는 경우를 우선 생각해보자. 즉 $\Omega$ 에 대한 고유상태 $|\omega\rangle$ 에 $\Lambda$ 를 측정하면 $\lambda_1$ 혹은 $|\lambda_2$ 가 측정 될 수 있다고 하자. 즉
+
+$$
+|\phi\rangle = a_1 |\omega,\lambda_1\rangle + a_2|\omega,\, \lambda_2\rangle
+$$
+
+일 경우 $P(\lambda_1)= \dfrac{|a_1|}{\sqrt{|a_1|^2+|a_2|^2}}$, $P(\lambda_2)= \dfrac{|a_2|}{\sqrt{|a_1|^2+|a_2|^2}}$ 이다. 
+
+</br>
+
+### 밀도 행렬 {#sec-QM_density_matrix}
+
+지금까지 우리는 같은 상태에 있는 $N$ 개 입자 시스템에 대해 다루었다. 그러나 실제로 이것을 구현하기는 매우 우려우며, 일반적인 $N$ 입자의 양자 앙상블은 $|i\rangle$ 상태에 $n_i$ 개의 입자가 있으며 $N = n_1+n_2+\cdots$ 인 경우이다. 일단 $\{|i\rangle\}$ 이 정규직교기저라고 하자. 이를 다루기 위해 우리는 **밀도 행렬 (density matrix)** $\rho$ 를 다음과 같이 정의한다.
+
+$$
+\boxed{ \rho = \sum_i p_i |i\rangle \langle i|, \quad p_i = \dfrac{n_i}{N}.}
+$$ {#eq-QM_density_matrix}
+
+이 때 $p_i$ 는 앙상블의 입자를 임의로 선택 했을 때 $|i\rangle$ 상태를 선택할 확률이다. 특정 상태를 제외한 확률이 $0$ 인 경우를 **순수한 앙상블 (pure enssemble)** 이라고 하고 그렇지 않을 경우 **혼합된 앙상블 (mixed enssemble)** 이라고 한다.
+
+이제 앙상블에서의 $\Omega$ 의 평균값을 구해보자. $\langle \Omega \rangle$ 은 한 입자에 대한 측정에서의 평균값이므로 다른 표기법이 필요하다. 이를 $\langle \overline{\Omega}\rangle$ 이라고 하자. 즉 $\langle \overline{\Omega}\rangle$ 는 $N$ 개의 입자로 이루어진 앙상블에서 한 입자를 선택하여 $\Omega$ 를 측정했을 때의 기대값이다. 이를 **앙상블 평균값 (emssemble average)** 라고 한다. 
+
+$$
+\langle i|\rho|j\rangle = \sum_k p_k \langle i|k\rangle\langle k|j\rangle = p_{i}\delta_{ij}
+$$ {#eq-QM_matrix_element_of_density_matrix}
+
+임을 알 수 있다. 
+
+$$
+\langle \overline{\Omega} \rangle = \sum_i p_i \langle i|\Omega |i\rangle.
+$$ {#eq-QM_enssemble_average}
+
+이를 좀 더 전개해보자. @eq-QM_matrix_element_of_density_matrix 를 이용하면
+
+$$
+\begin{aligned}
+\langle \overline{\Omega} \rangle &= \sum_i p_i \langle i|\Omega |i\rangle = \sum_{i,j} p_i\langle i|\Omega |j\rangle\langle j|i\rangle = \sum_{i, j} \langle i|\Omega|j\rangle p_i\delta_{ij} \\
+&= \sum_{ij} \langle i|\Omega|j\rangle \langle j|\rho|i\rangle = \sum_i \langle i|\Omega \rho |i\rangle = \text{tr}(\Omega \rho)
+\end{aligned}
+$$
+
+을 얻는다. 즉
+
+$$
+\boxed {\langle \overline{\Omega}\rangle = \text{tr}(\Omega \rho).}
+$$ {#eq-QM_enssemble_average_and_trace}
+
+임을 알 수 있다. 
+
+우리가 한 입자의 $P(\omega)$ 가 아니라 앙상블에서의 $\omega$ 의 기대값을 알고 싶다고 하자. $P(\omega)$ 와 구별하기 위해 $\overline{P(\omega)}$ 로 표기하자. 
+
+$$
+P(\omega) = |\langle \omega|\psi\rangle|^2 = \langle \psi|\omega\rangle \langle \omega|\psi\rangle = \langle \psi | \P_\omega |\psi\rangle = \langle \P_\omega\rangle
+$$
+
+이므로,
+
+$$
+\overline{P(\omega)} = \text{tr}(\P_\omega \rho)
+$$
+
+임을 알 수 있다. 
+
+</br>
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#prp-QM_properties_of_projection_operator}
+
+#### 밀도 행렬의 수학적 성질
+
+밀도행렬은 다음 성질을 가진다. 
+
+&emsp;($1$) $\rho^\dagger = \rho$,
+
+&emsp;($2$) $\tr (\rho) = 1$, 
+
+&emsp;($3$) 순수한 앙상블일 때 $\rho^2 = \rho$, 
+
+&emsp;($4$) $k$ 개의 상태에 균일하게 분표된 앙상블일 때 $\rho = (1/k)I$, 
+
+&emsp;($5$) $\tr \rho^2 \le 1$ 이며 순수한 앙싱블일 경우 $\tr \rho^2=1$ 이다.
+
+:::
+
+</div></br>
+
+::: {.proof}
+
+($1$) @eq-QM_density_matrix 에서 $p_i$ 는 실수이므로 $\rho^\dagger = \sum_i p_ |i\rangle^\dagger \langle i|^\dagger = \rho$,
+
+($2$) $\tr \rho = \sum_i \langle i|\rho|i\rangle = \sum_{i, j} p_j\langle i|j\rangle \langle j|i\rangle = \sum_i p_i=1$
+
+($3$) 순수한 앙상블일 때, 즉 모든 상태가 $i$ 일 때 $\rho = \P_i$ 이므로 $\rho^2=\rho$.
+
+($4$) $i=1,\ldots,\,k$ 에 대해 $p_i = 1/k$ 이다.
+
+($5$) ($2$), ($3$) 부터 순수한 앙상블일 경우 $\tr \rho^2 = \tr \rho =1$ 임을 안다. 
+
+$$
+\tr \rho^2 = \sum_i \langle i|\rho^2|i\rangle = \sum_{i,j, k} p_j p_k \langle i|j\rangle \langle j|\langle k \rangle \langle k|i \rangle = \sum_i p_i^2 \le 1.
+$$
+
+:::
 
 </br>
 
 ### 1차원 위치와 운동량 {#sec-QM_position_and_momentum}
 
-원리 2 에 부연설명을 하자면 고전역학적인 측정량 $\omega (x,\,p)$ 에 상응햐는 양자역학의 측정량 $\Omega$ 는 에르미트 연산자로 $x,\,p$ 를 각각 $X,\,P$ 로 바꾸면 된다. 즉 $\Omega (X, P) = \omega (x \rightarrow X,\, p \rightarrow P)$ 이다. 
-
-우리는 지금까지 무한차원의 힐베르트 공간 $\mathcal{H}$ 를 생각했지만 실제로 무한차원 공간에서 사고해 본 적은 없었다 이제 그것을 시작할 때다. 위치 연산자 $X$ 를 생각해보자. 1차원에서조차도 $X$ 는 $\mathbb{R}$ 의 어떤 값도 가질 수 있다. $X$ 는 에르미트 연산자이므로 $X$ 의 고유벡터로 이루어진 기저를 생각할 수 있으며 이것을 $\{|x\rangle : x\in \mathbb{R}\}$ 이라고 할 수 있다. 힐베르트 공간에서의 기저이므로 다음을 만족해야 한다. 유한차원과는 다르게 크로네커 델타는 디렉 델타 함수로, $\sum$ 은 $\int$ 로 바뀐다.
+우리는 지금까지 무한차원의 힐베르트 공간 $\mathcal{H}$ 를 생각했지만 실제로 무한차원 공간에서 사고해 본 적은 없었다. 이제 그것을 시작할 때다. 위치 연산자 $X$ 를 생각해보자. $X$ 는 에르미트 연산자이므로 $X$ 의 고유벡터로 이루어진 기저를 생각할 수 있으며 이것을 $\{|x\rangle : x\in \mathbb{R}\}$ 이라고 할 수 있다. 힐베르트 공간에서의 기저이므로 다음을 만족해야 한다. 여기서 유한차원과는 다르게 크로네커 델타는 디렉 델타 함수로, $\sum$ 은 $\int$ 로 바뀐다.
 
 
-1. 직교성 (orthogonallity) : $\langle x | x' \rangle = \delta (x-x')$.
+&emsp;($1$) **직교성 (orthogonallity)** : $\langle x | x' \rangle = \delta (x-x')$.
 
-2. 완비성 (completeness) : $\displaystyle  \int |x\rangle \langle x| \,dx = I$
-
-
-여기에 대해 기술하기 위애서는 디렉 델타 함수 $\delta(x)$ 에 대해 알아야 한다. 디렉 델타 함수는 다음의 두가지 성질을 가지는 함수이다.
-
-&emsp; ($1$) $\displaystyle \delta(x) = \left\{ \begin{array}{ll} +\infty \qquad &;\text{if } x= 0\\ 0 & ;\text{otherwise}.\end{array}\right.$
-
-&emsp; ($2$) $\displaystyle \int_{-\infty}^\infty f(x)\, \delta(x) = f(0)$.
+&emsp;($2$) **완전성 (completeness)** : $\displaystyle  \int |x\rangle \langle x| \,dx = I$
 
 
+상태 $|\psi\rangle$ 을 위치 공간에서 표현하면 다음과 같다.
 
-</br>
+$$
+|\psi \rangle = \int_{-\infty}^\infty |x\rangle \langle x|\psi\rangle \,dx = \int_{-\infty}^\infty |x\rangle \psi(x)\, dx
+$$
+
+여기서 $\psi(x) = \langle x|\psi\rangle$ 을 상태 $\psi$ 의 $X$ 기저에서의 **파동함수 (wavefunction)** 이라고 한다. 
+
+
 
 이제 디렉 델타 함수를 이용해 운동량 연산자 $P$ 에 대한 간단한 계산을 해 보자.
 $$
@@ -500,8 +641,57 @@ $$
 
 </br>
 
-
 ### 가우시안 파동함수와 불확정성 {#sec-QM_gaussian_wavefunction}
+
+
+우리는 가우시안 함수인 파동함수를 생각 할 수 있다
+
+$$
+\psi(x) = \dfrac{e^{-(x-a)^2/2\Delta^2}}{(\pi \Delta^2)^{1/4}} 
+$$
+
+앞의 계수는 $\langle \psi|\psi\rangle=1$ 을 만족하도록 붙여준 것이다. 원리 3 에 따라 이 파동함수가 기술하는 입자를 $[x,\, x+dx]$ 영역에서 발견할 확률 $P(x)\,dx$ 는
+
+$$
+P(x)\,dx = |\psi(x)|^2\, dx  = \dfrac{e^{-(x-a)^2/\Delta^2}}{\sqrt{\pi \Delta^2}}
+$$
+
+이다. 가우스 함수를 생각하면 알겠지만 이 확률은 $x=a$ 에서 가장 큰 값을 갖고 $x=a$ 에서 멀어질 수록 $0$ 으로 수렴하는 함수이다. 이제 $\langle X\rangle$ 을 구해보자. 먼저 그 전에 $\langle x|X|\psi\rangle$ 을 구해보자.
+
+$$
+\langle x|X|\psi\rangle = \int_{-\infty}^\infty \langle x|X|x'\rangle \langle x'|\psi\rangle\,dx = \int_{-\infty}^\infty x\delta(x-x')\,\psi(x)\, dx = x\psi(x)
+$$
+
+이다. 이제,
+
+$$
+\begin{aligned}
+\langle X\rangle &= \langle \psi|X|\psi\rangle = \int_{-\infty}^\infty \langle \psi|x\rangle \langle x|X|\psi\rangle \,dx = \int_{-\infty}^\infty \psi^\ast (x) x\psi(x)\, dx \\
+&= \dfrac{1}{\sqrt{\pi \Delta^2}}\int_{-\infty}^\infty e^{-(x-a)^2/\Delta^2}\,x\,dx = a
+\end{aligned}
+$$
+
+이다. 즉 $X$ 를 측정했을 때 측정값의 평균은 가우스 함수의 중심 $a$ 이다. 이제 $X$ 의 불확정성을 계산해보자. @eq-QM_uncertainty_of_observable_2 를 이용하기 위해 우선 $\langle X^2\rangle$ 을 먼저 계산한다.
+
+$$
+\begin{aligned}
+\langle X^2 \rangle &= \int_{-\infty}^\infty x^2 |\psi(x)|^2\,dx = \dfrac{\Delta^2}{2} + a^2
+\end{aligned}
+$$
+
+이므로 1치원 가우시안 파동함수에 대한 위치연산자 $X$ 의 
+
+$$
+\Delta X = \sqrt{\langle X^2\rangle - \langle X\rangle^2} = \dfrac{\Delta}{\sqrt{2}}
+$$
+
+를 얻었다.
+
+
+
+
+
+
 
 @sec-part1_wavefunction 의 [파동함수](../AUX/quantum_state.qmd#sec-part1_wavefunction) 을 생각하자. $\psi(x) = \langle x|\psi\rangle$ 는 상태 $|\psi\rangle$ 을 에르미트 연산자 $X$ 의 고유값의 함수로 표현한 것이다. 따라서 $|\psi(x)|^2\,dx$ 는 $|\psi\rangle$ 상태의 입자를 $[x,\,x+dx]$ 구간에서 발견할 확률이다. 여기서는 $\psi(x)$ 가 가우시안 함수인 경우를 살펴보자. 정규화를 생각하면
 
