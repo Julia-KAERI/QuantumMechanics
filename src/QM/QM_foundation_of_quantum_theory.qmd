@@ -559,6 +559,8 @@ $$
 
 ### 1차원 위치와 운동량 {#sec-QM_position_and_momentum}
 
+#### **위치 공간에서의 운둉량 연산자**
+
 우리는 지금까지 무한차원의 힐베르트 공간 $\mathcal{H}$ 를 생각했지만 실제로 무한차원 공간에서 사고해 본 적은 없었다. 이제 그것을 시작할 때다. 위치 연산자 $X$ 를 생각해보자. $X$ 는 에르미트 연산자이므로 $X$ 의 고유벡터로 이루어진 기저를 생각할 수 있으며 이것을 $\{|x\rangle : x\in \mathbb{R}\}$ 이라고 할 수 있다. 힐베르트 공간에서의 기저이므로 다음을 만족해야 한다. 여기서 유한차원과는 다르게 크로네커 델타는 디렉 델타 함수로, $\sum$ 은 $\int$ 로 바뀐다.
 
 
@@ -583,25 +585,25 @@ $$
 $$
 
 
-$\langle x | P |\psi\rangle$ 은 $|\psi\rangle$ 상태를 운동량을 측정 한 후 그것을 $x$ 에 대한 함수로 나타내라는 의미이다. 이것은 계산대로 $\psi(x)$ 의 미분값에 $-i\hbar$ 를 곱한것과 같다. 이때문에 운동량 연산자 $P$ 를 $P=-i\hbar \dfrac{d}{dx}$ 로 표기하기도 한다. 2차원 이상의 공간에 대해서는 $P_i = -i\hbar \dfrac{\partial}{\partial x_i}$ 로 표기할 수 있다. 
+$\langle x | P |\psi\rangle$ 은 $|\psi\rangle$ 상태를 운동량을 측정 한 후 그것을 $x$ 에 대한 함수로 나타내라는 의미이다. 이것은 계산대로 $\psi(x)$ 의 미분값에 $-i\hbar$ 를 곱한것과 같다. 이때문에 운동량 연산자 $P$ 를 위치공간에서 $P=-i\hbar \dfrac{d}{dx}$ 로 표기하기도 한다. 2차원 이상의 위치공간에서 운동량 연산자르르 다음과 같이 표현할 수 있다.
 
-또한 우리는 일반적으로 두 에르미트 연산자가 commutative 하지 않는다는 것을 안다. $X$ 와 $P$ 의 경우는 어떠한가?
+$$
+\boxed{P_i = -i\hbar \dfrac{\partial}{\partial x_i}}
+$$ {#eq-QM_momentum_operator_in_position_space}
 
 </br>
 
-<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-QM_uncertainty_of_X_and_P}
+#### **위치와 운동량의 불확정성**
 
-$[X, P]=XP-PX=i\hbar I$ 임을 보여라.
+우리는 일반적으로 두 에르미트 연산자가 commutative 하지 않는다는 것을 안다. $X$ 와 $P$ 의 경우는 어떠한가?
 
-:::
+</br>
+<div class="border" style="background-color:#F2F4F4  ;padding:5px;">
 
-</div></br>
+::: {#exm-QM_uncertainty_of_X_and_P}
 
-::: {.solution}
-
-$\langle x| (XP-PX) |\psi\rangle = i\hbar \psi(x)$ 임을 보이자.
+$[X, P]=XP-PX=i\hbar I$ 임을 보이자. 위치 공간에서 $\langle x| (XP-PX) |\psi\rangle = i\hbar \psi(x)$ 임을 보이면 된다. 우리는 디렉 델타 함수에서 $\int f(x')\delta'(x-x') dx' = f'(x)$ 임을 안다. 
 $$
 \begin{aligned}
 \langle x| & (XP-PX) |\psi\rangle = \int \langle x | (XP-PX)|x'\rangle \langle x'|\psi\rangle \, dx' \\
@@ -609,15 +611,15 @@ $$
 &= -i\hbar \left[\iint x\delta(x-x'')\, \delta'(x'-x'') \, \psi(x') dx''\, dx' \right. \\
 &\qquad \qquad\left. - \iint \delta'(x-x'') \, x'\delta(x'-x'') \, \psi(x')\, dx'' \, dx'\right]\\
 &= -i\hbar \left[\int x\delta(x-x'') \psi'(x'') \, dx''  - \int \delta'(x-x'') x'' \psi(x'')\, dx''\right] \\
-&= -i\hbar \left[x\psi'(x) - \psi(x) - x\psi'(x)\right] \\
-&= i\hbar \psi(x) = \langle x | i\hbar I | \psi\rangle
+&= -i\hbar \left[x\psi'(x) - \psi(x) - x\psi'(x)\right] \\[0.2em]
+&= i\hbar \psi(x) = \langle x | i\hbar I | \psi\rangle.
 \end{aligned}
 $$
 
-로부터 우리는 $[X, P] = XP-PX = i\hbar I$ 임을 알 수 있다. 즉 $X$ 와 $P$ 는 서로 교환되지 않으며 불확정성의 원리에 의해 $X$ 와 $P$ 는 동시에 정확하게 측정 될 수 없다는 것을 알 수 있다.
+즉 $[X,\,P]=i\hbar I$ 이므로 $X$ 와 $P$ 는 서로 교환되지 않으며 불확정성의 원리에 의해 $X$ 와 $P$ 는 동시에 정확하게 측정 될 수 없다는 것을 알 수 있다.
 
 :::
-
+</div>
 </br>
 
 우리는 앞서 고전적인 측정량 $\omega (x,\,p)$ 를 양자 측정량 $\Omega (X, \, P)$ 로 바꿀 수 있다는 것을 알았다. 그런데 예를 들어 $\omega = xp$ 의 경우 앞서 보인 것과 같이 $XP\ne PX$ 이므로 $\Omega$ 를 정할 때 모호함이 생긴다. 이럴 경우는 대칭적으로 $\Omega = \dfrac{1}{2}(XP+PX)$ 로 변환한다. 이것이 불가능 할 경우도 있는데 $\omega = x^2p$ 와 같이 $x^k$ 나 $p^k$ 가 비대칭적으로 들어가 있을 경우이다. 이런 경우는 실험을 통해 양자역학적인 변수를 정할 수 밖에 없다.
@@ -650,48 +652,20 @@ $$
 \psi(x) = \dfrac{e^{-(x-a)^2/2\Delta^2}}{(\pi \Delta^2)^{1/4}} 
 $$
 
+
 앞의 계수는 $\langle \psi|\psi\rangle=1$ 을 만족하도록 붙여준 것이다. 원리 3 에 따라 이 파동함수가 기술하는 입자를 $[x,\, x+dx]$ 영역에서 발견할 확률 $P(x)\,dx$ 는
 
 $$
 P(x)\,dx = |\psi(x)|^2\, dx  = \dfrac{e^{-(x-a)^2/\Delta^2}}{\sqrt{\pi \Delta^2}}
 $$
 
-이다. 가우스 함수를 생각하면 알겠지만 이 확률은 $x=a$ 에서 가장 큰 값을 갖고 $x=a$ 에서 멀어질 수록 $0$ 으로 수렴하는 함수이다. 이제 $\langle X\rangle$ 을 구해보자. 먼저 그 전에 $\langle x|X|\psi\rangle$ 을 구해보자.
-
-$$
-\langle x|X|\psi\rangle = \int_{-\infty}^\infty \langle x|X|x'\rangle \langle x'|\psi\rangle\,dx = \int_{-\infty}^\infty x\delta(x-x')\,\psi(x)\, dx = x\psi(x)
-$$
-
-이다. 이제,
+이다. 가우스 함수를 생각하면 알겠지만 이 확률은 $x=a$ 에서 가장 큰 값을 갖고 $x=a$ 에서 멀어질 수록 $0$ 으로 수렴하는 함수이다. 여기에 대해 다음이 성립한다(@exr-QM_uncertainty_of_gaussian_wavefunction_1).
 
 $$
 \begin{aligned}
-\langle X\rangle &= \langle \psi|X|\psi\rangle = \int_{-\infty}^\infty \langle \psi|x\rangle \langle x|X|\psi\rangle \,dx = \int_{-\infty}^\infty \psi^\ast (x) x\psi(x)\, dx \\
-&= \dfrac{1}{\sqrt{\pi \Delta^2}}\int_{-\infty}^\infty e^{-(x-a)^2/\Delta^2}\,x\,dx = a
+\langle X \rangle & = a,  \qquad \langle X^2 \rangle = \dfrac{\Delta^2}{2} + a^2, \qquad \Delta X &= \dfrac{\Delta}{\sqrt{2}}.
 \end{aligned}
 $$
-
-이다. 즉 $X$ 를 측정했을 때 측정값의 평균은 가우스 함수의 중심 $a$ 이다. 이제 $X$ 의 불확정성을 계산해보자. @eq-QM_uncertainty_of_observable_2 를 이용하기 위해 우선 $\langle X^2\rangle$ 을 먼저 계산한다.
-
-$$
-\begin{aligned}
-\langle X^2 \rangle &= \int_{-\infty}^\infty x^2 |\psi(x)|^2\,dx = \dfrac{\Delta^2}{2} + a^2
-\end{aligned}
-$$
-
-이므로 1치원 가우시안 파동함수에 대한 위치연산자 $X$ 의 
-
-$$
-\Delta X = \sqrt{\langle X^2\rangle - \langle X\rangle^2} = \dfrac{\Delta}{\sqrt{2}}
-$$
-
-를 얻었다.
-
-
-
-
-
-
 
 @sec-part1_wavefunction 의 [파동함수](../AUX/quantum_state.qmd#sec-part1_wavefunction) 을 생각하자. $\psi(x) = \langle x|\psi\rangle$ 는 상태 $|\psi\rangle$ 을 에르미트 연산자 $X$ 의 고유값의 함수로 표현한 것이다. 따라서 $|\psi(x)|^2\,dx$ 는 $|\psi\rangle$ 상태의 입자를 $[x,\,x+dx]$ 구간에서 발견할 확률이다. 여기서는 $\psi(x)$ 가 가우시안 함수인 경우를 살펴보자. 정규화를 생각하면
 
