@@ -585,11 +585,52 @@ $$
 $$
 
 
-$\langle x | P |\psi\rangle$ 은 $|\psi\rangle$ 상태를 운동량을 측정 한 후 그것을 $x$ 에 대한 함수로 나타내라는 의미이다. 이것은 계산대로 $\psi(x)$ 의 미분값에 $-i\hbar$ 를 곱한것과 같다. 이때문에 운동량 연산자 $P$ 를 위치공간에서 $P=-i\hbar \dfrac{d}{dx}$ 로 표기하기도 한다. 2차원 이상의 위치공간에서 운동량 연산자르르 다음과 같이 표현할 수 있다.
+$\langle x | P |\psi\rangle$ 은 $|\psi\rangle$ 상태를 운동량을 측정 한 후 그것을 $x$ 에 대한 함수로 나타내라는 의미이다. 이것은 계산대로 $\psi(x)$ 의 미분값에 $-i\hbar$ 를 곱한것과 같다. 이때문에 운동량 연산자 $P$ 를 위치공간에서 $P=-i\hbar \dfrac{d}{dx}$ 로 표기하기도 한다. 2차원 이상의 위치공간에서 운동량 연산자를 다음과 같이 표현할 수 있다.
 
 $$
 \boxed{P_i = -i\hbar \dfrac{\partial}{\partial x_i}}
 $$ {#eq-QM_momentum_operator_in_position_space}
+
+</br>
+
+#### **위치공간에서의 운동량 고유함수**
+
+또한 우리가 파동함수 $\psi(x)$ 를 알 때 운동량에 대해 무엇을 알 수 있을까? $\langle x |P |\psi\rangle$ 을 보자. 
+
+$$
+\langle x|P|\psi\rangle = \int \langle x|P|x'\rangle \langle x'|\psi\rangle = (-i\hbar)\int \delta'(x-x')\, \psi(x')\, dx = -i\hbar \dfrac{d\psi(x)}{dx}
+$$ {#eq-QM_momentum_state_to_position}
+
+운동량 $p$ 인 상태는 $|p\rangle$ 로 표현 할 수 있다. 당연히 $P|p\rangle = p|p\rangle$ 이다. 이것을 $X$ 에 대한 기저로 표현하면
+
+$$
+\langle x|P|p\rangle = p\langle x|p\rangle
+$$
+
+이 된다. $P$ 의 고유벡터 $|p\rangle$ 을 $X$ 기저로 표현한 파동함수를 $\psi_p(x)$ 라고 하자. 즉 $\psi_p (x) :=\langle x|p\rangle$ 이다. @eq-QM_momentum_state_to_position 으로부터 $|\psi\rangle = |p\rangle$ 로 놓으면 아래와 같은 1차 미분 방정식을 얻는다.
+
+$$
+- i\hbar \dfrac{d\psi_p(x)}{dx} = p \psi_p (x).
+$$
+
+이 미분방정식의 해는 아래와 같다.
+
+$$
+\psi_p (x) = A e^{ipx/\hbar}.
+$$
+
+정규화 조건 $\langle p'|p\rangle = \delta (p-p')$ 과 @prp-CHM_properties_of_dirac_delta_function 의 ($7$) 로부터
+
+$$
+\delta(p-p') = \int_{-\infty}^\infty \psi_{p'}^\ast (x) \, \psi_p(x) dx = |A|^2\int_{-\infty}^\infty e^{i(p-p')/\hbar}\, dx =2\pi \hbar^2 {|A|^2}\delta(p-p')
+$$
+
+을 얻는다. 즉 $A=\dfrac{1}{\sqrt{2\pi \hbar}}$ 이며, 따라서 위치공간에서의 운동량의 고유함수 $\langle x|p\rangle$ 은 다음과 같다.
+
+$$
+\boxed{\langle x|p\rangle = \psi_p(x) = \dfrac{1}{\sqrt{2\pi \hbar}}e^{ipx/\hbar}}
+$$ {#eq-QM_momentum_eigenfunction_in_position_space}
+
 
 </br>
 
@@ -650,7 +691,7 @@ $$
 
 $$
 \psi(x) = \dfrac{e^{-(x-a)^2/2\Delta^2}}{(\pi \Delta^2)^{1/4}} 
-$$
+$${#eq-QM_gaussian_wavefunction}
 
 
 앞의 계수는 $\langle \psi|\psi\rangle=1$ 을 만족하도록 붙여준 것이다. 원리 3 에 따라 이 파동함수가 기술하는 입자를 $[x,\, x+dx]$ 영역에서 발견할 확률 $P(x)\,dx$ 는
@@ -667,180 +708,50 @@ $$
 \end{aligned}
 $$
 
-@sec-part1_wavefunction 의 [파동함수](../AUX/quantum_state.qmd#sec-part1_wavefunction) 을 생각하자. $\psi(x) = \langle x|\psi\rangle$ 는 상태 $|\psi\rangle$ 을 에르미트 연산자 $X$ 의 고유값의 함수로 표현한 것이다. 따라서 $|\psi(x)|^2\,dx$ 는 $|\psi\rangle$ 상태의 입자를 $[x,\,x+dx]$ 구간에서 발견할 확률이다. 여기서는 $\psi(x)$ 가 가우시안 함수인 경우를 살펴보자. 정규화를 생각하면
-
-$$
-\psi (x) = \dfrac{1}{(\pi \Delta^2)^{1/4}} \exp \left(-\dfrac{(x-a)^2}{2\Delta^2}\right)
-$$ {#eq-QM_gaussian_wavefunction}
-
-이어야 한다. 이 때 입자를 $[x,\,x+dx]$ 구간에서 발견할 확률 $P(x)\,dx$ 는
-
-$$
-P(x)\,dx = |\psi(x)|^2 \,dx = \dfrac{1}{(\pi \Delta^2)^{1/2}} e^{-(x-a)^2/\Delta^2}
-$$
-
-가 된다. 상태 $|\psi\rangle$ 와 위치연산자 $X$ 에 대해 $\langle x|X|\psi\rangle$ 을 보자.
+상태 $|\psi\rangle$ 와 위치연산자 $X$ 에 대해 $\langle x|X|\psi\rangle$ 을 보자.
 
 $$
 \langle x|X|\psi\rangle  = \int \langle x|X|x'\rangle \langle x'|\psi\rangle\,dx' = \int x\, \delta (x-x') \,\psi(x')\, dx' = x\psi(x)
 $$
 
-</br>
-
-
-<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
-
-::: {#exr-QM_uncertainty_of_gaussian_wavefunction_1}
-
-#### 가우시안 파동함수의 위치 불확정성
-
-@eq-QM_gaussian_wavefunction 으로 정의된 파동함수 $\psi(x)$ 에 대해 다음을 보여라. 연산자 $X$ 에 대한 $\Delta X$ 의 정의는 @eq-part1_square_of_uncertainty 를 따른다.
-
-$$
-\begin{aligned}
-\langle X \rangle & = a, \\
-\langle X^2 \rangle &= \dfrac{\Delta^2}{2} + a^2, \\
-\Delta X &= \dfrac{\Delta}{\sqrt{2}}.
-\end{aligned}
-$$
-
-:::
-
-</div></br>
-
-::: {.solution}
-이 때 $X$ 의 기대값 $\langle X \rangle$ 은
-
-$$
-\begin{aligned}
-\langle X \rangle &= \langle \psi |X|\psi\rangle = \int \langle \psi |x\rangle \langle x |X |\psi\rangle \, dx = \int \psi^\ast(x) x \psi(x)\, dx \\
-&= \int x |\psi(x)|^2 \,dx = a
-\end{aligned}
-$$
-
-이다. 또한
-
-$$
-\begin{aligned}
-\left(\langle \Delta X\rangle\right)^2 &= \langle \psi | (X-\langle X \rangle)^2 | \psi \rangle = \langle \psi |X^2 |\psi \rangle - \langle X\rangle^2
-\end{aligned}
-$$
-
-이며, 
-
-$$
-\langle X^2 \rangle = \langle \psi|X^2 |\psi \rangle = \int x^2 |\psi(x)|^2 \, dx = \dfrac{\Delta^2}{2} + a^2
-$$
-
-이므로, 
-
-$$
-\left(\langle \Delta X\rangle\right)^2 = \dfrac{\Delta^2}{2}
-$$
-
-이다. 따라서 $\langle \Delta X\rangle = \Delta / \sqrt{2}$ 이다. 
-
-::: 
+이제 @eq-QM_gaussian_wavefunction 로 주어진 파동함수에 대한 운동량 표현을 구할 수 있다.
 
 </br>
 
+<div class="border" style="background-color:#F2F4F4  ;padding:5px;">
 
-우리가 파동함수 $\psi(x)$ 를 알 때 운동량에 대해 무엇을 알 수 있을까? $\langle x |P |\psi\rangle$ 을 보자. 
+::: {#exm-QM_momentum_representation_of_gaussian_wavefunction}
 
-$$
-\langle x|P|\psi\rangle = \int \langle x|P|x'\rangle \langle x'|\psi\rangle = (-i\hbar)\int \delta'(x-x')\, \psi(x')\, dx = -i\hbar \dfrac{d\psi(x)}{dx}
-$$ {#eq-QM_momentum_state_to_position}
-
-운동량 $p$ 인 상태는 $|p\rangle$ 로 표현 할 수 있다. 당연히 $P|p\rangle = p|p\rangle$ 이다. 이것을 $X$ 에 대한 기저로 표현하면
-
-$$
-\langle x|P|p\rangle = p\langle x|p\rangle
-$$
-
-이 된다. $P$ 의 고유벡터 $|p\rangle$ 을 $X$ 기저로 표현한 파동함수를 $\psi_p(x)$ 라고 하자. 즉 $\psi_p (x) :=\langle x|p\rangle$ 이다. @eq-QM_momentum_state_to_position 으로부터 $|\psi\rangle = |p\rangle$ 로 놓으면 아래와 같은 1차 미분 방정식을 얻는다.
-
-$$
-- i\hbar \dfrac{d\psi_p(x)}{dx} = p \psi_p (x).
-$$
-
-그렇다면 
-
-$$
-\psi_p (x) = A e^{ipx/\hbar}
-$$
-
-를 얻는다. 정규화 조건 $\langle p'|p\rangle = \delta (p-p')$ 과 @prp-CHM_properties_of_dirac_delta_function 의 ($7$) 로부터
-
-$$
-\delta(p-p') = \int_{-\infty}^\infty \psi_{p'}^\ast (x) \, \psi_p(x) dx = |A|^2\int_{-\infty}^\infty e^{i(p-p')/\hbar}\, dx =2\pi \hbar^2 {|A|^2}\delta(p-p')
-$$
-
-을 얻는다. 즉 $A=\dfrac{1}{\sqrt{2\pi \hbar}}$ 이며, 따라서, 
-
-$$
-\psi_p(x) = \dfrac{1}{\sqrt{2\pi \hbar}}e^{ipx/\hbar}
-$$
-
-이다. 이제 @eq-QM_gaussian_wavefunction 로 주어진 파동함수에 대한 운동량 표현을 구할 수 있다.
-
-</br>
-
-<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
-
-::: {#exr-QM_momentum_representation_of_gaussian_wavefunction}
-
-@eq-QM_gaussian_wavefunction 로 주어진 파동함수 $\psi(x)$ 에 대해 운동량 표현 $\langle p|\psi\rangle = \psi(p)$ 을 구하라.
-:::
-</div></br>
-
-::: {.solution}
+@eq-QM_gaussian_wavefunction 로 주어진 파동함수 $\psi(x)$ 에 대해 운동량 표현 $\langle p|\psi\rangle = \psi(p)$ 을 구해보자.
 
 $$
 \begin{aligned}
-\langle p|\psi\rangle = \int \langle p|x\rangle \langle x|\psi\rangle\, dx = \int \psi_p^\ast (x) \psi(x)\, dx = \left(\dfrac{\Delta^2}{\pi \hbar^2}\right)^{1/4} e^{-ipa/\hbar} e^{-p^2\Delta^2/2\hbar^2}
+\langle p|\psi\rangle &= \int \langle p|x\rangle \langle x|\psi\rangle\, dx = \int \psi_p^\ast (x) \psi(x)\, dx \\
+&= \left(\dfrac{\Delta^2}{\pi \hbar^2}\right)^{1/4} e^{-ipa/\hbar} e^{-p^2\Delta^2/2\hbar^2}.
 \end{aligned}
 $$ {#eq-QM_momentum_representation_of_gaussian_wavefunction}
 
 :::
 
-
-</br>
+</div></br>
 
 @eq-QM_momentum_representation_of_gaussian_wavefunction 의 $\psi(p)$ 는 $p=0$ 을 중심으로 한 가우시안 함수에 $e^{-ipa/\hbar}$ 를 곱한 함수이다. @exr-QM_uncertainty_of_gaussian_wavefunction_1 에서와 같이 $\langle P\rangle$, $\langle P^2 \rangle$, $(\langle \Delta P\rangle)^{1/2}$ 를 구할 수 있다.
 
+$$
+\langle P \rangle = 0, \qquad \langle P^2 \rangle = \dfrac{\hbar^2}{2 \Delta^2}, \qquad \Delta P = \dfrac{\hbar}{\sqrt{2} \Delta}.
+$$
+
+
 
 </br>
 
-<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
-
-::: {#exr-QM_uncertainty_of_gaussian_wavefunction_2}
-
-@exr-QM_momentum_representation_of_gaussian_wavefunction 에서 구한 $\psi(p)$ 에 대해 다음을 보여라.
-
-$$
-\begin{aligned}
-\langle P \rangle & = 0, \\
-\langle P^2 \rangle &= \dfrac{\hbar^2}{2 \Delta^2}, \\
-\Delta P &= \dfrac{\hbar}{\sqrt{2} \Delta}.
-\end{aligned}
-$$
-:::
-
-</div></br>
-
-::: {.solution}
-@exr-QM_momentum_representation_of_gaussian_wavefunction 과 근본적으로 같은 계산이다.
-:::
-
-</br>
-
-@exr-QM_uncertainty_of_gaussian_wavefunction_1 과 @exr-QM_uncertainty_of_gaussian_wavefunction_2 로 부터 우리는 
+@exr-QM_uncertainty_of_gaussian_wavefunction_1 과 위 식으로부터 우리는 다음의 관계를 얻는다.
 
 $$
 \Delta X \cdot \Delta P = \dfrac{\hbar}{2}
 $$
 
-를 얻었다. [불확정성 원리](../AUX/quantum_state.qmd#sec-part1_uncertainty_principle) 에서 얻은 @eq-part1_general_uncertainty 와 @exr-QM_uncertainty_of_X_and_P 부터 얻은 결과를 생각하면 임의의 파동함수에 대해 
+를 얻었다. [불확정성 원리](../AUX/quantum_state.qmd#sec-part1_uncertainty_principle) 에서 얻은 @eq-part1_general_uncertainty 와 @exm-QM_uncertainty_of_X_and_P 부터 얻은 결과를 생각하면 임의의 파동함수에 대해 
 
 $$
 \Delta X \cdot \Delta P \ge \dfrac{\hbar}{2}
@@ -879,13 +790,13 @@ $$
 
 ### 평면파 {#sec-QM_plane_wave}
 
-운동량이 $p$ 인 상태의 파동함수 $\psi_p(x)$ 는 다음과 같다.
+운동량이 $p$ 인 상태의 파동함수 $\psi_p(x)$ 는 다음과 같다는 것을 안다.
 
 $$
 \psi_p(x) = \dfrac{1}{\sqrt{2\pi\hbar}}e^{ipx/\hbar}
 $$
 
-이것은 1차원 평면파이며 $\delta(p-p')$ 로 정규화된다. 이 평면파는 전체 공간에서 균일한 확률로 존재하며, 따라서 어떤 특정한 공간상의 유한한 구역에서 발견될 확률은 $0$ 에 가깝다. 우주가 유한하다면 $0$ 은 아니다. 이건은 매우 기묘한 조건이며, 따라서 어떤 물리적으로 실재하며 유의미한 상황도 기술할 수 없다. 즉 엄격한 의미에서라면 정확히 정의된 운동량에 대한 고유상태는 실재로 존재하지 않는다. 
+이것은 1차원 평면파이며 1 이 아닌 $\delta(p-p')$ 로 정규화된다(@prp-CHM_properties_of_dirac_delta_function 의 ($7$)). Shankar 는 이런 파동함수를 *improper wave vector* 라고 한다. 이 평면파는 전체 공간에서 균일한 확률로 존재하며, 따라서 어떤 특정한 공간상의 유한한 구역에서 발견될 확률은 $0$ 에 가깝다. 우주가 유한하다면 $0$ 은 아니다. 이건은 매우 기묘한 조건이며, 따라서 어떤 물리적으로 실재하며 유의미한 상황도 기술할 수 없다. 즉 엄격한 의미에서라면 정확히 정의된 운동량에 대한 고유상태는 실재로 존재하지 않는다. 
 
 우리는 앞서 가우시안 모양의 파동함수에 대해 알아보았다. 만약 $\Delta P$ 가 $p_0$ 를 중심으로 매우 작은 $\Delta P$ 를 갖는 가우시안 파동함수라고 생각해보자. 즉
 
@@ -893,7 +804,7 @@ $$
 \phi(p)= \dfrac{1}{(\pi \Delta^2)^{1/4}} \exp \left(- \dfrac{(p-p_0)^2}{2\Delta^2}\right)
 $$
 
-이며 $\Delta$ 값이 매우 작다고 생각해보자. 우리의 $P$ 에 대한 측정 정확도보다도 작다면 $\phi(p)$ 는 매우 잘 정의된 운동량 고유상태라고 말할 수 있을 것이다. 그리고 이 경우 평면파, 즉 운동량에 대한 고유상태로 approximation 할 수 있을 것이다. 평면파는 물리적으로는 어색하더라도 수학적으로는 매우 다루기 편하기 때문이다.
+이며 $\Delta$ 값이 매우 작다고 생각해보자. 우리의 $P$ 에 대한 측정 정확도보다도 작다면 $\phi(p)$ 는 매우 잘 정의된 운동량 고유상태라고 말할 수 있을 것이다. 그리고 이 경우 평면파, 즉 운동량에 대한 고유상태로 approximation 할 수 있을 것이다. 평면파는 물리적으로는 어색하더라도 수학적으로는 매우 다루기 편하기 때문이다. 이것은 위치에 대한 고유상태도 (당연히) 마찬가지이다. 
 
 </br>
 
@@ -1112,3 +1023,66 @@ $U(t)$ 가 시간 의존적인 해밀토니안에 대한 시간 전개 연산자
 ### 슈뢰딩거 방정식과 기저의 선택
 
 대부분의 경우 슈뢰딩거 방정식은 특정 기저에 대해 풀게 된다. 수학적으로 모든 기저는 동등하지만 주어진 문제에 따라 더 편한 기저는 존재하기 마련이다. 해밀토니안이 $X$ 와 $P$ 에만 의존할 경우 당연히 $X$ 기저나 $P$ 기저에 대해 풀게 된다. $X$ 와 $P$ 에 동시에 고유벡터인 벡터는 $|\varnothing\rangle$ 이외에는 존재하지 않으므로 (따라서 물리적인 의미가 없으므로) $X$ 혹은 $P$ 중에 문제에 따라 선택한다. 
+
+</br>
+
+### 연습문제 {.unnumbered}
+
+</br>
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-QM_uncertainty_of_gaussian_wavefunction_1}
+
+#### 가우시안 파동함수의 위치 불확정성
+
+@eq-QM_gaussian_wavefunction 으로 정의된 파동함수 $\psi(x)$ 에 대해 다음을 보여라. 연산자 $X$ 에 대한 $\Delta X$ 의 정의는 @eq-part1_square_of_uncertainty 를 따른다.
+
+$$
+\begin{aligned}
+\langle X \rangle & = a, \\
+\langle X^2 \rangle &= \dfrac{\Delta^2}{2} + a^2, \\
+\Delta X &= \dfrac{\Delta}{\sqrt{2}}.
+\end{aligned}
+$$
+
+:::
+
+</div></br>
+
+::: {.solution}
+이 때 $X$ 의 기대값 $\langle X \rangle$ 은
+
+$$
+\begin{aligned}
+\langle X \rangle &= \langle \psi |X|\psi\rangle = \int \langle \psi |x\rangle \langle x |X |\psi\rangle \, dx = \int \psi^\ast(x) x \psi(x)\, dx \\
+&= \int x |\psi(x)|^2 \,dx = a
+\end{aligned}
+$$
+
+이다. 또한
+
+$$
+\begin{aligned}
+\left(\langle \Delta X\rangle\right)^2 &= \langle \psi | (X-\langle X \rangle)^2 | \psi \rangle = \langle \psi |X^2 |\psi \rangle - \langle X\rangle^2
+\end{aligned}
+$$
+
+이며, 
+
+$$
+\langle X^2 \rangle = \langle \psi|X^2 |\psi \rangle = \int x^2 |\psi(x)|^2 \, dx = \dfrac{\Delta^2}{2} + a^2
+$$
+
+이므로, 
+
+$$
+\left(\langle \Delta X\rangle\right)^2 = \dfrac{\Delta^2}{2}
+$$
+
+이다. 따라서 $\langle \Delta X\rangle = \Delta / \sqrt{2}$ 이다. 
+
+::: 
+
+</br>
+
