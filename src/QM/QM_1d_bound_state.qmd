@@ -6,47 +6,99 @@ crossref:
   chapters: true
 ---
 
+{{< include ../latexmacros.qmd >}}
 
 ## 자유 입자 
 
 ### 자유 입자 문제의 해와 시간 전개 {#sec-QM_free_particle_and_time_evolution}
 
-가장 간단한 자유입자의 경우 슈레딩거 방정식은 다음과 같다.
+가장 간단한 자유입자의 경우 슈뢰딩거 방정식은 다음과 같다.
 
 $$
 i\hbar \dfrac{\partial |\psi\rangle}{\partial t} = H|\psi\rangle = \dfrac{P^2}{2m}|\psi\rangle.
-$$
+$$ {#eq-QM_schroedinger_equation_for_free_particle}
 
 해밀토니안이 $P$ 만의 함수이므로 $P$ 의 고유벡터 $|p\rangle$ 기저로 풀면
 
 $$
 H|p\rangle = \dfrac{p^2}{2m}|p\rangle 
-$$
+$$ {#eq-QM_schroedinger_equation_for_free_particle_in_momentum_space}
+
 
 이다. 또한 $E$ 를 $H$ 의 고유값으로 갖는 고유벡터를 $|E\rangle$ 이라고 하면
 
 $$
 H|E\rangle = E|E\rangle
-$$
+$${#eq-QM_schroedinger_equation_for_free_particle_in_energy_space}
 
-이며 이로부터 $p = \pm \sqrt{2mE}$ 를 얻는다. 즉 각각의 $|E\rangle$ 상태는 $|p=+\sqrt{2mE}\rangle$ 상태와 $|p=-\sqrt{2mE}\rangle$ 상태의 선형결합으로 표현 할 수 있다. 이렇게 해밀토니안 $H$ 와 commute 한 연산자 $A$ 에 대해 $H$ 의 어떤 고유상태가 $A$ 의 서로 다른 고유상태가 섞여 있을 수 있으며 이것을 **축퇴 상태(degenerated state)** 라고 한다. 자유입자의 경우 $H$ 의 고유상태 $|E\rangle$ 은 운동량 연산지 $P$ 의 두 고유상태 $|p=\sqrt{2mE}\rangle$ 과 $|p=-\sqrt{2mE}\rangle$ 가 섞여 있으며, 따라서 아래와 같이 
+이며 이로부터 $p = \pm \sqrt{2mE}$ 를 얻는다. 즉 각각의 $|E\rangle$ 상태는 $|p=+\sqrt{2mE}\rangle$ 상태와 $|p=-\sqrt{2mE}\rangle$ 상태의 선형결합으로 표현 할 수 있다. 이렇게 해밀토니안 $H$ 와 commute 한 연산자 $A$ 에 대해 $H$ 의 어떤 고유상태가 $A$ 의 서로 다른 고유상태가 섞여 있는 **축퇴 상태(degenerated state)** 이고 아래와 같이 
 
 $$
 |E\rangle = a |p=+\sqrt{2mE}\rangle + b|p=-\sqrt{2mE}\rangle,\, \qquad a,\,b\in \mathbb{C},\, |a|^2+|b|^2=1
-$$
+$$ {#eq-QM_solution_of_free_particle_in_momentum_space}
 
 로 표현 할 수 있다. 또한 이 때의 시간 전개 연산자는
 
 $$
-U(t) = \int_{-\infty}^\infty |p\rangle \langle p| e^{-ip^2/2m\hbar}\, dp 
-$$ {#eq-time_evolution_of_free_particle}
+\mathcal{U}(t) = \int_{-\infty}^\infty |p\rangle \langle p| e^{-ip^2 t/2m\hbar}\, dp 
+$$ {#eq-QM_time_evolution_of_free_particle}
 
-이며 이것을 $X$ 기저로 표현하면
+이다.
+
+</br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-QM_shankar_5_1_1}
+
+@eq-QM_time_evolution_of_free_particle 은 $E$ 에 대한 적분과 $\pm$ 인덱스에 대한 합을 이용하여 아래 식과 같음을 보여라.
+
+$$
+\mathcal{U}(t) = \sum_{\alpha = \pm} \int_0^\infty \left(\dfrac{m}{\sqrt{2mE}}\right) |E,\alpha\rangle \langle E,\alpha| e^{-iEt/\hbar}\, dE
+$$ 
+
+:::
+
+</div></br>
+
+::: {.solution}
+
+$|p>0\rangle = |E,\, +\rangle,\, |p<0\rangle = |E,\, -\rangle$, $dp = \sqrt{\dfrac{2m}{2E}}dE$ 임을 이용하여 @eq-QM_time_evolution_of_free_particle 의 적분 변수를 $p\to E$ 로 변경하면 된다.
+
+:::
+
+
+</br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-QM_shankar_5_1_2}
+
+@eq-QM_schroedinger_equation_for_free_particle_in_energy_space 를 해를 위치 기저 에서 구하고 @eq-QM_solution_of_free_particle_in_momentum_space 를 다시 얻어라. 즉 에너지가 $E$ 일 때의 일반해는
+
+$$
+\psi_E(x) = \beta \exp \left(\dfrac{i\sqrt{2mE}x}{\hbar}\right)+ \gamma \exp \left(-\dfrac{i\sqrt{2mE}x}{\hbar}\right)
+$$
+
+임을 보여라. 
+
+
+:::
+
+</div></br>
+
+::: {.solution}
+
+$\langle x|p\rangle = \dfrac{1}{\sqrt{2\pi\hbar}} e^{ipx}$.
+
+:::
+
+</br>
+
+이것을 $X$ 기저로 표현하면
 
 $$
 \begin{aligned}
-U(x,\,t; x',\,0) := \langle x|U(t)|x'\rangle &= \int_{-\infty}^\infty \langle x|p\rangle \langle p|x'\rangle e^{-2p^2/2m\hbar}\, dp \\
-&= \dfrac{1}{2\pi \hbar} \int_{-\infty}^\infty e^{ip(x-x')} e^{-2p^2/2m\hbar}\, dp \\
+\mathcal{U}(x,\,t; x',\,0) := \langle x|\mathcal{U}(t)|x'\rangle &= \int_{-\infty}^\infty \langle x|p\rangle \langle p|x'\rangle e^{-2p^2t/2m\hbar}\, dp \\
+&= \dfrac{1}{2\pi \hbar} \int_{-\infty}^\infty e^{ip(x-x')} e^{-2p^2t/2m\hbar}\, dp \\
 &= \left(\dfrac{m}{2\pi \hbar i t}\right)^{1/2} e^{im(x-x')^2/2\hbar t}
 \end{aligned}
 $$ {#eq-QM_time_evolution_of_operator_for_free_particle_in_X_basis}
@@ -54,7 +106,7 @@ $$ {#eq-QM_time_evolution_of_operator_for_free_particle_in_X_basis}
 이다. 따라서 $t=0$ 일 때 $\psi(x',\,t=0)$ 인 상태였다면
 
 $$
-\psi(x,\,t) = \langle x|\psi(t)\rangle = \int\langle x|U(t)|x'\rangle \langle x'|\psi(0)\rangle \, dx' = \int U(x,t;x',0) \, \psi(x',\,0)\, dx'
+\psi(x,\,t) = \langle x|\psi(t)\rangle = \int\langle x|\mathcal{U}(t)|x'\rangle \langle x'|\psi(0)\rangle \, dx' = \int \mathcal{U}(x,t;x',0) \, \psi(x',\,0)\, dx'
 $$
 
 을 통해 $\psi(x,\,t)$ 를 알 수 있다. 
@@ -67,7 +119,7 @@ $$
 가장 단적인 예로 $\psi (x',\,0)= \delta (x'-x'_0)$ 라면, 즉 $t=0$ 일 때 $x'=x'_0$ 로 국소화 되어 있었다면
 
 $$
-\psi(x,\,t) =  U(x,t;x',0) 
+\psi(x,\,t) =  \mathcal{U}(x,t;x',0) 
 $$
 
 이다. @eq-QM_time_evolution_of_operator_for_free_particle_in_X_basis 를 통해 알 수 있듯이 $t=0$ 일 때 국소화 되어 있던 입자는 시간이 지날수록 공간상으로 넓게 퍼지게 된다. 
@@ -111,6 +163,8 @@ $$
 
 </br>
 
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
 ::: {#exr-QM_gaussian_wave_packet}
 
 @eq-QM_gaussian_wave_packet_with_definite_momentum 로 주어진 웨이브 페킷에 대해 다음을 보여라.
@@ -119,8 +173,9 @@ $$
 
 &emsp; ($2$) 패킷의 폭 $\Delta X$ 는 시간에 대해 다음과 같이 변한다. $\Delta X(t) = \dfrac{\Delta}{\sqrt{2}} \left(1+ \dfrac{\hbar^2 t^2}{m^2\Delta^4}\right)^{1/2}$
 
-
 :::
+
+</div></br>
 
 ::: {.solution}
 
@@ -196,14 +251,17 @@ $$
 
 </br>
 
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
 ::: {#exr-QM_shankar_5_1_3}
 
 #### 가우시안 패킷 문제에 대한 다른 접근
 
-자유입자에 대해 $U(t) = e^{-iHt/\hbar}$ 이며 $p = -i\hbar \dfrac{d}{dx}$ 이므로
+자유입자에 대해 $\mathcal{U}(t) = e^{-iHt/\hbar}$ 이며 $p = -i\hbar \dfrac{d}{dx}$ 이므로
 
 $$
-U(t) = \exp \left[\dfrac{i}{\hbar} \left(\dfrac{\hbar^2 t}{2m} \dfrac{d^2}{dx^2}\right)\right] = \sum_{k=0}^\infty \dfrac{1}{k!} \left(\dfrac{i\hbar t}{2m}\right)^k\dfrac{d^{2k}}{dx^{2k}}
+\mathcal{U}(t) = \exp \left[\dfrac{i}{\hbar} \left(\dfrac{\hbar^2 t}{2m} \dfrac{d^2}{dx^2}\right)\right] = \sum_{k=0}^\infty \dfrac{1}{k!} \left(\dfrac{i\hbar t}{2m}\right)^k\dfrac{d^{2k}}{dx^{2k}}
 $$ {#eq-QM_another_form_of_gaussian_packet}
 
 로 쓸 수 있다. 초기 상태를 @eq-QM_gaussian_wave_packet_with_definite_momentum 에서 $p_0=0$, $\Delta =1$ 로 잡으면
@@ -216,6 +274,8 @@ $$
 
 :::
 
+</div></br>
+
 ::: {.solution}
 $\psi(x,\,0)$ 를 테일러 전개하면 아래와 같다.
 $$
@@ -224,7 +284,7 @@ $$
 
 이로부터 $\psi(x,\,t)$ 를 아래와 같이 표현할 수 있음을 안다.
 $$
-\psi(x,t) = U(t)\,\psi(x, 0) = \dfrac{1}{\pi^{1/4}}\sum_{k=0}^{\infty} \sum_{j=0}^\infty \left(\dfrac{i\hbar t}{2m}\right)^k \dfrac{1}{k!} \dfrac{d^{2k}}{dx^{2k}} \left(\dfrac{(-1)^j x^{2j}}{j! (2^j)} \right) \tag{2}
+\psi(x,t) = \mathcal{U}(t)\,\psi(x, 0) = \dfrac{1}{\pi^{1/4}}\sum_{k=0}^{\infty} \sum_{j=0}^\infty \left(\dfrac{i\hbar t}{2m}\right)^k \dfrac{1}{k!} \dfrac{d^{2k}}{dx^{2k}} \left(\dfrac{(-1)^j x^{2j}}{j! (2^j)} \right) \tag{2}
 $$
 
 여기서, $\dfrac{d^{2k}}{dx^{2k}} \left(\dfrac{(-1)^j x^{2j}}{j! (2^j)} \right)$ 를 구하면 
@@ -295,13 +355,49 @@ $$
 
 </br>
 
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
 ::: {#exr-shankar_5_1_4}
 
+아래와 같은 파동함수를 생각하자.
 
+$$
+\psi(x,\,0) = \left\{\begin{array}{ll} \sin \left(\dfrac{\pi x}{L}\right), \qquad & |x|\le \dfrac{L}{2} \\ 0 &|x|>\dfrac{L}{2}\end{array}\right. .
+$$
+
+이 함수가 몇번을 미분하든 우리는 $|x|\le \dfrac{L}{2}$ 영역에 구속된 해를 얻게 된다. 따라서 
+
+$$
+\mathcal{U}(t) = \exp \left[\dfrac{i}{\hbar} \left(\dfrac{\hbar^2t}{2m}\right) \dfrac{d^2}{dx^2}\right]
+$$
+
+연산자를 이 함수에 적용하면 역시 $|x|<\dfrac{L}{2}$ 영역에 구속된 함수를 얻는다. 그렇다면 wave packet 의 퍼짐은 어떻게 되는 것인가?
 
 
 :::
 
+</div></br>
+
+::: {.solution}
+
+이 파동함수는 $x=\pm L/2$ 에서 연속이 아니며, 따라서 슈뢰딩거 방정식의 해도 아니다. 또한 $\psi'(x=\pm L/2)=0$ 이다. 
+
+
+$|x|<\dfrac{L}{2}$ 인 영역에서
+$$
+\begin{aligned}
+\mathcal{U}(t)\psi(x,\,0) &= \sum_{k=0}^\infty \dfrac{1}{k!}\left(\dfrac{i}{\hbar}\right)^k \left(\dfrac{\hbar^2 t}{2m}\right)^k \dfrac{d^{2k}}{dx^{2k}} \sin\left(\dfrac{\pi x}{L}\right) \\[0.3em]
+&= \sum_{k=0}^\infty \dfrac{1}{k!} \left(\dfrac{-i}{\hbar}\right)^k \left(\dfrac{\hbar^2 t}{2m}\right)^k \left(\dfrac{\pi}{L}\right)^{2k} \sin \left(\dfrac{\pi x}{L}\right) \\[0.3em]
+&= \exp \left[-\dfrac{i}{\hbar} \left(\dfrac{\pi^2\hbar^2t}{2mL^2}\right) \right] \psi (x,\,0)
+\end{aligned}
+$$
+
+이므로 $\psi(x,\,t) = \mathcal{U}(t)\psi(x, 0)$ 역시 슈뢰딩거 방정식의 해가 아니다.
+
+:::
+
+</br>
 
 ### 에너지 고유함수의 일반적인 특징
 
@@ -324,7 +420,7 @@ $$
 포텐셜 $V(x)$ 가 다음과 같이 주어졌다고 하자. (@fig-QM_infinite_potential_well)
 
 $$
-V(x) = \left\{\begin{array}{ll}  0, \qquad & |x|<L/2 \\ \infty, & |x|\ge L/2 \end{array} \right.
+V(x) = \left\{\begin{array}{ll}  0, \qquad & |x|<\dfrac{L}{2} \\ \infty, & |x|\ge\dfrac{L}{2} \end{array} \right.
 $$
 
 이 때 $X$ 기저에서의 슈뢰딩거 방정식은 다음과 같다.
@@ -377,13 +473,13 @@ $$
 E_n = \dfrac{\hbar^2 \pi^2 n^2}{2mL^2}
 $$ {#eq-QM_energy_eigenvalues_of_infinite_potentail_wall}
 
-이다. 즉 박스 안의 입자가 가질 수 있는 에너지는 불연속적이다. 이렇게 어떤 동역학적인 값에 대해 불연속적인 값만 허용될 때 이를 **양자화(quantization)** 이라고 한다. 또한 파동함수는 $|x|<L/2$ 영역에서만 $0$ 이 아닌 값을 갖는다. 이렇게 파동함수 $\psi(x)$ 가 
+이다. 즉 박스 안의 입자가 가질 수 있는 에너지는 불연속적이다. 이렇게 어떤 동역학적인 값에 대해 불연속적인 값만 허용될 때 이를 **양자화(quantization)** 라고 한다. 또한 파동함수는 $|x|<L/2$ 영역에서만 $0$ 이 아닌 값을 갖는다. 이렇게 파동함수 $\psi(x)$ 가 
 
 $$
 \lim_{|x| \to \infty} \psi (x) = 0
 $$
 
-일 때 이 상태를 **bound state** 라고 한다. 고전적인 bound state 는 $V(x)$ 가 $E$ 보다 작은 영역이 국소화 되어 있을 때 발생하며, 양자역학도 마찬가지다. 더군다나 양자역학에서는 bound state 의 에너지는 필연적으로 양자화된다. 
+일 때 이 상태를 **bound state** 라고 한다. 고전적인 bound state 는 $V(x)$ 가 $E$ 보다 작은 영역이 국소화 되어 있을 때 발생하며, 양자역학도 마찬가지다. 더군다나 양자역학에서는 bound state 의 에너지는 필연적으로 양자화된다(see @sec-QM_bound_state_and_energy_quantization). 
 
 </br>
 
@@ -394,19 +490,19 @@ $$
 포텐셜 $V(x)$ 가 $V_0>0$ 에 대해 다음과 같이 주어졌다고 하자.
 $$
 V(x) = \left\{\begin{array}{ll}  0, \qquad & |x|<a \\ V_0, & |x|\ge a \end{array} \right.
-$$
+$$ {#eq-QM_1d_potential_wall_potential}
 
-$0<E<V_0$ 인 경우를 생각해보자 이 경우 $\rm{I}$ 과 $\rm{III}$ 은 고전적으로 금지된 영역이다. 그러나 무한 포텐셜 우물에서와는 다르게 $\rm{I}$ 과 $\rm{III}$ 의 파동함수는 $0$ 이 아니며 $\kappa = \sqrt{2m(V_0-E)/\hbar^2}$, $k=\sqrt{2mE}/\hbar^2$ 에 대해 
+$0<E<V_0$ 인 경우를 생각해보자 이 경우 $\rm{I}$ 과 $\rm{III}$ 은 고전적으로 금지된 영역이다. 그러나 무한 포텐셜 우물에서와는 다르게 $\rm{I}$ 과 $\rm{III}$ 의 파동함수는 $0$ 이 아니며 $\kappa = \sqrt{2m(V_0-E)/\hbar^2}$, $k=\sqrt{2mE}/\hbar^2$ 에 대해 아래와 같다.
 
 $$
 \begin{aligned}
-\psi_\rm{I}(x) &= A_1 e^{\kappa x}, \\
-\psi_{\rm{II}}(x) &= A\cos (k x) + B \sin (k x), \\
+\psi_\rm{I}(x) &= A_1 e^{\kappa x}, \\[0.3em]
+\psi_{\rm{II}}(x) &= A\cos (k x) + B \sin (k x), \\[0.3em]
 \psi_\rm{III}(x) &= A_3 e^{-\kappa x}.
 \end{aligned}
-$$
+$${#eq-QM_1d_potential_wall_initial_wave_function}
 
-이다. 이제 파동함수와 그 도함수의 연속 조건으로부터
+이제 파동함수와 그 도함수의 연속 조건으로부터
 
 $$
 \begin{aligned}
@@ -415,7 +511,7 @@ A_1 e^{-\kappa a} &= A \cos (-ka) + B \sin (-k a), \\
 A_3 e^{-k\kappa a} &= A \cos (ka) + B \sin (k a), \\
 -\kappa A_3 e^{-\kappa a} & = -kA \sin (k a) + kB \cos (k a) 
 \end{aligned}
-$$
+$${#eq-QM_1d_potential_wall_boundary_condition_1}
 
 첫번째 두 식과 마지막 두 식으로부터, 
 
@@ -424,7 +520,7 @@ $$
 \kappa (A \cos (k a) - B \sin (k a)) &= k(A \sin (k a) + B \cos (k a)), \\
 -\kappa (A \cos (k a) + B \sin (k a)) &= -k (A\sin (k a) - B \cos (k a))
 \end{aligned}
-$$
+$${#eq-QM_1d_potential_wall_boundary_condition_2}
 
 를 얻는다. 두 식의 양변을 빼주면 $B=0,\, \kappa \cos (ka) = k \sin (ka)$ 을 얻으며, 두 식의 양변을 더하면 $A=0,\,\kappa \sin (ka) = -k \cos (ka)$ 을 얻는다. 즉 경계조건으로부터 다음 두 조건중 하나를 만족해야 한다는 것을 안다.
 
@@ -436,7 +532,7 @@ $$
 
 $$
 \kappa = \sqrt{2mV_0/\hbar^2 - k^2}
-$$ 
+$$ {#eq-QM_1d_potential_wall_descrete_condition}
 
 를 만족해야 한다. 아래 그림은 짝함수($(a)$) 와 홀함수($(b)$) 의 경우에 대해 허용된 $\kappa$ 값을 보여준다. 즉 무한 포텐셜 우물이 아닌 일반적인 포텐셜 우물이더라도 bound state 일 때 에너지가 양자화 된다는 것을 안다. 
 
@@ -453,13 +549,14 @@ $$
 
 지금까지 $E<V_0$ 인 경우를 살펴보았다. $E>V_0$ 인 경우는 그 해가 모두 $\sin$ 함수와 $\cos$ 함수의 중첩이기 때문에 파동함수가 전 영역에 걸쳐 있으며 에너지도 양자화 되지 않는데. 이것을 보이는것은 어렵지 않다.
 
-
 </br>
 
 ### Bound state 와 에너지 양자화 {#sec-QM_bound_state_and_energy_quantization}
 
+앞서의 무한포텐셜 우물과 포텐셜 우물의 경우 상태가 bound state 일 경우 에너지가 양자화된다. 이것은 일반적으로 bound state 에서 성립하는데 여기서는 이것을 보이고자 한다. 엄밀한 수학적 증명은 아니며 일종의 스케치이다. 
 
-앞서의 무한포텐셜 우물과 포텐셜 우물의 경우 상태가 bound state 일 경우 에너지가 양자화된다. 이것은 일반적으로 bound state 에서 성립하는데 여기서는 이것을 보이고자 한다. 정해진 $E$ 에 대해 $V(x)$ 는 다음의 성질을 가진다고 가정하자 하자.
+
+정해진 $E$ 에 대해 $V(x)$ 는 유한하며 다음의 성질을 가진다고 가정하자.
 
 $$
 \lim_{x\to \infty} V(x) = V_+ > E,\qquad \lim_{x \to -\infty} V(x) = V_- > E.
@@ -481,7 +578,10 @@ $$
 &emsp; ($3$) 역시 양 끝단이 아닌경우 $V_i > E$ 이면 $\psi_i (x) = A_i e^{\kappa_i x}+ B_i e^{-\kappa_i x}$ 이다.
 
 
-양 끝단을 기술하는 파동함수 $\psi_1$ 과 $\psi_N$ 은 각각 하나의 미지수 $A_1,\,A_N$ 를 가진다. 그 외의 구간에서는 두개의 미지수 $A_i$ 와 $B_i$ 를 가진다. 이 미지수는 파동함수 $\psi_i(x)$ 와 그 미분인 $\psi'_i(x)$ 가 인접한 $\psi_{i-1}(x),\, \psi'_{i-1}(x)$ 그리고 $\psi_{i+1}(x),\, \psi'_{i+1}(x)$ 와 연속이어야 한다는 조건으로부터 결정 될 수 있다. 즉 우리는 $2\times (N-2)+ 2 = 2N-2$ 개의 미지수에 대해 $2N-2$ 개의 경계조건을 가진다. 그런데 여기에서 주의해야 할 것이 있다. 미지수에 대한 식은 미지수 전체에 $0$ 이 아닌 수를 곱해도 성립한다. 즉 $A_i,\,B_i$ 에 대해 중요한것은 각각의 비율이다. 여기에서 미지수의 자유도를 제한하는 조건이 하나 들어가므로 실제로 미지수의 자유도는 $2N-3$ 이며 이에 대해 $2N-2$ 개의 경계조건이 존재하게 된다. 이것이 에너지 양자화의 원인이다. 이 조건은 구간을 늘려도 확실히 성립한다. 
+양 끝단을 기술하는 파동함수 $\psi_1$ 과 $\psi_N$ 은 각각 하나의 미지수 $A_1,\,A_N$ 를 가진다. 그 외의 구간에서는 두개의 미지수 $A_i$ 와 $B_i$ 를 가진다. 이 미지수는 파동함수 $\psi_i(x)$ 와 그 미분인 $\psi'_i(x)$ 가 인접한 $\psi_{i-1}(x),\, \psi'_{i-1}(x)$ 그리고 $\psi_{i+1}(x),\, \psi'_{i+1}(x)$ 와 연속이어야 한다는 조건으로부터 결정 될 수 있다. 즉 우리는 $2\times (N-2)+ 2 = 2N-2$ 개의 미지수에 대해 $2N-2$ 개의 경계조건을 가진다. 앞서의 포텐셜 우물에서의 @eq-QM_1d_potential_wall_boundary_condition_1 와 같은 식이다. 이로부터 $2N-2$ 개의 미지수에 대한 $QA=0$ 꼴의 선형방정식을 얻는다. 여기서 $A \in \C^{2N-2}$ 의 값에 어떤 $0$ 이 아닌 값을 곱하더라도 식은 성립하며, 이를 이용하여 파동함수를 정규화 하는데 사용 할 수 있지만 고유값을 구하는데는 사용하지 않는 값이다.
+
+우리는 $2N-2$ 개의 $\kappa_i$ 혹은 $k_i$ 값을 가지고 있으며, 허용된 값들은 연속이다. 여기에 @eq-QM_1d_potential_wall_descrete_condition 와 같은 조건이 추가되면서 연속의 조건이 깨지게 된다.
+
 
 1차원 bound state 의 양자화는 $\lim_{|x|\to \infty} V(x) > E$ 인 경우에만 성립하는 것이 아니다. 뒤에 보겠지만 $V(x) = \dfrac{1}{2}m\omega^2 x^2$ 으로 주어지는 단순조화진동자의 경우에도 에너지는 양자화 되어 있다. $V(x) \to \infty$ 이므로 파동함수는 $V(x)\le E$ 인 영역에 훨씬 더 강하게 bound 되어 있다.  
 
@@ -531,14 +631,16 @@ $$
 
 </br>
 
-### 연습문제
+### 연습문제 {.unnumbered}
 
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 ::: {#exr-QM_potential_wall_1}
 
 무한 포텐셜 우물의 파동함수 $\psi_n(x)$(@eq-QM_wavefunction_of_infinite_potential_wall) 에 대한 시간전개 연산자 $U(t)$ 를 구하고 이것을 $X$ 의 기저로 표현하라.
 
-
 :::
+
+</div></br>
 
 ::: {.solution}
 
@@ -561,15 +663,19 @@ $$
 
 :::
 
-
 </br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-shankar_5_2_2}
+
+#### Shankar 5.2.2
 
 ($a$) $|\psi\rangle$ 이 정규화된 상태이고 $E_0$ 가 $H$ 의 가장 작은 고유값일 때 $\langle \psi |H |\psi\rangle \ge E_0$ 임을 보여라.
 
 ($b$) 1차원에서의 attractive potential 이 있는 시스템은 최소한 하나의 bound state 를 가진다는 것을  보여라. $\lim_{|x|\to\infty} V(x) = 0$ 으로 간주하라.
 :::
+
+</div></br>
 
 ::: {.solution}
 
@@ -637,16 +743,19 @@ $$
 :::
 
 </br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-shankar_5_2_3}
 
-#### Shanker 5.2.2
+#### Shanker 5.2.3
 
 $V(x) = -aV_0 \delta (x)$ 인 경우를 생각하자. 이 때 에너지 $E=-\dfrac{ma^2V_0^2}{2\hbar^2}$ 인 bound state 가 존재한다는 것을 보여라. 다른 bound state 가 존재하는가?
 
 :::
 
-::: {.proof}
+</div></br>
+
+::: {.solution}
 
 $E<0$ 인 경우를 생각하자. 당연히 $x<0$ 인 영역의 파동함수는 $\psi_{\rm{I}}(x) = Ae^{\kappa x}$ 이며 $x>0$ 인 영역의 파동함수는 $\psi_{\rm{II}}(x) = Be^{-\kappa x}$ 이다. 
 
@@ -717,6 +826,7 @@ $$
 :::
 
 </br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-shankar_5_2_4}
 
@@ -726,7 +836,9 @@ $$
 
 :::
 
-::: {.proof}
+</div></br>
+
+::: {.solution}
 
 $|n\rangle$ 상태의 입자가 존재할 때 벽이 받는 힘은 다음과 같다.
 $$
@@ -810,9 +922,11 @@ $$
 \dfrac{\partial P}{\partial t} = \nabla \cdot \boldsymbol{j}
 $$ {#eq-QM_continuity_equation_of_probability}
 
-를 얻게 된다. 이 때 $\boldsymbol{j}$ **확률 흐름 밀도(probability current density)** 라고 하고 @eq-QM_continuity_equation_of_probability 를 **연속 방정식(continuity equation)** 이라고 한다.
+를 얻게 된다. 이 때 $\boldsymbol{j}$ 를 **확률 흐름 밀도(probability current density)** 라고 하고 @eq-QM_continuity_equation_of_probability 를 **연속 방정식(continuity equation)** 이라고 한다.
 
 </br>
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-shankar_5_3_1}
 
@@ -821,6 +935,8 @@ $$ {#eq-QM_continuity_equation_of_probability}
 실함수 $V_r,\, V_i$ 에 대해 포텐셜 $V = V_r - iV_i$ 가 주어졌다고 하자. 그리고 $V_i$ 는 상수함수라고 하자. 이에 대한 해밀토니안 $H$ 는 에르미트인가? 이 포텐셜에 대해 연속방정식을 적용하여 입자를 발견할 총 확률(total probability) 이 $e^{-2V_it/\hbar}$ 로 감소함을 보여라. 이런 복소 포텐셜은 입자가 흠수되는 과정에 적용된다.
 
 :::
+
+</div></br>
 
 ::: {.solution}
 
@@ -868,6 +984,7 @@ $$
 :::
 
 </br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-shankar_5_3_2}
 
@@ -876,6 +993,8 @@ $$
 실함수 $\tilde{\Psi}$ 와 상수 $c$ 에 대해 $\Psi = c\tilde{\Psi}$ 에 대한 $\boldsymbol{j}=0$ 임을 보여라. 여기서 $c$ 는 실수이거나 복소수 일 수 있다.
 
 :::
+
+</div></br>
 
 ::: {.solution}
 
@@ -886,6 +1005,7 @@ $$
 :::
 
 </br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-shankar_5_3_3}
 
@@ -900,6 +1020,8 @@ $$
 이 때 $\boldsymbol{j}$ 와 $P$ 를 구하고 전자기 방정식 $\boldsymbol{j}= \rho \boldsymbol{v}$ 와 비교하라. 여기서 $\boldsymbol{v}$ 는 속도이다. $\rho$ 와 $\boldsymbol{j}$ 는 상수이며 따라서 @eq-QM_continuity_equation_of_probability 가 자동작으로 만족된다.
 
 :::
+
+</div></br>
 
 ::: {.solution}
 
@@ -933,7 +1055,7 @@ $$
 
 :::
 
-</br>
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-shankar_5_3_4}
 
@@ -942,6 +1064,8 @@ $$
 1차원에서의 $\psi = Ae^{ipx/\hbar} + Be^{-ipx/\hbar}$ 를 생각하자. $j = (|A|^2-|B|^2)p/m$ 임을 보여라. 
 
 :::
+
+</div></br>
 
 ::: {.solution}
 
@@ -961,12 +1085,18 @@ $$
 
 ## 중요한 정리
 
+여기서는 앞서 다루지 않았지만 중요한 사항을 정리한다.
+
+
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#thm-QM_no_degeneracy_in_1d_bound_state}
 
 1차원 bound state 에는 축퇴가 없다.
 
 :::
+
+</div></br>
 
 ::: {.proof}
 
@@ -1008,12 +1138,15 @@ $$
 :::
 
 </br>
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#thm-QM_eigenfunction_of_H_is_pure_real_function_in_X_basis}
 
 해밀토니안 $H$ 의 고유상태는 $X$ 기저에서 실함수로 표현 될 수 있다. 즉 실함수에 $c\in \mathbb{C}$ 를 곱한 꼴이다.
 
 :::
+
+</div></br>
 
 ::: {.proof}
 

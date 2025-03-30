@@ -5,22 +5,21 @@ number-depth: 3
 crossref:
   chapters: true
 ---
+{{< include ../latexmacros.qmd >}}
 
 ## 단순조화진동자는 왜 중요한가
 
-어떤 시스템이 안정 평형 상태(stable equillibrium) 에서 약간 벗어날 경우, 이 fluctuation 을 진동자(들) 로 기술할 수 있다는 것은 고전역학으로부터도 잘 알려져 있다. 예를 들어 포텐셜 $V(x)$ 가 부여된 1차원 동역학을 생각하자. $V(x)$ 가 $x=x_0$ 에서 극소값을 가진다면, $V'(x_0) = 0$ 이며 따라서
+앞으로 보이겠지만 단순조화진동자는 고전역학적으로 뿐만 아니라 양자역학적으로도 완벽하게 풀리는 문제이다. 단순조화진동자는 또한 실용적으로도 매우 중요하다. 어떤 시스템이 안정 평형 상태(stable equillibrium) 에서 약간 벗어날 경우, 이 fluctuation 을 진동자(들) 로 기술할 수 있다는 것은 고전역학으로부터도 잘 알려져 있다. 예를 들어 포텐셜 $V(x)$ 가 부여된 1차원 동역학을 생각하자. $V(x)$ 가 $x=x_0$ 에서 극소값을 가진다면, $V'(x_0) = 0$ 이며 따라서
 
 $$
 V(x) = V(x_0) + \dfrac{1}{2} V''(x_0)(x-x_0)^2 + \dfrac{1}{6}V'''(x_0)(x-x_0)^3 + \cdots
 $$
 
-이다. 
+이다. 우리가 관심 있는 영역이 $x_0$ 주위의 좁은 영역일 경우 이 시스템은 조화진동자 문제가 된다.
 
 </br>
 
-## 진동자의 양자화
-
-$V(x) = \dfrac{1}{2}m\omega^2X^2$ 으로 주어진 1차원 조화진동자를 생각하자.
+이제 $V(x) = \dfrac{1}{2}m\omega^2X^2$ 으로 주어진 1차원 조화진동자를 생각하자.
 
 $$
 H = \dfrac{P^2}{2m} + \dfrac{1}{2}m\omega^2X^2
@@ -46,7 +45,7 @@ $$
 
 </br>
 
-이제 @eq-QM_1d_sho 로 주어진 시간독립 슈뢰딩거 방정식을 풀어보자. 여기에는 두가지 방법이 있다. 하나는 $X$ 기저에서 (혹은 $P$ 기저에서) 멱급수를 이용하여 미분방정식을 푸는 것이고 다른 하나는 아주 독특한 사다리 연산자(ladder operator) 를 도입하는 것이다. 여기서는 후자를 먼저 알아보도록 한다.
+이제 @eq-QM_1d_sho 로 주어진 시간독립 슈뢰딩거 방정식을 풀어보자. 여기에는 두가지 방법이 있다. 하나는 $X$ 기저에서 (혹은 $P$ 기저에서) 멱급수를 이용하여 미분방정식을 푸는 것이고 다른 하나는 아주 독특한 사다리 연산자(ladder operator) 를 도입하는 것이다. 여기서는 후자를 통해 단순조화진동자 문제에 접근한다.
 
 </br>
 
@@ -55,7 +54,7 @@ $$
 
 ### 사다리 연산자와 해밀토니안 {#sec-QM_ladder_operator_and_hamiltonian}
 
-$X$,\, $P$ 에 대해 연산자 $a$ 를 다음과 같이 정의한다. 
+$X$, $P$ 에 대해 연산자 $a$ 를 다음과 같이 정의한다. 
 
 $$
 a = \left(\dfrac{m\omega}{2\hbar}\right)^{1/2} X + i \left(\dfrac{1}{2m\omega \hbar}\right)^{1/2} P.
@@ -82,13 +81,13 @@ $$
 a^\dagger a = \left(\dfrac{m\omega}{2\hbar}\right)X^2 + \dfrac{1}{2m\omega \hbar} P^2 + i \left(\dfrac{1}{2\hbar}\right)[X, P] = \dfrac{H}{\hbar \omega} - \dfrac{1}{2}I
 $$
 
-이다. 즉,
+이다. 즉 단순조화진동자의 해밀토니안은 $a$ 와 $a^\dagger$ 를 이용하여 다음과 같이 표현된다.
 
 $$
-H = \hbar \omega\left(a^\dagger a + \dfrac{1}{2}I\right)
+\boxed{H = \hbar \omega\left(a^\dagger a + \dfrac{1}{2}I\right).}
 $$ {#eq-QM_sho_hamiltonian_using_ladder}
 
-이다. 이 때 $a$ 와 $a^\dagger$ 를 **사다리 연산자(ladder operator)** 라고 한다. 이런 이름이 붙은 이유는 차츰 명백해질 것이다. 
+이 때 $a$ 와 $a^\dagger$ 를 **사다리 연산자(ladder operator)** 라고 한다. 이런 이름이 붙은 이유는 차츰 명백해질 것이다. 
 
 </br>
 
@@ -107,12 +106,12 @@ $H$ 에 대해 에너지 $E$ 를 갖는 고유상태 $|E\rangle$ 를 생각하�
 
 $$
 \begin{aligned}
-Ha|E\rangle &= \left(aH - \hbar \omega a\right) |E\rangle = a(E-\hbar \omega)|E\rangle, \\[0.2em]
-Ha^\dagger |E\rangle &= \left(a^\dagger H + \hbar \omega a^\dagger\right)|E\rangle = a^\dagger (E+\hbar \omega)|E\rangle
+Ha|E\rangle &= \left(aH - \hbar \omega a\right) |E\rangle = (E-\hbar \omega)a|E\rangle, \\[0.2em]
+Ha^\dagger |E\rangle &= \left(a^\dagger H + \hbar \omega a^\dagger\right)|E\rangle = (E+\hbar \omega)a^\dagger |E\rangle
 \end{aligned}
 $$ {#eq-QM_commutator_for_ladder_and_hamiltonian_2}
 
-를 얻는다. 즉 $a|E\rangle$ 은 고유값 $E-\hbar \omega$ 를 갖는 $H$ 의 고유상태이며 $a^\dagger |E\rangle$ 은 고유값 $E+\hbar\omega$ 를 갖는 $H$ 의 고유상태이다. 여기서 $a$ 와 $a^\dagger$ 를 사다리 연산자라고 부르는 이유가 밝혀진다. $a$ 는 에너지의 고유상태를 $\hbar \omega$ 만큼 낮은 에너지의 고유상태로 보내는 연산자이고 $a^\dagger$ 는 에너지의 고유상태를 $\hbar \omega$ 만큼 높은 에너지의 고유상태로 보내는 연산자이다. 이때문에 $a$ 를 *lowering operator*, $a^\dagger$ 를 *raising operator* 라고 한다. 
+를 얻는다. 즉 $a|E\rangle$ 은 고유값 $E-\hbar \omega$ 를 갖는 $H$ 의 고유상태이며 $a^\dagger |E\rangle$ 은 고유값 $E+\hbar\omega$ 를 갖는 $H$ 의 고유상태이다. 여기서 $a$ 와 $a^\dagger$ 를 사다리 연산자라고 부르는 이유가 밝혀진다. $a$ 는 에너지의 고유상태를 $\hbar \omega$ 만큼 낮은 에너지의 고유상태로 보내는 연산자이고 $a^\dagger$ 는 에너지의 고유상태를 $\hbar \omega$ 만큼 높은 에너지의 고유상태로 보내는 연산자이다. 이때문에 $a$ 를 **하강 연산자(lowering operator)**, $a^\dagger$ 를 **상승 연산자(raising operator)** 라고 한다. 
 
 우리는 @exm-QM_sho_positive_energy 에서 에너지의 고유값이 non-negative 임을 보았다. 우리가 어떤 상태 $|E\rangle$ 에 있다고 하자. $a$ 연산자를 통해 계속 낮은 에너지의 고유상태로 가다 보면 어느 순간에 $0$ 보다 낮은 에너지의 상태를 취해야 할 때가 있는데 이는 불가능 하다. 따라서 어떤 상태 $|E_0\rangle$ 에서 
 
@@ -145,7 +144,7 @@ $$
 \hbar \omega \left(n+\dfrac{1}{2}\right),\qquad n=0,\,1,\,2,\ldots
 $$
 
-를 고유값으로 갖는 $H$ 의 고유상태를 얻을 수 있다. 이를 $|n\rangle$ 이라고 쓸 수 있을 것이다. 한가지 의문을 제시할 수 있다. $\frac{\hbar \omega}{2}$ 의 에너지를 갖는 상태는 유일한가? 우리는 이미 @thm-QM_no_degeneracy_in_1d_bound_state 에서 1차원 bound state 에는 축퇴(degeneracy) 가 없다는 것을 보였다. 즉 $\dfrac{1}{2}\hbar \omega$ 를 갖는 상태는 하나 뿐이다. 그렇다면 $\hbar\omega (n+1/2)$ 의 에너지를 갖는 상태도 하나 뿐이다. 그렇다면 우리는 정규화된 고유상태를 $|n\rangle$ 이라고 표기할 수 있을 것이다. 즉, $n=0,\,1,\,2,\ldots$ 에 대해
+를 고유값으로 갖는 $H$ 의 고유상태를 얻을 수 있다. 이를 $|n\rangle$ 이라고 쓸 수 있을 것이다. 한가지 의문을 제시할 수 있다. $\frac{\hbar \omega}{2}$ 의 에너지를 갖는 상태는 유일한가? 우리는 이미 @thm-QM_no_degeneracy_in_1d_bound_state 에서 1차원 bound state 에는 축퇴(degeneracy) 가 없다는 것을 보였다. 즉 $\dfrac{1}{2}\hbar \omega$ 를 갖는 상태는 하나 뿐이다. 그렇다면 $\hbar\omega \left(n+\frac{1}{2}\right)$ 의 에너지를 갖는 상태도 하나 뿐이다. 그렇다면 우리는 정규화된 고유상태를 $|n\rangle$ 이라고 표기할 수 있을 것이다. 즉, $n=0,\,1,\,2,\ldots$ 에 대해
 
 $$
 H|n\rangle = \hbar \omega \left(a^\dagger a+ \dfrac{1}{2}I\right) |n\rangle = \hbar \omega \left(n+\dfrac{1}{2}\right) |n\rangle, 
@@ -205,7 +204,7 @@ $$
 이므로, 
 
 $$
-|n\rangle = \dfrac{\left(a^\dagger\right)^n |0\rangle}{\sqrt{n!}}
+\boxed{|n\rangle = \dfrac{\left(a^\dagger\right)^n |0\rangle}{\sqrt{n!}}}
 $$ {#eq-QM_energy_eigenstate_from_ground_state_in_sho}
 
 이다.
@@ -255,6 +254,8 @@ $$
 
 ### 연습문제
 
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
 ::: {#exr-shankar_7_4_2}
 
 #### Shankar 7.4.2
@@ -263,7 +264,9 @@ $$
 
 :::
 
-::: {.soluiton}
+</div></br>
+
+::: {.solution}
 
 @eq-QM_sho_x_and_p_with_ladder_operator 로부터 $\langle n|X|n\rangle = 0$, $\langle n|P|n\rangle=0$ 임은 쉽게 알 수 있다. 본문에서 $\langle X^2\rangle = \left(\dfrac{\hbar}{2m\omega}\right)(2n+1)$ 임을 보였다.
 
@@ -284,6 +287,7 @@ $$
 :::
 
 </br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-shankar_7_4_3}
 
@@ -298,6 +302,8 @@ $$
 의 관계가 성립하는 것을 의미한다. 양자역학의 1차원 조화진동자에 해서는 $k=2$ 에서 위의 관계가 성립함을 보여라.
 
 :::
+
+</div></br>
 
 ::: {.solution}
 
@@ -314,6 +320,7 @@ $$
 :::
 
 </br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-shankar_7_4_4}
 
@@ -323,6 +330,7 @@ $\langle n|X^4|n\rangle = \left(\dfrac{\hbar}{2m\omega}\right)^2(3+6n(n+1))$ 임
 
 
 :::
+</div></br>
 
 ::: {.solution}
 
@@ -349,6 +357,7 @@ $$
 :::
 
 </br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-shankar_7_4_5}
 
@@ -356,13 +365,15 @@ $$
 
 $t=0$ 일 때 입자는 $|\Psi(0)\rangle = \dfrac{1}{\sqrt{2}} \left(|0\rangle + |1\rangle\right)$ 상태 였다. 
 
-&emsp; ($1$) $|\Psi(t)\rangle$ 을 구하라.
+&emsp;($1$) $|\Psi(t)\rangle$ 을 구하라.
 
-&emsp; ($2$) $\langle X(0)\rangle = \langle \Psi (0)|X|\Psi(0)\rangle$ 을 구하라. $\langle P(0)\rangle$, $\langle X(t)\rangle$, $\langle P(t)\rangle$ 을 구하라.
+&emsp;($2$) $\langle X(0)\rangle = \langle \Psi (0)|X|\Psi(0)\rangle$ 을 구하라. $\langle P(0)\rangle$, $\langle X(t)\rangle$, $\langle P(t)\rangle$ 을 구하라.
 
-&emsp; ($3$) 에렌페스트 정리를 이용하여 $\dfrac{d}{dt}\langle X(t)\rangle$ 과 $\dfrac{d}{dt}\langle P(t)\rangle$ 을 구하고 $\langle X(t)\rangle$ 과 $\langle P(t)\rangle$ 을 구하고 ($2$) 의 결과와 비교하라.
+&emsp;($3$) 에렌페스트 정리를 이용하여 $\dfrac{d}{dt}\langle X(t)\rangle$ 과 $\dfrac{d}{dt}\langle P(t)\rangle$ 을 구하고 $\langle X(t)\rangle$ 과 $\langle P(t)\rangle$ 을 구하고 ($2$) 의 결과와 비교하라.
 
 :::
+
+</div></br>
 
 ::: {.solution}
 
@@ -427,6 +438,7 @@ $$
 :::
 
 </br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-shankar_7_4_6}
 
@@ -435,6 +447,8 @@ $$
 $\langle a(t)\rangle = e^{-i\omega t}\langle a(0)\rangle$ 이며 $\langle a^\dagger (t) \rangle = e^{i\omega t}\langle a^\dagger (0)\rangle$ 임을 보여라.
 
 :::
+
+</div></br>
 
 ::: {.solution}
 
@@ -448,6 +462,7 @@ $$
 :::
 
 </br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-shankar_7_4_8}
 
@@ -461,13 +476,15 @@ $$
 
 이다. 
 
-&emsp; ($1$) 양자역학적인 각운동량 $L_x,\,L_y,\,L_z$ 를 구성하고 순서에 의한 모호함이 없음을 보여라.
+&emsp;($1$) 양자역학적인 각운동량 $L_x,\,L_y,\,L_z$ 를 구성하고 순서에 의한 모호함이 없음을 보여라.
 
-&emsp; ($2$) $\{l_x,\, l_y\}= l_z$ 임을 보여라.
+&emsp;($2$) $\{l_x,\, l_y\}= l_z$ 임을 보여라.
 
-&emsp; ($3$) $[L_x,\,L_y] = i\hbar L_z$ 임을 보여라.
+&emsp;($3$) $[L_x,\,L_y] = i\hbar L_z$ 임을 보여라.
 
 :::
+
+</div></br>
 
 ::: {.solution}
 
@@ -490,6 +507,7 @@ $$
 $$
 
 </br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-shankar_7_4_9}
 
@@ -521,6 +539,8 @@ $$
 임을 보여라.
 
 :::
+
+</div></br>
 
 ::: {.solution}
 
@@ -751,11 +771,14 @@ $$ {#eq-QM_orthogonality_of_hermite_polynomials}
 
 ### 연습문제
 
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 ::: {#exr-shankar_7_5_1}
 
 $P$ 기저에서의 바닥상태의 파동함수 $\Psi_0(p)$ 를 구하라.
 
 :::
+
+</div></br>
 
 
 ::: {.solution}
@@ -795,7 +818,7 @@ $$
 :::
 
 </br>
-
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-shankar_7.3.6}
 
@@ -810,6 +833,8 @@ $$
 경계조건은 무엇인가? 고유값과 고유벡터를 구하라.
 
 :::
+
+</div></br>
 
 ::: {.solution}
 

@@ -7,12 +7,15 @@ crossref:
 ---
 
 
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
 ::: {#prp-part3_exponent_of_operator_1}
 
 힐베르트 공간 $\mathscr{H}$ 에서 정의된 연산자 $M,\, N$ 에 대해 다음 $[M,\,N]=0$ 이면 $e^{M+N} =e^M e^N$ 이다.
 
 :::
 
+</div></br>
 
 ::: {.proof}
 
@@ -24,7 +27,7 @@ crossref:
 행렬에 대한 다음 상미분 방정식과 초기조건이 주어져 있다고 하자.
 
 $$
-dX/dt=(M+N)X \qquad \text{with }X(0)=I
+\dfrac{dX}{dt}=(M+N)X \qquad \text{with }X(0)=I
 $$ {#eq-exp_op_1}
 
 이 미분방정식에 대한 유일해는 다음과 같다.
@@ -41,7 +44,7 @@ $${#eq-exp_op_3}
 
 라고 하자. 그렇다면 
 $$
-dY/dt=\dfrac{d(e^{𝑀𝑡})}{dt} e^{Nt} + e^{Mt}\dfrac{d(e^{Nt})}{dt}= Me^{Mt}e^{Nt} + e^{Mt}Ne^{Nt}
+\dfrac{dY}{dt}=\dfrac{d(e^{𝑀𝑡})}{dt} e^{Nt} + e^{Mt}\dfrac{d(e^{Nt})}{dt}= Me^{Mt}e^{Nt} + e^{Mt}Ne^{Nt}
 $${#eq-exp_op_4}
 
 이다. $[M,\,N]= MN-NM=0$ 이므로 $[e^{Mt},\, N]=0$ 이며 따라서
@@ -69,16 +72,23 @@ $$
 
 </br>
 
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
 ::: {#prp-part3_Baker_Hausdorff_Lemma}
 
 #### Baker-Hausdorff Lemma {#sec-prp_baker_housedorff_lemma}
 
 $\lambda$ 가 실수일 때 다음이 성립한다.
 $$
-e^{iG\lambda}Ae^{-iG\lambda} = A + i\lambda [G,\,A] + \dfrac{(i\lambda)^2}{2!} [G,\,[G,\,A]] + \cdots + \dfrac{(i\lambda)^n}{n!} \underbrace{[G,\,[G,\,[G,\cdots [G}_{n\text{ times}},\,A]]]] + \cdots 
+\begin{aligned}
+e^{iG\lambda}Ae^{-iG\lambda} &= A + i\lambda [G,\,A] + \dfrac{(i\lambda)^2}{2!} [G,\,[G,\,A]] +\cdots  \\
+&\qquad + \dfrac{(i\lambda)^n}{n!} \underbrace{[G,\,[G,\,[G,\cdots [G}_{n\text{ times}},\,A]]]] + \cdots 
+\end{aligned}
 $$
 
 :::
+
+</div></br>
 
 ::: {.proof}
 
@@ -87,7 +97,7 @@ $$
 [MathExchange 의 질문과 답변](https://math.stackexchange.com/questions/711308/baker-hausdorff-lemma-from-sakurais-book) 가운데 Robert Lewis 의 증명을 요약한다.
 :::
 
-$A,\,B$ 가 힐베르트 공간 $\mathcal{H}$ 에서 정의된 연산자라고 하자. 에르미트여부는 상관 없다. 선형연산자에 대한 상미분 방정식
+$A,\,B$ 가 힐베르트 공간 $\mathscr{H}$ 에서 정의된 연산자라고 하자. 에르미트여부는 상관 없다. 선형연산자에 대한 상미분 방정식
 
 $$
 \dfrac{dX}{d\lambda} = [B,\,X]
@@ -159,85 +169,6 @@ $$
 \dfrac{dY}{d\lambda} = \phi_B(e^{\lambda \phi_B(A)}) = [B,\, Y]
 $$
 
-이며 $Y(0) = A$ 임을 보일 수 있다. 즉 $Y(\lambda) = X(\lambda)$ 이다. 
-
-
-Let 𝐴 and 𝐵 be any two operators on the Hilbert space ℋ, hermitian or not. We assume 𝐴,𝐵∈𝐿(ℋ), the Banach algebra of bounded linear maps from ℋ to itself. Consider the linear operator ordinary differential equation
-
-𝑑𝑋𝑑𝜆=[𝐵,𝑋](1)
-
-with initial condition
-
-𝑋(0)=𝐴.(2)
-
-We observe that
-
-𝑋(𝜆)=𝑒𝜆𝐵𝐴𝑒−𝜆𝐵(3)
-
-is the unique solution to (1), (2), for from (3) it follows that
-
-𝑑𝑋𝑑𝜆=𝑒𝜆𝐵𝑑𝜆𝐴𝑒−𝜆𝐵+𝑒𝜆𝐵𝑑𝐴𝑑𝜆𝑒−𝜆𝐵+𝑒𝜆𝐵𝐴𝑒−𝜆𝐵𝑑𝜆= 𝐵𝑒𝜆𝐵𝐴𝑒−𝜆𝐵−𝑒𝜆𝐵𝐴𝑒−𝜆𝐵𝐵=[𝐵,𝑒𝜆𝐵𝐴𝑒−𝜆𝐵],(4)
-
-where we have used the fact that 𝑑𝐴/𝑑𝜆=0 and the Leibniz product rule for derivatives in (4), and furthermore it is evident from (3) that 𝑋(0)=𝐴.
-
-We next recall that for any 𝐵∈𝐿(ℋ) the adjoint linear operator ad𝐵:𝐿(ℋ)→𝐿(ℋ) may be defined via
-
-ad𝐵(𝐴)=[𝐵,𝐴](5)
-
-for all 𝐴∈𝐿(ℋ). Denoting by ‖𝑇‖𝐿 the standard operator norm on 𝐿(ℋ), we see that
-
-‖ad𝐵(𝐴)‖𝐿=‖[𝐵,𝐴]‖𝐿=‖𝐵𝐴−𝐴𝐵‖𝐿≤‖𝐵𝐴‖𝐿+‖𝐴𝐵‖𝐿 ≤‖𝐵‖𝐿‖𝐴‖𝐿+‖𝐴‖𝐿‖𝐵‖𝐿=2‖𝐵‖𝐿‖𝐴‖𝐿,(6)
-
-which shows that
-
-‖ad𝐵‖𝐿≤2‖𝐵‖𝐿,(7)
-
-i.e. that ad𝐵∈𝐿(ℋ) is itself a bounded linear operator of norm at most 2‖𝐵‖𝐿. Furthermore, we have
-
-ad2𝐵(𝐴)=ad𝐵(ad𝐵(𝐴))=ad𝐵([𝐵,𝐴])=[𝐵,[𝐵,𝐴]],(8)
-
-ad3𝐵(𝐴)=ad𝐵(ad2𝐵(𝐴))=ad𝐵([𝐵,[𝐵,𝐴]])=[𝐵,[𝐵,[𝐵,𝐴]]],(9)
-
-and so on:
-
-ad𝑛𝐵(𝐴)=[𝐵,[𝐵,[𝐵,...[𝐵,𝐴]]]...],(10)
-
-where the operator ad𝐵=[𝐵,⋅] occurs a total of 𝑛 times on the right-hand side of (10). We see that in fact (1) may be written in terms of ad𝐵 as
-
-𝑑𝑋𝑑𝜆=ad𝐵(𝑋).(11)
-
-Now set
-
-𝑌(𝜆)=𝐴+𝜆[𝐵,𝐴]+𝜆22![𝐵,[𝐵,𝐴]] +…+𝜆𝑛𝑛![𝐵,[𝐵,[𝐵,…[𝐵𝑛times,𝐴]]]]…]+…;(12)
-
-from the above we see that 𝑌(𝜆) may be written
-
-𝑌(𝜆)=𝐴+𝜆ad𝐵(𝐴)+𝜆22!ad2𝐵(𝐴)+…+𝜆𝑛𝑛!ad𝑛𝐵(𝐴)+… =∑∞0𝜆𝑛𝑛!ad𝑛𝐵(𝐴)+…=𝑒𝜆ad𝐵(𝐴);(13)
-
-since by (7) ad𝐵 is a bounded operator on 𝐿(ℋ), all the series occuring above converge absolutely and uniformly on compacta for all 𝜆∈ℝ, in fact for all 𝜆∈ℂ. We thus have, exactly as in the case of ordinary calculus, that the derivative 𝑌′(𝜆) is given by
-
-𝑑𝑌𝑑𝜆=ad𝐵(𝑒𝜆ad𝐵(𝐴))=[𝐵,𝑒𝜆ad𝐵(𝐴)],(14)
-
-and furthermore
-
-𝑌(0)=𝐴,(15)
-
-which follows trivially from (12) and/or (13). Comparing (1), (2), (11), (14) and (15), we see that 𝑋(𝜆) and 𝑌(𝜆), satisfying as they do the same ODE with identical initial conditions, must by uniqueness etc. be identical for all 𝜆: 𝑋(𝜆)=𝑌(𝜆). Using (3) and (12), (13) we thus see that
-
-𝑒𝜆𝐵𝐴𝑒−𝜆𝐵=𝑒𝜆ad𝐵(𝐴) =𝐴+𝜆[𝐵,𝐴]+…+𝜆𝑛𝑛![𝐵,[𝐵,[𝐵,…[𝐵𝑛times,𝐴]]]]…]+…;(16)
-
-if we now set 𝐵=𝑖𝐺 we obtain
-
-𝑒𝑖𝜆𝐺𝐴𝑒−𝑖𝜆𝐺=𝑒𝑖𝜆ad𝐺(𝐴) =𝐴+𝑖𝜆[𝐺,𝐴]+…+(𝑖𝜆)𝑛𝑛![𝐺,[𝐺,[𝐺,…[𝐺𝑛times,𝐴]]]]…]+…,(17)
-
-where we have used the fact that ad𝑖𝐺=𝑖ad𝐺, a consequence of the linearity of the bracket [𝐺,𝐴] in each of its variables 𝐴,𝐺. Equation (17) is the desired result. QED.
-
-Note: The technique used here, based on uniqueness of ODEs, is similar in spirit to that used in my answers to several other questions; in particular see this one and this one.
-
-Another Note: A couple of interesting formulas related to the above: [𝐵,𝑒𝜆𝐵𝐴𝑒−𝜆𝐵]=𝑒𝜆𝐵[𝐵,𝐴]𝑒−𝜆𝐵 and 𝐴=𝑒−𝜆𝐵𝑒𝜆ad𝐵(𝐴)𝑒𝜆𝐵.
-
-Hope this helps. Cheerio,
-
-and as always,
+이며 $Y(0) = A$ 임을 보일 수 있다. 즉 $Y(\lambda) = X(\lambda)$ 이다. $\square$
 
 :::

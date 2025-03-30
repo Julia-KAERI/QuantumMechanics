@@ -6,6 +6,8 @@ crossref:
   chapters: true
 ---
 
+{{< include ../latexmacros.qmd >}}
+
 ## 일차원 우물 문제와 산란
 
 </br>
