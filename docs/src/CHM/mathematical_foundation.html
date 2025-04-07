@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.42">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>1&nbsp; 힐베르트 공간과 브라켓 표기법 – 양자 역학</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../src/CHM/symmetry_in_classical_mechanics.html" rel="next">
+<link href="../../src/CHM/CHM.html" rel="prev">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-b467865d89f01302b3bb45791fa41ab5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "일치 없음",
+    "search-matching-documents-text": "일치된 문서",
+    "search-copy-link-title": "검색 링크 복사",
+    "search-hide-matches-text": "추가 검색 결과 숨기기",
+    "search-more-match-text": "추가 검색결과",
+    "search-more-matches-text": "추가 검색결과",
+    "search-clear-button-title": "제거",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "취소",
+    "search-submit-button-title": "검색",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/CHM/CHM.html">I. 고전적, 역사적, 수학적 주제들</a></li><li class="breadcrumb-item"><a href="../../src/CHM/mathematical_foundation.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">힐베르트 공간과 브라켓 표기법</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/CHM/CHM.html">I. 고전적, 역사적, 수학적 주제들</a></li><li class="breadcrumb-item"><a href="../../src/CHM/mathematical_foundation.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">힐베르트 공간과 브라켓 표기법</span></a></li></ol></nav>
+      <h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">힐베르트 공간과 브라켓 표기법</span></h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../../">양자 역학</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../src/CHM/CHM.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">I. 고전적, 역사적, 수학적 주제들</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="토글 섹션">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/CHM/mathematical_foundation.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">힐베르트 공간과 브라켓 표기법</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/CHM/symmetry_in_classical_mechanics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">고전역학에서의 대칭</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/CHM/some_proofs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">몇몇 증명들</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../src/QM/QM.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">II. 양자역학</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="토글 섹션">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/QM/QM_foundation_of_quantum_theory.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">고전 물리학의 붕괴와 양자 원리</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/QM/QM_1d_bound_state.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">1차원 문제 I : 자유입자와 Bound state</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/QM/QM_classical_limit.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">고전적인 극한과 불확정성 원리</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/QM/QM_harmonic_oscillator.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">단순조화진동자</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/QM/QM_1d_scattering.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">1차원 산란</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/QM/QM_path_integral_1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">경로적분 I</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/QM/QM_N_DoF_system.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">N 자유도 시스템</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/QM/QM_symmetry.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">대칭</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/QM/QM_angular_momentum.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">회전과 각운동량</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../src/AUX/AUX.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">III. 기타 이런저런 이야기들</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="토글 섹션">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/AUX/entanglement.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">양자 얽힘</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/AUX/quantum_state.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">양자 상태</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">목차</h2>
+   
+  <ul>
+  <li><a href="#sec-CHM_hilbert_space" id="toc-sec-CHM_hilbert_space" class="nav-link active" data-scroll-target="#sec-CHM_hilbert_space"><span class="header-section-number">1.1</span> 힐베르트 공간</a></li>
+  <li><a href="#sec-CHM_braket_notation" id="toc-sec-CHM_braket_notation" class="nav-link" data-scroll-target="#sec-CHM_braket_notation"><span class="header-section-number">1.2</span> 브라켓 표기법</a></li>
+  <li><a href="#힐베르트-공간의-선형대수학" id="toc-힐베르트-공간의-선형대수학" class="nav-link" data-scroll-target="#힐베르트-공간의-선형대수학"><span class="header-section-number">1.3</span> 힐베르트 공간의 선형대수학</a>
+  <ul class="collapse">
+  <li><a href="#영벡터-표기" id="toc-영벡터-표기" class="nav-link" data-scroll-target="#영벡터-표기"><span class="header-section-number">1.3.1</span> 영벡터 표기</a></li>
+  <li><a href="#기저와-차원" id="toc-기저와-차원" class="nav-link" data-scroll-target="#기저와-차원"><span class="header-section-number">1.3.2</span> 기저와 차원</a></li>
+  <li><a href="#벡터와-연산자의-행렬-표현" id="toc-벡터와-연산자의-행렬-표현" class="nav-link" data-scroll-target="#벡터와-연산자의-행렬-표현"><span class="header-section-number">1.3.3</span> 벡터와 연산자의 행렬 표현</a></li>
+  <li><a href="#닮음변환과-유니타리-변환" id="toc-닮음변환과-유니타리-변환" class="nav-link" data-scroll-target="#닮음변환과-유니타리-변환"><span class="header-section-number">1.3.4</span> 닮음변환과 유니타리 변환</a></li>
+  <li><a href="#고유값과-고유벡터" id="toc-고유값과-고유벡터" class="nav-link" data-scroll-target="#고유값과-고유벡터"><span class="header-section-number">1.3.5</span> 고유값과 고유벡터</a></li>
+  <li><a href="#행렬의-대각화" id="toc-행렬의-대각화" class="nav-link" data-scroll-target="#행렬의-대각화"><span class="header-section-number">1.3.6</span> 행렬의 대각화</a></li>
+  <li><a href="#에르미트-연산자" id="toc-에르미트-연산자" class="nav-link" data-scroll-target="#에르미트-연산자"><span class="header-section-number">1.3.7</span> 에르미트 연산자</a></li>
+  <li><a href="#sec-CHM_compatible_operators" id="toc-sec-CHM_compatible_operators" class="nav-link" data-scroll-target="#sec-CHM_compatible_operators"><span class="header-section-number">1.3.8</span> Compatible operators</a></li>
+  </ul></li>
+  <li><a href="#sec-CHM_infinite_dimesion" id="toc-sec-CHM_infinite_dimesion" class="nav-link" data-scroll-target="#sec-CHM_infinite_dimesion"><span class="header-section-number">1.4</span> 무한차원에 대해</a>
+  <ul class="collapse">
+  <li><a href="#sec-CHM_dirac_delta_function" id="toc-sec-CHM_dirac_delta_function" class="nav-link" data-scroll-target="#sec-CHM_dirac_delta_function"><span class="header-section-number">1.4.1</span> 디랙 델타함수</a></li>
+  <li><a href="#무한차원-벡터공간에서의-연속적인-변수에-대한-기술" id="toc-무한차원-벡터공간에서의-연속적인-변수에-대한-기술" class="nav-link" data-scroll-target="#무한차원-벡터공간에서의-연속적인-변수에-대한-기술"><span class="header-section-number">1.4.2</span> 무한차원 벡터공간에서의 연속적인 변수에 대한 기술</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<div class="hidden">
+<p>%</p>
+%
+<!-- \newcommand{\hom}{\text{Hom}}
+\newcommand{\iso}{\text{Iso}}
+\newcommand{\aut}{\text{Aut}} -->
+<p><span class="math display">\[
+\DeclarePairedDelimiters{\set}{\{}{\}}
+\DeclareMathOperator*{\argmax}{argmax}
+\]</span></p>
+</div>
+<section id="sec-CHM_hilbert_space" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="sec-CHM_hilbert_space"><span class="header-section-number">1.1</span> 힐베르트 공간</h2>
+<p>양자역학은 힐베르트 공간, 정확히 말하면 분리가능한 힐베르트 공간에서 기술된다. <strong>힐베르트 공간(Hilbert space)</strong>은 우리가 익숙한 유한차원 내적 벡터공간의 성질을 가지고 있는 무한차원 복소 벡터공간이라고 요약 할 수 있다.</p>
+<p>힐베르트 공간은 벡터공간이며 따라서 힐베르트 공간의 원소는 벡터이다. 역사적, 실용적 이유로 양자역학에서의 표기법은 보통 수학에서의 표기법과는 다른 브라켓 표기법을 사용하며 대표적으로 벡터는 <span class="math inline">\(|a\rangle\)</span> 과 같이 <span class="math inline">\(|\,\rangle\)</span> 형태로 표기하며, 선형연산자는 <span class="math inline">\(\hat{L}\)</span> 과 같이 문자 위에 <span class="math inline">\(\hat{~}\)</span> 기호를 씌워 표기하거나 단지 <span class="math inline">\(L\)</span> 과 같이 쓰기도 한다. 양자역학에서의 상태는 수학적으로 힐베르트 공간의 벡터이다.</p>
+<p><br></p>
+</section>
+<section id="sec-CHM_braket_notation" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="sec-CHM_braket_notation"><span class="header-section-number">1.2</span> 브라켓 표기법</h2>
+<p>브라켓 표기법은 양자역학을 기술하는 표기법으로 폴 디랙(P. A. M. Dirac) 에 의해 고안되으며 디랙 표기법, 혹은 브라켓 표기법이라고 불린다.</p>
+<p>수학에서는 두 벡터 <span class="math inline">\(u,\,v\)</span> 의 내적을 보통 <span class="math inline">\((u,\,v)\)</span> 나 <span class="math inline">\(\langle u,\, v\rangle\)</span> 로 표기한다. 복소내적벡터공간에서는 벡터 <span class="math inline">\(v_1,\,a_2\)</span> 와 스칼라 <span class="math inline">\(c_1,\,c_2\)</span> 에 대해</p>
+<p><span class="math display">\[
+\begin{aligned}
+( c_1 a_1 + c_2 a_2,\, b ) &amp;= c_1 ( a_1,\,b ) + c_2 ( a_2,\, b), \\
+( b,\,c_1a_1+c_2a_2 ) &amp;= \overline{c_1} ( b,\, a_1 ) + \overline{c_2} ( b,\, a_2), \\
+(u,\,v) &amp;= \overline{(v,\,u)}.
+\end{aligned}
+\]</span></p>
+<p>이 성립하도록 내적 기호 <span class="math inline">\((\, , \,)\)</span> 혹은 <span class="math inline">\(\langle\, , \, \rangle\)</span> 를 정의한다. 그러나 양자역학의 표기법은 이와는 좀 다른 규칙을 적용한다.</p>
+<div class="callout callout-style-default callout-important no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+브라켓 표기법
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li><p>벡터는 <span class="math inline">\(|\phi\rangle\)</span> 과 같이 표기하며 <strong>캣(ket)</strong> 라고 한다. <span class="math inline">\(|\phi\rangle\)</span> 에 대한 스칼라 <span class="math inline">\(c\)</span> 곱은 <span class="math inline">\(c|\phi\rangle\)</span> 과 같이 표기한다. 선형결합은 <span class="math inline">\(c_1|\phi_1\rangle + c_2|\phi_2\rangle + \cdots\)</span> 와 같이 표현한다.</p></li>
+<li><p>연산자 <span class="math inline">\(A\)</span> 에 대한 <span class="math inline">\(|\phi\rangle\)</span> 의 선형변환은 <span class="math inline">\(A|\phi\rangle\)</span> 로 표기한다.</p></li>
+<li><p><span class="math inline">\(|\phi \rangle\)</span> 에 대한 dual vector 를 <span class="math inline">\(\langle \phi|\)</span> 로 표기하며 <strong>브라(bra)</strong> 이라고 한다. <span class="math inline">\(\langle \phi| = | \phi\rangle^\dagger\)</span> 로 쓰기도 한다. 벡터 <span class="math inline">\(|\phi\rangle\)</span> 과 <span class="math inline">\(|\psi\rangle\)</span> 에 대한 내적은 <span class="math inline">\(\langle \psi | \phi \rangle\)</span> 로 표기한다. 브라와 캣을 합쳐서 <strong>브라켓(bracket)</strong> 이라고 한다. 내적에 대해 <span class="math inline">\(\langle \phi |\psi \rangle = \overline{\langle \psi|\phi \rangle}\)</span> 이다.</p></li>
+<li><p>따라서 <span class="math inline">\((c_1 |\psi_1\rangle + c_2|\psi_2)^\dagger = \overline{c_1}\langle \psi_1| + \overline{c_2}\langle \psi_2| = \langle \psi_1| \overline{c_1} +\langle \psi_1| \overline{c}_2\)</span> 이다. 이로부터 다음이 성립한다.<br>
+<span class="math display">\[
+\begin{aligned}
+\langle \psi | \left(c_1  |\phi_1\rangle + c_2 | \phi_2\rangle\right) &amp;= c_1 \langle \psi|\phi_1\rangle + c_2 \langle \psi|\phi_2\rangle, \\
+(c_1 |\psi_1\rangle + c_2 |\psi_2\rangle)^\dagger| \phi \rangle &amp; = \overline{c_1}\langle \psi_1|\phi \rangle + \overline{c_2}\langle\psi_2 |\phi\rangle.
+\end{aligned}
+\]</span></p></li>
+<li><p><span class="math inline">\(\langle \psi | A |\phi \rangle = \langle \psi| (A| \phi \rangle)\)</span> 을 의미한다. 즉 브라켓 사이의 선형연산자는 켓에 대한 선형연산자를 의미한다. 또한 <span class="math inline">\((A|\psi\rangle)^\dagger |\phi\rangle = \langle \psi|A^\dagger|\phi\rangle\)</span> 이다.</p></li>
+</ol>
+</div>
+</div>
+<p><br></p>
+<p>양자역학에서 캣은 양자상태를 표현하는 벡터이며 <span class="math inline">\(0\)</span> 이 아닌 <span class="math inline">\(c\in \mathbb{F}\)</span> 에 대해 <span class="math inline">\(c|\psi \rangle\)</span> 과 <span class="math inline">\(|\psi\rangle\)</span> 을 동일하다고 간주한다. 일반적으로 ket 은 <span class="math inline">\(\langle \phi | \phi \rangle =1\)</span> 인 정규화된벡터를 의미하는 경우가 많다. 또한 유한차원 복소벡터공간에서 양자상태를 표현한다면 <span class="math inline">\(|\phi\rangle\)</span> 을 열벡터로, <span class="math inline">\(\langle \psi |\)</span> 를 행벡터로 표현한다. 브라켓 표기법을 사용하는 이유를 요약하면 다음과 같다.</p>
+<ol type="1">
+<li><p>양자 상태 표현의 편의성 : 브라켓으로 벡터를 표현할 때의 가장 큰 장점은 양자상태를 표현할 때 수학적인 표기법보다 편하다는 것이다. 예를 들어 양자수 3개로 정의되는 상태에 대해 <span class="math inline">\(|abc\rangle\)</span> 과 같이 세개의 숫자를 쓴 다음에 캣으로 묶어버리는 것으로 양자상태를 표현할 수 있다. 수소원자의 경우 주양자수 <span class="math inline">\(n=2\)</span>, 궤도양자수 <span class="math inline">\(l=1\)</span>, 자기양자수 <span class="math inline">\(m=0\)</span> 인 상태를 <span class="math inline">\(|nlm\rangle\)</span> 표기법을 사용하여 <span class="math inline">\(|210\rangle\)</span> 으로 표기할 수있다. 또한 내적에서 사용되는 쌍대기저를 독립적인 브라 표기법으로 <span class="math inline">\(\langle 210 |\)</span> 와 같이 표현 할 수 있다. 만약 브라켓 표기법 없이 사용한다면 <span class="math inline">\(|210\rangle\)</span> 상태를 <span class="math inline">\(\Psi_{210}\)</span> 이나 <span class="math inline">\(\Phi^2_{10}\)</span> 과 같이 표현해야 할 것이다.</p></li>
+<li><p>연산자와 벡터의 분리 : <span class="math inline">\(\langle\phi | \hat{A} |\psi\rangle\)</span> 형식이기 때문에 연산자의 연산을 브라와 캣 사이의 공간에서 수행 할 수 있는데 이는 수식표기가 좀 더 깔끔해진다.</p></li>
+<li><p>연산자인 <span class="math inline">\(|\phi\rangle\langle \psi|\)</span> 와 내적인 <span class="math inline">\(\langle \psi|\phi\rangle\)</span> 의 구분이 명확해진다. 벡터를 사용한다면 <span class="math inline">\(\boldsymbol{\psi} \boldsymbol{\phi}^\dagger\)</span> 와 <span class="math inline">\(\boldsymbol{\psi}^\dagger\boldsymbol{\phi}\)</span> 와 같이 구분하기 힘들다.</p></li>
+</ol>
+<p><br></p>
+</section>
+<section id="힐베르트-공간의-선형대수학" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="힐베르트-공간의-선형대수학"><span class="header-section-number">1.3</span> 힐베르트 공간의 선형대수학</h2>
+<p>힐베르트 공간은 복소내적벡터공간이다. 즉 여기서는 복소내적벡터공간의 선형대수학을 다룬다.</p>
+<p><br></p>
+<section id="영벡터-표기" class="level3" data-number="1.3.1">
+<h3 data-number="1.3.1" class="anchored" data-anchor-id="영벡터-표기"><span class="header-section-number">1.3.1</span> 영벡터 표기</h3>
+<p>원래 벡터공간은 영벡터를 항상 포함하며 수학에서는 <span class="math inline">\(0\)</span>, <span class="math inline">\(\boldsymbol{0}\)</span> 혹은 <span class="math inline">\(\overrightarrow{0}\)</span> 과 같이 표기하며 벡터의 덧셈에 대한 항등원이다. 그러나 브라켓 표기법으로 <span class="math inline">\(|0\rangle\)</span> 은 어떤 <span class="math inline">\(0\)</span> 인 양자상태나 인덱스를 표기하는데 사용 될 수 있으며 이를 섞어 사용하는 것은 혼란을 준다. 따라서 여기서는 <span class="math inline">\(|\varnothing\rangle\)</span> 로 영벡터를 표현하기로 하자.</p>
+<p><br></p>
+</section>
+<section id="기저와-차원" class="level3" data-number="1.3.2">
+<h3 data-number="1.3.2" class="anchored" data-anchor-id="기저와-차원"><span class="header-section-number">1.3.2</span> 기저와 차원</h3>
+<section id="선형독립" class="level4">
+<h4 class="anchored" data-anchor-id="선형독립"><strong>선형독립</strong></h4>
+<p>벡터의 집합 <span class="math inline">\(\{|1\rangle,\, |2\rangle,\ldots,\}\)</span> 과 영벡터 <span class="math inline">\(|\varnothing\rangle\)</span> 에 대해</p>
+<p><span class="math display">\[
+|\varnothing \rangle = c_1|1\rangle + c_2|2\rangle + \cdots \iff c_1=c_2=\cdots = 0
+\]</span></p>
+<p>일 때 <span class="math inline">\(\{|1\rangle,\, |2\rangle,\ldots,\}\)</span> 를 선형독립이라고 한다.</p>
+<p><br></p>
+</section>
+<section id="기저와-차원-1" class="level4">
+<h4 class="anchored" data-anchor-id="기저와-차원-1"><strong>기저와 차원</strong></h4>
+<p><span class="math inline">\(\mathscr{H}\)</span> 의 선형독립인 벡터의 집합 <span class="math inline">\(\mathcal{B}=\{|\phi_1\rangle,\, |\phi_2\rangle,\ldots\}\)</span> 의 선형결합으로 모든 벡터를 표현 할 수 있을 때 <span class="math inline">\(\mathcal{B}\)</span> 를 <span class="math inline">\(\mathscr{H}\)</span> 의 <strong>기저(basis)</strong> 라고 하고 기저에 속한 벡터를 <strong>기저벡터(basis vector)</strong> 라고 한다. 유한개의 기저벡터로 이루어진 기저가 존재한다면 <span class="math inline">\(\mathscr{H}\)</span> 를 유한차원 벡터공간이라고 하며 그렇지 않다면 무한차원 벡터공간이라고 한다. <span class="math inline">\(\{|\phi_1\rangle, \ldots\}\)</span> 가 기저일 때</p>
+<p><span class="math display">\[
+|\phi\rangle = \sum_{j} c_j |\phi_j\rangle
+\]</span></p>
+<p>로 표현 할 수 있으며, 이 때 <span class="math inline">\(c_j\)</span> 는 유일하게 정해진다.</p>
+<p>벡터공간의 기저는 무한개가 가능하지만 유한차원 벡터공간일 경우 기저를 이루는 기저벡터의 수는 항상 같다. 이 기저벡터의 수를 벡터공간의 <strong>차원(dimension)</strong> 이라고 한다.</p>
+<p><br></p>
+</section>
+<section id="정규직교기저" class="level4">
+<h4 class="anchored" data-anchor-id="정규직교기저"><strong>정규직교기저</strong></h4>
+<p>벡터 <span class="math inline">\(|\phi\rangle\)</span> 의 <strong>크기 (norm)</strong> 은 <span class="math inline">\(\sqrt{\langle \phi|\phi\rangle}\)</span> 로 정의된다. 벡터의 크기가 <span class="math inline">\(1\)</span> 인 벡터를 <strong>단위벡터 (unit vector)</strong> 라고 한다. 두 벡터의 내적이 <span class="math inline">\(0\)</span> 이면 두 벡터는 <strong>직교한다(be orthogonal)</strong> 라고 한다. 한 벡터가 다른 벡터의 스칼라배일 때 두 벡터는 <strong>평행하다(be parallel)</strong> 라고 한다. 벡터 <span class="math inline">\(|\phi\rangle\)</span> 에 대해</p>
+<p><span class="math display">\[
+|\phi'\rangle = \dfrac{|\phi\rangle}{\sqrt{\langle \phi|\phi\rangle}}
+\]</span></p>
+<p>은 단위벡터이다. 즉 임의의 벡터와 평행한 단위벡터를 항상 구할 수 있다.</p>
+<p>기저 <span class="math inline">\(\mathcal{B}\)</span> 가 서로 직교하는 단위벡터로 이루어 져 있을 때 이 기저를 <strong>정규직교기저(orthonormal basis)</strong> 라고 한다. 기저가 있을 경우 항상 정규직교기저를 구할 수 있으며, 기저에 대해 정규직교기저를 구하는 방법중에 대표적인 것이 그람-슈미트 방법(Gram-Schmide method) 이다.</p>
+<p><br></p>
+</section>
+</section>
+<section id="벡터와-연산자의-행렬-표현" class="level3" data-number="1.3.3">
+<h3 data-number="1.3.3" class="anchored" data-anchor-id="벡터와-연산자의-행렬-표현"><span class="header-section-number">1.3.3</span> 벡터와 연산자의 행렬 표현</h3>
+<section id="벡터의-행렬표현" class="level4">
+<h4 class="anchored" data-anchor-id="벡터의-행렬표현"><strong>벡터의 행렬표현</strong></h4>
+<p><span class="math inline">\(\mathscr{H}\)</span> 에 대한 한 기저 <span class="math inline">\(\mathcal{B}=\{|1\rangle,\, |2\rangle ,\ldots, |n\rangle \}\)</span> 를 생각하자. 모든 벡터는 기저벡터의 선형결합으로 표현 할 수 있다.</p>
+<p><span class="math display">\[
+|\phi\rangle = \sum_{j}c_j |j\rangle.
+\]</span></p>
+<p>이 때 임의의 벡터 <span class="math inline">\(|\phi\rangle\)</span> 을 <span class="math inline">\(\mathcal{B}\)</span> 에 대해 열벡터로 아래와 같이 표현 할 수 있다. 즉 <span class="math inline">\(n\)</span> 차원 공간의 벡터는 <span class="math inline">\(n \times 1\)</span> 행렬로 표현할 수 있다.</p>
+<p><span class="math display">\[
+[|\phi\rangle]_\mathcal{B} := \begin{bmatrix} c_1 \\ \vdots \\ c_n \end{bmatrix}
+\]</span></p>
+<p>를 벡터 <span class="math inline">\(|\phi\rangle\)</span> 의 기저 <span class="math inline">\(\mathcal{B}\)</span> 에 대한 행렬 표현이라고 한다.</p>
+<p><br></p>
+</section>
+<section id="연산자와-행렬표현" class="level4">
+<h4 class="anchored" data-anchor-id="연산자와-행렬표현"><strong>연산자와 행렬표현</strong></h4>
+<p>힐베르트 공간 <span class="math inline">\(\mathscr{H}\)</span> 에서 정의된 선형사상 <span class="math inline">\(A:\mathscr{H} \to \mathscr{H}\)</span> 를 <strong>연산자(operator)</strong> 라고 한다. 선형사상은 임의의 <span class="math inline">\(|a\rangle,\, |b\rangle \in \mathscr{H},\, c\in \mathbb{F}\)</span> 에 대해</p>
+<p><span class="math display">\[
+A(|a\rangle + c|b\rangle) =  A|a\rangle + c(A|b\rangle)
+\]</span></p>
+<p>인 함수를 의미한다.</p>
+<p>기저 <span class="math inline">\(\mathcal{B}=\{|1\rangle,\, |2\rangle ,\ldots, |n\rangle \}\)</span> 에 대해 <span class="math inline">\(|\phi\rangle = \sum_{j}c_j |j\rangle\)</span> 라고 하자. 그리고 <span class="math inline">\(A|j\rangle = \sum_{i} A_{ij}|i\rangle\)</span> 이라고 하자.</p>
+<p><span class="math display">\[
+A|\phi\rangle = \sum_j c_j A|j\rangle = \sum_j\sum_i c_j A_{ij}|i\rangle
+\]</span></p>
+<p>이므로</p>
+<p><span class="math display">\[
+\left[A|\phi\rangle\right]_{\mathcal{B}} = \begin{bmatrix} \sum_j A_{1j}c_j\\ \vdots \\ \sum_j A_{nj}c_j\end{bmatrix}
+\]</span></p>
+<p>이다. 연산자 <span class="math inline">\(A\)</span> 의 기저 <span class="math inline">\(\mathcal{B} = \{|1\rangle,\, |2\rangle,\ldots,\,|n\rangle\}\)</span> 에 대한 행렬 표현 <span class="math inline">\([A]_{\mathcal{B}}\)</span> 를 다음과 같이 정의하자.</p>
+<p><span class="math display">\[
+[A]_{\mathcal{B}} = \begin{bmatrix} A_{11} &amp; \cdots &amp; A_{1n} \\ \vdots &amp; \ddots &amp; \vdots \\ A_{n1} &amp; \cdots &amp; A_{nn}\end{bmatrix}
+\]</span></p>
+<p>그렇다면</p>
+<p><span class="math display">\[
+[A|\phi\rangle]_{\mathcal{B}} = \begin{bmatrix} \sum_j A_{1j}c_j\\ \vdots \\ \sum_j A_{nj}c_j\end{bmatrix} = [A]_{\mathcal{B}}[|\phi\rangle]_{\mathcal{B}}
+\]</span></p>
+<p>임을 알 수 있다. 즉 정해진 기저 <span class="math inline">\(\mathcal{B}\)</span> 에 대해 벡터 뿐만 아니라 선형연산자도 행렬로 표현 할 수 있다. 지금까지 기저가 정규직교기저라는 가정을 하지 않았음에 유의하라. 여기가지는 임의의 기저에 대해 성립한다.</p>
+<p>이제 정규직교기저를 생각해보자. 즉 <span class="math inline">\(\mathcal{B} = \{|1\rangle,\, |2\rangle,\ldots,\,|n\rangle\}\)</span> 가 정규직교 기저라면,</p>
+<p><span class="math display">\[
+\boxed{
+\langle j|A|i\rangle = \sum_kA_{ik}\langle j| k\rangle = A_{ij}}
+\]</span></p>
+<p>임을 알 수 있다. 또한 <span class="math inline">\(|\phi\rangle =\sum_i c_i|i\rangle,\, |\psi\rangle = \sum_j d_j|j\rangle\)</span> 일 때</p>
+<p><span class="math display">\[
+\langle \psi|A|\phi\rangle = \sum_{i, j} \overline{d_j} c_i\langle j|A|i\rangle = \sum_{i, j} \overline{d_j} A_{ij} c_i = \left([|\psi\rangle]_{\mathcal{B}}\right)^\dagger [A]_{\mathcal{B}} [|\phi\rangle]_{\mathcal{B}}
+\]</span></p>
+<p>임을 알 수 있다.</p>
+<p>벡터와 연산자를 특정 기저에 대해 행렬로 표현 할 수 있으며, 이 때 각각 1-1 대응 관계가 존재한다. 이것을 선형대수학의 기본정리라고 부르기도 한다. 이제 연산자는 행렬로, 벡터는 열행렬로 표현 할 수 있다.</p>
+<p><br></p>
+</section>
+</section>
+<section id="닮음변환과-유니타리-변환" class="level3" data-number="1.3.4">
+<h3 data-number="1.3.4" class="anchored" data-anchor-id="닮음변환과-유니타리-변환"><span class="header-section-number">1.3.4</span> 닮음변환과 유니타리 변환</h3>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="def-CHM_similarity_transform" class="theorem definition">
+<p><span class="theorem-title"><strong>정의 1.1 (닮음 변환)</strong></span> 어떤 행렬 <span class="math inline">\(A\)</span> 와 가역행렬 <span class="math inline">\(S\)</span> 에 대해 <span class="math inline">\(SAS^{-1}\)</span> 을 행렬 <span class="math inline">\(A\)</span> 에 대한 <strong>닮은 변환(similarity transform)</strong> 이라고 한다. <span class="math inline">\(A\)</span> 의 닮음변환으로 표현할 수 있는 행렬 <span class="math inline">\(B\)</span> 에 대해 <span class="math inline">\(A\)</span> 와 <span class="math inline">\(B\)</span> 는 서로 <strong>닮았다 (be similar)</strong> 라고 한다.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<p>닮음 변환이 중요한 이유는 닮음 변환이 기저의 변환이기 때문이다. 기저 <span class="math inline">\(\mathcal{B}=\{|i\rangle : i=1,\,2,\ldots\}\)</span> 를 생각하자. 가역행렬, 즉 가역 선형 연산자 <span class="math inline">\(S\)</span> 에 대해 <span class="math inline">\(S\mathcal{B} = \{S|i\rangle :i=1,\ldots\}\)</span> 가 선형 독립임을 보이자.</p>
+<p><span class="math display">\[
+|\varnothing\rangle = \sum_{i=1} c_i S|i\rangle = S\left( \sum_{i=1} c_i |i\rangle\right)
+\]</span></p>
+<p><span class="math inline">\(S\)</span> 가 가역이므로 <span class="math inline">\(\left( \sum_{i=1} c_i |i\rangle\right)=|\varnothing\rangle\)</span> 이며 따라서 모든 <span class="math inline">\(c_i=0\)</span> 이다. 따라서 <span class="math inline">\(S\mathcal{B}\)</span> 역시 기저이다.</p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="def-CHM_unitary_transform" class="theorem definition">
+<p><span class="theorem-title"><strong>정의 1.2 (Hermite conjugate 와 유니타리 연산자)</strong></span> 연산자 <span class="math inline">\(A\)</span> 에 대해 <span class="math inline">\((A|\psi)^\dagger |\phi\rangle = \langle \psi |A^\dagger |\phi\rangle\)</span> 을 만족하는 <span class="math inline">\(A^\dagger\)</span> 는 항상 존재하며 역시 <span class="math inline">\(\mathscr{H}\)</span> 에서의 선형연산자이다. <span class="math inline">\(A\)</span> 에 대해 <span class="math inline">\(A^\dagger\)</span> 를 <span class="math inline">\(A\)</span> 에 대한 <strong>Hermitian cojugate</strong> 혹은 <strong>Hermitian adjoint</strong> 라고 한다. <span class="math inline">\(U^{-1}=U^\dagger\)</span> 인 연산자를 <strong>유니타리 연산자 (unitary operator)</strong> 라고 한다. 참고로 실벡터 공간에서 정의된, 즉 모든 성분이 실수인 행렬일 경우 <span class="math inline">\(U^\dagger = ^T\)</span> 이다. 어떤 행렬 <span class="math inline">\(O\)</span> 가 <span class="math inline">\(O^{-1}=O^T\)</span> 일 때 <strong>직교 연산자 (orthogonal operator)</strong> 라고 한다.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+<div id="exm-MA_hermitian_conjugate" class="theorem example">
+<p><span class="theorem-title"><strong>예제 1.1 (Hermitian conjugate)</strong></span> 연산자 <span class="math inline">\(L\)</span> 과 <span class="math inline">\(L^\dagger\)</span> 을 생각하자.</p>
+<p><span class="math display">\[
+\langle \psi|L^\dagger|\phi\rangle = \left(L|\psi\right)^\dagger |\phi\rangle = \overline{|\phi\rangle^\dagger \left(L|\psi\rangle\right)} = \overline{\langle \phi | L|\psi\rangle}
+\]</span></p>
+<p>즉 다음이 성립한다.</p>
+<p><span id="eq-CHM_hermitan_conjugate"><span class="math display">\[
+\boxed{
+\langle \psi|L^\dagger|\phi\rangle  = \overline{\langle \phi | L|\psi\rangle}}
+\tag{1.1}\]</span></span></p>
+</div>
+</div>
+<p><br></p>
+<p>우선 유니타리 행렬은 정의상 가역행렬이므로 유니타리 행렬에 의한 닮음 변환이 가능하다. 이를 연산자의 <strong>유니타리 변환 (Unitary transform)</strong> 이라고 한다. 즉 연산자 <span class="math inline">\(L\)</span> 과 유니타리 연산자 <span class="math inline">\(U\)</span> 에 대해 <span class="math inline">\(ULU^{-1}\)</span> 는 연산자의 유니타리 변환이다. 벡터 <span class="math inline">\(|\phi\rangle\)</span> 에 대해 <span class="math inline">\(U|\phi\rangle\)</span> 은 벡터의 유니타리 변환이다. 벡터의 유니타리 변환의 경우 다음이 성립한다. <span class="math display">\[
+\langle U\phi |U\psi\rangle = \langle \phi| U^\dagger U|\psi\rangle = \langle \phi|\psi\rangle
+\]</span></p>
+<p>즉 유니타리 연산자에 의해 변환된 두 벡터의 내적은 변하지 않는다. 따라서 정규직교기저를 유니타리 행렬로 변환시키더라도 정규직교기저가 된다.</p>
+<p><br></p>
+</section>
+<section id="고유값과-고유벡터" class="level3" data-number="1.3.5">
+<h3 data-number="1.3.5" class="anchored" data-anchor-id="고유값과-고유벡터"><span class="header-section-number">1.3.5</span> 고유값과 고유벡터</h3>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="def-CHM_eigenvector" class="theorem definition">
+<p><span class="theorem-title"><strong>정의 1.3 (고유값과 과유벡터)</strong></span> 영벡터가 아닌 벡터 <span class="math inline">\(|\phi\rangle\)</span> 과 연산자 <span class="math inline">\(\Lambda\)</span> 에 대해</p>
+<p><span class="math display">\[
+\Lambda |\phi\rangle = \lambda|\phi\rangle
+\]</span></p>
+<p>을 만족하는 스칼라 <span class="math inline">\(\lambda\)</span> 가 존재할 때 <span class="math inline">\(|\phi\rangle\)</span> 을 연산자 <span class="math inline">\(\Lambda\)</span> 에 대해 <span class="math inline">\(\lambda\)</span> 의 <strong>고유값 (eigenvalue)</strong> 을 갖는 <strong>고유벡터 (eigenvector)</strong> 라고 한다.</p>
+</div>
+</div>
+</div>
+</div>
+<p><span class="math inline">\(|\phi\rangle\)</span> 과 <span class="math inline">\(|\psi\rangle\)</span> 이 연산자 <span class="math inline">\(\Lambda\)</span> 에 대해 같은 고유값 <span class="math inline">\(\lambda\)</span> 를 갖는다면 <span class="math inline">\(|\phi\rangle\)</span> 과 <span class="math inline">\(|\psi\rangle\)</span> 의 임의의 선형 결합 역시 고유값 <span class="math inline">\(\lambda\)</span> 를 갖는 고유벡터임을 보일 수 있다.</p>
+<p><span class="math display">\[
+\Lambda (a|\phi\rangle + b|\psi\rangle) = a\Lambda|\phi\rangle + b\Lambda|\psi\rangle = \lambda(a|\phi\rangle + b|\psi\rangle).
+\]</span></p>
+<p>따라서 <span class="math inline">\(\Lambda\)</span> 에 대해 같은 고유값을 갖는 벡터의 집합과 <span class="math inline">\(|\varnothing\rangle\)</span> 의 합집합은 <span class="math inline">\(\mathscr{H}\)</span> 의 부분공간을 이루며 이를 <span class="math inline">\(\Lambda\)</span> 에 대한 <strong>고유공간(eigenspace)</strong> 이라고 한다. 서로 선형독립인 두 벡터가 같은 고유값을 가질 때 이 두 벡터는 <strong>축퇴되었다 (be degenerated)</strong> 고 표현한다.</p>
+<p><br></p>
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+<div id="prp-CHM_similar_transform_and_eigenvector" class="theorem proposition">
+<p><span class="theorem-title"><strong>명제 1.1</strong></span> 연산자 <span class="math inline">\(L\)</span> 에 대한 고유값은 유니타리 변환에 대해 불변이다.</p>
+</div>
+</div>
+<p><br></p>
+<div class="proof">
+<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(L|\phi\rangle = \lambda |\phi\rangle\)</span> 이라고 하자. 유니타리 연산자 <span class="math inline">\(U\)</span> 에 의한 유니타리 변환 <span class="math inline">\(L'=ULU^\dagger,\, U|\phi\rangle\)</span> 을 생각하자.</p>
+<p><span class="math display">\[
+(ULU^\dagger)(U|\phi\rangle) = UL|\phi\rangle = \lambda (U|\phi\rangle)
+\]</span></p>
+<p>이므로 <span class="math inline">\(U|\phi\rangle\)</span> 이 고유값 <span class="math inline">\(\lambda\)</span> 를 갖는 <span class="math inline">\(ULU^\dagger\)</span> 의 고유벡터이다. <span class="math inline">\(\square\)</span></p>
+</div>
+<p><br></p>
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+<div id="prp-CHM_orthogonality_of_eigen_vectors_with_different_eigenvalues" class="theorem proposition">
+<p><span class="theorem-title"><strong>명제 1.2</strong></span> 서로 다른 고유값을 갖는 두 벡터는 선형 독립이다.</p>
+</div>
+</div>
+<p><br></p>
+<div class="proof">
+<p><span class="proof-title"><em>(증명)</em>. </span>연산자 <span class="math inline">\(L\)</span> 의 두 고유벡터 <span class="math inline">\(|1\rangle,\, |2\rangle\)</span> 이 각각 <span class="math inline">\(l_1,\,l_2\)</span> 서로 다른 고유값을 가진다고 하자.</p>
+<p><span class="math display">\[
+|\varnothing \rangle = a_1|1\rangle + a_2|2\rangle
+\]</span></p>
+<p>라고 놓자.</p>
+<p><span class="math display">\[
+L|\varnothing \rangle = |\varnothing\rangle = a_1L|1\rangle + a_2L|\rangle = a_1l_1|1\rangle +a_2l_2|2\rangle = (l_2-l_1)a_2|2\rangle
+\]</span></p>
+<p>이다. <span class="math inline">\(l_1\ne l_2\)</span> 이므로 <span class="math inline">\(a_2=0\)</span> 이며, 따라서 <span class="math inline">\(a_1=0\)</span> 이다. 즉 두 벡터는 선형 독립이다. <span class="math inline">\(\square\)</span></p>
+</div>
+<p><br></p>
+<div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+<div id="exm-MA_different_eigenvalue_non_orthogonal" class="theorem example">
+<p><span class="theorem-title"><strong>예제 1.2 (서로 다른 고유값을 갖지만 직교하지 경우)</strong></span> <br></p>
+<p><span class="math inline">\(A=\begin{bmatrix} 2 &amp; 1 \\ 0 &amp; 3\end{bmatrix}\)</span> 에 대해 <span class="math inline">\(v_1 =\begin{bmatrix} 1 \\ 0\end{bmatrix}\)</span> 와 <span class="math inline">\(v_2 = \begin{bmatrix}1 \\ 1\end{bmatrix}\)</span> 는 각각 <span class="math inline">\(2\)</span> 와 <span class="math inline">\(3\)</span> 을 고유값으로 갖는 고유벡터지만 <span class="math inline">\(v_1^Tv_2=1\)</span> 로 직교하지 않는다.</p>
+</div>
+</div>
+<p><br></p>
+</section>
+<section id="행렬의-대각화" class="level3" data-number="1.3.6">
+<h3 data-number="1.3.6" class="anchored" data-anchor-id="행렬의-대각화"><span class="header-section-number">1.3.6</span> 행렬의 대각화</h3>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="def-CHM_diagonalization" class="theorem definition">
+<p><span class="theorem-title"><strong>정의 1.4 (행렬의 대각화)</strong></span> 정사각행렬이 어떤 닮음 변환에 의해 대각행렬로 변화할 때 행렬이 <strong>대각화되었다(be diagonalized)</strong> 고 하고, 이런 행렬을 <strong>대각화 가능 행렬(daignalizable matrix)</strong> 이라고 한다.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+<div id="thm-CHM_diagonalizatoin_of_matrix" class="theorem">
+<p><span class="theorem-title"><strong>정리 1.1</strong></span> 정사각행렬 <span class="math inline">\(A\)</span> 에 대해 다음 두 명제는 동치이다.</p>
+<p> (<span class="math inline">\(a\)</span>) <span class="math inline">\(A\)</span> 는 대각화 가능하다.</p>
+<p> (<span class="math inline">\(b\)</span>) <span class="math inline">\(A\)</span> 의 고유벡터로 이루어진 기저가 존재한다.</p>
+</div>
+</div>
+<p><br></p>
+<div class="proof">
+<p><span class="proof-title"><em>(증명)</em>. </span>(<span class="math inline">\(a\implies b\)</span>) 어떤 가역행렬 <span class="math inline">\(S\)</span> 에 대해 <span class="math inline">\(M=S^{-1}AS\)</span> 이 대각행렬이라고 하고 <span class="math inline">\(m_i = M_{ii}\)</span> 라고 하자. 대각 행렬에 대해 표준기저벡터 <span class="math inline">\(|e_i\rangle,\, i=1,\,2,\ldots\)</span> 는 <span class="math inline">\(m_i\)</span> 를 고유값으로 갖는 고유벡터이며</p>
+<p><span class="math display">\[
+A(S|e_i\rangle) = SS^{-1}AS|e_i\rangle = SM|e_i\rangle= m_i(S|e_i\rangle)
+\]</span></p>
+<p>이다. 즉 <span class="math inline">\(S|e_i\rangle\)</span> 은 <span class="math inline">\(A\)</span> 의 고유벡터이며, 기저이다.</p>
+<p>(<span class="math inline">\(b\implies a\)</span>) <span class="math inline">\(\{|x_i\rangle:\,i=1,\ldots\}\)</span> 의 각각의 벡터가 <span class="math inline">\(\lambda_i\)</span> 를 고유값으로 갖는 기저라고 하자. <span class="math inline">\(L|i\rangle = \lambda_i|i\rangle\)</span> 이므로 이 기저에서의 행렬표현은 대각행렬이다. <span class="math inline">\(\square\)</span></p>
+</div>
+<p><br></p>
+<p>이제 연산자의 고유값과 고유벡터에 대해 다시 생각해보자. 연산자 <span class="math inline">\(L\)</span> 에 대해 고유값 <span class="math inline">\(\lambda\)</span> 를 가진 벡터 <span class="math inline">\(|l\rangle\)</span> 이 존재한다면 <span class="math inline">\(L|l\rangle = \lambda |l\rangle\)</span> 이므로 <span class="math inline">\((L-\lambda I)|l\rangle = |\varnothing\rangle\)</span> 이다. 즉 <span class="math inline">\(L-\lambda I\)</span> 는 가역행렬이 아니며 따라서 <span class="math inline">\(\det(L-\lambda I) = 0\)</span> 이다. 유한차원 벡터공간이라면 <span class="math inline">\(\det(L-\lambda I)\)</span> 는 <span class="math inline">\(\lambda\)</span> 에 대한 다항식으로 <strong>특성 다항식 (characteristic polynomial)</strong> 라고 불리며 같은 이유로 <span class="math inline">\(\det(L-\lambda I)=0\)</span> 을 <strong>특성 다항식 (characteristic equation)</strong> 이라고 부른다.</p>
+<p><br></p>
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+<div id="prp-CHM_eigenvalue_and_roots_of_polynomial" class="theorem proposition">
+<p><span class="theorem-title"><strong>명제 1.3</strong></span> 유한차원 <span class="math inline">\(\mathbb{F}\)</span>-벡터공간 <span class="math inline">\(V\)</span> 에서 정의된 연산지 <span class="math inline">\(L\)</span> 에 대해 두 명제는 동치이다.</p>
+<p> (<span class="math inline">\(a\)</span>) <span class="math inline">\(\lambda\in \mathbb{F}\)</span> 는 <span class="math inline">\(L\)</span> 의 고유값이다.</p>
+<p> (<span class="math inline">\(b\)</span>) <span class="math inline">\(\det (L-\lambda I)=0\)</span> 이다.</p>
+</div>
+</div>
+<p><br></p>
+<div class="proof">
+<p><span class="proof-title"><em>(증명)</em>. </span>(<span class="math inline">\(a \implies b\)</span>) 는 위에서 보였다.</p>
+<p>(<span class="math inline">\(b \implies a\)</span>) <span class="math inline">\((L-\lambda I)|\phi\rangle = |\varnothing\rangle\)</span> 인 <span class="math inline">\(|\phi\rangle \in V\)</span> 가 존재한다. <span class="math inline">\(\square\)</span></p>
+</div>
+<p><br></p>
+<p><span class="math inline">\(n\)</span>-차원 벡터공간에서 <span class="math inline">\(\det(L-\lambda I)\)</span> 는 <span class="math inline">\(n\)</span> 차 다항식임을 안다. 만약 <span class="math inline">\(\mathbb{F}= \mathbb{C}\)</span> 라면 대수학의 기본정리에 의해 <span class="math inline">\(\det(L-\lambda I)=0\)</span> 을 만족하는 최소한 하나의 <span class="math inline">\(\lambda\)</span> 가 존재한다. 즉 우리는 다음을 알 수 있다.</p>
+<p><br></p>
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+<div id="prp-CHM_existance_of_eigenvalue_in_complex_vector_space" class="theorem proposition">
+<p><span class="theorem-title"><strong>명제 1.4</strong></span> 유한차원 복소벡터공간에서는 최소한 하나의 고유벡터가 존재한다.</p>
+</div>
+</div>
+<p><br></p>
+<p><br></p>
+</section>
+<section id="에르미트-연산자" class="level3" data-number="1.3.7">
+<h3 data-number="1.3.7" class="anchored" data-anchor-id="에르미트-연산자"><span class="header-section-number">1.3.7</span> 에르미트 연산자</h3>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="def-CHM_heritian" class="theorem definition">
+<p><span class="theorem-title"><strong>정의 1.5 (에르미트 연산자)</strong></span> 연산자 <span class="math inline">\(A\)</span> 가 <span class="math inline">\(A^\dagger = A\)</span> 일 때 이 연산자를 <strong>에르미트 연산자 (Heritiaan operator)</strong> 라고 한다.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<p>양자역학에서 에르미트 연산자는 매우 중요하며 특별히 다룰 가치가 있다.</p>
+<p><br></p>
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+<div id="thm-CHM_basic_properties_of_hermitian_operator" class="theorem">
+<p><span class="theorem-title"><strong>정리 1.2 (에르미트 연산자의 기본적인 성질)</strong></span> 복소벡터 벡터공간 <span class="math inline">\(V\)</span> 에서의 에르미트 연산자에 대해 다음이 성립한다.</p>
+<p> (<span class="math inline">\(1\)</span>) <span class="math inline">\(\left(A^\dagger\right)^\dagger = A\)</span> 이다.</p>
+<p> (<span class="math inline">\(2\)</span>) 에르미트 연산자의 고유값은 실수이다.</p>
+<p> (<span class="math inline">\(3\)</span>) 서로 다른 고유값을 갖는 에르미트 연산자의 고유벡터는 직교한다.</p>
+</div>
+</div>
+<p><br></p>
+<div class="proof">
+<p><span class="proof-title"><em>(증명)</em>. </span>(<span class="math inline">\(1\)</span>) <span class="math inline">\(\langle \phi|\left(A^\dagger\right)^\dagger|\psi\rangle = \overline{\langle \psi |A^\dagger |\phi\rangle} = \overline{\overline{\langle \phi |A|\psi\rangle}}=\langle \phi |A|\psi\rangle\)</span>.</p>
+<p>(<span class="math inline">\(2\)</span>) 에르미트 연산자 <span class="math inline">\(A\)</span> 에 대해 <span class="math inline">\(|a\rangle\)</span> 이 고유값 <span class="math inline">\(a\)</span> 를 갖는 고유벡터라고 하자. 즉 <span class="math inline">\(A|a\rangle = a|a\rangle\)</span> 이다.</p>
+<p><span class="math display">\[
+\overline{a}=\overline{\langle a|A|a\rangle} = \langle a|A^\dagger |a\rangle = \langle a|A|a\rangle = a
+\]</span></p>
+<p>(<span class="math inline">\(3\)</span>) <span class="math inline">\(|a\rangle,\, |b\rangle\)</span> 이 각각 <span class="math inline">\(a,\,b\in \mathbb{R}\)</span> 를 고유값으로 갖는 에르미트 연산자 <span class="math inline">\(L\)</span> 의 고유벡터이며 <span class="math inline">\(a\ne b\)</span> 라고 하자.</p>
+<p><span class="math display">\[
+\begin{aligned}
+0 = \langle a|(L-L)|b\rangle = \langle a|L|b\rangle - \langle a|L|b\rangle = (L|a\rangle)^\dagger |b\rangle - \langle a\left(L|b\rangle \right) = (a-b)\langle a|b\rangle
+\end{aligned}
+\]</span></p>
+<p>이다. <span class="math inline">\(a\ne b\)</span> 이므로 <span class="math inline">\(\langle a|b\rangle  = 0\)</span> 이다. <span class="math inline">\(\square\)</span></p>
+</div>
+<p><br></p>
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+<div id="thm-CHM_diagonalizatoin_of_hermitian_operator" class="theorem">
+<p><span class="theorem-title"><strong>정리 1.3 (에르미트 행렬의 대각화)</strong></span> <br></p>
+<p>유한차원 복소벡터공간에서 다음이 성립한다.</p>
+<p> (<span class="math inline">\(1\)</span>) 에르미트 연산자에 대한 교유벡터로 벡터공간의 정규직교기저를 구성 할 수 있다.</p>
+<p> (<span class="math inline">\(5\)</span>) 에르미트 연산자는 특정 기저에 대해 대각행렬로 표현 될 수 있다.</p>
+</div>
+</div>
+<p><br></p>
+<div class="proof">
+<p><span class="proof-title"><em>(증명)</em>. </span>(<span class="math inline">\(1\)</span>) <span class="math inline">\(A\)</span> 가 <span class="math inline">\(n\)</span> 차원 벡터공간에서의 에르미트 연산자라고 하고 Induction 을 이용하여 증명한다. 우선 1차원에서는 자명하다. 이제 <span class="math inline">\(1\)</span> 차원 부터 <span class="math inline">\(n-1\)</span> 차원까지 성립한다고 가정하자. <a href="#prp-CHM_existance_of_eigenvalue_in_complex_vector_space" class="quarto-xref">명제&nbsp;<span>1.4</span></a> 에 의해 하나의 고유벡터 <span class="math inline">\(|\phi\rangle\)</span> 이 존재한다. 이때의 고유값을 <span class="math inline">\(\lambda\)</span> 라고 하자. 그렇다면 <span class="math inline">\(\lambda\)</span> 의 고유값을 가진 벡터의 집합이 <span class="math inline">\(n\)</span> 차원이라면, 즉 모든 벡터가 <span class="math inline">\(\lambda\)</span> 의 고유값을 갖는 고유벡터라면 정규직교 기저에 의해 연산자는 대각화된다. <span class="math inline">\(\lambda\)</span> 의 고유값을 가진 벡터의 집합이 <span class="math inline">\(n\)</span> 차원 보다 작다면 <span class="math inline">\(\lambda\)</span> 의 고유값을 가진 부분공간과 <span class="math inline">\(\lambda\)</span> 이외의 고유값을 가진 부분공간으로 분해된다. 각각의 부분공간이 <span class="math inline">\(n\)</span> 보다 작은 차원이므로 가정에 의해 각각 정규직교기저를 구성 할 수 있으며, 이 정규직교기저의 합집합이 전체 벡터공간의 정규직교 기저가 된다.</p>
+<p>(<span class="math inline">\(2\)</span>) (<span class="math inline">\(1\)</span>) 과 <a href="#thm-CHM_diagonalizatoin_of_matrix" class="quarto-xref">정리&nbsp;<span>1.1</span></a> 에 의해 성립한다. <span class="math inline">\(\square\)</span></p>
+</div>
+<p><br></p>
+</section>
+<section id="sec-CHM_compatible_operators" class="level3" data-number="1.3.8">
+<h3 data-number="1.3.8" class="anchored" data-anchor-id="sec-CHM_compatible_operators"><span class="header-section-number">1.3.8</span> Compatible operators</h3>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="def-CHM_commutator_of_operators" class="theorem definition">
+<p><span class="theorem-title"><strong>정의 1.6 (Commutator)</strong></span> 두 연산자 <span class="math inline">\(L,\,M\)</span> 에 대해</p>
+<p><span id="eq-CHM_commutators"><span class="math display">\[
+[L,\,M] := LM-ML
+\tag{1.2}\]</span></span></p>
+<p>을 두 연산자에 대한 <strong>commutator</strong> 라고 한다. <span class="math inline">\([L,\,M]=0\)</span> 이면 두 연산자는 <strong>compatible</strong> 하다고 한다.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+<div id="prp-CHM_uncertainty_1" class="theorem proposition">
+<p><span class="theorem-title"><strong>명제 1.5</strong></span> 힐베르트 공간 <span class="math inline">\(\mathscr{H}\)</span> 에서 정의된 두 에르미트 연산자 <span class="math inline">\(L,\,M\)</span> 에 대해 다음은 동치이다.</p>
+<p> (<span class="math inline">\(a\)</span>) <span class="math inline">\([L,\,M]= 0\)</span>.</p>
+<p> (<span class="math inline">\(b\)</span>) <span class="math inline">\(L\)</span> 과 <span class="math inline">\(M\)</span> 에 대해 동시에 모두 고유벡터인 벡터로 이루어진 <span class="math inline">\(\mathscr{H}\)</span> 의 기저가 존재한다.</p>
+</div>
+</div>
+<p><br></p>
+<div class="proof">
+<p><span class="proof-title"><em>(증명)</em>. </span>(<span class="math inline">\(a \implies b\)</span>) <span class="math inline">\(L\)</span> 과 <span class="math inline">\(M\)</span> 이 에르미트 연산자이므로 각각의 고유상태로 이루어진 <span class="math inline">\(\mathscr{H}\)</span> 의 기저가 존재한다. 고유값 <span class="math inline">\(l_i\)</span> 인 <span class="math inline">\(L\)</span> 의 고유상태를 <span class="math inline">\(|l_i\rangle\)</span> 로 표기하자.</p>
+<p><span class="math display">\[
+|\varnothing\rangle=[L,\,M]|l_i\rangle = (LM- M l_i) |l_i\rangle = (L- l_i) M|l_i\rangle
+\]</span></p>
+<p>이므로 <span class="math inline">\(M|l_i\rangle\)</span> 는 고유값 <span class="math inline">\(l_i\)</span> 를 갖는 <span class="math inline">\(L\)</span> 의 고유상태이다. <span class="math inline">\(M\)</span> 역시 에르미트 연산자이므로</p>
+<p><span class="math display">\[
+M|l_i\rangle = \sum_j m_j|l_i m_j\rangle
+\]</span></p>
+<p>로 쓸 수 있다. 따라서 <span class="math inline">\(\mathscr{H}\)</span> 는 <span class="math inline">\(\{|l_i m_j\rangle \}\)</span> 를 기저로 갖는다.</p>
+<p>(<span class="math inline">\(b \implies a\)</span>) <span class="math inline">\(L\)</span> 과 <span class="math inline">\(M\)</span> 에 대해 각각 <span class="math inline">\(l,\,m\)</span> 의 고유값을 갖는 동시에 고유상태인 기저를 <span class="math inline">\(|lm\rangle\)</span> 라고 하면</p>
+<p><span class="math display">\[
+[L,\,M]|lm\rangle = LM|lm\rangle - ML|lm\rangle = (lm-lm)|lm\rangle = |\varnothing\rangle
+\]</span></p>
+<p>이므로 <span class="math inline">\([L,\,M] = \hat{0}\)</span> 이다. <span class="math inline">\(\square\)</span></p>
+</div>
+<p><br></p>
+<p><a href="#prp-CHM_uncertainty_1" class="quarto-xref">명제&nbsp;<span>1.5</span></a> 은 양자역학이 degeneracy 를 해결하는 방법을 말해준다. 어떤 에르미트 연산자 <span class="math inline">\(L\)</span> 에 대하나 고유상태가 degenrated 되어 있을 경우 <span class="math inline">\(L\)</span> 과 compatible 한 연산자 <span class="math inline">\(M\)</span> 을 찾으며, 운이 좋다면 <span class="math inline">\(L\)</span> 의 degenerated 된 고유공간를 <span class="math inline">\(M\)</span> 의 고유상태로 분해 할 수 있다. <span class="math inline">\(L,\,M\)</span> 이 compatible 하므로 이 분해된 고유공간 역시 <span class="math inline">\(L\)</span> 의 고유공간이므로 우리의 목적을 해치지 않는다. 만약 <span class="math inline">\(L\)</span> 에 대해 compatible 한 모든 연산자에 대해 분해되지 않는 2차원 이상의 고유공간이 존재한다면 이것은 자연이 우리에게 허용하지 않은 구분이다. 그러나 실제적인 경우에는 이런것은 존재하기 힘들다.(<span class="citation" data-cites="Sakurai1994">Sakurai (<a href="CHM.html#ref-Sakurai1994" role="doc-biblioref">1994</a>)</span>)</p>
+<p><br></p>
+</section>
+</section>
+<section id="sec-CHM_infinite_dimesion" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="sec-CHM_infinite_dimesion"><span class="header-section-number">1.4</span> 무한차원에 대해</h2>
+<section id="sec-CHM_dirac_delta_function" class="level3" data-number="1.4.1">
+<h3 data-number="1.4.1" class="anchored" data-anchor-id="sec-CHM_dirac_delta_function"><span class="header-section-number">1.4.1</span> 디랙 델타함수</h3>
+<p>양자역학에서 위치 <span class="math inline">\(x\)</span> 나 운동량 <span class="math inline">\(p\)</span> 와 같은 연속적인 값을 다루는데는 디렉 댈타 함수 <span class="math inline">\(\delta (x)\)</span> 가 필수적이다.</p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="def-CHM_dirac_delta_function" class="theorem definition">
+<p><span class="theorem-title"><strong>정의 1.7 (1차원 디랙 델타 함수)</strong></span> 1차원 디렉 델타 함수 <span class="math inline">\(\delta(x)\)</span> 는 아래의 성질을 만족하는 함수이다.</p>
+<p>  (<span class="math inline">\(1\)</span>) <span class="math inline">\(\delta (x) = \left\{ \begin{array}{ll} +\infty \qquad &amp; ;\text{x=0}.\\ 0 &amp;;\text{oterwise}.  \end{array}\right.\)</span></p>
+<p>  (<span class="math inline">\(2\)</span>) <span class="math inline">\(\displaystyle \int_{-\infty}^\infty f(x)\, \delta (x) \, dx = f(0)\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<p>여기서는 참고를 위해 디랙 델타함수의 성질에 대해 증명 없이 기술하기로 한다.</p>
+<p><br></p>
+<div id="prp-CHM_properties_of_dirac_delta_function" class="theorem proposition">
+<p><span class="theorem-title"><strong>명제 1.6 (디랙 델타 함수의 성질)</strong></span> 디랙 델타 함수 <span class="math inline">\(\delta(x)\)</span> 는 아래의 성질을 만족한다.</p>
+<p>  (<span class="math inline">\(1\)</span>) <span class="math inline">\(\delta (-x) = \delta (x)\)</span>,</p>
+<p>  (<span class="math inline">\(2\)</span>) <span class="math inline">\(\displaystyle \int f(x) \delta (x-x')\, dx = f(x')\)</span>,</p>
+<p>  (<span class="math inline">\(3\)</span>) <span class="math inline">\(\delta (ax) = \dfrac{1}{|a|}\delta (x)\)</span>,</p>
+<p>  (<span class="math inline">\(4\)</span>) <span class="math inline">\(g(x)=0\)</span> 의 해 <span class="math inline">\(\{x_i\}\)</span> 에 대해 모든 <span class="math inline">\(x_i\)</span> 에서 <span class="math inline">\(g(x_i)\ne 0\)</span> 일 때 <span class="math inline">\(\displaystyle \delta (g(x)) = \sum_{i} \dfrac{\delta(x-x_i)}{|g'(x_i)|}\)</span>,</p>
+<p>  (<span class="math inline">\(5\)</span>) <span class="math inline">\(\displaystyle \int f(x)\, \delta'(x)\, dx = f'(0)\)</span>,</p>
+<p>  (<span class="math inline">\(6\)</span>) <span class="math inline">\(x\,\delta'(x) = - \delta(x)\)</span></p>
+<p>  (<span class="math inline">\(7\)</span>) <span class="math inline">\(\displaystyle \dfrac{1}{2\pi}\int_{-\infty}^\infty e^{ikx}\, dk = \delta (x)\)</span>.</p>
+</div>
+<p><br></p>
+</section>
+<section id="무한차원-벡터공간에서의-연속적인-변수에-대한-기술" class="level3" data-number="1.4.2">
+<h3 data-number="1.4.2" class="anchored" data-anchor-id="무한차원-벡터공간에서의-연속적인-변수에-대한-기술"><span class="header-section-number">1.4.2</span> 무한차원 벡터공간에서의 연속적인 변수에 대한 기술</h3>
+<p><span class="math display">\[
+\sum_i |a_i\rangle \langle a_i|\psi\rangle \longrightarrow \int | x\rangle \langle  x|\psi\rangle \, dx
+\]</span></p>
+<p><span class="math display">\[
+\langle x|x'\rangle = \delta(x-x')
+\]</span></p>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-Sakurai1994" class="csl-entry" role="listitem">
+Sakurai, Jun John. 1994. <em><span class="nocase">Modern quantum mechanics; rev. ed.</span></em> Reading, MA: Addison-Wesley. <a href="https://cds.cern.ch/record/1167961">https://cds.cern.ch/record/1167961</a>.
+</div>
+</div>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "복사완료!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "복사완료!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../src/CHM/CHM.html" class="pagination-link" aria-label="I. 고전적, 역사적, 수학적 주제들">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">I. 고전적, 역사적, 수학적 주제들</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../src/CHM/symmetry_in_classical_mechanics.html" class="pagination-link" aria-label="고전역학에서의 대칭">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">고전역학에서의 대칭</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

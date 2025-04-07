@@ -1,0 +1,1335 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.42">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>11&nbsp; 대칭 – 양자 역학</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../src/QM/QM_angular_momentum.html" rel="next">
+<link href="../../src/QM/QM_N_DoF_system.html" rel="prev">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-b467865d89f01302b3bb45791fa41ab5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "일치 없음",
+    "search-matching-documents-text": "일치된 문서",
+    "search-copy-link-title": "검색 링크 복사",
+    "search-hide-matches-text": "추가 검색 결과 숨기기",
+    "search-more-match-text": "추가 검색결과",
+    "search-more-matches-text": "추가 검색결과",
+    "search-clear-button-title": "제거",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "취소",
+    "search-submit-button-title": "검색",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/QM/QM.html">II. 양자역학</a></li><li class="breadcrumb-item"><a href="../../src/QM/QM_symmetry.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">대칭</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/QM/QM.html">II. 양자역학</a></li><li class="breadcrumb-item"><a href="../../src/QM/QM_symmetry.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">대칭</span></a></li></ol></nav>
+      <h1 class="title"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">대칭</span></h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../../">양자 역학</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../src/CHM/CHM.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">I. 고전적, 역사적, 수학적 주제들</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="토글 섹션">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/CHM/mathematical_foundation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">힐베르트 공간과 브라켓 표기법</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/CHM/symmetry_in_classical_mechanics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">고전역학에서의 대칭</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/CHM/some_proofs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">몇몇 증명들</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../src/QM/QM.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">II. 양자역학</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="토글 섹션">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/QM/QM_foundation_of_quantum_theory.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">고전 물리학의 붕괴와 양자 원리</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/QM/QM_1d_bound_state.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">1차원 문제 I : 자유입자와 Bound state</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/QM/QM_classical_limit.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">고전적인 극한과 불확정성 원리</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/QM/QM_harmonic_oscillator.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">단순조화진동자</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/QM/QM_1d_scattering.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">1차원 산란</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/QM/QM_path_integral_1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">경로적분 I</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/QM/QM_N_DoF_system.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">N 자유도 시스템</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/QM/QM_symmetry.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">대칭</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/QM/QM_angular_momentum.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">회전과 각운동량</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../src/AUX/AUX.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">III. 기타 이런저런 이야기들</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="토글 섹션">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/AUX/entanglement.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">양자 얽힘</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/AUX/quantum_state.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">양자 상태</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">목차</h2>
+   
+  <ul>
+  <li><a href="#고전역학의-대칭" id="toc-고전역학의-대칭" class="nav-link active" data-scroll-target="#고전역학의-대칭"><span class="header-section-number">11.1</span> 고전역학의 대칭</a></li>
+  <li><a href="#양자-이론에서의-translational-invariance" id="toc-양자-이론에서의-translational-invariance" class="nav-link" data-scroll-target="#양자-이론에서의-translational-invariance"><span class="header-section-number">11.2</span> 양자 이론에서의 translational invariance</a>
+  <ul class="collapse">
+  <li><a href="#passive-transform-으로-본-translation" id="toc-passive-transform-으로-본-translation" class="nav-link" data-scroll-target="#passive-transform-으로-본-translation"><span class="header-section-number">11.2.1</span> Passive transform 으로 본 translation</a></li>
+  <li><a href="#고전역학의-정준변환과-양자역학의-unitary-변환" id="toc-고전역학의-정준변환과-양자역학의-unitary-변환" class="nav-link" data-scroll-target="#고전역학의-정준변환과-양자역학의-unitary-변환"><span class="header-section-number">11.2.2</span> 고전역학의 정준변환과 양자역학의 unitary 변환</a></li>
+  <li><a href="#finite-translation" id="toc-finite-translation" class="nav-link" data-scroll-target="#finite-translation"><span class="header-section-number">11.2.3</span> Finite Translation</a></li>
+  <li><a href="#수학적인-보충" id="toc-수학적인-보충" class="nav-link" data-scroll-target="#수학적인-보충"><span class="header-section-number">11.2.4</span> 수학적인 보충</a></li>
+  <li><a href="#다입자-시스템의-경우" id="toc-다입자-시스템의-경우" class="nav-link" data-scroll-target="#다입자-시스템의-경우"><span class="header-section-number">11.2.5</span> 다입자 시스템의 경우</a></li>
+  <li><a href="#translational-invariance-의-의미" id="toc-translational-invariance-의-의미" class="nav-link" data-scroll-target="#translational-invariance-의-의미"><span class="header-section-number">11.2.6</span> Translational Invariance 의 의미</a></li>
+  </ul></li>
+  <li><a href="#time-translational-invariance" id="toc-time-translational-invariance" class="nav-link" data-scroll-target="#time-translational-invariance"><span class="header-section-number">11.3</span> Time Translational invariance</a></li>
+  <li><a href="#parity-invariance" id="toc-parity-invariance" class="nav-link" data-scroll-target="#parity-invariance"><span class="header-section-number">11.4</span> Parity Invariance</a>
+  <ul class="collapse">
+  <li><a href="#active-transformation-의-관점에서" id="toc-active-transformation-의-관점에서" class="nav-link" data-scroll-target="#active-transformation-의-관점에서"><span class="header-section-number">11.4.1</span> Active transformation 의 관점에서</a></li>
+  <li><a href="#passive-transform-의-관점에서" id="toc-passive-transform-의-관점에서" class="nav-link" data-scroll-target="#passive-transform-의-관점에서"><span class="header-section-number">11.4.2</span> Passive transform 의 관점에서</a></li>
+  <li><a href="#parity-붕괴" id="toc-parity-붕괴" class="nav-link" data-scroll-target="#parity-붕괴"><span class="header-section-number">11.4.3</span> Parity 붕괴</a></li>
+  <li><a href="#연습문제" id="toc-연습문제" class="nav-link" data-scroll-target="#연습문제"><span class="header-section-number">11.4.4</span> 연습문제</a></li>
+  </ul></li>
+  <li><a href="#time-reversal-symmetry" id="toc-time-reversal-symmetry" class="nav-link" data-scroll-target="#time-reversal-symmetry"><span class="header-section-number">11.5</span> Time Reversal Symmetry</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<section id="고전역학의-대칭" class="level2" data-number="11.1">
+<h2 data-number="11.1" class="anchored" data-anchor-id="고전역학의-대칭"><span class="header-section-number">11.1</span> 고전역학의 대칭</h2>
+<p>우리는 고전역학의 해밀토니안 <span class="math inline">\(\mathcal{H}\)</span> 에 대해 다음이 성립한다는 것을 안다.</p>
+<p>(<span class="math inline">\(1\)</span>) 동역학 변수 <span class="math inline">\(g(q,\,p)\)</span> 에 의한 infinitesimal canonical transformation 에 대해 해밀토니안이 변하지 않으면 <span class="math inline">\(g\)</span> 는 보존된다.</p>
+<p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(\mathcal{H}\)</span> 가 불변인 canonical transformation 에 의한 운동방정식의 해의 변환은 역시 운동방정식의 해이다.</p>
+<p><br></p>
+</section>
+<section id="양자-이론에서의-translational-invariance" class="level2" data-number="11.2">
+<h2 data-number="11.2" class="anchored" data-anchor-id="양자-이론에서의-translational-invariance"><span class="header-section-number">11.2</span> 양자 이론에서의 translational invariance</h2>
+<p>양자역학에서 translational invariance, 즉 어떤 translation 에 대한 해밀토니안 <span class="math inline">\(H\)</span> 의 invariance 를 어떻게 정의할 것인가? 양자역학에서는 임의의 상태에 대한 어떤 위치라는 것도 정의가 되지 않으며, 따라서 infinetsimal translation 에 대한 해밀토니안의 불변성도 정의 할 수 없다. 그러나 고전역학에서 정의된 어떤 양은 양자역학에서의 기대값에 상응하도록 되어있는 경우가 많다는 것을 고려하면, 양자역학에서의 translational invariance 는 (그것을 생각해야 한다면) 경로의 기대값에 대한 infinitesimal transformation 에 대한 것이어야 할 것이다. 즉,</p>
+<p><span id="eq-QM_infinitesimal_translation"><span class="math display">\[
+\begin{aligned}
+\langle X \rangle &amp;\to \langle X\rangle + \varepsilon,\\[0.3em]
+\langle P \rangle &amp;\to \langle P \rangle
+\end{aligned}
+\tag{11.1}\]</span></span></p>
+<p>에 대한 것이다. Infinitesimal translation <span class="math inline">\(T_{\varepsilon}\)</span> 에 의해 상태벡터 <span class="math inline">\(|\Psi \rangle\)</span> 이 ㅣ변한 상태를 <span class="math inline">\(|\Psi_\varepsilon\rangle\)</span> 이라고 하자. 즉</p>
+<p><span class="math display">\[
+T_{\varepsilon}|\Psi\rangle = |\Psi_\varepsilon\rangle
+\]</span></p>
+<p>에 대해</p>
+<p><span class="math display">\[
+\begin{aligned}
+\langle \Psi_\varepsilon|X|\Psi_\varepsilon \rangle &amp;= \langle \Psi|X|\Psi\rangle + \varepsilon,\\
+\langle \Psi_\varepsilon|P|\Psi_\varepsilon \rangle &amp;= \langle \Psi|P|\Psi\rangle
+\end{aligned}
+\]</span></p>
+<p>라는 의미이다. 이것은 active transformation 에서의 관점이다. 즉 변환은 상태벡터를 변화시킨다. 이와 동등하지만 다른 passive transformation 은 연산자 자체를 다음과 같이 변화시킨다. <span class="math display">\[
+\begin{aligned}
+X &amp; \to T^\dagger_\varepsilon XT_{\varepsilon} = X+\varepsilon I,\\
+P &amp; \to T^\dagger_\varepsilon PT_{\varepsilon} = P
+\end{aligned}
+\]</span></p>
+<p>이라고 하자. 여기에 대해</p>
+<p><span class="math display">\[
+\begin{aligned}
+\langle \Psi|T^\dagger_\varepsilon X T_{\varepsilon} |\Psi\rangle &amp;= \langle \Psi |X|\Psi\rangle + \varepsilon, \\[0.3em]
+\langle \Psi|T^\dagger_\varepsilon P T_{\varepsilon} |\Psi\rangle &amp;= \langle \Psi |P|\Psi\rangle
+\end{aligned}
+\]</span></p>
+<p>이 성립한다. 이미 알겠지만 능동적 변환과 수동적 변환은 동일한 현상에 대한 다른 수학적 표현법일 따름이다. 이제 우리는 <span class="math inline">\(T_\varepsilon\)</span> 을 구해보도록 하자. 일단 active transformation 의 관점을 따르기로 한다. 우선 <span class="math inline">\(X\)</span> 기저에서 <span class="math inline">\(|x\rangle\)</span> 상태에 있는 입자에 대해</p>
+<p><span class="math display">\[
+T_{\varepsilon}|x\rangle = |x+\varepsilon\rangle
+\]</span></p>
+<p>라고 할 수 있다. <span class="math inline">\(|x\rangle\)</span> 는 <span class="math inline">\(X\)</span> 에 대한 정규직교기저이며 <span class="math inline">\(|x+\varepsilon\rangle\)</span> 도 그러하다. 즉 <span class="math inline">\(T_\varepsilon\)</span> 은 유니타리 연산자이다. 이제 <span class="math inline">\(|\Psi_\varepsilon \rangle = T_\varepsilon |\Psi\rangle\)</span> 을 생각해보자.</p>
+<p><span class="math display">\[
+\begin{aligned}
+|\Psi_\varepsilon\rangle = T_{\varepsilon}|\Psi\rangle &amp;= T_{\varepsilon} \int_{-\infty}^\infty |x\rangle \langle x|\Psi\rangle\, dx = \int_{-\infty}^\infty |x+\varepsilon\rangle \langle x|\Psi\rangle \,dx , \\
+&amp;= \int_{-\infty}^\infty |x'\rangle \langle x'-\varepsilon|\Psi\rangle \, dx'
+\end{aligned}
+\]</span></p>
+<p>이므로</p>
+<p><span class="math display">\[
+\Psi_\varepsilon (x) = \langle x|T_{\varepsilon}|\Psi\rangle = \int_{-\infty}^\infty \langle x|x'\rangle \langle x'-\varepsilon|\Psi\rangle\, dx' = \Psi(x-\varepsilon)
+\]</span></p>
+<p>이다. 즉 파동함수 <span class="math inline">\(\psi (x) = \langle x|\psi\rangle\)</span> 에 대해 <span class="math inline">\(\psi_\varepsilon (x) = \langle x|T_\varepsilon |\psi\rangle = \psi(x-\varepsilon)\)</span> 이며 이것은 파동함수의 translation 을 의미한다는 것을 알 수 있다. 또한,</p>
+<p><span class="math display">\[
+\begin{aligned}
+\langle \Psi_\varepsilon|P|\Psi_\varepsilon\rangle &amp;= \int_{-\infty}^\infty \Psi_\varepsilon^\ast(x) \left(-i\hbar \dfrac{d}{dx}\right)\Psi_\varepsilon(x)\, dx \\
+&amp;= \int_\infty^\infty\Psi^\ast(x) \left(-i\hbar \dfrac{d}{dx}\right)\Psi (x)\, dx = \langle \Psi |P|\Psi\rangle
+\end{aligned}
+\]</span></p>
+<p>이다. 즉, 아마 예상했던 바와 같이 translation 에 대해 운동량의 기대값은 변하지 않는다.</p>
+<p>여기서 한가지 짚고 넘어가야 할 것이 있다. 고전역학에서는 <span class="math inline">\(x\)</span> 와 <span class="math inline">\(p\)</span> 는 독립적이며 고전역학에서의 translation 은</p>
+<p><span class="math display">\[
+\begin{aligned}
+x &amp;\to x+\varepsilon, \\
+p &amp;\to p
+\end{aligned}
+\]</span></p>
+<p>라는 독립적인 두 변환이 동시에 성립할때를 말한다. 그러나 양자역학에서는 <span class="math inline">\(|x\rangle \to |x+\varepsilon\rangle\)</span> 변환만으로 translation 변환이 정해지는 것처럼 보인다. 어떤 차이가 있을까? 한가지 답은 <span class="math inline">\(T_{\varepsilon}|x\rangle = |x+\varepsilon\rangle\)</span> 이외의 것도 가능하다는 것이다. 예를 들어 어떤 <span class="math inline">\(\lim_{x\to 0}g(x) = 0\)</span> 인 미분가능함수 <span class="math inline">\(g(x)\)</span> 에 대해</p>
+<p><span class="math display">\[
+T_{\varepsilon} |x\rangle = e^{i\varepsilon g(x)/\hbar}|x+\varepsilon\rangle
+\]</span></p>
+<p>라고 해 보자. 이 때</p>
+<p><span class="math display">\[
+\begin{aligned}
+\langle x|T_{\varepsilon} |\Psi\rangle &amp;= \int \langle x|T_{\varepsilon}|x'\rangle  \langle x'|\Psi\rangle \, dx' \\
+&amp;= \int \langle x|e^{i\varepsilon g(x')/\hbar} |x'+\varepsilon\rangle \langle x'|\Psi\rangle \, dx'  \\
+&amp;=\int \delta(x-x'-\varepsilon) e^{i\varepsilon g(x')/\hbar} \, \Psi(x')\, dx' = e^{i\varepsilon g(x-\varepsilon)} \Psi(x-\varepsilon)
+\end{aligned}
+\]</span></p>
+<p>이다. 이를 이용하면</p>
+<p><span class="math display">\[
+\begin{aligned}
+\langle \Psi|T^\dagger_{\varepsilon} X T_{\varepsilon}|\Psi\rangle &amp;=\int \Psi^\ast(x-\varepsilon) X \Psi (x-\varepsilon)\, dx = \langle \Psi|X|\Psi \rangle +\varepsilon
+\end{aligned}
+\]</span></p>
+<p>이며,</p>
+<p><span class="math display">\[
+\begin{aligned}
+\langle \Psi|T^\dagger_{\varepsilon} P T_{\varepsilon}|\Psi\rangle &amp;= \int e^{-i \varepsilon g(x-\varepsilon)/\hbar} \Psi^\ast (x-\varepsilon) \left(-i\hbar \dfrac{d}{dx}\right) e^{i\varepsilon g(x-\varepsilon)/\hbar} \Psi(x-\varepsilon)\, dx \\
+&amp;= \int \varepsilon g'(x-\varepsilon) \Psi^\ast (x-\varepsilon)\Psi(x-\varepsilon)\, dx  + \langle \Psi |P |\Psi\rangle  \\
+&amp;= \langle \Psi |P |\Psi \rangle + \varepsilon \langle g'(x) \rangle
+\end{aligned}
+\]</span></p>
+<p>이다. 즉 우리가 <span class="math inline">\(T_\varepsilon |x\rangle = |x+\varepsilon\rangle\)</span> 을 선택한 것은 <span class="math inline">\(\langle X\rangle \to \langle X\rangle + \varepsilon,\, \langle P \rangle \to \langle P \rangle\)</span> 인 변환을 선택한 것이다.</p>
+<p>이제 <span class="math inline">\(X\)</span> 기저에 대한 <span class="math inline">\(T_\varepsilon\)</span> 을 정의했으므로 <span class="math inline">\(T_\varepsilon\)</span> 에 대한 몇가지 성질을 알아보자.</p>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-part3_properties_of_translation_operator" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 11.1</strong></span> Infinitesimal translation operator <span class="math inline">\(T_\varepsilon\)</span> 에 대해 다음을 보여라.</p>
+<p>  (<span class="math inline">\(1\)</span>) <span class="math inline">\(T_\varepsilon\)</span> 은 unitery 이다.</p>
+<p>  (<span class="math inline">\(2\)</span>) <span class="math inline">\(T_{\varepsilon_1} T_{\varepsilon_2} = T_{\varepsilon_1+ \varepsilon_2}\)</span> 이다.</p>
+<p>  (<span class="math inline">\(3\)</span>) <span class="math inline">\(T^\dagger_\varepsilon = T_{-\varepsilon}\)</span> 이다.</p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>(증명)</em>. </span>(<span class="math inline">\(1\)</span>) <span class="math inline">\(\langle \Psi | \Psi\rangle = \langle \Psi|T^\dagger_\varepsilon T |\Psi\rangle\)</span> 이면 <span class="math inline">\(T_\varepsilon\)</span> 은 uniatary 이다.</p>
+<p><span class="math display">\[
+\langle T_\varepsilon \Psi | T_\varepsilon \Psi\rangle = \int_{-\infty}^\infty \Psi^\ast(x-\varepsilon) \Psi(x-\varepsilon)\, dx = \int_{-\infty}^\infty \Psi^\ast(x) \Psi(x)\, dx = \langle \Psi|\Psi\rangle
+\]</span></p>
+<p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(T_{\varepsilon_1}T_{\varepsilon_2}|x\rangle = T_{\varepsilon_1}|x+\varepsilon_1\rangle = |x+\varepsilon_1+\varepsilon_2\rangle = T_{\varepsilon_1+\varepsilon_2}|x\rangle\)</span></p>
+<p>(<span class="math inline">\(3\)</span>) <span class="math inline">\(T\)</span> 가 unitary 이므로 <span class="math inline">\(T^\dagger_\varepsilon T_\varepsilon = I\)</span> 이며 (<span class="math inline">\(2\)</span>) 로 부터 <span class="math inline">\(T^\dagger_\varepsilon = T_{-\varepsilon}\)</span> 이다. <span class="math inline">\(\square\)</span></p>
+</div>
+</div>
+<p><br></p>
+<p>Translation 을 선택했으므로 우리는 translational invariance 를 정의 할 수 있다. 즉 <span class="math inline">\(|\Psi_\varepsilon\rangle = T_\varepsilon|\Psi\rangle\)</span> 에 대해</p>
+<p><span class="math display">\[
+\langle \Psi| H |\Psi\rangle = \langle \Psi_\varepsilon | H |\Psi_\varepsilon \rangle
+\]</span></p>
+<p>일 때 해밀토니안 <span class="math inline">\(H\)</span> 가 translatinal invariance 라고 한다. 이제 <span class="math inline">\(T_{\varepsilon}\)</span> 을 명확하게 구성해 보자. <span class="math inline">\(\varepsilon=0\)</span> 일 때 <span class="math inline">\(T_{\varepsilon} = I\)</span> 이므로 <span class="math inline">\(\varepsilon\)</span> 의 1차항까지 전개하여</p>
+<p><span id="eq-QM_translation_operator"><span class="math display">\[
+T_{\varepsilon}= I-\dfrac{i\varepsilon}{\hbar}G
+\tag{11.2}\]</span></span></p>
+<p>라고 하자. <a href="#eq-QM_translation_operator" class="quarto-xref">식&nbsp;<span>11.2</span></a> 는 근사식이며 많은 계산에서 <span class="math inline">\(\varepsilon\)</span> 에 대한 1차식가지만의 결과가 사용되기 때문에 편리하다. 이 때 <span class="math inline">\(G\)</span> 는 translation 의 generator 라고 한다. <span class="math inline">\(G\)</span> 가 애르미트 연산자임은 쉽게 보일 수 있다.</p>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-shankar_11_2_2" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 11.2 (Shankar 11.2.2)</strong></span> <span class="math inline">\(T_\varepsilon\)</span> 이 유니타리 임을 이용하여 <a href="#eq-QM_translation_operator" class="quarto-xref">식&nbsp;<span>11.2</span></a> 의 <span class="math inline">\(G\)</span> 는 에르미트 임을 보여라.</p>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(T^\dagger_{\varepsilon} T_{\varepsilon}= I\)</span> 이므로,</p>
+<p><span class="math display">\[
+T^\dagger T = I - \dfrac{i\varepsilon}{\hbar}(G-G^\dagger) + o(\varepsilon^2) = I
+\]</span></p>
+<p>이다. 따라서 <span class="math inline">\(G=G^\dagger\)</span> 이다.</p>
+</div>
+</div>
+<p><br></p>
+<p>이제 <span class="math inline">\(G\)</span> 연산자를 구해보자. <span class="math inline">\(\langle x|T_{\varepsilon} |\Psi\rangle = \Psi(x-\varepsilon)\)</span> 이므로 양변을 order of <span class="math inline">\(\varepsilon\)</span> 까지 전개하면</p>
+<p><span class="math display">\[
+\Psi(x) - \dfrac{i\varepsilon}{\hbar} \langle x|G|\Psi\rangle = \Psi (x) - \varepsilon\dfrac{d}{dx}\Psi(x)
+\]</span></p>
+<p>이다. 즉,</p>
+<p><span class="math display">\[
+\langle x|G|\Psi \rangle = -i\hbar \dfrac{d}{dx}\Psi(x)
+\]</span></p>
+<p>이므로 <span class="math inline">\(G=P\)</span> 이고</p>
+<p><span class="math display">\[
+T_{\varepsilon} = I - \dfrac{i\varepsilon}{h}P
+\]</span></p>
+<p>임을 알 수 있다. 즉 양자역학에서도 고전역학에서와 마찬가지로 운동량은 infinitesimal translation transformation 의 generator 이다.</p>
+<p><br></p>
+<p>이제 고전역학에서와 같이 translational invariance 로 부터 운동량이 보존된다는 것을 보이자.</p>
+<p><span class="math display">\[
+\begin{aligned}
+\langle \Psi_\varepsilon | H | \Psi_\varepsilon \rangle &amp;= \langle T_\varepsilon \Psi | H | T_\varepsilon \Psi\rangle \\
+&amp;= \langle \Psi | \left(I + \dfrac{i\varepsilon}{\hbar}P\right) H \left(I - \dfrac{i\varepsilon}{\hbar}P\right) |\Psi \rangle  \\
+&amp;= \langle \Psi | H |\Psi \rangle + \dfrac{i\varepsilon}{\hbar} + \dfrac{i\varepsilon}{\hbar} \langle \Psi | [P,\, H]|\Psi \rangle
+\end{aligned}
+\]</span></p>
+<p>이므로 <span class="math inline">\(\Psi_\varepsilon| H |\Psi_\varepsilon \rangle = \langle \Psi | H |\Psi \rangle\)</span> 로부터 <span class="math inline">\([P,\, H] = 0\)</span> 을 얻는다. 즉 <span class="math inline">\(\langle \dot{P}\rangle = 0\)</span> 이므로 <span class="math inline">\(P\)</span> 는 보존된다.</p>
+<p><br></p>
+<section id="passive-transform-으로-본-translation" class="level3" data-number="11.2.1">
+<h3 data-number="11.2.1" class="anchored" data-anchor-id="passive-transform-으로-본-translation"><span class="header-section-number">11.2.1</span> Passive transform 으로 본 translation</h3>
+<p>Translation <span class="math inline">\(T_\varepsilon\)</span> 이 연산자에 적용된다면</p>
+<p><span id="eq-QM_transilation_in_passive_transform"><span class="math display">\[
+T_\varepsilon^\dagger XT_\varepsilon = X + \varepsilon I,\qquad T^\dagger_\varepsilon P T = P
+\tag{11.3}\]</span></span></p>
+<p>이다. <span class="math inline">\(T^\dagger_\varepsilon X T_\varepsilon\)</span> 은 원점이 <span class="math inline">\(\varepsilon\)</span> 만큼 이동되었을 때의 위치연산자이다. 이것을 다시</p>
+<p><span id="eq-QM_translation_form_2"><span class="math display">\[
+T_\varepsilon = I - \dfrac{i\varepsilon}{\hbar}G
+\tag{11.4}\]</span></span></p>
+<p>라고 쓰자. <a href="#eq-QM_transilation_in_passive_transform" class="quarto-xref">식&nbsp;<span>11.3</span></a> 와 <a href="#eq-QM_translation_form_2" class="quarto-xref">식&nbsp;<span>11.4</span></a>, 그리고 <span class="math inline">\(G^\dagger = G\)</span> 로부터</p>
+<p><span class="math display">\[
+X+\varepsilon I = \left(I + \dfrac{i\varepsilon}{\hbar}G\right)X\left(I - \dfrac{i\varepsilon}{\hbar}G\right) = X - \dfrac{i\varepsilon}{\hbar} [X,\,G] + o(\varepsilon^2)
+\]</span></p>
+<p>를 얻는다. 즉 <span class="math inline">\([X,\,G] = i\hbar I\)</span> 이므로 우리는</p>
+<p><span id="eq-QM_form_of_G"><span class="math display">\[
+G=P+f(X)
+\tag{11.5}\]</span></span></p>
+<p>라는 것을 알 수 있다. 또한 <span class="math inline">\(T^\dagger_\varepsilon P T = P\)</span> 로부터</p>
+<p><span class="math display">\[
+P = P - \dfrac{i\varepsilon}{\hbar}[P,\,G]
+\]</span></p>
+<p>이므로 <span class="math inline">\([P,\,G] = 0\)</span> 임을 알 수 있다. 그렇다면 <span class="math inline">\(G=P+\text{const}\)</span> 형태이며, <a href="#eq-QM_form_of_G" class="quarto-xref">식&nbsp;<span>11.5</span></a> 에서 <span class="math inline">\(f(X) = \text{const}\)</span> 임을 알 수 있으며, 우리는 상수항을 <span class="math inline">\(0\)</span> 으로 선택하여</p>
+<p><span class="math display">\[
+T_\varepsilon = I - \dfrac{i\varepsilon}{h} P
+\]</span></p>
+<p>라고 할 수 있다.</p>
+<p>이제 일반적인 <span class="math inline">\(X,\, P\)</span> 의 power series 로 표현 될 수 있는 연산자 <span class="math inline">\(\Omega (X,\,P)\)</span> 에 Unitary transform <span class="math inline">\(U\)</span> 이 적용 될 경우 (<span class="math inline">\(U^\dagger U = I\)</span>)</p>
+<p><span class="math display">\[
+U^\dagger \Omega (X,\,P) U = \Omega (U^\dagger XU,\, U^\dagger PU)
+\]</span></p>
+<p>이 성립한다는 것을 쉽게 알 수 있다.</p>
+<p><br></p>
+</section>
+<section id="고전역학의-정준변환과-양자역학의-unitary-변환" class="level3" data-number="11.2.2">
+<h3 data-number="11.2.2" class="anchored" data-anchor-id="고전역학의-정준변환과-양자역학의-unitary-변환"><span class="header-section-number">11.2.2</span> 고전역학의 정준변환과 양자역학의 unitary 변환</h3>
+<p>Passive transformation 관점은 고전역학에서의 동역학 변수를 다루는 것과 비슷하기 대문에 양자역학과 고전역학을 비교하는데 유리함이 있다. 실제로 고전역학의 정준변환 (canonical transformation) 과 양자역학의 unitary 변환 사이에는 밀접한 관련이 있다. 이제 <span class="math inline">\(\delta X\)</span> 와 <span class="math inline">\(\delta P\)</span> 를 다음과 같이 정의하자.</p>
+<p><span class="math display">\[
+\begin{aligned}
+\delta X &amp;:= T^\dagger_\varepsilon XT_\varepsilon -X,\\
+\delta P &amp;:= T^\dagger_\varepsilon P T_\varepsilon - P.
+\end{aligned}
+\]</span></p>
+<p>우리는 이미 <a href="#eq-QM_transilation_in_passive_transform" class="quarto-xref">식&nbsp;<span>11.3</span></a> 로부터 다음을 안다.</p>
+<p><span class="math display">\[
+\delta X = \varepsilon I,\qquad \delta P = 0.
+\]</span></p>
+<p>반면에 <span class="math inline">\(T_\varepsilon = I - \dfrac{i\varepsilon}{\hbar} P\)</span> 라는 근사식을 사용한다면 아래의 결과를 얻는다.</p>
+<p><span class="math display">\[
+\delta X = -\dfrac{i\varepsilon}{\hbar}[X,\,P] = \varepsilon  I,\qquad \delta P = -\dfrac{i\varepsilon}{\hbar}[P,\,P] = 0
+\]</span></p>
+<p>이것을 일반적인 동역학 변수 <span class="math inline">\(\Omega(X,\,P)\)</span> 까지 확장해보면 다음을 얻는다.</p>
+<p><span class="math display">\[
+\delta \Omega (X,\,P) = \Omega(X+\varepsilon I,\, P) - \Omega (X,\,P) = T_\varepsilon^\dagger \Omega T_\varepsilon - \Omega = -\dfrac{i\varepsilon}{\hbar}[\Omega,\,P]
+\]</span></p>
+<p>위의 두 식을 <span class="math inline">\(p\)</span> 에 의해 generated 되는 정준변환과 비교해보자.</p>
+<p><span class="math display">\[
+\delta x = \varepsilon \{ x,\,p\} = \varepsilon,\qquad \delta p = \varepsilon \{p,\,p\} = 0, \qquad \delta \omega = \varepsilon \{\omega,\, p\}
+\]</span></p>
+<p>만약 해밀토니안이 translation 에 대해 불변이라면, 즉</p>
+<p><span class="math display">\[
+\delta H = -\dfrac{i\varepsilon}{\hbar}[H,\, P] =0
+\]</span></p>
+<p>이라면 <span class="math inline">\([H,\,P]=0\)</span> 이며, 띠라서 에렌페스트 정리로부터 <span class="math inline">\(\langle \dot{P}\rangle = 0\)</span> 을 얻는다. 고전적으로는</p>
+<p><span class="math display">\[\delta \mathcal{H} = \varepsilon \{\mathcal{H},\, p\} = 0
+\]</span></p>
+<p>으로부터 <span class="math inline">\(\dot{p} = \{p,\, \mathcal{H}\} = 0\)</span> 을 얻은 것이다. 이것을 일반화 시켜 보자면 고전역학에서 <span class="math inline">\(g(x,\,p)\)</span> 에 의해 generated 되는 infinitesimal 정준 변환</p>
+<p><span class="math display">\[
+\delta \omega = \varepsilon \{\omega,\, g\}
+\]</span></p>
+<p>에 대한 양자역학적인 결과는 infinitesimal unitary transform <span class="math inline">\(U_G(\varepsilon) = I - i\varepsilon G/\hbar\)</span> 에 대해</p>
+<p><span class="math display">\[
+\delta \Omega = -\dfrac{i\varepsilon}{\hbar} [\Omega,\, G]
+\]</span></p>
+<p>이다. <span class="citation" data-cites="Shankar1994">Shankar (<a href="../CHM/CHM.html#ref-Shankar1994" role="doc-biblioref">1994</a>)</span> 는 이러한 관계를 <strong>상보성(correspondence)</strong> 이라고 표현한다.</p>
+<p>이런 상보성은 고전역학에서 inifintesimal canconical transformation 이 존재하는 경우 뿐만 아니라 아래와 같은 경우에도 존재한다.</p>
+<ul>
+<li>finite canonical transformation 의 경우</li>
+<li>infinitesimal 버젼이 존재하지 않는 regular canonical transformation 의 경우</li>
+</ul>
+<p><em>자세한 설명은 이후에</em></p>
+<p><br></p>
+</section>
+<section id="finite-translation" class="level3" data-number="11.2.3">
+<h3 data-number="11.2.3" class="anchored" data-anchor-id="finite-translation"><span class="header-section-number">11.2.3</span> Finite Translation</h3>
+<p>이제 infinitesimal 한 경우가 아닌 finite translation 의 경우를 살펴 보자. <span class="math inline">\(a\)</span> 만큼의 translation 을 <span class="math inline">\(T(a)\)</span> 라고 표기한다. <span class="math inline">\(a\)</span> 만큼의 finite translation 을 생각하고 <span class="math inline">\([0,\,a]\)</span> 구간을 <span class="math inline">\(N\)</span> 개의 같은 크기의 부분구간으로 나누자. 즉 한 부분구간의 크기는 <span class="math inline">\(a/N\)</span> 이 된다. 그렇다면 <span class="math inline">\(N \to \infty\)</span> 극한에서 <span class="math inline">\(a/N\)</span> 만큼의 translation 은 infinitesimal translation 이 되며</p>
+<p><span class="math display">\[
+T\left(\dfrac{a}{N}\right) = I - \dfrac{ia}{\hbar N}P
+\]</span></p>
+<p>라고 쓸 수 있다. 그렇다면</p>
+<p><span class="math display">\[
+T(a) = \lim_{N \to \infty} \left[T\left(\dfrac{a}{N}\right)\right]^N = \lim_{N \to \infty} \left[I - \dfrac{ia}{\hbar N}P\right]^N = e^{-iaP/\hbar}
+\]</span></p>
+<p>이다. 물론 <span class="math inline">\(P\)</span> 는 연산자이므로 함부로 대수적인</p>
+<p><span class="math display">\[
+\lim_{N \to \infty} \left(1 - \dfrac{a}{N}\right)^N =e^{-a}
+\]</span></p>
+<p>를 사용해서는 안되지만 이 경우 계산에 관련된 것이 연산자 <span class="math inline">\(P\)</span> 와 스칼라 값 뿐이며, 따라서 관계된 모든 값에 대해 <span class="math inline">\(P\)</span> 와의 commutativity 가 성립하기 때문에 <span class="math inline">\(T(a) =e^{-iaP/\hbar}\)</span> 이게 된다.</p>
+<p><br></p>
+</section>
+<section id="수학적인-보충" class="level3" data-number="11.2.4">
+<h3 data-number="11.2.4" class="anchored" data-anchor-id="수학적인-보충"><span class="header-section-number">11.2.4</span> 수학적인 보충</h3>
+<p><a href="../CHM/some_proofs.html#prp-part3_Baker_Hausdorff_Lemma" class="quarto-xref">명제&nbsp;<span>3.2</span></a> (Baker-Housdorff lemma) 에 따라 다음이 성립한다.</p>
+<p><span class="math display">\[
+e^{-A}Be^A = B + [B,\,A] + \dfrac{1}{2!}[[B,\,A],\,A] + \cdots
+\]</span></p>
+<p>이로부터,</p>
+<p><span id="eq-part3_transformation_of_operator_by_translation"><span class="math display">\[
+\begin{aligned}
+T^\dagger(a) \Omega T(a) &amp;= e^{iaP/\hbar}\Omega e^{-iaP/\hbar} \\
+&amp;= \Omega - \dfrac{ai}{\hbar}[\Omega,\, P] - \dfrac{a^2}{2\hbar^2}[[\Omega,\, P],\,P] + \cdots
+\end{aligned}
+\tag{11.6}\]</span></span></p>
+<p>임을 안다.</p>
+<br>
+<div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+<div id="exm-transformation_of_lagrangian" class="theorem example">
+<p><span class="theorem-title"><strong>예제 11.1</strong></span> <a href="#eq-part3_transformation_of_operator_by_translation" class="quarto-xref">식&nbsp;<span>11.6</span></a> 에서 <span class="math inline">\(\Omega = X^2\)</span> 일 경우 직관적으로 <span class="math inline">\(T^\dagger(a)X^2T(a) = (X+aI)^2\)</span> 임을 안다. 이를 수학적으로 보이자.</p>
+<p><span class="math display">\[
+\begin{aligned}
+\left[X^2,\, P\right] &amp;= X[X,\,P] + [X,\,P]X = 2i\hbar X, \\
+[[X^2,\,P],\, P] &amp;= 2i\hbar [X,\, P] = -2\hbar^2 I,\\
+[[[X^2,\,P],\,P],\,P]  &amp;= 0
+\end{aligned}
+\]</span></p>
+<p>이므로 <span class="math inline">\([\cdots [[X^2,\,P],\,P], \cdots, P]\)</span> 에서 <span class="math inline">\(P\)</span> 가 3번 이상 나타날 경우 <span class="math inline">\(0\)</span> 임을 알 수 있다. 따라서,</p>
+<p><span class="math display">\[
+\begin{aligned}
+T^\dagger(a) X^2 T(a) &amp;= X^2 +2aX + a^2I = (X+aI)^2
+\end{aligned}
+\]</span></p>
+<p>이다.</p>
+</div>
+</div>
+<p><br></p>
+<p>고전역학에서 infinitesimal displacement <span class="math inline">\(\delta a\)</span> 에 대해</p>
+<p><span class="math display">\[
+\delta \omega= \delta a\{\omega,\,p\}
+\]</span></p>
+<p>이다. 즉</p>
+<p><span class="math display">\[
+\dfrac{d\omega}{da} = \{\omega,\, p\}
+\]</span></p>
+<p>이다. 이 결과를 이용하면,</p>
+<p><span class="math display">\[
+\dfrac{d}{da}\left(\dfrac{d\omega}{da}\right) = \dfrac{d^2\omega}{da^2} = \left\{\dfrac{d\omega}{da},\, p\right\} = \{ \{ \omega,\, p\},\, p\}
+\]</span></p>
+<p>이며, 이를 계속 해 나가다 보면 <span class="math inline">\(\delta a\)</span> 만큼의 displacement 에 의해 <span class="math inline">\(\omega\)</span> 는 다음과 같이 변화한다는 것을 알 수 있다.</p>
+<p><span class="math display">\[
+\omega \to \omega+ a\{\omega,\, p\} + \dfrac{a^2}{2!} \{ \{\omega,\, p\},\,p\} + \cdots
+\]</span></p>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-shankar_11_2_3" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 11.3 (Shankar 11.2.3)</strong></span> <span class="math inline">\((x,\,y) \mapsto (\overline{x},\, \overline{y})\)</span> 에서의 Infinitesimal rotation</p>
+<p><span class="math display">\[
+\overline{x} = x \cos \varepsilon - y \sin \varepsilon,\qquad \overline{y} = x \sin \varepsilon + y \cos \varepsilon
+\]</span></p>
+<p>을 생각하자.</p>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(l_z = xp_y -yp_x\)</span> 에 대해</p>
+<p><span class="math display">\[
+\begin{aligned}
+\{x,\,l_z\} &amp;= -y, \\
+\{\{x,\, l_z\},\, l_z\} &amp;= x
+\end{aligned}
+\]</span></p>
+<p>이므로</p>
+<p><span class="math display">\[
+\begin{aligned}
+\overline{x} &amp;= x + \theta \{x,\,l_z\} + \dfrac{\theta^2}{2!} \{\{x,\, l_z\},\, l_z\} + \cdots \\
+&amp;= x - y\theta - \dfrac{\theta^2}{2!} x + \dfrac{\theta^3}{3!}y + \cdots \\
+&amp;= x\left(\sum_{j=0}^\infty \dfrac{\theta^{2j}}{(2j)!}\right) - y \left(\sum_{j=0}^\infty \dfrac{\theta^{2j+1}}{(2j+1)!}\right) \\
+&amp;= x\cos \theta - y \sin \theta
+\end{aligned}
+\]</span></p>
+<p>이다. 같은 방법으로</p>
+<p><span class="math display">\[
+\overline{y} = x\sin \theta + y \cos \theta
+\]</span></p>
+<p>임을 보일 수 있다.</p>
+</div>
+</div>
+<p><br></p>
+</section>
+<section id="다입자-시스템의-경우" class="level3" data-number="11.2.5">
+<h3 data-number="11.2.5" class="anchored" data-anchor-id="다입자-시스템의-경우"><span class="header-section-number">11.2.5</span> 다입자 시스템의 경우</h3>
+<p>입자가 하나 이상인 시스테의 경우 infinitesimal translation <span class="math inline">\(T_\varepsilon\)</span> 을 다음과 같이 정의한다.</p>
+<p><span class="math display">\[
+\langle x_1,\ldots,x_N | T_\varepsilon |\Psi\rangle = \Psi (x_1-\varepsilon,\ldots,\, x_N-\varepsilon)
+\]</span></p>
+<p><span class="math inline">\(T_\varepsilon\)</span> 에서 <span class="math inline">\(\varepsilon \to 0\)</span> 인 극한에서 <span class="math inline">\(T=I\)</span> 이므로 어떤 generator <span class="math inline">\(P\)</span> 를 생각하여 <span class="math inline">\(\varepsilon\)</span> 에 대한 1차항까지 고려하면 <span class="math inline">\(T=I - \dfrac{i\varepsilon}{\hbar}P\)</span> 라고 놓을 수 있다. 이제 위 식의 양변을 <span class="math inline">\(\varepsilon\)</span> 에 대한 1차항까지 비교하면</p>
+<p><span class="math display">\[
+\begin{aligned}
+\langle x_1,\ldots,\,x_N | I - \dfrac{i\varepsilon}{\hbar} P|\Psi\rangle &amp;= \Psi (x_1,\ldots,\,x_N) - \sum_{j=1}^N \varepsilon \dfrac{\partial \Psi}{\partial x_j} \\
+&amp;= \Psi(x_1,\ldots,,x_N) - \left(\dfrac{i\varepsilon}{\hbar}\right)\sum_{j=1}^N P_j\Psi(x)
+\end{aligned}
+\]</span></p>
+<p>이므로</p>
+<p><span class="math display">\[
+T_\varepsilon = I - \dfrac{i\varepsilon}{\hbar} \sum_{j=1}^N P_j = I - \dfrac{i\varepsilon}{\hbar}P
+\]</span></p>
+<p>라 놓을 수 있다.</p>
+<p><span class="math display">\[
+P = \sum_j P_j
+\]</span></p>
+<p>는 총 운동량(total momentum) 이라고 부를 수 있다는 것을 알 수 있다. 이로부터 <span class="math inline">\(T_\varepsilon\)</span> 에 대해 해밀토니안이 불변이면 총 각운동량이 보존된다는 것을 알 수 있다.</p>
+<p><br></p>
+</section>
+<section id="translational-invariance-의-의미" class="level3" data-number="11.2.6">
+<h3 data-number="11.2.6" class="anchored" data-anchor-id="translational-invariance-의-의미"><span class="header-section-number">11.2.6</span> Translational Invariance 의 의미</h3>
+<p><span class="math inline">\(T(a)\)</span> 는 유니타리이므로 translation 에 대해 해밀토니안이 불변이라면 <span class="math inline">\(T(a)^\dagger HT=H\)</span> 로부터 <span class="math inline">\(T(a)H=HT(a)\)</span> 이다. 이로부터 <span class="math inline">\(T(a)U(t)=U(t)T(a)\)</span> 임을 알 수 있다. <span class="math inline">\(t=0\)</span> 에 <span class="math inline">\(|\Psi(0)\rangle\)</span> 과 <span class="math inline">\(T(a)|\Psi(0)\rangle\)</span> 인 상태를 준비했다면 <span class="math inline">\(T(a)U(t)|\Psi(0)\rangle = U(t)\left(T(a)|\Psi(0)\rangle\right)\)</span> 이다. 즉 <span class="math inline">\(x=0\)</span> 인 관찰자가 <span class="math inline">\(|\Psi(0)\rangle\)</span> 의 시간에 대한 변화를 보는 것과 <span class="math inline">\(x=a\)</span> 에서의 관찰자가 <span class="math inline">\(T(a)|\Psi(0)\rangle\)</span> 의 시간에 대한 변화를 보는 것은 상대적인 위치의 차이를 제외하면 동일하는 것을 알 수 있다.</p>
+<p>우리가 지금까지 발견한 모든 기본적인 상호작용은 translational invariance 의 성질을 가지며 이는 근원적인 의미에서 공간의 균일성(homogeneity) 를 의미하며, 물리적으로는 운동량 보존으로 나타난다.</p>
+<p><br></p>
+</section>
+</section>
+<section id="time-translational-invariance" class="level2" data-number="11.3">
+<h2 data-number="11.3" class="anchored" data-anchor-id="time-translational-invariance"><span class="header-section-number">11.3</span> Time Translational invariance</h2>
+<p>고전적으로 공간의 균일성이 운동량 보존으로 나타난다면 시간의 균일성은 해밀토니안의 보존으로 나타나는데 이것은 양자세계에서도 마찬가지이다. 시간에 대한 infinitesimal translation 을 생각하자. 시간 <span class="math inline">\(t_1\)</span> 에 <span class="math inline">\(|\Psi_0\rangle\)</span> 의 상태로 준비되었다고 하자. Infinitesimal time <span class="math inline">\(\varepsilon\)</span> 후의 상태는</p>
+<p><span class="math display">\[
+|\Psi(t_1+\varepsilon)\rangle = \left[I - \dfrac{i\varepsilon}{\hbar} H(t_1)\right] |\Psi_0\rangle
+\]</span></p>
+<hr>
+<p><br></p>
+</section>
+<section id="parity-invariance" class="level2" data-number="11.4">
+<h2 data-number="11.4" class="anchored" data-anchor-id="parity-invariance"><span class="header-section-number">11.4</span> Parity Invariance</h2>
+<section id="active-transformation-의-관점에서" class="level3" data-number="11.4.1">
+<h3 data-number="11.4.1" class="anchored" data-anchor-id="active-transformation-의-관점에서"><span class="header-section-number">11.4.1</span> Active transformation 의 관점에서</h3>
+<p>고전적으로 parity 변환은 다음과 같은 변환이다. <span id="eq-part3_classical_parity"><span class="math display">\[
+x \longrightarrow -x,\qquad p \longrightarrow -p
+\tag{11.7}\]</span></span></p>
+<p>시간, 공간 에 대한 translation 그리고 잠시 후에 다룰 회전에 대한 변환은 연속적인 변환이지만 Parity 는 불연속적인 변환이며 이는 양자이론에서도 마찬가지이다. 양자이론에에서의 parity 변환은 <span class="math inline">\(\Pi\)</span> 연산자로 표기하며 다음과 같이 정의된다.</p>
+<p><span id="eq-part3_quantum_parity"><span class="math display">\[
+\Pi|x\rangle = |-x\rangle.
+\tag{11.8}\]</span></span></p>
+<p>이로부터,</p>
+<p><span class="math display">\[
+\begin{aligned}
+\langle x|\Pi|\Psi\rangle &amp;= \int \langle x|\Pi |x'\rangle \langle x'|\Psi\rangle\, dx' = \int \langle x|-x'\rangle\, \Psi(x') = \int \delta(x+x')\Psi(x')\, dx' \\
+&amp;= \Psi(-x)
+\end{aligned}
+\]</span></p>
+<p>을 얻는다. 또한</p>
+<p><span class="math display">\[
+\begin{aligned}
+\Pi |p\rangle &amp;= \int |x\rangle \langle x|\Pi| x'\rangle \langle x'|p\rangle \, dx\,dx' = \int |x\rangle \langle x|-x'\rangle \langle x'|p\rangle \, dx\,dx'  \\
+&amp;= \int |x\rangle \delta (x'+x) \langle x'|p\rangle \, dx\, dx' = \int|x\rangle \langle -x|p\rangle \,dx
+\end{aligned}
+\]</span></p>
+<p>인데 <span class="math inline">\(\langle x|p\rangle = (2\pi \hbar)^{-1/2}e^{-ipx/\hbar}\)</span> 이므로 <span class="math inline">\(\langle -x|p\rangle = \langle x|-p\rangle\)</span> 이다. 즉,</p>
+<p><span class="math display">\[
+\Pi |p\rangle = \int |x\rangle \langle x|-p\rangle\,dx = |-p\rangle
+\]</span></p>
+<p>이다. 이로부터 우리는 <span class="math inline">\(\Pi\)</span> 연산자가 고전적인 parity 변환과 동등하다는 것을 알 수 있다.</p>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-properties_of_parity_operator" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 11.4</strong></span> Parity operator <span class="math inline">\(\Pi\)</span> 는 다음의 성질을 가진다는 것을 보여라.</p>
+<p>  (<span class="math inline">\(1\)</span>) <span class="math inline">\(\Pi^2 = I\)</span>,</p>
+<p>  (<span class="math inline">\(2\)</span>) <span class="math inline">\(\Pi\)</span> 는 에르미트이며 유니타리인 연산자이다.</p>
+<p>  (<span class="math inline">\(3\)</span>) <span class="math inline">\(\Pi\)</span> 의 고유값은 <span class="math inline">\(\pm 1\)</span> 이다.</p>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(1\)</span>) <span class="math inline">\(\Pi^2|x\rangle = \Pi |-x\rangle = |x\rangle\)</span> 이므로 <span class="math inline">\(\Pi^2=I\)</span> 이다.</p>
+<p>(<span class="math inline">\(2\)</span>) 우선 에르미트 임을 보이자.</p>
+<p><span class="math display">\[
+\begin{aligned}
+\langle x'|\Pi | x\rangle &amp;= \langle x'|-x\rangle = \delta (x'+x), \\
+\overline{\langle x|\Pi|x'\rangle} &amp;= \delta^\ast (x'+x) = \delta (x'+x)
+\end{aligned}
+\]</span></p>
+<p>이며 <span class="math inline">\(\overline{\langle x|\Pi|x'\rangle} = \langle x'|\Pi^\dagger |x\rangle\)</span> 이므로 <span class="math inline">\(\Pi = \Pi^\dagger\)</span> 이다. 따라서 <span class="math inline">\(\Pi\)</span> 는 에르미트 연산자이다. 그리고 <span class="math inline">\(I=\Pi^2 = \Pi^\dagger \Pi\)</span> 이므로 <span class="math inline">\(\Pi\)</span> 는 유니타리이다.</p>
+<p>(<span class="math inline">\(3\)</span>) <span class="math inline">\(|\pi\rangle\)</span> 을 <span class="math inline">\(\Pi\)</span> 의 고유상태라고 하자. <span class="math inline">\(\Pi^2|\pi\rangle = |\pi\rangle\)</span> 이므로 <span class="math inline">\(\Pi\)</span> 의 고유값은 <span class="math inline">\(\pm 1\)</span> 이다.</p>
+</div>
+</div>
+<p><br></p>
+<p>위의 연습문제에서 보았듯이 parity 연산자의 고유값은 <span class="math inline">\(\pm 1\)</span> 이다. 이 경우 고유값이 <span class="math inline">\(+1\)</span> 인 고유상태를 <strong>even parity</strong> 라고 하고 <span class="math inline">\(-1\)</span> 인 고유상태를 <strong>odd parity</strong> 라고 한다. <span class="math inline">\(\Psi(x)\)</span> 에 대해 <span class="math inline">\(\Psi(-x)= \Psi(x)\)</span> 이면 even parity 파동함수이며 <span class="math inline">\(\Psi(-x)=-\Psi(x)\)</span> 이면 odd parity 파동함수이다.</p>
+<br>
+<div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+<div id="exm-parity_in_other_basis" class="theorem example">
+<p><span class="theorem-title"><strong>예제 11.2</strong></span> <span class="math inline">\(|\Psi\rangle\)</span> 이 <span class="math inline">\(\Pi\)</span> 의 고유상태라고 하자. 어떤 <span class="math inline">\(\Omega\)</span> 에 대한 기저로 표현된 파동함수 <span class="math inline">\(\Psi(\omega)\)</span> 역시 <span class="math inline">\(\omega\)</span> 에 대해 even 혹은 odd parity 를 가질까? <span class="math inline">\(|\Psi\rangle\)</span> 이 <span class="math inline">\(\Pi\)</span> 에 대해 even parity 를 갖는다고 하자. 즉 <span class="math inline">\(\Psi(-x)= \Psi(x)\)</span> 이다. 이에 대해</p>
+<p><span class="math display">\[
+\Psi (-\omega) = \int \langle -\omega |x\rangle \Psi(x)\, dx = -\int \langle -\omega|-x\rangle \Psi (-x)\, dx = -\int \langle -\omega |-x\rangle \Psi(x)\, dx
+\]</span></p>
+<p>임을 생각하자. <span class="math inline">\(\langle -\omega |-x\rangle\)</span> 와 <span class="math inline">\(\langle \omega |x\rangle\)</span> 사이에 뚜렷한 대칭성이 없다면 <span class="math inline">\(\Psi(-\omega)\)</span> 가 <span class="math inline">\(\omega\)</span> 에 대해 even/odd parity 를 갖지 않는다.</p>
+</div>
+</div>
+<p><br></p>
+<p><br></p>
+</section>
+<section id="passive-transform-의-관점에서" class="level3" data-number="11.4.2">
+<h3 data-number="11.4.2" class="anchored" data-anchor-id="passive-transform-의-관점에서"><span class="header-section-number">11.4.2</span> Passive transform 의 관점에서</h3>
+<p>이제 partiy 연산자가 상태벡터가 아닌 다른 연산자에 작용하는 경우를 알아보자. Parity 연산자를 다음과 같이 정의할 수도 있다.</p>
+<p><span class="math display">\[
+\begin{aligned}
+\Pi^\dagger X \Pi = -X,\qquad \Pi^\dagger P \Pi = -P.
+\end{aligned}
+\]</span></p>
+<p>해밀토니안 <span class="math inline">\(H(X,\,P)\)</span> 가 <span class="math display">\[
+\Pi^\dagger H(X,\,P)\Pi = H(-X,\, -P) = H(X,\,P)
+\]</span></p>
+<p>라면, 즉 <span class="math inline">\([\Pi,\, H]=0\)</span> 이라면 이 해밀토니안이 parity-invariant 라고 한다. 이 경우 해밀토니안 <span class="math inline">\(H\)</span> 와 <span class="math inline">\(\Pi\)</span> 의 공통 고유벡터들로 힐베르트 공간의 기저벡터를 구성 할 수 있다. 대표적으로</p>
+<p>  (<span class="math inline">\(1\)</span>) <span class="math inline">\(H=\dfrac{P^2}{2m} + \dfrac{1}{2}m\omega^2X^2\)</span> 인 단순조화진동자,</p>
+<p>  (<span class="math inline">\(2\)</span>) <span class="math inline">\(x=0\)</span> 을 중심으로 대칭적인 1차원 포텐셜 우물</p>
+<p>을 들 수 있다. 또한 <span class="math inline">\(H\)</span> 가 parity invariant 라면 <span class="math inline">\([\Pi,\,U(t)]=0\)</span> 이므로 시간이 지나도 상태의 parity 를 보존하게 된다.</p>
+<p><br></p>
+</section>
+<section id="parity-붕괴" class="level3" data-number="11.4.3">
+<h3 data-number="11.4.3" class="anchored" data-anchor-id="parity-붕괴"><span class="header-section-number">11.4.3</span> Parity 붕괴</h3>
+<p>자연의 근본 법칙은 공간과 시간에 대한 translation (그리고 rotation) 에 대해 invariant 하지만 Parity 에 대해서는 그렇지 않다. 핵의 <span class="math inline">\(\beta\)</span>-붕괴를 설명하는 약한상호작용의 경우 어떻게 하더라도 parity-invariant 한 해밀토니안을 만들어 낼 수 없다는 것이 알려져 있다. 즉 초기상태를 <span class="math inline">\(|\Psi(0)\rangle\)</span> 과 <span class="math inline">\(\Pi |\Psi(0)\rangle\)</span> 로 준비했을 경우 <span class="math inline">\(\Pi U(t)|\Psi(0)\rangle\)</span> 은 <span class="math inline">\(U(t)\Pi|\Psi(0)\rangle\)</span> 과 다르다는 것이다. 다음과 같은 <span class="math inline">\(\beta\)</span> 붕괴 반응을 보자.</p>
+<p><span class="math display">\[
+{}^{60}\text{Co} \rightarrow {}^{60}\text{Ni} + e^- + \overline{\nu}
+\]</span></p>
+<p>여기서 <span class="math inline">\(e^-\)</span> 는 전자이고 <span class="math inline">\(\overline{\nu}\)</span> 는 반중성미자이다. 여기서 전자는 <span class="math inline">\({}^{60}\text{Co}\)</span> 의 스핀방향과 반대방향으로 나오는 것이 관측되었는데 이것이 parity 가 보존되지 않음을 보이는 것이다. <a href="#fig-beta_decay_and_parity" class="quarto-xref">그림&nbsp;<span>11.1</span></a> 를 보자</p>
+<p><br></p>
+<div id="fig-beta_decay_and_parity" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-beta_decay_and_parity-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/parity.png" class="img-fluid figure-img" width="500">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-beta_decay_and_parity-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;11.1: 베타붕괴와 패리티 비보존
+</figcaption>
+</figure>
+</div>
+<p><br></p>
+<p><span class="math inline">\(t=0\)</span> 에서<span class="math inline">\({}^{60}\text{Co}\)</span> 의 스핀이 <span class="math inline">\(z\)</span> 방향으로 정렬되었다고 하자.(실험 <span class="math inline">\(A\)</span>) 다른 관찰자는 실험 <span class="math inline">\(A\)</span> 와는 거울대칭이 되도록 실험을 설정했다고 하자. 스핀의 방향이 <span class="math inline">\(A\)</span> 와는 반대방향임에 주목하라. <span class="math inline">\(M\)</span> 은 <span class="math inline">\(A\)</span> 와 거울 대칭인 가상의 실험이다. 베타붕괴가 발생했을 때 <span class="math inline">\(A\)</span> 실험에서는 전자의 방향이 <span class="math inline">\({}^{60}\text{Co}\)</span> 스핀과 반대방향, 즉 <span class="math inline">\(-z\)</span> 방향의 속도를 갖는다. Parity 가 보존된다면 <span class="math inline">\(B\)</span> 실험에서도 <span class="math inline">\(-z\)</span> 방향으로 전자가 나와야겠지만(<span class="math inline">\(M\)</span> 실험) 실제로는 <span class="math inline">\(B\)</span> 와 같이 <span class="math inline">\(+z\)</span> 방향으로 전자가 나온다.</p>
+<p><br></p>
+</section>
+<section id="연습문제" class="level3" data-number="11.4.4">
+<h3 data-number="11.4.4" class="anchored" data-anchor-id="연습문제"><span class="header-section-number">11.4.4</span> 연습문제</h3>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-QM_shankar_11_4_1" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 11.5 (Shankar 11.4.1)</strong></span> <span class="math inline">\([\Pi,\,H] = 0\)</span> 이라면 even/odd parity 를 가진 시작상태에 대해 그 패리티가 보존됨을 보여라.</p>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\([\Pi,\,H]=0\)</span> 이라면 힐베르트 공간 <span class="math inline">\(\mathscr{H}\)</span> 가 <span class="math inline">\(\Pi,\, H\)</span> 의 공통 고유벡터로 된 기저를 갖는다. 이를 <span class="math inline">\(|\Psi_{E,\pi}\rangle\)</span> 이라고 하자. <span class="math inline">\(\Pi |\Psi_{E,\pi}(0)\rangle = \pi_{E,\,\pi}|\Psi_{E,\pi}(0)\rangle\)</span> 이라고 하자. <span class="math display">\[
+\Pi |\Psi_{E,\pi}(t) \rangle = \Pi e^{-iHt/\hbar}|\Psi_{E,\pi}(0)\rangle = e^{-iHt/\hbar} \Pi |\Psi_{E,\pi}(0)\rangle = \pi_{E,\pi} |\Psi_{E,\pi}(t)\rangle
+\]</span></p>
+</div>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-QM_shankar_11_4_2" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 11.6 (Shankar 11.4.2)</strong></span> 아래와 같은 포텐셜의 입자를 생각하자.</p>
+<p><span class="math display">\[
+V(x) = V_0 \sin (2\pi x/a).
+\]</span></p>
+<p>이 포텐셜은 정수 <span class="math inline">\(m\)</span> 에 대한 <span class="math inline">\(x\to x+2ma\)</span> translation 에 대해 불변이다. 운동량이 보존되는가? 왜 안되는가?</p>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>에렌페스트 정리로부터</p>
+<p><span class="math display">\[
+\begin{aligned}
+i\hbar \langle \dot P\rangle =  \langle [P,\, H]\rangle = \left\langle \dfrac{-i\hbar 2\pi}{a} V_0 \cos\left(\dfrac{2\pi x}{a} \right)\right\rangle \ne 0
+\end{aligned}
+\]</span></p>
+</div>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-QM_shankar_11_4_3" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 11.7 (Shankar 11.4.3)</strong></span> 어떤 반응에서 전자의 스핀이 항상 운동량과 평행하다는 것을 알게 되었다. 패리티 보존이 깨진다는 것을 보여라.</p>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>see <a href="#fig-beta_decay_and_parity" class="quarto-xref">그림&nbsp;<span>11.1</span></a></p>
+</div>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-QM_shankar_11_4_4" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 11.8 (Shankar 11.4.4)</strong></span> 우리는 parity 를 거울 반사로 간주하였다. 1차원에서는 이것이 맞지만 고차원에서는</p>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span></p>
+</div>
+</div>
+<p><br></p>
+</section>
+</section>
+<section id="time-reversal-symmetry" class="level2" data-number="11.5">
+<h2 data-number="11.5" class="anchored" data-anchor-id="time-reversal-symmetry"><span class="header-section-number">11.5</span> Time Reversal Symmetry</h2>
+<p>– to be done –</p>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-Shankar1994" class="csl-entry" role="listitem">
+Shankar, R. 1994. <em>Principles of Quantum Mechanics</em>. Springer. <a href="https://books.google.co.kr/books?id=2zypV5EbKuIC">https://books.google.co.kr/books?id=2zypV5EbKuIC</a>.
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "복사완료!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "복사완료!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../src/QM/QM_N_DoF_system.html" class="pagination-link" aria-label="N 자유도 시스템">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">N 자유도 시스템</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../src/QM/QM_angular_momentum.html" class="pagination-link" aria-label="회전과 각운동량">
+        <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">회전과 각운동량</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

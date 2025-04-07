@@ -1,0 +1,1422 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.42">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>10&nbsp; N 자유도 시스템 – 양자 역학</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../src/QM/QM_symmetry.html" rel="next">
+<link href="../../src/QM/QM_path_integral_1.html" rel="prev">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-b467865d89f01302b3bb45791fa41ab5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "일치 없음",
+    "search-matching-documents-text": "일치된 문서",
+    "search-copy-link-title": "검색 링크 복사",
+    "search-hide-matches-text": "추가 검색 결과 숨기기",
+    "search-more-match-text": "추가 검색결과",
+    "search-more-matches-text": "추가 검색결과",
+    "search-clear-button-title": "제거",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "취소",
+    "search-submit-button-title": "검색",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/QM/QM.html">II. 양자역학</a></li><li class="breadcrumb-item"><a href="../../src/QM/QM_N_DoF_system.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">N 자유도 시스템</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/QM/QM.html">II. 양자역학</a></li><li class="breadcrumb-item"><a href="../../src/QM/QM_N_DoF_system.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">N 자유도 시스템</span></a></li></ol></nav>
+      <h1 class="title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">N 자유도 시스템</span></h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../../">양자 역학</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../src/CHM/CHM.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">I. 고전적, 역사적, 수학적 주제들</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="토글 섹션">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/CHM/mathematical_foundation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">힐베르트 공간과 브라켓 표기법</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/CHM/symmetry_in_classical_mechanics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">고전역학에서의 대칭</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/CHM/some_proofs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">몇몇 증명들</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../src/QM/QM.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">II. 양자역학</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="토글 섹션">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/QM/QM_foundation_of_quantum_theory.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">고전 물리학의 붕괴와 양자 원리</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/QM/QM_1d_bound_state.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">1차원 문제 I : 자유입자와 Bound state</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/QM/QM_classical_limit.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">고전적인 극한과 불확정성 원리</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/QM/QM_harmonic_oscillator.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">단순조화진동자</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/QM/QM_1d_scattering.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">1차원 산란</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/QM/QM_path_integral_1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">경로적분 I</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/QM/QM_N_DoF_system.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">N 자유도 시스템</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/QM/QM_symmetry.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">대칭</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/QM/QM_angular_momentum.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">회전과 각운동량</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../src/AUX/AUX.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">III. 기타 이런저런 이야기들</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="토글 섹션">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/AUX/entanglement.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">양자 얽힘</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/AUX/quantum_state.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">양자 상태</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">목차</h2>
+   
+  <ul>
+  <li><a href="#차원-다입자-시스템" id="toc-차원-다입자-시스템" class="nav-link active" data-scroll-target="#차원-다입자-시스템"><span class="header-section-number">10.1</span> <span class="math inline">\(1\)</span> 차원 다입자 시스템</a>
+  <ul class="collapse">
+  <li><a href="#direct-product" id="toc-direct-product" class="nav-link" data-scroll-target="#direct-product"><span class="header-section-number">10.1.1</span> Direct product</a></li>
+  <li><a href="#direct-product-space-에서의-연산자" id="toc-direct-product-space-에서의-연산자" class="nav-link" data-scroll-target="#direct-product-space-에서의-연산자"><span class="header-section-number">10.1.2</span> Direct product space 에서의 연산자</a></li>
+  <li><a href="#두-입자의-x-p-기저에서의-설명" id="toc-두-입자의-x-p-기저에서의-설명" class="nav-link" data-scroll-target="#두-입자의-x-p-기저에서의-설명"><span class="header-section-number">10.1.3</span> 두 입자의 <span class="math inline">\(X\)</span>, <span class="math inline">\(P\)</span> 기저에서의 설명</a></li>
+  <li><a href="#분리가능한-해밀토니안의-경우" id="toc-분리가능한-해밀토니안의-경우" class="nav-link" data-scroll-target="#분리가능한-해밀토니안의-경우"><span class="header-section-number">10.1.4</span> 분리가능한 해밀토니안의 경우</a></li>
+  <li><a href="#분리-불가능한-해밀토니안의-경우" id="toc-분리-불가능한-해밀토니안의-경우" class="nav-link" data-scroll-target="#분리-불가능한-해밀토니안의-경우"><span class="header-section-number">10.1.5</span> 분리 불가능한 해밀토니안의 경우</a></li>
+  <li><a href="#차원-다입자-시스템-1" id="toc-차원-다입자-시스템-1" class="nav-link" data-scroll-target="#차원-다입자-시스템-1"><span class="header-section-number">10.1.6</span> 1차원 다입자 시스템</a></li>
+  <li><a href="#다차원-n-입자-시스템" id="toc-다차원-n-입자-시스템" class="nav-link" data-scroll-target="#다차원-n-입자-시스템"><span class="header-section-number">10.1.7</span> 다차원 <span class="math inline">\(N\)</span> 입자 시스템</a></li>
+  </ul></li>
+  <li><a href="#동일-입자" id="toc-동일-입자" class="nav-link" data-scroll-target="#동일-입자"><span class="header-section-number">10.2</span> 동일 입자</a>
+  <ul class="collapse">
+  <li><a href="#고전적인-경우" id="toc-고전적인-경우" class="nav-link" data-scroll-target="#고전적인-경우"><span class="header-section-number">10.2.1</span> 고전적인 경우</a></li>
+  <li><a href="#양자역학의-경우" id="toc-양자역학의-경우" class="nav-link" data-scroll-target="#양자역학의-경우"><span class="header-section-number">10.2.2</span> 양자역학의 경우</a></li>
+  <li><a href="#보존-페르미온-배타원리" id="toc-보존-페르미온-배타원리" class="nav-link" data-scroll-target="#보존-페르미온-배타원리"><span class="header-section-number">10.2.3</span> 보존, 페르미온, 배타원리</a></li>
+  </ul></li>
+  <li><a href="#보존과-페르미온의-힐베르트-공간" id="toc-보존과-페르미온의-힐베르트-공간" class="nav-link" data-scroll-target="#보존과-페르미온의-힐베르트-공간"><span class="header-section-number">10.3</span> 보존과 페르미온의 힐베르트 공간</a>
+  <ul class="collapse">
+  <li><a href="#동일한-두-입자의-힐베르트-공간" id="toc-동일한-두-입자의-힐베르트-공간" class="nav-link" data-scroll-target="#동일한-두-입자의-힐베르트-공간"><span class="header-section-number">10.3.1</span> 동일한 두 입자의 힐베르트 공간</a></li>
+  <li><a href="#보존의-경우" id="toc-보존의-경우" class="nav-link" data-scroll-target="#보존의-경우"><span class="header-section-number">10.3.2</span> 보존의 경우</a></li>
+  <li><a href="#페르미온의-경우" id="toc-페르미온의-경우" class="nav-link" data-scroll-target="#페르미온의-경우"><span class="header-section-number">10.3.3</span> 페르미온의 경우</a></li>
+  <li><a href="#입자의-보존페르미온-여부는-어떻게-결정하는가" id="toc-입자의-보존페르미온-여부는-어떻게-결정하는가" class="nav-link" data-scroll-target="#입자의-보존페르미온-여부는-어떻게-결정하는가"><span class="header-section-number">10.3.4</span> 입자의 보존/페르미온 여부는 어떻게 결정하는가</a></li>
+  <li><a href="#n-동일-입자-시스템" id="toc-n-동일-입자-시스템" class="nav-link" data-scroll-target="#n-동일-입자-시스템"><span class="header-section-number">10.3.5</span> <span class="math inline">\(N\)</span> 동일 입자 시스템</a></li>
+  </ul></li>
+  <li><a href="#우주와-대칭반대칭-파동함수-문제" id="toc-우주와-대칭반대칭-파동함수-문제" class="nav-link" data-scroll-target="#우주와-대칭반대칭-파동함수-문제"><span class="header-section-number">10.4</span> 우주와 대칭/반대칭 파동함수 문제</a></li>
+  <li><a href="#연습문제" id="toc-연습문제" class="nav-link" data-scroll-target="#연습문제"><span class="header-section-number">10.5</span> 연습문제</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<p>지금까지는 그것이 <span class="math inline">\(X\)</span> 든 <span class="math inline">\(P\)</span> 든 자유도가 1 인 시스템을 주로 다루었다. 이제는 자유도가 <span class="math inline">\(N &gt; 1\)</span> 인 시스템을 어떻게 구성하는지 알아보자.</p>
+<p><br></p>
+<section id="차원-다입자-시스템" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="차원-다입자-시스템"><span class="header-section-number">10.1</span> <span class="math inline">\(1\)</span> 차원 다입자 시스템</h2>
+<p>1차원 2 입자 시스템을 생각하자. 고전적으로 <span class="math inline">\((x_1,\,p_1)\)</span> 과 <span class="math inline">\((x_2,\,p_2)\)</span> 로 각각 기술된다고 하자. 이 입자가 양자역학으로 기술되기 위해서는 연산자 <span class="math inline">\(X_1,\,P_1,\,X_2,\,P_2\)</span> 에 대해 다음과 같은 cannonical commutation relation 을 만족해야 한다.</p>
+<p><span id="eq-QM_2_ptc_operators_1"><span class="math display">\[
+\begin{aligned}
+\left[X_i,\, P_j\right] &amp;= i \hbar \delta_{ij}I, \\
+[X_i,\, X_j] &amp;= \delta_{ij}I, \\
+[P_i,\, P_j] &amp;= \delta_{ij}I.
+\end{aligned}
+\tag{10.1}\]</span></span></p>
+<p>첫번째 입자를 기술하는 힐베르트 공간을 <span class="math inline">\(\mathcal{H}_1\)</span> 이라고 하고 두번째 입자를 기술하는 힐베르트 공간을 <span class="math inline">\(\mathcal{H}_2\)</span> 라고 하자. <span class="math inline">\(\{|x_1\rangle\}\)</span> 을 <span class="math inline">\(\mathcal{H}_1\)</span> 에서의 좌표 기저라고 하고 <span class="math inline">\(\{|x_2\rangle\}\)</span> 을 <span class="math inline">\(\mathcal{H}_2\)</span> 의 좌표기저라고 하자. 각각의 힐베르트공간에서의 연산자를 표기하기 위헤 <span class="math inline">\(X_1^{(1)}\)</span> 과 같은 표기법을 사용한다. <span class="math inline">\(X_1^{(2)}\)</span> 는 <span class="math inline">\(\mathcal{H}_2\)</span> 에서의 첫번째 입자의 좌표 연산자이다. (의미가 그렇다는 거시 무의미하다.) 그렇다면 <a href="#eq-QM_2_ptc_operators_1" class="quarto-xref">식&nbsp;<span>10.1</span></a> 는 다음과 같이 표현 할 수 있다.</p>
+<p><span id="eq-QM_2_ptc_operators_2"><span class="math display">\[
+\begin{aligned}
+\left[ X_1^{(1)},\, P_1^{(1)}\right] = i\hbar I^{(1)}, \qquad \left[ X_2^{(2)},\, P_2^{(2)}\right] = i\hbar I^{(2)}
+\end{aligned}
+\tag{10.2}\]</span></span></p>
+<p><br></p>
+<p>우리는 이제 서로 교집합이 없는 두 힐베르트 공간을 하나의 상태로 기술하는 것을 배워야 한다. 이것을 위해 추상적인 수학이 필요하다.</p>
+<p><br></p>
+<section id="direct-product" class="level3" data-number="10.1.1">
+<h3 data-number="10.1.1" class="anchored" data-anchor-id="direct-product"><span class="header-section-number">10.1.1</span> Direct product</h3>
+<p>두 벡터공간을 동시에 기술하는 벡터공간은 두 벡터공간의 <strong>direct product</strong> 를 통해 가능하다. <span class="math inline">\(\mathcal{H}_1\)</span> 과 <span class="math inline">\(\mathcal{H}_2\)</span> 의 direct product 는 <span class="math inline">\(\mathcal{H}_1 \otimes \mathcal{H}_2\)</span> 라고 쓰며 <span class="math inline">\(|\phi_1\rangle \in \mathcal{H}_1\)</span> 과 <span class="math inline">\(|\phi_2 \rangle \in \mathcal{H}_2\)</span> 에 대해 <span class="math inline">\(|\phi_1\rangle \otimes |\phi_2\rangle\)</span> 이라고 표기하는 벡터를 포함한다. 여기서 <span class="math inline">\(|\phi_1\rangle \otimes |\phi_2\rangle\)</span> 은 <span class="math inline">\(\mathcal{H}_1\)</span> 에서 기술되는 입자가 <span class="math inline">\(|\phi_1\rangle\)</span> 상태에 있고 <span class="math inline">\(\mathcal{H}_2\)</span> 에서 기술되는 입자는 <span class="math inline">\(|\phi_2\rangle\)</span> 상태에 있는 상태벡터이다. <span class="math inline">\(\mathcal{H}_1 \otimes \mathcal{H}_2\)</span> 가 벡터공간이 되기 위해서는 단순히 <span class="math inline">\(|\phi_1\rangle \otimes |\phi_2\rangle\)</span> 꼴의 벡터 뿐만 아니라 이런 벡터들의 선형결합도 포함해야 한다. 즉 <span class="math inline">\(\mathcal{H}_1 \otimes \mathcal{H}_2\)</span> 는 각각의 <span class="math inline">\(|\phi_1\rangle \in \mathcal{H}_1\)</span>, <span class="math inline">\(|\phi_2\rangle \in \mathcal{H}_2\)</span> 에 대해 모든 <span class="math inline">\(|\phi_1\rangle\otimes |\phi_2\rangle\)</span> 벡터들의 선형결합을 포함하는 벡터공간이다. 즉</p>
+<p><span class="math display">\[
+\mathcal{H}_1 \otimes \mathcal{H}_2 = \text{span}\left(\left\{|\phi_1\rangle \otimes |\phi_2\rangle \right\}\right)
+\]</span></p>
+<p>이다. <span class="math inline">\(\mathcal{H}_1 \otimes \mathcal{H}_2\)</span> 가 벡터공간이기 위해 다음의 규칙이 성립한다.</p>
+<p><span class="math display">\[
+\begin{aligned}
+( \alpha_1 |\phi_1\rangle + \beta_1 |\psi_1\rangle) \otimes (\gamma_2 |\phi_2\rangle) &amp;= \alpha_1 \gamma_2 |\phi_1 \rangle \otimes |\phi_2\rangle + \beta_1\gamma_2 |\psi_1\rangle \otimes |\phi_2\rangle, \\
+(\gamma_1 |\phi_1\rangle) \otimes ( \alpha_2 |\phi_2\rangle +\beta_2 |\psi_2\rangle) &amp;= \alpha_2 \gamma_1 |\phi_1\rangle \otimes |\phi_2\rangle + \beta_2 \gamma_1 |\phi_1 \rangle \otimes |\psi_2\rangle.
+\end{aligned}
+\]</span></p>
+<p><br></p>
+<p>이제 direct product space 의 기저에 대해 알아보자. <span class="math inline">\(\left\{\left|\phi^{(1)}_i\right\rangle :i=1,\,2,\ldots\right\}\)</span> 이 <span class="math inline">\(\mathcal{H}_1\)</span> 의 기저이고 <span class="math inline">\(\left\{\left|\phi^{(2)}_j\right\rangle : j=1,\,2,\ldots\right\}\)</span> 이 <span class="math inline">\(\mathcal{H}_2\)</span> 의 기저일 때</p>
+<p><span class="math display">\[
+\left\{ \left|\phi^{(1)}_i\right\rangle \otimes \left|\phi^{(2)}_j\right\rangle \right\}
+\]</span></p>
+<p>이 <span class="math inline">\(\mathcal{H}_1 \otimes \mathcal{H}_2\)</span> 의 기저가 된다는 것은 쉽게 보일 수 있다.</p>
+<p><br></p>
+<p>여기서 주의해야 할 것은 모든 <span class="math inline">\(\mathcal{H}_1 \otimes \mathcal{H}_2\)</span> 의 벡터가 <span class="math inline">\(\mathcal{H}_1\)</span> 과 <span class="math inline">\(\mathcal{H}_2\)</span> 각각의 벡터의 direct product 로 표현 될 수 있는 것은 아니라는 것이다.</p>
+<div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+<div id="exm-QM_direct_product" class="theorem example">
+<p><span class="theorem-title"><strong>예제 10.1</strong></span> 예를 들어 두 스핀 <span class="math inline">\(1/2\)</span> 입자의 스핀 상태를 각각 <span class="math inline">\(|+\rangle,\, |-\rangle\)</span> 로 표현한다고 하자. 이 때</p>
+<p><span class="math display">\[
+|\Psi \rangle = |+\rangle \otimes |- \rangle - |- \rangle \otimes |+ \rangle
+\]</span></p>
+<p>를 생각하자. <span class="math inline">\(|\phi_1\rangle = a_1 | + \rangle + b_1 |- \rangle \in \mathcal{H}_1\)</span>, <span class="math inline">\(|\phi_2\rangle = a_2 |+\rangle + b_2 |- \rangle \in \mathcal{H}_2\)</span> 에 대해 <span class="math inline">\(|\Psi\rangle = |\psi_1\rangle \otimes |\psi_2\rangle\)</span> 라면</p>
+<p><span class="math display">\[
+\begin{aligned}
+|\Psi\rangle &amp;= |\phi_1\rangle \otimes |\phi_2\rangle \\
+&amp;= a_1a_2 |+\rangle \otimes |+\rangle + a_1b_2 |+\rangle \otimes |-\rangle + a_2b_1 |-\rangle \otimes |+\rangle +b_1b_2 |-\rangle \otimes |-\rangle
+\end{aligned}
+\]</span></p>
+<p>이어야 하므로 <span class="math inline">\(a_1a_2=0\)</span>, <span class="math inline">\(b_1b_2=0\)</span>, <span class="math inline">\(a_1b_2=1\)</span>, <span class="math inline">\(a_2b_1=-1\)</span> 이어야 하는데 이는 불가능하다.</p>
+</div>
+</div>
+<p><br></p>
+<p>즉 어떤 <span class="math inline">\(|\psi \rangle \in \mathcal{H}_1\otimes \mathcal{H}_2\)</span> 는 <span class="math inline">\(\mathcal{H}_1\)</span> 과 <span class="math inline">\(\mathcal{H}_2\)</span> 에서의 각각 하나의 벡터의 direct product 로 표현될 수 없을 수 있다.</p>
+<p><br></p>
+<p><span class="math inline">\(\mathcal{H}_1 \otimes \mathcal{H}_2\)</span> 가 Direct product 의 conjugate vector 는 다음과 같이 정의된다.</p>
+<p><span class="math display">\[
+\langle \phi_1 | \otimes \langle \phi_2 | := (|\phi_1\rangle \otimes |\phi_2\rangle)^\dagger.
+\]</span></p>
+<p>그리고 내적은 다음과 같이 정의된다.</p>
+<p><span class="math display">\[
+\left(\langle \phi_1 | \otimes \langle \phi_2 |\right) (|\psi_1 \rangle \otimes |\psi_2\rangle) := \langle \phi_1 | \psi_1\rangle \langle \phi_2 | \psi_2\rangle
+\]</span></p>
+<p><br></p>
+</section>
+<section id="direct-product-space-에서의-연산자" class="level3" data-number="10.1.2">
+<h3 data-number="10.1.2" class="anchored" data-anchor-id="direct-product-space-에서의-연산자"><span class="header-section-number">10.1.2</span> Direct product space 에서의 연산자</h3>
+<p><span class="math inline">\(\mathcal{H}_1\)</span> 에서 정의된 연산자 <span class="math inline">\(A^{(1)}\)</span> 과 <span class="math inline">\(\mathcal{H}_2\)</span> 에서 정의된 연산자 <span class="math inline">\(B^{(2)}\)</span> 에 대해</p>
+<p><span class="math display">\[
+\left(A^{(1)}\otimes B^{(2)}\right) \left( |\phi_1\rangle \otimes |\phi_2\rangle\right) := \left(A^{(1)}|\phi_1\rangle\right) \otimes (\left(B^{(2)})|\phi_2\rangle\right)
+\]</span></p>
+<p>로 정의하는 것은 자연스럽다. 또한 선형연산자의 성질에 의해</p>
+<p><span class="math display">\[
+\begin{aligned}
+\left(A^{(1)}\otimes B^{(2)}\right) &amp;\left( a|\phi_1\rangle \otimes |\phi_2\rangle + b|\psi_1\rangle \otimes |\psi_2\rangle\right) \\
+&amp;=a\left(A^{(1)}\otimes B^{(2)}\right)\left( |\phi_1\rangle \otimes |\phi_2\rangle \right) + b\left(A^{(1)}\otimes B^{(2)}\right)\left(|\psi_1\rangle + |\psi_2\rangle\right) \\
+\end{aligned}
+\]</span></p>
+<p>이다. 이렇게 되면 <span class="math inline">\(\mathcal{H}_1\)</span> 에서 정의된 <span class="math inline">\(A_1^{(1)}\)</span> 에 대해 <span class="math inline">\(\mathcal{H}_2\)</span> 에서 정의된 항등연산자 <span class="math inline">\(I^{(2)}\)</span> 를 이용하여 <span class="math inline">\(\mathcal{H}_1 \otimes \mathcal{H}_2\)</span> 에서의 연산자 <span class="math inline">\(A_1^{(1)\otimes (2)}\)</span> 를 다음과 같이 정의하자.</p>
+<p><span class="math display">\[
+A_1^{(1)\otimes (2)} := A_1^{(1)}\otimes I_2^{(2)}
+\]</span></p>
+<p>그렇다면 <span class="math display">\[
+A_1^{(1)\otimes (2)} |\phi_1\rangle \otimes |\phi_2\rangle = \left(A_1^{(1)}\otimes I_2^{(2)}\right) |\phi_1\rangle \otimes |\phi_2\rangle = \left(A_1^{(1)}|\phi_1\rangle\right) \otimes |\phi_2\rangle
+\]</span></p>
+<p>가 된다. 즉 <span class="math inline">\(\mathcal{H}_1\)</span> 에서 <span class="math inline">\(A_{1}^{(1)}\)</span> 이 하던 일을 <span class="math inline">\(\mathcal{H}_1 \otimes \mathcal{H}_2\)</span> 에서 <span class="math inline">\(A_1^{(1)\otimes (2)}\)</span> 가 하게 된다. 마찬가지로 <span class="math inline">\(\mathcal{H}_2\)</span> 에서 정의된 연산자 <span class="math inline">\(B_2^{(2)}\)</span> 에 대해 <span class="math inline">\(I_1^{(1)}\otimes B_2^{(2)}\)</span> 연산자는 <span class="math inline">\(B_2^{(2)}\)</span> 연산자를 <span class="math inline">\(\mathcal{H}_1 \otimes \mathcal{H}_2\)</span> 공간으로 확장한 것이다.</p>
+<p>이제 <span class="math inline">\(\mathcal{H}_1\)</span> 에서 정의된 <span class="math inline">\(A_1^{(1)},\, \Gamma_1^{(1)}\)</span> 과 <span class="math inline">\(\mathcal{H}_2\)</span> 에서 정의된 <span class="math inline">\(B_2^{(2)},\, \Omega_2^{(2)}\)</span> 연산자에 대해</p>
+<p><span class="math display">\[
+\begin{aligned}
+\left(A_1^{(1)}\otimes B_2^{(2)}\right) \left(\Gamma_1^{(1)}\otimes \Omega_2^{(2)}\right) |\phi_1\rangle \otimes |\phi_2\rangle &amp;= \left(A_1^{(1)}\otimes B_2^{(2)}\right) \left[\left(\Gamma_1^{(1)}|\phi_1\rangle \right) \otimes \left(\Omega_2^{(2)}|\phi_2\rangle \right)\right] \\
+&amp;= \left(A_1^{(1)} \Gamma_1^{(1)}|\phi_1\rangle \right) \otimes \left(B_2^{(2)} \Omega_2^{(2)}|\phi_2\rangle\right)\\
+&amp;= \left(A_1^{(1)}\Gamma_1^{(1)} \otimes B_2^{(2)}\Omega_2^{(2)}\right)|\phi_1\rangle \otimes |\phi_2\rangle
+\end{aligned}
+\]</span></p>
+<p>임을 알 수 있다. 즉,</p>
+<p><span id="eq-pqrt2_operator_product_in_product_space"><span class="math display">\[
+\left(A^{(1)}\otimes B^{(2)}\right) \left(\Gamma^{(1)}\otimes \Omega^{(2)}\right) =  \left(A^{(1)}\Gamma^{(1)} \otimes B^{(2)}\Omega^{(2)}\right)
+\tag{10.3}\]</span></span></p>
+<p>이다.</p>
+<p><br></p>
+<div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+<div id="exm-QM_commutator_in_product_space" class="theorem example">
+<p><span class="theorem-title"><strong>예제 10.2</strong></span> <span class="math inline">\(\left[A^{(1)}\otimes I^{(2)},\, I^{(1)}\otimes B^{(2)}\right] = 0\)</span> 임을 보일 수 있다.</p>
+<p><span class="math display">\[
+\begin{aligned}
+\left[ A^{(1)}\otimes I^{(2)},\, I^{(1)}\otimes B^{(2)}\right] |\phi_1\rangle \otimes |\phi_2\rangle = \left(A^{(1)} \otimes B^{(2)} - A^{(1)}\otimes B^{(2)}\right) |\phi_1\rangle \otimes |\phi_2\rangle = |\varnothing\rangle
+\end{aligned}
+\]</span></p>
+</div>
+</div>
+<p><br></p>
+<div id="exr-shankar_10_1_2" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 10.1 (Shankar 10.1.2)</strong></span> 한 입자에 대한 힐베르트 공간이 2차원인 가상의 세계를 생각하자. 기저를 <span class="math inline">\(|+\rangle\)</span> 과 <span class="math inline">\(|-\rangle\)</span> 라고 하자. 아래에 정의된 연산자 <span class="math inline">\(\sigma_1^{(1)},\,\sigma_2^{(2)}\)</span> 가 각각 <span class="math inline">\(\mathcal{H}_1\)</span> 과 <span class="math inline">\(\mathcal{H}_2\)</span> 에서 정의된 연산자라고 하자.</p>
+<p><span class="math display">\[
+\begin{array}{cc} \\ \sigma_{1}^{(1)} = \end{array}  \begin{array}{c} \\ + \\ - \end{array} \begin{array}{c} \begin{array}{c} + &amp; - \end{array} \\\begin{bmatrix} a &amp; b \\ c &amp; d \end{bmatrix} \end{array}, \qquad
+\begin{array}{cc} \\ \sigma_{2}^{(2)} = \end{array}  \begin{array}{c} \\ + \\ - \end{array} \begin{array}{c} \begin{array}{c} + &amp; - \end{array} \\\begin{bmatrix} e &amp; f \\ g &amp; h \end{bmatrix} \end{array},
+\]</span></p>
+<p><span class="math inline">\(\mathcal{H}_1 \otimes \mathcal{H}_2\)</span> 가 <span class="math inline">\(|+\rangle \otimes |+\rangle\)</span>, <span class="math inline">\(|+\rangle \otimes |-\rangle\)</span>, <span class="math inline">\(|-\rangle \otimes |+\rangle\)</span>, <span class="math inline">\(|-\rangle \otimes |-\rangle\)</span> 로 span 될 때 <span class="math inline">\(\sigma_1^{(1)\otimes (2)}\)</span>, <span class="math inline">\(\sigma_2^{(1)\otimes (2)}\)</span>, <span class="math inline">\(\sigma_1^{(1)} \otimes \sigma_2^{(2)}\)</span> 를 구하시오.</p>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(|i\rangle \otimes |j\rangle\)</span> 을 <span class="math inline">\(|ij\rangle\)</span> 로 표기하자. <span class="math inline">\(\langle i'j'|\sigma_1^{(1)\otimes (2)}|ij\rangle = \langle i'|\sigma_1^{(1)}|i\rangle \langle j'|j\rangle\)</span> 이므로</p>
+<p><span class="math display">\[
+\sigma_1^{(1)\otimes (2)} = \begin{array}{c} \\ ++ \\ +- \\ -+ \\ --\end{array} \begin{array}{c} \begin{array}{cccc} ++ &amp; +- &amp; -+ &amp; -- \end{array} \\ \begin{bmatrix} \;\; a\;\; &amp; \;\;0\;\; &amp; \;\;b\;\; &amp; \;\; 0\;\; \\ 0 &amp; a &amp; 0 &amp; b \\ c &amp; 0 &amp; d &amp; 0 \\ 0 &amp; c &amp; 0 &amp; d\end{bmatrix} \end{array}
+\]</span></p>
+<p>이다. <span class="math inline">\(\langle i'j'|\sigma_2^{(1)\otimes (2)} | ij\rangle = \langle i'|i\rangle \langle j'|\sigma_2^{(2)}|j\rangle\)</span> 이므로</p>
+<p><span class="math display">\[
+\sigma_1^{(1)\otimes (2)} = \begin{array}{c} \\ ++ \\ +- \\ -+ \\ --\end{array} \begin{array}{c} \begin{array}{cccc} ++ &amp; +- &amp; -+ &amp; -- \end{array} \\ \begin{bmatrix} \;\; e\;\; &amp; \;\;f\;\; &amp; \;\;0\;\; &amp; \;\; 0\;\; \\ g &amp; h &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; e &amp; f \\ 0 &amp; 0 &amp; g &amp; h\end{bmatrix} \end{array}
+\]</span></p>
+<p>이며, <span class="math inline">\(\langle i'j'|\sigma_1^{(1)}\otimes \sigma_2^{(2)}|i, j\rangle = \langle i'|\sigma_1^{(1)}|i\rangle \langle j'|\sigma_2^{(2)}|j\rangle\)</span> 이므로,</p>
+<p><span class="math display">\[
+\sigma_1^{(1)\otimes (2)} = \begin{array}{c} \\ ++ \\ +- \\ -+ \\ --\end{array} \begin{array}{c} \begin{array}{cccc} ++ &amp; +- &amp; -+ &amp; -- \end{array} \\ \begin{bmatrix} \,\, ae\,\; &amp; \,\,af\,\; &amp; \,\,be\,\; &amp; \,\, bf\,\; \\ ag &amp; ah &amp; bg &amp; bh \\ ce &amp; cf &amp; de &amp; df \\ cg &amp; ch &amp; dg &amp; dh\end{bmatrix} \end{array}
+\]</span></p>
+<p>이다.</p>
+</div>
+<p><br></p>
+</section>
+<section id="두-입자의-x-p-기저에서의-설명" class="level3" data-number="10.1.3">
+<h3 data-number="10.1.3" class="anchored" data-anchor-id="두-입자의-x-p-기저에서의-설명"><span class="header-section-number">10.1.3</span> 두 입자의 <span class="math inline">\(X\)</span>, <span class="math inline">\(P\)</span> 기저에서의 설명</h3>
+<p>이제 다시 <span class="math inline">\(X\)</span>, <span class="math inline">\(P\)</span> 기저로 돌아오자. Direct product 를 이용하면 두 입자에 대해 <span class="math inline">\(X_1^{(1)}\)</span>, <span class="math inline">\(X_2^{(2)}\)</span> 를 두 입자를 동시에 기술하는 힐베르트 공간에서의 연산자로 확장 할 수 있다. 이를 이용하면 commutation relation 은 다음과 같다.</p>
+<p><span class="math display">\[
+\begin{aligned}
+\left[X_i^{(1)\otimes (2)},\, P_j^{(1)\otimes (2)}\right] &amp;= i\hbar \delta_{ij} I^{(1)\otimes (2)}, \\
+\left[X_i^{(1)\otimes (2)},\, X_j^{(1)\otimes (2)}\right] &amp;= \left[P_i^{(1)\otimes (2)},\, P_j^{(1)\otimes (2)}\right] = 0.
+\end{aligned}
+\]</span></p>
+<p>이제 표기법을 좀 단순화하자. 우리가 어떤 힐베르트 공간에서 기술하는지 안다면 <span class="math inline">\((1) \otimes (2)\)</span> 와 같은 첨자는 생략해도 상관 없을 것이다. 여기서는 <span class="math inline">\(\mathcal{H}_1 \otimes \mathcal{H}_2\)</span> 에서 기술하기 때문에 <span class="math inline">\(X_i=X_i^{(1)\otimes (2)}\)</span>, <span class="math inline">\(P_j = P_j^{(1)\otimes (2)}\)</span> 로 줄여서 사용해도 무방할 것이다. 또한 <span class="math inline">\(|x_1\rangle \otimes |x_2\rangle\)</span> 을 <span class="math inline">\(|x_1x_2\rangle\)</span> 로 표기해도 혼란이 없을 것이다. 그렇다면</p>
+<p><span class="math display">\[
+X_1|x_1x_2\rangle = x_1|x_1x_2\rangle,\qquad X_2|x_1x_2\rangle = x_2|x_1x_2\rangle
+\]</span></p>
+<p>이며,</p>
+<p><span class="math display">\[
+\langle x_1'x_2'|x_1x_2 \rangle = \delta(x_1-x_1')\,\delta(x_2-x_2')
+\]</span></p>
+<p>이 된다. 또한 이 기저에서 어떤 상태 <span class="math inline">\(|\Psi\rangle\)</span> 을 표현한다면 파동함수는</p>
+<p><span class="math display">\[
+\langle x_1x_2|\Psi\rangle = \Psi(x_1,\,x_2)
+\]</span></p>
+<p>이고,</p>
+<p><span class="math display">\[
+X_i \to x_i,\qquad P_i \to -i\hbar \dfrac{\partial}{\partial x_i}
+\]</span></p>
+<p>가 된다. 또한</p>
+<p><span class="math display">\[
+P(x_1,\,x_2) = \left|\langle x_1x_2|\Psi\rangle\right|^2
+\]</span></p>
+<p>는 입자 <span class="math inline">\(1\)</span> 을 <span class="math inline">\(x_1\)</span> 에서, 입자 <span class="math inline">\(2\)</span> 를 <span class="math inline">\(x_2\)</span> 에서 발견할 확률밀도함수가 된다. 따라서,</p>
+<p><span class="math display">\[
+1 = \int_{-\infty}^\infty \int_{-\infty}^\infty P(x_1,\,x_2)\,dx_1\,dx_2 = \int_{-\infty}^\infty \int_{-\infty}^\infty |\langle x_1x_2|\Psi\rangle|^2\,dx_1\,dx_2
+\]</span></p>
+<p>인 정규화 조건을 만족해야 한다.</p>
+<p>이제 두 입자의 상태 <span class="math inline">\(|\Psi\rangle \in \mathcal{H}_1\otimes \mathcal{H}_2\)</span> 를 생각하자. 여기에 대한 슈뢰딩거 방정식은</p>
+<p><span class="math display">\[
+i\hbar |\dot{\Psi}\rangle = \left[\dfrac{P_1^2}{2m_1} + \dfrac{P_2^2}{2m_2} + V(X_1, X_2)\right] |\Psi\rangle = H|\Psi\rangle
+\]</span></p>
+<p>이다. 만약 <span class="math inline">\(H\)</span> 가 <span class="math inline">\((X_1,\,P_1)\)</span> 에 대한 항과 <span class="math inline">\((X_2,\,P_2)\)</span> 에 대한 항으로 분리 가능하다면, 즉 여기서 <span class="math inline">\(V(X_1,\,X_2) = V_1(X_1)+V_2(X_2)\)</span> 로 분리 할 수 있다면</p>
+<p><span id="eq-QM_2_ptls_seperable_hamiltonian"><span class="math display">\[
+H=\left(\dfrac{P_1^2}{2m_1} + V_1(X_1)\right) + \left(\dfrac{P_2^2}{2m_2} + V_2(X_2)\right) = H_1+H_2
+\tag{10.4}\]</span></span></p>
+<p>이며 이것은 각각의 힐베르트 공간으로 분리하여 풀 수 있다. 물론 수소원자에서의 쿨롱 포텐셜처럼 분리되지 않을 수도 있다. 분리되는 경우가 훨씬 간단할 것이므로 여기에 대해 우선 알아보자.</p>
+<p><br></p>
+</section>
+<section id="분리가능한-해밀토니안의-경우" class="level3" data-number="10.1.4">
+<h3 data-number="10.1.4" class="anchored" data-anchor-id="분리가능한-해밀토니안의-경우"><span class="header-section-number">10.1.4</span> 분리가능한 해밀토니안의 경우</h3>
+<p><a href="#eq-QM_2_ptls_seperable_hamiltonian" class="quarto-xref">식&nbsp;<span>10.4</span></a> 과 같이 두 입자에 대한 해밀토니안이 <span class="math inline">\(\mathcal{H}_1\)</span> 에서의 <span class="math inline">\(H_1\)</span> 과 <span class="math inline">\(\mathcal{H}_2\)</span> 에서의 <span class="math inline">\(H_2\)</span> 로 분리가능할 경우를 생각해보자. <span class="math inline">\(H_1 = H_1^{(1)} \otimes I_2^{(2)}\)</span>, <span class="math inline">\(H_2= I_1^{(1)} \otimes H_2^{(2)}\)</span> 으로 표현 할 수 있다. 여기에서 <span class="math inline">\(H_1^{(1)}\)</span> 의 고유값 <span class="math inline">\(E_1\)</span> 인 고유상태를 <span class="math inline">\(|E_1\rangle\)</span> 이라고 하고 <span class="math inline">\(H_2^{(2)}\)</span> 의 고유값 <span class="math inline">\(E_2\)</span> 인 고유상태를 <span class="math inline">\(|E_2\rangle\)</span> 이라고 하자.</p>
+<p><span class="math display">\[
+H|E_1\rangle \otimes |E_2\rangle = (H_1 + H_2)|E_1\rangle \otimes |E_2\rangle = (E_1+E_2) |E_1\rangle \otimes |E_2\rangle = E|E_1\rangle \otimes |E_2\rangle
+\]</span></p>
+<p>이므로 <span class="math inline">\(|E_1\rangle \otimes |E_2\rangle\)</span> 은 에너지가 <span class="math inline">\(E=E_1+E_2\)</span> 인 <span class="math inline">\(H\)</span> 의 고유상태이다. 그렇다면 <span class="math inline">\(H\)</span> 의 고유값이 <span class="math inline">\(E\)</span> 인 고유상태 <span class="math inline">\(|\Psi_E\rangle\)</span> 은</p>
+<p><span class="math display">\[
+|\Psi_E(t)\rangle = |E\rangle e^{-iEt/\hbar} =  |E_1\rangle e^{-iE_1/\hbar} \otimes |E_2\rangle e^{-iE_2/\hbar}
+\]</span></p>
+<p>를 만족한다. 이제 좌표 기저에서 확인해보자. <a href="#eq-QM_2_ptls_seperable_hamiltonian" class="quarto-xref">식&nbsp;<span>10.4</span></a> 를 좌표기저에서 표현해보면 <span class="math inline">\(\Psi_E(x_1,\,x_2) = \langle x_1x_2|\Psi_E\rangle\)</span> 에 대해</p>
+<p><span id="eq-QM_2_ptls_schroedinger_eq_seperable"><span class="math display">\[
+\left[-\dfrac{\hbar^2}{2m_1}\dfrac{\partial^2}{\partial x_1^2} + V_1(x_1) - \dfrac{\hbar^2}{2m_2}\dfrac{\partial^2}{\partial x_2^2} + V_2(x_2)\right] \Psi_E(x_1,\,x_2) = E\Psi_E(x_1,\,x_2)
+\tag{10.5}\]</span></span></p>
+<p>이어야 한다. 이제 <span class="math inline">\(\Psi_E(x_1,\,x_2)\)</span> 가 <span class="math inline">\(x_1\)</span> 에 대한 함수와 <span class="math inline">\(x_2\)</span> 에 대한 함수의 곱으로 표현 될 수 있다고 가정하자. 즉</p>
+<p><span class="math display">\[
+\Psi_E(x_1,\,x_2) = \Psi_{1}(x_1) \Psi_{2}(x_2)
+\]</span></p>
+<p>라면 <a href="#eq-QM_2_ptls_schroedinger_eq_seperable" class="quarto-xref">식&nbsp;<span>10.5</span></a> 는 다음과 같이 변경된다.</p>
+<p><span id="eq-QM_2_ptls_schroedinger_eq_seperable_2"><span class="math display">\[
+\begin{aligned}
+\dfrac{1}{\Psi_1(x_1)} &amp;\left[ -\dfrac{\hbar^2}{2m_1}\dfrac{\partial^2}{\partial x_1^2} + V_1(x_1) \right] \Psi_1(x_1) \\
+&amp;+ \dfrac{1}{\Psi_2(x_2)} \left[ - \dfrac{\hbar^2}{2m_2}\dfrac{\partial^2}{\partial x_2^2} + V_2(x_2)\right] \Psi_2(x_2) = E.
+\end{aligned}
+\tag{10.6}\]</span></span></p>
+<p>위 식의 좌변은 각각 <span class="math inline">\(x_1\)</span> 에만 의존하는 항과 <span class="math inline">\(x_2\)</span> 에만 의존하는 항의 합이다. 따라서 위 식은 아래의 세 식으로 분리될 수 있다.</p>
+<p><span class="math display">\[
+\begin{aligned}
+\dfrac{1}{\Psi_1(x_1)} \left[ -\dfrac{\hbar^2}{2m_1}\dfrac{\partial^2}{\partial x_1^2} + V_1(x_1) \right] \Psi_1(x_1) &amp;= E_1,\\
+\dfrac{1}{\Psi_2(x_2)} \left[ - \dfrac{\hbar^2}{2m_2}\dfrac{\partial^2}{\partial x_2^2} + V_2(x_2)\right] \Psi_2(x_2) &amp;= E_2,\\
+E_1+E_2 &amp;= E.
+\end{aligned}
+\]</span></p>
+<p>이로부터 우리는 <span class="math inline">\(\Psi_1(x_1)\)</span> 은 <span class="math inline">\(E_1\)</span> 을 고유값으로 갖는 파동함수이며 <span class="math inline">\(\Psi_2(x_2)\)</span> 는 <span class="math inline">\(E_2\)</span> 를 고유값으로 갖는 파동함수이고, 이 때 <span class="math inline">\(\Psi_1(x_1)\Psi_2(x_2)\)</span> 는 <span class="math inline">\(E_1+E_2\)</span> 를 고유값으로 갖는 <span class="math inline">\(H\)</span> 의 고유 파동함수임을 알 수 있다. <span class="math inline">\(\Psi_1(x_1)\)</span> 을 <span class="math inline">\(\Psi_{E_1}(x_1)\)</span> 으로, <span class="math inline">\(\Psi_2(x_2)\)</span> 를 <span class="math inline">\(\Psi_{E_2}(x_2)\)</span> 로 쓸 수 있으며, 따라서 분리가능한 1차원 2 입자 시스템의 슈뢰딩거 방정식을 만족하는 고유함수는 다음과 같이 쓸 수 있다는 것을 알 수 있다.</p>
+<p><span class="math display">\[
+\Psi_E(x_1,\,x_2) = \Psi_E(x_1,\,x_2) e^{-iEt/\hbar} = \Psi_{E_1}(x_1) e^{-iE_1t/\hbar}\,  \Psi_{E_2}(x_2) e^{-iE_2t/\hbar}
+\]</span></p>
+<p><br></p>
+</section>
+<section id="분리-불가능한-해밀토니안의-경우" class="level3" data-number="10.1.5">
+<h3 data-number="10.1.5" class="anchored" data-anchor-id="분리-불가능한-해밀토니안의-경우"><span class="header-section-number">10.1.5</span> 분리 불가능한 해밀토니안의 경우</h3>
+<p>예를 들어 <span class="math inline">\(V(x_1,\,x_2) = V(x_1-x_2)\)</span> 라고 하자. 고전역학의 2체문제에서와 같이</p>
+<p><span class="math display">\[
+x_{CM} := \dfrac{m_1x_1+m_2x_2}{m_1+m_2},\qquad x := x_1-x_2
+\]</span></p>
+<p>라고 하자. 그렇다면 각각 conjugate momentum <span class="math inline">\(p_{CM},\, p\)</span> 는 <span class="math inline">\(M=m_1+m_2,\,\mu = \dfrac{m_1m_1}{m_1+m_2}\)</span> 에 대해</p>
+<p><span class="math display">\[
+p_{CM} =  M\dot{x}_{cm} = m_1\dot{x}_1 + m_2 \dot{x}_2,\qquad p = \mu \dot{x}
+\]</span></p>
+<p>이며 해밀토니안은 아래와 같이 <span class="math inline">\(x_{CM},\, p_{CM},\, x,\, p\)</span> 에 대해 표현 할 수 있다. <span class="math display">\[
+H = H_{CM}+ H_{rel} = \left[\dfrac{p_{CM}^2}{2(m_1+m_2)}\right] + \left[\dfrac{p^2}{2\mu} + V(x)\right].
+\]</span></p>
+<p>새로운 변수들에 대해서도</p>
+<p><span class="math display">\[
+[X_{CM},\, P_{CM}] = i\hbar I,\qquad [X,\,P] = i\hbar
+\]</span></p>
+<p>임을 보일 수 있다. 즉 <span class="math inline">\(V(x_1-x_2)\)</span> 와 같은 포텐셜에서는 분리 불가능한 해밀토니안을 적절한 좌표 변환을 통해 분리 가능한 해밀토니안으로 변환시킬 수 있다.</p>
+<p><br></p>
+</section>
+<section id="차원-다입자-시스템-1" class="level3" data-number="10.1.6">
+<h3 data-number="10.1.6" class="anchored" data-anchor-id="차원-다입자-시스템-1"><span class="header-section-number">10.1.6</span> 1차원 다입자 시스템</h3>
+<p>우리가 지금까지 2입자에 대해 알아본 것은 대부분 다입자 시스템에도 적용 할 수 있다. 그러나 무게중심을 이용하여 분리불가능한 해밀토니안을 분리가능한 해밀토니안으로 바꾸는 것은 다입자 시스템에는 일반적으로 적용 될 수 없다.</p>
+<p><br></p>
+</section>
+<section id="다차원-n-입자-시스템" class="level3" data-number="10.1.7">
+<h3 data-number="10.1.7" class="anchored" data-anchor-id="다차원-n-입자-시스템"><span class="header-section-number">10.1.7</span> 다차원 <span class="math inline">\(N\)</span> 입자 시스템</h3>
+<p>수학적으로 <span class="math inline">\(1\)</span> 차원 <span class="math inline">\(N\)</span> 입자 시스템과 <span class="math inline">\(N\)</span> 차원 <span class="math inline">\(1\)</span> 입자 시스템은 동등하다.</p>
+<p><br></p>
+</section>
+</section>
+<section id="동일-입자" class="level2" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="동일-입자"><span class="header-section-number">10.2</span> 동일 입자</h2>
+<p>어떤 입자가 동일하다는 것은 차이가 나는 고유의 성질이 없다는 뜻이다. 예를 들어 두 전자는 전하, 질량, 스핀이 동일하며 두 입자의 차이를 구별 할 수 없다. 두 전자의 위치나 운동량이 다를 수 있지만 위치나 운동량은 고유의 성질은 아니다. 이 동일성의 정의는 고전 물리학이나 양자역학에서 같이 사용되지만 의미는 매우 다르다.</p>
+<p><br></p>
+<section id="고전적인-경우" class="level3" data-number="10.2.1">
+<h3 data-number="10.2.1" class="anchored" data-anchor-id="고전적인-경우"><span class="header-section-number">10.2.1</span> 고전적인 경우</h3>
+<p>아래 그림과 같은 당구공 충돌을 생각하자. 1번 홀과 2번 홀 근처에 각각 동일한 공이 위치하며 이를 1번공, 2번공이라고 하자. 두 공의 위치를 정확히 바꾼다고 하더라도 변화가 없을 것이다. 그러나 고전물리학에서는 이 교환이 서로 구별된다. 어떻게 구별되는지 알아보기로 하자.</p>
+<div id="fig-identical_particles_billiad" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-identical_particles_billiad-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/identical_particles_billiad.png" class="img-fluid figure-img" width="300">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-identical_particles_billiad-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;10.1: 동일입자 당구 충돌 실혐. <span class="math inline">\(t=0\)</span> 에서 각각 1 번과 2번 홀에서 출발하여 충돌 한 후 <span class="math inline">\(t=T\)</span> 에서 각각 3번과 4번 홀로 들어갔다고 하자.
+</figcaption>
+</figure>
+</div>
+<p><span class="math inline">\(t=0\)</span> 에서 두 당구선수가 각각의 공을 당구대의 중앙을 향해 쳤고, 중앙에서 충돌 후 <span class="math inline">\(t=T\)</span> 에서 각각 3번 홀과 4번 홀로 하나씩 들어갔다고 하자. 여기서 가능성은 1번공이 3번홀로, 2번공이 4번홀로 가는 경우와 1번공이 4번홀로 2번공이 3번홀로 가는 경우가 있다. 정확이 어떻게 가든 우리는 이 가운데 정확한 답을 알 수 있다. 그것은 고전물리학이 입자의 궤적을 정확하게 예측 할수 있다는 것을 가정하기 때문이다. 즉 1번공과 2번공 각각의 궤적을 정확히 알 수 있기 때문에, 처음부터 이 공을 관찰한 관찰자는 둘 가운데 정확한 답을 찾을 수 있다.</p>
+<p><br></p>
+</section>
+<section id="양자역학의-경우" class="level3" data-number="10.2.2">
+<h3 data-number="10.2.2" class="anchored" data-anchor-id="양자역학의-경우"><span class="header-section-number">10.2.2</span> 양자역학의 경우</h3>
+<p>동일한 두 입자의 위치를 동시에 측정하여 <span class="math inline">\(a\)</span> 와 <span class="math inline">\(b\)</span> 의 측정값을 얻었다고 하자. 이 때 <span class="math inline">\(a\ne b\)</span> 임을 가정하자. 이 상태벡터를 <span class="math inline">\(|\Psi\rangle\)</span> 이라고 하자. 각 입자를 <span class="math inline">\(1\)</span>, <span class="math inline">\(2\)</span> 로 라벨을 붙이고 <span class="math inline">\(\mathcal{H}_1\otimes \mathcal{H}_2\)</span> 힐베르트 공간에서 기술할 때 이것은 <span class="math inline">\(|ab\rangle\)</span> 일 수도 있고 <span class="math inline">\(|ba\rangle\)</span> 일 수도 있다. 문제는 동일한 입자를 구별 할 수 없다는 것이다. 따라서 <span class="math inline">\(|\Phi\rangle\)</span> 은 <span class="math inline">\(|ab\rangle\)</span> 과 <span class="math inline">\(|ba\rangle\)</span> 의 중첩으로</p>
+<p><span class="math display">\[
+|\Psi\rangle = \alpha |ab\rangle + \beta|ba\rangle
+\]</span></p>
+<p>이다. 두 입자를 교환하는 <span class="math inline">\(P_{12}\)</span> 연산을 생각해보자.</p>
+<p><span class="math display">\[
+P_{12}|\Psi\rangle = \beta|ab\rangle + \alpha |ba\rangle
+\]</span></p>
+<p>이며, <span class="math inline">\(P_{12}|\Psi\rangle\)</span> 은 <span class="math inline">\(|\Psi\rangle\)</span> 과 구분할 수 없는 양자상태, 즉 <span class="math inline">\(|\gamma|^2=1\)</span> 인 복소수 <span class="math inline">\(\gamma\)</span> 에 대해 <span class="math inline">\(\gamma |\Psi\rangle\)</span> 이어야 한다. 즉</p>
+<p><span class="math display">\[
+P_{12}|\Psi\rangle = \beta |ab\rangle + \alpha |ba\rangle = \gamma \alpha |ab\rangle + \gamma \beta |ab\rangle
+\]</span></p>
+<p>이어야 하며, 따라서 <span class="math inline">\(\alpha = \beta \gamma\)</span>, <span class="math inline">\(\beta = \alpha \gamma\)</span> 이므로, <span class="math inline">\(\alpha = \pm \beta\)</span> 이어야 한다. 이제 <span class="math inline">\(P_{12}\)</span> 에 대한 고유값은 <span class="math inline">\(\pm 1\)</span> 이며 고유값이 <span class="math inline">\(1\)</span> 인 고유상태를 <span class="math inline">\(|ab,\,S\rangle\)</span>, <span class="math inline">\(-1\)</span> 인 고유상태를 <span class="math inline">\(|ab,\,A\rangle\)</span> 이라고 하면 (정규화를 고려하면)</p>
+<p><span class="math display">\[
+\begin{aligned}
+|ab,\,S\rangle &amp;=\dfrac{1}{\sqrt{2}}\left[|ab\rangle + |ba\rangle\right],\\
+|ab,\,A\rangle &amp;= \dfrac{1}{\sqrt{2}}\left[|ab\rangle - |ba\rangle\right].
+\end{aligned}
+\]</span></p>
+<p><span class="math inline">\(S,\,A\)</span> 라는 라벨은 상태가 대칭(S, Symmetric) 이거나 반대칭(A, Antisymmetric) 이므로 붙여졌다. <span class="math inline">\(|ab,\,S\rangle\)</span> 대칭 상태벡터, <span class="math inline">\(|ab,\,A\rangle\)</span> 을 반대칭 상태벡터라고 한다. 위치 뿐만 아니라 힐베르트 공간의 complete set of observables 를 <span class="math inline">\(\omega,\, \omega'\)</span> 이라고 할 때</p>
+<p><span id="eq-QM_symmatric_and_antisymmetric_state_vector"><span class="math display">\[
+\begin{aligned}
+|\omega\omega',\,S\rangle = \dfrac{1}{\sqrt{2}} [|\omega\omega'\rangle + |\omega'\omega\rangle], \\
+|\omega\omega',\, A\rangle = \dfrac{1}{\sqrt{2}} [|\omega\omega'\rangle - |\omega'\omega\rangle], \\
+\end{aligned}
+\tag{10.7}\]</span></span></p>
+<p>와 같이 대칭, 반대칭인 상태벡터를 구성 할 수 있다. 또한 여기서는 동일한 두 입자에 대해서만 다루었는데, 앞으로 보겠지만 임의의 <span class="math inline">\(N\)</span> 입자에 대해 대칭인 상태벡터와 반대칭인 상태벡터를 구성 할 수 있다. 그리고 이 대칭/반대칭 상태벡터는 단순히 상태의 대칭성을 수학적으로 보이는 것이 아니라 자연의 근본적인 성질과 밀접히 관련되어 있다.</p>
+<p><br></p>
+</section>
+<section id="보존-페르미온-배타원리" class="level3" data-number="10.2.3">
+<h3 data-number="10.2.3" class="anchored" data-anchor-id="보존-페르미온-배타원리"><span class="header-section-number">10.2.3</span> 보존, 페르미온, 배타원리</h3>
+<p>놀랍게도 모든 입자는 각 입자에 따라 대칭, 혹은 반대칭 상태벡터중 하나를 따른다. 대칭인 상태벡터를 따르는 입자를 <strong>보존(boson)</strong> 이라고 하며 반대칭인 상태벡터를 따르는 입자를 <strong>페르미온(fermiion)</strong> 이라고 한다. 보존에는 파이온, 광자, 중력자가 있으며 페르미온에는 전자, 양성자, 중성자가 있다.</p>
+<p>페르미온의 경우 아주 흥미로운 현상이 있다. <a href="#eq-QM_symmatric_and_antisymmetric_state_vector" class="quarto-xref">식&nbsp;<span>10.7</span></a> 에서 <span class="math inline">\(\omega = \omega'\)</span> 이라면</p>
+<p><span class="math display">\[
+|\omega \omega,\, A\rangle = 0
+\]</span></p>
+<p>이 된다. 이것이 그 유명한 파울리의 <strong>배타 원리 (exclusion principle)</strong> 이다. 동일한 두 페르미온 입자는 동일한 상태에 있을 수 없다.</p>
+<p><br></p>
+<p>어떤 입자가 보존인지 페르미온인지는 각 입자가 가진 고유의 내재적인 각운동량, 소위 스핀 각운동량(spin angular momentum) 에 따라 다르다. 양자장론에 따르면 스핀 각운동량의 크기는 각 입자의 종류마다 고유하며 <span class="math inline">\(\hbar/2\)</span> 의 배수를 가진다. <span class="math inline">\(\hbar/2\)</span> 의 짝수배인 입자는 보즈-아인슈타인 통계를 따르는 입자로 보존이며, <span class="math inline">\(\hbar/2\)</span> 의 홀수배인 입자는 페르미-디랙 통계를 따르는 입자로 페르미온이다. 그러나 이 구분은 3차원에서의 구분이며 1차원의 경우는 고전적으로도 각운동량이라는 물리량이 정의되지 않는다. 이 경우는 실험적으로 보즈-아인슈타인 통계를 따르는지, 페르미-디랙 통계를 따르는지에 따라 구분한다. <span class="citation" data-cites="Shankar1994">(<a href="../CHM/CHM.html#ref-Shankar1994" role="doc-biblioref">Shankar 1994</a>)</span></p>
+<p><br></p>
+</section>
+</section>
+<section id="보존과-페르미온의-힐베르트-공간" class="level2" data-number="10.3">
+<h2 data-number="10.3" class="anchored" data-anchor-id="보존과-페르미온의-힐베르트-공간"><span class="header-section-number">10.3</span> 보존과 페르미온의 힐베르트 공간</h2>
+<section id="동일한-두-입자의-힐베르트-공간" class="level3" data-number="10.3.1">
+<h3 data-number="10.3.1" class="anchored" data-anchor-id="동일한-두-입자의-힐베르트-공간"><span class="header-section-number">10.3.1</span> 동일한 두 입자의 힐베르트 공간</h3>
+<p>두 동일 보존의 상태벡터는 항상 대칭적이며 두 동일 페르미온의 상태벡터는 항상 반대칭적이다. 이제 대칭적인 힐베르트 공간, 즉 대칭적인 상태함수만을 허용하는 힐베르트 공간을 <span class="math inline">\(\mathcal{H}_S\)</span> 라고 표기하고 반대칭 적인 힐베르트 공간을 <span class="math inline">\(\mathcal{H}_A\)</span> 라고 표기하기로 하자.</p>
+<p>두 입자의 힐베르트 공간 <span class="math inline">\(\mathcal{H}_1 \otimes \mathcal{H}_2\)</span> 를 생각하자. <span class="math inline">\(|\omega_1,\,\omega_2\rangle \in \mathcal{H}_1 \otimes \mathcal{H}_2\)</span> 일 때</p>
+<p><span class="math display">\[
+\begin{aligned}
+|\omega_1\omega_2\rangle &amp;= \dfrac{|\omega_1\omega_2\rangle + |\omega_2\omega_1\rangle}{2} + \dfrac{|\omega_1\omega_2\rangle - |\omega_2\omega_1\rangle}{2} \\
+&amp;= \dfrac{1}{\sqrt{2}}|\omega_1\omega_2,\,S\rangle + \dfrac{1}{\sqrt{2}}|\omega_1\omega_2,\, A\rangle\
+\end{aligned}
+\]</span></p>
+<p>이다. 즉 <span class="math inline">\(\mathcal{H}_1 \otimes \mathcal{H}_2\)</span> 의 모든 벡터는 <span class="math inline">\(\mathcal{H}_S\)</span> 와 <span class="math inline">\(\mathcal{H}_A\)</span> 의 합으로 표현 할 수 있다. 또한 우리는 <span class="math inline">\(\mathcal{H}_S \cap \mathcal{H}_A = \{|\varnothing\rangle\}\)</span> 이라는 것을 보일 수 있다. 이 경우는 소위 벡터공간의 직합(direct sum, <span class="math inline">\(\otimes\)</span>) 이라는 것으로</p>
+<p><span class="math display">\[
+\mathcal{H}_1 \otimes \mathcal{H}_2 = \mathcal{H}_S \oplus \mathcal{H}_A
+\]</span></p>
+<p>이다. 우리는 <span class="math inline">\(\mathcal{H}_S\)</span> 의 상태벡터는 시간이 지나도 <span class="math inline">\(\mathcal{H}_S\)</span> 의 상태벡터로 머무르며 <span class="math inline">\(\mathcal{H}_A\)</span> 의 상태벡터 역시 <span class="math inline">\(\mathcal{H}_A\)</span> 의 상태로 머무른다는 것을 보일 수 있다 (<a href="#exr-shankar_10_3_5" class="quarto-xref">연습문제&nbsp;<span>10.4</span></a>). 즉 우리가 동일한 입자에 대해 생각할때는 보존이면 <span class="math inline">\(\mathcal{H}_S\)</span>, 페르미온이면 <span class="math inline">\(\mathcal{H}_A\)</span> 에서만 생각하면 된다.</p>
+<p>지금까지 <span class="math inline">\(\omega_1\ne \omega_2\)</span> 인 경우에 대해 <span class="math inline">\(|\omega_1\omega_2,\,S\rangle\)</span> 이나 <span class="math inline">\(|\omega_1\omega_2,\,A\rangle\)</span> 을 생각했다. 페르미온의 경우는 배타원리에 의해 <span class="math inline">\(\omega_1 = \omega_2\)</span> 인 경우를 생각 할 필요가 없다. 보존의 경우는 <span class="math inline">\(|\omega \omega\rangle\)</span> 자체가 대칭적이므로 더 생각할 필요가 없게 된다. 즉 <span class="math inline">\(|\omega\omega,\,S\rangle = |\omega\omega\rangle\)</span> 이다.</p>
+<p><br></p>
+</section>
+<section id="보존의-경우" class="level3" data-number="10.3.2">
+<h3 data-number="10.3.2" class="anchored" data-anchor-id="보존의-경우"><span class="header-section-number">10.3.2</span> 보존의 경우</h3>
+<p><span class="math inline">\(\mathcal{H}_S\)</span> 의 임의의 벡터 <span class="math inline">\(|\Psi_S\rangle\)</span> 을 <span class="math inline">\(\Omega\)</span> 기저로 전개해보자. 이 경우</p>
+<p><span class="math display">\[
+P_S(\omega_1,\,\omega_2) = |\langle \omega_1\omega_2,\,S|\Psi_S\rangle|^2
+\]</span></p>
+<p>가 <span class="math inline">\(|\Psi_S\rangle\)</span> 이 <span class="math inline">\(|\omega_1\omega_2,\, S\rangle\)</span> 에서 발견될 확률이다. <span class="math inline">\(\omega\)</span> 가 이산적일 경우 <span class="math inline">\(\mathcal{H}_S\)</span> 에서의 정규화 조건은</p>
+<p><span class="math display">\[
+1 = \langle \Psi_S|\Psi_S\rangle = \sum_S |\langle \omega_1\omega_2,\,S|\Psi_s\rangle|^2 = \sum_S P_S(\omega_1,\, \omega_2)
+\]</span></p>
+<p>이다. 여기서 <span class="math inline">\(\sum_S\)</span> 는 모든 구별되는 대칭인 <span class="math inline">\(|\omega_1\omega_2,\,S\rangle\)</span> 에 대한 합을 의미한다. 이 경우 <span class="math inline">\(|\omega_1\omega_2,\, S\rangle\)</span> 과 <span class="math inline">\(|\omega_2\omega_1,\,S\rangle\)</span> 을 따로 더하는 것을 막기 위해</p>
+<p><span class="math display">\[
+\sum_S = \sum_{\omega_2 = \omega_{\text{min}}}^{\omega_{\text{max}}} \sum_{\omega_1 = \omega_\text{min}}^{\omega_2}
+\]</span></p>
+<p>와 같이 놓을 수 있다. 이 때 <span class="math inline">\(\omega_\text{min}\)</span> 과 <span class="math inline">\(\omega_\text{max}\)</span> 는 <span class="math inline">\(\omega\)</span> 가 가질 수 있는 최소값과 최대값이다. 혹은</p>
+<p><span class="math display">\[
+\sum_S = \dfrac{1}{2}\sum_{\omega_1} \sum_{\omega_2}
+\]</span></p>
+<p>로 놓을 수도 있다.</p>
+<p><br></p>
+<p>이제 <span class="math inline">\(\Omega\)</span> 가 연속인 측정값을 가지는 경우를 생각하자. 이제 정규화 조건은 double counting 을 피하기 위해</p>
+<p><span id="eq-QM_normalization_condition_for_H_S_1"><span class="math display">\[
+1 = \iint |\langle \omega_1\omega_2,\, S|\Psi_S\rangle|^2 \dfrac{d\omega_1\,d\omega_2}{2}
+\tag{10.8}\]</span></span></p>
+<p>이 된다.</p>
+<p>이 경우 파동함수를 아래와 같이 정의한다.</p>
+<p><span class="math display">\[
+\Psi_S (\omega_1,\,\omega_2) := \dfrac{1}{\sqrt{2}} \langle \omega_1\omega_2,\, S|\Psi_S\rangle
+\]</span></p>
+<p>이제 <a href="#eq-QM_normalization_condition_for_H_S_1" class="quarto-xref">식&nbsp;<span>10.8</span></a> 이 좀 더 깔끔하게 아래와 같이 된다.</p>
+<p><span class="math display">\[
+\int |\Psi_S(\omega_1,\omega_2)|^2\ d\omega_1\,d\omega_2 = 1
+\]</span></p>
+<p>하지만 <span class="math inline">\(|\Psi_S\rangle\)</span> 상태가 <span class="math inline">\(|\omega_1\omega_2,\,S\rangle\)</span> 에 존재할 확룰 <span class="math inline">\(P_S(\omega_1,\, \omega_2)\)</span> 는</p>
+<p><span class="math display">\[
+P_S(\omega_1,\, \omega_2) = |\langle x_1x_2,\,S|\Psi_S\rangle|^2 =2 \left|\Psi_S(\omega_1,\, \omega_2)\right|^2
+\]</span></p>
+<p>이 된다. 여기서 우리가 <span class="math inline">\(\langle \omega_1\omega_2|\Psi_S\rangle = \langle \omega_2\omega_1|\Psi_S\rangle\)</span> 임을 이용하면</p>
+<p><span class="math display">\[
+\begin{aligned}
+\Psi_S(\omega_1,\, \omega_2) &amp;= \dfrac{1}{\sqrt{2}} \langle \omega_1\omega_2,\,S|\Psi_S\rangle = \dfrac{1}{2} \left[\langle \omega_1 \omega_2|\Psi_S\rangle + \langle \omega_2 \omega_1|\Psi_S\rangle\right] \\
+&amp;= \langle \omega_1 \omega_2|\Psi_S\rangle
+\end{aligned}
+\]</span></p>
+<p>이다. 파동함수 <span class="math inline">\(\Psi_S(\omega_1,\,\omega_2) = \langle \omega_1\omega_2|\Psi_S\rangle\)</span> 에서 <span class="math inline">\(\mathcal{H}_S\)</span> 에 속하지 않는 <span class="math inline">\(| \omega_1\omega_2\rangle\)</span> 에 대한 bra 가 포함되어 있음에 유의하라.</p>
+<p><br></p>
+<div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+<div id="exm-QM_two_boson_wave_fucntion" class="theorem example">
+<p><span class="theorem-title"><strong>예제 10.3 (무한 포텐셜 우물의 동일한 두 보존 입자)</strong></span> <a href="../../src/QM/QM_1d_bound_state.html#sec-QM_infinite_potential_well">무한 포텐셜 우물</a> 문제를 생각하자. 상호작용하지 않는 두 보존이 <span class="math inline">\(n=2,\, n=3\)</span> 상태로 관측되었다고 하자. 그렇다면 상태벡터 <span class="math inline">\(|\Psi_S\rangle\)</span> 는</p>
+<p><span class="math display">\[
+|\Psi_S\rangle = \dfrac{|23\rangle + |32\rangle}{\sqrt{2}}
+\]</span></p>
+<p>이며 파동함수 <span class="math inline">\(\Psi_S(x_1,\,x_2)\)</span> 는</p>
+<p><span class="math display">\[
+\begin{aligned}
+\Psi_S(x_1,\,x_2) &amp;= \dfrac{1}{\sqrt{2}}\langle x_1x_2|(|23\rangle + |32\rangle) = \dfrac{1}{\sqrt{2}} \left[\psi_2(x_1)\psi_3(x_2) + \psi_3(x_1)\psi_2(x_2)\right]
+\end{aligned}
+\]</span></p>
+<p>이다.</p>
+</div>
+</div>
+<p><br></p>
+</section>
+<section id="페르미온의-경우" class="level3" data-number="10.3.3">
+<h3 data-number="10.3.3" class="anchored" data-anchor-id="페르미온의-경우"><span class="header-section-number">10.3.3</span> 페르미온의 경우</h3>
+<p><span class="math display">\[
+|\omega_1\omega_2,\,A\rangle = \dfrac{1}{\sqrt{2}}\left[|\omega_1\omega_2\rangle - |\omega_2\omega_1\rangle\right]
+\]</span></p>
+<p>이므로 파동함수는 <span class="math inline">\(\langle \omega_2\omega_1| = \langle \omega_1\omega_2|P_{12}\)</span> 임을 이용하면</p>
+<p><span class="math display">\[
+\begin{aligned}
+\Psi_A(x_1,\,x_2) &amp;:= \dfrac{1}{\sqrt{2}}\left[\langle \omega_1\omega_2,\,A|\Psi_A\rangle\right]\\
+&amp;= \dfrac{1}{\sqrt{2}}\left(\langle \omega_1\omega_2| -\langle \omega_2\omega_1|\right) |\Psi_A\rangle \\
+&amp;= \dfrac{1}{\sqrt{2}} \left( \langle \omega_1\omega_2|\Psi_A\rangle - \langle \omega_1\omega_2|P_{12}|\Psi_A\rangle \right) \\
+&amp;= \dfrac{1}{\sqrt{2}} \langle \omega_1\omega_2|\Psi_A\rangle
+\end{aligned}
+\]</span></p>
+<p>이며 보존의 경우와 마찬가지로,</p>
+<p><span class="math display">\[
+P_A(\omega_1,\, \omega_2) = 2|\Psi_A(\omega_1,\,\omega_2)|^2
+\]</span></p>
+<p>이다. 여기서 정규화 조건은</p>
+<p><span class="math display">\[
+1 = \iint P_A (\omega_1,\,\omega_2) \dfrac{d\omega_1\,d\omega_2}{2} = \iint |\Psi_A(\omega_1,\,\omega_2)|^2\, d\omega_1\,d\omega_2
+\]</span></p>
+<p>가 된다.</p>
+<div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+<div id="exm-QM_two_fermion_wave_fucntion" class="theorem example">
+<p><span class="theorem-title"><strong>예제 10.4 (무한 포텐셜 우물의 동일한 두 페르미온 입자)</strong></span> 보존의 경우(<a href="#exm-QM_two_boson_wave_fucntion" class="quarto-xref">예제&nbsp;<span>10.3</span></a>) 와 같이<a href="../../src/QM/QM_1d_bound_state.html#sec-QM_infinite_potential_well">무한 포텐셜 우물</a> 문제를 생각하자. 상호작용하지 않는 두 페르미온이 <span class="math inline">\(n=2,\, n=3\)</span> 상태로 관측되었다고 하자. 그렇다면 반대칭 상태벡터 <span class="math inline">\(|\Psi_A\rangle\)</span> 는</p>
+<p><span class="math display">\[
+|\Psi_A\rangle = \dfrac{|23\rangle - |32\rangle}{\sqrt{2}}
+\]</span></p>
+<p>이며 파동함수 <span class="math inline">\(\Psi_A(x_1,\,x_2)\)</span> 는</p>
+<p><span class="math display">\[
+\begin{aligned}
+\Psi_A(x_1,\,x_2) &amp;= \dfrac{1}{\sqrt{2}}\langle x_1x_2|(|23\rangle - |32\rangle) = \dfrac{1}{\sqrt{2}} \left[\psi_2(x_1)\psi_3(x_2) - \psi_3(x_1)\psi_2(x_2)\right]
+\end{aligned}
+\]</span></p>
+<p>이다.</p>
+</div>
+</div>
+<p><br></p>
+<p><a href="#exm-QM_two_fermion_wave_fucntion" class="quarto-xref">예제&nbsp;<span>10.4</span></a> 에서 <span class="math inline">\(\Psi_A(x_1,\,x_2)\)</span> 는 행렬의 행렬식(determinant) <span class="math inline">\(|A|\)</span> 를 이용하여</p>
+<p><span class="math display">\[
+\Psi_A(x_1,\,x_2) =  \dfrac{1}{\sqrt{2}} \left[\psi_2(x_1)\psi_3(x_2) - \psi_3(x_1)\psi_2(x_2)\right]= \dfrac{1}{\sqrt{2}} \left| \begin{array}{cc} \psi_2(x_1) &amp; \psi_3 (x_1) \\ \psi_2(x_2) &amp; \psi_3 (x_2) \end{array}\right|
+\]</span></p>
+<p>로 표현 할 수 있다. 이것을 일반화하면 <span class="math inline">\(N\)</span> 개의 페르미온 입자가 각각 <span class="math inline">\(\omega_1,\ldots,\,\omega_N\)</span> 상태에 있다고 할 때</p>
+<p><span id="eq-QM_determinamt_and_antisymmetric_wavefunction"><span class="math display">\[
+\Psi_A(x_1,\ldots,\,x_N) = \dfrac{1}{\sqrt{N!}}\left|\begin{array}{cccc} \psi_{\omega_1}(x_1) &amp; \psi_{\omega_2} (x_1) &amp; \cdots &amp; \psi_{\omega_N}(x_1) \\\psi_{\omega_1}(x_2) &amp; \psi_{\omega_2} (x_2) &amp; \cdots &amp; \psi_{\omega_N}(x_2) \\ &amp; \vdots &amp; &amp; \\ \psi_{\omega_1}(x_N) &amp; \psi_{\omega_2} (x_N) &amp; \cdots &amp; \psi_{\omega_N}(x_N)  \end{array}\right|
+\tag{10.9}\]</span></span></p>
+<p>이다. 이것은 행렬식의 정의로부터 자명한데 행렬식은 <span class="math inline">\(N\times N\)</span> 행렬에 대해 아래의 성질을 갖는 함수로 정의되며, 아래의 세가지 성질을 모두 충족하는 함수는 행렬식이 유일하다.</p>
+<p>  (<span class="math inline">\(1\)</span>) 항등행렬에 대해 행렬식은 <span class="math inline">\(1\)</span> 이다.</p>
+<p>  (<span class="math inline">\(2\)</span>) <span class="math inline">\(N\)</span> 차원 행/열 벡터에 대해 다중선형 함수이다.</p>
+<p>  (<span class="math inline">\(3\)</span>) 두 행/열 을 바꾼 행렬의 행렬식은 원래 행렬의 행렬에 <span class="math inline">\(-1\)</span> 을 곱한 값이다.</p>
+<p><a href="#eq-QM_determinamt_and_antisymmetric_wavefunction" class="quarto-xref">식&nbsp;<span>10.9</span></a> 가 반대칭이라는 것은 행렬식의 성질 (<span class="math inline">\(3\)</span>) 으로 부터 알 수 있다. <a href="#eq-QM_determinamt_and_antisymmetric_wavefunction" class="quarto-xref">식&nbsp;<span>10.9</span></a> 의 두 열을 바꾸는 것이 두 상태를 바꾸는 교환연산이기 때문이다. 또한 <span class="math inline">\(\int |\psi_{\omega_i}(x_j)|^2\, dx_j = 1\)</span> 이며 항의 갯수가 <span class="math inline">\(N!\)</span> 개이므로</p>
+<p><span class="math display">\[
+\int\int\cdots \int \left|\Psi_A(x_1,\ldots,\,x_N)\right|^2 \, dx_1 dx_2 \cdots dx_N = 1
+\]</span></p>
+<p>이다.</p>
+<p><br></p>
+</section>
+<section id="입자의-보존페르미온-여부는-어떻게-결정하는가" class="level3" data-number="10.3.4">
+<h3 data-number="10.3.4" class="anchored" data-anchor-id="입자의-보존페르미온-여부는-어떻게-결정하는가"><span class="header-section-number">10.3.4</span> 입자의 보존/페르미온 여부는 어떻게 결정하는가</h3>
+<p>입자가 보존인지 페르미온인지는 어떻게 결정 할 수 있을까? 예를 들어 서로 상호작용하지 않는 두 중성 파인온 입자(<span class="math inline">\(\pi^0\)</span>) 를 생각하자. 이것을 1차원 포텐셜 우물에 넣었고 두 입자가 <span class="math inline">\(m,\,n\)</span> 상태에 있다고 관측이 되었다면</p>
+<p><span id="eq-QM_probability_density_of_two_identical_particle"><span class="math display">\[
+\begin{aligned}
+P_{S/A}(x_1,\,x_2) &amp;= 2|\Psi_{S/A} (x_1,\,x_2)|^2 \\
+&amp;= 2\left|\dfrac{1}{\sqrt{2}}\left[ \psi_m(x_1) \psi_n(x_2) \pm \psi_m(x_2) \psi_n(x_1)\right]\right|^2 \\
+&amp;= |\psi_m(x_1)|^2|\psi_n(x_2)|^2 + |\psi_m(x_2)|^2|\psi_n(x_1)|^2 \\[0.3em]
+&amp;\quad \pm \left[\psi_m(x_1)\psi_n(x_2)\psi_m^\ast (x_2) \psi_n^\ast(x_1) + \psi_m(x_2)\psi_n(x_1) \psi_m^\ast(x_1) \psi_n^\ast(x_2)\right]
+\end{aligned}
+\tag{10.10}\]</span></span></p>
+<p>이 된다. 위 식은 세가지 항으로 구분 할 수 있다.</p>
+<div class="callout callout-style-simple callout-important no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>(<span class="math inline">\(1\)</span>) 첫번째 항 <span class="math inline">\(|\psi_m(x_1)|^2|\psi_n(x_2)|^2\)</span> 은 첫번째 입자가 <span class="math inline">\(m\)</span> 상태, 두번째 입자가 <span class="math inline">\(n\)</span> 상태에 있을 확률분포이다.</p>
+<p>(<span class="math inline">\(2\)</span>) 두번째 항 <span class="math inline">\(|\psi_m(x_2)|^2|\psi_n(x_1)|^2\)</span> 은 첫번째 입자가 <span class="math inline">\(n\)</span> 상태, 두번째 입자가 <span class="math inline">\(m\)</span> 상태에 있을 확률분포이다.</p>
+<p>(<span class="math inline">\(3\)</span>) <span class="math inline">\(\pm\)</span> 과 뒤에 따르는 나머지 항은 소위 간섭(interference) 에 의한 항이다.</p>
+</div>
+</div>
+</div>
+<p>여기서 (<span class="math inline">\(1\)</span>) 과 (<span class="math inline">\(2\)</span>) 는 정확히 구별할수 없는 두 입자에 의한 효과이며 (<span class="math inline">\(3\)</span>) 은 두 입자에 의한 간섭에 의한 효과이다. 예를 들어 두 입자가 같은 위치에서 발견될 확률을 생각해보자.</p>
+<p><span id="eq-QM_limit_of_two_particle_wavefunction_1"><span class="math display">\[
+\begin{aligned}
+\lim_{x_1\to x,\, x_2\to x} P_S(x_1,\,x_2) &amp;= 4|\psi_m(x)\psi_n(x)|^2, \\
+\lim_{x_1\to x,\, x_2\to x} P_A(x_1,\,x_2) &amp;= 0,
+\end{aligned}
+\tag{10.11}\]</span></span></p>
+<p>즉 우리가 두 중성 파이온에 대해 <span class="math inline">\(P(x_1,\,x_2)\)</span> 를 구한다면 혹은 최소한 두 입자가 같은 위치에서 발견될 확률을 구한다면 이 입자가 보존인지 페르미온인지를 확인 할 수 있다.</p>
+<p>두 입자에 대해 <span class="math inline">\(P(x_1,\,x_2)\)</span> 를 구하는 것은 보존/페르미온 구분 이전에 두 입자가 동일한지 아닌지 여부에 대해 결정하는데도 사용 될 수 있다. <span class="math inline">\(K\)</span> 와 <span class="math inline">\(\overline{K}\)</span> 라고 불리우는 두 보존은 질량과 전하가 같고 <em>hypercharge</em> 라고 불리는 양자수가 다르다. 우선 서로 다른 두 입자가 각각 <span class="math inline">\(m,\,n\)</span> 상태에서 <span class="math inline">\(x_1,\,x_2\)</span> 에서 발견될 확률 <span class="math inline">\(P_D(x_1,\,x_2)\)</span> 는</p>
+<p><span class="math display">\[
+P_D(x_1,\,x_2) = |\psi_m(x_1)|^2|\psi_n(x_2)|^2 + |\psi_m(x_2)|^2|\psi_n(x_1)|^2
+\]</span></p>
+<p>이며, 같은 위치에서 발견될 확률은</p>
+<p><span class="math display">\[
+\lim_{x_1\to x,\, x_2\to x} P_D(x_1,\,x_2) = 2|\psi_m(x)\psi_n(x)|^2
+\]</span></p>
+<p>이다. 이를 <a href="#eq-QM_limit_of_two_particle_wavefunction_1" class="quarto-xref">식&nbsp;<span>10.11</span></a> 와 비교해보면 2배의 차이가 난다.</p>
+<p><br></p>
+</section>
+<section id="n-동일-입자-시스템" class="level3" data-number="10.3.5">
+<h3 data-number="10.3.5" class="anchored" data-anchor-id="n-동일-입자-시스템"><span class="header-section-number">10.3.5</span> <span class="math inline">\(N\)</span> 동일 입자 시스템</h3>
+<p>지금까지는 대부분 <span class="math inline">\(N=2\)</span> 인 경우에 대해 알아보았다. 이제 <span class="math inline">\(N\ge 2\)</span> 인 동일 입자로 이루어진 시스템에 대해 생각해보자. 선형대수학에서 행렬식을 배울 때 사용했던 개념을 도입한다. 집합 <span class="math inline">\(A=\{1,\ldots,\,N\}\)</span> 에 대해 <span class="math inline">\(A\mapsto A\)</span> 전단사 함수의 집합을 <span class="math inline">\(S_N\)</span> 이라고 한다. <span class="math inline">\(S_N\)</span> 의 갯수는 <span class="math inline">\(N!\)</span> 개이다. <span class="math inline">\(\sigma\in S_N\)</span> 일 때 <span class="math inline">\(\sigma\)</span> 는 항상 교환연산자의 합성으로 표현 할 수 있으며 몇개의 교환연산자의 합성인지는 선택에 따라 다르지만 그것이 짝수개인지 홀수개인지는 항상 정해진다. 이 때 <span class="math inline">\(\text{sgn}(\sigma)\)</span> 함는 <span class="math inline">\(\sigma\)</span> 가 짝수개의 교환연산자의 합성일경우 <span class="math inline">\(+1\)</span> 을, 홀수개의 교환연산자의 합성일경우는 <span class="math inline">\(-1\)</span> 인 함수이다. 이 경우 <span class="math inline">\(N\)</span> 개의 입자에 대한 대칭/반대칭 상태는 아래와 같이 표현된다.</p>
+<p><span class="math display">\[
+\begin{aligned}
+|\omega_1 \cdots \omega_N,\,S\rangle &amp;= \dfrac{1}{\sqrt{N!}}\sum_{\sigma\in S_N} \sigma|\omega_1 \cdots \omega_N\rangle, \\
+|\omega_1 \ldots \omega_N,\,A\rangle &amp;= \dfrac{1}{\sqrt{N!}}\sum_{\sigma\in S_N} \text{sgn}(\sigma) \sigma |\omega_1\cdots \omega_N\rangle
+\end{aligned}
+\]</span></p>
+<p>여기서 <span class="math inline">\(1/\sqrt{N!}\)</span> 은 정규화 인자이다. 이 때 파동함수는</p>
+<p><span class="math display">\[
+\Psi_{S/A}(x_1,\ldots,\,x_N) = \langle x_1\cdots x_N|\omega_1 \cdots \omega_N,\, S/A\rangle
+\]</span></p>
+<p>로 정의되며,</p>
+<p><span class="math display">\[
+P_{S/A}(x_1,\ldots,\,x_N) = |\Psi_{S/A}(x_1,\ldots,\,x_N)|^2
+\]</span></p>
+<p>이고</p>
+<p><span class="math display">\[
+\iint P_{S/A}(x_1,\ldots,\,x_N)\, dx_1 \cdots dx_N = \iint |\Psi_{S/A}(x_1,\ldots,\,x_N)|^2 \, dx_1 \cdots dx_N = 1
+\]</span></p>
+<p>이다.</p>
+<p><br></p>
+</section>
+</section>
+<section id="우주와-대칭반대칭-파동함수-문제" class="level2" data-number="10.4">
+<h2 data-number="10.4" class="anchored" data-anchor-id="우주와-대칭반대칭-파동함수-문제"><span class="header-section-number">10.4</span> 우주와 대칭/반대칭 파동함수 문제</h2>
+<p>자연에 대한 논의에서 항상 중요한것은 우리가 실험하거나 이론적으로 계산하려고 하는 부분을 우주의 나머지 부분과 분리하는 것이다. 어떤 시스템도 엄밀하게 고립될 수 없기 때문에 우리는 적절한 근사를 사용한다. 고전역학에서는 우리가 관심있는 시스템과 나머지 우주 전체를 분리하다. 즉,</p>
+<p><span class="math display">\[
+\mathcal{H}_{\text{universe}} = \mathcal{H}_{\text{system}} + \mathcal{H}_\text{rest}
+\]</span></p>
+<p>로 분리하며 <span class="math inline">\(\mathcal{H}_{\text{system}}\)</span> 은 우리가 관심있는 시스템의 (일반화된) 좌표와 운동량의 함수이며, 이 좌표와 운동량은 나머지 우주에 대해 독립적임을 가정한다. 이것이 좋은 근사가 되기위해서는 이 가정이 가능한 한 잘 만족되어야 한다.</p>
+<p>양자역학에서는 우리의 시스템과 나머지 우주의 파동함수를 다음과 같이 분리한다.</p>
+<p><span class="math display">\[
+\Psi_{\text{universe}} = \Psi_{\text{system}}\cdot \Psi_{\text{rest}}
+\]</span></p>
+<p>– to be shotly –</p>
+<p>예를 들어 지구의 전자의 파동함수 <span class="math inline">\(\psi_E(x_E)\)</span> 와 달의 전자의 파동함수 <span class="math inline">\(\psi_M(x_M)\)</span> 을 생각하면 당연히</p>
+<p><span class="math display">\[
+\begin{aligned}
+\iint \psi_E(x_E)\psi^\ast_M (x_M)\, dx_E\, dx_M &amp;\approx 0, \\
+\int \psi_E(x_M)\, dx_M \approx \int \psi_M(x_E)\, dx_E &amp;\approx 0
+\end{aligned}
+\]</span></p>
+<p>일 것이므로 <span class="math inline">\(\Psi(x_E,\,x_M) \approx \psi_E(x_E)\psi_M(x_M)\)</span> 이 되며, 이 경우 분리 할 수 있다는…</p>
+<p><br></p>
+</section>
+<section id="연습문제" class="level2" data-number="10.5">
+<h2 data-number="10.5" class="anchored" data-anchor-id="연습문제"><span class="header-section-number">10.5</span> 연습문제</h2>
+<div id="exr-shankar_10_3_1" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 10.2 (Shankar 10.3.1)</strong></span> 두 동일한 보존이 <span class="math inline">\(|\phi\rangle\)</span> 과 <span class="math inline">\(|\psi\rangle\)</span> 상태에서 발견되었다. <span class="math inline">\(\langle \phi|\psi\rangle \ne 0\)</span> 일 때 정규화된 상태벡터는 무엇인가?</p>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(|\Psi_S\rangle = a(|\phi\psi\rangle + |\psi\phi\rangle)\)</span> 이며</p>
+<p><span class="math display">\[
+\begin{aligned}
+1 &amp;= \langle \Psi_S|\Psi_S\rangle = |a|^2(2+ |\langle \phi|\psi\rangle|^2)
+\end{aligned}
+\]</span></p>
+<p>이므로,</p>
+<p><span class="math display">\[
+|\Psi_S\rangle = \dfrac{1}{\sqrt{2+|\langle \phi|\psi\rangle|^2}}(|\phi \psi\rangle + |\psi \phi\rangle)
+\]</span></p>
+<p>이다.</p>
+</div>
+<p><br></p>
+<div id="exr-shankar_10_3_2" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 10.3 (Shankar 10.3.2)</strong></span> 3개의 보존으로 이루어진 무한 포텐셜 우물 시스템에서 <span class="math inline">\(3,\,3,\,4\)</span> 상태에서 에너지가 측정되었다. 대칭화되고 정규화된 상태벡터를 쓰시오.</p>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math display">\[
+|334,\, S\rangle = \dfrac{1}{\sqrt{3}}(|334\rangle +  |433\rangle  + |343\rangle)
+\]</span></p>
+</div>
+<p><br></p>
+<div id="exr-shankar_10_3_5" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 10.4 (Shankar 10.3.5)</strong></span> 교환연산자 <span class="math inline">\(P_{12}\)</span> 는 <span class="math inline">\(X\)</span> 기저에 대해 다음과 같이 작용한다.</p>
+<p><span class="math display">\[
+P_{12}|x_1x_2\rangle = |x_2x_1\rangle.
+\]</span></p>
+<p>(<span class="math inline">\(1\)</span>) <span class="math inline">\(P_{12}\)</span> 의 고유값이 <span class="math inline">\(\pm 1\)</span> 임을 보여라.</p>
+<p>(<span class="math inline">\(2\)</span>) 기저 캣 <span class="math inline">\(|\omega_1\omega_2\rangle\)</span> 에 대해서도 <span class="math inline">\(P_{12}|\omega_1 \omega_2 \rangle = |\omega_2\omega_1\rangle\)</span> 임을 보이고 <span class="math inline">\(\mathcal{H}_S\)</span> 와 <span class="math inline">\(\mathcal{H}_A\)</span> 가 <span class="math inline">\(P_{12}\)</span> 의 고유값 <span class="math inline">\(\pm 1\)</span> 에 대한 고유공간임을 보여라.</p>
+<p>(<span class="math inline">\(3\)</span>) <span class="math inline">\(P_{12}X_1P_{12}=X_2\)</span>, <span class="math inline">\(P_{12}X_2P_{12}=X_1\)</span> 이며 운동량 연산자 <span class="math inline">\(P_1,\, P_2\)</span> 에 대해서도 유사하게 성립함을 보여라. 그리고 <span class="math inline">\(P_{12}\Omega (X_2,P_2\;X_1,P_1) P_{12}= \Omega (X_1,P_1\;X_2,P_2)\)</span> 임을 보여라.</p>
+<p>(<span class="math inline">\(4\)</span>) 두 동일 입자에 대한 해밀토니안과 시간전개 연산자가 <span class="math inline">\(H\to P_{12}HP_{12}\)</span>, <span class="math inline">\(U \to P_{12}UP_{12}\)</span> 변환에 대해 불변임을 보여라. 이를 이용하여 <span class="math inline">\(P_{12}\)</span> 의 고유상태는 시간이 지나도 <span class="math inline">\(P_{12}\)</span> 의 고유상태임을 보여라. 즉 <span class="math inline">\(\mathcal{H}_S\)</span>(혹은 <span class="math inline">\(\mathcal{H}_A\)</span>) 에 속하는 상태벡터는 시간이 지나도 <span class="math inline">\(\mathcal{H}_S\)</span>(혹은 <span class="math inline">\(\mathcal{H}_A\)</span>) 에 속한다.</p>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(1\)</span>) 우선 <span class="math inline">\(P_{12}\)</span> 에르미트 임을 보이자.</p>
+<p><span class="math display">\[
+\begin{aligned}
+\langle x'_1x'_2|P_{12}|x_1x_2\rangle &amp;= \langle x'_1x'_2|x_2x_1\rangle = \delta(x_2-x'_1)\, \delta(x1-x'_2), \\
+\langle x'_1x'_2|P^\dagger_{12} |x_1x_2\rangle &amp;= (P_{12}|x'_1x'_2 \rangle)^\dagger |x_1x_2\rangle = \langle x'_2x'_1 | x_1x_2\rangle = \delta(x_1-x'_2)\, \delta(x_2-x'_1)
+\end{aligned}
+\]</span></p>
+<p>이므로 <span class="math inline">\(P_{12}= P^\dagger_{12}\)</span> 이다. 즉 <span class="math inline">\(P_{12}\)</span> 는 에르미트 연산자이다. 또한 <span class="math inline">\(P_{12}^2 = I = P_{12}P_{12}^\dagger\)</span> 이므로 <span class="math inline">\(P_{12}\)</span> 는 유니타리 연산자이다. 이제 <span class="math inline">\(P_{12}\)</span> 가 에르미트 연산자이므로 <span class="math inline">\(P_{12}\)</span> 의 고유벡터로 <span class="math inline">\(\mathcal{H}\)</span> 의 기저를 구성 할 수 있다. <span class="math inline">\(P_{12}\)</span> 의 고유벡터를 <span class="math inline">\(|\Pi\rangle\)</span> 이라고 라고 하고 그 고유값을 <span class="math inline">\(\lambda\)</span> 라고 하자. <span class="math inline">\(P_{12}^2 |\Pi\rangle = \lambda^2|\Pi\rangle = |\Pi\rangle\)</span> 이므로 <span class="math inline">\(\lambda = \pm 1\)</span> 이다.</p>
+<p>(<span class="math inline">\(2\)</span>)</p>
+<p><span class="math display">\[
+\begin{aligned}
+P_{12}|\omega_1 \omega_2 \rangle &amp;= \iint P_{12}|x_1x_2\rangle \langle x_1x_2|\omega_1\omega_2\rangle \,dx_1\,dx_2 \\
+&amp;= \iint |x_2x_1\rangle \langle x_1 | \omega_1\rangle \langle x_2|\omega_2\rangle \,dx_1\,dx_2 \\
+&amp;= \iint |x_2x_1\rangle \langle x_2x_1|\omega_2\omega_1\rangle \,dx_1\,dx_2 \\
+&amp;= |\omega_2 \omega_1\rangle
+\end{aligned}
+\]</span></p>
+<p>(<span class="math inline">\(3\)</span>) 임의의 <span class="math inline">\(|x_1x_2\rangle\)</span> 기저에 대해</p>
+<p><span class="math display">\[
+\langle x_1x_2|P_{12}X_1 P_{12} |x_1x_2\rangle = \langle x_2x_1|X_1|x_2x_1\rangle = x_2 = \langle x_1x_2|X_2|x_1x_2\rangle
+\]</span></p>
+<p>이므로 <span class="math inline">\(P_{12}X_1 P_{12}=X_2\)</span> 이다. 같은 방법으로 <span class="math inline">\(P_{12}X_2P_{12}=X_1\)</span> 임을 보일 수 있다. (<span class="math inline">\(2\)</span>) 의 결과로 <span class="math inline">\(P_{12}P_1 P_{12}=P_2\)</span>, <span class="math inline">\(P_{12}P_2P_{12}=P_1\)</span> 임을 보일 수 있다.</p>
+<p><span class="math inline">\(\Omega(X_1,\, P_1,\, X_2,\,P_2)\)</span> 가</p>
+</div>
+<p><br></p>
+<div id="exr-shankar_10_3_6" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 10.5 (Shankar 10.3.6)</strong></span> 수소 원자와 같은 복합 물질을 생각하자. 이 물질은 보존 혹은 페르미온 처럼 행동하는가? 짝수 혹은 홀수개의 페르미온으로 이루어진 입자가 보존이나 페르미온 처럼 행동할지에 대해 논하라.</p>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>수소 원자는 양성자와 전자로 이루어져 있으므로 두 수소 원자를 각각 <span class="math inline">\(|n_1e_1n_2e_2\rangle\)</span> 로 기술 할 수 있다. <span class="math inline">\(n_i\)</span> 은 핵에 대한 양자상태이며 <span class="math inline">\(e_j\)</span> 는 전자에 대한 양자상태이다. 여기에는 양성자와 전자라는 두종류의 동일 입자가 각각 존재한다. 양성자에 대한 반대칭성과 전자에 대한 반대칭성을 고려하면</p>
+<p><span class="math display">\[
+\begin{aligned}
+|n_1e_1n_2e_2,\, A\rangle &amp;= \dfrac{1}{\sqrt{2}}(|n_1n_2\rangle - |n_2n_1\rangle) \otimes \dfrac{1}{\sqrt{2}}(|e_1e_2\rangle - |e_2e_1\rangle) \\
+&amp;= \dfrac{1}{2}(|n_1e_1n_2e_2\rangle - |n_1e_2n_2e_1\rangle - |n_2e_1n_1e_2\rangle + |n_2e_2n_1e_1\rangle)
+\end{aligned}
+\]</span></p>
+<p>이다. 즉 양성자나 전자의 각각에 대한 교환에 대하 반대칭성을 보이는 파동함수는 이것 뿐이다.</p>
+</div>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-Shankar1994" class="csl-entry" role="listitem">
+Shankar, R. 1994. <em>Principles of Quantum Mechanics</em>. Springer. <a href="https://books.google.co.kr/books?id=2zypV5EbKuIC">https://books.google.co.kr/books?id=2zypV5EbKuIC</a>.
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "복사완료!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "복사완료!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../src/QM/QM_path_integral_1.html" class="pagination-link" aria-label="경로적분 I">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">경로적분 I</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../src/QM/QM_symmetry.html" class="pagination-link" aria-label="대칭">
+        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">대칭</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

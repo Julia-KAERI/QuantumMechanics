@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.42">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>13&nbsp; 양자 얽힘 – 양자 역학</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../src/AUX/quantum_state.html" rel="next">
+<link href="../../src/AUX/AUX.html" rel="prev">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-b467865d89f01302b3bb45791fa41ab5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "일치 없음",
+    "search-matching-documents-text": "일치된 문서",
+    "search-copy-link-title": "검색 링크 복사",
+    "search-hide-matches-text": "추가 검색 결과 숨기기",
+    "search-more-match-text": "추가 검색결과",
+    "search-more-matches-text": "추가 검색결과",
+    "search-clear-button-title": "제거",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "취소",
+    "search-submit-button-title": "검색",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating slimcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/AUX/AUX.html">III. 기타 이런저런 이야기들</a></li><li class="breadcrumb-item"><a href="../../src/AUX/entanglement.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">양자 얽힘</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/AUX/AUX.html">III. 기타 이런저런 이야기들</a></li><li class="breadcrumb-item"><a href="../../src/AUX/entanglement.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">양자 얽힘</span></a></li></ol></nav>
+      <h1 class="title"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">양자 얽힘</span></h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../../">양자 역학</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../src/CHM/CHM.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">I. 고전적, 역사적, 수학적 주제들</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="토글 섹션">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/CHM/mathematical_foundation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">힐베르트 공간과 브라켓 표기법</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/CHM/symmetry_in_classical_mechanics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">고전역학에서의 대칭</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/CHM/some_proofs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">몇몇 증명들</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../src/QM/QM.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">II. 양자역학</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="토글 섹션">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/QM/QM_foundation_of_quantum_theory.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">고전 물리학의 붕괴와 양자 원리</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/QM/QM_1d_bound_state.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">1차원 문제 I : 자유입자와 Bound state</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/QM/QM_classical_limit.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">고전적인 극한과 불확정성 원리</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/QM/QM_harmonic_oscillator.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">단순조화진동자</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/QM/QM_1d_scattering.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">1차원 산란</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/QM/QM_path_integral_1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">경로적분 I</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/QM/QM_N_DoF_system.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">N 자유도 시스템</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/QM/QM_symmetry.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">대칭</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/QM/QM_angular_momentum.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">회전과 각운동량</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../src/AUX/AUX.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">III. 기타 이런저런 이야기들</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="토글 섹션">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/AUX/entanglement.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">양자 얽힘</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/AUX/quantum_state.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">양자 상태</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">목차</h2>
+   
+  <ul>
+  <li><a href="#곱공간과-얽힘-상태" id="toc-곱공간과-얽힘-상태" class="nav-link active" data-scroll-target="#곱공간과-얽힘-상태"><span class="header-section-number">13.1</span> 곱공간과 얽힘 상태</a>
+  <ul class="collapse">
+  <li><a href="#sec-part1_tensor_product" id="toc-sec-part1_tensor_product" class="nav-link" data-scroll-target="#sec-part1_tensor_product"><span class="header-section-number">13.1.1</span> 텐서곱</a></li>
+  <li><a href="#sec-part1_tensor_product_and_product_state" id="toc-sec-part1_tensor_product_and_product_state" class="nav-link" data-scroll-target="#sec-part1_tensor_product_and_product_state"><span class="header-section-number">13.1.2</span> 텐서곱과 곱상태</a></li>
+  <li><a href="#sec-part1_classical_correlation" id="toc-sec-part1_classical_correlation" class="nav-link" data-scroll-target="#sec-part1_classical_correlation"><span class="header-section-number">13.1.3</span> 고전적인 상관관계</a></li>
+  <li><a href="#sec-part1_product_space" id="toc-sec-part1_product_space" class="nav-link" data-scroll-target="#sec-part1_product_space"><span class="header-section-number">13.1.4</span> 양자계의 결합</a></li>
+  <li><a href="#sec-part1_entangled_state" id="toc-sec-part1_entangled_state" class="nav-link" data-scroll-target="#sec-part1_entangled_state"><span class="header-section-number">13.1.5</span> 얽힘 상태</a></li>
+  <li><a href="#sec-part1_entangled_observables" id="toc-sec-part1_entangled_observables" class="nav-link" data-scroll-target="#sec-part1_entangled_observables"><span class="header-section-number">13.1.6</span> 복합 관측량</a></li>
+  </ul></li>
+  <li><a href="#약간은-수학적인-준비" id="toc-약간은-수학적인-준비" class="nav-link" data-scroll-target="#약간은-수학적인-준비"><span class="header-section-number">13.2</span> 약간은 수학적인 준비</a>
+  <ul class="collapse">
+  <li><a href="#sec-part1_vector_and_tensor_in_prodct_space" id="toc-sec-part1_vector_and_tensor_in_prodct_space" class="nav-link" data-scroll-target="#sec-part1_vector_and_tensor_in_prodct_space"><span class="header-section-number">13.2.1</span> 곱공간에서의 벡터와 행렬</a></li>
+  <li><a href="#sec-part1_projection" id="toc-sec-part1_projection" class="nav-link" data-scroll-target="#sec-part1_projection"><span class="header-section-number">13.2.2</span> Projection</a></li>
+  <li><a href="#sec-part1_density_matrix" id="toc-sec-part1_density_matrix" class="nav-link" data-scroll-target="#sec-part1_density_matrix"><span class="header-section-number">13.2.3</span> 밀도 행렬</a></li>
+  <li><a href="#sec-part1_entanglement_and_density_matrix" id="toc-sec-part1_entanglement_and_density_matrix" class="nav-link" data-scroll-target="#sec-part1_entanglement_and_density_matrix"><span class="header-section-number">13.2.4</span> 얽힘과 밀도 행렬</a></li>
+  </ul></li>
+  <li><a href="#얽힘과-상관-관계" id="toc-얽힘과-상관-관계" class="nav-link" data-scroll-target="#얽힘과-상관-관계"><span class="header-section-number">13.3</span> 얽힘과 상관 관계</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block page-columns page-full" id="quarto-document-content">
+
+
+
+
+
+<section id="곱공간과-얽힘-상태" class="level2 page-columns page-full" data-number="13.1">
+<h2 data-number="13.1" class="anchored" data-anchor-id="곱공간과-얽힘-상태"><span class="header-section-number">13.1</span> 곱공간과 얽힘 상태</h2>
+<section id="sec-part1_tensor_product" class="level3" data-number="13.1.1">
+<h3 data-number="13.1.1" class="anchored" data-anchor-id="sec-part1_tensor_product"><span class="header-section-number">13.1.1</span> 텐서곱</h3>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="def-part1_tensor_product_of_vector_space" class="theorem definition">
+<p><span class="theorem-title"><strong>정의 13.1 (벡터공간의 텐서곱)</strong></span> 두 힐베르트 공간 <span class="math inline">\(\mathscr{H}_A\)</span> 과 <span class="math inline">\(\mathscr{H}_B\)</span> 를 생각하자. <span class="math inline">\(\mathscr{H}_A\)</span> 의 기저 <span class="math inline">\(\{|a_i\rangle_A : i\}\)</span> 와 <span class="math inline">\(\mathscr{H}_B\)</span> 의 기저 <span class="math inline">\(\{|b_j\rangle:j\}\)</span> 에 대해 <span class="math inline">\(\mathscr{H}=\text{span}(\{|a_i\rangle_A \otimes |b_j\rangle_B:i,\,j\})\)</span> 를 아래의 세 조건과 함께 정의 할 수 있다.</p>
+<p>  (<span class="math inline">\(1\)</span>) <span class="math inline">\(c\in \mathbb{C}\)</span> 에 대해 <span class="math inline">\(c(|a\rangle_A \otimes |b\rangle_B) = (c|a\rangle_A)\otimes |b\rangle_B = |a\rangle_A \otimes (|b\rangle_B)\)</span>.</p>
+<p>  (<span class="math inline">\(2\)</span>) <span class="math inline">\((|a\rangle_A + |a'\rangle_A) \otimes |b\rangle_B = |a\rangle_A\otimes |b\rangle_B + |a'\rangle_A \otimes |b\rangle_B\)</span>.</p>
+<p>  (<span class="math inline">\(3\)</span>) <span class="math inline">\(|a\rangle_A \otimes (|b\rangle_B + |b'\rangle_B)= |a\rangle_A \otimes |b\rangle_B + |a\rangle_a \otimes |b'\rangle_B\)</span>.</p>
+<p>이 때 <span class="math inline">\(\mathscr{H}\)</span> 역시 힐베르트 공간이며 <span class="math inline">\(\mathscr{H}_A\)</span> 와 <span class="math inline">\(\mathscr{H}_B\)</span> 의 <strong>텐서곱(tensor product)</strong> 라고 하고 <span class="math inline">\(\mathscr{H}_A \otimes \mathscr{H}_B\)</span> 로 표기한다.</p>
+<p>텐서곱에서의 내적은 각각의 공간에서의 내적의 곱으로 정의된다. 즉,</p>
+<p><span class="math display">\[
+( \langle a'|_A \otimes \langle b'|_B)(|a\rangle_A \otimes |b\rangle_B ) := \langle a'|a\rangle_A \langle b'|b\rangle_B
+\]</span></p>
+<p>이다.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<p>여기서 주의해야 할 것은 일반적으로 선형대수학에서 사용하는 <strong>곱공간(product space)</strong> (<span class="math inline">\(\mathscr{H}_A \times \mathscr{H}_B\)</span>) 과 tensor product (<span class="math inline">\(\mathscr{H}_A \otimes \mathscr{H}_B\)</span>) 는 다르다는 것이다. 곱공간에서 <span class="math inline">\((3|a\rangle_A,\, |b\rangle_B) \ne (|a\rangle_A,\, 3|b\rangle_B)\)</span> 이지만 텐서곱에서는 <span class="math inline">\(((3|a\rangle_A) \otimes |b\rangle_B) = |a\rangle_A \otimes (3|b\rangle_B)\)</span> 이다.</p>
+</section>
+<section id="sec-part1_tensor_product_and_product_state" class="level3" data-number="13.1.2">
+<h3 data-number="13.1.2" class="anchored" data-anchor-id="sec-part1_tensor_product_and_product_state"><span class="header-section-number">13.1.2</span> 텐서곱과 곱상태</h3>
+<p><span class="math inline">\(A\)</span> 계(System <span class="math inline">\(A\)</span>), <span class="math inline">\(B\)</span> 계(System <span class="math inline">\(B\)</span>) 라고 하지 않고 앨리스 계(Alice system), 밥 계(Bob system) 라고 하자. 각각의 상태공간을 앨리스 공간, 밥 공간이라고 하고 각각 <span class="math inline">\(S_A\)</span>, <span class="math inline">\(S_B\)</span> 라고 표기하자. 이 두 벡터 공간의 벡터는 그 상태로는 더할 수 없다. <span class="math inline">\(|\phi\rangle_A\in S_A\)</span> 와 <span class="math inline">\(|\psi\rangle_B \in S_B\)</span> 에 대해</p>
+<p><span class="math display">\[
+|\phi \rangle_A + |\psi\rangle_B
+\]</span></p>
+<p>는 어떠한 의미도 없다. <span class="math inline">\(S_A\)</span> 와 <span class="math inline">\(S_B\)</span> 는 독자적인 힐베르트 공간이며 따라서 둘을 동시에 기술하는 상태공간 <span class="math inline">\(S_{AB}\)</span> 은 텐서곱 <span class="math inline">\(S_A \otimes S_B\)</span> 으로 표현 할 수 있다. <span class="math inline">\(S_A\)</span> 의 기저벡터 <span class="math inline">\(\{ |a\rangle_A\}\)</span> 과 <span class="math inline">\(S_B\)</span> 의 기저벡터 <span class="math inline">\(\{ |b\rangle_B \}\)</span> 에 대해 <span class="math inline">\(\{ |a\rangle_A \otimes | b\rangle_B \}\)</span> 는 <span class="math inline">\(S_{AB}\)</span> 의 기저벡터가 된다. 앞으로 <span class="math inline">\(|a\rangle_A \otimes |b\rangle_B\)</span> 를 <span class="math inline">\(|ab\rangle\)</span> 로 쓰기로 하자. 앨리스 공간의 연산자 <span class="math inline">\(\hat{\sigma}_A\)</span> 와 밥 공간의 연산자 <span class="math inline">\(\hat{\sigma}_B\)</span> 에 대해 <span class="math inline">\(\hat{\sigma}_A |a\rangle_A = a|a\rangle_A\)</span>, <span class="math inline">\(\hat{\sigma}_B |b\rangle_B=b|b\rangle_B\)</span> 라고 하면 <span class="math inline">\(\hat{\sigma}_A\otimes \hat{I}_B\)</span> 는 앨리스 공간에서의 연산자 <span class="math inline">\(\hat{\sigma}_A\)</span> 를 <span class="math inline">\(S_{AB}\)</span> 로 확장한 것으로</p>
+<p><span class="math display">\[
+\left(\hat{\sigma}_A \otimes \hat{I}_B\right)|ab\rangle = \left(\hat{\sigma}_A|a\rangle_A\right) \otimes \left(\hat{I}_B|b\rangle_B\right) = a|a\rangle_A \otimes |b\rangle_B = a|ab\rangle
+\]</span></p>
+<p>이다. 마찬가지로 <span class="math inline">\(\hat{I}_A \otimes \hat{\sigma}_B |ab\rangle = b|ab\rangle\)</span> 이다. 이제 <span class="math inline">\(S_A\)</span> 와 <span class="math inline">\(S_B\)</span> 의 임의의 벡터에 대해 생각해보자. <span class="math inline">\(|\phi\rangle_A = \sum_i \alpha_i |a_i\rangle_A\)</span> 이고 <span class="math inline">\(|\psi\rangle_B = \sum_j \beta_j |b_j\rangle_B\)</span> 일 때</p>
+<p><span class="math display">\[
+|\phi\rangle_A \otimes |\psi \rangle_B = \sum_{i, j}\alpha_i \beta_j (|a_i\rangle_A \otimes |b_j )\rangle_B = \sum_{i, j} \alpha_i \beta_j |a_i b_j\rangle
+\]</span></p>
+<p>이다. 이 때 정규화 조건에 따라 <span class="math inline">\(\sum_i |\alpha_i|^2 = \sum_j |\beta_j|^2 = 1\)</span> 이어야 하며,</p>
+<p><span class="math display">\[
+\sum_{i, j} |\alpha_i \beta_j|^2 = \sum_i |\alpha_i|^2\left(\sum_j |\beta_j|^2\right) = \sum_i |\alpha_i|^2 = 1
+\]</span></p>
+<p>이다. 즉 부분공간의 정규화된 상태들의 곱상태는 정규화되어 있다. 그렇다면 모든 <span class="math inline">\(S_{AB}\)</span> 의 상태벡터 즉 <span class="math inline">\(\{|a_ib_j\rangle\}\)</span> 의 선형결합으로 표현되는 상태벡터들은 <span class="math inline">\(S_A\)</span> 와 <span class="math inline">\(S_B\)</span> 의 곱상태로 표현 될 수 있을까? 답은 그렇지 않다이다. 여기에 대해서는 <a href="#sec-part1_entangled_state" class="quarto-xref"><span> 13.1.5</span></a> 부터 계속 알아보게 될 것이다.</p>
+<p><br></p>
+</section>
+<section id="sec-part1_classical_correlation" class="level3 page-columns page-full" data-number="13.1.3">
+<h3 data-number="13.1.3" class="anchored" data-anchor-id="sec-part1_classical_correlation"><span class="header-section-number">13.1.3</span> 고전적인 상관관계</h3>
+<p>앨리스와 밥이 각각 <span class="math inline">\(\sigma=+1\)</span> 과 <span class="math inline">\(\sigma = -1\)</span> 을 무작위적으로 나누어 가진다고 하자. 그리고 나누어 가지자 앨리스는 4광넌 떨어진 알파센타우리로 떠나고 밥은 지구에 남아 있는다고 생각하자. 4광년 떨어진 곳에서 자신의 <span class="math inline">\(\sigma\)</span> 를 확인한 앨리스는 확인하자 마자 밥이 가진 <span class="math inline">\(\sigma\)</span> 가 얼마인지 알 수 있다. 앨리스의 <span class="math inline">\(\sigma\)</span> 값을 <span class="math inline">\(\sigma_A\)</span>, 밥의 <span class="math inline">\(\sigma\)</span> 값을 <span class="math inline">\(\sigma_B\)</span> 라고 하면 우리는 다음을 알 수 있다.</p>
+<p><span class="math display">\[
+\langle \sigma_A\rangle = 0,\qquad \langle \sigma_B \rangle = 0,\qquad \langle \sigma_A \sigma_B \rangle = -1.
+\]</span></p>
+<p>우리는 이로부터</p>
+<p><span class="math display">\[
+0=\langle \sigma_A\rangle \langle \sigma_B \rangle  \ne \langle \sigma_A\sigma_B \rangle
+\]</span></p>
+<p>임을 안다. 통계적으로</p>
+<p><span id="eq-correlation_in_qm"><span class="math display">\[
+\langle \sigma_A \sigma_B \rangle - \langle \sigma_A \rangle \langle \sigma_B \rangle
+\tag{13.1}\]</span></span></p>
+<div class="page-columns page-full"><p>을 두 변수 <span class="math inline">\(\sigma_A,\,\sigma_B\)</span> 사이의 상관관계(correlation) 이라고 한다<span class="math inline">\(^*\)</span>.  이 값이 <span class="math inline">\(0\)</span> 이 아닐 때 두 값 <span class="math inline">\(\sigma_A\)</span>, <span class="math inline">\(\sigma_B\)</span> 사이에 <strong>상관관계가 있다 (be correlated)</strong> 라고 한다.(두 값이 <span class="math inline">\(0\)</span> 이면 상관관계가 없는 것이 아니다.)</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="math inline">\(^*\)</span> 정확히 말하면 <a href="#eq-correlation_in_qm" class="quarto-xref">식&nbsp;<span>13.1</span></a> 은 통계학에서의 공분산(covariance) 이다.</span></div></div>
+<p>통계학적으로 정확한 의미는 두 독립변수 <span class="math inline">\(a,\,b\)</span> 와 각각의 확률 <span class="math inline">\(P_A(a),\, P_B(b)\)</span> 에 대해</p>
+<p><span class="math display">\[
+P(a,\,b)= P_A(a)P_B(b)
+\]</span></p>
+<p>이면 두 변수 <span class="math inline">\(a,\,b\)</span> 사이에 상관관게가 없다고 한다.</p>
+<p><br></p>
+</section>
+<section id="sec-part1_product_space" class="level3" data-number="13.1.4">
+<h3 data-number="13.1.4" class="anchored" data-anchor-id="sec-part1_product_space"><span class="header-section-number">13.1.4</span> 양자계의 결합</h3>
+<p>이제 양자의 세계로 들어와보자. 앨리스와 밥이 각각 자신의 실험장비를 가지고 완전히 독립적으로 상태를 준비했으며 각각 <span class="math inline">\(\sigma = \pm 1\)</span> 의 값을 가질 수 있다고 하자. 앨리스의 스핀은 <span class="math inline">\(\hat{\sigma}_A\)</span>, 밥의 스핀은 <span class="math inline">\(\hat{\sigma}_B\)</span> 로 측정한다. 이 둘을 동시에 기술하는 상태를 곱상태를 <span class="math inline">\(|\sigma_A\rangle_A \otimes |\sigma_B\rangle_B = |\sigma_A \sigma_B\rangle\)</span> 로 놓으면</p>
+<p><span class="math display">\[
+|uu\rangle,\, |ud\rangle,\,|du\rangle,\, |dd\rangle
+\]</span></p>
+<p>의 상태가 가능하다. 앨리스의 상태 <span class="math inline">\(|\Phi_A\rangle_A\)</span> 는 <span class="math inline">\(|u\rangle_A\)</span> 와 <span class="math inline">\(|d\rangle_A\)</span> 의 중첩으로 표현 가능하며, 마찬가지로 밥의 상태 <span class="math inline">\(|\Phi_B\rangle_B\)</span> 는 <span class="math inline">\(|u\rangle_B\)</span> 와 <span class="math inline">\(|d\rangle_B\)</span> 의 중첩으로 표현 가능하다. 이 상태가 정규화 되었다면 아래와 같이 쓸 수 있다.</p>
+<p><span class="math display">\[
+\begin{aligned}
+|\Phi_A\rangle_A = a_u |u\rangle_A + a_d|d\rangle_A, &amp;\qquad |\Phi_B\rangle_B = b_u |u\rangle_B + b_d|d\rangle_B,\\[0.3em]
+|a_u|^2+|a_d|^2 = 1, &amp;\qquad |b_u|^2 + |b_d|^2 = 1.
+\end{aligned}
+\]</span></p>
+<p>이제 두 상태의 곱상태 <span class="math inline">\(|\Phi\rangle\)</span> 은 다음을 만족한다.</p>
+<p><span class="math display">\[
+|\Phi\rangle = |\Phi_A\rangle_A \otimes |\Phi_B \rangle_B = a_ub_u|uu\rangle + a_ub_d|ud\rangle + a_db_u|du\rangle + a_db_d |dd\rangle.
+\]</span></p>
+<p>다시한번 강조하지만 곱상태는 곱해지는 상태들이 모두 독립적으로 행동한다는 것이다.</p>
+<p>이제 곱상태에는 몇개의 변수가 필요한지 알아보자. 앨리스 계를 기술하는데는 두 복소수 <span class="math inline">\(a_u,\,a_d\)</span> 가 필요하며 이는 4개의 실변수를 정해야 한다는 뜻이다. 그러나 정규화 조건 으로 하나, 위상 동등성 조건으로 하나, 이렇게 해서 실제로 2개의 자유도를 가진 계이다. 밥의 계도 마찬가지로 2개의 자유도를 가진 계이다. 따라서 앨리스계와 밥계를 별도로 정의하는 시스템은 4개의 자유도를 가진 시스템이다. 이제 곱상태의 경우 4개의 복소 변수 <span class="math inline">\(a_u,\,a_d,\,b_u,\,b_d\)</span> 가 필요한데 이는 8개의 실변수를 정해야 한다는 의미이다. 앨리스 계와 밥 계에 각각 정규화 조건과 위상 조건에 의해 제약되기 때문에 4개의 자유도를 가진 시스템이 된다. 즉 별도로 기술하든 곱상태로 기술하든 그 계는 4개의 자유도를 가진 수학적으로 동등한 벡터공간이다.</p>
+<p><br></p>
+</section>
+<section id="sec-part1_entangled_state" class="level3" data-number="13.1.5">
+<h3 data-number="13.1.5" class="anchored" data-anchor-id="sec-part1_entangled_state"><span class="header-section-number">13.1.5</span> 얽힘 상태</h3>
+<p><span class="math inline">\(|uu\rangle,\, |ud\rangle,\, |du\rangle,\,|dd\rangle\)</span> 의 기저를 갖는 복합공간에서의 일반적인 벡터는 다음과 같이 표현된다.</p>
+<p><span class="math display">\[
+|\mathscr{\Psi}\rangle = c_{uu}|uu\rangle + c_{ud}|ud\rangle + c_{du}|du\rangle + c_{dd}|dd\rangle
+\]</span></p>
+<p>그러나 우리는 단 하나의 정규화 조건(<span class="math inline">\(\sum_{i, j = u}^d |c_{ij}|^2=1\)</span>) 과 단 하나의 위상 조건만을 가지고 있다. 즉 이 상태는 6개의 자유도를 가진 상태이다. 우리는 <a href="#sec-part1_product_space" class="quarto-xref"><span> 13.1.4</span></a> 에서의 곱상태가 복합상태에 포함된다는 것을 보일 수 있다. 뒤에 나오겠지만 우리는 이 복합 공간의 기저를 다음과 같이 분류 할 수 있다.</p>
+<p><span class="math display">\[
+\begin{aligned}
+|S\rangle &amp; = \dfrac{1}{\sqrt{2}}\left(|ud\rangle -|du\rangle\right),\\
+|T_1\rangle &amp;= \dfrac{1}{\sqrt{2}}\left(|ud\rangle + |du\rangle\right),\\
+|T_2 \rangle &amp;= \dfrac{1}{\sqrt{2}}\left(|uu\rangle + |dd\rangle\right),\\
+|T_3 \rangle &amp;= \dfrac{1}{\sqrt{2}}\left(|uu\rangle - |dd\rangle\right).
+\end{aligned}
+\]</span></p>
+<div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+<div id="exr-p1-entangled_1" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 13.1</strong></span> <span class="math inline">\(|S\rangle\)</span> 이 곱상태로 표현될 수 없음을 보여라.</p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(|S\rangle = a_ub_u|uu\rangle + a_ub_d |ud\rangle + a_db_u|du\rangle + a_db_d|dd\rangle\)</span> 이라면 <span class="math inline">\(a_ub_u= a_db_d=0\)</span>, <span class="math inline">\(a_ub_d = - a_db_u=1/\sqrt{2}\)</span> 이어야 한데 이는 불가능하다.</p>
+</div>
+</div>
+<p><br></p>
+<p>앞서 말했듯이 곱상태는 복합상태에 완전히 포함된다. 그러나 복합상태는 곱상태에 포함되지 않을 수 있다. <a href="#exr-p1-entangled_1" class="quarto-xref">연습문제&nbsp;<span>13.1</span></a> 에서 보였듯이 <span class="math inline">\(|S\rangle\)</span> 은 곱상태로 표현될 수 없는데 실제로 <span class="math inline">\(|S\rangle\)</span> 은 최대 얽힘 상태라고 한다. <span class="math inline">\(|S\rangle\)</span> 이 곱상태로 표현 될 수 없다는 것은 무엇을 의미하는가?</p>
+<p><br></p>
+<p>우리는 <a href="quantum_state.html#eq-part1_pauli_matrix_z_state" class="quarto-xref">식&nbsp;<span>14.8</span></a> 에서 각 스핀 연산자에 대해 <span class="math inline">\(\hat{\sigma}_z\)</span> 의 고유상테가 어떻게 되는지 보았다. 그렇다면 복합 상태에 대해서는 어떻게 될까? <span class="math inline">\(2 \times 2\)</span> 항등연산자 <span class="math inline">\(\hat{I}\)</span> 에 대해 <span class="math inline">\(\hat{\sigma}_0=\hat{I}\)</span> 라고 하자. 그리고 <span class="math inline">\(i=0,\,x,\,y,\,z\)</span> 에 대해 <span class="math inline">\(\hat{\sigma}_{i}\)</span> 를 앨리스의 상태에 대한 연산자, <span class="math inline">\(\hat{\tau}_i\)</span> 를 밥의 상태에 대한 연산자라고 하자. 그렇다면,</p>
+<p><span class="math display">\[
+\hat{\sigma}_i \hat{\tau}_j |xy\rangle = (\hat{\sigma}_i |x\rangle_A) \otimes (\hat{\tau}_j |y\rangle_B)
+\]</span></p>
+<p>이다. 즉 앨리스에 대한 연산자는 복합상태에서 앨리스에 관련된 스핀에만, 밥에 대한 연산자는 복합상태에서 밥에 관련된 스핀에만 작용한다. 이것은 벡터공간에서의 곱공간에 대한 기본적인 연산자의 그것과 동일하다. 즉 <span class="math inline">\(\hat{\sigma}_i \hat{\tau}_j := \hat{\sigma}_i \otimes \hat{\tau}_j\)</span> 이다.</p>
+<p>우리는 단일 스핀에 대한 기대값 이 <span class="math inline">\(\hat{\sigma}_z\)</span> 의 고유값을 기저로 했을 때</p>
+<p><span class="math display">\[
+\langle \hat{\sigma}_z \rangle = 1,\, \langle  \hat{\sigma}_x \rangle = \langle \hat{\sigma}_y\rangle = 0
+\]</span></p>
+<p>임을 안다. <span class="math inline">\(\hat{\Sigma}\)</span> 연산자를 <span class="math inline">\(\hat{\Sigma}=\hat{\sigma}_x^2 + \hat{\sigma}_y^2 + \hat{\sigma}_z^2\)</span> 로 정의해 보자. 파울리 행렬로부터 우리는 <span class="math inline">\(\hat{\Sigma}=3\hat{I}\)</span> 임을 안다. 이 연산자가 항등행렬로 표현된다는 것은 어떤 상태에 대해서도 <span class="math inline">\(\hat{\Sigma}\)</span> 의 기대값이 <span class="math inline">\(3\)</span> 이라는 의미이다.</p>
+<p><span class="math display">\[
+\langle \hat{\Sigma}\rangle = 3
+\]</span></p>
+<p><span class="math inline">\(3\)</span> 이라는 값이 나오는 것은 스핀이 <span class="math inline">\(1/2\)</span> 의 양자수를 갖기 때문에 나오는 값이며, 자세한 것은 뒤에 다루기로 한다. 중요한 것은 모든 스핀이 <span class="math inline">\(0\)</span> 이 되는 상태는 존재하지 않는다는 것이다.</p>
+<p>이제 <span class="math inline">\(|S\rangle\)</span> 에 대해 <span class="math inline">\(\sigma_x,\,\sigma_y,\,\sigma_z,\, \tau_x,\,\tau_y,\,\tau_z\)</span> 의 기대값을 구해보자. <a href="quantum_state.html#eq-part1_pauli_matrix_z_state" class="quarto-xref">식&nbsp;<span>14.8</span></a> 의 결과를 이용 할 수 있다.</p>
+<p><span class="math display">\[
+\begin{aligned}
+\langle S| \hat{\sigma}_z |S\rangle &amp;= \langle S|  \hat{\sigma}_x |S \rangle = \langle  S|\hat{\sigma}_y |S\rangle = 0, \\
+\langle S|\hat{\tau}_z |S\rangle &amp;= \langle S| \hat{\tau}_x |S \rangle = \langle S| \hat{\tau}_y |S \rangle = 0, \\
+\end{aligned}
+\]</span></p>
+<p>즉 <span class="math inline">\(|S\rangle\)</span> 은 단순하나 곱상태와는 아주 많이 다르다. <span class="math inline">\(\langle S|\hat{\sigma}_i |S\rangle = \langle S|\hat{\tau}_i|S\rangle = 0\, (i=x,\,y,\,z)\)</span> 이 의미하는 것은 <span class="math inline">\(|S\rangle\)</span> 상태에 대해 두 입자의 어떤 스핀 방향에 대해서도 <span class="math inline">\(+1\)</span> 이 나올 확률과 <span class="math inline">\(-1\)</span> 이 나올 확률이 동일하다는 것이다. 즉 <span class="math inline">\(|S\rangle\)</span> 상태에 대해서는 우리는 전혀 정보를 얻을 수 없다. 숨은 변수 이론을 긍정하지 않는다면 우리가 말할 수 있는것은 우리는 원래 알 수 없다는 것 뿐이다.</p>
+<p><br></p>
+</section>
+<section id="sec-part1_entangled_observables" class="level3" data-number="13.1.6">
+<h3 data-number="13.1.6" class="anchored" data-anchor-id="sec-part1_entangled_observables"><span class="header-section-number">13.1.6</span> 복합 관측량</h3>
+<p>앨리스(Alice)-밥(Bob) 이외에 챨리(Charlie)를 등장시킨다. 챨리가 <span class="math inline">\(|S\rangle\)</span> 상태를 준비한다고 하자. 찰리는 <span class="math inline">\(|S\rangle\)</span> 의 스핀을 보지 않고 한 스핀은 앨리스에게, 한 스핀은 밥에게 준다. 이 지점에서 우리는 다음의 사실을 안다.</p>
+<ol type="1">
+<li><p>앨리스의 스핀 <span class="math inline">\(\hat{\sigma}_i\)</span> 와 밥의 스핀 <span class="math inline">\(\hat{\tau}_j\)</span> 는 교환가능하다. 즉 동시에 측정 가능하며 서로 간섭하지 않는다. 심지어 <span class="math inline">\([\hat{\sigma}_z,\, \hat{\tau}_x] = \hat{0}\)</span> 이다.</p></li>
+<li><p><span class="math inline">\(\hat{\tau}_z\hat{\sigma}_z|S\rangle = -|S\rangle\)</span> 이다.</p></li>
+<li><p><span class="math inline">\(\hat{\tau}_x\hat{\sigma}_x |S\rangle = -|S\rangle\)</span> 이다.</p></li>
+<li><p><span class="math inline">\(\hat{\tau}_y\hat{\sigma}_y |S\rangle = -|S\rangle\)</span> 이다.</p></li>
+</ol>
+<p><span class="math inline">\(|S\rangle = \frac{1}{\sqrt{2}} (|ud\rangle  - |du\rangle)\)</span> 이므로 2. 는 예상 할 수 있었다. 그러나 3 과 4의 결론은 좀 놀랍지 않은가? 즉 앨리스와 밥이 어떤 방향으로든 같은 방향의 스핀을 측정하면 두 스핀은 항상 반대 방향을 향한다.</p>
+<p><br></p>
+<div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+<div id="exm-p1-entangled_2" class="theorem example">
+<p><span class="theorem-title"><strong>예제 13.1</strong></span> 여기까지 왔는데 <span class="math inline">\(|T_1\rangle,\, |T_2\rangle,\, |T_3\rangle\)</span> 에 대해 같은 계산을 꼭 해야 할 것 같지 않은가?</p>
+<p><span class="math display">\[
+\begin{aligned}
+\hat{\tau}_z \hat{\sigma}_z |T_1\rangle &amp;= \dfrac{1}{\sqrt{2}}\hat{\tau}_z (|ud\rangle - |du\rangle) = \dfrac{1}{\sqrt{2}}( -|ud\rangle - |du\rangle) = - |T_1\rangle, \\
+\hat{\tau}_x \hat{\sigma}_x |T_1\rangle &amp;= \dfrac{1}{\sqrt{2}} \hat{\tau}_z(|dd\rangle +|uu\rangle)= \dfrac{1}{\sqrt{2}} (|du\rangle + |ud\rangle) = |T_1\rangle, \\
+\hat{\tau}_y \hat{\sigma}_y |T_1\rangle &amp;= \dfrac{1}{\sqrt{2}}\hat{\tau}_y (-i|dd\rangle + i|uu\rangle) = \dfrac{1}{\sqrt{2}}(|du\rangle + |du\rangle) = |T_1\rangle, , \\[1em]
+\hat{\tau}_z \hat{\sigma}_z |T_2\rangle &amp;= \dfrac{1}{\sqrt{2}}\hat{\tau}_z (|uu\rangle - |dd\rangle) = \dfrac{1}{\sqrt{2}}( |uu\rangle + |dd\rangle) =  |T_2\rangle, \\
+\hat{\tau}_x \hat{\sigma}_x |T_2\rangle &amp;= \dfrac{1}{\sqrt{2}} \hat{\tau}_z(|du\rangle +|ud\rangle)= \dfrac{1}{\sqrt{2}} (|dd\rangle + |uu\rangle) = |T_2\rangle, \\
+\hat{\tau}_y \hat{\sigma}_y |T_2\rangle &amp;= \dfrac{1}{\sqrt{2}}\hat{\tau}_y (-i|du\rangle + i|ud\rangle) = \dfrac{1}{\sqrt{2}}(-|dd\rangle - |uu\rangle) = -|T_2\rangle, \\[1em]
+\hat{\tau}_z \hat{\sigma}_z |T_3\rangle &amp;= \dfrac{1}{\sqrt{2}}\hat{\tau}_z (|uu\rangle + |dd\rangle) = \dfrac{1}{\sqrt{2}}( |uu\rangle - |dd\rangle) =  |T_3\rangle, \\
+\hat{\tau}_x \hat{\sigma}_x |T_3\rangle &amp;= \dfrac{1}{\sqrt{2}} \hat{\tau}_z(|du\rangle -|ud\rangle)= \dfrac{1}{\sqrt{2}} (|dd\rangle - |uu\rangle) = -|T_3\rangle, \\
+\hat{\tau}_y \hat{\sigma}_y |T_2\rangle &amp;= \dfrac{1}{\sqrt{2}}\hat{\tau}_y (-i|du\rangle - i|ud\rangle) = \dfrac{1}{\sqrt{2}}(-|dd\rangle + |uu\rangle) = |T_3\rangle,
+\end{aligned}
+\]</span></p>
+</div>
+</div>
+<p><br></p>
+<p>자 그렇다면 스핀의 서로 다른 방향을 측정한다면 어떻게 될 것인가? <span class="math inline">\(|S\rangle\)</span> 에 대한 <span class="math inline">\(\hat{\sigma}_x \hat{\tau}_y\)</span> 를 계산해보자.</p>
+<p><span class="math display">\[
+\begin{aligned}
+\hat{\sigma}_x \hat{\tau}_y |S\rangle &amp;= i|T_1\rangle, \\
+\end{aligned}
+\]</span></p>
+<p>따라서 <span class="math inline">\(\langle S|\hat{\sigma}_x \hat{\tau}_y |S\rangle=0\)</span> 이며 상관관계의 정의에 따라</p>
+<p><span class="math display">\[
+\langle S|\hat{\sigma}_x \hat{\tau}_y|S\rangle - \langle S|\hat{\sigma}_x|S\rangle \langle S|\hat{\tau}_y|S\rangle = 0
+\]</span></p>
+<p>이므로 <span class="math inline">\(\hat{\sigma}_x\)</span> 와 <span class="math inline">\(\hat{\tau}_y\)</span> 가 상관관계가 있다고 볼 근거는 없다. (위의 값이 <span class="math inline">\(0\)</span> 이 아니라면 상관관계가 있지만 <span class="math inline">\(0\)</span> 이라고 해서 상관관계가 없다고 볼 수 없다는 것을 다시 한번 기억하라.)</p>
+<p><br></p>
+<p>이제 <span class="math inline">\(\hat{J} = \hat{\boldsymbol{\sigma}}\cdot \hat{\boldsymbol{\tau}}= \hat{\sigma}_x \hat{\tau}_x + \hat{\sigma}_y \hat{\tau}_y + \hat{\sigma}_z \hat{\tau}_z\)</span> 로 정의된 연산자 <span class="math inline">\(\hat{J}\)</span> 를 생각하자. 일단 이 연산자에 대해 <span class="math inline">\(|S\rangle,\, |T_1\rangle,\, |T_2\rangle,\,|T_3\rangle\)</span> 의 값을 계산해보자.</p>
+<p><span class="math display">\[
+\begin{aligned}
+\hat{J}|S\rangle &amp;= -3|S\rangle, \\
+\hat{J}|T_1\rangle &amp;= |T_1\rangle, \\
+\hat{J}|T_2\rangle &amp;= |T_2\rangle, \\
+\hat{J}|T_3\rangle &amp;= |T_3\rangle.
+\end{aligned}
+\]</span></p>
+<p>자 <span class="math inline">\(|S\rangle\)</span> 과 <span class="math inline">\(|T_1\rangle,\,|T_2\rangle,\,|T_3\rangle\)</span> 은 모두 <span class="math inline">\(\hat{J}\)</span> 의 고유상태이며 <span class="math inline">\(|S\rangle\)</span> 은 <span class="math inline">\(-3\)</span> 을 나머지 세 상태는 <span class="math inline">\(1\)</span> 을 고유값으로 하는 <span class="math inline">\(\hat{J}\)</span> 의 고유벡터이다. 실제로 <span class="math inline">\(\hat{J}\)</span> 는 두 스핀의 에너지에 대한 해밀토니안과 관련된 연산자이며, <span class="math inline">\(|S\rangle\)</span> 의 <span class="math inline">\(S\)</span> 는 단일 상태(singlet) 에서 <span class="math inline">\(T_1\)</span> 등의 <span class="math inline">\(T\)</span> 는 삼중상태(triplet) 에서 따온 문자이다.</p>
+<p><br></p>
+</section>
+</section>
+<section id="약간은-수학적인-준비" class="level2" data-number="13.2">
+<h2 data-number="13.2" class="anchored" data-anchor-id="약간은-수학적인-준비"><span class="header-section-number">13.2</span> 약간은 수학적인 준비</h2>
+<section id="sec-part1_vector_and_tensor_in_prodct_space" class="level3" data-number="13.2.1">
+<h3 data-number="13.2.1" class="anchored" data-anchor-id="sec-part1_vector_and_tensor_in_prodct_space"><span class="header-section-number">13.2.1</span> 곱공간에서의 벡터와 행렬</h3>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+연산자의 표기
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>지금까지 <span class="math inline">\(\hat{\sigma}\)</span> 와 같이 <span class="math inline">\(\hat{}\)</span> 표기를 썼지만 지금부터는 특별히 구별이 필요한 상황이 아니면 <span class="math inline">\(\hat{\,}\)</span> 표기를 없에고 연산자도 <span class="math inline">\(\sigma\)</span> 와 같이 표기하기로 한다.</p>
+</div>
+</div>
+<p>지금까지 우리는 스핀이 <span class="math inline">\(\pm 1\)</span> 값을 갖는 두 입자의 상태를 각각 <span class="math inline">\(|a\rangle_A\otimes |b\rangle_B = |ab\rangle\)</span> 형태로 표현하였다. 여기서 <span class="math inline">\(a,\,b\)</span> 는 각각 <span class="math inline">\(u\)</span> 혹은 <span class="math inline">\(d\)</span> 값을 가지기 때문에 총 4개의 기저 벡터가 존재한다. 이제 <span class="math inline">\(\{|uu\rangle,\,|ud\rangle,\, |du\rangle,\, |dd\rangle\)</span> 의 기저에서 상태를 다음과 같이 표기하기로 하자.</p>
+<p><span class="math display">\[
+|\phi\rangle = x_1 |uu\rangle + x_2 |ud\rangle + x_3|du\rangle + x_4|dd\rangle
+\]</span></p>
+<p>그렇다면 <span class="math inline">\(|\phi\rangle\)</span> 은 열행렬로 다음과 같이 표현 할 수 있다.</p>
+<p><span class="math display">\[
+|\phi\rangle = \begin{bmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \end{bmatrix}.
+\]</span></p>
+<p>또한 이 상태에 대한 연산자 <span class="math inline">\(\Sigma\)</span> 의 행렬표현은 다음과 같다.</p>
+<p><span class="math display">\[
+\begin{bmatrix} \langle uu | \Sigma|uu\rangle &amp; \langle uu|\Sigma|ud\rangle &amp; \langle uu |\Sigma|du\rangle &amp; \langle uu|\Sigma|dd\rangle \\
+\langle ud|\Sigma|uu\rangle &amp; \langle ud|\Sigma|ud\rangle &amp; \langle ud|\Sigma|du\rangle &amp; \langle ud|\Sigma|dd\rangle \\
+\langle du|\Sigma|uu\rangle &amp; \langle du|\Sigma|ud\rangle &amp; \langle du|\Sigma|du\rangle &amp; \langle du|\Sigma|dd\rangle \\
+\langle dd|\Sigma|uu\rangle &amp; \langle dd|\Sigma|ud\rangle &amp; \langle dd|\Sigma|du\rangle &amp; \langle dd|\Sigma|dd\rangle
+\end{bmatrix}.
+\]</span></p>
+<p>이 규칙은 대부분의 경우에 적용된다. <span class="math inline">\(A\)</span> 계의 기저 <span class="math inline">\(\{|a_i\rangle_A\}\)</span> 과 <span class="math inline">\(B\)</span> 계의 기저 <span class="math inline">\(\{b_j\rangle_B\}\)</span> 을 결합한 <span class="math inline">\(AB\)</span> 계의 기저를 <span class="math inline">\(\{ |a_ib_j\rangle :=|a_i\rangle_A\otimes |b_j\rangle_B  : i,\,j=1,\,2,\ldots\}\)</span> 로 정했다면 보통 순서를</p>
+<p><span class="math display">\[
+|a_1b_1\rangle,\,|a_1b_2\rangle, \ldots,\, |a_2b_1\rangle,\, |a_2b_2\rangle, \ldots, |a_ib_1\rangle,\,|a_i b_2\rangle,\ldots
+\]</span></p>
+<p>로 잡는다. 그리고 당연히 행렬도 이 기저 순서에 따라 표현한다.</p>
+<p><br></p>
+</section>
+<section id="sec-part1_projection" class="level3" data-number="13.2.2">
+<h3 data-number="13.2.2" class="anchored" data-anchor-id="sec-part1_projection"><span class="header-section-number">13.2.2</span> Projection</h3>
+<p>계의 임의의 두 벡터 <span class="math inline">\(|\phi\rangle,\, |\psi\rangle\)</span> 에 대해</p>
+<p><span class="math display">\[
+|\psi\rangle \langle \phi|
+\]</span></p>
+<p>는 일반적인 브라켓의 사용처럼 사용하며 일종의 함수이다.</p>
+<p><span id="eq-projection_1"><span class="math display">\[
+\begin{aligned}
+(|\psi\rangle\langle \phi| )|a\rangle  &amp;= |\psi\rangle (\langle \phi|a\rangle)= (\langle \phi|a\rangle) |\psi\rangle, \\[0.4em]
+\langle b | (| \psi\rangle \langle \phi|) &amp;= (\langle b|\psi\rangle ) \langle \phi|
+\end{aligned}
+\tag{13.2}\]</span></span></p>
+<p>벡터공간에 작용하는 함수다. 아래와 같이 선형 함수이므로 선형연산자이다.</p>
+<p><span id="eq-projection_2"><span class="math display">\[
+|\psi\rangle \langle \phi| (a|x\rangle + b|y\rangle) = a(|\psi \rangle \langle \phi|x\rangle) + (|\psi \rangle \langle \phi|y\rangle).
+\tag{13.3}\]</span></span></p>
+<p><br></p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="def-projection_operator" class="theorem definition">
+<p><span class="theorem-title"><strong>정의 13.2 (Projection 연산자)</strong></span> 정규화된 브라 <span class="math inline">\(|\psi\rangle\)</span> 에 대해 <span class="math inline">\(|\psi\rangle\langle\psi|\)</span> 를 <strong>projection</strong> 이라고 한다.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<div id="prp-properties_of_projection" class="theorem proposition">
+<p><span class="theorem-title"><strong>명제 13.1</strong></span> Projecition <span class="math inline">\(P_\psi := |\psi\rangle\langle \psi|\)</span> 는 다음과 같은 성질을 가진다.</p>
+<p>  (<span class="math inline">\(1\)</span>) <span class="math inline">\({P_\psi}^2 = P_\psi\)</span> 이다.</p>
+<p>  (<span class="math inline">\(2\)</span>) <span class="math inline">\(P_\psi\)</span> 는 에르미트 연산자이다.</p>
+<p>  (<span class="math inline">\(3\)</span>) <span class="math inline">\(|\psi\rangle\)</span> 는 <span class="math inline">\(|\psi\rangle\)</span> 은 고유값 <span class="math inline">\(1\)</span> 을 갖는 <span class="math inline">\(P_\psi\)</span> 의 고유벡터이다.</p>
+<p>  (<span class="math inline">\(4\)</span>) <span class="math inline">\(P_\psi\)</span> 의 고유값은 <span class="math inline">\(0\)</span> 과 <span class="math inline">\(1\)</span> 뿐이다.</p>
+<p>  (<span class="math inline">\(5\)</span>) <span class="math inline">\(\text{tr}(P_\psi)=1\)</span> 이다.</p>
+<p>  (<span class="math inline">\(6\)</span>) 힐베르트 공간의 정규직교기저 <span class="math inline">\(\{|i\rangle\}\)</span> 에 대해 <span class="math inline">\(\sum_{i}P_i = \sum_{i} |i\rangle \langle i\rangle = I\)</span> 이다.</p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>(증명)</em>. </span>수학적으로 벡터공간에서 <span class="math inline">\(P^2=P\)</span> 인 선형연산자를 projection 이라고 한다. 여기에서의 projection 과 같은 의미이다.</p>
+<p>(<span class="math inline">\(1\)</span>) <a href="#eq-projection_1" class="quarto-xref">식&nbsp;<span>13.2</span></a> 을 사용하면 쉽게 보일 수 있다.</p>
+<p>(<span class="math inline">\(2\)</span>) <span class="math inline">\({P_\psi}^\dagger = (|\psi\rangle\langle \psi|)^\dagger=|\psi\rangle\langle \psi|\)</span>.</p>
+<p>(<span class="math inline">\(3\)</span>) <span class="math inline">\(P_\psi |\psi\rangle = |\psi\rangle\)</span>.</p>
+<p>(<span class="math inline">\(4\)</span>) <span class="math inline">\(P_\psi |\psi\rangle = \lambda |\psi\rangle\)</span> 이면 <span class="math inline">\({P_\psi}^2|\psi\rangle = \lambda^2|\psi\rangle\)</span> 이다. <span class="math inline">\(\lambda^2=\lambda\)</span> 이어야 하므로 <span class="math inline">\(\lambda\)</span> 는 <span class="math inline">\(0\)</span> 과 <span class="math inline">\(1\)</span> 만 가능하다.</p>
+<p>(<span class="math inline">\(5\)</span>) <span class="math inline">\(P_\psi\)</span> 가 에르미트 연산자이므로 서로 직교하는 <span class="math inline">\(P_\psi\)</span> 의 고유벡터로 기저를 구성 할 수 있다. <span class="math inline">\(|\phi\rangle\)</span> 이 <span class="math inline">\(|\psi\rangle\)</span> 과 직교한다면 <span class="math inline">\(P_\psi |\phi\rangle = |\psi\rangle \langle \psi|\phi\rangle = |\varnothing\rangle\)</span> 이므로 <span class="math inline">\(|\psi\rangle\)</span> 을 제외한 모든 기저벡터는 고유값 <span class="math inline">\(0\)</span> 을 가진다. <span class="math inline">\(P_\psi\)</span> 가 에르미트 행렬이므로 <span class="math inline">\(\operatorname{tr}(P_\psi)\)</span> 는 모든 고유값의 합, 즉 <span class="math inline">\(1\)</span> 이다.</p>
+<p>(<span class="math inline">\(6\)</span>) <span class="math inline">\(|\phi\rangle = \sum_j a_j |j\rangle\)</span> 에 대해 <span class="math display">\[
+\sum_i P_i |\phi\rangle = \sum_i \sum_j |i\rangle\langle i| (a_j|j\rangle)= \sum_i \left( \sum_j \langle i|j\rangle a_j\right) |i\rangle = \sum_i a_i |i\rangle = |\phi\rangle
+\]</span></p>
+<p>이므로 <span class="math inline">\(\sum_i P_i=I\)</span> 이다. <span class="math inline">\(\square\)</span></p>
+</div>
+<p><br></p>
+<p>이제 Projection 과 어떤 관측량 <span class="math inline">\(L\)</span> 의 기대값과의 관계를 알아보자.</p>
+<p><br></p>
+<div id="thm-projection_and_expectation" class="theorem">
+<p><span class="theorem-title"><strong>정리 13.1</strong></span> 연산자 <span class="math inline">\(L\)</span> 의 기대값 <span class="math inline">\(\langle \psi|L|\psi\rangle\)</span> 과 projection <span class="math inline">\(P_\psi = |\psi\rangle\langle\psi|\)</span> 사이에 다음이 성립한다.</p>
+<p><span id="eq-expectation_and_projection"><span class="math display">\[
+\langle \psi|L|\psi\rangle = \operatorname{tr}|\psi\rangle\langle\psi | L .
+\tag{13.4}\]</span></span></p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>(증명)</em>. </span>임의의 정규직교기저 <span class="math inline">\(\{|i\rangle\}\)</span> 을 생각하자.</p>
+<p><span class="math display">\[
+\begin{aligned}
+\operatorname{tr}|\psi\rangle\langle \psi | L &amp;= \sum_i \langle i|\psi\rangle \langle \psi |L |i\rangle = \langle \psi | L \left(\sum_i | i \rangle \langle i\rangle\right) |\psi\rangle = \langle \psi | L |\psi\rangle.\qquad \square
+\end{aligned}
+\]</span></p>
+</div>
+<p><br></p>
+</section>
+<section id="sec-part1_density_matrix" class="level3" data-number="13.2.3">
+<h3 data-number="13.2.3" class="anchored" data-anchor-id="sec-part1_density_matrix"><span class="header-section-number">13.2.3</span> 밀도 행렬</h3>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="def-density_operator" class="theorem definition">
+<p><span class="theorem-title"><strong>정의 13.3 (밀도 행렬)</strong></span> 힐베르트 공간 <span class="math inline">\(\mathscr{H}\)</span> 의 기저 <span class="math inline">\(\{|\phi_i\rangle : i=1,\,2,\ldots\}\)</span> 와 <span class="math inline">\(|\phi_i\rangle\)</span> 의 상태에 있을 확률 <span class="math inline">\(p_i\)</span> 에 대해</p>
+<p><span class="math display">\[
+\rho := \sum_i p_i |\phi_i\rangle \langle \phi_i|
+\]</span></p>
+<p>로 정의된 <span class="math inline">\(\rho\)</span> 를 <strong>밀도 행렬(density matrix)</strong> 이라고 한다.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<p><span class="math inline">\(\rho\)</span> 가 밀도 행렬이라는 이름을 갖는 이유를 알아보자. 우선 <a href="#eq-expectation_and_projection" class="quarto-xref">식&nbsp;<span>13.4</span></a> 의 밀도행렬 버젼을 알아보자.</p>
+<div id="thm-density_operator_and_expectation_value" class="theorem">
+<p><span class="theorem-title"><strong>정리 13.2 (밀도행렬과 기대값)</strong></span> 밀도행렬 <span class="math inline">\(\rho\)</span> 와 연산자 <span class="math inline">\(L\)</span> 에 대해 다음이 성립한다. <span id="eq-density_matrix_and_expectation_value"><span class="math display">\[
+\text{tr} (\rho L) = \langle L \rangle.
+\tag{13.5}\]</span></span></p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>(증명)</em>. </span>우리가 관심 있는 측정량 <span class="math inline">\(L\)</span> 의 고유벡터를 기저 <span class="math inline">\(\{|\phi_i\rangle \}\)</span> 로 삼으면 <span class="math inline">\(|\mathscr{\Phi} \rangle = \sum_i a_i |\phi_i\rangle\)</span> 에 대해</p>
+<p><span class="math display">\[
+\langle L \rangle = \langle \mathscr{\Phi} |L |\mathscr{\Phi} \rangle = \sum_{i} |a_i|^2 \langle \phi_i|L|\phi_i\rangle
+\]</span></p>
+<p>이다. <span class="math inline">\(\{|\phi_i\rangle\}\)</span> 에 대한 밀도 연산자 <span class="math inline">\(\rho = \sum_{i} p_i |\phi_i \rangle \langle \phi_i|\)</span> 에 대해</p>
+<p><span class="math display">\[
+\begin{aligned}
+\text{tr}(\rho L) &amp;= \sum_j \langle \phi_j | \rho L|\phi_j\rangle = \sum_i p_i\sum_{j} \langle \phi_j | \phi_i \rangle \langle \phi_i |L|\phi_j \rangle \\
+&amp;=\sum_{i, j}p_j \delta_{ij}\langle \phi_i |L |\phi_j\rangle = \sum_i p_i \langle \phi_i |L|\phi_i\rangle = \sum_i |a_i|^2 \langle \phi_i |L |\phi_i\rangle = \langle L \rangle
+\end{aligned}
+\]</span></p>
+<p>이다. <span class="math inline">\(\square\)</span></p>
+</div>
+<p><br></p>
+<p>우리가 어떤 양자상태를 준비할 때 그 위상까지 정확히 준비할 수 있는 경우는 거의 없고(실제로 거의 불가능하며) 대부분 어떤 가능한 상태와, 그 상태를 가질 확률 정도만을 정보로 가질 뿐이다. 이 정보로 밀도연산자를 만들 수 있으며, 이 밀도연산자와 측정값과 관계된 연산자를 이용하여 기대값을 계산 할 수 있다.</p>
+<p><br></p>
+<div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+<div id="exm-part1_density_matrix_might_be_nondiagonal" class="theorem example">
+<p><span class="theorem-title"><strong>예제 13.2</strong></span> 밀도 행렬을 <span class="math inline">\(\{|\phi_i\rangle\}\)</span> 기저로 구성했다고 하자. 이 기저에 대해서 <span class="math inline">\(\rho\)</span> 는 대각행렬이다. 그러나 (당연하게도) 다른 기저 <span class="math inline">\(\{|\psi_i\rangle\}\)</span> 기저에 대해</p>
+<p><span class="math display">\[
+\rho_{\psi_j,\, \psi_i} = \langle \psi_j | \rho|\psi_i\rangle  = \sum_{k} p_k \langle \psi_j |\phi_k\rangle \langle \phi_k |\psi_j\rangle
+\]</span></p>
+<p>는 대각행렬이 아니다.</p>
+</div>
+</div>
+<p><br></p>
+</section>
+<section id="sec-part1_entanglement_and_density_matrix" class="level3" data-number="13.2.4">
+<h3 data-number="13.2.4" class="anchored" data-anchor-id="sec-part1_entanglement_and_density_matrix"><span class="header-section-number">13.2.4</span> 얽힘과 밀도 행렬</h3>
+<p>하나의 상태에 대해서만 확률 <span class="math inline">\(1\)</span> 일 때 밀도행렬은 projection 이며 이 경우 <strong>순수 상태(pure state)</strong> 라고 하고, 순수 상태가 아닌 상태를 <strong>혼합 상태(mixed state)</strong> 라고 한다.</p>
+<p>부분계 <span class="math inline">\(A,\,B\)</span> 로 구성된 복합계를 생각하자. 앞서 우리가 계속 다뤄온 2 스핀계라고 생각해도 무방하다. <span class="math inline">\(A\)</span> 계의 기저를 <span class="math inline">\(\{|a_i\rangle_A:i=1,\,2,\ldots\}\)</span>, <span class="math inline">\(B\)</span> 계의 기저를 <span class="math inline">\(\{|b_j\rangle_B:j=1,\,2,\ldots\}\)</span> 라고 하자. 복합계는</p>
+<p><span id="eq-entalgnement2_wavefunction"><span class="math display">\[
+|\mathscr{\Psi}\rangle = \sum_{i, j} c_{ij} |a_{i}\rangle_A \otimes |b_j\rangle_B= \sum_{i, j} c_{ij}|a_ib_j\rangle
+\tag{13.6}\]</span></span></p>
+<p>로 표현 할 수 있다. 여기서 우리는 오직 <span class="math inline">\(A\)</span> 계에 대해서만 관심이 있다고 하자. <span class="math inline">\(A\)</span> 계의 연산자 <span class="math inline">\(L_A\)</span> 에 대한 기댓값은 복합계에서 <span class="math inline">\(L = L_A \otimes I_B\)</span> 로 쓸 수 있다. <span class="math inline">\(L\)</span> 에 대한 기댓값은 <span class="math inline">\(L_A\)</span> 에 대한 기댓값과 같아야 하며 따라서,</p>
+<p><span class="math display">\[
+\begin{aligned}
+\langle L\rangle &amp;= \langle \mathscr{\Psi}|L|\mathscr{\Psi}\rangle = \sum_{i,i',j,j'} c_{ij}\overline{c_{i'j'}} \langle b_{j'}|b_j\rangle \langle a_{i'}|L|a_i\rangle \\
+&amp;= \sum_{i,i',j,j'} c_{ij}\overline{c_{i'j'}} \delta_{jj'} \langle a_{i'}|L|a_i\rangle \\
+&amp;= \sum_{i, i', j} c_{ij}\overline{c_{i'j}} \langle a_{i'}|L|a_i\rangle
+\end{aligned}
+\]</span></p>
+<p>이다. 이제 <a href="#eq-density_matrix_and_expectation_value" class="quarto-xref">식&nbsp;<span>13.5</span></a> 을 생각하면</p>
+<p><span id="eq-entanglement2_density"><span class="math display">\[
+\rho_{ii'} = \sum_j c_{ij}\overline{c_{i'j}} = \sum_j \langle a_ib_j |\mathscr{\Psi}\rangle \langle \mathscr{\Psi} | a_{i'}b_j\rangle = \langle a_i | \mathscr{\Psi}\rangle \langle \mathscr{\Psi}|a_i\rangle
+\tag{13.7}\]</span></span></p>
+<p>이다. <span class="math inline">\(\sum_j \langle b_j|b_j\rangle_B  =1\)</span> 이므로 <span class="math inline">\(\sum_j\)</span> 는 사라질 수 있다. 따라서</p>
+<p><span id="eq-entanglement2_expetation_with_density"><span class="math display">\[
+\langle L \rangle = \text{tr}(\rho L)
+\tag{13.8}\]</span></span></p>
+<p>이 된다.</p>
+<p><a href="#eq-entanglement2_density" class="quarto-xref">식&nbsp;<span>13.7</span></a> 은 순수상태의 밀도행렬이 아닌 혼합상태의 밀도행렬이다. 우리가 <a href="#eq-entalgnement2_wavefunction" class="quarto-xref">식&nbsp;<span>13.6</span></a> 에서의 계수 <span class="math inline">\(c_{ij}\)</span> 를 완벽하게 알고 있다고 하자. 그렇더라도 밀도행렬 <a href="#eq-entanglement2_density" class="quarto-xref">식&nbsp;<span>13.7</span></a> 는 순수상태의 밀도행렬이 아닌 혼합상태의 밀도형렬이다. 즉 전체계가 순수상태더라도 그 부분계는 복합상태로 기술되어야 한다.</p>
+<p><a href="#eq-entanglement2_density" class="quarto-xref">식&nbsp;<span>13.7</span></a> 을 보자. <span class="math inline">\(A\)</span> 계의 <span class="math inline">\(a_i\)</span> 값을 변수 <span class="math inline">\(a\)</span> 로 삼으면 <a href="#eq-entanglement2_density" class="quarto-xref">식&nbsp;<span>13.7</span></a> 식을 아래와 같이 쓸 수 있다.</p>
+<p><span id="eq-entanglement2_density_2"><span class="math display">\[
+\rho_{aa'} = \langle \mathscr{\Psi}|a\rangle \langle a| \mathscr{\Psi}\rangle = \mathscr{\Psi}^\ast(a) \mathscr{\Psi}(a')
+\tag{13.9}\]</span></span></p>
+<p><br></p>
+<div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+<div id="exm-entanglement2_density" class="theorem example">
+<p><span class="theorem-title"><strong>예제 13.3</strong></span> 앨리스와 밥의 2 스핀계로 다시 돌아가자. <span class="math inline">\(\sigma_z\)</span> 기저에서 <span class="math inline">\(|\mathscr{\Psi}\rangle = \alpha |u\rangle + \beta|d\rangle\)</span> 의 밀도행렬을 계산해보자. <a href="#eq-entanglement2_density_2" class="quarto-xref">식&nbsp;<span>13.9</span></a> 로 부터</p>
+<p><span class="math display">\[
+\rho_{ab}= \begin{bmatrix} |\alpha|^2 &amp; \alpha \overline{\beta} \\ \overline{\alpha} \beta &amp; |\beta|^2\end{bmatrix}
+\]</span></p>
+<p>이다. 또한 정규화 조건 <span class="math inline">\(|\alpha|^2=|\beta|^2=1\)</span> 을 만족해야 한다.</p>
+</div>
+</div>
+<p><br></p>
+<p><a href="#eq-entanglement2_expetation_with_density" class="quarto-xref">식&nbsp;<span>13.8</span></a> 을 보자. 우리가 <span class="math inline">\(A\)</span> 시스템 에만 관심이 있다고 하자. <span class="math inline">\(A\)</span> 계에 대한 연산자 <span class="math inline">\(L_A\)</span> 를 확장하여 <span class="math inline">\(L=L_A \otimes I_B\)</span> 라는 전체 계에 대한 연산자를 만들 수 있다. 또한 우리가 <span class="math inline">\(A\)</span> 계에 대한 밀도연산자 <span class="math inline">\(\rho_A\)</span> 만을 알고 있다고 하자. 역시 같은 방법으로 전체 계에 작용하는 밀도연산자를 구성 할 수 있다.</p>
+<p><span class="math display">\[
+\rho = \rho_A \otimes I_B
+\]</span></p>
+<p>이제 <span class="math inline">\(\langle L_A \rangle_A = \operatorname{tr} (\rho L)\)</span> 임을 안다. 즉 우리가 전체 시스템이 아닌 부분계에만 관심이 있다면 우리는 부분계의 밀도행렬만을 알면 그 부분계에 대해 모든 것을 알 수 있다.</p>
+<p><br></p>
+<p>이제 밀도연산자의 수학적인 성질에 대해 정리해보자.</p>
+<div id="prp-entanglement2_properties_of_density_matrix" class="theorem proposition">
+<p><span class="theorem-title"><strong>명제 13.2 (밀도연산자의 수학적 성질)</strong></span> <span class="math inline">\(\rho\)</span> 가 어떤 계의 밀도행렬일 때 다음을 만족한다.</p>
+<p>  (<span class="math inline">\(1\)</span>) <span class="math inline">\(\rho\)</span> 는 에르미트 행렬이다.</p>
+<p>  (<span class="math inline">\(2\)</span>) <span class="math inline">\(\text{tr}(\rho)=1\)</span>.</p>
+<p>  (<span class="math inline">\(3\)</span>) 순수상태에 대해 <span class="math inline">\(\rho^2=\rho\)</span>, <span class="math inline">\(\text{tr}(\rho^2)=1\)</span> 이며 혼합상태에 대해 <span class="math inline">\(\rho^2 \ne \rho\)</span>, <span class="math inline">\(\text{tr}(\rho^2)&lt;1\)</span> 이다.</p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>(증명)</em>. </span>(<span class="math inline">\(1\)</span>) 정규직교기저 <span class="math inline">\(\{|\phi_i\rangle\}\)</span> 에 대해 <span class="math inline">\(\rho = \sum_i p_i|\phi_i\rangle \langle \phi_i|\)</span> 이며 <span class="math inline">\(\rho^\ast = \rho\)</span> 이다.</p>
+<p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(\operatorname{tr}(\rho) = \sum_j \sum_i \langle \phi_j | (p_i|\phi_i\rangle \langle \phi_i|) | \phi_j\rangle = \sum_{i, j} p_i \langle \phi_j|\phi_i\rangle \langle \phi_i|\phi_j\rangle = \sum_i p_i = 1\)</span>.</p>
+<p>(<span class="math inline">\(3\)</span>) 순수상태는 어떤 상태 <span class="math inline">\(|\Psi\rangle\)</span> 에 대해 <span class="math inline">\(\rho = |\mathscr{\Psi}\rangle \langle \mathscr{\Psi}\rangle\)</span> 이므로 <span class="math inline">\(\rho^2 = \rho\)</span> 이며 <span class="math inline">\(\operatorname{tr}(\rho^2)= \operatorname{tr}(\rho)=1\)</span> 이다. 복합상태라면 <span class="math inline">\(\rho= \sum_j p_j |\phi_j\rangle \langle \phi_j|\)</span>, <span class="math inline">\(\forall j,\, |p_j|^2&lt;1\)</span> 이며,</p>
+<p><span class="math display">\[
+\rho^2 = \sum_{i, j}p_ip_j |\phi_j\rangle \langle \phi_j |\phi_i\rangle \langle \phi_i|= \sum_{i}(p_i)^2 |\phi_i\rangle\langle \phi_i| \ne \rho
+\]</span></p>
+<p>이므로</p>
+<p><span class="math display">\[
+\text{tr}(\rho^2) = \sum_i p_i^2 &lt; \sum_i p_i =1
+\]</span></p>
+<p>이다. <span class="math inline">\(\square\)</span></p>
+</div>
+<p><br></p>
+</section>
+</section>
+<section id="얽힘과-상관-관계" class="level2" data-number="13.3">
+<h2 data-number="13.3" class="anchored" data-anchor-id="얽힘과-상관-관계"><span class="header-section-number">13.3</span> 얽힘과 상관 관계</h2>
+<p><span class="math inline">\(A\)</span> 계의 앨리스와 <span class="math inline">\(B\)</span> 계의 밥을 생각하자. 또한 <span class="math inline">\(A\)</span> 계의 관측량 <span class="math inline">\(L_A\)</span> 와 <span class="math inline">\(B\)</span> 계의 관측량 <span class="math inline">\(L_B\)</span> 를 생각하자. <span class="math inline">\(L_A\)</span> 와 <span class="math inline">\(L_B\)</span> 사이의 상관관계 <span class="math inline">\(C(L_A,\,L_B)\)</span> 는 다음과 같이 정의된다.</p>
+<p><span class="math display">\[
+C(L_A,\, L_B) := \langle L_AL_B\rangle - \langle L_A\rangle_A \langle L_B \rangle_B
+\]</span></p>
+<p>곱 상태라면 당연히 <span class="math inline">\(C(L_A,\,L_B)=0\)</span> 이 된다. 만약 <span class="math inline">\(C(L_A,\,L_B)\ne 0\)</span> 인 어떤 관측량을 찾을 수 있다면 이 상태는 얽힌상태이다.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "복사완료!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "복사완료!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../src/AUX/AUX.html" class="pagination-link" aria-label="III. 기타 이런저런 이야기들">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">III. 기타 이런저런 이야기들</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../src/AUX/quantum_state.html" class="pagination-link" aria-label="양자 상태">
+        <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">양자 상태</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
