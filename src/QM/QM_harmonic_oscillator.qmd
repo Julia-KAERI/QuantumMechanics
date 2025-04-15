@@ -233,7 +233,7 @@ $$
 \langle m|P|n\rangle &= i \left(\dfrac{m\omega \hbar}{2}\right)^{1/2} \langle m|\left(\sqrt{n+1}|n+1\rangle - \sqrt{n}|n-1\rangle\right) \\
 &= i \left(\dfrac{m\omega \hbar}{2}\right)^{1/2}\left(\sqrt{n+1}\delta_{m,n+1} - \sqrt{n}\delta_{m, n-1}\right).
 \end{aligned}
-$$
+$$ {#eq-QM_sho_x_and_p_with_ladder_operator_2}
 
 이렇게 동역학 변수를 사다리 연산자 $a,\,a^\dagger$ 를 이용해서 표현하는것은 계산을 엄청나게 줄여준다. 우리는 아직 $X$ 기저로 표현된 $|n\rangle$ 상태의 파동함수를 알아보지는 않았지만 어쨌든 그 파동함수를 $\Psi_n(x)$ 라고 하면, 
 
@@ -244,8 +244,11 @@ $$
 이다. 뒤에 보겠지만 $\Psi_n(x)$ 에 대한 적분은 실제로 쉽지 않다. 그러나 사다리 연산자를 사용하게 되면
 
 $$
-\langle n|X^2|n\rangle = \left(\dfrac{\hbar}{2m\omega}\right)\langle n| aa+a^\dagger a + aa^\dagger + a^\dagger a^\dagger |n\rangle = \left(\dfrac{\hbar}{2m\omega}\right) = \left(\dfrac{\hbar}{2m\omega}\right)(2n+1)
-$$
+\begin{aligned}
+\langle n|X^2|n\rangle &= \left(\dfrac{\hbar}{2m\omega}\right)\langle n| aa+a^\dagger a + aa^\dagger + a^\dagger a^\dagger |n\rangle \\
+&=  \left(\dfrac{\hbar}{2m\omega}\right)(2n+1)
+\end{aligned}
+$${#eq-QM_sho_x_and_p_with_ladder_operator_3}
 
 로 간단히 계산이 된다. ($[a,\, a^\dagger]=1$ 로 부터 $aa^\dagger = a^\dagger a +1 = N+1$ 임을 안다.)
 
@@ -580,7 +583,7 @@ $$
 
 ## $X$ 기저에서의 고유함수
 
-### $X$ 기저에서의 고유함수와 에르미트 다항식
+### $X$ 기저에서의 고유함수와 에르미트 다항식 {#sec-QM_SHO_hermite_polynomials}
 
 이제 사다리 연산자를 이용한 에너지 기저에서 $X$ 기저에 대한 표현으로 변환시키는 것을 알아보자. 우리는 $a|0\rangle = 0$ 임을 안다. 또한 @eq-QM_ladder_operator_a 와 @eq-QM_ladder_operator_a_dagger  에서 보았듯이
 

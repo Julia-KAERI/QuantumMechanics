@@ -233,14 +233,197 @@ $$
 (\Delta \Omega)^2 (\Delta \Lambda)^2 \ge \dfrac{1}{4} \langle \Psi|\{\Omega - \langle \Omega \rangle,\, \Lambda - \langle \Lambda \rangle\}|\Psi\rangle^2 + \dfrac{1}{4}\langle \Psi |\Gamma |\Psi \rangle^2
 $${#eq-QM_uncertainty_derivation_of_uncertianty_relation_2}
 
-이다. $\{\cdots \}$ 관련 항은 항상 양수이므로 
+이다. $\{\cdots \}$ 관련 항은 항상 양수이며 $[\Omega,\, \Gamma] = i\Gamma$ 이므로
 
 $$
-[\Omega,\, \Gamma] = i\Gamma \implies (\Delta \Omega)(\Delta \Gamma) \ge \dfrac{1}{2}|\langle \Psi |\Gamma |\Psi\rangle|
+(\Delta \Omega)(\Delta \Gamma) \ge \dfrac{1}{2}|\langle \Psi |\Gamma |\Psi\rangle|
 $$ {#eq-QM_uncertianty_uncertainty_relation}
 
 이 성립한다. 이를 불확정성 관계라고 한다. 위 식에서 등식이 성립하는 경우는 아래의 두 조건을 모두 만족하는 경우 뿐이다.
 
-&emsp;($1$) $\langle \Psi|\{\Omega - \langle \Omega \rangle,\, \Lambda - \langle \Lambda \rangle\}|\Psi\rangle=0$,
+$$\begin{aligned}
+&(1)&& \langle \Psi|\{\Omega - \langle \Omega \rangle,\, \Lambda - \langle \Lambda \rangle\}|\Psi\rangle=0,\\[0.3em]
+&(2)&&\exists c\in \C,\, \text{s. t. } (\Omega - \langle \Omega)|\Psi\rangle = c(\Lambda - \langle \Lambda \rangle)|\Psi\rangle.
+\end{aligned}
+$${#eq-QM_uncertianty_uncertainty_relation_2}
 
-&emsp;($2$) 어떤 $c\in \C$ 에 대해 $(\Omega - \langle \Omega)|\Psi\rangle = c(\Lambda - \langle \Lambda \rangle)|\Psi\rangle$ 
+여기서 $(1)$ 조건은 @eq-QM_uncertainty_derivation_of_uncertianty_relation_1 의 코시-슈바르츠 부등식 조건으로 부터 나온다.
+
+
+</br>
+
+### 불확정성을 최소화 하는 패킷 {#sec-QM_uncertainty_minimum_uncertainty_packet}
+
+
+$X,\,P$ 의 불확정성을 최소화 하는 1차원 파동함수 $\Psi(x)$ 를 구해보자. @eq-QM_uncertianty_uncertainty_relation_2 의 $(2)$ 로부터,
+
+$$
+(P-\langle P\rangle) |\Psi\rangle = c(X-\langle X\rangle)|\Psi\rangle
+$$ {#eq-QM_uncertainty_minimal_packet_1}
+
+이어야 한다. $X$ 기저에서 아래와 같은 미분방정식이다.
+
+$$
+\left(- i\hbar\dfrac{d}{dx} - \langle P\rangle\right) \Psi(x) = c(x-\langle X\rangle)\Psi(x)
+$$
+
+를 만족해야 한다. 일반성을 잃지 않고 $\langle X \rangle = 0$ 으로 놓을 수 있다. 그렇다면 이 방정식의 해는
+$$
+\Psi(x) = \Psi(0) e^{i\langle P\rangle x/\hbar} e^{icx^2/2\hbar}
+$${#eq-QM_uncertainty_minimal_packet_2}
+
+이다. 이제 @eq-QM_uncertianty_uncertainty_relation_2 의 $(1)$ 를 생각하자. 그리고 $\langle X\rangle = 0$ 을 다시 이용하면 $|\Psi\rangle$ 은 아래 식을 만족해야 한다.
+
+$$
+\begin{aligned}
+&\langle \Psi | (P-\langle P\rangle) X + X(P-\langle P\rangle) |\Psi\rangle = 0.
+\end{aligned}
+$$
+
+@eq-QM_uncertainty_minimal_packet_1 의 adjoint 는
+
+$$
+\langle \Psi | (P-\langle P\rangle) = c^\ast \langle \Psi |(X-\langle X\rangle)
+$$
+
+이므로, 
+
+$$
+\langle \Psi |c^\ast X^2 + cX^2|\Psi\rangle = 0
+$$
+
+을 얻는다. 즉
+
+$$
+(c+c^\ast) \langle \Psi|X^2|\Psi\rangle = 0
+$$
+
+이다. $c = i\alpha$ ($\alpha \in \mathbb{R}$) 라고 놓자. 그렇다면 @eq-QM_uncertainty_minimal_packet_2 는 아래와 같이 쓸 수 있다.
+
+$$
+\Psi(x) = \Psi(0) e^{i\langle P\rangle x/\hbar} e^{-\alpha x^2/2\hbar}.
+$${#eq-QM_uncertainty_minimal_packet_3}
+
+여기서 $\alpha > 0$ 이어야 $\Psi(x)$ 가 정규화 가능하다. 이 파동함수는 가우시안 형태를 가지며, $X$ 와 $P$ 의 불확정성을 최소화하는 상태를 나타낸다. 이를 **최소 불확정성 패킷(minimum uncertainty packet)** 이라고 한다. 
+
+</br>
+
+### 불확정성의 원리의 응용 {#sec-QM_uncertainty_uncertainty_principle}
+
+이제 불확정성의 원리를 사용하여 바닥상태 에너지와 바닥상태 패동함수의 분포에 대해 알아 볼 수 있다. 수소원자의 경우를 생각해보자. 수소원자에서 양성자를 고정시켰을 때의 해밀토니안은 다음과 같다.
+
+$$
+H = \dfrac{P_x^2+P_y^2+P_z^2}{2m} - \dfrac{e^2}{(X^2+Y^2+Z^2)^{1/2}}
+$$
+
+정규화된 상태 $|\Psi\rangle$ 에서
+
+$$
+\langle H \rangle = \dfrac{\langle P_x^2\rangle +\langle P_y^2\rangle+\langle P_z^2\rangle}{2m} - e^2 \left\langle \dfrac{1}{(X^2+Y^2+Z^2)^{1/2}}\right\rangle
+$$
+
+이다. $\langle P_i^2\rangle = (\Delta P_i)^2 + \langle P_i\rangle^2$ 이며 $\langle P_i\rangle =0$ 으로 놓고 시작해 보자.
+
+$$
+\langle H\rangle = \dfrac{ (\Delta P_x)^2 +  (\Delta P_y)^2+ (\Delta P_z)^2}{2m} - e^2 \left\langle \dfrac{1}{(X^2+Y^2+Z^2)^{1/2}}\right\rangle
+$$
+
+이다. 우리는 $\Delta P_x \Delta X \ge \hbar/2$ 임을 안다. 문제는 $\langle (X^2+Y^2+Z^2)^{-1/2}\rangle$ 이 $\Delta X,\, \Delta Y,\, \Delta Z$ 와 단순하게 관련되지 않는다는 것이다. 일단 아래와 같이 장난을 해 보자.
+
+$$
+\left\langle \dfrac{1}{(X^2+Y^2+Z^2)^{1/2}}\right\rangle \simeq \dfrac{1}{\langle (X^2+Y^2+Z^2)^{1/2}\rangle}
+$$
+
+그렇다면
+
+$$
+\langle H \rangle \simeq  \dfrac{(\Delta P_x)^2 +  (\Delta P_y)^2+ (\Delta P_z)^2}{2m} -e^2\dfrac{1}{\langle (X^2+Y^2+Z^2)^{1/2}\rangle}
+$$
+
+이다. 운동량과 마찬가지로 $\langle X^2+Y^2+Z^2\rangle \simeq (\langle X^2\rangle +\langle Y^2\rangle + \langle Z^2\rangle)^{1/2}$ 라고 놓으면
+
+$$
+\langle H \rangle \simeq  \dfrac{(\Delta P_x)^2 +  (\Delta P_y)^2+ (\Delta P_z)^2}{2m} -e^2\dfrac{1}{(\langle X^2\rangle +\langle Y^2\rangle + \langle Z^2\rangle)^{1/2}}
+$$
+
+역시 $\langle X^2\rangle = (\Delta X)^2 + \langle X\rangle^2$ 의 관계를 생각하자. $\langle X\rangle = \langle Y \rangle = \langle Z\rangle = 0$ 인 상태로 한정하고 가장 낮은 에너지를 찾아보자. 이 경우
+
+$$
+\langle H \rangle \simeq \dfrac{(\Delta P_x)^2 +  (\Delta P_y)^2+ (\Delta P_z)^2}{2m} - \dfrac{e^2}{((\Delta X)^2+(\Delta Y)^2+ (\Delta Z)^2)^{1/2}}
+$$
+
+이다. 그런에 수소 원자 문제는 구면 대칭 문제이다. 이 경우 파동함수가 구면 대칭일 경우 가장 낮은 에너지를 가질것이라는 것이 직관적으로 명백하다. 즉 
+
+$$
+(\Delta X)^2 = (\Delta Y)^2 = (\Delta Z)^2,\qquad (\Delta P_x)^2 = (\Delta P_y)^2 = (\Delta P_z)^2
+$$
+
+의 경우에 가장 낮은 에너지를 가질 것이다. 그렇다면,
+
+$$
+\langle H \rangle \simeq \dfrac{3(\Delta P_x)^2}{2m} - \dfrac{e^2}{\sqrt{3}(\Delta X)}
+$$
+
+이다. 여기에 불확정성의 원리 $\Delta P_x \Delta X \ge \hbar /2$ 를 적용하면
+
+$$
+\langle H \rangle \ge \dfrac{3\hbar^2}{8m (\Delta X)^2} - \dfrac{e^2}{\sqrt{3}(\Delta X)}
+$$
+
+이며 미분을 통해 가장 낮은 에너지를 가지는 $\Delta X$ 를 구하면
+
+$$
+\Delta X = \dfrac{3\sqrt{3}\hbar^2}{4me^2} \approx 1.3 \dfrac{\hbar^2}{me^2}
+$$
+
+이며,
+
+$$
+\langle H \rangle \ge \dfrac{-2me^4}{9\hbar^2}
+$$
+
+이다. 뒤에 구하겠지만 실제 수소원자의 바닥상태 에너지 $E_g = \dfrac{-me^4}{2\hbar^2}$ 이다. 약 2.25 배 차이가 난다. 그리고 우리는 불확정성을 최소로 하는 파동함수, 즉 가우시안 파동함수를 가정했지만 실제 파동함수는 가우시안 파동함수가 아니라
+
+$$
+\Psi(r) = ce^{-r/a_0},\qquad a_0 = \dfrac{\hbar^2}{me^2}
+$$
+
+이다. 
+
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-QM_shankar_9_4_1}
+#### Shankar 9.4.1
+
+뒤의 단순조화진동자에서 $|n=1\rangle$ 상태에 대해
+
+$$
+\left \langle \dfrac{1}{X^2}\right \rangle \simeq \dfrac{1}{\langle X^2\rangle} \simeq \dfrac{m\omega}{\hbar}
+$$
+
+임을 보여라.
+
+:::
+
+</div></br>
+
+::: {.solution}
+
+@eq-QM_sho_xi, @eq-QM_sho_energy_eigenstate_with_hermite_polynomial, @eq-QM_sho_hermite_polynomial_first_4 를 생각하자. $\alpha = \sqrt{m\omega/\hbar}$ 라고 하면 $\xi = \alpha x$ 이며,
+$$
+\begin{aligned}
+\left \langle \dfrac{1}{X^2}\right \rangle &= \left(\dfrac{m\omega}{4\pi \hbar}\right)^{1/2} \int_{-\infty}^\infty \dfrac{1}{x^2} (4\alpha^2x^2) e^{-\alpha^2x^2} \, dx \\
+&=  \left(\dfrac{m\omega}{4\pi \hbar}\right)^{1/2} 4\alpha^2 \int_{-\infty}^\infty e^{-\alpha^2x^2} \\
+&=  \left(\dfrac{m\omega}{4\pi \hbar}\right)^{1/2} 4\sqrt{\pi} \alpha =\dfrac{2m\omega}{\hbar}
+\end{aligned}
+$$
+
+또한 @eq-QM_sho_x_and_p_with_ladder_operator_3 로부터 $\langle 1|X^2 |1\rangle = \dfrac{3\hbar}{2m\omega}$ 이므로
+
+$$
+\dfrac{1}{\langle X^2\rangle} = \dfrac{2m\omega}{3\hbar}
+$$
+이다. 
+
+:::
