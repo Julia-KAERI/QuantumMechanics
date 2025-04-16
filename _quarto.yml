@@ -14,7 +14,7 @@ book:
     - part: src/CHM/CHM.qmd
       chapters:
       - src/CHM/mathematical_foundation.qmd
-      - src/CHM/symmetry_in_classical_mechanics.qmd
+      - src/CHM/CHM_symmetry_in_classical_mechanics.qmd
       - src/CHM/some_proofs.qmd
     - part: src/QM/QM.qmd
       chapters:

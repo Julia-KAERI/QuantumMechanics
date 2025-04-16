@@ -194,7 +194,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../src/CHM/symmetry_in_classical_mechanics.html" class="sidebar-item-text sidebar-link">
+  <a href="../../src/CHM/CHM_symmetry_in_classical_mechanics.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">고전역학에서의 대칭</span></span></a>
   </div>
 </li>
@@ -335,7 +335,7 @@ window.Quarto = {
   <li><a href="#n-동일-입자-시스템" id="toc-n-동일-입자-시스템" class="nav-link" data-scroll-target="#n-동일-입자-시스템"><span class="header-section-number">10.3.5</span> <span class="math inline">\(N\)</span> 동일 입자 시스템</a></li>
   </ul></li>
   <li><a href="#우주와-대칭반대칭-파동함수-문제" id="toc-우주와-대칭반대칭-파동함수-문제" class="nav-link" data-scroll-target="#우주와-대칭반대칭-파동함수-문제"><span class="header-section-number">10.4</span> 우주와 대칭/반대칭 파동함수 문제</a></li>
-  <li><a href="#연습문제" id="toc-연습문제" class="nav-link" data-scroll-target="#연습문제"><span class="header-section-number">10.5</span> 연습문제</a></li>
+  <li><a href="#연습문제" id="toc-연습문제" class="nav-link" data-scroll-target="#연습문제">연습문제</a></li>
   </ul>
 </nav>
     </div>
@@ -346,19 +346,19 @@ window.Quarto = {
 
 
 
-<p>지금까지는 그것이 <span class="math inline">\(X\)</span> 든 <span class="math inline">\(P\)</span> 든 자유도가 1 인 시스템을 주로 다루었다. 이제는 자유도가 <span class="math inline">\(N &gt; 1\)</span> 인 시스템을 어떻게 구성하는지 알아보자.</p>
+<p>지금까지는 자유도가 1 인 시스템, 1차원 단일 입자로 이루어진 시스템을 주로 다루었다. 이제는 자유도가 <span class="math inline">\(N &gt; 1\)</span> 인 시스템을 어떻게 구성하는지 알아보자.</p>
 <p><br></p>
 <section id="차원-다입자-시스템" class="level2" data-number="10.1">
 <h2 data-number="10.1" class="anchored" data-anchor-id="차원-다입자-시스템"><span class="header-section-number">10.1</span> <span class="math inline">\(1\)</span> 차원 다입자 시스템</h2>
 <p>1차원 2 입자 시스템을 생각하자. 고전적으로 <span class="math inline">\((x_1,\,p_1)\)</span> 과 <span class="math inline">\((x_2,\,p_2)\)</span> 로 각각 기술된다고 하자. 이 입자가 양자역학으로 기술되기 위해서는 연산자 <span class="math inline">\(X_1,\,P_1,\,X_2,\,P_2\)</span> 에 대해 다음과 같은 cannonical commutation relation 을 만족해야 한다.</p>
-<p><span id="eq-QM_2_ptc_operators_1"><span class="math display">\[
+<p><span id="eq-QM_NDOF_2_ptc_operators_1"><span class="math display">\[
 \begin{aligned}
-\left[X_i,\, P_j\right] &amp;= i \hbar \delta_{ij}I, \\
-[X_i,\, X_j] &amp;= \delta_{ij}I, \\
+\left[X_i,\, P_j\right] &amp;= i \hbar \delta_{ij}I, \\[0.3em]
+[X_i,\, X_j] &amp;= \delta_{ij}I, \\[0.3em]
 [P_i,\, P_j] &amp;= \delta_{ij}I.
 \end{aligned}
 \tag{10.1}\]</span></span></p>
-<p>첫번째 입자를 기술하는 힐베르트 공간을 <span class="math inline">\(\mathcal{H}_1\)</span> 이라고 하고 두번째 입자를 기술하는 힐베르트 공간을 <span class="math inline">\(\mathcal{H}_2\)</span> 라고 하자. <span class="math inline">\(\{|x_1\rangle\}\)</span> 을 <span class="math inline">\(\mathcal{H}_1\)</span> 에서의 좌표 기저라고 하고 <span class="math inline">\(\{|x_2\rangle\}\)</span> 을 <span class="math inline">\(\mathcal{H}_2\)</span> 의 좌표기저라고 하자. 각각의 힐베르트공간에서의 연산자를 표기하기 위헤 <span class="math inline">\(X_1^{(1)}\)</span> 과 같은 표기법을 사용한다. <span class="math inline">\(X_1^{(2)}\)</span> 는 <span class="math inline">\(\mathcal{H}_2\)</span> 에서의 첫번째 입자의 좌표 연산자이다. (의미가 그렇다는 거시 무의미하다.) 그렇다면 <a href="#eq-QM_2_ptc_operators_1" class="quarto-xref">식&nbsp;<span>10.1</span></a> 는 다음과 같이 표현 할 수 있다.</p>
+<p>첫번째 입자를 기술하는 힐베르트 공간을 <span class="math inline">\(\mathcal{H}_1\)</span> 이라고 하고 두번째 입자를 기술하는 힐베르트 공간을 <span class="math inline">\(\mathcal{H}_2\)</span> 라고 하자. <span class="math inline">\(\{|x_1\rangle\}\)</span> 을 <span class="math inline">\(\mathcal{H}_1\)</span> 에서의 좌표 기저라고 하고 <span class="math inline">\(\{|x_2\rangle\}\)</span> 을 <span class="math inline">\(\mathcal{H}_2\)</span> 의 좌표기저라고 하자. 각각의 힐베르트공간에서의 연산자를 표기하기 위헤 <span class="math inline">\(X_1^{(1)}\)</span> 과 같은 표기법을 사용한다. <span class="math inline">\(X_1^{(2)}\)</span> 는 <span class="math inline">\(\mathcal{H}_2\)</span> 에서의 첫번째 입자의 좌표 연산자이다. (의미가 그렇다는 것일 뿐 실제로는 무의미하다.) 그렇다면 <a href="#eq-QM_NDOF_2_ptc_operators_1" class="quarto-xref">식&nbsp;<span>10.1</span></a> 는 다음과 같이 표현 할 수 있다.</p>
 <p><span id="eq-QM_2_ptc_operators_2"><span class="math display">\[
 \begin{aligned}
 \left[ X_1^{(1)},\, P_1^{(1)}\right] = i\hbar I^{(1)}, \qquad \left[ X_2^{(2)},\, P_2^{(2)}\right] = i\hbar I^{(2)}
@@ -376,7 +376,7 @@ window.Quarto = {
 <p>이다. <span class="math inline">\(\mathcal{H}_1 \otimes \mathcal{H}_2\)</span> 가 벡터공간이기 위해 다음의 규칙이 성립한다.</p>
 <p><span class="math display">\[
 \begin{aligned}
-( \alpha_1 |\phi_1\rangle + \beta_1 |\psi_1\rangle) \otimes (\gamma_2 |\phi_2\rangle) &amp;= \alpha_1 \gamma_2 |\phi_1 \rangle \otimes |\phi_2\rangle + \beta_1\gamma_2 |\psi_1\rangle \otimes |\phi_2\rangle, \\
+( \alpha_1 |\phi_1\rangle + \beta_1 |\psi_1\rangle) \otimes (\gamma_2 |\phi_2\rangle) &amp;= \alpha_1 \gamma_2 |\phi_1 \rangle \otimes |\phi_2\rangle + \beta_1\gamma_2 |\psi_1\rangle \otimes |\phi_2\rangle, \\[0.3em]
 (\gamma_1 |\phi_1\rangle) \otimes ( \alpha_2 |\phi_2\rangle +\beta_2 |\psi_2\rangle) &amp;= \alpha_2 \gamma_1 |\phi_1\rangle \otimes |\phi_2\rangle + \beta_2 \gamma_1 |\phi_1 \rangle \otimes |\psi_2\rangle.
 \end{aligned}
 \]</span></p>
@@ -462,7 +462,8 @@ A_1^{(1)\otimes (2)} |\phi_1\rangle \otimes |\phi_2\rangle = \left(A_1^{(1)}\oti
 \]</span></p>
 </div>
 </div>
-<p><br></p>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-shankar_10_1_2" class="theorem exercise">
 <p><span class="theorem-title"><strong>연습문제 10.1 (Shankar 10.1.2)</strong></span> 한 입자에 대한 힐베르트 공간이 2차원인 가상의 세계를 생각하자. 기저를 <span class="math inline">\(|+\rangle\)</span> 과 <span class="math inline">\(|-\rangle\)</span> 라고 하자. 아래에 정의된 연산자 <span class="math inline">\(\sigma_1^{(1)},\,\sigma_2^{(2)}\)</span> 가 각각 <span class="math inline">\(\mathcal{H}_1\)</span> 과 <span class="math inline">\(\mathcal{H}_2\)</span> 에서 정의된 연산자라고 하자.</p>
 <p><span class="math display">\[
@@ -471,6 +472,8 @@ A_1^{(1)\otimes (2)} |\phi_1\rangle \otimes |\phi_2\rangle = \left(A_1^{(1)}\oti
 \]</span></p>
 <p><span class="math inline">\(\mathcal{H}_1 \otimes \mathcal{H}_2\)</span> 가 <span class="math inline">\(|+\rangle \otimes |+\rangle\)</span>, <span class="math inline">\(|+\rangle \otimes |-\rangle\)</span>, <span class="math inline">\(|-\rangle \otimes |+\rangle\)</span>, <span class="math inline">\(|-\rangle \otimes |-\rangle\)</span> 로 span 될 때 <span class="math inline">\(\sigma_1^{(1)\otimes (2)}\)</span>, <span class="math inline">\(\sigma_2^{(1)\otimes (2)}\)</span>, <span class="math inline">\(\sigma_1^{(1)} \otimes \sigma_2^{(2)}\)</span> 를 구하시오.</p>
 </div>
+</div>
+<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(|i\rangle \otimes |j\rangle\)</span> 을 <span class="math inline">\(|ij\rangle\)</span> 로 표기하자. <span class="math inline">\(\langle i'j'|\sigma_1^{(1)\otimes (2)}|ij\rangle = \langle i'|\sigma_1^{(1)}|i\rangle \langle j'|j\rangle\)</span> 이므로</p>
 <p><span class="math display">\[
@@ -513,11 +516,11 @@ X_1|x_1x_2\rangle = x_1|x_1x_2\rangle,\qquad X_2|x_1x_2\rangle = x_2|x_1x_2\rang
 <p><span class="math display">\[
 X_i \to x_i,\qquad P_i \to -i\hbar \dfrac{\partial}{\partial x_i}
 \]</span></p>
-<p>가 된다. 또한</p>
+<p>가 된다. 또한 입자 <span class="math inline">\(1\)</span> 을 <span class="math inline">\(x_1\)</span> 에서, 입자 <span class="math inline">\(2\)</span> 를 <span class="math inline">\(x_2\)</span> 에서 발견할 확률밀도함수 <span class="math inline">\(P(x_1,\,x_2)\)</span> 는</p>
 <p><span class="math display">\[
 P(x_1,\,x_2) = \left|\langle x_1x_2|\Psi\rangle\right|^2
 \]</span></p>
-<p>는 입자 <span class="math inline">\(1\)</span> 을 <span class="math inline">\(x_1\)</span> 에서, 입자 <span class="math inline">\(2\)</span> 를 <span class="math inline">\(x_2\)</span> 에서 발견할 확률밀도함수가 된다. 따라서,</p>
+<p>이다. 따라서</p>
 <p><span class="math display">\[
 1 = \int_{-\infty}^\infty \int_{-\infty}^\infty P(x_1,\,x_2)\,dx_1\,dx_2 = \int_{-\infty}^\infty \int_{-\infty}^\infty |\langle x_1x_2|\Psi\rangle|^2\,dx_1\,dx_2
 \]</span></p>
@@ -600,6 +603,45 @@ H = H_{CM}+ H_{rel} = \left[\dfrac{p_{CM}^2}{2(m_1+m_2)}\right] + \left[\dfrac{p
 <section id="다차원-n-입자-시스템" class="level3" data-number="10.1.7">
 <h3 data-number="10.1.7" class="anchored" data-anchor-id="다차원-n-입자-시스템"><span class="header-section-number">10.1.7</span> 다차원 <span class="math inline">\(N\)</span> 입자 시스템</h3>
 <p>수학적으로 <span class="math inline">\(1\)</span> 차원 <span class="math inline">\(N\)</span> 입자 시스템과 <span class="math inline">\(N\)</span> 차원 <span class="math inline">\(1\)</span> 입자 시스템은 동등하다.</p>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-shankar_10_1_3" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 10.2 (Shankar 10.1.3)</strong></span> 3차원 등방 진동자는 다음과 같은 해밀토니안으로 기술된다.</p>
+<p><span class="math display">\[
+H = \dfrac{p_x^2+p_y^2+p_z^2}{2m} + \dfrac{m\omega^2}{2}(x^2+y^2+z^2)
+\]</span></p>
+<p>(<span class="math inline">\(1\)</span>) <span class="math inline">\(E=\left(n+\frac{3}{2}\right)\hbar \omega\)</span> 임을 보여라. 이 때 <span class="math inline">\(n=n_x+n_y+n_z\)</span>, <span class="math inline">\(n_x,\,n_y,\,n_z = 0,\,1,\ldots\)</span> 이다.</p>
+<p>(<span class="math inline">\(2\)</span>) 단순조화진동자의 고유함수를 이용하여 위 에너지에 대한 고유함수를 기술하고 정해진 <span class="math inline">\(n\)</span> 에 대해 패리티가 <span class="math inline">\((-1)^n\)</span> 임을 보여라. 첫번째 4 상태를 구면좌표계로 표현하라. 에너지 <span class="math inline">\(E=\left(n+\dfrac{3}{2}\right)\hbar \omega\)</span> 에 대한 degeneracy 가 <span class="math inline">\((n+1)(n+2)/2\)</span> 임을 보여라.</p>
+</div>
+</div>
+<p><br></p>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(1\)</span>) <span class="math inline">\(\displaystyle H=\sum_{i\in \{x,\,y,\,z\}} \dfrac{p_i^2}{2m}+ \dfrac{m\omega^2}{2}x_i^2\)</span> 이므로 분리가능한 해밀토니안이며, 따라서 <span class="math inline">\(x,\,y,\,z\)</span> 에 대한 해밀토니안을 각각 <span class="math inline">\(H_x,\,H_y,\,H_z\)</span> 로 표현할 수 있고 각각의 해밀토니안에 대한 상태를 <span class="math inline">\(|n_x\rangle,\, |n_y\rangle,\, |n_z\rangle\)</span> 로 표현 할 수 있다. <span class="math inline">\(|n_xn_yn_z\rangle\)</span> 은 <span class="math inline">\(H\)</span> 의 고유상태이며 <span class="math inline">\(E=E_x+E_y+E_z = \left(n_x+n_y+n_z + \dfrac{3}{2}\right)\hbar \omega\)</span> 이며, <span class="math inline">\(n_x,\,n_y,\,n_z = 0,\,1,\,2,\ldots\)</span> 이다. <span class="math inline">\(n=n_x+n_y+n_z\)</span> 에 대해 <span class="math inline">\(E=\left(n+\frac{3}{2}\right)\hbar \omega\)</span> 이다.</p>
+<p>(<span class="math inline">\(2\)</span>) 정해진 <span class="math inline">\(n=n_x+n_y+n_z\)</span> 에 대해 에너지 고유상태 <span class="math inline">\(|n\rangle\)</span> 은 <span class="math inline">\(|n_x\angle,\, |n_y\rangle,\, |n_z\rangle\)</span> 의 선형결합이다. 즉</p>
+<p><span class="math display">\[
+\langle x,\,y,\,z|n\rangle = \sum_{n_x+n_y+n_z=n} c_{n_x, n_y, n_z}\langle x|n_x\rangle \langle y|n_y\rangle \langle z| n_z\rangle
+\]</span></p>
+<p>이다. <a href="QM_harmonic_oscillator.html#eq-QM_sho_energy_eigenstate_with_hermite_polynomial" class="quarto-xref">식&nbsp;<span>7.16</span></a> 과 <a href="QM_harmonic_oscillator.html#eq-QM_generator_of_hermite_polynomial" class="quarto-xref">식&nbsp;<span>7.17</span></a> 로 부터 <span class="math inline">\(\langle -x|n_x\rangle = (-1)^{n_x} \langle x|n_x\rangle\)</span> 임을 안다. 따라서,</p>
+<p><span class="math display">\[
+\langle -x,\,-y,\,-z|n\rangle = (-1)^n \langle x,\,y,\,z|n\rangle
+\]</span></p>
+<p>이다. 즉 <span class="math inline">\(|n\rangle\)</span> 의 parity 는 <span class="math inline">\((-1)^n\)</span> 이다.</p>
+<p>첫번째 4 상태는 <span class="math inline">\(n_x=n_y=n_z=0\)</span> 인 상태 하나와 <span class="math inline">\(n_x,\,n_y,\,n_z\)</span> 가운데 하나만 <span class="math inline">\(1\)</span> 이고 나머지는 <span class="math inline">\(0\)</span> 인 상태 3개이다. <span class="math inline">\(\alpha = \sqrt{m\omega/\hbar^2}\)</span> 에 대해</p>
+<p><span class="math display">\[
+\begin{aligned}
+\langle r|0,0,0\rangle &amp;= \left(\dfrac{\alpha^2}{\pi }\right)^{3/4}  e^{-\alpha^2 r^2/2} \\[0.3em]
+\langle r|1,0,0\rangle &amp; = \dfrac{\sqrt{2}}{\pi^{3/4}}\alpha^{5/2} e^{-\alpha^2 r^2/2} r\sin \theta \cos \varphi \\[0.3em]
+\langle r|0,1,0\rangle &amp; = \dfrac{\sqrt{2}}{\pi^{3/4}}\alpha^{5/2} e^{-\alpha^2 r^2/2} r\sin \theta \sin \varphi \\[0.3em]
+\langle r|0,0,1\rangle &amp; = \dfrac{\sqrt{2}}{\pi^{3/4}}\alpha^{5/2} e^{-\alpha^2 r^2/2} r\cos \theta
+\end{aligned}
+\]</span></p>
+<p>이다.</p>
+<p>이제 <span class="math inline">\(n=n_x+n_y+n_z\)</span> 에 대한 degeneracy 를 알아 보자. <span class="math inline">\(n\ge 0\)</span> 에 대해 <span class="math inline">\(n_x,\, n_y,\,n_z\ge 0\)</span> 을 <span class="math inline">\(n=n_x+n_y+n_z\)</span> 가 되도록 분배하는 방법이다. 정해진 <span class="math inline">\(n\)</span> 에 대해 <span class="math inline">\(n_x\)</span> 는 <span class="math inline">\(0,\ldots,\,n\)</span> 중에 선택하면 되며 <span class="math inline">\(n_y\)</span> 는 <span class="math inline">\(0\)</span> 부터 <span class="math inline">\(n-n_x\)</span> 까지 선택하면 되고, <span class="math inline">\(n_z\)</span> 는 자동으로 정해진다. 따라서 가능한 방법의 수는</p>
+<p><span class="math display">\[
+\sum_{n_x=0}^n (n-n_x+1) = (n+1)^2 - \dfrac{n(n+1)}{2} = \dfrac{(n+1)(n+2)}{2}
+\]</span></p>
+<p>이다.</p>
+</div>
 <p><br></p>
 </section>
 </section>
@@ -625,11 +667,11 @@ H = H_{CM}+ H_{rel} = \left[\dfrac{p_{CM}^2}{2(m_1+m_2)}\right] + \left[\dfrac{p
 </section>
 <section id="양자역학의-경우" class="level3" data-number="10.2.2">
 <h3 data-number="10.2.2" class="anchored" data-anchor-id="양자역학의-경우"><span class="header-section-number">10.2.2</span> 양자역학의 경우</h3>
-<p>동일한 두 입자의 위치를 동시에 측정하여 <span class="math inline">\(a\)</span> 와 <span class="math inline">\(b\)</span> 의 측정값을 얻었다고 하자. 이 때 <span class="math inline">\(a\ne b\)</span> 임을 가정하자. 이 상태벡터를 <span class="math inline">\(|\Psi\rangle\)</span> 이라고 하자. 각 입자를 <span class="math inline">\(1\)</span>, <span class="math inline">\(2\)</span> 로 라벨을 붙이고 <span class="math inline">\(\mathcal{H}_1\otimes \mathcal{H}_2\)</span> 힐베르트 공간에서 기술할 때 이것은 <span class="math inline">\(|ab\rangle\)</span> 일 수도 있고 <span class="math inline">\(|ba\rangle\)</span> 일 수도 있다. 문제는 동일한 입자를 구별 할 수 없다는 것이다. 따라서 <span class="math inline">\(|\Phi\rangle\)</span> 은 <span class="math inline">\(|ab\rangle\)</span> 과 <span class="math inline">\(|ba\rangle\)</span> 의 중첩으로</p>
+<p>동일한 두 입자의 위치를 동시에 측정하여 <span class="math inline">\(a\)</span> 와 <span class="math inline">\(b\)</span> 의 측정값을 얻었다고 하자. 이 때 <span class="math inline">\(a\ne b\)</span> 임을 가정하자. 이 상태벡터를 <span class="math inline">\(|\Psi\rangle\)</span> 이라고 하자. 각 입자를 <span class="math inline">\(1\)</span>, <span class="math inline">\(2\)</span> 로 라벨을 붙이고 <span class="math inline">\(\mathcal{H}_1\otimes \mathcal{H}_2\)</span> 힐베르트 공간에서 기술할 때 이것은 <span class="math inline">\(|ab\rangle\)</span> 일 수도 있고 <span class="math inline">\(|ba\rangle\)</span> 일 수도 있다. 문제는 두 입자가 동일하여 구별 할 수 없는 경우이다. <span class="math inline">\(|\Phi\rangle\)</span> 은 <span class="math inline">\(|ab\rangle\)</span> 과 <span class="math inline">\(|ba\rangle\)</span> 의 중첩으로 아래와 같이 표현해 보자.</p>
 <p><span class="math display">\[
 |\Psi\rangle = \alpha |ab\rangle + \beta|ba\rangle
 \]</span></p>
-<p>이다. 두 입자를 교환하는 <span class="math inline">\(P_{12}\)</span> 연산을 생각해보자.</p>
+<p>두 입자를 교환하는 <span class="math inline">\(P_{12}\)</span> 연산을 생각해보자.</p>
 <p><span class="math display">\[
 P_{12}|\Psi\rangle = \beta|ab\rangle + \alpha |ba\rangle
 \]</span></p>
@@ -683,7 +725,7 @@ P_{12}|\Psi\rangle = \beta |ab\rangle + \alpha |ba\rangle = \gamma \alpha |ab\ra
 <p><span class="math display">\[
 \mathcal{H}_1 \otimes \mathcal{H}_2 = \mathcal{H}_S \oplus \mathcal{H}_A
 \]</span></p>
-<p>이다. 우리는 <span class="math inline">\(\mathcal{H}_S\)</span> 의 상태벡터는 시간이 지나도 <span class="math inline">\(\mathcal{H}_S\)</span> 의 상태벡터로 머무르며 <span class="math inline">\(\mathcal{H}_A\)</span> 의 상태벡터 역시 <span class="math inline">\(\mathcal{H}_A\)</span> 의 상태로 머무른다는 것을 보일 수 있다 (<a href="#exr-shankar_10_3_5" class="quarto-xref">연습문제&nbsp;<span>10.4</span></a>). 즉 우리가 동일한 입자에 대해 생각할때는 보존이면 <span class="math inline">\(\mathcal{H}_S\)</span>, 페르미온이면 <span class="math inline">\(\mathcal{H}_A\)</span> 에서만 생각하면 된다.</p>
+<p>이다. 우리는 <span class="math inline">\(\mathcal{H}_S\)</span> 의 상태벡터는 시간이 지나도 <span class="math inline">\(\mathcal{H}_S\)</span> 의 상태벡터로 머무르며 <span class="math inline">\(\mathcal{H}_A\)</span> 의 상태벡터 역시 <span class="math inline">\(\mathcal{H}_A\)</span> 의 상태로 머무른다는 것을 보일 수 있다 (<a href="#exr-shankar_10_3_5" class="quarto-xref">연습문제&nbsp;<span>10.5</span></a>). 즉 우리가 동일한 입자에 대해 생각할때는 보존이면 <span class="math inline">\(\mathcal{H}_S\)</span>, 페르미온이면 <span class="math inline">\(\mathcal{H}_A\)</span> 에서만 생각하면 된다.</p>
 <p>지금까지 <span class="math inline">\(\omega_1\ne \omega_2\)</span> 인 경우에 대해 <span class="math inline">\(|\omega_1\omega_2,\,S\rangle\)</span> 이나 <span class="math inline">\(|\omega_1\omega_2,\,A\rangle\)</span> 을 생각했다. 페르미온의 경우는 배타원리에 의해 <span class="math inline">\(\omega_1 = \omega_2\)</span> 인 경우를 생각 할 필요가 없다. 보존의 경우는 <span class="math inline">\(|\omega \omega\rangle\)</span> 자체가 대칭적이므로 더 생각할 필요가 없게 된다. 즉 <span class="math inline">\(|\omega\omega,\,S\rangle = |\omega\omega\rangle\)</span> 이다.</p>
 <p><br></p>
 </section>
@@ -711,11 +753,11 @@ P_S(\omega_1,\,\omega_2) = |\langle \omega_1\omega_2,\,S|\Psi_S\rangle|^2
 <p><span id="eq-QM_normalization_condition_for_H_S_1"><span class="math display">\[
 1 = \iint |\langle \omega_1\omega_2,\, S|\Psi_S\rangle|^2 \dfrac{d\omega_1\,d\omega_2}{2}
 \tag{10.8}\]</span></span></p>
-<p>이 된다.</p>
-<p>이 경우 파동함수를 아래와 같이 정의한다.</p>
-<p><span class="math display">\[
-\Psi_S (\omega_1,\,\omega_2) := \dfrac{1}{\sqrt{2}} \langle \omega_1\omega_2,\, S|\Psi_S\rangle
-\]</span></p>
+<p>이 된다. 이 경우 파동함수를 아래와 같이 정의한다.</p>
+<p><span id="eq-QM_NDOF_Wavefunction_for_two_identical_boson"><span class="math display">\[
+\boxed{
+\Psi_S (\omega_1,\,\omega_2) := \dfrac{1}{\sqrt{2}} \langle \omega_1\omega_2,\, S|\Psi_S\rangle. }
+\tag{10.9}\]</span></span></p>
 <p>이제 <a href="#eq-QM_normalization_condition_for_H_S_1" class="quarto-xref">식&nbsp;<span>10.8</span></a> 이 좀 더 깔끔하게 아래와 같이 된다.</p>
 <p><span class="math display">\[
 \int |\Psi_S(\omega_1,\omega_2)|^2\ d\omega_1\,d\omega_2 = 1
@@ -739,10 +781,14 @@ P_S(\omega_1,\, \omega_2) = |\langle x_1x_2,\,S|\Psi_S\rangle|^2 =2 \left|\Psi_S
 <p><span class="math display">\[
 |\Psi_S\rangle = \dfrac{|23\rangle + |32\rangle}{\sqrt{2}}
 \]</span></p>
-<p>이며 파동함수 <span class="math inline">\(\Psi_S(x_1,\,x_2)\)</span> 는</p>
+<p>이며 파동함수 <span class="math inline">\(\Psi_S(x_1,\,x_2)\)</span> 는 <a href="#eq-QM_NDOF_Wavefunction_for_two_identical_boson" class="quarto-xref">식&nbsp;<span>10.9</span></a> 에 따라</p>
 <p><span class="math display">\[
 \begin{aligned}
-\Psi_S(x_1,\,x_2) &amp;= \dfrac{1}{\sqrt{2}}\langle x_1x_2|(|23\rangle + |32\rangle) = \dfrac{1}{\sqrt{2}} \left[\psi_2(x_1)\psi_3(x_2) + \psi_3(x_1)\psi_2(x_2)\right]
+\Psi_S(x_1,\,x_2) &amp;= \dfrac{1}{\sqrt{2}}\langle x_1x_2,\,S|\Psi_S\rangle \\[0.3em]
+&amp;=\dfrac{1}{\sqrt{2}}\left(\dfrac{1}{\sqrt{2}}\left(\langle x_1x_2| + \langle x_2x_1|\right)\right) \left(\dfrac{1}{\sqrt{2}}(|23\rangle + |32\rangle)\right) \\[0.3em]
+&amp;= \dfrac{1}{2\sqrt{2}} \left(\langle x_1x_2|23\rangle + \langle x_1x_2|32\rangle + \langle x_2x_1|23\rangle + \langle x_2x_1|32\rangle  \right) \\
+&amp;= \dfrac{1}{2\sqrt{2}}\left(\Psi_2(x_1) \Psi_3(x_2) + \Psi_3(x_1)\Psi_2(x_2) + \Psi_2(x_2)\Psi_3(x_1) + \Psi_3(x_2)\Psi_2(x_1)\right)  \\[0.3em]
+&amp;= \dfrac{1}{\sqrt{2}} \left[\Psi_2(x_1)\Psi_3(x_2) + \Psi_3(x_1)\Psi_2(x_2)\right]
 \end{aligned}
 \]</span></p>
 <p>이다.</p>
@@ -782,7 +828,7 @@ P_A(\omega_1,\, \omega_2) = 2|\Psi_A(\omega_1,\,\omega_2)|^2
 <p>이며 파동함수 <span class="math inline">\(\Psi_A(x_1,\,x_2)\)</span> 는</p>
 <p><span class="math display">\[
 \begin{aligned}
-\Psi_A(x_1,\,x_2) &amp;= \dfrac{1}{\sqrt{2}}\langle x_1x_2|(|23\rangle - |32\rangle) = \dfrac{1}{\sqrt{2}} \left[\psi_2(x_1)\psi_3(x_2) - \psi_3(x_1)\psi_2(x_2)\right]
+\Psi_A(x_1,\,x_2) &amp;= \dfrac{1}{\sqrt{2}}\langle x_1x_2|(|23\rangle - |32\rangle) = \dfrac{1}{\sqrt{2}} \left[\Psi_2(x_1)\Psi_3(x_2) - \Psi_3(x_1)\Psi_2(x_2)\right]
 \end{aligned}
 \]</span></p>
 <p>이다.</p>
@@ -791,17 +837,17 @@ P_A(\omega_1,\, \omega_2) = 2|\Psi_A(\omega_1,\,\omega_2)|^2
 <p><br></p>
 <p><a href="#exm-QM_two_fermion_wave_fucntion" class="quarto-xref">예제&nbsp;<span>10.4</span></a> 에서 <span class="math inline">\(\Psi_A(x_1,\,x_2)\)</span> 는 행렬의 행렬식(determinant) <span class="math inline">\(|A|\)</span> 를 이용하여</p>
 <p><span class="math display">\[
-\Psi_A(x_1,\,x_2) =  \dfrac{1}{\sqrt{2}} \left[\psi_2(x_1)\psi_3(x_2) - \psi_3(x_1)\psi_2(x_2)\right]= \dfrac{1}{\sqrt{2}} \left| \begin{array}{cc} \psi_2(x_1) &amp; \psi_3 (x_1) \\ \psi_2(x_2) &amp; \psi_3 (x_2) \end{array}\right|
+\Psi_A(x_1,\,x_2) =  \dfrac{1}{\sqrt{2}} \left[\Psi_2(x_1)\Psi_3(x_2) - \Psi_3(x_1)\Psi_2(x_2)\right]= \dfrac{1}{\sqrt{2}} \left| \begin{array}{cc} \Psi_2(x_1) &amp; \Psi_3 (x_1) \\ \Psi_2(x_2) &amp; \Psi_3 (x_2) \end{array}\right|
 \]</span></p>
 <p>로 표현 할 수 있다. 이것을 일반화하면 <span class="math inline">\(N\)</span> 개의 페르미온 입자가 각각 <span class="math inline">\(\omega_1,\ldots,\,\omega_N\)</span> 상태에 있다고 할 때</p>
 <p><span id="eq-QM_determinamt_and_antisymmetric_wavefunction"><span class="math display">\[
-\Psi_A(x_1,\ldots,\,x_N) = \dfrac{1}{\sqrt{N!}}\left|\begin{array}{cccc} \psi_{\omega_1}(x_1) &amp; \psi_{\omega_2} (x_1) &amp; \cdots &amp; \psi_{\omega_N}(x_1) \\\psi_{\omega_1}(x_2) &amp; \psi_{\omega_2} (x_2) &amp; \cdots &amp; \psi_{\omega_N}(x_2) \\ &amp; \vdots &amp; &amp; \\ \psi_{\omega_1}(x_N) &amp; \psi_{\omega_2} (x_N) &amp; \cdots &amp; \psi_{\omega_N}(x_N)  \end{array}\right|
-\tag{10.9}\]</span></span></p>
+\Psi_A(x_1,\ldots,\,x_N) = \dfrac{1}{\sqrt{N!}}\left|\begin{array}{cccc} \Psi_{\omega_1}(x_1) &amp; \Psi_{\omega_2} (x_1) &amp; \cdots &amp; \Psi_{\omega_N}(x_1) \\ \Psi_{\omega_1}(x_2) &amp; \Psi_{\omega_2} (x_2) &amp; \cdots &amp; \Psi_{\omega_N}(x_2) \\ &amp; \vdots &amp; &amp; \\ \Psi_{\omega_1}(x_N) &amp; \Psi_{\omega_2} (x_N) &amp; \cdots &amp; \Psi_{\omega_N}(x_N)  \end{array}\right|
+\tag{10.10}\]</span></span></p>
 <p>이다. 이것은 행렬식의 정의로부터 자명한데 행렬식은 <span class="math inline">\(N\times N\)</span> 행렬에 대해 아래의 성질을 갖는 함수로 정의되며, 아래의 세가지 성질을 모두 충족하는 함수는 행렬식이 유일하다.</p>
 <p>  (<span class="math inline">\(1\)</span>) 항등행렬에 대해 행렬식은 <span class="math inline">\(1\)</span> 이다.</p>
 <p>  (<span class="math inline">\(2\)</span>) <span class="math inline">\(N\)</span> 차원 행/열 벡터에 대해 다중선형 함수이다.</p>
 <p>  (<span class="math inline">\(3\)</span>) 두 행/열 을 바꾼 행렬의 행렬식은 원래 행렬의 행렬에 <span class="math inline">\(-1\)</span> 을 곱한 값이다.</p>
-<p><a href="#eq-QM_determinamt_and_antisymmetric_wavefunction" class="quarto-xref">식&nbsp;<span>10.9</span></a> 가 반대칭이라는 것은 행렬식의 성질 (<span class="math inline">\(3\)</span>) 으로 부터 알 수 있다. <a href="#eq-QM_determinamt_and_antisymmetric_wavefunction" class="quarto-xref">식&nbsp;<span>10.9</span></a> 의 두 열을 바꾸는 것이 두 상태를 바꾸는 교환연산이기 때문이다. 또한 <span class="math inline">\(\int |\psi_{\omega_i}(x_j)|^2\, dx_j = 1\)</span> 이며 항의 갯수가 <span class="math inline">\(N!\)</span> 개이므로</p>
+<p><a href="#eq-QM_determinamt_and_antisymmetric_wavefunction" class="quarto-xref">식&nbsp;<span>10.10</span></a> 가 반대칭이라는 것은 행렬식의 성질 (<span class="math inline">\(3\)</span>) 으로 부터 알 수 있다. <a href="#eq-QM_determinamt_and_antisymmetric_wavefunction" class="quarto-xref">식&nbsp;<span>10.10</span></a> 의 두 열을 바꾸는 것이 두 상태를 바꾸는 교환연산이기 때문이다. 또한 <span class="math inline">\(\int |\psi_{\omega_i}(x_j)|^2\, dx_j = 1\)</span> 이며 항의 갯수가 <span class="math inline">\(N!\)</span> 개이므로</p>
 <p><span class="math display">\[
 \int\int\cdots \int \left|\Psi_A(x_1,\ldots,\,x_N)\right|^2 \, dx_1 dx_2 \cdots dx_N = 1
 \]</span></p>
@@ -814,11 +860,11 @@ P_A(\omega_1,\, \omega_2) = 2|\Psi_A(\omega_1,\,\omega_2)|^2
 <p><span id="eq-QM_probability_density_of_two_identical_particle"><span class="math display">\[
 \begin{aligned}
 P_{S/A}(x_1,\,x_2) &amp;= 2|\Psi_{S/A} (x_1,\,x_2)|^2 \\
-&amp;= 2\left|\dfrac{1}{\sqrt{2}}\left[ \psi_m(x_1) \psi_n(x_2) \pm \psi_m(x_2) \psi_n(x_1)\right]\right|^2 \\
-&amp;= |\psi_m(x_1)|^2|\psi_n(x_2)|^2 + |\psi_m(x_2)|^2|\psi_n(x_1)|^2 \\[0.3em]
-&amp;\quad \pm \left[\psi_m(x_1)\psi_n(x_2)\psi_m^\ast (x_2) \psi_n^\ast(x_1) + \psi_m(x_2)\psi_n(x_1) \psi_m^\ast(x_1) \psi_n^\ast(x_2)\right]
+&amp;= 2\left|\dfrac{1}{\sqrt{2}}\left[ \Psi_m(x_1) \Psi_n(x_2) \pm \Psi_m(x_2) \Psi_n(x_1)\right]\right|^2 \\
+&amp;= |\Psi_m(x_1)|^2|\Psi_n(x_2)|^2 + |\Psi_m(x_2)|^2|\Psi_n(x_1)|^2 \\[0.3em]
+&amp;\quad \pm \left[\Psi_m(x_1)\Psi_n(x_2)\Psi_m^\ast (x_2) \Psi_n^\ast(x_1) + \Psi_m(x_2)\Psi_n(x_1) \Psi_m^\ast(x_1) \Prsi_n^\ast(x_2)\right]
 \end{aligned}
-\tag{10.10}\]</span></span></p>
+\tag{10.11}\]</span></span></p>
 <p>이 된다. 위 식은 세가지 항으로 구분 할 수 있다.</p>
 <div class="callout callout-style-simple callout-important no-icon">
 <div class="callout-body d-flex">
@@ -826,8 +872,8 @@ P_{S/A}(x_1,\,x_2) &amp;= 2|\Psi_{S/A} (x_1,\,x_2)|^2 \\
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<p>(<span class="math inline">\(1\)</span>) 첫번째 항 <span class="math inline">\(|\psi_m(x_1)|^2|\psi_n(x_2)|^2\)</span> 은 첫번째 입자가 <span class="math inline">\(m\)</span> 상태, 두번째 입자가 <span class="math inline">\(n\)</span> 상태에 있을 확률분포이다.</p>
-<p>(<span class="math inline">\(2\)</span>) 두번째 항 <span class="math inline">\(|\psi_m(x_2)|^2|\psi_n(x_1)|^2\)</span> 은 첫번째 입자가 <span class="math inline">\(n\)</span> 상태, 두번째 입자가 <span class="math inline">\(m\)</span> 상태에 있을 확률분포이다.</p>
+<p>(<span class="math inline">\(1\)</span>) 첫번째 항 <span class="math inline">\(|\Psi_m(x_1)|^2|\Psi_n(x_2)|^2\)</span> 은 첫번째 입자가 <span class="math inline">\(m\)</span> 상태, 두번째 입자가 <span class="math inline">\(n\)</span> 상태에 있을 확률분포이다.</p>
+<p>(<span class="math inline">\(2\)</span>) 두번째 항 <span class="math inline">\(|\Psi_m(x_2)|^2|\Psi_n(x_1)|^2\)</span> 은 첫번째 입자가 <span class="math inline">\(n\)</span> 상태, 두번째 입자가 <span class="math inline">\(m\)</span> 상태에 있을 확률분포이다.</p>
 <p>(<span class="math inline">\(3\)</span>) <span class="math inline">\(\pm\)</span> 과 뒤에 따르는 나머지 항은 소위 간섭(interference) 에 의한 항이다.</p>
 </div>
 </div>
@@ -835,20 +881,20 @@ P_{S/A}(x_1,\,x_2) &amp;= 2|\Psi_{S/A} (x_1,\,x_2)|^2 \\
 <p>여기서 (<span class="math inline">\(1\)</span>) 과 (<span class="math inline">\(2\)</span>) 는 정확히 구별할수 없는 두 입자에 의한 효과이며 (<span class="math inline">\(3\)</span>) 은 두 입자에 의한 간섭에 의한 효과이다. 예를 들어 두 입자가 같은 위치에서 발견될 확률을 생각해보자.</p>
 <p><span id="eq-QM_limit_of_two_particle_wavefunction_1"><span class="math display">\[
 \begin{aligned}
-\lim_{x_1\to x,\, x_2\to x} P_S(x_1,\,x_2) &amp;= 4|\psi_m(x)\psi_n(x)|^2, \\
+\lim_{x_1\to x,\, x_2\to x} P_S(x_1,\,x_2) &amp;= 4|\Psi_m(x)\Psi_n(x)|^2, \\
 \lim_{x_1\to x,\, x_2\to x} P_A(x_1,\,x_2) &amp;= 0,
 \end{aligned}
-\tag{10.11}\]</span></span></p>
+\tag{10.12}\]</span></span></p>
 <p>즉 우리가 두 중성 파이온에 대해 <span class="math inline">\(P(x_1,\,x_2)\)</span> 를 구한다면 혹은 최소한 두 입자가 같은 위치에서 발견될 확률을 구한다면 이 입자가 보존인지 페르미온인지를 확인 할 수 있다.</p>
 <p>두 입자에 대해 <span class="math inline">\(P(x_1,\,x_2)\)</span> 를 구하는 것은 보존/페르미온 구분 이전에 두 입자가 동일한지 아닌지 여부에 대해 결정하는데도 사용 될 수 있다. <span class="math inline">\(K\)</span> 와 <span class="math inline">\(\overline{K}\)</span> 라고 불리우는 두 보존은 질량과 전하가 같고 <em>hypercharge</em> 라고 불리는 양자수가 다르다. 우선 서로 다른 두 입자가 각각 <span class="math inline">\(m,\,n\)</span> 상태에서 <span class="math inline">\(x_1,\,x_2\)</span> 에서 발견될 확률 <span class="math inline">\(P_D(x_1,\,x_2)\)</span> 는</p>
 <p><span class="math display">\[
-P_D(x_1,\,x_2) = |\psi_m(x_1)|^2|\psi_n(x_2)|^2 + |\psi_m(x_2)|^2|\psi_n(x_1)|^2
+P_D(x_1,\,x_2) = |\Psi_m(x_1)|^2|\Psi_n(x_2)|^2 + |\Psi_m(x_2)|^2|\Psi_n(x_1)|^2
 \]</span></p>
 <p>이며, 같은 위치에서 발견될 확률은</p>
 <p><span class="math display">\[
-\lim_{x_1\to x,\, x_2\to x} P_D(x_1,\,x_2) = 2|\psi_m(x)\psi_n(x)|^2
+\lim_{x_1\to x,\, x_2\to x} P_D(x_1,\,x_2) = 2|\Psi_m(x)\Psi_n(x)|^2
 \]</span></p>
-<p>이다. 이를 <a href="#eq-QM_limit_of_two_particle_wavefunction_1" class="quarto-xref">식&nbsp;<span>10.11</span></a> 와 비교해보면 2배의 차이가 난다.</p>
+<p>이다. 이를 <a href="#eq-QM_limit_of_two_particle_wavefunction_1" class="quarto-xref">식&nbsp;<span>10.12</span></a> 와 비교해보면 2배의 차이가 난다.</p>
 <p><br></p>
 </section>
 <section id="n-동일-입자-시스템" class="level3" data-number="10.3.5">
@@ -878,16 +924,23 @@ P_{S/A}(x_1,\ldots,\,x_N) = |\Psi_{S/A}(x_1,\ldots,\,x_N)|^2
 </section>
 <section id="우주와-대칭반대칭-파동함수-문제" class="level2" data-number="10.4">
 <h2 data-number="10.4" class="anchored" data-anchor-id="우주와-대칭반대칭-파동함수-문제"><span class="header-section-number">10.4</span> 우주와 대칭/반대칭 파동함수 문제</h2>
-<p>자연에 대한 논의에서 항상 중요한것은 우리가 실험하거나 이론적으로 계산하려고 하는 부분을 우주의 나머지 부분과 분리하는 것이다. 어떤 시스템도 엄밀하게 고립될 수 없기 때문에 우리는 적절한 근사를 사용한다. 고전역학에서는 우리가 관심있는 시스템과 나머지 우주 전체를 분리하다. 즉,</p>
+<p>자연에 대한 논의에서 항상 중요한것은 우리가 실험하거나 이론적으로 계산하려고 하는 부분을 우주의 나머지 부분과 분리하는 것이다. 어떤 시스템도 엄밀하게 고립될 수 없기 때문에 우리는 적절한 근사를 사용한다. 고전역학에서는 우리가 관심있는 시스템(sys)과 나머지 우주 전체(rest, 이하 나머지)를 분리하다. 즉,</p>
 <p><span class="math display">\[
-\mathcal{H}_{\text{universe}} = \mathcal{H}_{\text{system}} + \mathcal{H}_\text{rest}
+\mathcal{H}_{\text{universe}} = \mathcal{H}_{\text{sys}} + \mathcal{H}_\text{rest}
 \]</span></p>
-<p>로 분리하며 <span class="math inline">\(\mathcal{H}_{\text{system}}\)</span> 은 우리가 관심있는 시스템의 (일반화된) 좌표와 운동량의 함수이며, 이 좌표와 운동량은 나머지 우주에 대해 독립적임을 가정한다. 이것이 좋은 근사가 되기위해서는 이 가정이 가능한 한 잘 만족되어야 한다.</p>
+<p>로 분리하며 <span class="math inline">\(\mathcal{H}_{\text{sys}}\)</span> 은 우리가 관심있는 시스템의 (일반화된) 좌표와 운동량의 함수이며, 이 좌표와 운동량은 나머지 우주에 대해 독립적임을 가정한다. 이것이 좋은 근사가 되기위해서는 이 가정이 가능한 한 잘 만족되어야 한다.</p>
 <p>양자역학에서는 우리의 시스템과 나머지 우주의 파동함수를 다음과 같이 분리한다.</p>
 <p><span class="math display">\[
-\Psi_{\text{universe}} = \Psi_{\text{system}}\cdot \Psi_{\text{rest}}
+\Psi_{\text{universe}} = \Psi_{\text{sys}}\cdot \Psi_{\text{rest}}
 \]</span></p>
-<p>– to be shotly –</p>
+<p>여기서 <span class="math inline">\(\Psi_{\text{sys}}\)</span> 는 시스템의 좌표계에만의 함수이며 이것들을 모두 <span class="math inline">\(x_s\)</span> 로 표현한다고 하자. 이 때 나머지 우주 전체는 어떻든 상관 없이 시스템이 <span class="math inline">\(x_s\)</span> 에 있을 확률 <span class="math inline">\(P(x_s)\)</span> 는</p>
+<p><span class="math display">\[
+\begin{aligned}
+P(x_s) &amp;= \int |\Psi_{\text{universe}}(x_s,\, x_\text{rest})|^2\, dx_\text{rest} = |\Psi_\text{sys}(x_s)|^2 \int |\Psi_{\text{rest}}(x_\text{rest})|^2 \, dx_{\text{rest}} \\
+&amp;=|\Psi_\text{sys}(x_s)|^2
+\end{aligned}
+\]</span></p>
+<p>이다. 그런데 문제는 시스템과 나머지에 동일한 입자가 있을 때 발생한다. 시스템과과 나머지 사이에 아무 상호작용이 없더라도 이 동일 입자들에 대한 대칭 혹은 반대칭 상태가 유지되어야 하며 파동함수를 시스템과 나머지의 곱으로 표현할 수 없으며, 따라서 위 식과 같이 확률을 분리할 수도 없다.</p>
 <p>예를 들어 지구의 전자의 파동함수 <span class="math inline">\(\psi_E(x_E)\)</span> 와 달의 전자의 파동함수 <span class="math inline">\(\psi_M(x_M)\)</span> 을 생각하면 당연히</p>
 <p><span class="math display">\[
 \begin{aligned}
@@ -898,36 +951,41 @@ P_{S/A}(x_1,\ldots,\,x_N) = |\Psi_{S/A}(x_1,\ldots,\,x_N)|^2
 <p>일 것이므로 <span class="math inline">\(\Psi(x_E,\,x_M) \approx \psi_E(x_E)\psi_M(x_M)\)</span> 이 되며, 이 경우 분리 할 수 있다는…</p>
 <p><br></p>
 </section>
-<section id="연습문제" class="level2" data-number="10.5">
-<h2 data-number="10.5" class="anchored" data-anchor-id="연습문제"><span class="header-section-number">10.5</span> 연습문제</h2>
+<section id="연습문제" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="연습문제">연습문제</h2>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-shankar_10_3_1" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 10.2 (Shankar 10.3.1)</strong></span> 두 동일한 보존이 <span class="math inline">\(|\phi\rangle\)</span> 과 <span class="math inline">\(|\psi\rangle\)</span> 상태에서 발견되었다. <span class="math inline">\(\langle \phi|\psi\rangle \ne 0\)</span> 일 때 정규화된 상태벡터는 무엇인가?</p>
+<p><span class="theorem-title"><strong>연습문제 10.3 (Shankar 10.3.1)</strong></span> 두 동일한 보존이 <span class="math inline">\(|\phi\rangle\)</span> 과 <span class="math inline">\(|\psi\rangle\)</span> 상태에서 발견되었다. <span class="math inline">\(\langle \phi|\psi\rangle \ne 0\)</span> 일 때 정규화된 상태벡터는 무엇인가?</p>
 </div>
+</div>
+<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(|\Psi_S\rangle = a(|\phi\psi\rangle + |\psi\phi\rangle)\)</span> 이며</p>
 <p><span class="math display">\[
 \begin{aligned}
-1 &amp;= \langle \Psi_S|\Psi_S\rangle = |a|^2(2+ |\langle \phi|\psi\rangle|^2)
+1 &amp;= \langle \Psi_S|\Psi_S\rangle = 2|a|^212+ |\langle \phi|\psi\rangle|^2)
 \end{aligned}
 \]</span></p>
 <p>이므로,</p>
 <p><span class="math display">\[
-|\Psi_S\rangle = \dfrac{1}{\sqrt{2+|\langle \phi|\psi\rangle|^2}}(|\phi \psi\rangle + |\psi \phi\rangle)
+|\Psi_S\rangle = \dfrac{1}{\sqrt{2(1+|\langle \phi|\psi\rangle|^2)}}(|\phi \psi\rangle + |\psi \phi\rangle)
 \]</span></p>
 <p>이다.</p>
 </div>
-<p><br></p>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-shankar_10_3_2" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 10.3 (Shankar 10.3.2)</strong></span> 3개의 보존으로 이루어진 무한 포텐셜 우물 시스템에서 <span class="math inline">\(3,\,3,\,4\)</span> 상태에서 에너지가 측정되었다. 대칭화되고 정규화된 상태벡터를 쓰시오.</p>
+<p><span class="theorem-title"><strong>연습문제 10.4 (Shankar 10.3.2)</strong></span> 3개의 보존으로 이루어진 무한 포텐셜 우물 시스템에서 <span class="math inline">\(3,\,3,\,4\)</span> 상태에서 에너지가 측정되었다. 대칭화되고 정규화된 상태벡터를 쓰시오.</p>
 </div>
-<div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span><span class="math display">\[
-|334,\, S\rangle = \dfrac{1}{\sqrt{3}}(|334\rangle +  |433\rangle  + |343\rangle)
-\]</span></p>
 </div>
 <p><br></p>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(\displaystyle |334,\, S\rangle = \dfrac{1}{\sqrt{3}}(|334\rangle +  |433\rangle  + |343\rangle)\)</span></p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-shankar_10_3_5" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 10.4 (Shankar 10.3.5)</strong></span> 교환연산자 <span class="math inline">\(P_{12}\)</span> 는 <span class="math inline">\(X\)</span> 기저에 대해 다음과 같이 작용한다.</p>
+<p><span class="theorem-title"><strong>연습문제 10.5 (Shankar 10.3.5)</strong></span> 교환연산자 <span class="math inline">\(P_{12}\)</span> 는 <span class="math inline">\(X\)</span> 기저에 대해 다음과 같이 작용한다.</p>
 <p><span class="math display">\[
 P_{12}|x_1x_2\rangle = |x_2x_1\rangle.
 \]</span></p>
@@ -936,6 +994,8 @@ P_{12}|x_1x_2\rangle = |x_2x_1\rangle.
 <p>(<span class="math inline">\(3\)</span>) <span class="math inline">\(P_{12}X_1P_{12}=X_2\)</span>, <span class="math inline">\(P_{12}X_2P_{12}=X_1\)</span> 이며 운동량 연산자 <span class="math inline">\(P_1,\, P_2\)</span> 에 대해서도 유사하게 성립함을 보여라. 그리고 <span class="math inline">\(P_{12}\Omega (X_2,P_2\;X_1,P_1) P_{12}= \Omega (X_1,P_1\;X_2,P_2)\)</span> 임을 보여라.</p>
 <p>(<span class="math inline">\(4\)</span>) 두 동일 입자에 대한 해밀토니안과 시간전개 연산자가 <span class="math inline">\(H\to P_{12}HP_{12}\)</span>, <span class="math inline">\(U \to P_{12}UP_{12}\)</span> 변환에 대해 불변임을 보여라. 이를 이용하여 <span class="math inline">\(P_{12}\)</span> 의 고유상태는 시간이 지나도 <span class="math inline">\(P_{12}\)</span> 의 고유상태임을 보여라. 즉 <span class="math inline">\(\mathcal{H}_S\)</span>(혹은 <span class="math inline">\(\mathcal{H}_A\)</span>) 에 속하는 상태벡터는 시간이 지나도 <span class="math inline">\(\mathcal{H}_S\)</span>(혹은 <span class="math inline">\(\mathcal{H}_A\)</span>) 에 속한다.</p>
 </div>
+</div>
+<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(1\)</span>) 우선 <span class="math inline">\(P_{12}\)</span> 에르미트 임을 보이자.</p>
 <p><span class="math display">\[
@@ -961,10 +1021,13 @@ P_{12}|\omega_1 \omega_2 \rangle &amp;= \iint P_{12}|x_1x_2\rangle \langle x_1x_
 <p>이므로 <span class="math inline">\(P_{12}X_1 P_{12}=X_2\)</span> 이다. 같은 방법으로 <span class="math inline">\(P_{12}X_2P_{12}=X_1\)</span> 임을 보일 수 있다. (<span class="math inline">\(2\)</span>) 의 결과로 <span class="math inline">\(P_{12}P_1 P_{12}=P_2\)</span>, <span class="math inline">\(P_{12}P_2P_{12}=P_1\)</span> 임을 보일 수 있다.</p>
 <p><span class="math inline">\(\Omega(X_1,\, P_1,\, X_2,\,P_2)\)</span> 가</p>
 </div>
-<p><br></p>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-shankar_10_3_6" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 10.5 (Shankar 10.3.6)</strong></span> 수소 원자와 같은 복합 물질을 생각하자. 이 물질은 보존 혹은 페르미온 처럼 행동하는가? 짝수 혹은 홀수개의 페르미온으로 이루어진 입자가 보존이나 페르미온 처럼 행동할지에 대해 논하라.</p>
+<p><span class="theorem-title"><strong>연습문제 10.6 (Shankar 10.3.6)</strong></span> 수소 원자와 같은 복합 물질을 생각하자. 이 물질은 보존 혹은 페르미온 처럼 행동하는가? 짝수 혹은 홀수개의 페르미온으로 이루어진 입자가 보존이나 페르미온 처럼 행동할지에 대해 논하라.</p>
 </div>
+</div>
+<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span>수소 원자는 양성자와 전자로 이루어져 있으므로 두 수소 원자를 각각 <span class="math inline">\(|n_1e_1n_2e_2\rangle\)</span> 로 기술 할 수 있다. <span class="math inline">\(n_i\)</span> 은 핵에 대한 양자상태이며 <span class="math inline">\(e_j\)</span> 는 전자에 대한 양자상태이다. 여기에는 양성자와 전자라는 두종류의 동일 입자가 각각 존재한다. 양성자에 대한 반대칭성과 전자에 대한 반대칭성을 고려하면</p>
 <p><span class="math display">\[

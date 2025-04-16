@@ -6,6 +6,9 @@ crossref:
   chapters: true
 ---
 
+{{< include ../latexmacros.qmd >}}
+
+
 ::: {.callout-tip appearance="minimal"}
 @Shankar1994 의 2장 *Review of Classical Mechanics* 의 2절 *The Hamiltonian formalism* 부터 정리한다.
 :::
@@ -16,37 +19,36 @@ crossref:
 
 ### 해밀토니안
 
-라그랑지안 역학에서는 일반화된 좌표 $\boldsymbol{q} = (q_1,\ldots,\,q_n)$ 와 그 속도 $\dot{\boldsymbol{q}} = (\dot{q}_1,\ldots,\,\dot{q}_n)$ 가 독립변수로서 라그랑지안에 사용된다. 즉
+라그랑지안 역학에서는 일반화된 좌표 $\bf{q} = (q_1,\ldots,\,q_n)$ 와 그 속도 $\dot{\bf{q}} = (\dot{q}_1,\ldots,\,\dot{q}_n)$ 가 독립변수로서 라그랑지안에 사용된다. 즉
 
 $$
-\mathcal{L} = \mathcal{L}(\boldsymbol{q},\,\dot{\boldsymbol{q}})
-$$
+\mathcal{L} = \mathcal{L}(\bf{q},\,\dot{\bf{q}})
+$$ {#eq-CHM_symmmetry_variables_of_lagrangian}
 
 이다. $q_i$ 에 대한 정준 모멘텀(canonical momentum 혹은 conjugate momentum) $p_i$ 는 라그랑지안 $\mathcal{L}$ 에 대해 다음과 같이 정의된다.
 
 $$
-p_i := \dfrac{\partial \mathcal{L}}{\partial \dot{q}_i}
-$$ {#eq-part3_generalized_momentum}
-
-이 때 $\boldsymbol{p}=(p_1,\ldots,\,p_n)$ 으로 표기한다.
+\boxed{p_i := \dfrac{\partial \mathcal{L}}{\partial \dot{q}_i}}.
+$$ {#eq-CHM_symmetry_generalized_momentum}
 
 </br>
 
-해밀토니안($\mathcal{H}$)은 라그랑지안에 대한 르장드르 변환을 통해 다음과 같이 정의된다. $$
-\mathcal{H} := \dot{\boldsymbol{q}} \cdot \boldsymbol{p} - \mathcal{L}(\boldsymbol{q},\, \dot{\boldsymbol{q}})
-$$ {#eq-part3_definition_of_hamiltonian}
+해밀토니안($\mathcal{H}$)은 라그랑지안에 대한 르장드르 변환을 통해 다음과 같이 정의된다. 
+$$
+\boxed{\mathcal{H} := \dot{\bf{q}} \cdot \bf{p} - \mathcal{L}(\bf{q},\, \dot{\bf{q}})}.
+$$ {#eq-CHM_symmetry_definition_of_hamiltonian}
 
 여기서
 
 $$
-\dfrac{\partial \mathcal{H}}{\partial \dot{q}_i} = p_i - \dfrac{\partial L}{\partial \dot{q}_i}= 0
+\dfrac{\partial \mathcal{H}}{\partial \dot{q}_i} = p_i - \dfrac{\partial \mathcal{L}}{\partial \dot{q}_i}= 0
 $$
 
-이므로 $\mathcal{H}$ 는 $\dot{\boldsymbol{q}}$ 에 의존하지 않으며, \$$\boldsymbol{q},\,\boldsymbol{p}$ 가 독립변수로서 $\mathcal{H}$ 를 기술한다. 즉
+이므로 $\mathcal{H}$ 는 $\dot{\bf{q}}$ 에 의존하지 않으며, $\bf{q},\,\bf{p}$ 가 독립변수로서 $\mathcal{H}$ 를 기술한다. 즉
 
 $$
-\mathcal{H} = \mathcal{H}(\boldsymbol{q},\, \boldsymbol{p})
-$$
+\boxed{\mathcal{H} = \mathcal{H}(\bf{q},\, \bf{p})}
+$$ {#eq-CHM_symmetry_hamiltonian_function_of_position_and_momentum}
 
 이다.
 
@@ -54,9 +56,9 @@ $$
 
 $$
 \dfrac{\partial \mathcal{L}}{\partial {q_i}} - \dfrac{d}{dt}\left(\dfrac{\partial \mathcal{L}}{\partial \dot{q}_i}\right) = 0
-$$
+$$ {#eq-CHM_symmetry_euler_lagrange_equation}
 
-이제 해밀토니안에 대한 운동방정식을 만들어 보자. @eq-part3_definition_of_hamiltonian 를 이용하면
+이제 해밀토니안에 대한 운동방정식을 만들어 보자. @eq-CHM_symmetry_definition_of_hamiltonian 를 이용하면
 
 $$
 \begin{aligned}
@@ -64,7 +66,7 @@ $$
 \end{aligned}
 $$
 
-이다. 여기서 $p_j = \partial L/\partial \dot{q}_j$ 이며 $\boldsymbol{p},\, \boldsymbol{q}$ 는 해밀토니안 $\mathcal{H}$ 의 독립변수이므로 $\partial q_j /\partial p_i = 0$ 이다. 이로부터,
+이다. 여기서 $p_j = \partial L/\partial \dot{q}_j$ 이며 $\bf{p},\, \bf{q}$ 는 해밀토니안 $\mathcal{H}$ 의 독립변수이므로 $\partial q_j /\partial p_i = 0$ 이다. 이로부터,
 
 $$
 \dfrac{\partial \mathcal{H}}{\partial p_i} = \dot{q}_i
@@ -76,13 +78,12 @@ $$
 \dfrac{\partial \mathcal{H}}{\partial q_i} = - \dfrac{\partial \mathcal{L}}{\partial q_i} - \sum_j \dfrac{\partial \dot{q}_j}{\partial q_i} \dfrac{\partial \mathcal{L}}{\partial \dot{q}_j} = - \dfrac{\partial \mathcal{L}}{\partial q_i} = -\dot{p}_i
 $$
 
-이다. 즉 해밀토니안의 운동방정식, 즉 **헤밀턴 정준방정식(Hamilton's canonical equations)**은 다음과 같이 주어진다,
+이다. 즉 해밀토니안의 운동방정식, 즉 **해밀턴 정준방정식(Hamilton's canonical equations)**은 다음과 같이 주어진다,
 
-::: {.border style="background-color:#FFF0F5 ;padding:1px;"}
 $$
-\dfrac{\partial \mathcal{H}}{\partial p_i} = \dot{q}_j,\qquad \dfrac{\partial \mathcal{H}}{\partial q_i} = - \dot{p}_i
-$$ {#eq-part3_equation_of_motion_for_hamiltonian}
-:::
+\boxed{\dfrac{\partial \mathcal{H}}{\partial p_i} = \dot{q}_i,\qquad \dfrac{\partial \mathcal{H}}{\partial q_i} = - \dot{p}_i}.
+$$ {#eq-CHM_symmetry_equation_of_motion_for_hamiltonian}
+
 
 </br>
 
@@ -96,14 +97,14 @@ $$ {#eq-part3_equation_of_motion_for_hamiltonian}
 
 $$
 \begin{aligned}
-\mathcal{H} &= \boldsymbol{p}\cdot \dot{\boldsymbol{q}} - \mathcal{L} =  \boldsymbol{p}\cdot \dot{\boldsymbol{q}} - T + V
+\mathcal{H} &= \bf{p}\cdot \dot{\bf{q}} - \mathcal{L} =  \bf{p}\cdot \dot{\bf{q}} - T + V
 \end{aligned}
 $$
 
-이다. 만약 운동에너지 $T$ 가 $T=\sum_{i, j} t_{ij}\dot{q}_i\dot{q}_j$ 꼴이며 $V=V(\boldsymbol{q})$ 라면,
+이다. 만약 운동에너지 $T$ 가 $T=\sum_{i, j} t_{ij}(\bf{q})\dot{q}_i\dot{q}_j$ 꼴이며 $V=V(\bf{q})$ 라면,
 
 $$
-p_i = \dfrac{\partial \mathcal{L}}{\partial \dot{q}_i} = 2\sum_j t_{ij}\dot{q}_j
+p_i = \dfrac{\partial \mathcal{L}}{\partial \dot{q}_i} = 2\sum_j t_{ij}(\bf{q})\dot{q}_j
 $$
 
 이므로
@@ -112,26 +113,26 @@ $$
 \mathcal{H} = 2T - T + V = T+V
 $$
 
-이다. 많은 역학적 에너지의 운동에너지가 $T=\sum_{i, j} t_{ij}\dot{q}_i\dot{q}_j$ 형태이므로 위 식을 많은 경우 사용 할 수 있다. 하지만 전자기장에서의 입자의 라그랑지안은 전하 $q$, 전기포텐셜 $\phi$ 와 자기포텐셜 $\boldsymbol{A}$ 에 대해 다음과 같이 주어진다.
+이다. 많은 시스템에서 역학적 에너지의 운동에너지가 $T=\sum_{i, j} t_{ij}\dot{q}_i\dot{q}_j$ 형태이므로 위 식을 많은 경우 사용 할 수 있다. 하지만 전자기장에서의 입자의 라그랑지안은 전하 $q$, 전기포텐셜 $\phi$ 와 자기포텐셜 $\bf{A}$ 에 대해 다음과 같이 주어진다.
 
 $$
-\mathcal{L}_{\text{em}} = \dfrac{1}{2} mv^2 - q\phi + \dfrac{q}{c} \boldsymbol{v}\cdot \boldsymbol{A}
-$$ {#eq-part3_lagrangian_of_particle_in_em_field}
+\mathcal{L}_{\text{em}} = \dfrac{1}{2} mv^2 - q\phi + \dfrac{q}{c} \bf{v}\cdot \bf{A}
+$$ {#eq-CHM_symmetry_lagrangian_of_particle_in_em_field}
 
 이 때 운동량은
 
 $$
 p_i = \dfrac{\partial \mathcal{L}_\text{em}}{\partial v_i} = mv_i  + \dfrac{qA_i}{c}
-$$ {#eq-part3_momentum_of_particle_in_em_field}
+$$ {#eq-CHM_symmetry_momentum_of_particle_in_em_field}
 
-이며, $\mathcal{H}_\text{em}$ 을 $\boldsymbol{p}$ 와 $\boldsymbol{q}$ 의 식으로 기술하면
+이며, $\mathcal{H}_\text{em}$ 을 $\bf{p}$ 와 $\bf{q}$ 의 식으로 기술하면
 
 $$
 \begin{aligned}
-\mathcal{H}_{\text{em}} &= mv^2 + \dfrac{q}{c} \boldsymbol{v}\cdot \boldsymbol{A} - \mathcal{L}_\text{em} = \dfrac{1}{2}mv^2 + q\phi \\
-&= \dfrac{1}{2m}\left(\boldsymbol{p}- \dfrac{q\boldsymbol{A}}{c}\right)^2  + q\phi
+\mathcal{H}_{\text{em}} &= mv^2 + \dfrac{q}{c} \bf{v}\cdot \bf{A} - \mathcal{L}_\text{em} = \dfrac{1}{2}mv^2 + q\phi \\
+&= \dfrac{1}{2m}\left(\bf{p}- \dfrac{q\bf{A}}{c}\right)^2  + q\phi
 \end{aligned}
-$$ {#eq-part3_hamiltonian_of_particle_in_em_field}
+$$ {#eq-CHM_symmetry_hamiltonian_of_particle_in_em_field}
 
 이다.
 
@@ -142,12 +143,12 @@ $$ {#eq-part3_hamiltonian_of_particle_in_em_field}
 ### 순환좌표와 푸아송 브라킷
 
 ::: {.callout-note appearance="minimal"}
-::: {#def-part3_poisson_bracket}
-해밀토니안 $\mathcal{H}(\boldsymbol{q},\, \boldsymbol{p})$ 에서 어떤 $q_i$ 에 대해
+::: {#def-CHM_symmetry_poisson_bracket}
+해밀토니안 $\mathcal{H}(\bf{q},\, \bf{p})$ 에서 어떤 $q_i$ 에 대해
 
 $$
 \dot{p}_i = - \dfrac{\partial \mathcal{H}}{\partial q_i} =0
-$$
+$$ 
 
 일 경우를 생각해보자. 그렇다면 해당 $p_i$ 는 시간에 대해 불변이 된다. 이렇게 해밀토니안이 어떤 좌표에 대해 의존성이 없을 때 이 좌표 $q_i$ 를 **순환좌표(cyclic coordinate)** 라고 한다.
 :::
@@ -155,7 +156,7 @@ $$
 
 </br>
 
-이제 시간에 대한 불변량을 해밀토니안을 이용하여 기술하는 방법을 알아보자. 어떤 물리량 $\omega(\boldsymbol{q},\, \boldsymbol{p})$ 가 명시적 시간 의존성이 없다고 하자. 이는 $\partial_t \omega = 0$ 이란 의미이다. 그렇다면,
+이제 시간에 대한 불변량을 해밀토니안을 이용하여 기술하는 방법을 알아보자. 어떤 물리량 $\omega(\bf{q},\, \bf{p})$ 가 명시적 시간 의존성이 없다고 하자. 이는 $\partial_t \omega = 0$ 이란 의미이다. 그렇다면,
 
 $$
 \begin{aligned}
@@ -168,8 +169,8 @@ $$
 </br>
 
 ::: {.callout-note appearance="minimal"}
-::: {#def-part3_poisson_bracket}
-두 물리량 $\omega,\, \theta$ 와 정준 좌표계 $\boldsymbol{q}$, 정준 모멘트 $\boldsymbol{p}$ 에 대해 아래와 같이 정의된 $\{\omega,\, \theta\}$ 를 $\omega,\, \theta$ 에 대한 **푸아송 브라킷(Poisson bracket)** 이라고 한다.
+::: {#def-CHM_symmetry_poisson_bracket}
+두 물리량 $\omega,\, \theta$ 와 정준 좌표계 $\bf{q}$, 정준 모멘트 $\bf{p}$ 에 대해 아래와 같이 정의된 $\{\omega,\, \theta\}$ 를 $\omega,\, \theta$ 에 대한 **푸아송 브라킷(Poisson bracket)** 이라고 한다.
 
 $$
 \{\omega,\, \theta\} := \sum_i \left(\dfrac{\partial \omega}{\partial q_i} \dfrac{\partial \theta}{\partial p_i} - \dfrac{\partial \omega}{\partial p_i} \dfrac{\partial \theta}{\partial q_i}\right)
@@ -181,12 +182,13 @@ $$
 
 $$
 \dfrac{d\omega}{dt} = \{ \omega,\, \mathcal{H}\}
-$$ {#eq-part3_time_differential_and_poisson_bracket}
+$$ {#eq-CHM_symmetry_time_differential_and_poisson_bracket}
 
 </br>
 
-::: {.border style="background-color:#F0FFFF  ;padding:5px;"}
-::: {#exr-part3_properties_of_poisson_bracket}
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CHM_symmetry_properties_of_poisson_bracket}
 #### Shankar_2_7_1
 
 푸아송 브라킷에 대해 다음이 성립함을 보여라.
@@ -198,7 +200,9 @@ $$ {#eq-part3_time_differential_and_poisson_bracket}
   ($3$) $\{ \omega,\, \theta\sigma\} = \{\omega,\, \theta\}\sigma + \theta \{\omega,\, \sigma\}$
 :::
 
-::: solution
+</div></br>
+
+::: {.solution}
 ($1$), ($2$) 는 쉽게 보일 수 있다. ($3$) 만 보이기로 한다. $\partial/\partial q_i = \partial_i$ 로 $\partial/\partial p_i = \partial_{pi}$ 로 표기하기로 한다.
 
 $$
@@ -210,49 +214,53 @@ $$
 \end{aligned}
 $$
 :::
-:::
+
 
 </br>
 
-$\boldsymbol{q},\, \boldsymbol{p}$ 에 대해서는 다음이 성립한다는 것을 알 수 있다.
+$\bf{q},\, \bf{p}$ 에 대해서는 다음이 성립한다는 것을 알 수 있다.
 
 $$
 \{p_i,\,p_j\} = \{q_i,\, q_j\} = 0,\qquad \{q_i,\, p_j\}= \delta_{ij}
-$$ {#eq-part3_poisson_braket_for_cannonical_coordinates}
+$$ {#eq-CHM_symmetry_poisson_braket_for_cannonical_coordinates}
 
 </br>
 
-### Point transformation 에서의 헤밀턴 정준 방정식
+### Point transformation 에서의 해밀턴 정준 방정식
 
-Configuration space 에서의 가역인 좌표변환을 point transformation 이라고 한다. 즉 $\boldsymbol{q}\to \boldsymbol{Q}$ 변환에서 아래와 같은 point transformation 을 생각하자. $$
-\boldsymbol{Q} = \boldsymbol{Q}(\boldsymbol{q}).
-$$ {#eq-part3_point_transformation_1}
+Configuration space 에서의 가역인 좌표변환을 point transformation 이라고 한다. 즉 $\bf{q}\to \bf{Q}$ 변환에서 아래와 같은 point transformation 을 생각하자. 
+$$
+\bf{Q} = \bf{Q}(\bf{q}).
+$$ {#eq-CHM_symmetry_point_transformation_1}
 
 즉,
 
 $$
 Q_i = Q_i (q_1,\ldots,\,q_n),\qquad i=1,\ldots,\,n
-$$ {#eq-part3_point_transformation_2}
+$$ {#eq-summetry_CHM_point_transformation_2}
 
-이다. 이 때 좌표변환에 $t$ 의존성이 없음을 확인하라. 그리고 가역인 변환이므로 항상 $\boldsymbol{q}(\boldsymbol{Q})$ 를 생각 할 수 있다. 이 변환에서 속도는 다음과 같이 변환된다.
+이다. 이 때 좌표변환에 $t$ 의존성이 없음을 확인하라. 그리고 가역인 변환이므로 항상 $\bf{q}(\bf{Q})$ 를 생각 할 수 있다. 이 변환에서 속도는 다음과 같이 변환된다.
 
 $$
 \dot{Q}_i = \dfrac{dQ_i}{dt} = \sum_j \left(\dfrac{\partial Q_i}{\partial q_j}\right) \dot{q}_j
-$$ {#eq-part3_transformation_of_velocity_via_point_transformation}
+$$ {#eq-CHM_transformation_of_velocity_via_point_transformation}
 
-Point transformation 에 대해 변화된 좌표료 기술된 라그랑지안을 $\overline{\mathcal{L}}(\boldsymbol{Q},\, \dot{\boldsymbol{Q}})$ 라고 하자. 즉 $(\boldsymbol{q},\,\dot{\boldsymbol{q}}) \to (\boldsymbol{Q},\,\dot{\boldsymbol{Q}})$ 변환에 대해
+Point transformation 에 대해 변화된 좌표료 기술된 라그랑지안을 $\overline{\mathcal{L}}(\bf{Q},\, \dot{\bf{Q}})$ 라고 하자. 즉 $(\bf{q},\,\dot{\bf{q}}) \to (\bf{Q},\,\dot{\bf{Q}})$ 변환에 대해
 
 $$
-\overline{\mathcal{L}}(\boldsymbol{Q},\,\dot{\boldsymbol{Q}}) = \mathcal{L}(\boldsymbol{q},\,\dot{\boldsymbol{q}}))
+\overline{\mathcal{L}}(\bf{Q},\,\dot{\bf{Q}}) = \mathcal{L}(\bf{q},\,\dot{\bf{q}})
 $$
 
 이다. 아래의 예를 보자.
 
 </br>
 
-::: {.border style="background-color:#F2F4F4  ;padding:5px;"}
-::: {#exm-transformation_of_lagrangian}
-라그랑지안이 다음과 같이 주어졌다고 하자. $$
+<div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+
+::: {#exm-CHM_symmetry_transformation_of_lagrangian}
+
+라그랑지안이 다음과 같이 주어졌다고 하자. 
+$$
 \mathcal{L}(x,\,y,\, \dot{x},\, \dot{y})= \dfrac{1}{2}m(\dot{x}^2+\dot{y}^2) - \dfrac{1}{2}k_1 x^2 - \dfrac{1}{2}k_2 y^2
 $$
 
@@ -262,20 +270,22 @@ $$
 X = x \cos \theta - y \sin \theta,\, Y = x \sin \theta + y \cos \theta.
 $$
 
-속도는 $$
+속도는 
+
+$$
 \dot{X} = \dot{x} \cos \theta - \dot{y}\sin \theta,\, \dot{Y} = \dot{x} \sin \theta + \dot{y} \cos\theta
 $$
 
 이다. 그렇다면 변환 행렬
 
 $$
-\boldsymbol{T}= \begin{bmatrix} \cos \theta & \sin \theta \\ -\sin \theta & \cos \theta \end{bmatrix} 
+\bf{T}= \begin{bmatrix} \cos \theta & \sin \theta \\ -\sin \theta & \cos \theta \end{bmatrix} 
 $$
 
 에 대해
 
 $$
-\boldsymbol{x}  = \boldsymbol{T}\boldsymbol{X}, \qquad  \dot{\boldsymbol{x}} = \boldsymbol{T} \dot{\boldsymbol{X}}
+\bf{x}  = \bf{T}\bf{X}, \qquad  \dot{\bf{x}} = \bf{T} \dot{\bf{X}}
 $$
 
 이므로 $(X,\,Y,\,\dot{X},\,\dot{Y})$ 를 변수로 하는 라그랑지안 $\overline{\mathcal{L}}$ 은 다음과 같다.
@@ -288,36 +298,42 @@ $$
 $$
 
 :::
-:::
+
+</div>
 
 </br>
 
-
-그렇다면 point transformation 에 대해 운동량 변환은 어떻게 될까? $Q_i$ 에 대한 canonical momentum $P_i$ 에 대해 다음을 보일 수 있다(@exr-shankar_2_7_8).
+그렇다면 point transformation 에 대해 운동량 변환은 어떻게 될까? $Q_i$ 에 대한 canonical momentum $P_i$ 에 대해 다음을 보일 수 있다(@exr-shankar_2_7_8 ($3$)).
 
 $$
-P_i := \dfrac{\partial \overline{\mathcal{L}}({\boldsymbol{Q}},\, \dot{\boldsymbol{Q}}_i)}{\partial \dot{Q}_i} = \sum_j \left(\dfrac{\partial q_i}{\partial Q_j}\right) p_j.
-$$ {#eq-part2_momentum_transformation}
+P_i := \dfrac{\partial \overline{\mathcal{L}}({\bf{Q}},\, \dot{\bf{Q}}_i)}{\partial \dot{Q}_i} = \sum_j \left(\dfrac{\partial q_i}{\partial Q_j}\right) p_j.
+$$ {#eq-CHM_symmetry_momentum_transformation}
 
 </br>
 
-Point transformation 에 의해 어떤 물리량 $\omega (q,\,\dot{q})$ 가 $\overline{\omega}(Q,\,\dot{Q})$ 로 변환된다고 하자. 위의 @exm-transformation_of_lagrangian 에서와 같이 $\omega (q,\, \dot{q}) = \overline{\omega}\left(Q(q),\, \dot{Q}(\dot{q})\right)$ 이다. 앞으로 어떤 변환에 대해 변환된 동역학 변수를 $\overline{\omega}$ 처럼 윗줄로 표기하기로 하자.
+Point transformation 에 의해 어떤 물리량 $\omega (q,\,\dot{q})$ 가 $\overline{\omega}(Q,\,\dot{Q})$ 로 변환된다고 하자. 위의 @exm-CHM_symmetry_transformation_of_lagrangian 에서와 같이 $\omega (q,\, \dot{q}) = \overline{\omega}\left(Q(q),\, \dot{Q}(\dot{q})\right)$ 이다. 앞으로 어떤 변환에 대해 변환된 동역학 변수를 $\overline{\omega}$ 처럼 윗줄로 표기하기로 하자.
 
 </br>
 
-::: {.border style="background-color:#F2F4F4  ;padding:5px;"}
+<div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+
 ::: {#exm-invariance_of_equation_of_motion_of_hamiltonian}
-위의 변환에서 해밀토니안에 대한 Hamilton's canonical equation 의 형태는 불변이다. 즉, $$
-\overline{\mathcal{H}} = \dot{\boldsymbol{Q}}\cdot {\boldsymbol{P}} - \overline{\mathcal{L}} (\boldsymbol{Q},\, \dot{\boldsymbol{Q}})
+
+위의 변환에서 해밀토니안에 대한 Hamilton's canonical equation 의 형태는 불변이다. 즉, 
+$$
+\overline{\mathcal{H}} = \dot{\bf{Q}}\cdot {\bf{P}} - \overline{\mathcal{L}} (\bf{Q},\, \dot{\bf{Q}})
 $$
 
-에 대해 $P_i$ 가 @eq-part2_momentum_transformation 을 만족한다고 하자. Point transformation 에 대해 라그랑지안의 형태가 변하지 않으므로 아래의 Hamilton's canonical equation 이 성립한다.
+에 대해 $P_i$ 가 @eq-CHM_symmetry_momentum_transformation 을 만족한다고 하자. Point transformation 에 대해 라그랑지안의 형태가 변하지 않으므로 아래의 Hamilton's canonical equation 이 성립한다.
 
 $$
 \dot{Q}_i = \dfrac{\partial \overline{\mathcal{H}}}{\partial P_i},\qquad \dot{P}_i = - \dfrac{\partial \overline{\mathcal{H}}}{\partial Q_i}
-$$ {#eq-part3_canonical_equations_after_point_transformation}
+$$ {#eq-CHM_symmetry_canonical_equations_after_point_transformation}
+
 :::
-:::
+
+
+</div></br>
 
 </br>
 
@@ -328,28 +344,28 @@ $$ {#eq-part3_canonical_equations_after_point_transformation}
 </br>
 
 ::: {.callout-note appearance="minimal"}
-::: {#def-part3_canonical_transformation}
+::: {#def-CHM_symmetry_canonical_transformation}
 #### 정준좌표계와 정준변환
 
-위상공간(phase space) 에서의 좌표계 $(p,\,q)$ 가 해밀턴 정준방정식을 만족할 때 이 좌표계를 **정준좌표계(canonical coordinates)** 라고 한다. 위상공간에서의 어떤 변환이 $(\boldsymbol{q},\,\boldsymbol{p})$ 를 $(\boldsymbol{Q},\, \boldsymbol{P})$ 로 변환한다고 하자. 이때 새로운 위상 좌표계의 $\boldsymbol{Q},\, \boldsymbol{P}$ 에 대해 헤밀턴 정준방정식이 성립한다면, 즉
+Phase space 에서의 좌표계 $(p,\,q)$ 가 해밀턴 정준방정식을 만족할 때 이 좌표계를 **정준좌표계(canonical coordinates)** 라고 한다. Phase space 에서의 어떤 변환이 $(\bf{q},\,\bf{p})$ 를 $(\bf{Q},\, \bf{P})$ 로 변환한다고 하자. 이때 새로운 phase space 에서의 좌표 $\bf{Q},\, \bf{P}$ 에 대해 해밀턴 정준방정식이 성립한다면, 즉
 
 $$
 \dot{Q}_i = \dfrac{\partial \mathcal{H}}{\partial P_i},\qquad \dot{P}_i = -\dfrac{\partial \mathcal{H}}{\partial Q_i}
-$$
+$$ {#eq-CHM_symmetry_cannonical_transformation}
 
-가 성립한다면 이 변환을 **정준변환(canonical transformation)** 이라고 한다. 즉 정준변환은 위상공간에서의 정준 좌표계 사이의 변환이다.
+가 성립한다면 이 변환을 **정준변환(canonical transformation)** 이라고 한다. 즉 정준변환은 phase space 에서의 정준 좌표계 사이의 변환이다.
 :::
 :::
 
 </br>
 
-$2n$ 개의 독립 변수에서 $2n$ 개의 독립변수로의 변환이라면 모두 시스템을 기술 할 수 있지만 모든 변환이 정준변환인것은 아니다(@exr-shankar_2_8_3). 정준좌표계 $(\boldsymbol{q},\,\boldsymbol{p})$ 로부터 어떤 변환을 통해 새로운 좌표계 $(\boldsymbol{Q},\, \boldsymbol{P})$ 를 얻었다면 이 변환이 정준변환인지를 판단할 수 있는 조건에 대해 묻지 않을 수 없다.
+$2n$ 개의 독립 변수에서 $2n$ 개의 독립변수로의 변환이라면 모두 시스템을 기술 할 수 있지만 모든 변환이 정준변환인것은 아니다(@exr-shankar_2_8_3). 정준좌표계 $(\bf{q},\,\bf{p})$ 로부터 어떤 변환을 통해 새로운 좌표계 $(\bf{Q},\, \bf{P})$ 를 얻었다면 이 변환이 정준변환인지를 판단할 수 있는 조건에 대해 묻지 않을 수 없다.
 
-@eq-part3_time_differential_and_poisson_bracket 으로부터,
+@eq-CHM_symmetry_time_differential_and_poisson_bracket 으로부터,
 
 $$
 \dfrac{dQ_j}{dt} = \dot{Q}_j = \sum_i \left(\dfrac{\partial Q_j}{\partial q_i}\dfrac{\partial \mathcal{H}}{\partial p_i} -  \dfrac{\partial Q_j}{\partial p_i}\dfrac{\partial \mathcal{H}}{\partial q_i}\right)
-$$ {#eq-part3_canonical_transformation_1}
+$$ {#eq-CHM_symmetry_canonical_transformation_1}
 
 이다. 또한
 
@@ -358,7 +374,7 @@ $$
 \dfrac{\partial \mathcal{H}}{\partial p_i} &= \sum_k \left(\dfrac{\partial \mathcal{H}}{\partial Q_k}\dfrac{\partial Q_k}{\partial p_i} + \dfrac{\partial \mathcal{H}}{\partial P_k}\dfrac{\partial P_k}{\partial p_i}\right), \\
 \dfrac{\partial \mathcal{H}'}{\partial q_i} &= \sum_k \left(\dfrac{\partial \mathcal{H}}{\partial Q_k}\dfrac{\partial Q_k}{\partial q_i} + \dfrac{\partial \mathcal{H}}{\partial P_k}\dfrac{\partial P_k}{\partial q_i}\right),
 \end{aligned}
-$$ {#eq-part3_canonical_transformation_2}
+$$ {#eq-CHM_symmetry_canonical_transformation_2}
 
 이므로,
 
@@ -366,82 +382,96 @@ $$
 \begin{aligned}
 \dot{Q}_j &= \sum_k \left[\dfrac{\partial \mathcal{H}}{\partial Q_k} \{ Q_j,\, Q_k \} + \dfrac{\partial \mathcal{H}}{\partial P_k} \{ Q_j,\, P_k \}\right]
 \end{aligned}
-$$ {#eq-part3_canonical_transformation_3}
+$$ {#eq-CHM_symmetry_canonical_transformation_3}
 
 이다. 비슷한 방법으로
 
 $$
 \dot{P}_j = \sum_k \left[\dfrac{\partial \mathcal{H}}{\partial Q_k}\{ P_j,\, Q_k\} + \dfrac{\partial \mathcal{H}}{\partial P_k} \{ P_j,\, P_k \}\right]
-$$ {#eq-part3_canonical_transformation_4}
+$$ {#eq-CHM_symmetry_canonical_transformation_4}
 
-임을 보일 수 있다. @eq-part3_canonical_transformation_3, @eq-part3_canonical_transformation_4 로부터 우리는 정준변환이 되기 위한 조건을 얻을 수 있다.
+임을 보일 수 있다. @eq-CHM_symmetry_canonical_transformation_3, @eq-CHM_symmetry_canonical_transformation_4 로부터 우리는 정준변환이 되기 위한 조건을 얻을 수 있다.
 
 $$
 \{ Q_j,\, Q_k \} = \{P_j,\, P_k\} = 0,\qquad \{Q_j,\, P_k\} = \delta_{jk}
-$$ {#eq-part3_condition_for_canonical_transformation}
+$$ {#eq-CHM_symmetry_condition_for_canonical_transformation}
 
 </br>
 
 ### 정준변환에서의 푸아송 브라켓의 불변성
 
-$(q,\,p) \mapsto (Q,\,P)$ 변환이 정준변환이라고 하자. $(q,\,p)$ 에 대한 정준변환을 $\{\omega,\, \theta\}_{q,\,p}$ 로 $(Q,\,P)$ 에 대한 정준변환을 $\{\omega,\, \theta\}_{Q,\,P}$ 로 표기 할 수 있다. 이 둘 사이에는 어떤 관계가 있을까? 놀랍게도 정준변환에 대해 푸아송 브라켓은 불변량이다. 즉,
+$(q,\,p) \mapsto (Q,\,P)$ 변환이 정준변환이라고 하자. $(q,\,p)$ 에 대한 정준변환을 $\{\omega,\, \theta\}_{q,\,p}$ 로 $(Q,\,P)$ 에 대한 정준변환을 $\{\overline{\omega},\, \overline{\theta}\}_{Q,\,P}$ 로 표기 할 수 있다. 이 둘 사이에는 어떤 관계가 있을까? 놀랍게도 정준변환에 대해 푸아송 브라켓은 불변량이다. 
+
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#thm-CHM_symmetry_invariance_of_poisson_bracket_under_cannonical_transformation}
+
+$(q,\,p) \mapsto (Q,\,P)$ 정준변환에 대해 푸아송 브라켓은 불변이다. 즉,
 
 $$
-\{\omega,\, \theta\}_{q,\,p} = \{\omega,\, \theta\}_{Q,\,P} 
-$$ {#eq-part3_invariance_of_poisson_bracket_under_canonical_transformation}
+\{\omega,\, \theta\}_{q,\,p} = \{\overline{\omega},\, \overline{\theta}\}_{Q,\,P} 
+$$ {#eq-CHM_symmetry_invariance_of_poisson_bracket_under_canonical_transformation}
 
 이 성립한다. 
-
-
-::: {.border style="background-color:#F0FFFF  ;padding:5px;"}
-::: {#exr-shankar_2_7_9}
-
-#### Shankar 2.7.9
-
-@eq-part3_condition_for_canonical_transformation 라면 @eq-part3_invariance_of_poisson_bracket_under_canonical_transformation 가 성립함을 보여라.
 :::
 
-::: solution
+</div></br>
+
+::: {.proof}
+@eq-CHM_symmetry_condition_for_canonical_transformation 를 생각하자.
 $$
 \begin{aligned}
 \{\omega,\, \theta\}_{q,\,p} &= \sum_k \dfrac{\partial \omega}{\partial q_k}\dfrac{\partial \theta}{\partial p_k} - \dfrac{\partial \omega}{\partial p_k}\dfrac{\partial \theta}{\partial q_k} \\
-&=\sum_k \left[\left(\sum_i \dfrac{\partial \omega}{\partial Q_i}\dfrac{\partial Q_i}{\partial q_k} + \dfrac{\partial \omega}{\partial P_i}\dfrac{\partial P_i}{\partial q_k}\right)\left(\sum_j \dfrac{\partial \theta}{\partial Q_j}\dfrac{\partial Q_j}{\partial p_k} + \dfrac{\partial \theta}{\partial P_j}\dfrac{\partial P_j}{\partial p_k}\right) \right. \\
-&\qquad - \left.\left(\sum_i \dfrac{\partial \omega}{\partial Q_i}\dfrac{\partial Q_i}{\partial p_k} + \dfrac{\partial \omega}{\partial P_i}\dfrac{\partial P_i}{\partial p_k}\right)\left(\sum_j \dfrac{\partial \theta}{\partial Q_j}\dfrac{\partial Q_j}{\partial q_k} + \dfrac{\partial \theta}{\partial P_j}\dfrac{\partial P_j}{\partial q_k}\right)\right] \\
-&= \sum_{i, j,k} \left[\dfrac{\partial \omega}{\partial Q_i}\dfrac{\partial \theta}{\partial Q_j}\left(\dfrac{\partial Q_i}{\partial q_k} \dfrac{\partial Q_j}{\partial p_k} - \dfrac{\partial Q_i}{\partial p_k}\dfrac{\partial Q_j}{\partial q_k}\right) \right. \\
-&\qquad + \dfrac{\partial \omega}{\partial Q_i}\dfrac{\partial \theta}{\partial P_j} \left(\dfrac{\partial Q_i}{\partial q_k} \dfrac{\partial P_j}{\partial p_k} - \dfrac{\partial Q_i}{\partial p_k}\dfrac{\partial P_j}{\partial q_k}\right) \\
-&\qquad + \dfrac{\partial \omega}{\partial P_i}\dfrac{\partial \theta}{\partial Q_j}\left(\dfrac{\partial P_i}{\partial q_k}\dfrac{\partial Q_j}{\partial p_k} - \dfrac{\partial P_i}{\partial p_k}\dfrac{\partial Q_j}{\partial q_k}\right) \\
-&\left.\qquad  \dfrac{\partial \omega}{\partial P_i}\dfrac{\partial \theta}{\partial P_j} \left(\dfrac{\partial P_i}{\partial q_k}\dfrac{\partial P_j}{\partial p_k} - \dfrac{\partial P_i}{\partial p_k} \dfrac{\partial P_j}{\partial q_k}\right)\right] \\
-&= \sum_{i,\,j} \left[\dfrac{\partial \omega}{\partial Q_i}\dfrac{\partial \theta}{\partial Q_j}\{Q_i,\, Q_j\} +  \dfrac{\partial \omega}{\partial Q_i}\dfrac{\partial \theta}{\partial P_j}\{Q_i,\, P_j\} \right. \\
-&\qquad \left.+ \dfrac{\partial \omega}{\partial P_i}\dfrac{\partial \theta}{\partial Q_j}\{P_i,\,Q_j\} + \dfrac{\partial \omega}{\partial P_i}\dfrac{\partial \theta}{\partial P_j}\{P_i,\, P_j\}\right] \\
-&= \dfrac{\partial \omega}{\partial Q_i}\dfrac{\partial \theta}{\partial P_j} - \dfrac{\partial \omega}{\partial P_i}\dfrac{\partial \theta}{\partial Q_j} = \{\omega,\, \theta\}_{Q,\,P}
+&=\sum_k \left[\left(\sum_i \dfrac{\partial \overline{\omega}}{\partial Q_i}\dfrac{\partial Q_i}{\partial q_k} + \dfrac{\partial \overline{\omega}}{\partial P_i}\dfrac{\partial P_i}{\partial q_k}\right)\left(\sum_j \dfrac{\partial \overline{\theta}}{\partial Q_j}\dfrac{\partial Q_j}{\partial p_k} + \dfrac{\partial \overline{\theta}}{\partial P_j}\dfrac{\partial P_j}{\partial p_k}\right) \right. \\
+&\qquad - \left.\left(\sum_i \dfrac{\partial \overline{\omega}}{\partial Q_i}\dfrac{\partial Q_i}{\partial p_k} + \dfrac{\partial \overline{\omega}}{\partial P_i}\dfrac{\partial P_i}{\partial p_k}\right)\left(\sum_j \dfrac{\partial \overline{\theta}}{\partial Q_j}\dfrac{\partial Q_j}{\partial q_k} + \dfrac{\partial \overline{\theta}}{\partial P_j}\dfrac{\partial P_j}{\partial q_k}\right)\right] \\
+&= \sum_{i, j,k} \left[\dfrac{\partial \overline{\omega}}{\partial Q_i}\dfrac{\partial \overline{\theta}}{\partial Q_j}\left(\dfrac{\partial Q_i}{\partial q_k} \dfrac{\partial Q_j}{\partial p_k} - \dfrac{\partial Q_i}{\partial p_k}\dfrac{\partial Q_j}{\partial q_k}\right) \right. \\
+&\qquad + \dfrac{\partial \overline{\omega}}{\partial Q_i}\dfrac{\partial \overline{\theta}}{\partial P_j} \left(\dfrac{\partial Q_i}{\partial q_k} \dfrac{\partial P_j}{\partial p_k} - \dfrac{\partial Q_i}{\partial p_k}\dfrac{\partial P_j}{\partial q_k}\right) \\
+&\qquad + \dfrac{\partial \overline{\omega}}{\partial P_i}\dfrac{\partial \overline{\theta}}{\partial Q_j}\left(\dfrac{\partial P_i}{\partial q_k}\dfrac{\partial Q_j}{\partial p_k} - \dfrac{\partial P_i}{\partial p_k}\dfrac{\partial Q_j}{\partial q_k}\right) \\
+&\left.\qquad  \dfrac{\partial \overline{\omega}}{\partial P_i}\dfrac{\partial \overline{\theta}}{\partial P_j} \left(\dfrac{\partial P_i}{\partial q_k}\dfrac{\partial P_j}{\partial p_k} - \dfrac{\partial P_i}{\partial p_k} \dfrac{\partial P_j}{\partial q_k}\right)\right] \\
+&= \sum_{i,\,j} \left[\dfrac{\partial \overline{\omega}}{\partial Q_i}\dfrac{\partial \overline{\theta}}{\partial Q_j}\{Q_i,\, Q_j\} +  \dfrac{\partial \overline{\omega}}{\partial Q_i}\dfrac{\partial \overline{\theta}}{\partial P_j}\{Q_i,\, P_j\} \right. \\
+&\qquad \left.+ \dfrac{\partial \overline{\omega}}{\partial P_i}\dfrac{\partial \overline{\theta}}{\partial Q_j}\{P_i,\,Q_j\} + \dfrac{\partial \overline{\omega}}{\partial P_i}\dfrac{\partial \overline{\theta}}{\partial P_j}\{P_i,\, P_j\}\right] \\
+&= \dfrac{\partial \overline{\omega}}{\partial Q_i}\dfrac{\partial \overline{\theta}}{\partial P_j} - \dfrac{\partial \overline{\omega}}{\partial P_i}\dfrac{\partial \overline{\theta}}{\partial Q_j} = \{\overline{\omega},\, \overline{\theta}\}_{Q,\,P} \qquad \square
 \end{aligned}
 $$
-:::
+
 :::
 
 </br>
 
-### Active Transfornation and Passive Transformation
+$(q,\,p)\mapsto (Q,\,P)$ 정준변환에서 $\omega (q,\,p)= \overline{\omega}(Q,\,P)$ 이므로 위상공간의 좌표계를 알면 되므로 이제 $\overline{\omega}$ 와 같은 표기는 사용하지 않기로 하자. @thm-CHM_symmetry_invariance_of_poisson_bracket_under_cannonical_transformation 에서 $\theta = \mathcal{H}$ 에 대해서도 성립한다. 따라서,
 
-지금까지의 $(q,\,p)\mapsto (Q,\,P)$ 변환은 $(q,\,p)$ 와 $(Q,\,P)$ 가 위상공간(phase space) 에서의 동일한 위치를 서로 다른 좌표계에서 기술하는 변환이었다. 이런 변환을 **passive transformation** 이라고 한다. 즉 $\omega(q,\,p) = \overline{\omega}(Q,\, P)$ 이며 단지 각자의 변수에 대한 $\omega$ 와 $\overline{\omega}$ 의 함수 형태가 달라진다. 예를 들어 데카르트 좌표계를 구면좌표계로 바꾸는 변환이 되겠다. 즉 passive transformation 은 좌표 변환이다.
+$$
+\dot{\omega} = \{\omega \mathcal{H}\}_{q,\,p} = \{\omega,\, \mathcal{H}\}_{Q,\,P}
+$$
+
+이다. 즉 운동에너지 혹은 특정 방향에 대한 각운동량의 시간에 대한 변화량은 위상공간의 좌표 변환에 대해 불변이다. 
+
+</br>
+
+### Regular transformation, Active Transfornation and Passive Transformation
+
+지금까지의 $(q,\,p)\mapsto (Q,\,P)$ 변환은 $(q,\,p)$ 와 $(Q,\,P)$ 가 phase space 에서의 동일한 위치를 서로 다른 좌표계에서 기술하는 변환이었다. 이런 변환을 **passive transformation** 이라고 한다. 즉 $\omega(q,\,p) = \overline{\omega}(Q,\, P)$ 이며 단지 각자의 변수에 대한 $\omega$ 와 $\overline{\omega}$ 의 함수 형태가 달라진다. 예를 들어 데카르트 좌표계를 구면좌표계로 바꾸는 변환이 되겠다. 즉 passive transformation 은 좌표 변환이다.
 
 어떤 변환에서 그 변환된 변수값의 볌위가 바뀌지 않는 변환을 **regular transformation** 이라고 한다. $(-\infty,\,\infty)$ 범위를 갖는 데카르트 좌표계에 대한 translation 이 한 예이다. 그러나 데카르트 좌표계를 2D 에서의 극좌표계나 3D 에서의 구면좌표계로 바꾸는 것은 regular transformation 이 아니다.
 
-Regular transformation 에 한정할 때 $(q,\,p) \mapsto (Q,\,P)$ 변환에 대한 다른 관점이 가능하다. $(Q,\,P)$ 를 기존 좌표계에서의 위치의 변환으로 생각하는 것이다. 이 변환을 **active transformation** 이라고 한다. 우리가 $\omega$ 가 $(q,\,p)\mapsto (Q,\,P)$ 변환에 대해 불변이라고 할 때는 이 active transformation 에 대한 것이다. 그리고 변환이 active 이든 passive 이든 $(Q,\,P)$ 가 헤밀턴 정준방정식을 만족한다면 정준변환이라고 한다.
+Regular transformation 에 한정할 때 $(q,\,p) \mapsto (Q,\,P)$ 변환에 대한 다른 관점이 가능하다. $(Q,\,P)$ 를 기존 좌표계에서의 위치의 변환으로 생각하는 것이다. 이 변환을 **active transformation** 이라고 한다. 
+우리가 $\omega$ 가 $(q,\,p)\mapsto (Q,\,P)$ 변환에 대해 불변이라고 할 때는 이 active transformation 에 대한 것이다. passive transformation 에서는 이것은 정의상 자명하며, active transformation 에서만 어떤 의미가 생기게 된다. 그리고 변환이 active 이든 passive 이든 $(Q,\,P)$ 가 해밀턴 정준방정식을 만족한다면 정준변환이라고 한다.
 
 </br>
 
-### 연습문제
+### 연습문제 {.unnumbered}
 
-::: {.border style="background-color:#F0FFFF  ;padding:5px;"}
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
 ::: {#exr-shankar_2_7_3}
 #### Shankar 2.7.3
 
-@eq-part3_canonical_transformation_3, @eq-part3_canonical_transformation_4 를 유도하라.
+@eq-CHM_symmetry_canonical_transformation_3, @eq-CHM_symmetry_canonical_transformation_4 를 유도하라.
 :::
+</div></br>
 
-::: solution
-@eq-part3_canonical_transformation_1, @eq-part3_canonical_transformation_2 로부터
+::: {.solution}
+@eq-CHM_symmetry_canonical_transformation_1, @eq-CHM_symmetry_canonical_transformation_2 로부터
 
 $$
 \begin{aligned}
@@ -451,11 +481,13 @@ $$
 \end{aligned}
 $$
 
-이다. 이제 $\dot{P}_j$ 를 구해보자. $$
+이다. 이제 $\dot{P}_j$ 를 구해보자. 
+
+$$
 \dot{P}_j = \sum_i \left(\dfrac{\partial P_j}{\partial q_i}\dfrac{\partial \mathcal{H}}{\partial p_i} - \dfrac{\partial P_j}{\partial p_i}\dfrac{\partial \mathcal{H}}{\partial q_i}\right)
 $$
 
-이므로 @eq-part3_canonical_transformation_2 를 이용하면
+이므로 @eq-CHM_symmetry_canonical_transformation_2 를 이용하면
 
 $$
 \begin{aligned}
@@ -467,11 +499,11 @@ $$
 
 이다.
 :::
-:::
 
 </br>
 
-::: {.border style="background-color:#F0FFFF  ;padding:5px;"}
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
 ::: {#exr-shankar_2_7_4}
 #### Shankar 2.7.4
 
@@ -487,7 +519,9 @@ P_y &= p_x \sin \theta + p_y \cos \theta.
 $$
 :::
 
-::: solution
+</div></br>
+
+::: {.solution}
 $\{X,\,Y\} = 0,\, \{P_x,\, P_y\}=0$ 임은 쉽게 보일 수 있다.
 
 $$
@@ -499,27 +533,30 @@ $$
 \end{aligned}
 $$
 
-이다. 즉 정준 변환의 조건 @eq-part3_condition_for_canonical_transformation 을 만족한다.
-:::
+이다. 즉 정준 변환의 조건 @eq-CHM_symmetry_condition_for_canonical_transformation 을 만족한다.
 :::
 
 </br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {.border style="background-color:#F0FFFF  ;padding:5px;"}
 ::: {#exr-shankar_2_7_5}
 #### Shankar 2.7.5
 
 극좌표 변환 $\rho = (x^2+y^2)^{1/2},\, \phi = \tan^{-1}(y/x)$ 에 대해
 
 $$
-p_\rho = \hat{\boldsymbol{e}}_\rho \cdot \boldsymbol{p} = \dfrac{xp_x+yp_y}{\sqrt{x^2+y^2}},\qquad p_\phi = xp_y - yp_x (= l_z) 
+p_\rho = \hat{\bf{e}}_\rho \cdot \bf{p} = \dfrac{xp_x+yp_y}{\sqrt{x^2+y^2}},\qquad p_\phi = xp_y - yp_x (= l_z) 
 $$
 
 가 정준변환임을 보여라.
 :::
 
-::: solution
-$\rho,\, \phi$ 에 $p_x,\, p_y$ 에 대한 명시적 의존성이 없으므로 $\{\rho,\, \phi\}=0$ 이다. 또한 $$
+</div></br>
+
+::: {.solution}
+$\rho,\, \phi$ 에 $p_x,\, p_y$ 에 대한 명시적 의존성이 없으므로 $\{\rho,\, \phi\}=0$ 이다. 또한 
+
+$$
 \begin{aligned}
 \{p_\rho ,\, p_\phi\} &= \dfrac{\partial p_\rho}{\partial x}\dfrac{\partial p_\phi}{\partial p_x} + \dfrac{\partial p_\rho}{\partial y}\dfrac{\partial p_\phi}{\partial p_y} - \dfrac{\partial p_\rho}{\partial p_x}\dfrac{\partial p_\phi}{\partial x} - \dfrac{\partial p_\rho}{\partial p_y}\dfrac{\partial p_\phi}{\partial y} \\
 &= \left(\dfrac{p_x (x^2+y^2) - x^2p_x - xyp_y}{(x^2+y^2)^{3/2}}\right) (-y) + \left(\dfrac{p_y (x^2+y^2) - xyp_x - y^2p_y}{(x^2+y^2)^{3/2}}\right)x \\
@@ -538,12 +575,14 @@ $$
 \{\phi,\, p_\rho\} &= \dfrac{\partial \phi}{\partial x}\dfrac{\partial p_\rho}{\partial p_x} + \dfrac{\partial \phi}{\partial y}\dfrac{\partial p_\rho}{\partial p_y} = -\dfrac{xy}{(x^2+y^2)^{3/2}} + \dfrac{xy}{(x^2+y^2)^{3/2}} = 0.
 \end{aligned}
 $$
-:::
+
+
 :::
 
 </br>
 
-::: {.border style="background-color:#F0FFFF  ;padding:5px;"}
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
 ::: {#exr-shankar_2_7_7}
 #### Shankar 2.7.7
 
@@ -554,7 +593,9 @@ Q=\ln (q^{-1} \sin p),\qquad P = q \cot p
 $$
 :::
 
-::: solution
+</div></br>
+
+::: {.solution}
 $$
 \begin{aligned}
 \{Q,\, P\} &= \dfrac{\partial Q}{\partial q}\dfrac{\partial P}{\partial p} - \dfrac{\partial P}{\partial q}\dfrac{\partial Q}{\partial p} \\
@@ -562,38 +603,41 @@ $$
 \end{aligned}
 $$
 :::
-:::
+
 
 </br>
 
-::: {.border style="background-color:#F0FFFF  ;padding:5px;"}
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
 ::: {#exr-shankar_2_7_8}
 #### Shankar 2.7.8
 
-다음과 같은 configuration space $\boldsymbol{q}=(q_1,\ldots,\,q_n)$ 에서 $\boldsymbol{Q}=(Q_1,\ldots,\,Q_n)$ 으로의 좌표변환을 생각하자
+다음과 같은 configuration space $\bf{q}=(q_1,\ldots,\,q_n)$ 에서 $\bf{Q}=(Q_1,\ldots,\,Q_n)$ 으로의 좌표변환을 생각하자
 
 $$
 Q_i = Q_i (q_1,\ldots,\,q_n),\, i=1,\ldots,\,n
 $$
 
-($1$) 이 변환의 역변환이 $\boldsymbol{q} = \boldsymbol{q}(\boldsymbol{Q})$ 라면 $\dot{q}_i = \sum_j \left(\dfrac{\partial q_i}{\partial Q_j}\right) \dot{Q}_i$ 임을 보여라.
+($1$) 이 변환의 역변환이 $\bf{q} = \bf{q}(\bf{Q})$ 라면 $\dot{q}_i = \sum_j \left(\dfrac{\partial q_i}{\partial Q_j}\right) \dot{Q}_i$ 임을 보여라.
 
 ($2$) ($1$) 로 부터 다음을 보여라.
 
 $$
-\left(\dfrac{\partial \dot{q}_i}{\partial \dot{Q}_j}\right)_{\dot{\boldsymbol{q}}} = \dfrac{\partial q_i}{\partial Q_j}
+\left(\dfrac{\partial \dot{q}_i}{\partial \dot{Q}_j}\right)_{\bf{Q}} = \dfrac{\partial q_i}{\partial Q_j}
 $$
 
-($3$) 다음을 계산하라. 이 때 $\boldsymbol{q}=\boldsymbol{q}(\boldsymbol{Q})$ 임을 이용한다.
+($3$) 다음을 계산하라. 이 때 $\bf{q}=\bf{q}(\bf{Q})$ 임을 이용한다.(@eq-CHM_symmetry_momentum_transformation 임을 보이는 것이다.)
 
 $$
-P_i = \left[\dfrac{\partial \overline{\mathcal{L}}(\boldsymbol{Q},\, \dot{\boldsymbol{Q}})}{\partial \dot{Q}_i}\right]_{\boldsymbol{Q}} = \left[\dfrac{\partial \mathcal{L}(\boldsymbol{q},\, \dot{\boldsymbol{q}})}{\partial \dot{Q}_i}\right]_{\boldsymbol{Q}}
+P_i = \left[\dfrac{\partial \overline{\mathcal{L}}(\bf{Q},\, \dot{\bf{Q}})}{\partial \dot{Q}_i}\right]_{\bf{Q}} = \left[\dfrac{\partial \mathcal{L}(\bf{q},\, \dot{\bf{q}})}{\partial \dot{Q}_i}\right]_{\bf{Q}}
 $$
 
 ($4$) Point transformation 에 의한 변환은 정준변환임을 보여라.
 :::
 
-::: solution
+</div></br>
+
+::: {.solution}
 ($1$) Chain rule 에 의해
 
 $$
@@ -607,7 +651,7 @@ $$
 ($2$) ($1$) 로 부터
 
 $$
-\left(\dfrac{\partial \dot{q}_i}{\partial \dot{Q}_j}\right)_\boldsymbol{Q} = \dfrac{\partial q_i}{\partial Q_j}
+\left(\dfrac{\partial \dot{q}_i}{\partial \dot{Q}_j}\right)_\bf{Q} = \dfrac{\partial q_i}{\partial Q_j}
 $$
 
 이다.
@@ -616,12 +660,12 @@ $$
 
 $$
 \begin{aligned}
-P_i &= \left[\dfrac{\partial \overline{\mathcal{L}}(\boldsymbol{Q},\, \dot{\boldsymbol{Q}})}{\partial \dot{Q}_i}\right]_\boldsymbol{Q} =  \sum_j \left[\dfrac{\partial \mathcal{L}(\boldsymbol{q},\, \dot{\boldsymbol{q}})}{\partial \dot{q}_j}\right] \left(\dfrac{\partial \dot{q}_j}{\partial \dot{Q}_i}\right)_{\boldsymbol{Q}} = \sum_j \left[\dfrac{\partial \mathcal{L}(\boldsymbol{q},\, \dot{\boldsymbol{q}})}{\partial \dot{q}_j}\right]_{\boldsymbol{Q}}  \left(\dfrac{\partial q_j}{\partial Q_i}\right)\\
+P_i &= \left[\dfrac{\partial \overline{\mathcal{L}}(\bf{Q},\, \dot{\bf{Q}})}{\partial \dot{Q}_i}\right]_\bf{Q} =  \sum_j \left[\dfrac{\partial \mathcal{L}(\bf{q},\, \dot{\bf{q}})}{\partial \dot{q}_j}\right] \left(\dfrac{\partial \dot{q}_j}{\partial \dot{Q}_i}\right)_{\bf{Q}} = \sum_j \left[\dfrac{\partial \mathcal{L}(\bf{q},\, \dot{\bf{q}})}{\partial \dot{q}_j}\right]  \left(\dfrac{\partial q_j}{\partial Q_i}\right)\\
 &= \sum_j \left(\dfrac{\partial q_j}{\partial Q_i}\right) p_j
 \end{aligned}
 $$
 
-($4$) $\boldsymbol{Q}=\boldsymbol{Q}(\boldsymbol{q})$ 이므로 $\{Q_i,\,Q_j\}= 0$ 이다. 또한 ($3$) 으로부터 $\boldsymbol{P}=\boldsymbol{P}(\boldsymbol{p})$ 임을 알 수 있다. 따라서 $\{P_i,\,P_j\}=0$ 이다.
+($4$) $\bf{Q}=\bf{Q}(\bf{q})$ 이므로 $\{Q_i,\,Q_j\}= 0$ 이다. 또한 ($3$) 으로부터 $\bf{P}=\bf{P}(\bf{p})$ 임을 알 수 있다. 따라서 $\{P_i,\,P_j\}=0$ 이다.
 
 $$
 \begin{aligned}
@@ -630,11 +674,10 @@ $$
 \end{aligned} 
 $$
 :::
-:::
 
 </br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {.border style="background-color:#F0FFFF  ;padding:5px;"}
 ::: {#exr-shankar_2_7_7}
 #### Shankar 2.7.7
 
@@ -645,7 +688,9 @@ Q=\ln (q^{-1} \sin p),\qquad P = q \cot p
 $$
 :::
 
-::: solution
+</div></br>
+
+:::{.solution}
 $$
 \begin{aligned}
 \{Q,\, P\} &= \dfrac{\partial Q}{\partial q}\dfrac{\partial P}{\partial p} - \dfrac{\partial P}{\partial q}\dfrac{\partial Q}{\partial p} \\
@@ -653,10 +698,6 @@ $$
 \end{aligned}
 $$
 :::
-:::
-
-</br>
-
 
 </br>
 
@@ -664,39 +705,43 @@ $$
 
 ### Generator 와 정준변환
 
-여기서는 해밀토니안 $\mathcal{H}=\mathcal{H}(\boldsymbol{q},\,\boldsymbol{p})$ 와 $(\boldsymbol{q},\,\boldsymbol{p}) \mapsto (\boldsymbol{Q},\,\boldsymbol{P})$ regular canonical transformation 에 대해 다음이 성립함을 보일것이다.
+우선 해밀토니안 $\mathcal{H}=\mathcal{H}(\bf{q},\,\bf{p})$ 와 $(\bf{q},\,\bf{p}) \mapsto (\bf{Q},\,\bf{P})$ regular canonical transformation 에 대해 아래의 두 중요한 명제를 보자.
 
-$I$. 어떤 물리량 $g(\boldsymbol{q},\,\boldsymbol{p})$ 에 대해 해밀토니안 $\mathcal{H}$ 가 아래와 같은 infinitesimal transformation 에 대한 불변이라면 이 변환은 정준변환이며, $g(\boldsymbol{q},\,\boldsymbol{p})$ 는 운동 상수이다. $$
+</br>
+
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#thm-CHM_symmetry_constant_of_motion}
+
+어떤 물리량 $g(\bf{q},\,\bf{p})$ 에 대해 해밀토니안 $\mathcal{H}$ 가 아래와 같은 infinitesimal transformation 에 대한 불변이라면 이 변환은 정준변환이며, $g(\bf{q},\,\bf{p})$ 는 운동 상수이다. 
+
+$$
 Q_i = q_i + \varepsilon \dfrac{\partial g}{\partial p_i},\qquad P_i = p_i - \varepsilon \dfrac{\partial g}{\partial q_i}
-$$ {#eq-part3_infinitesimal_transformation}
+$$ {#eq-CHM_symmetry_infinitesimal_transformation}
 
 이 때 $g$ 를 해당 정준변환에 대한 **generator** 라고 한다.
 
-$II$. $\mathcal{H}$ 가 regular canonical transformation $(\boldsymbol{q},\,\boldsymbol{p}) \mapsto (\boldsymbol{Q},\,\boldsymbol{P})$ 에 대해 불변이며(infinitesimal 일 필요는 없다), $(\boldsymbol{q}(t),\,\boldsymbol{p}(t))$ 가 운동방정식의 해라면 $(\boldsymbol{Q}(t),\, \boldsymbol{P}(t))$ 도 운동방정식의 해이다.
-
-</br>
-
-::: {.border style="background-color:#F2F4F4  ;padding:5px;"}
-::: {#prp-part3_constant_of_motion}
-$I$. 이 성립한다.
 :::
 
-::: proof
-$(\boldsymbol{q},\,\boldsymbol{p}) \mapsto (\boldsymbol{Q},\,\boldsymbol{P})$ 변환이 @eq-part3_infinitesimal_transformation 일 때 $\mathcal{H}$ 의 변화를 $\varepsilon$ 에 대한 1 차 항까지 쓰면 $$
+</div></br>
+
+::: {.proof}
+이 변환이 정준변환이라는 것은 @exr-shankar_2_8_2 에서 보인다. $(\bf{q},\,\bf{p}) \mapsto (\bf{Q},\,\bf{P})$ 변환이 @eq-CHM_symmetry_infinitesimal_transformation  일 때 $\mathcal{H}$ 의 변화를 $\varepsilon$ 에 대한 1 차 항까지 쓰면 
+$$
 \delta \mathcal{H} = \sum_i \left[\dfrac{\partial \mathcal{H}}{\partial q_i}\left(\varepsilon \dfrac{\partial g}{\partial p_i} \right) + \dfrac{\partial \mathcal{H}}{\partial p_i}\left(-\varepsilon \dfrac{\partial g}{\partial q_i}\right)\right] = \varepsilon \{\mathcal{H},\,g\} 
-$$ {#eq-part3_delta_of_hamiltonian_by_infinitesimal_transform}
+$$ {#eq-CHM_symmetry_delta_of_hamiltonian_by_infinitesimal_transform}
 
-이다. 이 변환에 대해 $\mathcal{H}$ 가 불변이라면 $\delta \mathcal{H}=0$ 이므로 $\{\mathcal{H},\, g\}= 0$ 이며 따라서 $\dfrac{dg}{dt}=0$ 이다. 즉 $g$ 는 운동상수이다. $\square$
-:::
+이다. 이 변환에 대해 $\mathcal{H}$ 가 불변이라면 $\delta \mathcal{H}=0$ 이므로 $\{\mathcal{H},\, g\}= 0$ 이며 따라서 $\dfrac{dg}{dt}=0$ 이다. 즉 $g$ 는 운동상수이다.  $\square$
 :::
 
 </br>
 
-@eq-part3_delta_of_hamiltonian_by_infinitesimal_transform 은 해밀토니안의 infinitesimal transform 에 대한 변화였지만 임의의 $\omega$ 에 대해서도 같은 방법으로 정의 할 수 있다. 즉,
+
+@eq-CHM_symmetry_delta_of_hamiltonian_by_infinitesimal_transform 은 해밀토니안의 infinitesimal transform 에 대한 변화였지만 임의의 $\omega$ 에 대해서도 같은 방법으로 정의 할 수 있다. 즉,
 
 $$
 \delta \omega := \sum_i \left[\dfrac{\partial \omega}{\partial q_i}\left(\varepsilon \dfrac{\partial g}{\partial p_i} \right) + \dfrac{\partial \omega}{\partial p_i}\left(-\varepsilon \dfrac{\partial g}{\partial q_i}\right)\right] = \varepsilon \{\omega,\,g\} 
-$$ {#eq-part3_infinitesimal_variation_of_variable}
+$$ {#eq-CHM_symmetry_infinitesimal_variation_of_variable}
 
 라고 할 수 있다.
 
@@ -704,16 +749,15 @@ $$ {#eq-part3_infinitesimal_variation_of_variable}
 
 <div class="border" style="background-color:#F2F4F4  ;padding:5px;">
 
-::: {#exm-part3_linear_momentum}
+::: {#exm-CHM_symmetry_linear_momentum}
 
-$(\boldsymbol{x},\,\boldsymbol{p})$ 에 대해 $g(\boldsymbol{x},\, \boldsymbol{p}) = \boldsymbol{p}$ 라고 하자. 그렇다면,
+$(\bf{x},\,\bf{p})$ 에 대해 $g(\bf{x},\, \bf{p}) = \bf{p}$ 라고 하자. 그렇다면,
 
 $$
 X_i = x_i + \varepsilon,\qquad P_i = p_i
 $$
 
-이므로 선형 운동량 $\boldsymbol{p}$ 는 infinitesimal translation 의 generator 임을 알 수 있으며 해밀토니안이 이 변환에 대해 불변이면 선형운동량 $\boldsymbol{p}$ 가 보존된다는 것을 알 수 있다.
-
+이므로 선형 운동량 $\bf{p}$ 는 infinitesimal translation 의 generator 임을 알 수 있으며 해밀토니안이 이 변환에 대해 불변이면 선형운동량 $\bf{p}$ 가 보존된다는 것을 알 수 있다.
 
 :::
 
@@ -722,8 +766,10 @@ $$
 </br>
 
 <div class="border" style="background-color:#F2F4F4  ;padding:5px;">
-::: {#exm-part3_angular_momentum}
-$g(\boldsymbol{x},\, \boldsymbol{p})= l_z = xp_y-yp_x$ 라고 하자. 그렇다면,
+
+::: {#exm-CHM_symmetry_angular_momentum}
+
+$g(\bf{x},\, \bf{p})= l_z = xp_y-yp_x$ 라고 하자. 그렇다면,
 
 $$
 X = x + \varepsilon y,\qquad Y = y -\varepsilon x,\qquad Z = z
@@ -742,7 +788,9 @@ $$
 
 </br>
 
-::: {.border style="background-color:#F0FFFF  ;padding:5px;"}
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
 ::: {#exr-shankar_2_8_2}
 
 #### Shankar 2.8.2
@@ -750,8 +798,10 @@ $$
 어떤 동역학 변수 $g$ 에 의해 생성되는 infinitesimal transformation 은 정준변환임을 보여라.
 :::
 
-::: solution
-@eq-part3_infinitesimal_transformation 의 변환을 생각하자.
+</div></br>
+
+::: {.solution}
+@eq-CHM_symmetry_infinitesimal_transformation 의 변환을 생각하자.
 
 $$
 \begin{aligned}
@@ -777,11 +827,11 @@ $$
 \end{aligned}
 $$
 :::
-:::
 
 </br>
 
-::: {.border style="background-color:#F0FFFF  ;padding:5px;"}
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
 ::: {#exr-shankar_2_8_3}
 #### Shankar 2.8.3
 
@@ -792,10 +842,15 @@ $$
 $$
 
 이 해밀토니안은 좌표와 모멘트의 회전에 대해 불변이며 이는 $l_z$ 가 보존됨을 의미한다. 그러나 $\mathcal{H}$ 는 좌표만의 회전에 대해서도 불변이다. 이 변환은 정준변환이 아님을 보여라. 이 경우 $\delta \mathcal{H}$ 를 $\varepsilon \{\mathcal{H},\, g\}$ 의 꼴로 쓸 수 없으며, 따라서 보존법칙을 따르지 않는다는 것을 보여라.
+
 :::
 
-::: solution
-$(x,\,y,\,p_x,\,p_y) \mapsto (X,\,Y,\,P_x,\,P_y)$ 변환을 생각하자. $$
+</div></br>
+
+:::{.solution}
+$(x,\,y,\,p_x,\,p_y) \mapsto (X,\,Y,\,P_x,\,P_y)$ 변환을 생각하자. 
+
+$$
 X=x \cos \theta - y \sin \theta,\qquad Y = x \sin \theta + y \cos \theta,\qquad P_x = p_x,\qquad P_y = p_y
 $$
 
@@ -812,11 +867,12 @@ $$
 
 이므로 정준변환이 아니다. 이 경우, $\delta H = 0$ 이며 $\varepsilon \{\mathcal{H},\,g\}$ 형태가 될 수 없으므로 $g$ 에 대한 보존이 성립하지 않는다.
 :::
-:::
+
 
 </br>
 
-::: {.border style="background-color:#F0FFFF  ;padding:5px;"}
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
 ::: {#exr-shankar_2_8_4}
 #### Shankar 2.8.4
 
@@ -829,7 +885,9 @@ $$
 이 해밀토니안은 위상공간($x-p$ 평면)에서의 infinitesimal rotation 에 대해 불변다. 이 변환이 canonical 임을 보이고 이 변환의 generator 를 찾아라.
 :::
 
-::: solution
+</div></br>
+
+::: {.solution}
 $(x,\,p) \mapsto (X,\,P)$ 에 대한 infinitesimal rotation 은 다음과 같다.
 
 $$
@@ -856,13 +914,22 @@ $$
 
 이다. 따라서 $g(x,\,p)=-\mathcal{H}$ 이다.
 :::
+
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#prp-CHM_symmetry_constant_of_motion}
+
+$\mathcal{H}$ 가 regular canonical transformation $(\bf{q},\,\bf{p}) \mapsto (\bf{Q},\,\bf{P})$ 에 대해 불변이며(infinitesimal 일 필요는 없다), $(\bf{q}(t),\,\bf{p}(t))$ 가 운동방정식의 해라면 $(\bf{Q}(t),\, \bf{P}(t))$ 도 운동방정식의 해이다.
+
 :::
+
+</div>
 
 </br>
 
 ### Infinite canonical transform 으로부터
 
-지금까지 우리는 어떤 generator 에 의한 정준변환에서 약간의 부산물로서 infinitesimal canoincal transform 을 얻었다. 이제 어떤 주어진 infinitesimal canonical transform 으로부터 제대로 된 canonical transform 을 얻을 수 있음을 보이고자 한다. 일단 Generator $g$ 에 의한 정준변환(@eq-part3_infinitesimal_transformation) 을 생각하자. 해밀토니안 $\mathcal{H}$ 에 의해 generate 되는 infinitesimal transform 을 생각하면 @eq-part3_infinitesimal_variation_of_variable 로 부터
+지금까지 우리는 어떤 generator 에 의한 정준변환에서 약간의 부산물로서 infinitesimal canoincal transform 을 얻었다. 이제 어떤 주어진 infinitesimal canonical transform 으로부터 제대로 된 canonical transform 을 얻을 수 있음을 보이고자 한다. 일단 Generator $g$ 에 의한 정준변환(@eq-CHM_symmetry_infinitesimal_transformation) 을 생각하자. 해밀토니안 $\mathcal{H}$ 에 의해 generate 되는 infinitesimal transform 을 생각하면 @eq-CHM_symmetry_infinitesimal_variation_of_variable 로 부터
 
 $$
 \delta q_i = \varepsilon \{q_i,\, \mathcal{H}\},\qquad \delta p_i = \varepsilon \{p_i,\, \mathcal{H}\}
@@ -874,7 +941,7 @@ $$
 \delta q_i = \varepsilon  \dot{q}_i,\qquad \delta p_i = \varepsilon \dot{p}_i
 $$
 
-가 된다. 따라서 위상공간에서의 변환 $(Q,\,P) := (q+\varepsilon\{q,\, H\},\, p+ \varepsilon \{p,\, H\})$ 은 infinitesimal time interval $\varepsilon$ 에 대해 $(q,\,p)$ 가 $(Q,\,P)$ 로 위상공간에서 움직이는 active canonical transformation 이다. 이 운동방정식을 적분하여 $(Q,\,P)$ 를 얻을 수 있다. 이제 $g\ne \mathcal{H}$ 인 일반적인 변환을 생각해보자. 즉
+가 된다. 따라서 phase space 에서의 변환 $(Q,\,P) := (q+\varepsilon\{q,\, H\},\, p+ \varepsilon \{p,\, H\})$ 은 infinitesimal time interval $\varepsilon$ 에 대해 $(q,\,p)$ 가 $(Q,\,P)$ 로 위상공간에서 움직이는 active canonical transformation 이다. 이 운동방정식을 적분하여 $(Q,\,P)$ 를 얻을 수 있다. 이제 $g\ne \mathcal{H}$ 인 일반적인 변환을 생각해보자. 즉
 
 $$
 \delta q_i = \varepsilon \{q_i,\, g\},\qquad \delta p_i = \varepsilon \{ p_i,\, g\}
@@ -919,33 +986,36 @@ $$
 
 ### Regular canonical transformation 과 운동방정식의 해
 
-::: {.border style="background-color:#F2F4F4  ;padding:5px;"}
-::: {#prp-part3_canonital_transoformation_and_solution_of_equation_of_motion}
-$\mathcal{H}$ 가 regular canonical transformation $(\boldsymbol{q},\,\boldsymbol{p}) \mapsto (\boldsymbol{Q},\,\boldsymbol{P})$ 에 대해 불변이며(infinitesimal 일 필요는 없다), $(\boldsymbol{q}(t),\,\boldsymbol{p}(t))$ 가 운동방정식의 해라면 $(\boldsymbol{Q}(t),\, \boldsymbol{P}(t))$ 도 운동방정식의 해이다.
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#prp-CHM_symmetry_canonital_transoformation_and_solution_of_equation_of_motion}
+$\mathcal{H}$ 가 regular canonical transformation $(\bf{q},\,\bf{p}) \mapsto (\bf{Q},\,\bf{P})$ 에 대해 불변이며(infinitesimal 일 필요는 없다), $(\bf{q}(t),\,\bf{p}(t))$ 가 운동방정식의 해라면 $(\bf{Q}(t),\, \bf{P}(t))$ 도 운동방정식의 해이다.
 :::
 
-::: proof
-$\boldsymbol{q}(t),\, \boldsymbol{p}(t)$ 가 운동방정식의 해이므로 아래를 만족한다.
+</div></br>
+
+:::{.proof}
+$\bf{q}(t),\, \bf{p}(t)$ 가 운동방정식의 해이므로 아래를 만족한다.
 
 $$
 \dot{q}_i = \dfrac{\partial \mathcal{H}(p,\,q)}{\partial p_i},\qquad \dot{p}_i = -\dfrac{\partial \mathcal{H}(p,\,q)}{\partial q_i}
 $$
 
-$\mathcal{H}$ 가 $(\boldsymbol{q},\,\boldsymbol{p}) \mapsto (\boldsymbol{Q},\,\boldsymbol{P})$ 변환에 대해 불변이므로
+$\mathcal{H}$ 가 $(\bf{q},\,\bf{p}) \mapsto (\bf{Q},\,\bf{P})$ 변환에 대해 불변이므로
 
 $$
-\dot{Q}_i = \{ Q_i,\, \mathcal{H}(\boldsymbol{q},\, \boldsymbol{p})\}_{(\boldsymbol{q},\,\boldsymbol{p})}
+\dot{Q}_i = \{ Q_i,\, \mathcal{H}(\bf{q},\, \bf{p})\}_{(\bf{q},\,\bf{p})}
 $$
 
 이 변환이 passive transformation 이라면 
 $$
-\dot{Q}_i = \{ Q_i,\, \mathcal{H}(\boldsymbol{q},\, \boldsymbol{p})\}_{(\boldsymbol{q},\,\boldsymbol{p})} = \{ Q_i,\, \overline{\mathcal{H}}(\boldsymbol{Q},\, \boldsymbol{P})\}_{(\boldsymbol{Q},\,\boldsymbol{P})} = \dfrac{\partial \overline{\mathcal{H}}(\boldsymbol{Q},\, \boldsymbol{P})}{\partial P_i}
+\dot{Q}_i = \{ Q_i,\, \mathcal{H}(\bf{q},\, \bf{p})\}_{(\bf{q},\,\bf{p})} = \{ Q_i,\, \overline{\mathcal{H}}(\bf{Q},\, \bf{P})\}_{(\bf{Q},\,\bf{P})} = \dfrac{\partial \overline{\mathcal{H}}(\bf{Q},\, \bf{P})}{\partial P_i}
 $$
 
 이며 같은 이유로
 
 $$
-\dot{P}_i = -\dfrac{\partial \overline{\mathcal{H}}(\boldsymbol{Q},\, \boldsymbol{P})}{\partial Q_i}
+\dot{P}_i = -\dfrac{\partial \overline{\mathcal{H}}(\bf{Q},\, \bf{P})}{\partial Q_i}
 $$
 
 이다. 이 변환이 active transformation 이라면,
@@ -970,7 +1040,6 @@ $$
 
 임을 보일 수 있다. 
 
-:::
 :::
 
 </br>

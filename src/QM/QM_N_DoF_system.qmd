@@ -6,7 +6,7 @@ crossref:
   chapters: true
 ---
 
-지금까지는 그것이 $X$ 든 $P$ 든 자유도가 1 인 시스템을 주로 다루었다. 이제는 자유도가 $N > 1$ 인 시스템을 어떻게 구성하는지 알아보자.
+지금까지는 자유도가 1 인 시스템, 1차원 단일 입자로 이루어진 시스템을 주로 다루었다. 이제는 자유도가 $N > 1$ 인 시스템을 어떻게 구성하는지 알아보자.
 
 </br>
 
@@ -16,14 +16,14 @@ crossref:
 
 $$
 \begin{aligned}
-\left[X_i,\, P_j\right] &= i \hbar \delta_{ij}I, \\
-[X_i,\, X_j] &= \delta_{ij}I, \\
+\left[X_i,\, P_j\right] &= i \hbar \delta_{ij}I, \\[0.3em]
+[X_i,\, X_j] &= \delta_{ij}I, \\[0.3em]
 [P_i,\, P_j] &= \delta_{ij}I.
 \end{aligned}
-$$ {#eq-QM_2_ptc_operators_1}
+$$ {#eq-QM_NDOF_2_ptc_operators_1}
 
 
-첫번째 입자를 기술하는 힐베르트 공간을 $\mathcal{H}_1$ 이라고 하고 두번째 입자를 기술하는 힐베르트 공간을 $\mathcal{H}_2$ 라고 하자. $\{|x_1\rangle\}$ 을 $\mathcal{H}_1$ 에서의 좌표 기저라고 하고 $\{|x_2\rangle\}$ 을 $\mathcal{H}_2$ 의 좌표기저라고 하자. 각각의 힐베르트공간에서의 연산자를 표기하기 위헤 $X_1^{(1)}$ 과 같은 표기법을 사용한다. $X_1^{(2)}$ 는 $\mathcal{H}_2$ 에서의 첫번째 입자의 좌표 연산자이다. (의미가 그렇다는 거시 무의미하다.) 그렇다면 @eq-QM_2_ptc_operators_1 는 다음과 같이 표현 할 수 있다.
+첫번째 입자를 기술하는 힐베르트 공간을 $\mathcal{H}_1$ 이라고 하고 두번째 입자를 기술하는 힐베르트 공간을 $\mathcal{H}_2$ 라고 하자. $\{|x_1\rangle\}$ 을 $\mathcal{H}_1$ 에서의 좌표 기저라고 하고 $\{|x_2\rangle\}$ 을 $\mathcal{H}_2$ 의 좌표기저라고 하자. 각각의 힐베르트공간에서의 연산자를 표기하기 위헤 $X_1^{(1)}$ 과 같은 표기법을 사용한다. $X_1^{(2)}$ 는 $\mathcal{H}_2$ 에서의 첫번째 입자의 좌표 연산자이다. (의미가 그렇다는 것일 뿐 실제로는 무의미하다.) 그렇다면 @eq-QM_NDOF_2_ptc_operators_1 는 다음과 같이 표현 할 수 있다.
 
 $$
 \begin{aligned}
@@ -50,7 +50,7 @@ $$
 
 $$
 \begin{aligned}
-( \alpha_1 |\phi_1\rangle + \beta_1 |\psi_1\rangle) \otimes (\gamma_2 |\phi_2\rangle) &= \alpha_1 \gamma_2 |\phi_1 \rangle \otimes |\phi_2\rangle + \beta_1\gamma_2 |\psi_1\rangle \otimes |\phi_2\rangle, \\
+( \alpha_1 |\phi_1\rangle + \beta_1 |\psi_1\rangle) \otimes (\gamma_2 |\phi_2\rangle) &= \alpha_1 \gamma_2 |\phi_1 \rangle \otimes |\phi_2\rangle + \beta_1\gamma_2 |\psi_1\rangle \otimes |\phi_2\rangle, \\[0.3em]
 (\gamma_1 |\phi_1\rangle) \otimes ( \alpha_2 |\phi_2\rangle +\beta_2 |\psi_2\rangle) &= \alpha_2 \gamma_1 |\phi_1\rangle \otimes |\phi_2\rangle + \beta_2 \gamma_1 |\phi_1 \rangle \otimes |\psi_2\rangle. 
 \end{aligned}
 $$
@@ -187,6 +187,7 @@ $$
 </div>
 
 </br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-shankar_10_1_2}
 
@@ -201,8 +202,9 @@ $$
 
 $\mathcal{H}_1 \otimes \mathcal{H}_2$ 가 $|+\rangle \otimes |+\rangle$, $|+\rangle \otimes |-\rangle$, $|-\rangle \otimes |+\rangle$, $|-\rangle \otimes |-\rangle$ 로 span 될 때 $\sigma_1^{(1)\otimes (2)}$, $\sigma_2^{(1)\otimes (2)}$, $\sigma_1^{(1)} \otimes \sigma_2^{(2)}$ 를 구하시오.
 
-
 :::
+
+</div></br>
 
 ::: {.solution}
 
@@ -264,13 +266,13 @@ $$
 X_i \to x_i,\qquad P_i \to -i\hbar \dfrac{\partial}{\partial x_i}
 $$
 
-가 된다. 또한
+가 된다. 또한 입자 $1$ 을 $x_1$ 에서, 입자 $2$ 를 $x_2$ 에서 발견할 확률밀도함수 $P(x_1,\,x_2)$ 는
 
 $$
 P(x_1,\,x_2) = \left|\langle x_1x_2|\Psi\rangle\right|^2
 $$
 
-는 입자 $1$ 을 $x_1$ 에서, 입자 $2$ 를 $x_2$ 에서 발견할 확률밀도함수가 된다. 따라서, 
+이다. 따라서
 
 $$
 1 = \int_{-\infty}^\infty \int_{-\infty}^\infty P(x_1,\,x_2)\,dx_1\,dx_2 = \int_{-\infty}^\infty \int_{-\infty}^\infty |\langle x_1x_2|\Psi\rangle|^2\,dx_1\,dx_2
@@ -392,6 +394,67 @@ $$
 
 수학적으로 $1$ 차원 $N$ 입자 시스템과 $N$ 차원 $1$ 입자 시스템은 동등하다. 
 
+</br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-shankar_10_1_3}
+
+#### Shankar 10.1.3
+
+3차원 등방 진동자는 다음과 같은 해밀토니안으로 기술된다.
+
+$$
+H = \dfrac{p_x^2+p_y^2+p_z^2}{2m} + \dfrac{m\omega^2}{2}(x^2+y^2+z^2)
+$$
+
+($1$) $E=\left(n+\frac{3}{2}\right)\hbar \omega$ 임을 보여라. 이 때 $n=n_x+n_y+n_z$, $n_x,\,n_y,\,n_z = 0,\,1,\ldots$ 이다.
+
+($2$) 단순조화진동자의 고유함수를 이용하여 위 에너지에 대한 고유함수를 기술하고 정해진 $n$ 에 대해 패리티가 $(-1)^n$ 임을 보여라. 첫번째 4 상태를 구면좌표계로 표현하라. 에너지 $E=\left(n+\dfrac{3}{2}\right)\hbar \omega$ 에 대한 degeneracy 가 $(n+1)(n+2)/2$ 임을 보여라.
+
+:::
+
+</div></br>
+
+::: {.solution}
+
+($1$) $\displaystyle H=\sum_{i\in \{x,\,y,\,z\}} \dfrac{p_i^2}{2m}+ \dfrac{m\omega^2}{2}x_i^2$ 이므로 분리가능한 해밀토니안이며, 따라서 $x,\,y,\,z$ 에 대한 해밀토니안을 각각 $H_x,\,H_y,\,H_z$ 로 표현할 수 있고 각각의 해밀토니안에 대한 상태를 $|n_x\rangle,\, |n_y\rangle,\, |n_z\rangle$ 로 표현 할 수 있다. $|n_xn_yn_z\rangle$ 은 $H$ 의 고유상태이며 $E=E_x+E_y+E_z = \left(n_x+n_y+n_z + \dfrac{3}{2}\right)\hbar \omega$ 이며, $n_x,\,n_y,\,n_z = 0,\,1,\,2,\ldots$ 이다. $n=n_x+n_y+n_z$ 에 대해 $E=\left(n+\frac{3}{2}\right)\hbar \omega$ 이다.
+
+($2$) 정해진 $n=n_x+n_y+n_z$ 에 대해 에너지 고유상태 $|n\rangle$ 은 $|n_x\angle,\, |n_y\rangle,\, |n_z\rangle$ 의 선형결합이다. 즉
+
+$$
+\langle x,\,y,\,z|n\rangle = \sum_{n_x+n_y+n_z=n} c_{n_x, n_y, n_z}\langle x|n_x\rangle \langle y|n_y\rangle \langle z| n_z\rangle
+$$
+
+이다. @eq-QM_sho_energy_eigenstate_with_hermite_polynomial 과 @eq-QM_generator_of_hermite_polynomial 로 부터 $\langle -x|n_x\rangle = (-1)^{n_x} \langle x|n_x\rangle$ 임을 안다. 따라서,
+
+$$
+\langle -x,\,-y,\,-z|n\rangle = (-1)^n \langle x,\,y,\,z|n\rangle
+$$
+
+이다. 즉 $|n\rangle$ 의 parity 는 $(-1)^n$ 이다.
+
+첫번째 4 상태는 $n_x=n_y=n_z=0$ 인 상태 하나와 $n_x,\,n_y,\,n_z$ 가운데 하나만 $1$ 이고 나머지는 $0$ 인 상태 3개이다. $\alpha = \sqrt{m\omega/\hbar^2}$ 에 대해 
+
+$$
+\begin{aligned}
+\langle r|0,0,0\rangle &= \left(\dfrac{\alpha^2}{\pi }\right)^{3/4}  e^{-\alpha^2 r^2/2} \\[0.3em]
+\langle r|1,0,0\rangle & = \dfrac{\sqrt{2}}{\pi^{3/4}}\alpha^{5/2} e^{-\alpha^2 r^2/2} r\sin \theta \cos \varphi \\[0.3em]
+\langle r|0,1,0\rangle & = \dfrac{\sqrt{2}}{\pi^{3/4}}\alpha^{5/2} e^{-\alpha^2 r^2/2} r\sin \theta \sin \varphi \\[0.3em]
+\langle r|0,0,1\rangle & = \dfrac{\sqrt{2}}{\pi^{3/4}}\alpha^{5/2} e^{-\alpha^2 r^2/2} r\cos \theta
+\end{aligned}
+$$
+
+이다. 
+
+이제 $n=n_x+n_y+n_z$ 에 대한 degeneracy 를 알아 보자. $n\ge 0$ 에 대해 $n_x,\, n_y,\,n_z\ge 0$ 을 $n=n_x+n_y+n_z$ 가 되도록 분배하는 방법이다. 정해진 $n$ 에 대해 $n_x$ 는 $0,\ldots,\,n$ 중에 선택하면 되며 $n_y$ 는 $0$ 부터 $n-n_x$ 까지 선택하면 되고, $n_z$ 는 자동으로 정해진다. 따라서 가능한 방법의 수는
+
+$$
+\sum_{n_x=0}^n (n-n_x+1) = (n+1)^2 - \dfrac{n(n+1)}{2} = \dfrac{(n+1)(n+2)}{2}
+$$
+
+이다. 
+
+:::
 
 </br>
 
@@ -417,13 +480,13 @@ $t=0$ 에서 두 당구선수가 각각의 공을 당구대의 중앙을 향해 
 ### 양자역학의 경우
 
 
-동일한 두 입자의 위치를 동시에 측정하여 $a$ 와 $b$ 의 측정값을 얻었다고 하자. 이 때 $a\ne b$ 임을 가정하자. 이 상태벡터를 $|\Psi\rangle$ 이라고 하자. 각 입자를 $1$, $2$ 로 라벨을 붙이고 $\mathcal{H}_1\otimes \mathcal{H}_2$ 힐베르트 공간에서 기술할 때 이것은 $|ab\rangle$ 일 수도 있고 $|ba\rangle$ 일 수도 있다. 문제는 동일한 입자를 구별 할 수 없다는 것이다. 따라서 $|\Phi\rangle$ 은 $|ab\rangle$ 과 $|ba\rangle$ 의 중첩으로 
+동일한 두 입자의 위치를 동시에 측정하여 $a$ 와 $b$ 의 측정값을 얻었다고 하자. 이 때 $a\ne b$ 임을 가정하자. 이 상태벡터를 $|\Psi\rangle$ 이라고 하자. 각 입자를 $1$, $2$ 로 라벨을 붙이고 $\mathcal{H}_1\otimes \mathcal{H}_2$ 힐베르트 공간에서 기술할 때 이것은 $|ab\rangle$ 일 수도 있고 $|ba\rangle$ 일 수도 있다. 문제는 두 입자가 동일하여 구별 할 수 없는 경우이다. $|\Phi\rangle$ 은 $|ab\rangle$ 과 $|ba\rangle$ 의 중첩으로 아래와 같이 표현해 보자.
 
 $$
 |\Psi\rangle = \alpha |ab\rangle + \beta|ba\rangle
 $$
 
-이다. 두 입자를 교환하는 $P_{12}$ 연산을 생각해보자. 
+두 입자를 교환하는 $P_{12}$ 연산을 생각해보자. 
 
 $$
 P_{12}|\Psi\rangle = \beta|ab\rangle + \alpha |ba\rangle
@@ -542,15 +605,12 @@ $$
 1 = \iint |\langle \omega_1\omega_2,\, S|\Psi_S\rangle|^2 \dfrac{d\omega_1\,d\omega_2}{2}
 $$ {#eq-QM_normalization_condition_for_H_S_1}
 
-이 된다. 
-
-
-
-이 경우 파동함수를 아래와 같이 정의한다.
+이 된다. 이 경우 파동함수를 아래와 같이 정의한다.
 
 $$
-\Psi_S (\omega_1,\,\omega_2) := \dfrac{1}{\sqrt{2}} \langle \omega_1\omega_2,\, S|\Psi_S\rangle
-$$
+\boxed{
+\Psi_S (\omega_1,\,\omega_2) := \dfrac{1}{\sqrt{2}} \langle \omega_1\omega_2,\, S|\Psi_S\rangle. }
+$$ {#eq-QM_NDOF_Wavefunction_for_two_identical_boson}
 
 이제 @eq-QM_normalization_condition_for_H_S_1 이 좀 더 깔끔하게 아래와 같이 된다.
 
@@ -590,11 +650,15 @@ $$
 |\Psi_S\rangle = \dfrac{|23\rangle + |32\rangle}{\sqrt{2}} 
 $$
 
-이며 파동함수 $\Psi_S(x_1,\,x_2)$ 는
+이며 파동함수 $\Psi_S(x_1,\,x_2)$ 는 @eq-QM_NDOF_Wavefunction_for_two_identical_boson 에 따라
 
 $$
 \begin{aligned}
-\Psi_S(x_1,\,x_2) &= \dfrac{1}{\sqrt{2}}\langle x_1x_2|(|23\rangle + |32\rangle) = \dfrac{1}{\sqrt{2}} \left[\psi_2(x_1)\psi_3(x_2) + \psi_3(x_1)\psi_2(x_2)\right]
+\Psi_S(x_1,\,x_2) &= \dfrac{1}{\sqrt{2}}\langle x_1x_2,\,S|\Psi_S\rangle \\[0.3em]
+&=\dfrac{1}{\sqrt{2}}\left(\dfrac{1}{\sqrt{2}}\left(\langle x_1x_2| + \langle x_2x_1|\right)\right) \left(\dfrac{1}{\sqrt{2}}(|23\rangle + |32\rangle)\right) \\[0.3em]
+&= \dfrac{1}{2\sqrt{2}} \left(\langle x_1x_2|23\rangle + \langle x_1x_2|32\rangle + \langle x_2x_1|23\rangle + \langle x_2x_1|32\rangle  \right) \\
+&= \dfrac{1}{2\sqrt{2}}\left(\Psi_2(x_1) \Psi_3(x_2) + \Psi_3(x_1)\Psi_2(x_2) + \Psi_2(x_2)\Psi_3(x_1) + \Psi_3(x_2)\Psi_2(x_1)\right)  \\[0.3em]
+&= \dfrac{1}{\sqrt{2}} \left[\Psi_2(x_1)\Psi_3(x_2) + \Psi_3(x_1)\Psi_2(x_2)\right]
 \end{aligned}
 $$
 
@@ -654,7 +718,7 @@ $$
 
 $$
 \begin{aligned}
-\Psi_A(x_1,\,x_2) &= \dfrac{1}{\sqrt{2}}\langle x_1x_2|(|23\rangle - |32\rangle) = \dfrac{1}{\sqrt{2}} \left[\psi_2(x_1)\psi_3(x_2) - \psi_3(x_1)\psi_2(x_2)\right]
+\Psi_A(x_1,\,x_2) &= \dfrac{1}{\sqrt{2}}\langle x_1x_2|(|23\rangle - |32\rangle) = \dfrac{1}{\sqrt{2}} \left[\Psi_2(x_1)\Psi_3(x_2) - \Psi_3(x_1)\Psi_2(x_2)\right]
 \end{aligned}
 $$
 
@@ -669,13 +733,13 @@ $$
 @exm-QM_two_fermion_wave_fucntion 에서 $\Psi_A(x_1,\,x_2)$ 는 행렬의 행렬식(determinant) $|A|$ 를 이용하여 
 
 $$
-\Psi_A(x_1,\,x_2) =  \dfrac{1}{\sqrt{2}} \left[\psi_2(x_1)\psi_3(x_2) - \psi_3(x_1)\psi_2(x_2)\right]= \dfrac{1}{\sqrt{2}} \left| \begin{array}{cc} \psi_2(x_1) & \psi_3 (x_1) \\ \psi_2(x_2) & \psi_3 (x_2) \end{array}\right|
+\Psi_A(x_1,\,x_2) =  \dfrac{1}{\sqrt{2}} \left[\Psi_2(x_1)\Psi_3(x_2) - \Psi_3(x_1)\Psi_2(x_2)\right]= \dfrac{1}{\sqrt{2}} \left| \begin{array}{cc} \Psi_2(x_1) & \Psi_3 (x_1) \\ \Psi_2(x_2) & \Psi_3 (x_2) \end{array}\right|
 $$
 
 로 표현 할 수 있다. 이것을 일반화하면 $N$ 개의 페르미온 입자가 각각 $\omega_1,\ldots,\,\omega_N$ 상태에 있다고 할 때
 
 $$
-\Psi_A(x_1,\ldots,\,x_N) = \dfrac{1}{\sqrt{N!}}\left|\begin{array}{cccc} \psi_{\omega_1}(x_1) & \psi_{\omega_2} (x_1) & \cdots & \psi_{\omega_N}(x_1) \\\psi_{\omega_1}(x_2) & \psi_{\omega_2} (x_2) & \cdots & \psi_{\omega_N}(x_2) \\ & \vdots & & \\ \psi_{\omega_1}(x_N) & \psi_{\omega_2} (x_N) & \cdots & \psi_{\omega_N}(x_N)  \end{array}\right|
+\Psi_A(x_1,\ldots,\,x_N) = \dfrac{1}{\sqrt{N!}}\left|\begin{array}{cccc} \Psi_{\omega_1}(x_1) & \Psi_{\omega_2} (x_1) & \cdots & \Psi_{\omega_N}(x_1) \\ \Psi_{\omega_1}(x_2) & \Psi_{\omega_2} (x_2) & \cdots & \Psi_{\omega_N}(x_2) \\ & \vdots & & \\ \Psi_{\omega_1}(x_N) & \Psi_{\omega_2} (x_N) & \cdots & \Psi_{\omega_N}(x_N)  \end{array}\right|
 $$ {#eq-QM_determinamt_and_antisymmetric_wavefunction}
 
 이다. 이것은 행렬식의 정의로부터 자명한데 행렬식은 $N\times N$ 행렬에 대해 아래의 성질을 갖는 함수로 정의되며, 아래의 세가지 성질을 모두 충족하는 함수는 행렬식이 유일하다.
@@ -695,7 +759,6 @@ $$
 
 이다. 
 
-
 </br>
 
 ### 입자의 보존/페르미온 여부는 어떻게 결정하는가
@@ -705,18 +768,18 @@ $$
 $$
 \begin{aligned}
 P_{S/A}(x_1,\,x_2) &= 2|\Psi_{S/A} (x_1,\,x_2)|^2 \\
-&= 2\left|\dfrac{1}{\sqrt{2}}\left[ \psi_m(x_1) \psi_n(x_2) \pm \psi_m(x_2) \psi_n(x_1)\right]\right|^2 \\
-&= |\psi_m(x_1)|^2|\psi_n(x_2)|^2 + |\psi_m(x_2)|^2|\psi_n(x_1)|^2 \\[0.3em]
-&\quad \pm \left[\psi_m(x_1)\psi_n(x_2)\psi_m^\ast (x_2) \psi_n^\ast(x_1) + \psi_m(x_2)\psi_n(x_1) \psi_m^\ast(x_1) \psi_n^\ast(x_2)\right]
+&= 2\left|\dfrac{1}{\sqrt{2}}\left[ \Psi_m(x_1) \Psi_n(x_2) \pm \Psi_m(x_2) \Psi_n(x_1)\right]\right|^2 \\
+&= |\Psi_m(x_1)|^2|\Psi_n(x_2)|^2 + |\Psi_m(x_2)|^2|\Psi_n(x_1)|^2 \\[0.3em]
+&\quad \pm \left[\Psi_m(x_1)\Psi_n(x_2)\Psi_m^\ast (x_2) \Psi_n^\ast(x_1) + \Psi_m(x_2)\Psi_n(x_1) \Psi_m^\ast(x_1) \Prsi_n^\ast(x_2)\right]
 \end{aligned}
 $$ {#eq-QM_probability_density_of_two_identical_particle}
 
 이 된다. 위 식은 세가지 항으로 구분 할 수 있다.
 
 ::: {.callout-important appearance="minimal"}
-($1$) 첫번째 항 $|\psi_m(x_1)|^2|\psi_n(x_2)|^2$ 은 첫번째 입자가 $m$ 상태, 두번째 입자가 $n$ 상태에 있을 확률분포이다.
+($1$) 첫번째 항 $|\Psi_m(x_1)|^2|\Psi_n(x_2)|^2$ 은 첫번째 입자가 $m$ 상태, 두번째 입자가 $n$ 상태에 있을 확률분포이다.
 
-($2$) 두번째 항 $|\psi_m(x_2)|^2|\psi_n(x_1)|^2$ 은 첫번째 입자가 $n$ 상태, 두번째 입자가 $m$ 상태에 있을 확률분포이다.
+($2$) 두번째 항 $|\Psi_m(x_2)|^2|\Psi_n(x_1)|^2$ 은 첫번째 입자가 $n$ 상태, 두번째 입자가 $m$ 상태에 있을 확률분포이다.
 
 ($3$) $\pm$ 과 뒤에 따르는 나머지 항은 소위 간섭(interference) 에 의한 항이다. 
 :::
@@ -725,7 +788,7 @@ $$ {#eq-QM_probability_density_of_two_identical_particle}
 
 $$
 \begin{aligned}
-\lim_{x_1\to x,\, x_2\to x} P_S(x_1,\,x_2) &= 4|\psi_m(x)\psi_n(x)|^2, \\
+\lim_{x_1\to x,\, x_2\to x} P_S(x_1,\,x_2) &= 4|\Psi_m(x)\Psi_n(x)|^2, \\
 \lim_{x_1\to x,\, x_2\to x} P_A(x_1,\,x_2) &= 0, 
 \end{aligned}
 $$ {#eq-QM_limit_of_two_particle_wavefunction_1}
@@ -735,13 +798,13 @@ $$ {#eq-QM_limit_of_two_particle_wavefunction_1}
 두 입자에 대해 $P(x_1,\,x_2)$ 를 구하는 것은 보존/페르미온 구분 이전에 두 입자가 동일한지 아닌지 여부에 대해 결정하는데도 사용 될 수 있다. $K$ 와 $\overline{K}$ 라고 불리우는 두 보존은 질량과 전하가 같고 *hypercharge* 라고 불리는 양자수가 다르다. 우선 서로 다른 두 입자가 각각 $m,\,n$ 상태에서 $x_1,\,x_2$ 에서 발견될 확률 $P_D(x_1,\,x_2)$ 는
 
 $$
-P_D(x_1,\,x_2) = |\psi_m(x_1)|^2|\psi_n(x_2)|^2 + |\psi_m(x_2)|^2|\psi_n(x_1)|^2 
+P_D(x_1,\,x_2) = |\Psi_m(x_1)|^2|\Psi_n(x_2)|^2 + |\Psi_m(x_2)|^2|\Psi_n(x_1)|^2 
 $$
 
 이며, 같은 위치에서 발견될 확률은 
 
 $$
-\lim_{x_1\to x,\, x_2\to x} P_D(x_1,\,x_2) = 2|\psi_m(x)\psi_n(x)|^2
+\lim_{x_1\to x,\, x_2\to x} P_D(x_1,\,x_2) = 2|\Psi_m(x)\Psi_n(x)|^2
 $$
 
 이다. 이를 @eq-QM_limit_of_two_particle_wavefunction_1 와 비교해보면 2배의 차이가 난다. 
@@ -785,22 +848,31 @@ $$
 
 ## 우주와 대칭/반대칭 파동함수 문제
 
-자연에 대한 논의에서 항상 중요한것은 우리가 실험하거나 이론적으로 계산하려고 하는 부분을 우주의 나머지 부분과 분리하는 것이다. 어떤 시스템도 엄밀하게 고립될 수 없기 때문에 우리는 적절한 근사를 사용한다. 고전역학에서는 우리가 관심있는 시스템과 나머지 우주 전체를 분리하다. 즉, 
+자연에 대한 논의에서 항상 중요한것은 우리가 실험하거나 이론적으로 계산하려고 하는 부분을 우주의 나머지 부분과 분리하는 것이다. 어떤 시스템도 엄밀하게 고립될 수 없기 때문에 우리는 적절한 근사를 사용한다. 고전역학에서는 우리가 관심있는 시스템(sys)과 나머지 우주 전체(rest, 이하 나머지)를 분리하다. 즉, 
 
 $$
-\mathcal{H}_{\text{universe}} = \mathcal{H}_{\text{system}} + \mathcal{H}_\text{rest}
+\mathcal{H}_{\text{universe}} = \mathcal{H}_{\text{sys}} + \mathcal{H}_\text{rest}
 $$
 
-로 분리하며 $\mathcal{H}_{\text{system}}$ 은 우리가 관심있는 시스템의 (일반화된) 좌표와 운동량의 함수이며, 이 좌표와 운동량은 나머지 우주에 대해 독립적임을 가정한다. 이것이 좋은 근사가 되기위해서는 이 가정이 가능한 한 잘 만족되어야 한다.
+로 분리하며 $\mathcal{H}_{\text{sys}}$ 은 우리가 관심있는 시스템의 (일반화된) 좌표와 운동량의 함수이며, 이 좌표와 운동량은 나머지 우주에 대해 독립적임을 가정한다. 이것이 좋은 근사가 되기위해서는 이 가정이 가능한 한 잘 만족되어야 한다.
 
 양자역학에서는 우리의 시스템과 나머지 우주의 파동함수를 다음과 같이 분리한다.
 
 $$
-\Psi_{\text{universe}} = \Psi_{\text{system}}\cdot \Psi_{\text{rest}}
+\Psi_{\text{universe}} = \Psi_{\text{sys}}\cdot \Psi_{\text{rest}}
 $$
 
+여기서 $\Psi_{\text{sys}}$ 는 시스템의 좌표계에만의 함수이며 이것들을 모두 $x_s$ 로 표현한다고 하자. 이 때 나머지 우주 전체는 어떻든 상관 없이 시스템이 $x_s$ 에 있을 확률 $P(x_s)$ 는
 
--- to be shotly --
+$$
+\begin{aligned}
+P(x_s) &= \int |\Psi_{\text{universe}}(x_s,\, x_\text{rest})|^2\, dx_\text{rest} = |\Psi_\text{sys}(x_s)|^2 \int |\Psi_{\text{rest}}(x_\text{rest})|^2 \, dx_{\text{rest}} \\
+&=|\Psi_\text{sys}(x_s)|^2 
+\end{aligned}
+$$
+
+이다. 그런데 문제는 시스템과 나머지에 동일한 입자가 있을 때 발생한다. 시스템과과 나머지 사이에 아무 상호작용이 없더라도 이 동일 입자들에 대한 대칭 혹은 반대칭 상태가 유지되어야 하며 파동함수를 시스템과 나머지의 곱으로 표현할 수 없으며, 따라서 위 식과 같이 확률을 분리할 수도 없다.
+
 
 예를 들어 지구의 전자의 파동함수 $\psi_E(x_E)$ 와 달의 전자의 파동함수 $\psi_M(x_M)$ 을 생각하면 당연히 
 
@@ -817,7 +889,9 @@ $$
 
 </br>
 
-## 연습문제
+## 연습문제 {.unnumbered}
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-shankar_10_3_1}
 
@@ -827,26 +901,30 @@ $$
 
 :::
 
+</div>
+</br>
+
 ::: {.solution}
 
 $|\Psi_S\rangle = a(|\phi\psi\rangle + |\psi\phi\rangle)$ 이며 
 
 $$
 \begin{aligned}
-1 &= \langle \Psi_S|\Psi_S\rangle = |a|^2(2+ |\langle \phi|\psi\rangle|^2)
+1 &= \langle \Psi_S|\Psi_S\rangle = 2|a|^212+ |\langle \phi|\psi\rangle|^2)
 \end{aligned}
 $$
 
 이므로, 
 
 $$
-|\Psi_S\rangle = \dfrac{1}{\sqrt{2+|\langle \phi|\psi\rangle|^2}}(|\phi \psi\rangle + |\psi \phi\rangle)
+|\Psi_S\rangle = \dfrac{1}{\sqrt{2(1+|\langle \phi|\psi\rangle|^2)}}(|\phi \psi\rangle + |\psi \phi\rangle)
 $$
 
 이다. 
 :::
 
 </br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-shankar_10_3_2}
 
@@ -855,17 +933,15 @@ $$
 3개의 보존으로 이루어진 무한 포텐셜 우물 시스템에서 $3,\,3,\,4$ 상태에서 에너지가 측정되었다. 대칭화되고 정규화된 상태벡터를 쓰시오.
 
 :::
+</div></br>
 
 ::: {.solution}
 
-
-$$
-|334,\, S\rangle = \dfrac{1}{\sqrt{3}}(|334\rangle +  |433\rangle  + |343\rangle) 
-$$
+$\displaystyle |334,\, S\rangle = \dfrac{1}{\sqrt{3}}(|334\rangle +  |433\rangle  + |343\rangle)$
 :::
 
 </br>
-
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-shankar_10_3_5}
 
@@ -886,6 +962,7 @@ $$
 ($4$) 두 동일 입자에 대한 해밀토니안과 시간전개 연산자가 $H\to P_{12}HP_{12}$, $U \to P_{12}UP_{12}$ 변환에 대해 불변임을 보여라. 이를 이용하여 $P_{12}$ 의 고유상태는 시간이 지나도 $P_{12}$ 의 고유상태임을 보여라. 즉 $\mathcal{H}_S$(혹은 $\mathcal{H}_A$) 에 속하는 상태벡터는 시간이 지나도 $\mathcal{H}_S$(혹은 $\mathcal{H}_A$) 에 속한다.
 
 :::
+</div></br>
 
 ::: {.solution}
 
@@ -926,6 +1003,7 @@ $\Omega(X_1,\, P_1,\, X_2,\,P_2)$ 가
 :::
 
 </br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-shankar_10_3_6}
 
@@ -934,6 +1012,8 @@ $\Omega(X_1,\, P_1,\, X_2,\,P_2)$ 가
 수소 원자와 같은 복합 물질을 생각하자. 이 물질은 보존 혹은 페르미온 처럼 행동하는가? 짝수 혹은 홀수개의 페르미온으로 이루어진 입자가 보존이나 페르미온 처럼 행동할지에 대해 논하라.
 
 :::
+
+</div></br>
 
 ::: {.solution}
 
