@@ -338,6 +338,17 @@ window.Quarto = {
 
 
 
+<div class="hidden">
+<p>%</p>
+%
+<!-- \newcommand{\hom}{\text{Hom}}
+\newcommand{\iso}{\text{Iso}}
+\newcommand{\aut}{\text{Aut}} -->
+<p><span class="math display">\[
+\DeclarePairedDelimiters{\set}{\{}{\}}
+\DeclareMathOperator*{\argmax}{argmax}
+\]</span></p>
+</div>
 <p><a href="../../src/CHM/CHM_symmetry_in_classical_mechanics.html">고전역학에서의 대칭</a> 을 참고하라.</p>
 <div class="callout callout-style-default callout-important no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -350,21 +361,25 @@ window.Quarto = {
 </div>
 <div class="callout-body-container callout-body">
 <p>우리는 고전역학의 해밀토니안 <span class="math inline">\(\mathcal{H}\)</span> 에 대해 다음이 성립한다는 것을 안다.</p>
-<p>(<span class="math inline">\(1\)</span>) 동역학 변수 <span class="math inline">\(g(q,\,p)\)</span> 에 의한 infinitesimal canonical transformation 에 대해 해밀토니안이 변하지 않으면 <span class="math inline">\(g\)</span> 는 보존된다.</p>
-<p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(\mathcal{H}\)</span> 가 불변인 canonical transformation 에 의한 운동방정식의 해의 변환은 역시 운동방정식의 해이다.</p>
+<p>(<span class="math inline">\(1\)</span>) 동역학 변수 <span class="math inline">\(g(\boldsymbol{q},\,\boldsymbol{p})\)</span> 에 의한 infinitesimal canonical transformation 에 대해 해밀토니안이 변하지 않으면 <span class="math inline">\(g\)</span> 는 보존된다. (<a href="../CHM/CHM_symmetry_in_classical_mechanics.html#thm-CHM_symmetry_constant_of_motion" class="quarto-xref">정리&nbsp;<span>2.2</span></a>)</p>
+<p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(\mathcal{H}\)</span> 가 불변인 canonical transformation 에 의한 운동방정식의 해의 변환은 역시 운동방정식의 해이다. (<a href="../CHM/CHM_symmetry_in_classical_mechanics.html#thm-CHM_symmetry_canonital_transoformation_and_solution_of_equation_of_motion" class="quarto-xref">정리&nbsp;<span>2.3</span></a>)</p>
 </div>
 </div>
 <p><br></p>
 <section id="양자-이론에서의-translational-invariance" class="level2" data-number="11.1">
 <h2 data-number="11.1" class="anchored" data-anchor-id="양자-이론에서의-translational-invariance"><span class="header-section-number">11.1</span> 양자 이론에서의 translational invariance</h2>
-<p>양자역학에서 translational invariance, 즉 어떤 translation 에 대한 해밀토니안 <span class="math inline">\(H\)</span> 의 invariance 를 어떻게 정의할 것인가? 양자역학에서는 임의의 상태에 대한 어떤 위치라는 것도 정의가 되지 않으며, 따라서 infinetsimal translation 에 대한 해밀토니안의 불변성도 정의 할 수 없다. 그러나 고전역학에서 정의된 어떤 양은 양자역학에서의 기대값에 상응하도록 되어있는 경우가 많다는 것을 고려하면, 양자역학에서의 translational invariance 는 (그것을 생각해야 한다면) 경로의 기대값에 대한 infinitesimal transformation 에 대한 것이어야 할 것이다. 즉,</p>
+<p>양자역학에서 translational invariance, 즉 어떤 translation 에 대한 해밀토니안 <span class="math inline">\(H\)</span> 의 invariance 를 어떻게 정의할 것인가? 양자역학에서는 어떤 상태의 입자의 위치나 에너지는 잘 정의된 물리량이 아니며, 따라서 위치에서의 infinetsimal translation 에 대한 해밀토니안의 불변성도 정의 할 수 없다. 그러나 고전역학에서 정의된 어떤 양은 양자역학에서의 기대값에 상응하도록 되어있는 경우가 많다는 것을 고려하면, 양자역학에서의 translational invariance 는 (그것을 생각해야 한다면) 경로의 기대값에 대한 infinitesimal transformation 에 대한 것이어야 할 것이다. 즉, 변환에 의해 위치와 운동량의 기대값이 아래와 같이 변해야 한다.</p>
 <p><span id="eq-QM_infinitesimal_translation"><span class="math display">\[
 \begin{aligned}
 \langle X \rangle &amp;\to \langle X\rangle + \varepsilon,\\[0.3em]
 \langle P \rangle &amp;\to \langle P \rangle
 \end{aligned}
 \tag{11.1}\]</span></span></p>
-<p>에 대한 것이다. Infinitesimal translation <span class="math inline">\(T_{\varepsilon}\)</span> 에 의해 상태벡터 <span class="math inline">\(|\Psi \rangle\)</span> 이 ㅣ변한 상태를 <span class="math inline">\(|\Psi_\varepsilon\rangle\)</span> 이라고 하자. 즉</p>
+<p>고전역학에서의 변환과 같이 여기에 두가지 방법이 있다. 상태를 변환시키는 active transformation 과 <span class="math inline">\(X,\,P\)</span> 연산자를 변화시키는 passive transformation.</p>
+<p><br></p>
+<section id="active-transformation" class="level4">
+<h4 class="anchored" data-anchor-id="active-transformation"><strong>active transformation</strong></h4>
+<p>Infinitesimal translation <span class="math inline">\(T_{\varepsilon}\)</span> 에 의해 상태벡터 <span class="math inline">\(|\Psi \rangle\)</span> 이 변한 상태를 <span class="math inline">\(|\Psi_\varepsilon\rangle\)</span> 이라고 하자. 즉</p>
 <p><span class="math display">\[
 T_{\varepsilon}|\Psi\rangle = |\Psi_\varepsilon\rangle
 \]</span></p>
@@ -375,7 +390,11 @@ T_{\varepsilon}|\Psi\rangle = |\Psi_\varepsilon\rangle
 \langle \Psi_\varepsilon|P|\Psi_\varepsilon \rangle &amp;= \langle \Psi|P|\Psi\rangle
 \end{aligned}
 \]</span></p>
-<p>라는 의미이다. 이것은 active transformation 에서의 관점이다. 즉 변환은 상태벡터를 변화시킨다. 이와 동등하지만 다른 passive transformation 은 연산자 자체를 다음과 같이 변화시킨다. <span class="math display">\[
+<p>라는 의미이다. 이와 동등하지만 다른 passive transformation 에 대해 알아보자.</p>
+</section>
+<section id="passive-transformation" class="level4">
+<h4 class="anchored" data-anchor-id="passive-transformation"><strong>passive transformation</strong></h4>
+<p>Passive transfornatino 은 연산자 자체를 다음과 같이 변화시킨다. <span class="math display">\[
 \begin{aligned}
 X &amp; \to T^\dagger_\varepsilon XT_{\varepsilon} = X+\varepsilon I,\\
 P &amp; \to T^\dagger_\varepsilon PT_{\varepsilon} = P
@@ -388,11 +407,13 @@ P &amp; \to T^\dagger_\varepsilon PT_{\varepsilon} = P
 \langle \Psi|T^\dagger_\varepsilon P T_{\varepsilon} |\Psi\rangle &amp;= \langle \Psi |P|\Psi\rangle
 \end{aligned}
 \]</span></p>
-<p>이 성립한다. 이미 알겠지만 능동적 변환과 수동적 변환은 동일한 현상에 대한 다른 수학적 표현법일 따름이다. 이제 우리는 <span class="math inline">\(T_\varepsilon\)</span> 을 구해보도록 하자. 일단 active transformation 의 관점을 따르기로 한다. 우선 <span class="math inline">\(X\)</span> 기저에서 <span class="math inline">\(|x\rangle\)</span> 상태에 있는 입자에 대해</p>
-<p><span class="math display">\[
+<p>이 성립한다.</p>
+<p><br></p>
+<p>이미 알겠지만 능동적 변환과 수동적 변환은 동일한 현상에 대한 다른 수학적 표현법일 따름이다. 이제 우리는 <span class="math inline">\(T_\varepsilon\)</span> 을 구해보도록 하자. 일단 active transformation 의 관점을 따르기로 한다. 우선 <span class="math inline">\(X\)</span> 기저에서 <span class="math inline">\(|x\rangle\)</span> 상태에 있는 입자에 대해</p>
+<p><span id="eq-QM_symmetry_translation_in_position_basis"><span class="math display">\[
 T_{\varepsilon}|x\rangle = |x+\varepsilon\rangle
-\]</span></p>
-<p>라고 할 수 있다. <span class="math inline">\(|x\rangle\)</span> 는 <span class="math inline">\(X\)</span> 에 대한 정규직교기저이며 <span class="math inline">\(|x+\varepsilon\rangle\)</span> 도 그러하다. 즉 <span class="math inline">\(T_\varepsilon\)</span> 은 유니타리 연산자이다. 이제 <span class="math inline">\(|\Psi_\varepsilon \rangle = T_\varepsilon |\Psi\rangle\)</span> 을 생각해보자.</p>
+\tag{11.2}\]</span></span></p>
+<p>라고 할 수 있다. <span class="math inline">\(|x\rangle\)</span> 와 <span class="math inline">\(|x+\varepsilon\rangle\)</span> 는 둘 다 <span class="math inline">\(X\)</span> 에 대한 정규직교기저벡터 이다. 즉 <span class="math inline">\(T_\varepsilon\)</span> 은 유니타리 연산자이다. 이제 <span class="math inline">\(|\Psi_\varepsilon \rangle = T_\varepsilon |\Psi\rangle\)</span> 을 생각해보자.</p>
 <p><span class="math display">\[
 \begin{aligned}
 |\Psi_\varepsilon\rangle = T_{\varepsilon}|\Psi\rangle &amp;= T_{\varepsilon} \int_{-\infty}^\infty |x\rangle \langle x|\Psi\rangle\, dx = \int_{-\infty}^\infty |x+\varepsilon\rangle \langle x|\Psi\rangle \,dx , \\
@@ -403,15 +424,18 @@ T_{\varepsilon}|x\rangle = |x+\varepsilon\rangle
 <p><span class="math display">\[
 \Psi_\varepsilon (x) = \langle x|T_{\varepsilon}|\Psi\rangle = \int_{-\infty}^\infty \langle x|x'\rangle \langle x'-\varepsilon|\Psi\rangle\, dx' = \Psi(x-\varepsilon)
 \]</span></p>
-<p>이다. 즉 파동함수 <span class="math inline">\(\psi (x) = \langle x|\psi\rangle\)</span> 에 대해 <span class="math inline">\(\psi_\varepsilon (x) = \langle x|T_\varepsilon |\psi\rangle = \psi(x-\varepsilon)\)</span> 이며 이것은 파동함수의 translation 을 의미한다는 것을 알 수 있다. 또한,</p>
+<p>이다. 즉 파동함수 <span class="math inline">\(\Psi (x) = \langle x|\Psi\rangle\)</span> 에 대해</p>
+<p><span id="eq-QM_symmetry_change_of_wave_fucntion_by_translation"><span class="math display">\[
+\Psi_\varepsilon (x) = \langle x|T_\varepsilon |\Psi\rangle = \Psi(x-\varepsilon)
+\tag{11.3}\]</span></span></p>
+<p>이며 이것은 파동함수의 translation 을 의미한다는 것을 알 수 있다. 또한,</p>
 <p><span class="math display">\[
 \begin{aligned}
 \langle \Psi_\varepsilon|P|\Psi_\varepsilon\rangle &amp;= \int_{-\infty}^\infty \Psi_\varepsilon^\ast(x) \left(-i\hbar \dfrac{d}{dx}\right)\Psi_\varepsilon(x)\, dx \\
 &amp;= \int_\infty^\infty\Psi^\ast(x) \left(-i\hbar \dfrac{d}{dx}\right)\Psi (x)\, dx = \langle \Psi |P|\Psi\rangle
 \end{aligned}
 \]</span></p>
-<p>이다. 즉, 아마 예상했던 바와 같이 translation 에 대해 운동량의 기대값은 변하지 않는다.</p>
-<p>여기서 한가지 짚고 넘어가야 할 것이 있다. 고전역학에서는 <span class="math inline">\(x\)</span> 와 <span class="math inline">\(p\)</span> 는 독립적이며 고전역학에서의 translation 은</p>
+<p>이다. 예상했던 바와 같이 translation 에 대해 운동량의 기대값은 변하지 않는다. 여기서 한가지 짚고 넘어가야 할 것이 있다. 고전역학에서는 <span class="math inline">\(x\)</span> 와 <span class="math inline">\(p\)</span> 는 독립적이며 고전역학에서의 translation 은</p>
 <p><span class="math display">\[
 \begin{aligned}
 x &amp;\to x+\varepsilon, \\
@@ -446,14 +470,15 @@ T_{\varepsilon} |x\rangle = e^{i\varepsilon g(x)/\hbar}|x+\varepsilon\rangle
 \]</span></p>
 <p>이다. 즉 우리가 <span class="math inline">\(T_\varepsilon |x\rangle = |x+\varepsilon\rangle\)</span> 을 선택한 것은 <span class="math inline">\(\langle X\rangle \to \langle X\rangle + \varepsilon,\, \langle P \rangle \to \langle P \rangle\)</span> 인 변환을 선택한 것이다.</p>
 <p>이제 <span class="math inline">\(X\)</span> 기저에 대한 <span class="math inline">\(T_\varepsilon\)</span> 을 정의했으므로 <span class="math inline">\(T_\varepsilon\)</span> 에 대한 몇가지 성질을 알아보자.</p>
-<br>
-<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
-<div id="exr-part3_properties_of_translation_operator" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 11.1</strong></span> Infinitesimal translation operator <span class="math inline">\(T_\varepsilon\)</span> 에 대해 다음을 보여라.</p>
-<p>  (<span class="math inline">\(1\)</span>) <span class="math inline">\(T_\varepsilon\)</span> 은 unitery 이다.</p>
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+<div id="prp-QM_symmetry_properties_of_translation_operator" class="theorem proposition">
+<p><span class="theorem-title"><strong>명제 11.1</strong></span> Infinitesimal translation operator <span class="math inline">\(T_\varepsilon\)</span> 에 대해 다음을 보여라.</p>
+<p>  (<span class="math inline">\(1\)</span>) <span class="math inline">\(T_\varepsilon\)</span> 은 unitary 이다.</p>
 <p>  (<span class="math inline">\(2\)</span>) <span class="math inline">\(T_{\varepsilon_1} T_{\varepsilon_2} = T_{\varepsilon_1+ \varepsilon_2}\)</span> 이다.</p>
 <p>  (<span class="math inline">\(3\)</span>) <span class="math inline">\(T^\dagger_\varepsilon = T_{-\varepsilon}\)</span> 이다.</p>
 </div>
+</div>
+<p><br></p>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span>(<span class="math inline">\(1\)</span>) <span class="math inline">\(\langle \Psi | \Psi\rangle = \langle \Psi|T^\dagger_\varepsilon T |\Psi\rangle\)</span> 이면 <span class="math inline">\(T_\varepsilon\)</span> 은 uniatary 이다.</p>
 <p><span class="math display">\[
@@ -462,21 +487,20 @@ T_{\varepsilon} |x\rangle = e^{i\varepsilon g(x)/\hbar}|x+\varepsilon\rangle
 <p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(T_{\varepsilon_1}T_{\varepsilon_2}|x\rangle = T_{\varepsilon_1}|x+\varepsilon_1\rangle = |x+\varepsilon_1+\varepsilon_2\rangle = T_{\varepsilon_1+\varepsilon_2}|x\rangle\)</span></p>
 <p>(<span class="math inline">\(3\)</span>) <span class="math inline">\(T\)</span> 가 unitary 이므로 <span class="math inline">\(T^\dagger_\varepsilon T_\varepsilon = I\)</span> 이며 (<span class="math inline">\(2\)</span>) 로 부터 <span class="math inline">\(T^\dagger_\varepsilon = T_{-\varepsilon}\)</span> 이다. <span class="math inline">\(\square\)</span></p>
 </div>
-</div>
 <p><br></p>
-<p>Translation 을 선택했으므로 우리는 translational invariance 를 정의 할 수 있다. 즉 <span class="math inline">\(|\Psi_\varepsilon\rangle = T_\varepsilon|\Psi\rangle\)</span> 에 대해</p>
+<p>양자역학에서의 translation 을 정의했으므로 우리는 translational invariance 를 정의 할 수 있다. 즉 <span class="math inline">\(|\Psi_\varepsilon\rangle = T_\varepsilon|\Psi\rangle\)</span> 에 대해</p>
 <p><span class="math display">\[
 \langle \Psi| H |\Psi\rangle = \langle \Psi_\varepsilon | H |\Psi_\varepsilon \rangle
 \]</span></p>
 <p>일 때 해밀토니안 <span class="math inline">\(H\)</span> 가 translatinal invariance 라고 한다. 이제 <span class="math inline">\(T_{\varepsilon}\)</span> 을 명확하게 구성해 보자. <span class="math inline">\(\varepsilon=0\)</span> 일 때 <span class="math inline">\(T_{\varepsilon} = I\)</span> 이므로 <span class="math inline">\(\varepsilon\)</span> 의 1차항까지 전개하여</p>
 <p><span id="eq-QM_translation_operator"><span class="math display">\[
 T_{\varepsilon}= I-\dfrac{i\varepsilon}{\hbar}G
-\tag{11.2}\]</span></span></p>
-<p>라고 하자. <a href="#eq-QM_translation_operator" class="quarto-xref">식&nbsp;<span>11.2</span></a> 는 근사식이며 많은 계산에서 <span class="math inline">\(\varepsilon\)</span> 에 대한 1차식가지만의 결과가 사용되기 때문에 편리하다. 이 때 <span class="math inline">\(G\)</span> 는 translation 의 generator 라고 한다. <span class="math inline">\(G\)</span> 가 애르미트 연산자임은 쉽게 보일 수 있다.</p>
+\tag{11.4}\]</span></span></p>
+<p>라고 하자. <a href="#eq-QM_translation_operator" class="quarto-xref">식&nbsp;<span>11.4</span></a> 는 근사식이며 많은 계산에서 <span class="math inline">\(\varepsilon\)</span> 에 대한 1차식까지만의 결과가 사용되기 때문에 편리하다. 이 때 <span class="math inline">\(G\)</span> 는 translation 의 generator 라고 한다. <span class="math inline">\(G\)</span> 가 에르미트 연산자임은 쉽게 보일 수 있다.</p>
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-shankar_11_2_2" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 11.2 (Shankar 11.2.2)</strong></span> <span class="math inline">\(T_\varepsilon\)</span> 이 유니타리 임을 이용하여 <a href="#eq-QM_translation_operator" class="quarto-xref">식&nbsp;<span>11.2</span></a> 의 <span class="math inline">\(G\)</span> 는 에르미트 임을 보여라.</p>
+<p><span class="theorem-title"><strong>연습문제 11.1 (Shankar 11.2.2)</strong></span> <span class="math inline">\(T_\varepsilon\)</span> 이 유니타리 임을 이용하여 <a href="#eq-QM_translation_operator" class="quarto-xref">식&nbsp;<span>11.4</span></a> 의 <span class="math inline">\(G\)</span> 는 에르미트 임을 보여라.</p>
 </div>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(T^\dagger_{\varepsilon} T_{\varepsilon}= I\)</span> 이므로,</p>
@@ -511,29 +535,30 @@ T_{\varepsilon} = I - \dfrac{i\varepsilon}{h}P
 \]</span></p>
 <p>이므로 <span class="math inline">\(\Psi_\varepsilon| H |\Psi_\varepsilon \rangle = \langle \Psi | H |\Psi \rangle\)</span> 로부터 <span class="math inline">\([P,\, H] = 0\)</span> 을 얻는다. 즉 <span class="math inline">\(\langle \dot{P}\rangle = 0\)</span> 이므로 <span class="math inline">\(P\)</span> 는 보존된다.</p>
 <p><br></p>
+</section>
 <section id="passive-transform-으로-본-translation" class="level3" data-number="11.1.1">
 <h3 data-number="11.1.1" class="anchored" data-anchor-id="passive-transform-으로-본-translation"><span class="header-section-number">11.1.1</span> Passive transform 으로 본 translation</h3>
 <p>Translation <span class="math inline">\(T_\varepsilon\)</span> 이 연산자에 적용된다면</p>
 <p><span id="eq-QM_transilation_in_passive_transform"><span class="math display">\[
 T_\varepsilon^\dagger XT_\varepsilon = X + \varepsilon I,\qquad T^\dagger_\varepsilon P T = P
-\tag{11.3}\]</span></span></p>
+\tag{11.5}\]</span></span></p>
 <p>이다. <span class="math inline">\(T^\dagger_\varepsilon X T_\varepsilon\)</span> 은 원점이 <span class="math inline">\(\varepsilon\)</span> 만큼 이동되었을 때의 위치연산자이다. 이것을 다시</p>
 <p><span id="eq-QM_translation_form_2"><span class="math display">\[
 T_\varepsilon = I - \dfrac{i\varepsilon}{\hbar}G
-\tag{11.4}\]</span></span></p>
-<p>라고 쓰자. <a href="#eq-QM_transilation_in_passive_transform" class="quarto-xref">식&nbsp;<span>11.3</span></a> 와 <a href="#eq-QM_translation_form_2" class="quarto-xref">식&nbsp;<span>11.4</span></a>, 그리고 <span class="math inline">\(G^\dagger = G\)</span> 로부터</p>
+\tag{11.6}\]</span></span></p>
+<p>라고 쓰자. <a href="#eq-QM_transilation_in_passive_transform" class="quarto-xref">식&nbsp;<span>11.5</span></a> 와 <a href="#eq-QM_translation_form_2" class="quarto-xref">식&nbsp;<span>11.6</span></a>, 그리고 <span class="math inline">\(G^\dagger = G\)</span> 로부터</p>
 <p><span class="math display">\[
 X+\varepsilon I = \left(I + \dfrac{i\varepsilon}{\hbar}G\right)X\left(I - \dfrac{i\varepsilon}{\hbar}G\right) = X - \dfrac{i\varepsilon}{\hbar} [X,\,G] + o(\varepsilon^2)
 \]</span></p>
 <p>를 얻는다. 즉 <span class="math inline">\([X,\,G] = i\hbar I\)</span> 이므로 우리는</p>
 <p><span id="eq-QM_form_of_G"><span class="math display">\[
 G=P+f(X)
-\tag{11.5}\]</span></span></p>
+\tag{11.7}\]</span></span></p>
 <p>라는 것을 알 수 있다. 또한 <span class="math inline">\(T^\dagger_\varepsilon P T = P\)</span> 로부터</p>
 <p><span class="math display">\[
 P = P - \dfrac{i\varepsilon}{\hbar}[P,\,G]
 \]</span></p>
-<p>이므로 <span class="math inline">\([P,\,G] = 0\)</span> 임을 알 수 있다. 그렇다면 <span class="math inline">\(G=P+\text{const}\)</span> 형태이며, <a href="#eq-QM_form_of_G" class="quarto-xref">식&nbsp;<span>11.5</span></a> 에서 <span class="math inline">\(f(X) = \text{const}\)</span> 임을 알 수 있으며, 우리는 상수항을 <span class="math inline">\(0\)</span> 으로 선택하여</p>
+<p>이므로 <span class="math inline">\([P,\,G] = 0\)</span> 임을 알 수 있다. 그렇다면 <span class="math inline">\(G=P+\text{const}\)</span> 형태이며, <a href="#eq-QM_form_of_G" class="quarto-xref">식&nbsp;<span>11.7</span></a> 에서 <span class="math inline">\(f(X) = \text{const}\)</span> 임을 알 수 있으며, 우리는 상수항을 <span class="math inline">\(0\)</span> 으로 선택하여</p>
 <p><span class="math display">\[
 T_\varepsilon = I - \dfrac{i\varepsilon}{h} P
 \]</span></p>
@@ -554,7 +579,7 @@ U^\dagger \Omega (X,\,P) U = \Omega (U^\dagger XU,\, U^\dagger PU)
 \delta P &amp;:= T^\dagger_\varepsilon P T_\varepsilon - P.
 \end{aligned}
 \]</span></p>
-<p>우리는 이미 <a href="#eq-QM_transilation_in_passive_transform" class="quarto-xref">식&nbsp;<span>11.3</span></a> 로부터 다음을 안다.</p>
+<p>우리는 이미 <a href="#eq-QM_transilation_in_passive_transform" class="quarto-xref">식&nbsp;<span>11.5</span></a> 로부터 다음을 안다.</p>
 <p><span class="math display">\[
 \delta X = \varepsilon I,\qquad \delta P = 0.
 \]</span></p>
@@ -623,12 +648,12 @@ e^{-A}Be^A = B + [B,\,A] + \dfrac{1}{2!}[[B,\,A],\,A] + \cdots
 T^\dagger(a) \Omega T(a) &amp;= e^{iaP/\hbar}\Omega e^{-iaP/\hbar} \\
 &amp;= \Omega - \dfrac{ai}{\hbar}[\Omega,\, P] - \dfrac{a^2}{2\hbar^2}[[\Omega,\, P],\,P] + \cdots
 \end{aligned}
-\tag{11.6}\]</span></span></p>
+\tag{11.8}\]</span></span></p>
 <p>임을 안다.</p>
 <br>
 <div class="border" style="background-color:#F2F4F4  ;padding:5px;">
-<div id="exm-transformation_of_lagrangian" class="theorem example">
-<p><span class="theorem-title"><strong>예제 11.1</strong></span> <a href="#eq-part3_transformation_of_operator_by_translation" class="quarto-xref">식&nbsp;<span>11.6</span></a> 에서 <span class="math inline">\(\Omega = X^2\)</span> 일 경우 직관적으로 <span class="math inline">\(T^\dagger(a)X^2T(a) = (X+aI)^2\)</span> 임을 안다. 이를 수학적으로 보이자.</p>
+<div id="exm-QM_symmetry_transformation_of_lagrangian" class="theorem example">
+<p><span class="theorem-title"><strong>예제 11.1</strong></span> <a href="#eq-part3_transformation_of_operator_by_translation" class="quarto-xref">식&nbsp;<span>11.8</span></a> 에서 <span class="math inline">\(\Omega = X^2\)</span> 일 경우 직관적으로 <span class="math inline">\(T^\dagger(a)X^2T(a) = (X+aI)^2\)</span> 임을 안다. 이를 수학적으로 보이자.</p>
 <p><span class="math display">\[
 \begin{aligned}
 \left[X^2,\, P\right] &amp;= X[X,\,P] + [X,\,P]X = 2i\hbar X, \\
@@ -665,7 +690,7 @@ T^\dagger(a) X^2 T(a) &amp;= X^2 +2aX + a^2I = (X+aI)^2
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-shankar_11_2_3" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 11.3 (Shankar 11.2.3)</strong></span> <span class="math inline">\((x,\,y) \mapsto (\overline{x},\, \overline{y})\)</span> 에서의 Infinitesimal rotation</p>
+<p><span class="theorem-title"><strong>연습문제 11.2 (Shankar 11.2.3)</strong></span> <span class="math inline">\((x,\,y) \mapsto (\overline{x},\, \overline{y})\)</span> 에서의 Infinitesimal rotation</p>
 <p><span class="math display">\[
 \overline{x} = x \cos \varepsilon - y \sin \varepsilon,\qquad \overline{y} = x \sin \varepsilon + y \cos \varepsilon
 \]</span></p>
@@ -743,11 +768,11 @@ P = \sum_j P_j
 <h3 data-number="11.3.1" class="anchored" data-anchor-id="active-transformation-의-관점에서"><span class="header-section-number">11.3.1</span> Active transformation 의 관점에서</h3>
 <p>고전적으로 parity 변환은 다음과 같은 변환이다. <span id="eq-part3_classical_parity"><span class="math display">\[
 x \longrightarrow -x,\qquad p \longrightarrow -p
-\tag{11.7}\]</span></span></p>
+\tag{11.9}\]</span></span></p>
 <p>시간, 공간 에 대한 translation 그리고 잠시 후에 다룰 회전에 대한 변환은 연속적인 변환이지만 Parity 는 불연속적인 변환이며 이는 양자이론에서도 마찬가지이다. 양자이론에에서의 parity 변환은 <span class="math inline">\(\Pi\)</span> 연산자로 표기하며 다음과 같이 정의된다.</p>
 <p><span id="eq-part3_quantum_parity"><span class="math display">\[
 \Pi|x\rangle = |-x\rangle.
-\tag{11.8}\]</span></span></p>
+\tag{11.10}\]</span></span></p>
 <p>이로부터,</p>
 <p><span class="math display">\[
 \begin{aligned}
@@ -770,7 +795,7 @@ x \longrightarrow -x,\qquad p \longrightarrow -p
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-properties_of_parity_operator" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 11.4</strong></span> Parity operator <span class="math inline">\(\Pi\)</span> 는 다음의 성질을 가진다는 것을 보여라.</p>
+<p><span class="theorem-title"><strong>연습문제 11.3</strong></span> Parity operator <span class="math inline">\(\Pi\)</span> 는 다음의 성질을 가진다는 것을 보여라.</p>
 <p>  (<span class="math inline">\(1\)</span>) <span class="math inline">\(\Pi^2 = I\)</span>,</p>
 <p>  (<span class="math inline">\(2\)</span>) <span class="math inline">\(\Pi\)</span> 는 에르미트이며 유니타리인 연산자이다.</p>
 <p>  (<span class="math inline">\(3\)</span>) <span class="math inline">\(\Pi\)</span> 의 고유값은 <span class="math inline">\(\pm 1\)</span> 이다.</p>
@@ -847,7 +872,7 @@ x \longrightarrow -x,\qquad p \longrightarrow -p
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-QM_shankar_11_4_1" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 11.5 (Shankar 11.4.1)</strong></span> <span class="math inline">\([\Pi,\,H] = 0\)</span> 이라면 even/odd parity 를 가진 시작상태에 대해 그 패리티가 보존됨을 보여라.</p>
+<p><span class="theorem-title"><strong>연습문제 11.4 (Shankar 11.4.1)</strong></span> <span class="math inline">\([\Pi,\,H] = 0\)</span> 이라면 even/odd parity 를 가진 시작상태에 대해 그 패리티가 보존됨을 보여라.</p>
 </div>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\([\Pi,\,H]=0\)</span> 이라면 힐베르트 공간 <span class="math inline">\(\mathscr{H}\)</span> 가 <span class="math inline">\(\Pi,\, H\)</span> 의 공통 고유벡터로 된 기저를 갖는다. 이를 <span class="math inline">\(|\Psi_{E,\pi}\rangle\)</span> 이라고 하자. <span class="math inline">\(\Pi |\Psi_{E,\pi}(0)\rangle = \pi_{E,\,\pi}|\Psi_{E,\pi}(0)\rangle\)</span> 이라고 하자. <span class="math display">\[
@@ -858,7 +883,7 @@ x \longrightarrow -x,\qquad p \longrightarrow -p
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-QM_shankar_11_4_2" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 11.6 (Shankar 11.4.2)</strong></span> 아래와 같은 포텐셜의 입자를 생각하자.</p>
+<p><span class="theorem-title"><strong>연습문제 11.5 (Shankar 11.4.2)</strong></span> 아래와 같은 포텐셜의 입자를 생각하자.</p>
 <p><span class="math display">\[
 V(x) = V_0 \sin (2\pi x/a).
 \]</span></p>
@@ -876,7 +901,7 @@ i\hbar \langle \dot P\rangle =  \langle [P,\, H]\rangle = \left\langle \dfrac{-i
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-QM_shankar_11_4_3" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 11.7 (Shankar 11.4.3)</strong></span> 어떤 반응에서 전자의 스핀이 항상 운동량과 평행하다는 것을 알게 되었다. 패리티 보존이 깨진다는 것을 보여라.</p>
+<p><span class="theorem-title"><strong>연습문제 11.6 (Shankar 11.4.3)</strong></span> 어떤 반응에서 전자의 스핀이 항상 운동량과 평행하다는 것을 알게 되었다. 패리티 보존이 깨진다는 것을 보여라.</p>
 </div>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span>see <a href="#fig-beta_decay_and_parity" class="quarto-xref">그림&nbsp;<span>11.1</span></a></p>
@@ -885,7 +910,7 @@ i\hbar \langle \dot P\rangle =  \langle [P,\, H]\rangle = \left\langle \dfrac{-i
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-QM_shankar_11_4_4" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 11.8 (Shankar 11.4.4)</strong></span> 우리는 parity 를 거울 반사로 간주하였다. 1차원에서는 이것이 맞지만 고차원에서는</p>
+<p><span class="theorem-title"><strong>연습문제 11.7 (Shankar 11.4.4)</strong></span> 우리는 parity 를 거울 반사로 간주하였다. 1차원에서는 이것이 맞지만 고차원에서는</p>
 </div>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span></p>

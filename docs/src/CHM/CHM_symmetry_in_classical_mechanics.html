@@ -329,6 +329,7 @@ window.Quarto = {
   <li><a href="#generator-와-정준변환" id="toc-generator-와-정준변환" class="nav-link" data-scroll-target="#generator-와-정준변환"><span class="header-section-number">2.3.1</span> Generator 와 정준변환</a></li>
   <li><a href="#infinite-canonical-transform-으로부터" id="toc-infinite-canonical-transform-으로부터" class="nav-link" data-scroll-target="#infinite-canonical-transform-으로부터"><span class="header-section-number">2.3.2</span> Infinite canonical transform 으로부터</a></li>
   <li><a href="#regular-canonical-transformation-과-운동방정식의-해" id="toc-regular-canonical-transformation-과-운동방정식의-해" class="nav-link" data-scroll-target="#regular-canonical-transformation-과-운동방정식의-해"><span class="header-section-number">2.3.3</span> Regular canonical transformation 과 운동방정식의 해</a></li>
+  <li><a href="#액션-mathcals-와-에너지" id="toc-액션-mathcals-와-에너지" class="nav-link" data-scroll-target="#액션-mathcals-와-에너지"><span class="header-section-number">2.3.4</span> 액션 <span class="math inline">\(\mathcal{S}\)</span> 와 에너지</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -500,7 +501,7 @@ p_i = \dfrac{\partial \mathcal{L}_\text{em}}{\partial v_i} = mv_i  + \dfrac{qA_i
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CHM_symmetry_properties_of_poisson_bracket" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 2.1 (Shankar_2_7_1)</strong></span> 푸아송 브라킷에 대해 다음이 성립함을 보여라.</p>
+<p><span class="theorem-title"><strong>연습문제 2.1 (Shankar 2.7.1)</strong></span> 푸아송 브라킷에 대해 다음이 성립함을 보여라.</p>
 <p>  (<span class="math inline">\(1\)</span>) <span class="math inline">\(\{\omega,\, \theta\} = -\{\theta,\, \omega \}\)</span>.</p>
 <p>  (<span class="math inline">\(2\)</span>) <span class="math inline">\(\{\omega,\, \theta + \sigma \} = \{\omega,\, \theta\} + \{\omega,\, \sigma\}\)</span>.</p>
 <p>  (<span class="math inline">\(3\)</span>) <span class="math inline">\(\{ \omega,\, \theta\sigma\} = \{\omega,\, \theta\}\sigma + \theta \{\omega,\, \sigma\}\)</span></p>
@@ -675,11 +676,11 @@ P_i := \dfrac{\partial \overline{\mathcal{L}}({\boldsymbol{Q}},\, \dot{\boldsymb
 \]</span></p>
 </div>
 <p><br></p>
-<p><span class="math inline">\((q,\,p)\mapsto (Q,\,P)\)</span> 정준변환에서 <span class="math inline">\(\omega (q,\,p)= \overline{\omega}(Q,\,P)\)</span> 이므로 위상공간의 좌표계를 알면 되므로 이제 <span class="math inline">\(\overline{\omega}\)</span> 와 같은 표기는 사용하지 않기로 하자. <a href="#thm-CHM_symmetry_invariance_of_poisson_bracket_under_cannonical_transformation" class="quarto-xref">정리&nbsp;<span>2.1</span></a> 에서 <span class="math inline">\(\theta = \mathcal{H}\)</span> 에 대해서도 성립한다. 따라서,</p>
+<p><span class="math inline">\((q,\,p)\mapsto (Q,\,P)\)</span> 정준변환에서 <span class="math inline">\(\omega (q,\,p)= \overline{\omega}(Q,\,P)\)</span> 이므로 phase space 의 좌표계를 알면 되므로 이제 <span class="math inline">\(\overline{\omega}\)</span> 와 같은 표기는 사용하지 않기로 하자. <a href="#thm-CHM_symmetry_invariance_of_poisson_bracket_under_cannonical_transformation" class="quarto-xref">정리&nbsp;<span>2.1</span></a> 에서 <span class="math inline">\(\theta = \mathcal{H}\)</span> 에 대해서도 성립한다. 따라서,</p>
 <p><span class="math display">\[
 \dot{\omega} = \{\omega \mathcal{H}\}_{q,\,p} = \{\omega,\, \mathcal{H}\}_{Q,\,P}
 \]</span></p>
-<p>이다. 즉 운동에너지 혹은 특정 방향에 대한 각운동량의 시간에 대한 변화량은 위상공간의 좌표 변환에 대해 불변이다.</p>
+<p>이다. 즉 운동에너지 혹은 특정 방향에 대한 각운동량의 시간에 대한 변화량은 phase space의 좌표 변환에 대해 불변이다.</p>
 <p><br></p>
 </section>
 <section id="regular-transformation-active-transfornation-and-passive-transformation" class="level3" data-number="2.2.5">
@@ -870,7 +871,7 @@ Q=\ln (q^{-1} \sin p),\qquad P = q \cot p
 <h2 data-number="2.3" class="anchored" data-anchor-id="대칭"><span class="header-section-number">2.3</span> 대칭</h2>
 <section id="generator-와-정준변환" class="level3" data-number="2.3.1">
 <h3 data-number="2.3.1" class="anchored" data-anchor-id="generator-와-정준변환"><span class="header-section-number">2.3.1</span> Generator 와 정준변환</h3>
-<p>우선 해밀토니안 <span class="math inline">\(\mathcal{H}=\mathcal{H}(\boldsymbol{q},\,\boldsymbol{p})\)</span> 와 <span class="math inline">\((\boldsymbol{q},\,\boldsymbol{p}) \mapsto (\boldsymbol{Q},\,\boldsymbol{P})\)</span> regular canonical transformation 에 대해 아래의 두 중요한 명제를 보자.</p>
+<p>우선 해밀토니안 <span class="math inline">\(\mathcal{H}=\mathcal{H}(\boldsymbol{q},\,\boldsymbol{p})\)</span> 와 <span class="math inline">\((\boldsymbol{q},\,\boldsymbol{p}) \mapsto (\boldsymbol{Q},\,\boldsymbol{P})\)</span> regular canonical transformation 에 대해 중요한 수학적 사실을 알아보자.</p>
 <p><br></p>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="thm-CHM_symmetry_constant_of_motion" class="theorem">
@@ -883,17 +884,35 @@ Q_i = q_i + \varepsilon \dfrac{\partial g}{\partial p_i},\qquad P_i = p_i - \var
 </div>
 <p><br></p>
 <div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span>이 변환이 정준변환이라는 것은 <a href="#exr-shankar_2_8_2" class="quarto-xref">연습문제&nbsp;<span>2.8</span></a> 에서 보인다. <span class="math inline">\((\boldsymbol{q},\,\boldsymbol{p}) \mapsto (\boldsymbol{Q},\,\boldsymbol{P})\)</span> 변환이 <a href="#eq-CHM_symmetry_infinitesimal_transformation" class="quarto-xref">식&nbsp;<span>2.24</span></a> 일 때 <span class="math inline">\(\mathcal{H}\)</span> 의 변화를 <span class="math inline">\(\varepsilon\)</span> 에 대한 1 차 항까지 쓰면 <span id="eq-CHM_symmetry_delta_of_hamiltonian_by_infinitesimal_transform"><span class="math display">\[
-\delta \mathcal{H} = \sum_i \left[\dfrac{\partial \mathcal{H}}{\partial q_i}\left(\varepsilon \dfrac{\partial g}{\partial p_i} \right) + \dfrac{\partial \mathcal{H}}{\partial p_i}\left(-\varepsilon \dfrac{\partial g}{\partial q_i}\right)\right] = \varepsilon \{\mathcal{H},\,g\}
+<p><span class="proof-title"><em>(증명)</em>. </span><a href="#exr-shankar_2_8_2" class="quarto-xref">연습문제&nbsp;<span>2.8</span></a> 에서 보인다. <span class="math inline">\(\square\)</span></p>
+</div>
+<br>
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+<div id="prp-CHM_symmetry_constant_of_motion" class="theorem proposition">
+<p><span class="theorem-title"><strong>명제 2.1</strong></span> <a href="#thm-CHM_symmetry_constant_of_motion" class="quarto-xref">정리&nbsp;<span>2.2</span></a> 의 변환에 대한 임의의 동역학 변수 <span class="math inline">\(\mathcal{\omega}\)</span> 의 변화를 <span class="math inline">\(\varepsilon\)</span> 의 1 차 항까지만 생각한 것을 <span class="math inline">\(\delta \mathcal{\omega}\)</span> 라 할 때 다음이 성립한다.</p>
+<p><span id="eq-CHM_symmetry_infinitesimal_variation_of_variable"><span class="math display">\[
+\delta \omega = \varepsilon \{\omega,\, g\}
 \tag{2.25}\]</span></span></p>
-<p>이다. 이 변환에 대해 <span class="math inline">\(\mathcal{H}\)</span> 가 불변이라면 <span class="math inline">\(\delta \mathcal{H}=0\)</span> 이므로 <span class="math inline">\(\{\mathcal{H},\, g\}= 0\)</span> 이며 따라서 <span class="math inline">\(\dfrac{dg}{dt}=0\)</span> 이다. 즉 <span class="math inline">\(g\)</span> 는 운동상수이다. <span class="math inline">\(\square\)</span></p>
+</div>
 </div>
 <p><br></p>
-<p><a href="#eq-CHM_symmetry_delta_of_hamiltonian_by_infinitesimal_transform" class="quarto-xref">식&nbsp;<span>2.25</span></a> 은 해밀토니안의 infinitesimal transform 에 대한 변화였지만 임의의 <span class="math inline">\(\omega\)</span> 에 대해서도 같은 방법으로 정의 할 수 있다. 즉,</p>
-<p><span id="eq-CHM_symmetry_infinitesimal_variation_of_variable"><span class="math display">\[
-\delta \omega := \sum_i \left[\dfrac{\partial \omega}{\partial q_i}\left(\varepsilon \dfrac{\partial g}{\partial p_i} \right) + \dfrac{\partial \omega}{\partial p_i}\left(-\varepsilon \dfrac{\partial g}{\partial q_i}\right)\right] = \varepsilon \{\omega,\,g\}
-\tag{2.26}\]</span></span></p>
-<p>라고 할 수 있다.</p>
+<div class="proof">
+<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(\delta \omega = \sum_i \left[\dfrac{\partial \omega}{\partial q_i}\left(\varepsilon \dfrac{\partial g}{\partial p_i} \right) + \dfrac{\partial \omega}{\partial p_i}\left(-\varepsilon \dfrac{\partial g}{\partial q_i}\right)\right] = \varepsilon \{\omega,\,g\}\qquad \square\)</span></p>
+</div>
+<p><br></p>
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+<div id="prp-CHM_symmetry_constant_of_motion" class="theorem proposition">
+<p><span class="theorem-title"><strong>명제 2.2</strong></span> <a href="#thm-CHM_symmetry_constant_of_motion" class="quarto-xref">정리&nbsp;<span>2.2</span></a> 의 변환에 대해 해밀토니안의 변화 <span class="math inline">\(\delta \mathcal{H} =0\)</span> 이면 generator <span class="math inline">\(g\)</span> 는 운동상수이다.</p>
+</div>
+</div>
+<p><br></p>
+<div class="proof">
+<p><span class="proof-title"><em>(증명)</em>. </span><a href="#eq-CHM_symmetry_infinitesimal_variation_of_variable" class="quarto-xref">식&nbsp;<span>2.25</span></a> 에 따라</p>
+<p><span class="math display">\[
+0 = \delta \mathcal{H} = \varepsilon \{\mathcal{H},\, g\} = - \dfrac{dg}{dt}
+\]</span></p>
+<p>이므로 <span class="math inline">\(g\)</span> 는 운동상수이다. <span class="math inline">\(\square\)</span></p>
+</div>
 <p><br></p>
 <div class="border" style="background-color:#F2F4F4  ;padding:5px;">
 <div id="exm-CHM_symmetry_linear_momentum" class="theorem example">
@@ -983,7 +1002,7 @@ X=x \cos \theta - y \sin \theta,\qquad Y = x \sin \theta + y \cos \theta,\qquad 
 <p><span class="math display">\[
 \mathcal{H} = \dfrac{1}{2}p^2 + \dfrac{1}{2}x^2
 \]</span></p>
-<p>이 해밀토니안은 위상공간(<span class="math inline">\(x-p\)</span> 평면)에서의 infinitesimal rotation 에 대해 불변다. 이 변환이 canonical 임을 보이고 이 변환의 generator 를 찾아라.</p>
+<p>이 해밀토니안은 phase space(<span class="math inline">\(x-p\)</span> 평면)에서의 infinitesimal rotation 에 대해 불변다. 이 변환이 canonical 임을 보이고 이 변환의 generator 를 찾아라.</p>
 </div>
 </div>
 <p><br></p>
@@ -1006,16 +1025,11 @@ X = x+ \varepsilon \dfrac{\partial g}{\partial p},\qquad P = p - \varepsilon \df
 \]</span></p>
 <p>이다. 따라서 <span class="math inline">\(g(x,\,p)=-\mathcal{H}\)</span> 이다.</p>
 </div>
-<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
-<div id="prp-CHM_symmetry_constant_of_motion" class="theorem proposition">
-<p><span class="theorem-title"><strong>명제 2.1</strong></span> <span class="math inline">\(\mathcal{H}\)</span> 가 regular canonical transformation <span class="math inline">\((\boldsymbol{q},\,\boldsymbol{p}) \mapsto (\boldsymbol{Q},\,\boldsymbol{P})\)</span> 에 대해 불변이며(infinitesimal 일 필요는 없다), <span class="math inline">\((\boldsymbol{q}(t),\,\boldsymbol{p}(t))\)</span> 가 운동방정식의 해라면 <span class="math inline">\((\boldsymbol{Q}(t),\, \boldsymbol{P}(t))\)</span> 도 운동방정식의 해이다.</p>
-</div>
-</div>
 <p><br></p>
 </section>
 <section id="infinite-canonical-transform-으로부터" class="level3" data-number="2.3.2">
 <h3 data-number="2.3.2" class="anchored" data-anchor-id="infinite-canonical-transform-으로부터"><span class="header-section-number">2.3.2</span> Infinite canonical transform 으로부터</h3>
-<p>지금까지 우리는 어떤 generator 에 의한 정준변환에서 약간의 부산물로서 infinitesimal canoincal transform 을 얻었다. 이제 어떤 주어진 infinitesimal canonical transform 으로부터 제대로 된 canonical transform 을 얻을 수 있음을 보이고자 한다. 일단 Generator <span class="math inline">\(g\)</span> 에 의한 정준변환(<a href="#eq-CHM_symmetry_infinitesimal_transformation" class="quarto-xref">식&nbsp;<span>2.24</span></a>) 을 생각하자. 해밀토니안 <span class="math inline">\(\mathcal{H}\)</span> 에 의해 generate 되는 infinitesimal transform 을 생각하면 <a href="#eq-CHM_symmetry_infinitesimal_variation_of_variable" class="quarto-xref">식&nbsp;<span>2.26</span></a> 로 부터</p>
+<p>지금까지 우리는 어떤 generator 에 의한 정준변환에서 약간의 부산물로서 infinitesimal canoincal transform 을 얻었다. 이제 어떤 주어진 infinitesimal canonical transform 으로부터 제대로 된 canonical transform 을 얻을 수 있음을 보이고자 한다. 일단 Generator <span class="math inline">\(g\)</span> 에 의한 정준변환(<a href="#eq-CHM_symmetry_infinitesimal_transformation" class="quarto-xref">식&nbsp;<span>2.24</span></a>) 을 생각하자. 해밀토니안 <span class="math inline">\(\mathcal{H}\)</span> 에 의해 generate 되는 infinitesimal transform 을 생각하면 <a href="#eq-CHM_symmetry_infinitesimal_variation_of_variable" class="quarto-xref">식&nbsp;<span>2.25</span></a> 로 부터</p>
 <p><span class="math display">\[
 \delta q_i = \varepsilon \{q_i,\, \mathcal{H}\},\qquad \delta p_i = \varepsilon \{p_i,\, \mathcal{H}\}
 \]</span></p>
@@ -1023,7 +1037,7 @@ X = x+ \varepsilon \dfrac{\partial g}{\partial p},\qquad P = p - \varepsilon \df
 <p><span class="math display">\[
 \delta q_i = \varepsilon  \dot{q}_i,\qquad \delta p_i = \varepsilon \dot{p}_i
 \]</span></p>
-<p>가 된다. 따라서 phase space 에서의 변환 <span class="math inline">\((Q,\,P) := (q+\varepsilon\{q,\, H\},\, p+ \varepsilon \{p,\, H\})\)</span> 은 infinitesimal time interval <span class="math inline">\(\varepsilon\)</span> 에 대해 <span class="math inline">\((q,\,p)\)</span> 가 <span class="math inline">\((Q,\,P)\)</span> 로 위상공간에서 움직이는 active canonical transformation 이다. 이 운동방정식을 적분하여 <span class="math inline">\((Q,\,P)\)</span> 를 얻을 수 있다. 이제 <span class="math inline">\(g\ne \mathcal{H}\)</span> 인 일반적인 변환을 생각해보자. 즉</p>
+<p>가 된다. 따라서 phase space 에서의 변환 <span class="math inline">\((Q,\,P) := (q+\varepsilon\{q,\, H\},\, p+ \varepsilon \{p,\, H\})\)</span> 은 infinitesimal time interval <span class="math inline">\(\varepsilon\)</span> 에 대해 <span class="math inline">\((q,\,p)\)</span> 가 <span class="math inline">\((Q,\,P)\)</span> 로 phase space 에서 움직이는 active canonical transformation 이다. 이 운동방정식을 적분하여 <span class="math inline">\((Q,\,P)\)</span> 를 얻을 수 있다. 이제 <span class="math inline">\(g\ne \mathcal{H}\)</span> 인 일반적인 변환을 생각해보자. 즉</p>
 <p><span class="math display">\[
 \delta q_i = \varepsilon \{q_i,\, g\},\qquad \delta p_i = \varepsilon \{ p_i,\, g\}
 \]</span></p>
@@ -1056,8 +1070,8 @@ x= x_0 \cos \theta - y_0 \sin \theta,\qquad y = x_0 \sin \theta + y_0 \cos \thet
 <section id="regular-canonical-transformation-과-운동방정식의-해" class="level3" data-number="2.3.3">
 <h3 data-number="2.3.3" class="anchored" data-anchor-id="regular-canonical-transformation-과-운동방정식의-해"><span class="header-section-number">2.3.3</span> Regular canonical transformation 과 운동방정식의 해</h3>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
-<div id="prp-CHM_symmetry_canonital_transoformation_and_solution_of_equation_of_motion" class="theorem proposition">
-<p><span class="theorem-title"><strong>명제 2.2</strong></span> <span class="math inline">\(\mathcal{H}\)</span> 가 regular canonical transformation <span class="math inline">\((\boldsymbol{q},\,\boldsymbol{p}) \mapsto (\boldsymbol{Q},\,\boldsymbol{P})\)</span> 에 대해 불변이며(infinitesimal 일 필요는 없다), <span class="math inline">\((\boldsymbol{q}(t),\,\boldsymbol{p}(t))\)</span> 가 운동방정식의 해라면 <span class="math inline">\((\boldsymbol{Q}(t),\, \boldsymbol{P}(t))\)</span> 도 운동방정식의 해이다.</p>
+<div id="thm-CHM_symmetry_canonital_transoformation_and_solution_of_equation_of_motion" class="theorem">
+<p><span class="theorem-title"><strong>정리 2.3</strong></span> <span class="math inline">\(\mathcal{H}\)</span> 가 regular canonical transformation <span class="math inline">\((\boldsymbol{q},\,\boldsymbol{p}) \mapsto (\boldsymbol{Q},\,\boldsymbol{P})\)</span> 에 대해 불변이며(infinitesimal 일 필요는 없다), <span class="math inline">\((\boldsymbol{q}(t),\,\boldsymbol{p}(t))\)</span> 가 운동방정식의 해라면 <span class="math inline">\((\boldsymbol{Q}(t),\, \boldsymbol{P}(t))\)</span> 도 운동방정식의 해이다.</p>
 </div>
 </div>
 <p><br></p>
@@ -1096,6 +1110,150 @@ x= x_0 \cos \theta - y_0 \sin \theta,\qquad y = x_0 \sin \theta + y_0 \cos \thet
 <p>임을 보일 수 있다.</p>
 </div>
 <p><br></p>
+</section>
+<section id="액션-mathcals-와-에너지" class="level3" data-number="2.3.4">
+<h3 data-number="2.3.4" class="anchored" data-anchor-id="액션-mathcals-와-에너지"><span class="header-section-number">2.3.4</span> 액션 <span class="math inline">\(\mathcal{S}\)</span> 와 에너지</h3>
+<p>여기서는 앞으로 양자역학에서 유용한 다음 결과를 증명한다.</p>
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+<div id="thm-CHM_symmetry_action_and_hamiltonian" class="theorem">
+<p><span class="theorem-title"><strong>정리 2.4</strong></span> 액션 <span class="math inline">\(S_{cl} = \int \mathcal{L}\, dt\)</span> 에 대해 다음이 성립한다.</p>
+<p><span id="eq-CHM_symmetry_equation_of_hamiltonian_and_classical_action"><span class="math display">\[
+\dfrac{\partial S_{cl}(x_f,\, t_f; x_i,\,t_i)}{\partial t_f} = - \mathcal{H}(t_f) .
+\tag{2.26}\]</span></span></p>
+</div>
+</div>
+<p><br></p>
+<div class="proof">
+<p><span class="proof-title"><em>(증명)</em>. </span>액션 <span class="math inline">\(S_{cl}\)</span> 은 다음과 같이 정의된다.</p>
+<p><span class="math display">\[
+S_{cl} = \int_{t_i}^{t_f} \mathcal{L}(x,\, \dot{x}; t)\, dt
+\]</span></p>
+<p>편의를 위해 <span class="math inline">\(t_i = 0,\, x_{cl}(0)=0\)</span> 으로 놓을 수 있다. 고전역학적 경로와 그 deviation <span class="math inline">\(\eta(t)\)</span> 를 생각하자.</p>
+<div id="fig-CHM_symmetry_hamilton_jacobi_path" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-CHM_symmetry_hamilton_jacobi_path-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/hamilton_jacobi_path.png" class="img-fluid figure-img" width="300">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-CHM_symmetry_hamilton_jacobi_path-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;2.1: 고전역학적 경로 <span class="math inline">\(x_{cl}(t)\)</span> 과 deviation <span class="math inline">\(\eta(t)\)</span>
+</figcaption>
+</figure>
+</div>
+<p><span class="math display">\[
+\begin{aligned}
+\delta S_{cl}&amp;= \int_{0}^{t_f} \left[\dfrac{\partial \mathcal{L}}{\partial x} \eta(t) + \dfrac{\partial \mathcal{L}}{\partial \dot{x}} \dot{\eta}(t)\right]dt + \mathcal{L}(t_f)\Delta t \\[0.3em]
+&amp;=\int_0^{t_f} \left(-\dfrac{d}{dt}\left(\dfrac{\partial \mathcal{L}}{\partial \dot{x}}\right)+ \dfrac{\partial \mathcal{L}}{\partial x}\right)_{\text{cl}}  \, \eta(t)\, dt + \int_0^{t_f} \dfrac{d}{dt}\left[\dfrac{\partial \mathcal{L}}{\partial \dot{x}} \eta(t)\right]\, dt + \mathcal{L}(t_f)\Delta t \\[0.3em]
+&amp;= 0+ \left.\dfrac{\partial \mathcal{L}}{\partial \dot{x}} \eta(t) \right| _{t_f} +\mathcal{L}(t_f)\Delta t \\[0.3em]
+\end{aligned}
+\]</span></p>
+<p>이다. 여기서 <span class="math inline">\(\eta(t_f)= - \dot{x}(t_f) \Delta t\)</span> 이므로,</p>
+<p><span class="math display">\[
+\delta S = \left[\dfrac{\partial \mathcal{L}}{\partial \dot{x}} + \mathcal{L}\right]_{t_f} \Delta t = - \mathcal{H}(t_f)\Delta t
+\]</span></p>
+<p>이며, 이로부터 <a href="#eq-CHM_symmetry_equation_of_hamiltonian_and_classical_action" class="quarto-xref">식&nbsp;<span>2.26</span></a> 을 얻는다.</p>
+</div>
+<p><br></p>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CHM_symmetry_partial_derivative_of_action_by_position" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 2.11 (Shankar 2.8.6)</strong></span> 다음이 성립함을 보여라.</p>
+<p><span class="math display">\[
+\dfrac{\partial S_{cl}}{\partial x_f} = p(t_f).
+\]</span></p>
+</div>
+</div>
+<p><br></p>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span></p>
+<div id="fig-CHM_symmetry_hamilton_jacobi_path_2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-CHM_symmetry_hamilton_jacobi_path_2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/hamilton_jacobi_path_2.png" class="img-fluid figure-img" width="300">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-CHM_symmetry_hamilton_jacobi_path_2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;2.2: 고전역학적 경로 <span class="math inline">\(x_{cl}(t)\)</span> 과 deviation <span class="math inline">\(\eta(t)\)</span>
+</figcaption>
+</figure>
+</div>
+<p><span class="math inline">\(t_i=0,\, x_{cl}(0)=0\)</span> 으로 놓자.</p>
+<p><span class="math display">\[
+\begin{aligned}
+\delta S &amp;= \int_0^{t_f} \left[\mathcal{L}(x_{cl}(t)+\eta(t),\, \dot{x}_{cl}(t)+\dot{\eta}(t);t)- \mathcal{L}(x_{cl}(t),\, \dot{x}_{cl}(t);t)\right] \, dt \\[0.3em]
+&amp;= \int_0^{t_f} \left[\left(\dfrac{\partial \mathcal{L}}{\partial x}\right)_{\text{cl}}\eta(t) + \left(\dfrac{\partial \mathcal{L}}{\partial \dot{x}}\right)_{\text{cl}}\dot{\eta}(t)\right] \, dt \\[0.3em]
+&amp;= \int_0^{t_f} \left[-\dfrac{d}{dt}\left(\dfrac{\partial \mathcal{L}}{\partial \dot{x}}\right) + \left(\dfrac{\partial \mathcal{L}}{\partial x}\right)\right]\eta (t)\,dt + \int_0^{t_f} \dfrac{d}{dt} \left[\dfrac{\partial \mathcal{L}}{\partial \dot{x}}\,\eta(t)\right]\, dt\\[0.3em]
+&amp;= \left[\left(\dfrac{\partial \mathcal{L}}{\partial \dot{x}}\right)_{\text{cl}}\eta(t)\right]_{t=0}^{t=t_f} = \left(\dfrac{\partial \mathcal{L}}{\partial \dot{x}}\right)_{\text{cl},\, t=t_f}\eta(t_f) = p(t_f) \eta(t_f)
+\end{aligned}
+\]</span></p>
+<p>이다. 그런데 <span class="math inline">\(\Delta x_f = \eta(t_f)\)</span> 이므로,</p>
+<p><span class="math display">\[
+\dfrac{\partial S_{cl}}{\partial x_f} = p(t_f)
+\]</span></p>
+<p>이다.</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CHM_symmetry_action_of_harmonic_oscillator" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 2.12 (Shankar 2.8.7)</strong></span> 일차원 단순조화진동자의 일반해 <span class="math inline">\(x(t)\)</span> 는 다음과 같다.</p>
+<p><span class="math display">\[
+x(t) = A \cos \omega t + B \sin \omega t.
+\]</span></p>
+<p>에너지를 <span class="math inline">\(A,\,B\)</span> 를 이용하여 구하고 시간에 의존하지 않음을 보여랴. <span class="math inline">\(A,\,B\)</span> 를 <span class="math inline">\(x(0)= x_1\)</span>, <span class="math inline">\(x(T)=x_2\)</span> 가 되도록 선택하고 에너지를 <span class="math inline">\(x_1,\,x_2\)</span> 로 기술하라. <span class="math inline">\(x_1\)</span> 과 <span class="math inline">\(x_2\)</span> 를 연결하는 경로에서의 액선이 다음과 같음을 보여라.</p>
+<p><span class="math display">\[
+S_{cl}(x_1,x_2,T) = \dfrac{m\omega}{2\sin \omega T} \left[(x_1^2+x_2^2) \cos \omega T - 2x_1x_2\right].
+\]</span></p>
+<p>이를 이용하여 <span class="math inline">\(\partial S_{cl}/\partial T = E\)</span> 임을 보여라.</p>
+</div>
+</div>
+<p><br></p>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(\dot{x}(t) = -A \omega \sin \omega T + B \omega \cos \omega t\)</span> 이므로</p>
+<p><span class="math display">\[
+\begin{aligned}
+E &amp;= \dfrac{1}{2} m \dot{x}^2 + \dfrac{m\omega^2}{2} x^2 = \dfrac{m\omega^2(A^2+B^2)}{2}
+\end{aligned}
+\]</span></p>
+<p>이다. 보다시피 <span class="math inline">\(E\)</span> 는 <span class="math inline">\(t\)</span> 의존성이 없다.</p>
+<p><span class="math display">\[
+\begin{aligned}
+x(0) = A = x_1,\qquad x(T) = A \cos \omega T + B \sin \omega T = x_2
+\end{aligned}
+\]</span></p>
+<p>이므로,</p>
+<p><span class="math display">\[
+A=x_1,\qquad B = \dfrac{x_2 - x_1\cos \omega T}{\sin \omega T}
+\]</span></p>
+<p>이다. 따라서,</p>
+<p><span class="math display">\[
+\begin{aligned}
+E &amp;= \dfrac{m\omega^2}{2} \left(x_1^2 + \left(\dfrac{x_2 - x_1\cos \omega T}{\sin \omega T}\right)^2\right) \\[0.3em]
+&amp;= \dfrac{m\omega^2}{2 \sin^2\omega T}\left(x_1^2+x_2^2 - 2x_1x_2 \cos \omega T\right)
+\end{aligned}
+\]</span></p>
+<p>이다. 이제 <span class="math inline">\(S_{cl}\)</span> 을 구해보자. 조화진동자에서 <span class="math inline">\(\ddot{x}=-\omega^2 x\)</span> 임을 안다. <span class="math display">\[
+\begin{aligned}
+S_{cl} &amp;= \int_{0}^T \mathcal{L}(x,\,\dot{x};t)\, dt = \dfrac{m}{2}\int_{0}^T (\dot{x}^2 - \omega^2 x^2)\, dt .
+\end{aligned}
+\]</span></p>
+<p>여기서</p>
+<p><span class="math display">\[
+\int_0^T \dot{x}^2\,dt' = \left[x\dot{x}\right]_{0}^T - \int_0^T x\ddot{x}\, dt = [x\dot{x}]_{0}^T + \omega^2 \int_0^T x^2\, dt
+\]</span></p>
+<p>이므로</p>
+<p><span class="math display">\[
+\begin{aligned}
+S_{cl} &amp;= \dfrac{m}{2}[x(T)\dot{x}(T) - x(0) \dot{x}(0)] \\[0.3em]
+&amp;= \dfrac{m}{2} \left[x_2 (-A\omega \sin \omega T + \omega B \cos \omega T) - x_1B\omega\right] \\[0.3em]
+&amp;= \dfrac{m\omega}{2 \sin \omega T} \left[x_2 (-x_1 \sin^2 \omega T + (x_2-x_1 \cos \omega T) \cos \omega T) - x_1x_2 + x_1^2 \cos \omega T\right] \\[0.3em]
+&amp;= \dfrac{m\omega}{2 \sin \omega T} \left[(x_1^2+x_2^2) \cos \omega T - 2x_1x_2\right]
+\end{aligned}
+\]</span></p>
+<p>이다. 또한</p>
+<p><span class="math display">\[
+\begin{aligned}
+\dfrac{\partial S_{cl}}{\partial T} &amp;=  \dfrac{-m\omega^2 \cos \omega T}{2 \sin^2 \omega T} \left[(x_1^2+x_2^2) \cos \omega T - 2x_1x_2\right] - \dfrac{m\omega}{2\sin \omega T}\left[(x_1^2+x_2^2) \sin \omega T\right] \\[0.3em]
+&amp;= \dfrac{m\omega^2}{2\sin^2 \omega T}[2x_1x_2] - \dfrac{m\omega^2(x_1^2+x_2^2)}{2\sin^2\omega T}\left[\cos^2\omega T + \sin^2 \omega T\right] = -E
+\end{aligned}
+\]</span></p>
+</div>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">

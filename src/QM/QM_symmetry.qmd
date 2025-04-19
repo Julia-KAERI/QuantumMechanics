@@ -14,20 +14,18 @@ crossref:
 ::: {.callout-important icon="false"}
 #### 고전역학의 대칭
 
-
-
 우리는 고전역학의 해밀토니안 $\mathcal{H}$ 에 대해 다음이 성립한다는 것을 안다.
 
-($1$) 동역학 변수 $g(q,\,p)$ 에 의한 infinitesimal canonical transformation 에 대해 해밀토니안이 변하지 않으면 $g$ 는 보존된다.
+($1$) 동역학 변수 $g(\bf{q},\,\bf{p})$ 에 의한 infinitesimal canonical transformation 에 대해 해밀토니안이 변하지 않으면 $g$ 는 보존된다. (@thm-CHM_symmetry_constant_of_motion)
 
-($2$) $\mathcal{H}$ 가 불변인 canonical transformation 에 의한 운동방정식의 해의 변환은 역시 운동방정식의 해이다.
+($2$) $\mathcal{H}$ 가 불변인 canonical transformation 에 의한 운동방정식의 해의 변환은 역시 운동방정식의 해이다. (@thm-CHM_symmetry_canonital_transoformation_and_solution_of_equation_of_motion)
 :::
 
 </br>
 
 ## 양자 이론에서의 translational invariance
 
-양자역학에서 translational invariance, 즉 어떤 translation 에 대한 해밀토니안 $H$ 의 invariance 를 어떻게 정의할 것인가? 양자역학에서는 임의의 상태에 대한 어떤 위치라는 것도 정의가 되지 않으며, 따라서 infinetsimal translation 에 대한 해밀토니안의 불변성도 정의 할 수 없다. 그러나 고전역학에서 정의된 어떤 양은 양자역학에서의 기대값에 상응하도록 되어있는 경우가 많다는 것을 고려하면, 양자역학에서의 translational invariance 는 (그것을 생각해야 한다면) 경로의 기대값에 대한 infinitesimal transformation 에 대한 것이어야 할 것이다. 즉, 
+양자역학에서 translational invariance, 즉 어떤 translation 에 대한 해밀토니안 $H$ 의 invariance 를 어떻게 정의할 것인가? 양자역학에서는 어떤 상태의 입자의 위치나 에너지는 잘 정의된 물리량이 아니며, 따라서 위치에서의 infinetsimal translation 에 대한 해밀토니안의 불변성도 정의 할 수 없다. 그러나 고전역학에서 정의된 어떤 양은 양자역학에서의 기대값에 상응하도록 되어있는 경우가 많다는 것을 고려하면, 양자역학에서의 translational invariance 는 (그것을 생각해야 한다면) 경로의 기대값에 대한 infinitesimal transformation 에 대한 것이어야 할 것이다. 즉, 변환에 의해 위치와 운동량의 기대값이 아래와 같이 변해야 한다.
 
 $$
 \begin{aligned}
@@ -36,11 +34,16 @@ $$
 \end{aligned}
 $$ {#eq-QM_infinitesimal_translation}
 
-에 대한 것이다. Infinitesimal translation $T_{\varepsilon}$ 에 의해 상태벡터 $|\Psi \rangle$ 이 ㅣ변한 상태를 $|\Psi_\varepsilon\rangle$ 이라고 하자. 즉
+고전역학에서의 변환과 같이 여기에 두가지 방법이 있다. 상태를 변환시키는 active transformation 과 $X,\,P$ 연산자를 변화시키는 passive transformation.
+
+</br>
+
+#### **active transformation**
+Infinitesimal translation $T_{\varepsilon}$ 에 의해 상태벡터 $|\Psi \rangle$ 이 변한 상태를 $|\Psi_\varepsilon\rangle$ 이라고 하자. 즉
 
 $$
 T_{\varepsilon}|\Psi\rangle = |\Psi_\varepsilon\rangle
-$$
+$$ 
 
 에 대해
 
@@ -51,7 +54,11 @@ $$
 \end{aligned}
 $$
 
-라는 의미이다. 이것은 active transformation 에서의 관점이다. 즉 변환은 상태벡터를 변화시킨다. 이와 동등하지만 다른 passive transformation 은 연산자 자체를 다음과 같이 변화시킨다. 
+라는 의미이다. 이와 동등하지만 다른 passive transformation 에 대해 알아보자.
+
+#### **passive transformation**
+
+Passive transfornatino 은 연산자 자체를 다음과 같이 변화시킨다. 
 $$
 \begin{aligned}
 X & \to T^\dagger_\varepsilon XT_{\varepsilon} = X+\varepsilon I,\\
@@ -68,14 +75,18 @@ $$
 \end{aligned}
 $$
 
-이 성립한다. 이미 알겠지만 능동적 변환과 수동적 변환은 동일한 현상에 대한 다른 수학적 표현법일 따름이다. 이제 우리는 $T_\varepsilon$ 을 구해보도록 하자. 일단 active transformation 의 관점을 따르기로 한다. 우선 $X$ 기저에서 $|x\rangle$ 상태에 있는 입자에 대해
+이 성립한다. 
+
+</br>
+
+이미 알겠지만 능동적 변환과 수동적 변환은 동일한 현상에 대한 다른 수학적 표현법일 따름이다. 이제 우리는 $T_\varepsilon$ 을 구해보도록 하자. 일단 active transformation 의 관점을 따르기로 한다. 우선 $X$ 기저에서 $|x\rangle$ 상태에 있는 입자에 대해
 
 
 $$
 T_{\varepsilon}|x\rangle = |x+\varepsilon\rangle
-$$
+$${#eq-QM_symmetry_translation_in_position_basis}
 
-라고 할 수 있다. $|x\rangle$ 는 $X$ 에 대한 정규직교기저이며 $|x+\varepsilon\rangle$ 도 그러하다. 즉 $T_\varepsilon$ 은 유니타리 연산자이다. 이제 $|\Psi_\varepsilon \rangle = T_\varepsilon |\Psi\rangle$ 을 생각해보자. 
+라고 할 수 있다. $|x\rangle$ 와 $|x+\varepsilon\rangle$ 는 둘 다 $X$ 에 대한 정규직교기저벡터 이다. 즉 $T_\varepsilon$ 은 유니타리 연산자이다. 이제 $|\Psi_\varepsilon \rangle = T_\varepsilon |\Psi\rangle$ 을 생각해보자. 
 
 $$
 \begin{aligned}
@@ -90,7 +101,13 @@ $$
 \Psi_\varepsilon (x) = \langle x|T_{\varepsilon}|\Psi\rangle = \int_{-\infty}^\infty \langle x|x'\rangle \langle x'-\varepsilon|\Psi\rangle\, dx' = \Psi(x-\varepsilon)
 $$
 
-이다. 즉 파동함수 $\psi (x) = \langle x|\psi\rangle$ 에 대해 $\psi_\varepsilon (x) = \langle x|T_\varepsilon |\psi\rangle = \psi(x-\varepsilon)$ 이며 이것은 파동함수의 translation 을 의미한다는 것을 알 수 있다. 또한, 
+이다. 즉 파동함수 $\Psi (x) = \langle x|\Psi\rangle$ 에 대해 
+
+$$
+\Psi_\varepsilon (x) = \langle x|T_\varepsilon |\Psi\rangle = \Psi(x-\varepsilon)
+$$ {#eq-QM_symmetry_change_of_wave_fucntion_by_translation}
+
+이며 이것은 파동함수의 translation 을 의미한다는 것을 알 수 있다. 또한, 
 
 $$
 \begin{aligned}
@@ -99,9 +116,7 @@ $$
 \end{aligned}
 $$
 
-이다. 즉, 아마 예상했던 바와 같이 translation 에 대해 운동량의 기대값은 변하지 않는다. 
-
-여기서 한가지 짚고 넘어가야 할 것이 있다. 고전역학에서는 $x$ 와 $p$ 는 독립적이며 고전역학에서의 translation 은 
+이다. 예상했던 바와 같이 translation 에 대해 운동량의 기대값은 변하지 않는다. 여기서 한가지 짚고 넘어가야 할 것이 있다. 고전역학에서는 $x$ 와 $p$ 는 독립적이며 고전역학에서의 translation 은 
 
 $$
 \begin{aligned}
@@ -148,12 +163,13 @@ $$
 
 이제 $X$ 기저에 대한 $T_\varepsilon$ 을 정의했으므로 $T_\varepsilon$ 에 대한 몇가지 성질을 알아보자.
 
-</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
-::: {#exr-part3_properties_of_translation_operator}
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#prp-QM_symmetry_properties_of_translation_operator}
 
 Infinitesimal translation operator $T_\varepsilon$ 에 대해 다음을 보여라.
 
-&emsp; ($1$) $T_\varepsilon$ 은 unitery 이다. 
+&emsp; ($1$) $T_\varepsilon$ 은 unitary 이다. 
 
 &emsp; ($2$) $T_{\varepsilon_1} T_{\varepsilon_2} = T_{\varepsilon_1+ \varepsilon_2}$ 이다.
 
@@ -161,6 +177,7 @@ Infinitesimal translation operator $T_\varepsilon$ 에 대해 다음을 보여�
 
 :::
 
+</div></br>
 
 ::: {.proof}
 
@@ -176,9 +193,9 @@ $$
 
 :::
 
-</div></br>
+</br>
 
-Translation 을 선택했으므로 우리는 translational invariance 를 정의 할 수 있다. 즉 $|\Psi_\varepsilon\rangle = T_\varepsilon|\Psi\rangle$ 에 대해
+양자역학에서의 translation 을 정의했으므로 우리는 translational invariance 를 정의 할 수 있다. 즉 $|\Psi_\varepsilon\rangle = T_\varepsilon|\Psi\rangle$ 에 대해
 
 $$
 \langle \Psi| H |\Psi\rangle = \langle \Psi_\varepsilon | H |\Psi_\varepsilon \rangle
@@ -190,7 +207,7 @@ $$
 T_{\varepsilon}= I-\dfrac{i\varepsilon}{\hbar}G
 $$ {#eq-QM_translation_operator}
 
-라고 하자. @eq-QM_translation_operator 는 근사식이며 많은 계산에서 $\varepsilon$ 에 대한 1차식가지만의 결과가 사용되기 때문에 편리하다. 이 때 $G$ 는 translation 의 generator 라고 한다. $G$ 가 애르미트 연산자임은 쉽게 보일 수 있다.
+라고 하자. @eq-QM_translation_operator 는 근사식이며 많은 계산에서 $\varepsilon$ 에 대한 1차식까지만의 결과가 사용되기 때문에 편리하다. 이 때 $G$ 는 translation 의 generator 라고 한다. $G$ 가 에르미트 연산자임은 쉽게 보일 수 있다.
 
 </br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
