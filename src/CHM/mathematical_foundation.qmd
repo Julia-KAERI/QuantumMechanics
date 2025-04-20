@@ -753,7 +753,7 @@ $$
 ($b$) $|+\rangle,\, |-\rangle$ 을 $s_z$ 기저에서의 각각 $+\hbar/2,\, -\hbar/2$ 에 대한 고유벡터라고 하자. $\beta\rangle = \dfrac{1}{\sqrt{2}}(|+\rangle + |-\rangle)$ 이므로
 
 $$
-|\alpha\rangle\langle \beta| = 
+|\alpha\rangle\langle \beta| = \begin{array} 
 $$
 
 

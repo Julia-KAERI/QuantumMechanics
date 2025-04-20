@@ -182,7 +182,6 @@ $$ {#eq-QM_projection_operator}
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-
 ::: {#prp-QM_properties_of_projection_operator}
 
 #### 사영연산자의 성질
@@ -1235,20 +1234,3 @@ $$
 이다. 따라서 $\langle \Delta X\rangle = \Delta / \sqrt{2}$ 이다. 
 
 ::: 
-
-</br>
-<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
-
-::: {#exr-sakurai_1_4}
-
-#### Sakurai 1.4
-
-브라켓 표기법에서 아래 명제를 증명하거나 계산하라.
-
-($1$) 연산자 $A,\,B$ 에 대해 $\tr (AB) = \tr(BA)$ 이다.
-
-($2$) 연산자 $A,\,B$ 에 대해 $(AB)^\dagger = B^\dagger A^\dagger$
-
-:::
-
-</div></br>
