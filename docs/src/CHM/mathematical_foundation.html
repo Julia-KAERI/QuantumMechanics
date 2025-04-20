@@ -327,6 +327,7 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#sec-CHM_dirac_delta_function" id="toc-sec-CHM_dirac_delta_function" class="nav-link" data-scroll-target="#sec-CHM_dirac_delta_function"><span class="header-section-number">1.4.1</span> 디랙 델타함수</a></li>
   <li><a href="#무한차원-벡터공간에서의-연속적인-변수에-대한-기술" id="toc-무한차원-벡터공간에서의-연속적인-변수에-대한-기술" class="nav-link" data-scroll-target="#무한차원-벡터공간에서의-연속적인-변수에-대한-기술"><span class="header-section-number">1.4.2</span> 무한차원 벡터공간에서의 연속적인 변수에 대한 기술</a></li>
+  <li><a href="#연습문제" id="toc-연습문제" class="nav-link" data-scroll-target="#연습문제">연습문제</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -793,7 +794,8 @@ M|l_i\rangle = \sum_j m_j|l_i m_j\rangle
 </div>
 </div>
 <p>여기서는 참고를 위해 디랙 델타함수의 성질에 대해 증명 없이 기술하기로 한다.</p>
-<p><br></p>
+<br>
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="prp-CHM_properties_of_dirac_delta_function" class="theorem proposition">
 <p><span class="theorem-title"><strong>명제 1.6 (디랙 델타 함수의 성질)</strong></span> 디랙 델타 함수 <span class="math inline">\(\delta(x)\)</span> 는 아래의 성질을 만족한다.</p>
 <p>  (<span class="math inline">\(1\)</span>) <span class="math inline">\(\delta (-x) = \delta (x)\)</span>,</p>
@@ -803,6 +805,7 @@ M|l_i\rangle = \sum_j m_j|l_i m_j\rangle
 <p>  (<span class="math inline">\(5\)</span>) <span class="math inline">\(\displaystyle \int f(x)\, \delta'(x)\, dx = f'(0)\)</span>,</p>
 <p>  (<span class="math inline">\(6\)</span>) <span class="math inline">\(x\,\delta'(x) = - \delta(x)\)</span></p>
 <p>  (<span class="math inline">\(7\)</span>) <span class="math inline">\(\displaystyle \dfrac{1}{2\pi}\int_{-\infty}^\infty e^{ikx}\, dk = \delta (x)\)</span>.</p>
+</div>
 </div>
 <p><br></p>
 </section>
@@ -814,6 +817,48 @@ M|l_i\rangle = \sum_j m_j|l_i m_j\rangle
 <p><span class="math display">\[
 \langle x|x'\rangle = \delta(x-x')
 \]</span></p>
+<p><br></p>
+</section>
+<section id="연습문제" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="연습문제">연습문제</h3>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-sakurai_1_4" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 1.1 (Sakurai 1.4)</strong></span> 브라켓 표기법에서 아래 명제를 증명하거나 계산하라.</p>
+<p>(<span class="math inline">\(1\)</span>) 연산자 <span class="math inline">\(X,\,Y\)</span> 에 대해 <span class="math inline">\(\operatorname{tr}(XY) = \operatorname{tr}(YX)\)</span> 이다.</p>
+<p>(<span class="math inline">\(2\)</span>) 연산자 <span class="math inline">\(X,\,Y\)</span> 에 대해 <span class="math inline">\((XY)^\dagger = Y^\dagger X^\dagger\)</span> 이다.</p>
+<p>(<span class="math inline">\(3\)</span>) 에르미트 연산자 <span class="math inline">\(A\)</span> 에 대해 고유값들을 모두 알고 있을 때 <span class="math inline">\(\exp [if(A)]\)</span> 를 브라켓 형태로 표현하라.</p>
+<p>(<span class="math inline">\(4\)</span>) <span class="math inline">\(\psi_{a'}(\boldsymbol{x}') = \langle \boldsymbol{x}|a'\rangle\)</span> 일 때 <span class="math inline">\(\sum_{a'} \psi^\ast_{a'}(\boldsymbol{x}') \psi_{a'}(\boldsymbol{x}'')\)</span> 를 구하라.</p>
+</div>
+</div>
+<p><br></p>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(1\)</span>) 임의의 기저 <span class="math inline">\(\{|i\rangle\}\)</span> 에 대해</p>
+<p><span class="math display">\[
+\operatorname{tr}(XY)= \sum_i \sum_j\langle i|X|j\rangle \langle j|Y|i\rangle =  \sum_j \sum_i\langle j|Y|i\rangle \langle i|X|j\rangle = \operatorname{tr}(YX).
+\]</span></p>
+<p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(\langle i|(XY)^\dagger|j\rangle = \langle XYi|j\rangle = \langle Yi|X^\dagger|j\rangle = \langle i|Y^\dagger X^\dagger|j\rangle\)</span>.</p>
+<p>(<span class="math inline">\(3\)</span>) <span class="math inline">\(A\)</span> 의 고유값 <span class="math inline">\(a\)</span> 에 대한 고유벡터 <span class="math inline">\(|a\rangle\)</span> 가 힐베르트 공간의 정규직교기저를 이룬다고 하자.</p>
+<p><span class="math display">\[
+e^{if(A)} = \sum_{a} e^{if(A)}|a\rangle \langle a| = \sum_a e^{if(a)}|a\rangle \langle a|
+\]</span></p>
+<p>(<span class="math inline">\(4\)</span>) <span class="math inline">\(\sum_{a'}\psi^\ast_{a'}(\boldsymbol{x}')\psi_{a'}(\boldsymbol{x}'')=\sum_{a'}\langle a'|\boldsymbol{x'}\rangle \langle \boldsymbol{x}'' |a'\rangle = \sum_{a'}\langle \boldsymbol{x}''|a'\rangle \langle a'|\boldsymbol{x}'\rangle = \delta(\boldsymbol{x}'-\boldsymbol{x}'')\)</span></p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-sakurai_1_5" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 1.2 (Sakurai 1.5)</strong></span> (<span class="math inline">\(a\)</span>) 두 캣 <span class="math inline">\(|\alpha\rangle,\, |\beta\rangle\)</span> 을 생각하자. <span class="math inline">\(|a'\rangle,\, |a''\rangle,\ldots\)</span> 가 힐베르트 공간에서의 정규직교를 이루며 <span class="math inline">\(\langle a'|\alpha\rangle,\, \langle a''|\alpha\rangle, \ldots\)</span> 와 <span class="math inline">\(\langle a'|\beta\rangle,\, \langle a''|\beta\rangle, \ldots\)</span> 를 알고 있다고 하자. <span class="math inline">\(|\alpha\rangle\langle \beta|\)</span> 의 행렬 표현을 구하라.</p>
+<p>(<span class="math inline">\(b\)</span>) 스핀 <span class="math inline">\(\frac{1}{2}\)</span> 시스템을 생각하자. <span class="math inline">\(|\alpha\rangle\)</span> 과 <span class="math inline">\(|\beta\rangle\)</span> 이 각각 <span class="math inline">\(|s_z=\hbar/2\rangle\)</span> 과 <span class="math inline">\(|s_x=\hbar/2\rangle\)</span> 이라고 하자. <span class="math inline">\(|\alpha\rangle \langle \beta|\)</span> 를 <span class="math inline">\(S_z\)</span> 직교 기저에서의 행렬로 표현하라.</p>
+</div>
+</div>
+<p><br></p>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(a\)</span>) <span class="math inline">\(\langle a'|\alpha\rangle \langle \beta|a''\rangle\)</span>.</p>
+<p>(<span class="math inline">\(b\)</span>) <span class="math inline">\(|+\rangle,\, |-\rangle\)</span> 을 <span class="math inline">\(s_z\)</span> 기저에서의 각각 <span class="math inline">\(+\hbar/2,\, -\hbar/2\)</span> 에 대한 고유벡터라고 하자. <span class="math inline">\(\beta\rangle = \dfrac{1}{\sqrt{2}}(|+\rangle + |-\rangle)\)</span> 이므로</p>
+<p><span class="math display">\[
+|\alpha\rangle\langle \beta| =
+\]</span></p>
+</div>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">

@@ -389,6 +389,73 @@ $$
 
 
 </br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-shankar_10_1_3}
+
+#### Shankar 10.1.3
+
+해밀토니안이 아래와 같은 coupled mass system 을 생각하자.
+
+$$
+\mathcal{H} = \dfrac{p_1^2}{2m} + \dfrac{p_2^2}{2m} + \dfrac{m\omega^2}{2}\left[x_1^2+x_2^2+(x_1-x_2)^2\right].
+$$
+
+$x_I= (x_1+x_2)/\sqrt{2},\, x_{II}= (x_1-x_2)/\sqrt{2}$ 의 좌표를 사용한다면 해밀토니안을 decouple 시킬 수 있다는 것을 안다. 이 좌표계를 정규 좌표계라고 한다. 이 때 각각의 좌표에 대한 운동량은 $p_I = (p_1+p_2)/\sqrt{2}$, $p_{II} = (p_1-p_2)/\sqrt{2}$ 이다.
+
+&emsp;($1$) 해밀토니안 $\mathcal{H}$ 를 정규좌표계로 표현하라. 정규좌표계가 정준좌표계임을 보여라. 즉 $i=I,\, II$ 에 대해 $\{x_i,\,p_j\}= \delta_{ij}$ 임을 보여라.
+
+이제 이 시스템을 양자화하고 변수를 $[X_i,\,P_j]=i\hbar \delta_{ij},\, i,\,j=I,\,II$ 를 만족하는 연산자로 취급한다. $X_I$ 와 $X_{II}$ 기저로 고유값 방정식을 표현하라.
+
+
+($2$) 이 시스템을 직접적으로 양자화한다. $x_1,\,x_2,\,p_1,\,p_2$ 를 모두 양자 연산자로 취급하고 $X_1,\,X_2$ 기저로 고유값 방정식을 표현하라. 이제 $x_1,\,x_2,\, \partial/\partial x_1,\, \partial/\partial x_2$ 를 $x_I,\, x_{II},\, \partial/\partial x_{I},\, \partial/\partial x_{II}$ 로 변환하라. 이것은 ($1$) 의 결과와 같아야 한다.
+
+:::
+
+</div></br>
+
+::: {.proof}
+
+($1$) 주어진 좌표변환에 대해
+
+$$
+\begin{aligned}
+\mathcal{H} &= \dfrac{1}{2m}(p_I^2+p_{II}^2) + \dfrac{m\omega^2}{2}\left[x_I^2+3x_{II}^2\right] \\[0.3em] 
+&= \left(\dfrac{p_I^2}{2m} + \dfrac{m\omega^2}{2}x_{I}^2\right) + \left(\dfrac{p_{II}^2}{2m} + \dfrac{3m\omega^2}{2}x_{II}^2\right)
+\end{aligned}
+$${#eq-exr_shankar_10_1_3_1}
+
+이다. 이제 $x_I,\, x_{II}$ 가 정준좌표계임을 보이자. 
+
+$$
+\begin{aligned}
+\{x_I,\,p_{I}\} &=\dfrac{1}{2}\{x_1+x_2,\, p_1+p_2\} = \dfrac{1}{2}\{x_1,\, p_1\} + \dfrac{1}{2}\{x_2,\, p_2\} = 1, \\[0.3em]
+\{x_I,\, p_{II}\} &= \dfrac{1}{2}\{x_1+x_2,\, p_1-p_2\} = \dfrac{1}{2} \{x_1,\,p_1\} - \dfrac{1}{2} \{x_2,\, p_2\} = 0,\\[0.3em]
+\{x_{II},\, p_{I}\} &= \dfrac{1}{2}\{x_1-x_2,\, p_1+p_2\} = \dfrac{1}{2} \{x_1,\,p_1\} - \dfrac{1}{2} \{x_2,\, p_2\} = 0,\\[0.3em]
+\{x_{II},\,p_{II}\} &=\dfrac{1}{2}\{x_1-x_2,\, p_1-p_2\} = \dfrac{1}{2}\{x_1,\, p_1\} + \dfrac{1}{2}\{x_2,\, p_2\} = 1.
+\end{aligned}
+$$
+
+이제 @eq-exr_shankar_10_1_3_1 로 부터 해밀토니안을 아래와 같이 쓸 수 있다.
+
+$$
+H = \dfrac{P_I^2}{2m} + \dfrac{m\omega^2}{2}X_{I}^2 + \dfrac{P_{II}^2}{2m}+ \dfrac{3m\omega^2}{2}X_{II}^2
+$$
+
+분리가능한 해밀토니안이므로
+
+$$
+E = \left(n_I+\dfrac{1}{2}\right)\hbar \omega + \sqrt{3}\left(n_{II}+\dfrac{1}{2}\right)\hbar \omega,\, n_I,\, n_{II} = 0,\,1,\,2,\ldots
+$$
+
+이다.
+
+($2$) 해보면 된다.
+
+
+:::
+
+</br>
 
 ### 다차원 $N$ 입자 시스템
 
@@ -397,9 +464,9 @@ $$
 </br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-shankar_10_1_3}
+::: {#exr-shankar_10_2_3}
 
-#### Shankar 10.1.3
+#### Shankar 10.2.3
 
 3차원 등방 진동자는 다음과 같은 해밀토니안으로 기술된다.
 

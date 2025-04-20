@@ -1237,4 +1237,18 @@ $$
 ::: 
 
 </br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
+::: {#exr-sakurai_1_4}
+
+#### Sakurai 1.4
+
+브라켓 표기법에서 아래 명제를 증명하거나 계산하라.
+
+($1$) 연산자 $A,\,B$ 에 대해 $\tr (AB) = \tr(BA)$ 이다.
+
+($2$) 연산자 $A,\,B$ 에 대해 $(AB)^\dagger = B^\dagger A^\dagger$
+
+:::
+
+</div></br>
