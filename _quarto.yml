@@ -36,6 +36,7 @@ book:
       chapters:
       - src/AUX/entanglement.qmd
       - src/AUX/quantum_state.qmd
+      - src/AUX/JSBell_against_measurement.qmd
     # - part: src/figure/figure.qmd
     #   chapters:
     #   - src/figure/figure_part1_1.qmd

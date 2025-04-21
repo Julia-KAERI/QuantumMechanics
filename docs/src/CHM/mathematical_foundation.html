@@ -292,6 +292,12 @@ window.Quarto = {
  <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">양자 상태</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/AUX/JSBell_against_measurement.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Against Measurement - J. S. Bell</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item">
@@ -562,7 +568,7 @@ A|\phi\rangle = \sum_j c_j A|j\rangle = \sum_j\sum_i c_j A_{ij}|i\rangle
 <p><span class="math display">\[
 \Lambda |\phi\rangle = \lambda|\phi\rangle
 \]</span></p>
-<p>을 만족하는 스칼라 <span class="math inline">\(\lambda\)</span> 가 존재할 때 <span class="math inline">\(|\phi\rangle\)</span> 을 연산자 <span class="math inline">\(\Lambda\)</span> 에 대해 <span class="math inline">\(\lambda\)</span> 의 <strong>고유값 (eigenvalue)</strong> 을 갖는 <strong>고유벡터 (eigenvector)</strong> 라고 한다.</p>
+<p>을 만족하는 스칼라 <span class="math inline">\(\lambda\)</span> 가 존재할 때 <span class="math inline">\(|\phi\rangle\)</span> 을 연산자 <span class="math inline">\(\Lambda\)</span> 에 대해 <span class="math inline">\(\lambda\)</span> 의 <strong>고유값 (eigenvalue)</strong> 을 갖는 <strong>고유벡터 (eigenvector)</strong> 혹은 디랙 표기법 한정으로 <strong>고유켓(eigenket)</strong> 이라고 한다.</p>
 </div>
 </div>
 </div>
@@ -853,14 +859,51 @@ e^{if(A)} = \sum_{a} e^{if(A)}|a\rangle \langle a| = \sum_a e^{if(a)}|a\rangle \
 </div>
 <p><br></p>
 <div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(a\)</span>) <span class="math inline">\(\langle a'|\alpha\rangle \langle \beta|a''\rangle\)</span>.</p>
-<p>(<span class="math inline">\(b\)</span>) <span class="math inline">\(|+\rangle,\, |-\rangle\)</span> 을 <span class="math inline">\(s_z\)</span> 기저에서의 각각 <span class="math inline">\(+\hbar/2,\, -\hbar/2\)</span> 에 대한 고유벡터라고 하자. <span class="math inline">\(\beta\rangle = \dfrac{1}{\sqrt{2}}(|+\rangle + |-\rangle)\)</span> 이므로</p>
+<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(a\)</span>) <span class="math inline">\(|a'\rangle,\, a''\rangle, \ldots\)</span> 를 <span class="math inline">\(|a_1\rangle,\, |a_2\rangle,\ldots\)</span> 로 표기하자.</p>
 <p><span class="math display">\[
-|\alpha\rangle\langle \beta| = \begin{array}
+[|\alpha\rangle \langle \beta|]_{ij}= \langle a_i|\alpha\rangle\langle \beta|a_j\rangle
 \]</span></p>
+<p>(<span class="math inline">\(b\)</span>) <span class="math inline">\(|+\rangle,\, |-\rangle\)</span> 을 <span class="math inline">\(s_z\)</span> 기저에서의 각각 <span class="math inline">\(+\hbar/2,\, -\hbar/2\)</span> 에 대한 고유벡터라고 하자. <span class="math inline">\(|\beta\rangle = \dfrac{1}{\sqrt{2}}(|+\rangle + |-\rangle)\)</span> 이므로</p>
+<p><span class="math display">\[
+\dfrac{1}{\sqrt{2}}\begin{bmatrix} 1 &amp; 1 \\ 0 &amp; 0\end{bmatrix}.
+\]</span></p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-sakurai_1_6" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 1.3 (Sakurai 1.6)</strong></span> <span class="math inline">\(|i\rangle\)</span>, <span class="math inline">\(|j\rangle\)</span> 이 에르미트 연산자 <span class="math inline">\(A\)</span> 의 고유켓일 때 어떤 조건에서 <span class="math inline">\(|i\rangle +|j\rangle\)</span> 이 <span class="math inline">\(A\)</span> 의 고유캣이 되는가?</p>
+</div>
+</div>
+<p><br></p>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(a_i,\,a_j\)</span> 를 각각 <span class="math inline">\(|i\rangle,\, |j\rangle\)</span> 의 <span class="math inline">\(A\)</span> 에 대한 고유값이라고 하자. <span class="math inline">\(A(|i\rangle + |j\rangle) = a(|i\rangle  + |j\rangle)\)</span> 이므로</p>
+<p><span class="math display">\[
+(a_i-a)|i\rangle + (a_j-a)|j\rangle = 0
+\]</span></p>
+<p>이다. 서로 다른 고유값을 갖는 두 벡터는 선형 독립이므로 <span class="math inline">\(a=a_i=a_j\)</span> 이어야 한다.</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-sakurai_1_7" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 1.4 (Sakurai 1.7)</strong></span> 캣 공간이 에르미트 연산자 <span class="math inline">\(A\)</span> 의 고유캣의 집합 <span class="math inline">\(\{|a'\rangle\}\)</span> 로 span 된다고 하자. 그리고 degeneracy 가 없다고 하자.</p>
+<p>(<span class="math inline">\(a\)</span>) <span class="math inline">\(\displaystyle \prod_{a'} (A-a')\)</span> 이 null 연산자임을 보여라.</p>
+<p>(<span class="math inline">\(b\)</span>) <span class="math inline">\(\displaystyle \prod_{a'' \ne a'} \dfrac{(A-a'')}{(a'-a'')}\)</span> 의 의미를 논하라.</p>
+<p>(<span class="math inline">\(c\)</span>) Spin <span class="math inline">\(\frac{1}{2}\)</span> 시스템에 대해 <span class="math inline">\(A=S_z\)</span> 로 놓고 (<span class="math inline">\(a\)</span>), (<span class="math inline">\(b\)</span>) 를 설명하라.</p>
+</div>
+</div>
+<p><br></p>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(a\)</span>) <span class="math inline">\(\displaystyle |\alpha\rangle = \sum_{a'} c_{a'}|a'\rangle\)</span> 일 때 <span class="math inline">\(\displaystyle \prod_{a'} (A-a')|\alpha\rangle = 0\)</span> 이다.</p>
+<p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(Q_{a'}:= \displaystyle \prod_{a'' \ne a'} \dfrac{(A-a'')}{(a'-a'')}\)</span> 라고 하자. <span class="math inline">\(\displaystyle |\alpha\rangle = \sum_{a'} c_{a'}|a'\rangle\)</span> 에 대해 <span class="math inline">\(Q_{a'}|\alpha\rangle = c_{a'}|a'\rangle\)</span> 이다. 즉 <span class="math inline">\(Q_{a'}\)</span> 은 projection 이다.</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-sakurai_1_10" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 1.5 (Sakurai 1.10)</strong></span> &nbsp;</p>
 </div>
 
 
+</div>
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
 <div id="ref-Sakurai1994" class="csl-entry" role="listitem">
 Sakurai, Jun John. 1994. <em><span class="nocase">Modern quantum mechanics; rev. ed.</span></em> Reading, MA: Addison-Wesley. <a href="https://cds.cern.ch/record/1167961">https://cds.cern.ch/record/1167961</a>.

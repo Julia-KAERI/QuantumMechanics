@@ -1,0 +1,38 @@
+---
+title: "Against Measurement - J. S. Bell"
+number-sections: false
+number-depth: 3
+crossref:
+  chapters: true
+---
+
+{{< include ../latexmacros.qmd >}}
+
+SURELY, after 62 years, we should have an exact formulation of some serious part of quantum mechanics? By 'exact' I do not of course mean 'exactly true'. I mean only that the theory should be
+fully formulated in mathematical terms, with nothing left to the discretion of the theoretical physicist... until workable approximations are needed in applications. By 'Serious' I mean that some substantial fragment of physics shoud be covered. Nonrelativisitc 'particle' quantum mechanics, perhaps with the inclusion of the electromagnetic field and a cut-off interaction, is serious enough. For it covers 'a large part of physics and the whole of chemistry' (P. A. M. Dirac 1929 *Proc. R. Soc.* A **123** 714). I mean too, by 'serious', that 'apparatus' should not be separated off from the rest of the world into black boxes, as if it were not made of atoms and not ruled by quantum mechanics.
+
+The question, ' ...should we not have an exact formulation ...?', is often answered by one or both of two others. I will try to reply to them: *Why bother? Why not look it up in a good book?*
+
+</br>
+
+## Why bother?
+
+Perhaps the most distinguished of 'why bother?'ers has been Dirac (1963 *Sci. American* **208** May 45). He divided the difficulties of quantum mechanics into two classes, those of the first class and those of the second. The second-class difficulties were essentially the infinities of relativistic quantum field theory. Dirac was very disturbed by these, and was not impressed by the 'renormalisation' procedures by which they are circumvented. Dirac tried hard to eliminate these second-class difficulties, and urged others to do likewise. The first-class difficulties concerned the role of the 'observer', 'measurement', and so on. Dirac thought that these problems were not ripe for solution, and should be left for later. He expected developments in the theory which would make these problems look quite different. It would be a waste of effort to worry overmuch about them now, especially since we get along very well in practice without solving them.
+
+Dirac gives at least this much comfort to those who are troubled by these questions: he sees that they exist and are difficult. Many other distinguished physicists do not. It seems to me that it is among the most sure-footed of quantum physicists, those who have it in their bones, that one finds the greatest impatience with the idea that the 'foundations of quantum mechanics' might need some attention. Knowing what is right by instinct, they can become a little impatient with nitpicking distinctions between theorems and assumptins. When they do admit some ambiguity in the usual formulations, they are likely to insist that ordinary quantum mechanics is just fone 'for all practical purposes'. I agree with them about that: ORDINARY QUANTUM MECHANICS (as far as I know) IS JUST FINE FOR ALL PRACTICAL PURPOSES.
+
+Even when I begin by insisting on this myself, and in capital letters, it is likely to be insisted on repeatedly in the course of the discussion. So it is convenient to have an abbreviation for the last phrase: FOR ALL PRACTICAL PURPOSES = FAPP.
+
+I can imagine a practical geometer, say an architect, being impatient with Euclid's fifth postulate, or Playfair's axiom: of course in a plane, through a given point, you can draw only one straight line parallel to a given straight line, at least FAPP. The reasoning of such a natural geometer might not aim at pedantic precision, and new assertions, known in the bones to be right, even if neither among the originally stated assumptions nor derived from them as theorems, might come in at any stage. Perhaps these particular lines in the argument should, in a systematic presentation, be disting- uished by this label - FAPP - and the conclusions likewise: QED FAPP.
+
+I expect that mathematicians have classified such fuzzy logics. Certainly they have been much used by physicists.
+
+But is there not something to be said for the approach of Euclid? Even now that we know that Euclidean geometry is (in some sense) not quite true? Is it not good to know what follows from what, even if it is not really necessary FAPP? Suppose for example that quantum mechanics were found to *resist* precise formulation. Suppose that when formulation beyond FAPP is attempted, we find an unmovable finger obstinately pointing outside the subject, to the mind of the observer, to the Hindu scriptures, to God, or even only Gravitation? Would not that be very, very interesting?
+But I must say at once that it is not mathematical precision, but physical, with which I will be concerned here. I am not squeamish about delta functions. From the present point of view, the approach of von Neumann's book is not preferable to that of Dirac's.
+
+</br>
+
+
+## Why not look it up in a good book?
+
+But which good book? In fact it is seldom that a 'no problem' person is, on reflection, willing to endorse a treatment already in the literature. Usually the good unproblematic formulation is still in the head of the person
