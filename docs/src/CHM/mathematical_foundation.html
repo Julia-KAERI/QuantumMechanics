@@ -898,12 +898,23 @@ e^{if(A)} = \sum_{a} e^{if(A)}|a\rangle \langle a| = \sum_a e^{if(a)}|a\rangle \
 </div>
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
-<div id="exr-sakurai_1_10" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 1.5 (Sakurai 1.10)</strong></span> &nbsp;</p>
+<div id="exr-sakurai_1_17" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 1.5 (Sakurai 1.17)</strong></span> 두 연산자 <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span> 는 시간에 명시적으로 의존하지 않으며, commute 하지 않다. 즉 <span class="math inline">\([A,\,B]\ne 0\)</span> 이다. 그런데 <span class="math inline">\([A,\, H]=[B,\,H]=0\)</span> 이라고 하자. 그렇다면 에너자 고유상태는 일반적으로 degenerated 되어 있음을 보여라. 예외가 있는가? 예를 들어 보자면 central force problem <span class="math inline">\(H=\dfrac{\boldsymbol{p}^2}{2m}+ V(r)\)</span> with <span class="math inline">\(A=L_z,\, B=L_z\)</span> 가 있겠다.</p>
+</div>
+</div>
+<p><br></p>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(A,\,H\)</span> 의 동시 고유캣 <span class="math inline">\(|aE\rangle\)</span> 을 생각하자. <span class="math inline">\(A|ae\rangle = a|ae\rangle,\, H|ae\rangle = e|ae\rangle\)</span> 라고 하자. <span class="math inline">\([B, H]=0\)</span> 이므로</p>
+<p><span class="math display">\[
+\begin{aligned}
+\,0=[B, H]|ae\rangle &amp;= (eB-HB)|ae\rangle = (e-H)(B|ae\rangle)
+\end{aligned}
+\]</span></p>
+<p>이며 이는 <span class="math inline">\(B|ae\rangle\)</span> 이 <span class="math inline">\(H\)</span> 의 고유캣으로 고유값이 <span class="math inline">\(e\)</span> 인 경우이거나 <span class="math inline">\(B|ae\rangle=|\varnothing\rangle\)</span> 임을 의미한다. 임의의 <span class="math inline">\(\{|ae\rangle\}\)</span> 에 대해 성립하므로 후자라면 <span class="math inline">\(B=0\)</span> 이며 이는 <span class="math inline">\([A,\,B]\ne 0\)</span> 이라는 조건에 위배된다. 따라서 <span class="math inline">\(B|ae\rangle\)</span> 은 고유값 <span class="math inline">\(e\)</span> 를 갖는 <span class="math inline">\(H\)</span> 의 고유캣이다.</p>
+<p>해밀토니안의 고유상태가 degenerated 되어 있지 않다면 <span class="math inline">\(|ae\rangle = |e\rangle\)</span> 이어야 하며 이 경우 <span class="math inline">\([A,\,B]=0\)</span> 이다. 따라서 <span class="math inline">\(|e\rangle\)</span> 은 degenerated 되어야 한다.</p>
 </div>
 
 
-</div>
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
 <div id="ref-Sakurai1994" class="csl-entry" role="listitem">
 Sakurai, Jun John. 1994. <em><span class="nocase">Modern quantum mechanics; rev. ed.</span></em> Reading, MA: Addison-Wesley. <a href="https://cds.cern.ch/record/1167961">https://cds.cern.ch/record/1167961</a>.
