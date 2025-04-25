@@ -1,0 +1,65 @@
+---
+title: "Introduction"
+number-sections: true
+number-depth: 3
+crossref:
+  chapters: true
+---
+
+{{< include ../latexmacros.qmd >}}
+
+</br>
+
+## Qubit
+
+### 단일 큐빗과 블로흐 구면 {#sec-QC_intro_single_qubit_and_bloch_sphere}
+
+큐빗(qubit) 은 특정한 성질을 가진 수학적 대상이다. 2차원 복소 벡터 공간의 한 정규직교기저를 $(|0\rangle,\, |1\rangle)$ 이라고 하자. 큐빗 $|\psi\rangle$ 은 이 두 상태의 벡터를 의미한다. 즉 $\alpha,\, \beta \in \C$, $|\alpha|^2+|\beta|^2=1$ 에 대해
+
+$$
+|\psi\rangle = \alpha|0\rangle + \beta |1\rangle
+$$ {#eq-QC_intro_notation_0}
+
+로 표현된다. 이 때 $|0\rangle,\, |1\rangle$ 을 계산 기저 벡터(computational basis vector) 라고 한다. $|\alpha|^2+|\beta|^2=1$ 조건으로부터 @eq-QC_intro_notation_0 은 $\gamma,\, \varphi,\, \theta$ 를 매개변수로 다음과 같이 표현 할 수 있다.
+
+$$
+|\psi\rangle = e^{i\gamma} \left[\cos \dfrac{\theta}{2}|0\rangle + e^{i\varphi}\sin \dfrac{\theta}{2}|1\rangle\right]
+$$
+
+양자역학에서 맨 앞의 overall phase $e^{i\gamma}$ 는 측정 결과에 어떤 영향도 끼치지 않으므로 무시해도 된다. 따라서 위 식은 $\theta,\, \varphi$ 의 두 매개변수에 대해 다음과 같이 표현 할 수 있다.
+
+$$
+|\psi\rangle = \cos \dfrac{\theta}{2}|0\rangle + e^{i\varphi}\sin \dfrac{\theta}{2}|1\rangle
+$$ {#eq-QC_intro_notation_1}
+
+$\theta,\, \varphi$ 를 통해 우리는 3차원 단위구(unit sphere) 표면의 점으로 단일 큐빗을 표현 할 수 있다. 큐빗을 표현하기 위한 3차원 단위 구 표면을 블로흐 구면(Bloch sphere) 라고 한다. 블로흐 구면은 단일 구면에 대한 여려 연산을 기술하는데 중요하게 사용된다. 한가지 주의할 점이 있다면 블로흐 구면은 단일 큐빗을 표현하는데 사용되며 다중 큐빗의 경우 블로흐 구면과 같은 효율적인 표현 수단은 아직 없다.
+
+
+![큐빗 $|\psi\rangle$ 과 블로흐 구면](figures/bloch_sphere.png){#fig-QC_intro_block_sphere width=250}
+
+</br>
+
+### 다중 큐빗 {#sec-QC_multiple_cubits}
+
+두개의 큐빗은 다음과 같이 기술 할 수 있다.
+
+$$
+|\psi\rangle = a_{00}|00\rangle + a_{01}|01\rangle + a_{10}|10\rangle + a_{11}|11\rangle
+$$
+
+이 때 $|ij\rangle$ 의 $i$ 는 첫번째 큐빗의 상태, $j$ 는 두번째 큐빗의 상태를 의미한다. 당연히 다음 정규화 조건을 만족해야 한다.
+
+$$
+\sum_{i,\,j=0}^1 |a_{ij}|^2 =1.
+$$
+
+두 큐빗 시스템 가운데 반드시 기억해야 할 것은 벨 큐빗 혹은 EPR 큐빗이라고 불리는 다음의 상태이다.
+
+$$
+\dfrac{|00\rangle + |11\rangle}{\sqrt{2}}.
+$$ {#eq-QC_intro_bell_qubit}
+
+이 상태의 흥미로운 점은 첫번째 큐빗을 측정하고 난 뒤 두번째 큐빗을 측정하면 두 값은 항상 같은 값을 가진다는 것이다. 즉 두 측정값은 correlated 되어 있다.
+
+
+

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>8&nbsp; 1차원 산란 – 양자 역학</title>
+<title>13&nbsp; Introduction – 양자 역학</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../src/QM/QM_path_integral_1.html" rel="next">
-<link href="../../src/QM/QM_harmonic_oscillator.html" rel="prev">
+<link href="../../src/AUX/AUX.html" rel="next">
+<link href="../../src/QC/00_quantum_computing.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -110,7 +110,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/QM/QM.html">II. 양자역학</a></li><li class="breadcrumb-item"><a href="../../src/QM/QM_1d_scattering.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">1차원 산란</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/QC/00_quantum_computing.html">Quantum Computing</a></li><li class="breadcrumb-item"><a href="../../src/QC/01_introduction.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Introduction</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -122,8 +122,8 @@ window.Quarto = {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/QM/QM.html">II. 양자역학</a></li><li class="breadcrumb-item"><a href="../../src/QM/QM_1d_scattering.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">1차원 산란</span></a></li></ol></nav>
-      <h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">1차원 산란</span></h1>
+    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/QC/00_quantum_computing.html">Quantum Computing</a></li><li class="breadcrumb-item"><a href="../../src/QC/01_introduction.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Introduction</span></a></li></ol></nav>
+      <h1 class="title"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Introduction</span></h1>
                       </div>
   </div>
     
@@ -221,7 +221,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../src/QM/QM_1d_scattering.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../src/QM/QM_1d_scattering.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">1차원 산란</span></span></a>
   </div>
 </li>
@@ -262,7 +262,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../src/QC/01_introduction.html" class="sidebar-item-text sidebar-link">
+  <a href="../../src/QC/01_introduction.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
@@ -313,8 +313,11 @@ window.Quarto = {
     <h2 id="toc-title">목차</h2>
    
   <ul>
-  <li><a href="#일차원-우물-문제와-산란" id="toc-일차원-우물-문제와-산란" class="nav-link active" data-scroll-target="#일차원-우물-문제와-산란"><span class="header-section-number">8.1</span> 일차원 우물 문제와 산란</a></li>
-  <li><a href="#단일-계단-포텐셜-산란-문제" id="toc-단일-계단-포텐셜-산란-문제" class="nav-link" data-scroll-target="#단일-계단-포텐셜-산란-문제"><span class="header-section-number">8.2</span> 단일 계단 포텐셜 : 산란 문제</a></li>
+  <li><a href="#qubit" id="toc-qubit" class="nav-link active" data-scroll-target="#qubit"><span class="header-section-number">13.1</span> Qubit</a>
+  <ul class="collapse">
+  <li><a href="#sec-QC_intro_single_qubit_and_bloch_sphere" id="toc-sec-QC_intro_single_qubit_and_bloch_sphere" class="nav-link" data-scroll-target="#sec-QC_intro_single_qubit_and_bloch_sphere"><span class="header-section-number">13.1.1</span> 단일 큐빗과 블로흐 구면</a></li>
+  <li><a href="#sec-QC_multiple_cubits" id="toc-sec-QC_multiple_cubits" class="nav-link" data-scroll-target="#sec-QC_multiple_cubits"><span class="header-section-number">13.1.2</span> 다중 큐빗</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -336,30 +339,54 @@ window.Quarto = {
 \DeclareMathOperator*{\argmax}{argmax}
 \]</span></p>
 </div>
-<section id="일차원-우물-문제와-산란" class="level2" data-number="8.1">
-<h2 data-number="8.1" class="anchored" data-anchor-id="일차원-우물-문제와-산란"><span class="header-section-number">8.1</span> 일차원 우물 문제와 산란</h2>
 <p><br></p>
-</section>
-<section id="단일-계단-포텐셜-산란-문제" class="level2" data-number="8.2">
-<h2 data-number="8.2" class="anchored" data-anchor-id="단일-계단-포텐셜-산란-문제"><span class="header-section-number">8.2</span> 단일 계단 포텐셜 : 산란 문제</h2>
-<div id="fig-QM_step_potential" class="quarto-float quarto-figure quarto-figure-center anchored">
+<section id="qubit" class="level2" data-number="13.1">
+<h2 data-number="13.1" class="anchored" data-anchor-id="qubit"><span class="header-section-number">13.1</span> Qubit</h2>
+<section id="sec-QC_intro_single_qubit_and_bloch_sphere" class="level3" data-number="13.1.1">
+<h3 data-number="13.1.1" class="anchored" data-anchor-id="sec-QC_intro_single_qubit_and_bloch_sphere"><span class="header-section-number">13.1.1</span> 단일 큐빗과 블로흐 구면</h3>
+<p>큐빗(qubit) 은 특정한 성질을 가진 수학적 대상이다. 2차원 복소 벡터 공간의 한 정규직교기저를 <span class="math inline">\((|0\rangle,\, |1\rangle)\)</span> 이라고 하자. 큐빗 <span class="math inline">\(|\psi\rangle\)</span> 은 이 두 상태의 벡터를 의미한다. 즉 <span class="math inline">\(\alpha,\, \beta \in \mathbb{C}\)</span>, <span class="math inline">\(|\alpha|^2+|\beta|^2=1\)</span> 에 대해</p>
+<p><span id="eq-QC_intro_notation_0"><span class="math display">\[
+|\psi\rangle = \alpha|0\rangle + \beta |1\rangle
+\tag{13.1}\]</span></span></p>
+<p>로 표현된다. 이 때 <span class="math inline">\(|0\rangle,\, |1\rangle\)</span> 을 계산 기저 벡터(computational basis vector) 라고 한다. <span class="math inline">\(|\alpha|^2+|\beta|^2=1\)</span> 조건으로부터 <a href="#eq-QC_intro_notation_0" class="quarto-xref">식&nbsp;<span>13.1</span></a> 은 <span class="math inline">\(\gamma,\, \varphi,\, \theta\)</span> 를 매개변수로 다음과 같이 표현 할 수 있다.</p>
+<p><span class="math display">\[
+|\psi\rangle = e^{i\gamma} \left[\cos \dfrac{\theta}{2}|0\rangle + e^{i\varphi}\sin \dfrac{\theta}{2}|1\rangle\right]
+\]</span></p>
+<p>양자역학에서 맨 앞의 overall phase <span class="math inline">\(e^{i\gamma}\)</span> 는 측정 결과에 어떤 영향도 끼치지 않으므로 무시해도 된다. 따라서 위 식은 <span class="math inline">\(\theta,\, \varphi\)</span> 의 두 매개변수에 대해 다음과 같이 표현 할 수 있다.</p>
+<p><span id="eq-QC_intro_notation_1"><span class="math display">\[
+|\psi\rangle = \cos \dfrac{\theta}{2}|0\rangle + e^{i\varphi}\sin \dfrac{\theta}{2}|1\rangle
+\tag{13.2}\]</span></span></p>
+<p><span class="math inline">\(\theta,\, \varphi\)</span> 를 통해 우리는 3차원 단위구(unit sphere) 표면의 점으로 단일 큐빗을 표현 할 수 있다. 큐빗을 표현하기 위한 3차원 단위 구 표면을 블로흐 구면(Bloch sphere) 라고 한다. 블로흐 구면은 단일 구면에 대한 여려 연산을 기술하는데 중요하게 사용된다. 한가지 주의할 점이 있다면 블로흐 구면은 단일 큐빗을 표현하는데 사용되며 다중 큐빗의 경우 블로흐 구면과 같은 효율적인 표현 수단은 아직 없다.</p>
+<div id="fig-QC_intro_block_sphere" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-QM_step_potential-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="figures/step_potential.png" class="img-fluid figure-img" width="350">
+<div aria-describedby="fig-QC_intro_block_sphere-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/bloch_sphere.png" class="img-fluid figure-img" width="250">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-QM_step_potential-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-그림&nbsp;8.1: 계단 포텐셜
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-QC_intro_block_sphere-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;13.1: 큐빗 <span class="math inline">\(|\psi\rangle\)</span> 과 블로흐 구면
 </figcaption>
 </figure>
 </div>
 <p><br></p>
-<p><a href="#fig-QM_step_potential" class="quarto-xref">그림&nbsp;<span>8.1</span></a> 로 주어진 포텐셜을 생각하자. 즉</p>
+</section>
+<section id="sec-QC_multiple_cubits" class="level3" data-number="13.1.2">
+<h3 data-number="13.1.2" class="anchored" data-anchor-id="sec-QC_multiple_cubits"><span class="header-section-number">13.1.2</span> 다중 큐빗</h3>
+<p>두개의 큐빗은 다음과 같이 기술 할 수 있다.</p>
 <p><span class="math display">\[
-V(x) = \left\{\begin{array}{ll} 0 \qquad &amp;; x&lt;0 \;(\rm{I} \, \text{영역}) \\ V_0 &amp;; x&gt;0\;(\rm{II}\, \text{영역})  \end{array}\right.
+|\psi\rangle = a_{00}|00\rangle + a_{01}|01\rangle + a_{10}|10\rangle + a_{11}|11\rangle
 \]</span></p>
-<p>이다. <span class="math inline">\(\rm{I}\)</span> 영역에서 <span class="math inline">\(+x\)</span> 방향으로 입자가 운동하는 고전적인 상황을 생각해보자. <span class="math inline">\(E&gt;V_0\)</span> 라면 <span class="math inline">\(\rm{II}\)</span> 영역으로 계속 진행해 나가고 <span class="math inline">\(E&lt;V_0\)</span> 라면 <span class="math inline">\(\rm{II}\)</span> 영역에 진입하지 못하고 반사될 것이다.</p>
+<p>이 때 <span class="math inline">\(|ij\rangle\)</span> 의 <span class="math inline">\(i\)</span> 는 첫번째 큐빗의 상태, <span class="math inline">\(j\)</span> 는 두번째 큐빗의 상태를 의미한다. 당연히 다음 정규화 조건을 만족해야 한다.</p>
+<p><span class="math display">\[
+\sum_{i,\,j=0}^1 |a_{ij}|^2 =1.
+\]</span></p>
+<p>두 큐빗 시스템 가운데 반드시 기억해야 할 것은 벨 큐빗 혹은 EPR 큐빗이라고 불리는 다음의 상태이다.</p>
+<p><span id="eq-QC_intro_bell_qubit"><span class="math display">\[
+\dfrac{|00\rangle + |11\rangle}{\sqrt{2}}.
+\tag{13.3}\]</span></span></p>
+<p>이 상태의 흥미로운 점은 첫번째 큐빗을 측정하고 난 뒤 두번째 큐빗을 측정하면 두 값은 항상 같은 값을 가진다는 것이다. 즉 두 측정값은 correlated 되어 있다.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -782,13 +809,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../src/QM/QM_harmonic_oscillator.html" class="pagination-link" aria-label="단순조화진동자">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">단순조화진동자</span></span>
+      <a href="../../src/QC/00_quantum_computing.html" class="pagination-link" aria-label="Quantum Computing">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Quantum Computing</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../src/QM/QM_path_integral_1.html" class="pagination-link" aria-label="경로적분 I">
-        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">경로적분 I</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../src/AUX/AUX.html" class="pagination-link" aria-label="III. 기타 이런저런 이야기들">
+        <span class="nav-page-text">III. 기타 이런저런 이야기들</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

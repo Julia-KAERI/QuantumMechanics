@@ -38,11 +38,11 @@ $$
 
 #### 브라켓 표기법
 
-1. 벡터는 $|\phi\rangle$ 과 같이 표기하며 **캣(ket)** 라고 한다. $|\phi\rangle$ 에 대한 스칼라 $c$ 곱은 $c|\phi\rangle$ 과 같이 표기한다. 선형결합은 $c_1|\phi_1\rangle + c_2|\phi_2\rangle + \cdots$ 와 같이 표현한다.
+1. 벡터는 $|\phi\rangle$ 과 같이 표기하며 **켓(ket)** 라고 한다. $|\phi\rangle$ 에 대한 스칼라 $c$ 곱은 $c|\phi\rangle$ 과 같이 표기한다. 선형결합은 $c_1|\phi_1\rangle + c_2|\phi_2\rangle + \cdots$ 와 같이 표현한다.
 
 2. 연산자 $A$ 에 대한 $|\phi\rangle$ 의 선형변환은 $A|\phi\rangle$ 로 표기한다. 
   
-3. $|\phi \rangle$ 에 대한 dual vector 를 $\langle \phi|$ 로 표기하며 **브라(bra)** 이라고 한다. $\langle \phi| = | \phi\rangle^\dagger$ 로 쓰기도 한다. 벡터 $|\phi\rangle$ 과 $|\psi\rangle$ 에 대한 내적은 $\langle \psi | \phi \rangle$ 로 표기한다. 브라와 캣을 합쳐서 **브라켓(bracket)** 이라고 한다. 내적에 대해 $\langle \phi |\psi \rangle = \overline{\langle \psi|\phi \rangle}$ 이다. 
+3. $|\phi \rangle$ 에 대한 dual vector 를 $\langle \phi|$ 로 표기하며 **브라(bra)** 이라고 한다. $\langle \phi| = | \phi\rangle^\dagger$ 로 쓰기도 한다. 벡터 $|\phi\rangle$ 과 $|\psi\rangle$ 에 대한 내적은 $\langle \psi | \phi \rangle$ 로 표기한다. 브라와 켓을 합쳐서 **브라켓(bracket)** 이라고 한다. 내적에 대해 $\langle \phi |\psi \rangle = \overline{\langle \psi|\phi \rangle}$ 이다. 
 
 4. 따라서 $(c_1 |\psi_1\rangle + c_2|\psi_2)^\dagger = \overline{c_1}\langle \psi_1| + \overline{c_2}\langle \psi_2| = \langle \psi_1| \overline{c_1} +\langle \psi_1| \overline{c}_2$ 이다. 이로부터 다음이 성립한다.  
 $$
@@ -60,11 +60,11 @@ $$
 
 <br>
 
-양자역학에서 캣은 양자상태를 표현하는 벡터이며 $0$ 이 아닌 $c\in \mathbb{F}$ 에 대해 $c|\psi \rangle$ 과 $|\psi\rangle$ 을 동일하다고 간주한다. 일반적으로 ket 은 $\langle \phi | \phi \rangle =1$ 인 정규화된벡터를 의미하는 경우가 많다. 또한 유한차원 복소벡터공간에서 양자상태를 표현한다면 $|\phi\rangle$ 을 열벡터로, $\langle \psi |$ 를 행벡터로 표현한다. 브라켓 표기법을 사용하는 이유를 요약하면 다음과 같다.
+양자역학에서 켓은 양자상태를 표현하는 벡터이며 $0$ 이 아닌 $c\in \mathbb{F}$ 에 대해 $c|\psi \rangle$ 과 $|\psi\rangle$ 을 동일하다고 간주한다. 일반적으로 ket 은 $\langle \phi | \phi \rangle =1$ 인 정규화된벡터를 의미하는 경우가 많다. 또한 유한차원 복소벡터공간에서 양자상태를 표현한다면 $|\phi\rangle$ 을 열벡터로, $\langle \psi |$ 를 행벡터로 표현한다. 브라켓 표기법을 사용하는 이유를 요약하면 다음과 같다.
 
-1. 양자 상태 표현의 편의성 : 브라켓으로 벡터를 표현할 때의 가장 큰 장점은 양자상태를 표현할 때 수학적인 표기법보다 편하다는 것이다. 예를 들어 양자수 3개로 정의되는 상태에 대해 $|abc\rangle$ 과 같이 세개의 숫자를 쓴 다음에 캣으로 묶어버리는 것으로 양자상태를 표현할 수 있다. 수소원자의 경우 주양자수 $n=2$, 궤도양자수 $l=1$, 자기양자수 $m=0$ 인 상태를 $|nlm\rangle$ 표기법을 사용하여 $|210\rangle$ 으로 표기할 수있다. 또한 내적에서 사용되는 쌍대기저를 독립적인 브라 표기법으로 $\langle 210 |$ 와 같이 표현 할 수 있다. 만약 브라켓 표기법 없이 사용한다면 $|210\rangle$ 상태를 $\Psi_{210}$ 이나 $\Phi^2_{10}$ 과 같이 표현해야 할 것이다. 
+1. 양자 상태 표현의 편의성 : 브라켓으로 벡터를 표현할 때의 가장 큰 장점은 양자상태를 표현할 때 수학적인 표기법보다 편하다는 것이다. 예를 들어 양자수 3개로 정의되는 상태에 대해 $|abc\rangle$ 과 같이 세개의 숫자를 쓴 다음에 켓으로 묶어버리는 것으로 양자상태를 표현할 수 있다. 수소원자의 경우 주양자수 $n=2$, 궤도양자수 $l=1$, 자기양자수 $m=0$ 인 상태를 $|nlm\rangle$ 표기법을 사용하여 $|210\rangle$ 으로 표기할 수있다. 또한 내적에서 사용되는 쌍대기저를 독립적인 브라 표기법으로 $\langle 210 |$ 와 같이 표현 할 수 있다. 만약 브라켓 표기법 없이 사용한다면 $|210\rangle$ 상태를 $\Psi_{210}$ 이나 $\Phi^2_{10}$ 과 같이 표현해야 할 것이다. 
 
-2. 연산자와 벡터의 분리 : $\langle\phi | \hat{A} |\psi\rangle$ 형식이기 때문에 연산자의 연산을 브라와 캣 사이의 공간에서 수행 할 수 있는데 이는 수식표기가 좀 더 깔끔해진다.
+2. 연산자와 벡터의 분리 : $\langle\phi | \hat{A} |\psi\rangle$ 형식이기 때문에 연산자의 연산을 브라와 켓 사이의 공간에서 수행 할 수 있는데 이는 수식표기가 좀 더 깔끔해진다.
 
 3. 연산자인 $|\phi\rangle\langle \psi|$ 와 내적인 $\langle \psi|\phi\rangle$ 의 구분이 명확해진다. 벡터를 사용한다면 $\boldsymbol{\psi} \boldsymbol{\phi}^\dagger$ 와 $\boldsymbol{\psi}^\dagger\boldsymbol{\phi}$ 와 같이 구분하기 힘들다. 
 
@@ -738,7 +738,7 @@ $$
 
 #### Sakurai 1.5
 
-($a$) 두 캣 $|\alpha\rangle,\, |\beta\rangle$ 을 생각하자. $|a'\rangle,\, |a''\rangle,\ldots$ 가 힐베르트 공간에서의 정규직교를 이루며 $\langle a'|\alpha\rangle,\, \langle a''|\alpha\rangle, \ldots$ 와 $\langle a'|\beta\rangle,\, \langle a''|\beta\rangle, \ldots$ 를 알고 있다고 하자. $|\alpha\rangle\langle \beta|$ 의 행렬 표현을 구하라.
+($a$) 두 켓 $|\alpha\rangle,\, |\beta\rangle$ 을 생각하자. $|a'\rangle,\, |a''\rangle,\ldots$ 가 힐베르트 공간에서의 정규직교를 이루며 $\langle a'|\alpha\rangle,\, \langle a''|\alpha\rangle, \ldots$ 와 $\langle a'|\beta\rangle,\, \langle a''|\beta\rangle, \ldots$ 를 알고 있다고 하자. $|\alpha\rangle\langle \beta|$ 의 행렬 표현을 구하라.
 
 ($b$) 스핀 $\frac{1}{2}$ 시스템을 생각하자. $|\alpha\rangle$ 과 $|\beta\rangle$ 이 각각 $|s_z=\hbar/2\rangle$ 과 $|s_x=\hbar/2\rangle$ 이라고 하자. $|\alpha\rangle \langle \beta|$ 를 $S_z$ 직교 기저에서의 행렬로 표현하라.
 
@@ -770,7 +770,7 @@ $$
 
 #### Sakurai 1.6
 
-$|i\rangle$, $|j\rangle$ 이 에르미트 연산자 $A$ 의 고유켓일 때 어떤 조건에서 $|i\rangle +|j\rangle$ 이 $A$ 의 고유캣이 되는가?
+$|i\rangle$, $|j\rangle$ 이 에르미트 연산자 $A$ 의 고유켓일 때 어떤 조건에서 $|i\rangle +|j\rangle$ 이 $A$ 의 고유켓이 되는가?
 
 :::
 
@@ -795,7 +795,7 @@ $$
 
 #### Sakurai 1.7
 
-캣 공간이 에르미트 연산자 $A$ 의 고유캣의 집합 $\{|a'\rangle\}$ 로 span 된다고 하자. 그리고 degeneracy 가 없다고 하자.
+켓 공간이 에르미트 연산자 $A$ 의 고유켓의 집합 $\{|a'\rangle\}$ 로 span 된다고 하자. 그리고 degeneracy 가 없다고 하자.
 
 ($a$) $\displaystyle \prod_{a'} (A-a')$ 이 null 연산자임을 보여라.
 
@@ -815,6 +815,34 @@ $$
 
 :::
 
+</br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-sakurai_1_10}
+#### Sakurai 1.10
+
+2-상태 시스템의 해밀토니안 연산자가 
+
+$$
+H = a(|1\rangle \langle 1| - |2\rangle\langle 2| + |1\rangle\langle 1| + |2\rangle\langle 2|) 
+$$
+
+로 주어졌다. 여기서 $a$ 는 에너지의 차원을 갖는 상수이다. 에너지 고유값과 이에 대한 에너지 고유켓을 구하라.
+
+:::
+
+</div></br>
+
+::: {.solution}
+
+$(|1\rangle,\, |2\rangle)$ 기저에서 $H = \begin{bmatrix} a & a \\ a & -a \end{bmatrix}$ 이며 고유값은 특성방정식 $t^2-2a^2=0$ 으로부터 고유값 $E_{\pm} = \pm \sqrt{2}a$ 이고, $E_+=\sqrt{2}a$ 에 대한 고유켓 $|+\rangle$ 과 $E_-=-\sqrt{2}a$ 에 대한 고유켓 $|-\rangle$ 은 다음과 같다.
+
+$$
+|+\rangle = \dfrac{1}{2}\begin{bmatrix} \sqrt{2+\sqrt{2}} \\ \sqrt{2-\sqrt{2}}\end{bmatrix} ,\qquad |-\rangle = \dfrac{1}{2}\begin{bmatrix} \sqrt{2-\sqrt{2}} \\ -\sqrt{2+\sqrt{2}}\end{bmatrix}.
+$$
+
+:::
+
 
 </br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
@@ -831,7 +859,7 @@ $$
 
 ::: {.solution}
 
-$A,\,H$ 의 동시 고유캣 $|aE\rangle$ 을 생각하자. $A|ae\rangle = a|ae\rangle,\, H|ae\rangle = e|ae\rangle$ 라고 하자. $[B, H]=0$ 이므로
+$A,\,H$ 의 동시 고유켓 $|aE\rangle$ 을 생각하자. $A|ae\rangle = a|ae\rangle,\, H|ae\rangle = e|ae\rangle$ 라고 하자. $[B, H]=0$ 이므로
 
 $$
 \begin{aligned}
@@ -839,10 +867,9 @@ $$
 \end{aligned}
 $$
 
-이며 이는 $B|ae\rangle$ 이 $H$ 의 고유캣으로 고유값이 $e$ 인 경우이거나 $B|ae\rangle=|\varnothing\rangle$ 임을 의미한다. 임의의 $\{|ae\rangle\}$ 에 대해 성립하므로 후자라면 $B=0$ 이며 이는 $[A,\,B]\ne 0$ 이라는 조건에 위배된다. 따라서 $B|ae\rangle$ 은 고유값 $e$ 를 갖는 $H$ 의 고유캣이다.
+이며 이는 $B|ae\rangle$ 이 $H$ 의 고유켓으로 고유값이 $e$ 인 경우이거나 $B|ae\rangle=|\varnothing\rangle$ 임을 의미한다. 임의의 $\{|ae\rangle\}$ 에 대해 성립하므로 후자라면 $B=0$ 이며 이는 $[A,\,B]\ne 0$ 이라는 조건에 위배된다. 따라서 $B|ae\rangle$ 은 고유값 $e$ 를 갖는 $H$ 의 고유켓이다.
 
 해밀토니안의 고유상태가 degenerated 되어 있지 않다면 $|ae\rangle = |e\rangle$ 이어야 하며 이 경우 $[A,\,B]=0$ 이다. 따라서 $|e\rangle$ 은 degenerated 되어야 한다.
-
 
 
 :::

@@ -1,0 +1,7 @@
+---
+title: "Quantum Computing"
+number-sections: true
+number-depth: 3
+crossref:
+  chapters: true
+---

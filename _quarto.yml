@@ -32,6 +32,9 @@ book:
     #   - src/part3/some_proofs.qmd
     #   - src/part3/symmetry_in_classical_mechanics.qmd
     #   - src/part3/historical_note.qmd
+    - part: src/QC/00_quantum_computing.qmd
+      chapters:
+      - src/QC/01_introduction.qmd
     - part : src/AUX/AUX.qmd
       chapters:
       - src/AUX/entanglement.qmd

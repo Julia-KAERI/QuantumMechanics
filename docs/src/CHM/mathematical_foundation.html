@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.42">
+<meta name="generator" content="quarto-1.6.43">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -57,7 +57,7 @@ div.csl-indent {
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-d4d76bf8491c20bad77d141916dc28e1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap-b467865d89f01302b3bb45791fa41ab5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
@@ -273,8 +273,8 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../src/AUX/AUX.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">III. 기타 이런저런 이야기들</span></a>
+            <a href="../../src/QC/00_quantum_computing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quantum Computing</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="토글 섹션">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -282,20 +282,37 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../src/QC/01_introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../src/AUX/AUX.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">III. 기타 이런저런 이야기들</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="토글 섹션">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../src/AUX/entanglement.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">양자 얽힘</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">양자 얽힘</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/AUX/quantum_state.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">양자 상태</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">양자 상태</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/AUX/JSBell_against_measurement.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Against Measurement - J. S. Bell</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Against Measurement - J. S. Bell</span></span></a>
   </div>
 </li>
       </ul>
@@ -385,9 +402,9 @@ window.Quarto = {
 </div>
 <div class="callout-body-container callout-body">
 <ol type="1">
-<li><p>벡터는 <span class="math inline">\(|\phi\rangle\)</span> 과 같이 표기하며 <strong>캣(ket)</strong> 라고 한다. <span class="math inline">\(|\phi\rangle\)</span> 에 대한 스칼라 <span class="math inline">\(c\)</span> 곱은 <span class="math inline">\(c|\phi\rangle\)</span> 과 같이 표기한다. 선형결합은 <span class="math inline">\(c_1|\phi_1\rangle + c_2|\phi_2\rangle + \cdots\)</span> 와 같이 표현한다.</p></li>
+<li><p>벡터는 <span class="math inline">\(|\phi\rangle\)</span> 과 같이 표기하며 <strong>켓(ket)</strong> 라고 한다. <span class="math inline">\(|\phi\rangle\)</span> 에 대한 스칼라 <span class="math inline">\(c\)</span> 곱은 <span class="math inline">\(c|\phi\rangle\)</span> 과 같이 표기한다. 선형결합은 <span class="math inline">\(c_1|\phi_1\rangle + c_2|\phi_2\rangle + \cdots\)</span> 와 같이 표현한다.</p></li>
 <li><p>연산자 <span class="math inline">\(A\)</span> 에 대한 <span class="math inline">\(|\phi\rangle\)</span> 의 선형변환은 <span class="math inline">\(A|\phi\rangle\)</span> 로 표기한다.</p></li>
-<li><p><span class="math inline">\(|\phi \rangle\)</span> 에 대한 dual vector 를 <span class="math inline">\(\langle \phi|\)</span> 로 표기하며 <strong>브라(bra)</strong> 이라고 한다. <span class="math inline">\(\langle \phi| = | \phi\rangle^\dagger\)</span> 로 쓰기도 한다. 벡터 <span class="math inline">\(|\phi\rangle\)</span> 과 <span class="math inline">\(|\psi\rangle\)</span> 에 대한 내적은 <span class="math inline">\(\langle \psi | \phi \rangle\)</span> 로 표기한다. 브라와 캣을 합쳐서 <strong>브라켓(bracket)</strong> 이라고 한다. 내적에 대해 <span class="math inline">\(\langle \phi |\psi \rangle = \overline{\langle \psi|\phi \rangle}\)</span> 이다.</p></li>
+<li><p><span class="math inline">\(|\phi \rangle\)</span> 에 대한 dual vector 를 <span class="math inline">\(\langle \phi|\)</span> 로 표기하며 <strong>브라(bra)</strong> 이라고 한다. <span class="math inline">\(\langle \phi| = | \phi\rangle^\dagger\)</span> 로 쓰기도 한다. 벡터 <span class="math inline">\(|\phi\rangle\)</span> 과 <span class="math inline">\(|\psi\rangle\)</span> 에 대한 내적은 <span class="math inline">\(\langle \psi | \phi \rangle\)</span> 로 표기한다. 브라와 켓을 합쳐서 <strong>브라켓(bracket)</strong> 이라고 한다. 내적에 대해 <span class="math inline">\(\langle \phi |\psi \rangle = \overline{\langle \psi|\phi \rangle}\)</span> 이다.</p></li>
 <li><p>따라서 <span class="math inline">\((c_1 |\psi_1\rangle + c_2|\psi_2)^\dagger = \overline{c_1}\langle \psi_1| + \overline{c_2}\langle \psi_2| = \langle \psi_1| \overline{c_1} +\langle \psi_1| \overline{c}_2\)</span> 이다. 이로부터 다음이 성립한다.<br>
 <span class="math display">\[
 \begin{aligned}
@@ -400,10 +417,10 @@ window.Quarto = {
 </div>
 </div>
 <p><br></p>
-<p>양자역학에서 캣은 양자상태를 표현하는 벡터이며 <span class="math inline">\(0\)</span> 이 아닌 <span class="math inline">\(c\in \mathbb{F}\)</span> 에 대해 <span class="math inline">\(c|\psi \rangle\)</span> 과 <span class="math inline">\(|\psi\rangle\)</span> 을 동일하다고 간주한다. 일반적으로 ket 은 <span class="math inline">\(\langle \phi | \phi \rangle =1\)</span> 인 정규화된벡터를 의미하는 경우가 많다. 또한 유한차원 복소벡터공간에서 양자상태를 표현한다면 <span class="math inline">\(|\phi\rangle\)</span> 을 열벡터로, <span class="math inline">\(\langle \psi |\)</span> 를 행벡터로 표현한다. 브라켓 표기법을 사용하는 이유를 요약하면 다음과 같다.</p>
+<p>양자역학에서 켓은 양자상태를 표현하는 벡터이며 <span class="math inline">\(0\)</span> 이 아닌 <span class="math inline">\(c\in \mathbb{F}\)</span> 에 대해 <span class="math inline">\(c|\psi \rangle\)</span> 과 <span class="math inline">\(|\psi\rangle\)</span> 을 동일하다고 간주한다. 일반적으로 ket 은 <span class="math inline">\(\langle \phi | \phi \rangle =1\)</span> 인 정규화된벡터를 의미하는 경우가 많다. 또한 유한차원 복소벡터공간에서 양자상태를 표현한다면 <span class="math inline">\(|\phi\rangle\)</span> 을 열벡터로, <span class="math inline">\(\langle \psi |\)</span> 를 행벡터로 표현한다. 브라켓 표기법을 사용하는 이유를 요약하면 다음과 같다.</p>
 <ol type="1">
-<li><p>양자 상태 표현의 편의성 : 브라켓으로 벡터를 표현할 때의 가장 큰 장점은 양자상태를 표현할 때 수학적인 표기법보다 편하다는 것이다. 예를 들어 양자수 3개로 정의되는 상태에 대해 <span class="math inline">\(|abc\rangle\)</span> 과 같이 세개의 숫자를 쓴 다음에 캣으로 묶어버리는 것으로 양자상태를 표현할 수 있다. 수소원자의 경우 주양자수 <span class="math inline">\(n=2\)</span>, 궤도양자수 <span class="math inline">\(l=1\)</span>, 자기양자수 <span class="math inline">\(m=0\)</span> 인 상태를 <span class="math inline">\(|nlm\rangle\)</span> 표기법을 사용하여 <span class="math inline">\(|210\rangle\)</span> 으로 표기할 수있다. 또한 내적에서 사용되는 쌍대기저를 독립적인 브라 표기법으로 <span class="math inline">\(\langle 210 |\)</span> 와 같이 표현 할 수 있다. 만약 브라켓 표기법 없이 사용한다면 <span class="math inline">\(|210\rangle\)</span> 상태를 <span class="math inline">\(\Psi_{210}\)</span> 이나 <span class="math inline">\(\Phi^2_{10}\)</span> 과 같이 표현해야 할 것이다.</p></li>
-<li><p>연산자와 벡터의 분리 : <span class="math inline">\(\langle\phi | \hat{A} |\psi\rangle\)</span> 형식이기 때문에 연산자의 연산을 브라와 캣 사이의 공간에서 수행 할 수 있는데 이는 수식표기가 좀 더 깔끔해진다.</p></li>
+<li><p>양자 상태 표현의 편의성 : 브라켓으로 벡터를 표현할 때의 가장 큰 장점은 양자상태를 표현할 때 수학적인 표기법보다 편하다는 것이다. 예를 들어 양자수 3개로 정의되는 상태에 대해 <span class="math inline">\(|abc\rangle\)</span> 과 같이 세개의 숫자를 쓴 다음에 켓으로 묶어버리는 것으로 양자상태를 표현할 수 있다. 수소원자의 경우 주양자수 <span class="math inline">\(n=2\)</span>, 궤도양자수 <span class="math inline">\(l=1\)</span>, 자기양자수 <span class="math inline">\(m=0\)</span> 인 상태를 <span class="math inline">\(|nlm\rangle\)</span> 표기법을 사용하여 <span class="math inline">\(|210\rangle\)</span> 으로 표기할 수있다. 또한 내적에서 사용되는 쌍대기저를 독립적인 브라 표기법으로 <span class="math inline">\(\langle 210 |\)</span> 와 같이 표현 할 수 있다. 만약 브라켓 표기법 없이 사용한다면 <span class="math inline">\(|210\rangle\)</span> 상태를 <span class="math inline">\(\Psi_{210}\)</span> 이나 <span class="math inline">\(\Phi^2_{10}\)</span> 과 같이 표현해야 할 것이다.</p></li>
+<li><p>연산자와 벡터의 분리 : <span class="math inline">\(\langle\phi | \hat{A} |\psi\rangle\)</span> 형식이기 때문에 연산자의 연산을 브라와 켓 사이의 공간에서 수행 할 수 있는데 이는 수식표기가 좀 더 깔끔해진다.</p></li>
 <li><p>연산자인 <span class="math inline">\(|\phi\rangle\langle \psi|\)</span> 와 내적인 <span class="math inline">\(\langle \psi|\phi\rangle\)</span> 의 구분이 명확해진다. 벡터를 사용한다면 <span class="math inline">\(\boldsymbol{\psi} \boldsymbol{\phi}^\dagger\)</span> 와 <span class="math inline">\(\boldsymbol{\psi}^\dagger\boldsymbol{\phi}\)</span> 와 같이 구분하기 힘들다.</p></li>
 </ol>
 <p><br></p>
@@ -853,7 +870,7 @@ e^{if(A)} = \sum_{a} e^{if(A)}|a\rangle \langle a| = \sum_a e^{if(a)}|a\rangle \
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-sakurai_1_5" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 1.2 (Sakurai 1.5)</strong></span> (<span class="math inline">\(a\)</span>) 두 캣 <span class="math inline">\(|\alpha\rangle,\, |\beta\rangle\)</span> 을 생각하자. <span class="math inline">\(|a'\rangle,\, |a''\rangle,\ldots\)</span> 가 힐베르트 공간에서의 정규직교를 이루며 <span class="math inline">\(\langle a'|\alpha\rangle,\, \langle a''|\alpha\rangle, \ldots\)</span> 와 <span class="math inline">\(\langle a'|\beta\rangle,\, \langle a''|\beta\rangle, \ldots\)</span> 를 알고 있다고 하자. <span class="math inline">\(|\alpha\rangle\langle \beta|\)</span> 의 행렬 표현을 구하라.</p>
+<p><span class="theorem-title"><strong>연습문제 1.2 (Sakurai 1.5)</strong></span> (<span class="math inline">\(a\)</span>) 두 켓 <span class="math inline">\(|\alpha\rangle,\, |\beta\rangle\)</span> 을 생각하자. <span class="math inline">\(|a'\rangle,\, |a''\rangle,\ldots\)</span> 가 힐베르트 공간에서의 정규직교를 이루며 <span class="math inline">\(\langle a'|\alpha\rangle,\, \langle a''|\alpha\rangle, \ldots\)</span> 와 <span class="math inline">\(\langle a'|\beta\rangle,\, \langle a''|\beta\rangle, \ldots\)</span> 를 알고 있다고 하자. <span class="math inline">\(|\alpha\rangle\langle \beta|\)</span> 의 행렬 표현을 구하라.</p>
 <p>(<span class="math inline">\(b\)</span>) 스핀 <span class="math inline">\(\frac{1}{2}\)</span> 시스템을 생각하자. <span class="math inline">\(|\alpha\rangle\)</span> 과 <span class="math inline">\(|\beta\rangle\)</span> 이 각각 <span class="math inline">\(|s_z=\hbar/2\rangle\)</span> 과 <span class="math inline">\(|s_x=\hbar/2\rangle\)</span> 이라고 하자. <span class="math inline">\(|\alpha\rangle \langle \beta|\)</span> 를 <span class="math inline">\(S_z\)</span> 직교 기저에서의 행렬로 표현하라.</p>
 </div>
 </div>
@@ -871,7 +888,7 @@ e^{if(A)} = \sum_{a} e^{if(A)}|a\rangle \langle a| = \sum_a e^{if(a)}|a\rangle \
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-sakurai_1_6" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 1.3 (Sakurai 1.6)</strong></span> <span class="math inline">\(|i\rangle\)</span>, <span class="math inline">\(|j\rangle\)</span> 이 에르미트 연산자 <span class="math inline">\(A\)</span> 의 고유켓일 때 어떤 조건에서 <span class="math inline">\(|i\rangle +|j\rangle\)</span> 이 <span class="math inline">\(A\)</span> 의 고유캣이 되는가?</p>
+<p><span class="theorem-title"><strong>연습문제 1.3 (Sakurai 1.6)</strong></span> <span class="math inline">\(|i\rangle\)</span>, <span class="math inline">\(|j\rangle\)</span> 이 에르미트 연산자 <span class="math inline">\(A\)</span> 의 고유켓일 때 어떤 조건에서 <span class="math inline">\(|i\rangle +|j\rangle\)</span> 이 <span class="math inline">\(A\)</span> 의 고유켓이 되는가?</p>
 </div>
 </div>
 <p><br></p>
@@ -885,7 +902,7 @@ e^{if(A)} = \sum_{a} e^{if(A)}|a\rangle \langle a| = \sum_a e^{if(a)}|a\rangle \
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-sakurai_1_7" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 1.4 (Sakurai 1.7)</strong></span> 캣 공간이 에르미트 연산자 <span class="math inline">\(A\)</span> 의 고유캣의 집합 <span class="math inline">\(\{|a'\rangle\}\)</span> 로 span 된다고 하자. 그리고 degeneracy 가 없다고 하자.</p>
+<p><span class="theorem-title"><strong>연습문제 1.4 (Sakurai 1.7)</strong></span> 켓 공간이 에르미트 연산자 <span class="math inline">\(A\)</span> 의 고유켓의 집합 <span class="math inline">\(\{|a'\rangle\}\)</span> 로 span 된다고 하자. 그리고 degeneracy 가 없다고 하자.</p>
 <p>(<span class="math inline">\(a\)</span>) <span class="math inline">\(\displaystyle \prod_{a'} (A-a')\)</span> 이 null 연산자임을 보여라.</p>
 <p>(<span class="math inline">\(b\)</span>) <span class="math inline">\(\displaystyle \prod_{a'' \ne a'} \dfrac{(A-a'')}{(a'-a'')}\)</span> 의 의미를 논하라.</p>
 <p>(<span class="math inline">\(c\)</span>) Spin <span class="math inline">\(\frac{1}{2}\)</span> 시스템에 대해 <span class="math inline">\(A=S_z\)</span> 로 놓고 (<span class="math inline">\(a\)</span>), (<span class="math inline">\(b\)</span>) 를 설명하라.</p>
@@ -898,19 +915,36 @@ e^{if(A)} = \sum_{a} e^{if(A)}|a\rangle \langle a| = \sum_a e^{if(a)}|a\rangle \
 </div>
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
-<div id="exr-sakurai_1_17" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 1.5 (Sakurai 1.17)</strong></span> 두 연산자 <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span> 는 시간에 명시적으로 의존하지 않으며, commute 하지 않다. 즉 <span class="math inline">\([A,\,B]\ne 0\)</span> 이다. 그런데 <span class="math inline">\([A,\, H]=[B,\,H]=0\)</span> 이라고 하자. 그렇다면 에너자 고유상태는 일반적으로 degenerated 되어 있음을 보여라. 예외가 있는가? 예를 들어 보자면 central force problem <span class="math inline">\(H=\dfrac{\boldsymbol{p}^2}{2m}+ V(r)\)</span> with <span class="math inline">\(A=L_z,\, B=L_z\)</span> 가 있겠다.</p>
+<div id="exr-sakurai_1_10" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 1.5 (Sakurai 1.10)</strong></span> 2-상태 시스템의 해밀토니안 연산자가</p>
+<p><span class="math display">\[
+H = a(|1\rangle \langle 1| - |2\rangle\langle 2| + |1\rangle\langle 1| + |2\rangle\langle 2|)
+\]</span></p>
+<p>로 주어졌다. 여기서 <span class="math inline">\(a\)</span> 는 에너지의 차원을 갖는 상수이다. 에너지 고유값과 이에 대한 에너지 고유켓을 구하라.</p>
 </div>
 </div>
 <p><br></p>
 <div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(A,\,H\)</span> 의 동시 고유캣 <span class="math inline">\(|aE\rangle\)</span> 을 생각하자. <span class="math inline">\(A|ae\rangle = a|ae\rangle,\, H|ae\rangle = e|ae\rangle\)</span> 라고 하자. <span class="math inline">\([B, H]=0\)</span> 이므로</p>
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\((|1\rangle,\, |2\rangle)\)</span> 기저에서 <span class="math inline">\(H = \begin{bmatrix} a &amp; a \\ a &amp; -a \end{bmatrix}\)</span> 이며 고유값은 특성방정식 <span class="math inline">\(t^2-2a^2=0\)</span> 으로부터 고유값 <span class="math inline">\(E_{\pm} = \pm \sqrt{2}a\)</span> 이고, <span class="math inline">\(E_+=\sqrt{2}a\)</span> 에 대한 고유켓 <span class="math inline">\(|+\rangle\)</span> 과 <span class="math inline">\(E_-=-\sqrt{2}a\)</span> 에 대한 고유켓 <span class="math inline">\(|-\rangle\)</span> 은 다음과 같다.</p>
+<p><span class="math display">\[
+|+\rangle = \dfrac{1}{2}\begin{bmatrix} \sqrt{2+\sqrt{2}} \\ \sqrt{2-\sqrt{2}}\end{bmatrix} ,\qquad |-\rangle = \dfrac{1}{2}\begin{bmatrix} \sqrt{2-\sqrt{2}} \\ -\sqrt{2+\sqrt{2}}\end{bmatrix}.
+\]</span></p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-sakurai_1_17" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 1.6 (Sakurai 1.17)</strong></span> 두 연산자 <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span> 는 시간에 명시적으로 의존하지 않으며, commute 하지 않다. 즉 <span class="math inline">\([A,\,B]\ne 0\)</span> 이다. 그런데 <span class="math inline">\([A,\, H]=[B,\,H]=0\)</span> 이라고 하자. 그렇다면 에너자 고유상태는 일반적으로 degenerated 되어 있음을 보여라. 예외가 있는가? 예를 들어 보자면 central force problem <span class="math inline">\(H=\dfrac{\boldsymbol{p}^2}{2m}+ V(r)\)</span> with <span class="math inline">\(A=L_z,\, B=L_z\)</span> 가 있겠다.</p>
+</div>
+</div>
+<p><br></p>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(A,\,H\)</span> 의 동시 고유켓 <span class="math inline">\(|aE\rangle\)</span> 을 생각하자. <span class="math inline">\(A|ae\rangle = a|ae\rangle,\, H|ae\rangle = e|ae\rangle\)</span> 라고 하자. <span class="math inline">\([B, H]=0\)</span> 이므로</p>
 <p><span class="math display">\[
 \begin{aligned}
 \,0=[B, H]|ae\rangle &amp;= (eB-HB)|ae\rangle = (e-H)(B|ae\rangle)
 \end{aligned}
 \]</span></p>
-<p>이며 이는 <span class="math inline">\(B|ae\rangle\)</span> 이 <span class="math inline">\(H\)</span> 의 고유캣으로 고유값이 <span class="math inline">\(e\)</span> 인 경우이거나 <span class="math inline">\(B|ae\rangle=|\varnothing\rangle\)</span> 임을 의미한다. 임의의 <span class="math inline">\(\{|ae\rangle\}\)</span> 에 대해 성립하므로 후자라면 <span class="math inline">\(B=0\)</span> 이며 이는 <span class="math inline">\([A,\,B]\ne 0\)</span> 이라는 조건에 위배된다. 따라서 <span class="math inline">\(B|ae\rangle\)</span> 은 고유값 <span class="math inline">\(e\)</span> 를 갖는 <span class="math inline">\(H\)</span> 의 고유캣이다.</p>
+<p>이며 이는 <span class="math inline">\(B|ae\rangle\)</span> 이 <span class="math inline">\(H\)</span> 의 고유켓으로 고유값이 <span class="math inline">\(e\)</span> 인 경우이거나 <span class="math inline">\(B|ae\rangle=|\varnothing\rangle\)</span> 임을 의미한다. 임의의 <span class="math inline">\(\{|ae\rangle\}\)</span> 에 대해 성립하므로 후자라면 <span class="math inline">\(B=0\)</span> 이며 이는 <span class="math inline">\([A,\,B]\ne 0\)</span> 이라는 조건에 위배된다. 따라서 <span class="math inline">\(B|ae\rangle\)</span> 은 고유값 <span class="math inline">\(e\)</span> 를 갖는 <span class="math inline">\(H\)</span> 의 고유켓이다.</p>
 <p>해밀토니안의 고유상태가 degenerated 되어 있지 않다면 <span class="math inline">\(|ae\rangle = |e\rangle\)</span> 이어야 하며 이 경우 <span class="math inline">\([A,\,B]=0\)</span> 이다. 따라서 <span class="math inline">\(|e\rangle\)</span> 은 degenerated 되어야 한다.</p>
 </div>
 
