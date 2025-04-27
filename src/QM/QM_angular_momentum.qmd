@@ -6,6 +6,10 @@ crossref:
   chapters: true
 ---
 
+{{< include ../latexmacros.qmd >}}
+
+</br>
+
 ## 2차원에서의 Translation
 
 ### 임의의 방향에 대한 Translation
@@ -28,33 +32,33 @@ $$
 P_n := \hat{\boldsymbol{n}}\cdot \boldsymbol{P}
 $$ {#eq-part3_momentum_operator_for_arbitrary_direction}
 
-로 표현된다. $P_n$ 은 $\hat{\boldsymbol{n}}$ 방향으로의 infinitesimal translation 의 generator 이다. 따라서 $\boldsymbol{a}$ 만큼의 translation $T(\boldsymbol{a})$ 는
+로 표현된다. $P_n$ 은 $\hat{\boldsymbol{n}}$ 방향으로의 infinitesimal translation 의 generator 이다. 따라서 $\boldsymbol{a}$ 만큼의 translation $T(\boldsymbol{a})$ 는 다음과 같다.
 
 $$
 T(\boldsymbol{a}) := e^{-iaP_a/\hbar} = e^{-i\boldsymbol{a}\cdot \boldsymbol{P}/\hbar}
 $$ {#eq-part3_translation_operator_for_arbitrary_direction}
 
-</br><div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+</br>
 
+:::: {.border style="background-color:#F2F4F4  ;padding:5px;"}
 ::: {#exm-QM_addition_of_translation_for_arbitrary_direction}
-@eq-part3_translation_operator_for_arbitrary_direction 에서 
+@eq-part3_translation_operator_for_arbitrary_direction 에서
 
 $$
 T(\boldsymbol{a})T(\boldsymbol{b}) = e^{i\boldsymbol{a}\cdot \boldsymbol{P}/\hbar}e^{i\boldsymbol{b}\cdot \boldsymbol{P}/\hbar} = e^{i(\boldsymbol{a}+\boldsymbol{b})\cdot \boldsymbol{P}/\hbar} = T(\boldsymbol{a}+\boldsymbol{b})
 $$ {#eq-part3_addition_of_translation_for_arbitrary_diraction}
 
-이다. 
-
+이다.
 :::
+::::
 
-</div></br>
+</br>
 
-### 연습문제
+### 연습문제 {.unnumbered}
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-shankar_12_1_1}
-
 #### Shankar 12.1.1
 
 $\hat{\boldsymbol{a}} = \boldsymbol{a}/\|\boldsymbol{a}\|$ 라고 하자. $\hat{\boldsymbol{a}}\cdot \boldsymbol{P}$ 가 $\boldsymbol{a}$ 방향으로의 infinitesimal translation 의 generator 임을 다음 관계를 이용하여 보여라.
@@ -62,18 +66,19 @@ $\hat{\boldsymbol{a}} = \boldsymbol{a}/\|\boldsymbol{a}\|$ 라고 하자. $\hat{
 $$
 \langle x,\,y| I - \dfrac{i}{\hbar} \delta \boldsymbol{a} \cdot \boldsymbol{P}|\Psi\rangle = \Psi (x-\delta a_x,\, y-\delta a_y)
 $$
-
 :::
 
-::: {.solution}
+</div></br>
 
-주어진 식의 우변을 $\delta \boldsymbol{a} = (\delta a_x,\, \delta a_y)$ 의 1차항까지 전개하면 
+:::{.solution}
+주어진 식의 우변을 $\delta \boldsymbol{a} = (\delta a_x,\, \delta a_y)$ 의 1차항까지 전개하면
 
 $$
 \Psi (x-\delta a_x,\, y-\delta a_y) = \Psi(x,\,y) - \delta a_x \partial_x \Psi(x,\,y) - \delta a_y \partial_y \Psi (x,\,y)
 $$
 
 이다. 좌변은 
+
 $$
 \begin{aligned}
 \langle x,\,y| I - \dfrac{i}{\hbar} \delta \boldsymbol{a} \cdot \boldsymbol{P}|\Psi\rangle &= \Psi(x,\,y) - \dfrac{i}{\hbar} \langle x,\,y| \delta a_x P_x + \delta a_y P_y|\Psi\rangle \\
@@ -82,20 +87,19 @@ $$
 \end{aligned}
 $$
 
-이다. 따라서 
+이다. 따라서
 
 $$
 I - \dfrac{i}{\hbar}\delta \boldsymbol{a}\cdot \boldsymbol{P}
 $$
 
-는 $\boldsymbol{a}$ 방향의 infinitesimal translation 의 generator 이다. 
+는 $\boldsymbol{a}$ 방향의 infinitesimal translation 의 generator 이다.
 
 :::
 
-</div></br>
+</br>
 
 ## 2차원에서의 회전
-
 
 3차원에서 $xy$ 평면에서의 $\phi_0$ 만큼의 회전은 $\phi_0\hat{\boldsymbol{e}}_3$ 벡터로 표현 할 수 있으며 이에 대한 연산자를 $R(\phi_0 \hat{\boldsymbol{e}}_3)$ 라고 표기하기로 하자. $T(\boldsymbol{a})$ 가 힐베르트 공간에서의 $\boldsymbol{a}$ 만큼의 translation 을 표현하듯이 힐베르트 공간에서의 $\phi_i \hat{\boldsymbol{e}}_3$ 만큼의 회전을 $U[R(\phi_0 \hat{\boldsymbol{e}}_3)]$ 라고 표기하기로 하자. 앞으로는 임의의 회전 방향을 다루게 될텐데 어쨋든 회전 각도와 방향이 정해져 있거나, 회전 각도나 방향에 무관한게 성립하는 성질을 다룰 때는 표기를 $R$ 로 하기로 하자. Active transform 관점에서 $U[R]|\Psi\rangle$ 은 $|\Psi\rangle$ 가 회전된 상태를 의미한다. 표기를 단순화 하기 위해 $|\Psi_R\rangle := U[R]|\Psi\rangle$ 로, 연산자 $A$ 에 대해 $\langle A\rangle_R := \langle \Psi_R|A|\Psi_R\rangle$ 이라고 표기하기로 하자.
 
@@ -110,13 +114,13 @@ $$
 \end{aligned}
 $$ {#eq-QM_change_of_expectation_for_rotation_in_d2}
 
-이제 $P$ 의 $|x\rangle$ 에 대한 작용과 유사하게 위치 캣에 대해 
+이제 $P$ 의 $|x\rangle$ 에 대한 작용과 유사하게 위치 켓에 대해
 
 $$
 U[R]|x,\,y\rangle = |x \cos \phi_0-y \sin \phi_0,\, x\sin \phi_0 + y \cos \phi_0\rangle
 $$ {#eq-QM_rotation_applied_to_position_eigenket}
 
-라고 할 수 있을 것이다. 
+라고 할 수 있을 것이다.
 
 </br>
 
@@ -136,7 +140,7 @@ $$ {#eq-QM_infinitesimal_rotation_in_2d}
 
 이 $\varepsilon_z$ 에 대한 1차 근사로 성립해야 한다.
 
-또한 @eq-QM_rotation_applied_to_position_eigenket 을 infinitesimal rotation 에 적용하면, 
+또한 @eq-QM_rotation_applied_to_position_eigenket 을 infinitesimal rotation 에 적용하면,
 
 $$
 U[R]|x,\,y\rangle = |x - \varepsilon_z y,\, \varepsilon_z x + y\rangle
@@ -159,7 +163,7 @@ $$
 \langle x,\,y | I - \dfrac{i\varepsilon_z L_z}{\hbar} |\Psi\rangle = \Psi (x+\varepsilon_z y,\, y-\varepsilon_z x).
 $$
 
-좌변은 
+좌변은
 
 $$
 \langle x,\,y | I - \dfrac{i\varepsilon_z L_z}{\hbar} |\Psi\rangle = \Psi (x,\,y) - \dfrac{i\varepsilon_z}{\hbar} \langle x,\,y|L_z|\Psi\rangle
@@ -171,7 +175,7 @@ $$
 \Psi (x+\varepsilon_z y,\, y-\varepsilon_z x) = \Psi(x,\,y) + \varepsilon_z y \partial_x \Psi(x,\,y) - \varepsilon_z x \partial_y \Psi(x,\,y)
 $$
 
-이므로 $L_z$ 는 좌표기저에서 
+이므로 $L_z$ 는 좌표기저에서
 
 $$
 L_z = -i\hbar (X \partial_y - Y\partial_x) = XP_y - YP_x
@@ -207,7 +211,7 @@ $$
 
 ### Commutation Relation
 
-이제 passive transform 의 관점으로 돌아와 보자. $\varepsilon_z$ 만큼의 infinitesimal rotation 을 생각하면, 
+이제 passive transform 의 관점으로 돌아와 보자. $\varepsilon_z$ 만큼의 infinitesimal rotation 을 생각하면,
 
 $$
 \begin{aligned}
@@ -218,7 +222,7 @@ U^\dagger[R] P_y U[R] &= P_y + \varepsilon_z P_x,\\
 \end{aligned}
 $$ {#eq-part3_rotation_in_passive_point_of_view}
 
-이며, 
+이며,
 
 $$
 U^\dagger[R]XU[R]= \left( I + \dfrac{i\varepsilon_z L_z}{\hbar}\right)X\left( I - \dfrac{i\varepsilon_z L_z}{\hbar}\right) \approx X - \dfrac{i\varepsilon}{\hbar}[X,\, L_z]
@@ -235,18 +239,19 @@ $$
 \end{aligned}
 $$ {#eq-part3_commutation_relation_for_angular_momentum}
 
-</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+</br>
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-shankar_12_2_2}
-
 #### Shankar 12.2.2
 
 @eq-part3_commutation_relation_for_angular_momentum 를 유도하는 과정에서 우리는 $L_z = XP_y-YP_x$ 를 사용하지 않았다. @eq-part3_commutation_relation_for_angular_momentum 로부터 $L_z = XP_y-YP_x$ 를 유도하라.
-
 :::
 
-::: {.solution}
+</div></br>
 
+:::{.solution}
 일단 $L_z=XP_y-YP_x$ 라는 것이 @eq-part3_commutation_relation_for_angular_momentum 과 양립함을 보이자.
 
 $$
@@ -266,14 +271,13 @@ $$
 \end{aligned}
 $$
 
-$L_z = L_z(X,\,Y,\,P_x,\,P_y)$ 라고 하자. 첫번째 $[X,\, L_z]=-i\hbar Y$ 를 운동량 기저에서 표현하면 
+$L_z = L_z(X,\,Y,\,P_x,\,P_y)$ 라고 하자. 첫번째 $[X,\, L_z]=-i\hbar Y$ 를 운동량 기저에서 표현하면
 
 $$
 i\hbar \left[\dfrac{\partial}{\partial P_x},\, L_z\right] = i\hbar \dfrac{\partial L_z}{\partial P_x} = -i\hbar Y
 $$
 
 이므로
-
 
 $$
 \dfrac{\partial L_z}{\partial P_x} = -Y
@@ -285,7 +289,8 @@ $$
 \dfrac{\partial L_z}{\partial P_y} = X
 $$
 
-를 얻으므로 $L_z = XP_y - YP_x + g(X,\,Y)$ 임을 안다. $[P_x,\,L_z]=-i\hbar P_y$ 로부터
+를 얻으므로 $L_z = XP_y - YP_x + g(X,\,Y)$ 임을 안다. $[P_x,\,L_z]=-i\hbar P_y$ 로부터 
+
 $$
 \dfrac{\partial L_z}{\partial X}= P_y,
 $$
@@ -296,10 +301,10 @@ $$
 L_z = XP_y - YP_x
 $$
 
-임을 알 수 있다. 
+임을 알 수 있다.
+
 :::
 
-</div>
 
 </br>
 
@@ -315,38 +320,37 @@ $$ {#eq-QM_finite_rotation}
 
 $L_z = -i\hbar (XP_y-YP_x)$ 가 어떻게 회전을 generate 하는지는 극좌표계에서 보면 쉽게 이해 할 수 있다. 다음 @exr-shankar_12_2_3 를 보자.
 
+</br>
 
-</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-shankar_12_2_3}
-
 #### Shankar 12.2.3
 
 $L_z = -i\hbar \left(x \partial_y - y \partial_x\right)$ 를 극좌표계에서 표현하면
-
 
 $$
 L_z = -i\hbar \dfrac{\partial}{\partial \phi}
 $$ {#eq-QM_angular_momentum_in_polar_coordinate}
 
 임을 보여라.
-
 :::
 
-::: {.solution}
+</div></br>
 
-극좌표계에서 $\rho = \sqrt{x^2+y^2},\, \phi = \tan^{-1}(y/x)$ 이므로 
+::: {.solution}
+극좌표계에서 $\rho = \sqrt{x^2+y^2},\, \phi = \tan^{-1}(y/x)$ 이므로
 
 $$
 \begin{aligned}
 L_z &= -i\hbar \left[\rho \cos \phi\left(\dfrac{\partial \rho}{\partial y}\dfrac{\partial}{\partial \rho} + \dfrac{\partial \phi}{\partial y}\dfrac{\partial }{\partial \phi}\right) - \rho \sin \phi \left(\dfrac{\partial \rho}{\partial x}\dfrac{\partial}{\partial \rho} + \dfrac{\partial \phi}{\partial x}\dfrac{\partial }{\partial \phi}\right)\right] \\
 &= -i\hbar \dfrac{\partial }{\partial \phi}.
 \end{aligned}
-$$ 
-
+$$
 :::
 
-</div></br>
+
+</br>
 
 즉 $\exp \left(-\dfrac{i\phi_0 L_z}{\hbar}\right)$ 를 극좌표계에서 표현하면 $\exp \left(-\phi_0 \dfrac{\partial}{\partial \phi}\right)$ 이 되며 테일러 전개로부터
 
@@ -372,13 +376,52 @@ $$ {#eq-QM_commutation_relation_by_rotational_invariance}
 
 누차 언급했듯이 힐베르트공간이 $L_z$ 와 $H$ 의 공통 고유상태를 기저로 갖는다는 것도 알 수 있다.
 
-
 </br>
 
 ### Consistency Check
 
--- to be fillled
+$\delta_z$ 만큼의 $z$ 축에 대한 미소회전과 $\bf{\varepsilon} = \varepsilon_x\hat{\bf{e}}_1 + \varepsilon_y \hat{\bf{e}}_2$ 만큼의 $xy$ 평면상의 infinitesimal translation 을 생각하자. 그리고 아래와 같은 네 연산의 곱을 생각하자.
 
+$$
+U[R(-\delta_z \hat{\bf{e}}_3)] T(-\bf{\varepsilon}) U[R(\delta_z \hat{\bf{e}}_3)] T(\bf{\varepsilon})
+$$ {#eq-QM_angular_momentum_consistency_0}
+
+$xy$ 평면상의 점은 위의 변환에 대해 다음과 같이 변한다.
+
+$$
+\begin{aligned}
+\begin{bmatrix} x \\ y\end{bmatrix} & \xrightarrow[\;\bf{\varepsilon}\;]{} \begin{bmatrix} x+\varepsilon_x \\ y+\varepsilon_y\end{bmatrix}\xrightarrow[\;R(\delta_z \hat{\bf{e}}_3)\;]{} \begin{bmatrix} (x+\varepsilon_x) - (y+\varepsilon_y)\delta_z \\ (x+\varepsilon_x)\delta_z + (y+\varepsilon)y\end{bmatrix} \\[0.5em]
+& \xrightarrow[\;-\bf{\varepsilon}\;]{} \begin{bmatrix} x-(y+\varepsilon_y)\delta_z \\ (x+\varepsilon_x) \delta_z + y\end{bmatrix}\xrightarrow[\;R(\delta_z \hat{\bf{e}}_3)\;]{} \begin{bmatrix} x-\varepsilon_y \delta_z \\ y+ \varepsilon_x \delta_z \end{bmatrix}.
+\end{aligned}
+$$
+
+위 식의 진행에서 $\varepsilon_x^2,\, \varepsilon_y^2,\, \delta_z^2$ 항은 무시했지만 교차되는 $\varepsilon_y\delta_z$, $\varepsilon_x\delta_z$ 는 남겨 놓았다. 그 이유는 이 교차항들이 운동량 연산자와 commute 하지 않기 때문이다. 어쨌든 @eq-QM_angular_momentum_consistency_0 은 다음과 같다.
+
+$$
+U[R(-\delta_z \hat{\bf{e}}_3)] T(-\bf{\varepsilon}) U[R(\delta_z \hat{\bf{e}}_3)] T(\bf{\varepsilon}) = T(-\varepsilon_y \delta_z,\, \varepsilon_x \delta_z).
+$$ {#eq-QM_angular_momentum_consistency_1}
+
+여기서 우변은
+
+$$
+I + \dfrac{i(\varepsilon_y \delta_z P_x - \varepsilon_x \delta_z P_y)}{\hbar}
+$$ {#eq-QM_angular_momentum_consistency_2}
+
+이며 좌변은
+
+$$
+\begin{aligned}
+&\left(I + \dfrac{i \delta_z L_z}{\hbar}\right) \left(I + \dfrac{i (\varepsilon_x P_x + \varepsilon_y P_y)}{\hbar}\right)\left(I - \dfrac{i \delta_z L_z}{\hbar}\right)\left(I - \dfrac{i (\varepsilon_x P_x + \varepsilon_y P_y)}{\hbar}\right) \\[0.3em]
+=& I + \dfrac{\epsilon_x \delta_z  P_x L_z + \varepsilon_y\delta_z  P_yL_z}{\hbar^2}  - \dfrac{\varepsilon_x \delta_z L_z P_x + \varepsilon_y \delta_z L_z P_y}{\hbar^2}  \\[0.3em]
+&= I + \dfrac{\varepsilon_x \delta_z}{\hbar^2}[P_x, L_z] +\dfrac{\varepsilon_y \delta_z}{\hbar^2}[P_y,\,L_z]  
+\end{aligned}
+$$
+
+이므로 @eq-QM_angular_momentum_consistency_2 와 비교하면 아래와 같은 조건을 얻는다.
+
+$$
+[P_x,\, L_z ] = -i\hbar P_y,\qquad [P_y,\, L_z] = i\hbar P_x
+$$
 
 </br>
 
@@ -404,7 +447,7 @@ $$
 
 ### $L_z$ 의 고유값과 파동함수
 
-해밀토니안 $H$ 가 rotational invariant 하다면, 즉 $[L_z,\,H]=0$ 이라면 $H$ 와 $L_z$ 에 대한 공통 고유캣이 힐베르트 공간의 기저가 된다. $L_z$ 의 고유캣 $|l_z\rangle$ 이 다음을 만족한다고 하자.
+해밀토니안 $H$ 가 rotational invariant 하다면, 즉 $[L_z,\,H]=0$ 이라면 $H$ 와 $L_z$ 에 대한 공통 고유켓이 힐베르트 공간의 기저가 된다. $L_z$ 의 고유켓 $|l_z\rangle$ 이 다음을 만족한다고 하자.
 
 $$
 L_z |l_z\rangle = l_z |l_z\rangle.
@@ -422,7 +465,7 @@ $$
 \Psi_{l_z}(\rho,\,\phi) = R(\rho) e^{il_z \phi/\hbar}.
 $$ {#eq-QM_eigenfunction_of_lz_1}
 
-여기서 $R(\rho)$ 는 임의의 $\rho$ 에만 의존하는 함수이다. 일단 $R(\rho)$ 에 대해서는 접어두고 @eq-QM_eigenfunction_of_lz_1 의 $e^{il_z\phi/\hbar}$ 만 생각하기로 하자. 일견 $l_z$ 에 대한 제한조건은 없는 듯이 보인다. 심지어는 복소수 일 수도 있다. $P$ 의 고유벡터인 $e^{ipx/\hbar}$ 의 경우 파동함수가 bounded 되어야 한다는 조건으로부터 $P$ 의 고유값 $p$ 가 실수임을 주장 할 수 있었다. 그러나 $\phi$ 는 $0$ 와 $2\pi$ 사이의 값만을 가지므로 $P$ 의 경우와 같은 주장을 할 수 없다. 그러나 $X,\,Y,\,P_x,\,P_y$ 가 모두 에르미트 연산자라는 조건과 $[X_i,\,P_j] = i\hbar \delta_{ij}$ 라는 조건으로부터
+여기서 $R(\rho)$ 는 $\rho$ 에만 의존하는 함수이며 $\int R(\rho)\rho\,d\rho$ 를 얻을 수 있는 함수이다. 즉 정규화 가능한 함수이어야 한다. 일단 $R(\rho)$ 에 대해서는 접어두고 @eq-QM_eigenfunction_of_lz_1 의 $e^{il_z\phi/\hbar}$ 만 생각하기로 하자. 일견 $l_z$ 에 대한 제한조건은 없는 듯이 보인다. 심지어는 복소수 일 수도 있다. $P$ 의 고유벡터인 $e^{ipx/\hbar}$ 의 경우 파동함수가 bounded 되어야 한다는 조건으로부터 $P$ 의 고유값 $p$ 가 실수임을 주장 할 수 있었다. 그러나 $\phi$ 는 $0$ 와 $2\pi$ 사이의 값만을 가지므로 $P$ 의 경우와 같은 주장을 할 수 없다. 그러나 $X,\,Y,\,P_x,\,P_y$ 가 모두 에르미트 연산자라는 조건과 $[X_i,\,P_j] = i\hbar \delta_{ij}$ 라는 조건으로부터
 
 $$
 (L_z)^\dagger = (XP_y-YP_x)^\dagger = P_yX-P_xY = XP_y-YP_x = L_z
@@ -436,119 +479,39 @@ $$
 \langle \Psi_1 | L_z|\Psi_2 \rangle= \overline{\langle \Psi_2 | L_z|\Psi_1\rangle}
 $$
 
-이다. 즉, 
+이다. 즉,
 
 $$
 \int_0^\infty \int_0^{2\pi} \Psi_1^\ast \left(-i\hbar \dfrac{\partial}{\partial \phi}\right) \Psi_2\, \rho \,d\rho\,d\phi = \left[\int_0^\infty \int_0^{2\pi} \Psi_2^\ast \left(-i\hbar \dfrac{\partial}{\partial \phi}\right) \Psi_1\, \rho \,d\rho\,d\phi\right]^\ast
 $$ {#eq-QM_conditino_for_hermiticity_of_lz}
 
-이다. 
-
-</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
-
-::: {#exr-shankar_12_3_1}
-
-#### Shankar 12.3.1
-
-$\Psi_1,\, \Psi_2$ 가 모두
+이다. 여기서 $\Phi_1$ 과 $\Phi_2$ 가 모두
 
 $$
-\Psi_i(\rho,\, 0) = \Psi_i(\rho,\, 2\pi)
-$$ 
-
-이 이면 @eq-QM_conditino_for_hermiticity_of_lz 를 만족함을 보여라.
-
-:::
-
-::: {.solution}
-
-@eq-QM_conditino_for_hermiticity_of_lz 에서 부분적분을 이용하면
-
-$$
-\begin{aligned}
-\text{[LHS]} &= (-i\hbar)\int_0^\infty \rho \, d\rho \left[\Psi_1^\ast(\rho,\, 2\pi)\Psi_2(0,\, 2\pi) - \Psi_1^\ast(\rho,\,0) \Psi_2(\rho,\,0)\right] \\
-&\qquad \qquad  + (i\hbar) \int_0^\infty \int_0^{2\pi} \Psi_2 \dfrac{\partial \Psi_1^\ast}{\partial \phi} \, \rho\, d\rho\, d\phi \\
-&= (-i\hbar)\int_0^\infty \rho \, d\rho \left[\Psi_1^\ast(\rho,\, 2\pi) \Psi_2(0,\, 2\pi) - \Psi_1^\ast(\rho,\,0) \Psi_2(\rho,\,0)\right] + \text{[RHS]}
-\end{aligned}
+\Phi(\rho,\, 0) = \Phi(\rho,\, 2\pi)
 $$
 
-이다. $\text{[LHS]}= \text{[RHS]}$ 이어야 하므로
-
-$$
-\int_0^\infty \rho \, d\rho \left(\Psi_1^\ast(\rho,\, 2\pi) \Psi_2(0,\, 2\pi) - \Psi_1^\ast(\rho,\,0) \Psi_2(\rho,\,0)\right) = 0
-$$
-
-이어야 한다. $\Psi_i(\rho,\,0) = \Psi_i (\rho,\, 2\pi)$ 라면 위 식이 $0$ 임은 쉽게 알 수 있다.
-
-:::
-
-</div></br>
-
-@exr-shankar_12_3_1 로부터 $L_z$ 의 고유벡터는
+를 만족할 경우 @eq-QM_conditino_for_hermiticity_of_lz 의 성질을 가짐을 보일 수 있다.(@exr-shankar_12_3_1) 이로부터 $L_z$ 의 고유벡터는
 
 $$
 e^{i2\pi l_z/\hbar}=1
 $$ {#eq-QM_quantization_condition_of_lz}
 
-이어야 한다. 즉 $L_Z$ 의 고유값 $l_z$ 는 
+이어야 한다. 즉 $L_Z$ 의 고유값 $l_z$ 는
 
 $$
 l_z = m\hbar,\qquad m\in \mathbb{Z}
 $$ {#eq-quantization_of_lz}
 
-이며 이 때 $m$ 을 *magnetic quantum number* 라고 한다. 
+이며 이 때 $m$ 을 **자기 양자수(magnetic quantum number)** 라고 한다.
 
+이제 @eq-QM_eigenfunction_of_lz_1 에 대해 생각해보자. $l_z$ 의 고유상태 이외의 $R(\rho)$ 항이 존재한다는 것은 $l_z$ 의 고유상태가 힐베르트 공간상의 한 점이 아니라 힐베르트 공간의 부분공간이라는 듯이다. 게다가 정규화 가능한 $R(\rho)$ 역시 무한차원에서 존재다. 이제 할 일은 $L_z$ 과 compatible 한 연산자를 찾아 공통의 고유상태로 기저를 구성하는 것이며 이후 회전에 대해 불변인 해밀토니안에서 어떻게 하는지 볼 것이다.
 
-</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
-
-::: {#exr-shankar_12_3_2}
-
-#### Shankar 12.3.2
-
-$l_z$ 에 대한 제한조건을 다른 관점에서 볼 수 있다. 두 허용된 $l_z$ 값 $l_1,\,l_2$ 의 중첩을 생각하자.
-
-$$
-\Psi(\rho,\,\phi) = A(\rho) e^{i\phi l_1/\hbar} + B(\rho) e^{i\phi l_2/\hbar}.
-$$
-
-$2\pi$ 회전에 대해 우리는 같은 물리적인 상태를 얻어야 한다는 조건으로부터 $l_1-l_2 = m\hbar,\, m\in \mathbb{Z}$ 이어야 함을 보여라. 허용된 $l_z$ 는 $0$ 근처에서 대칭적이어야 한다는 것으로부터 이 $m$ 값은 $\ldots,\,-3\hbar/2, \, -\hbar/2,\, \hbar/2,\, 3\hbar/2,\,\ldots$ 이거나 $\ldots,\,-2\hbar,\, -\hbar,\,0,\, \hbar,\, 2\hbar,\ldots$ 이어야 한다는 것을 보여라.
-
-
-:::
-
-::: {.solution}
-
-물리적으로 같은 상태라는 것은 $\Psi(\rho,\, \phi +2 \pi) = \Psi(\rho,\, \phi)$ 가 아니라 어떤 $\alpha \in \mathbb{C},\, |c|=1$ 에 대해 $\Psi(\rho,\,\phi+2\pi) = \alpha \Psi (\rho ,\, \phi)$ 이어야 한다는 것을 의미한다. 이로부터 
-
-$$
-\begin{aligned}
-\Psi(\rho,\, \phi+2\pi) &= A(\rho) e^{i\phi l_1/\hbar} e^{2i\pi l_1\hbar} + B(\rho) e^{i\phi l_2/\hbar} e^{2i\pi l_2/\hbar} \\
-&= e^{2i\pi l_2/\hbar}\left(A(\rho)e^{i\phi l_1/\hbar} e^{2i\pi (l_1-l_2)/\hbar} + B(\rho)e^{i\phi l_2/\hbar}\right) 
-\end{aligned}
-$$
-
-이므로 $e^{2\pi (l_1-l_2)/\hbar}=1$ 즉 $m\in \mathbb{Z}$ 에 대해 $l_1-l_2 = m\hbar$ 이어야 한다. 
-
-$l_2$ 가 허용된 값이라면 $-l_2$ 도 허용된 값이며, 어떤 정수 $n$ 에 대해 $l_1+l_2 = n\hbar$ 이어야 한다. 이 경우 
-
-$$
-l_1 = \dfrac{(m+n)\hbar}{2},\qquad l_2 = \dfrac{(n-m)\hbar}{2}
-$$ 
-
-이다.
-
-
-$l_2=-l_1$ 이라면 $l_1 = \dfrac{m\hbar}{2}$ 이다. 어떤 짝수인 $m_0=2n_0$ 에 대해 $l_1=n_0\hbar$ 라고 하자. 만약 $l = m_0+1$ 이 허용된 값이라면 $l-l_1$ 이 $\hbar$ 의 정수배 이어야 하지만 $l-l_1=\hbar/2$ 로 조건에 위배된다. 이것을 확장시켜 가 보면 어떤 $l_1$ 이 $\hbar$ 의 정수배라면 허용된 $l_1$ 은 모두 $\hbar$ 의 정수배이며, $l_1$ 이 $\hbar$ 의 반정수배($-3/2,\, -1/2,/,1/2,/,3/2$ 등) 라면 허용된 $l_1$ 은 모두 $\hbar$ 의 반정수배라는 것을 알 수 있다.
-
-:::
-
-</div></br>
-
-이제 @eq-QM_eigenfunction_of_lz_1 의 $R(\rho)$ 에 대해 생각해보자. 파동함수가 $R(\rho) e^{i\phi l_z/\hbar}$ 의 선형결합이라는 것은 $L_z$ 의 고유벡터가 힐베르트 공간 전체를 span 하지 못한다는 것을 의미한다. 즉 $L_z$ 고유공간은 힐베르트 공간의 부분공간이다. $L_z$ 의 고유값 $m\hbar$ 에 대한 파동함수 $\Phi_m(\phi)$ 에 대한 정규화 조건은 
+$L_z$ 의 고유값 $m\hbar$ 에 대한 파동함수 $\Phi_m(\phi)$ 에 대한 정규화 조건은
 
 $$
 \int_0^{2\pi} \Phi^\ast_m(\phi)\Phi_{m'}(\phi)\, d\phi =\delta_{mm'}
-$$ 
+$$
 
 이며 이를 고려하면 $\Phi_m(\phi)$ 를 다음과 같이 쓸 수 있다.
 
@@ -556,73 +519,7 @@ $$
 \Phi_m(\phi) = \dfrac{1}{\sqrt{2\pi}}e^{im\phi}
 $$ {#eq-QM_wavefunction_of_lz_eigenstate}
 
-
-</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
-
-::: {#exr-shankar_12_3_3}
-
-#### Shankar 12.3.3
-
-입자가 아래의 파동방정식으로 기술된다고 하자.
-
-$$
-\Psi(\rho,\, \phi) = A e^{-\rho^2/2\Delta^2} \cos^2\phi
-$$
-이 때 $l_z=0,\, 2\hbar,\, -2\hbar$ 에 대해 입자가 $l_z$ 상태에서 발견될 확률 $P(l_z)$ 를 구하라.
-:::
-
-::: {.solution}
-
-$\cos^2\phi$ 를 $\Phi_m(\phi)$ 로 전개하면 상수 $c= \sqrt{2\pi}/4$ 에 대해 
-$$
-\begin{aligned}
-\cos^2\phi &= \dfrac{\cos 2\phi +1}{2} = -\dfrac{1}{2} + \dfrac{e^{2i\phi}}{4} + \dfrac{e^{-2i\phi}}{4} \\
-&= c ( -2\Phi_0(\phi) + \Phi_2(\phi) + \Phi_{-2}(\phi))
-\end{aligned}
-$$
-
-이므로, 
-
-$$
-P(l_z=0) = \dfrac{1}{3},\, P(l_z=2)= P(l_z=-2)= \dfrac{1}{6}
-$$
-
-이다.
-
-:::
-
-</div></br>
-
-<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
-
-::: {#exr-shankar_12_3_4}
-
-#### Shankar 12.3.4
-
-입자의 파동함수가 아래와 같다.
-
-$$
-\Psi (\rho,\,\phi) = Ae^{-\rho^2/2\Delta^2} \left(\dfrac{\rho}{\Delta} \cos \phi + \sin \phi\right).
-$$
-
-이 때 $P(l_z=\hbar) = P(l_z=-\hbar)= \dfrac{1}{2}$ 임을 보여라.
-
-:::
-
-::: {.solution}
-
-$$
-\begin{aligned}
-\dfrac{\rho}{\Delta}\cos\phi + \sin \phi &= \dfrac{\rho}{\Delta}\dfrac{e^{i\phi}+ e^{-i\phi}}{2} - \dfrac{i e^{i\phi} - ie^{-i\phi}}{2} \\
-&= \sqrt{2\pi}\left(\dfrac{\rho}{\Delta} - \dfrac{i}{2}\right) \Phi_1(\phi) + \sqrt{2\pi}\left(\dfrac{\rho}{\Delta} + \dfrac{i}{2}\right)\Phi_{-1}(\phi)  
-\end{aligned}
-$$
-
-이며 $\Phi_1$ 과 \Phi_2$ 의 계수의 절대값이 같기 때문에, 그리고 $l_z=\pm\hbar$ 만이 허용되므로 두 상태의 확률은 같다.
-
-:::
-
-</div></br>
+</br>
 
 ### Rotational Invariant 문제
 
@@ -644,56 +541,51 @@ $$
 \left[-\dfrac{\hbar^2}{2\mu} \left(\dfrac{\partial^2}{\partial^2\rho} + \dfrac{1}{\rho}\dfrac{\partial}{\partial \rho} -\dfrac{m^2}{\rho^2} \right) + V(\rho) \right] R_{Em}(\rho,\,\phi) = E R_{Em}(\rho,\, \phi)
 $$ {#eq-QM_radial_differential_equation}
 
-즉 포텐셜이 raidal 에만 의존한다면 파동함수의 각 부분 $\Phi_m(\phi)$ 가 제외된 radial 부분만의 미분방정식만 남게 된다. 
+즉 포텐셜이 raidal 에만 의존한다면 파동함수의 각 부분 $\Phi_m(\phi)$ 가 제외된 radial 부분만의 미분방정식만 남게 된다.
 
+</br>
 
-
-</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-shankar_12_3_5}
-
 #### Shankar 12.3.5
 
 @eq-QM_radial_differential_equation 에서 각운동량이 repulsive potential 을 생성하는 것처럼 보인다. 그 gradiant 를 계산하고 원심력과 동일함을 보여라.
-
 :::
 
-::: {.solution}
+</div></br>
 
-각운동량과 관련 있는 부분은 $\dfrac{\hbar^2}{2\mu}\dfrac{m^2}{\rho^2} R_{Em}(\rho)$ 이다. 
+::: {.solution}
+각운동량과 관련 있는 부분은 $\dfrac{\hbar^2}{2\mu}\dfrac{m^2}{\rho^2} R_{Em}(\rho)$ 이다.
 
 $$
 -\langle \Psi_{Em} | \dfrac{\partial }{\partial \rho}\left(\dfrac{\hbar^2}{2\mu}\dfrac{m^2}{\rho^2}\right) |\Psi_{Em}\rangle = \dfrac{\hbar ^2m^2}{\mu} \left\langle \dfrac{1}{\rho^3}\right\rangle \approx_{\text{classical}} \dfrac{L_z^2}{\mu\rho^3}  
 $$
 
 로 고전역학의 원심력에 상응한다.
-
 :::
 
-</div></br>
+</br>
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-shankar_12_3_6}
-
 #### Shankar 12.3.6
 
 질량 $m$ 인 입자가 반지름 $a$ 인 원에 제한되어 있으며 해밀토니안은 $H=\dfrac{L_z^2}{2\mu a^2}$ 이다. $H$ 에 대한 고유값 문제를 풀고 그 deneneracy 를 논하라.
-
-:::
-
-::: {.solution}
-
-$\Phi_m(\phi)= \dfrac{1}{\sqrt{2\pi}}e^{im\phi}$ 가 고유벡터이며 절대값이 같은 각운동량을 가진 두 상태가 degenerated 된 상태이다.
-
 :::
 
 </div></br>
 
+:::{.solution}
+$\Phi_m(\phi)= \dfrac{1}{\sqrt{2\pi}}e^{im\phi}$ 가 고유벡터이며 절대값이 같은 각운동량을 가진 두 상태가 degenerated 된 상태이다.
+:::
+
+</br>
+
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-shankar_12_3_7}
-
 #### Shankar 12.3.7
 
 아래와 같은 해밀토니안이 주어졌다.
@@ -708,7 +600,6 @@ $$ {#eq-QM_shankar_12_3_7_1}
 
 ($3$) 비슷한 방법으로 $\rho \to \infty$ 극한에서 $R_{Em}(\rho) \to e^{-\mu\omega \rho^2/2\hbar}$ 임을 보여라.
 
-
 이제 $R_{Em}(\rho)= e^{|m|} e^{-\mu \omega \rho^2/2\hbar} U_{Em}(\rho)$ 라고 가정한다.
 
 ($4$) 무차원 변수 $\varepsilon = E/\hbar\omega$ 와 $y=\sqrt{\mu \omega/\hbar} \rho$ 로 바꾼다
@@ -721,7 +612,7 @@ $$ {#eq-QM_shankar_12_3_7_2}
 
 ($6$) $U$ 를 멱급수로 $U(y) = \sum_{r=0}^\infty C_r y^r$ 과 같이 전개하면 2개의 항으로 이루어진 점화식을 얻을 수 있다는 것을 보여라.
 
-($7$) 점화식을 얻고 $y \to \infty$ 극한에서 $U(y)$ 가 우리가 생각하는 미분방정식의 해가 되려면 어떤 항에서 종료되어야 한다는 것을 보여라. $\varepsilon = r+|m|+1$ 이면 $r$ 개의 항 후에 급수가 종료됨을 보여라. $r$ 이 짝수여야 한다는 것도 보여라. ($r$ 이 홀수이면 $\rho \to \infty$ 극한에서 $R$ 이 $\rho^{|m|}$ 처럼 행동하지 않는다). 최종적으로 
+($7$) 점화식을 얻고 $y \to \infty$ 극한에서 $U(y)$ 가 우리가 생각하는 미분방정식의 해가 되려면 어떤 항에서 종료되어야 한다는 것을 보여라. $\varepsilon = r+|m|+1$ 이면 $r$ 개의 항 후에 급수가 종료됨을 보여라. $r$ 이 짝수여야 한다는 것도 보여라. ($r$ 이 홀수이면 $\rho \to \infty$ 극한에서 $R$ 이 $\rho^{|m|}$ 처럼 행동하지 않는다). 최종적으로
 
 $$
 E= (2k+|m|+1)\hbar \omega,\qquad k=0,\,1,\,2,\ldots
@@ -737,10 +628,13 @@ $$
 
 ($8$) 주어진 $n$ 에 대해 가능한 $|m|$ 값은 무엇인가? 정해진 $n$ 에 대해 $n+1$ 개의 degeneracy 가 있음을 보여라. 이것을 데카르트 좌표계에서의 결과(@exr-shankar_10_2_2) 와 비교하라.
 
+($9$) $n=0,\,n=1$ 에 해당하는 모든 정규화된 고유함수를 쓰라.
 
+($10$) $n=0$ 일 때의 파동함수는 데카르트 좌표계에서의 해당하는 파동함수와 일치해야 함을 보여라. 두 $n=1$ 의 해는 해당하는 데카르트 좌표계의 파동함수의 선형 결합임을 보여라. 이 상태의 parity 는 데카르트 좌표계에서와 같이 $(-1)^n$ 임을 보여라.
 :::
+</div></br>
 
-::: {.solution}
+:::{.solution}
 
 ($1$) $U^\dagger H U = 0$ 이므로 $[H,\, L_z]=0$.
 
@@ -776,13 +670,13 @@ $$
 \dfrac{d^2 R}{d \rho^2} - \dfrac{\mu^2 \omega^2}{\hbar^2} \rho^2 R(\rho) = 0
 $$ {#eq-QM_shankar_12_3_7_4}
 
-으로 생각 할 수 있다. 위 방정식은 1차원 단순조화 진동자의 미분방정식과 같은 형태이므로 1차원 단순조화진동자의 해를 참고 할 수 있다. 1차원 단순조화진동자의 해는 에르미트 다항식과 $e^{-\alpha^2x^2}$ 의 곱 형태이며 $x\to \infty$ 영역에서 $e^{-\alpha^2x^2}$ 이 dominant 하다. 따라서 
+으로 생각 할 수 있다. 위 방정식은 1차원 단순조화 진동자의 미분방정식과 같은 형태이므로 1차원 단순조화진동자의 해를 참고 할 수 있다. 1차원 단순조화진동자의 해는 에르미트 다항식과 $e^{-\alpha^2x^2}$ 의 곱 형태이며 $x\to \infty$ 영역에서 $e^{-\alpha^2x^2}$ 이 dominant 하다. 따라서
 
 $$
 R(\rho) \approx e^{-\mu \omega \rho^2/\hbar}
 $$ {#eq-QM_shankar_12_3_7_5}
 
-라고 놓을 수 있다. 이 식을 @eq-QM_shankar_12_3_7_4 의 조변에 넣으면
+라고 놓을 수 있다. 이 식을 @eq-QM_shankar_12_3_7_4 의 좌변에 넣으면
 
 $$
 \dfrac{d^2 R}{d\rho^2} - \dfrac{\mu^2 \omega^2}{\hbar^2} \rho^2 R(\rho) - \dfrac{\mu \omega}{\hbar} R(\rho) 
@@ -796,7 +690,7 @@ $$
 \left[-\dfrac{1}{2}\left(\dfrac{d^2}{d y^2} + \dfrac{1}{y} \dfrac{d}{d y} - \dfrac{m^2}{y^2}\right) + \dfrac{y^2}{2} -\varepsilon\right] R(y) = 0
 $$ {#eq-QM_shankar_12_3_7_6}
 
-($5$) $R(y) = y^{|m|} e^{-y^2/2} U(y)$ 라고 하자. 
+($5$) $R(y) = y^{|m|} e^{-y^2/2} U(y)$ 라고 하자.
 
 $$
 \begin{aligned}
@@ -805,7 +699,7 @@ R''(y) &=|m|(|m|-1) y^{|m|-2} e^{-y^2} U(y) -|m|y^{|m|} e^{-y^2/2}U(y) + |m| y^{
 &\qquad - (|m|+1)y^{|m|} e^{-y^2/2}U(y) + y^{|m|+2}e^{-y^2/2} U(y) -y^{|m|+1} e^{-y^2} U'(y) \\
 &\qquad +|m| y^{|m|-1} y^{-y^2} U'(y) - y^{|m|+1}e^{-y^2/2}U'(y) + y^{|m|} e^{-y^2/2} U''(y)
 \end{aligned}
-$$ 
+$$
 
 이며
 
@@ -828,9 +722,9 @@ $$
 U''(y) + \left(\dfrac{2|m|+1}{y}-2y\right)U'(y) + (2\varepsilon - 2|m|-2) U(y)= 0
 $$ {#eq-QM_shankar_12_3_7_7}
 
-이다. 
+이다.
 
-($6$) $U(y) = \sum_{r=0}^{\infty} C_r y^r$ 의 멱급수 전개를 사용하면
+($6$) $\displaystyle U(y) = \sum_{r=0}^{\infty} C_r y^r$ 의 멱급수 전개를 사용하면
 
 $$
 \begin{aligned}
@@ -839,15 +733,295 @@ $$
 \end{aligned}
 $$
 
-이므로, 
+이므로,
 
 $$
 C_{r+2} =-\dfrac{2(\varepsilon - |m| -r -1)} {(r+2)(2|m|+r+2)} C_r,\qquad C_1=0
+$$ {#eq-QM_shankar_12_3_7_8}
+
+의 점화식을 얻는다. 즉 홀수인 $r$ 에 대해 $C_r=0$ 이다.
+
+($7$) 충분히 큰 $r$ 에 대해 $C_{r+2} \approx \dfrac{2}{r}C_r$ 이며 따라서 $C_{2n} \approx \dfrac{1}{ n!}C_0$ 이고
+
+$$
+U(y) \approx \sum_{r=0}^\infty \dfrac{1}{n!}y^{2r} = e^{y^2}
 $$
 
-의 점화식을 얻는다.
+이다. 이로부터 
+$$
+R(y) \approx y^{|m|} e^{-y^2/2} e^{y^2} = y^{|m|} e^{y^2/2}
+$$
+
+이므로 $y\to \infty$ 조건에서 발산한다. 이것은 허용되지 않으므로 @eq-QM_shankar_12_3_7_8 로부터 어떤 짝수 $r$ 에 대해 $\varepsilon = |m|+r+1$ 이어야 한다. 즉 어떤 $k\ge 0,\,k\in \mathbb{Z}$ 에 대해
+
+$$
+E = (|m| + 2k + 1)\hbar \omega ,\, k=0,\,1,\,2\ldots
+$$
+
+이어야 한다. $n=2k+|m|$ 으로 정의하면
+
+$$
+E = (n+1)\hbar \omega
+$$
+
+이다.
+
+($8$) $n$ 이 짝수이면 $m=0,\,\pm 2,\,\pm 4,\ldots,\, \pm n$ 까지 가능하다. $n$ 이 홀수이면 $\pm 1,\,\pm 3,\,\ldots,\,\pm n$ 까지 가능하다. 이 때 가능한 $m$ 값의 개수는 $n+1$ 이다. @exr-shankar_10_2_2 의 경우 $n=n_x+n_y$ 에 대해 가능한 $(n_x,\,n_y)$ 의 가지수는 $n+1$ 이므로 일치한다.
+
+($9$) $n,\, m$ 에 의해 상태를 정할 수 있으며 이 상태를 $|\Psi_{n,\,m}\rangle$ 로 표기하자. $n=0$ 이면 $k=|m|=0$ 이므로, $R_0(y) = C_0e^{-y^2}$ 이고
+
+$$
+\Phi_{0,\,0}(\rho,\,\phi) = \sqrt{\dfrac{\mu \omega}{\pi \hbar}}e^{-\mu \omega \rho^2/2\hbar}
+$$
+
+이다. $n=1$ 일 경우 $m=\pm 1$ 이 가능하며,
+
+$$
+\Psi_{1,\, \pm 1}(\rho,\, \phi) = \dfrac{\mu \omega}{\sqrt{\pi} \hbar} \rho ^{-\mu \omega \rho^2/2\hbar}e^{\pm i\phi}
+$$
+
+이다.
+
+($10$) trivial.
+:::
+
+</br>
+
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-shankar_12_3_8}
+#### Shankar 12.3.8
+
+질량 $\mu$, 전하 $q$ 를 가진 입자가 아래의 벡터포텐셜 $\bf{A}$ 의 영향을 받는다.
+
+$$
+\bf{A} = \dfrac{B}{2}(-y\hat{\bf{e}}_y + x\hat{\bf{e}}_x).
+$$
+
+($1$) 자기장 $\bf{B} = B\hat{\bf{e}}_z$ 임을 보여라.
+
+($2$) 이 포텐셜의 고전입자는 각운동량 $\omega_0 = qB/\mu c$ 를 가진 원운동을 함을 보여라.
+
+($3$) 이 양자 문제의 해밀토니안 $H$ 는 아래와 같다.
+
+$$
+H = \dfrac{(P_x + qYB/2c)^2}{2\mu} + \dfrac{(P_y -qXB/2c)^2}{2\mu}.
+$$
+
+$Q=(cP_x+qYB/2)/qB$ 와 $P=(P_y-qXB/2c)$ 는 canonical 임을 보여라. $H$ 를 $P,\,Q$ 에 대해 쓰고 에너지 레벨이 $E=(n+\frac{1}{2})\hbar \omega$ 임을 보여라.
+
+($4$) $H_O(\omega_0/2,\, \mu)$ 를 진동수 $\omega_0/2$, 질량 $\mu$ 일 때의 2차원 등방 조화 진동자의 해밀토니안이라고 하자. $H$ 를 원래의 변수에 대해 전개하여 다음과 같음을 보여라.
+
+$$
+H = H_O\left(\dfrac{\omega_0}{2},\, \mu\right) - \dfrac{\omega_0}{2}L_z
+$$
+
+$H_O$ 를 대각화 하는 기저는 $H$ 를 대각화함을 보여라. 이 기저에서 $H$ 에 대해 허용된 에너지 레벨은 $E=\left(k+ \frac{1}{2}|m| - \frac{1}{2}m + \frac{1}{2}\right)\hbar \omega_0$ 임을 보여라. 여기서 $k$ 는 정수이며 $m$ 은 angular momentum 이다. 
+
 
 :::
 
 </div></br>
+
+::: {.solution}
+
+($1$), ($2$) trivial
+
+($3$) $H$ 를 $Q,\, P,\, \omega_0$ 에 대해 쓰면
+
+$$
+H = \dfrac{q^2B^2}{2\mu c^2}Q^2 + \dfrac{P^2}{2\mu} = \dfrac{P^2}{2\mu} + \dfrac{\mu \omega_0^2}{2}Q^2
+$$
+
+이다.
+
+$$
+\begin{aligned}
+\{Q,\,P\}&= \dfrac{\partial Q}{\partial X}\dfrac{\partial P}{\partial P_x} - \dfrac{\partial Q}{\partial P_x}\dfrac{\partial P}{\partial X} + \dfrac{\partial Q}{\partial Y}\dfrac{\partial P}{\partial P_y} - \dfrac{\partial Q}{\partial P_y}\dfrac{\partial P}{\partial Y} =1
+\end{aligned}
+$$
+
+이므로 정준변환이다. 따라서 $E=\left(n+\dfrac{1}{2}\right)\hbar \omega$ 이다.
+
+($4$) $H$ 를 전개하면 다음과 같다.
+
+$$
+\begin{aligned}
+H &= \dfrac{P_x^2+P_y^2}{2\mu} + \dfrac{\mu (\omega_0/2)^2(X^2+Y^2) }{2} + \dfrac{\omega_0}{2}\left(YP_x - XP_y\right) \\[0.3em]
+&= H_O\left(\dfrac{\omega_0}{2},\, \mu\right) - \dfrac{\omega_0}{2}L_z
+\end{aligned}
+$$
+
+또한 $[P_x^2,\,L_z]=[P_y^2,\,L_z]= [X^2,\,L_z]=[Y^2,\,L_z] = 0$ 이므로 $[H_O,\,L_z]=0$ 이다. 따라서 $H_O$ 를 대각화하는 기저는 $H$ 를 대각화한다. @exr-shankar_12_3_7 로 부터 $H_O$ 의 에너지값 $E_0$ 는
+
+$$
+E_0 = \left(2k+|m| + 1\right)\dfrac{h\hbar \omega_0}{2} = \left(k+ \dfrac{|m|}{2}+ \dfrac{1}{2}\right)\hbar \omega_0
+$$
+
+이므로 $H$ 의 에너지 고유값 $E$ 는
+
+$$
+E = E_0 - \dfrac{\omega_0}{2}\hbar m = \left(k+ \dfrac{|m|}{2} - \dfrac{m}{2} +\dfrac{1}{2}\right)\hbar \omega_0
+$$
+
+이다. 
+
+
+
+:::
+
+</br>
+
+### 연습문제 {.unnumbered}
+
+</br>
+
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-shankar_12_3_1}
+#### Shankar 12.3.1
+
+$\Psi_1,\, \Psi_2$ 가 모두
+
+$$
+\Psi_i(\rho,\, 0) = \Psi_i(\rho,\, 2\pi)
+$$
+
+이 이면 @eq-QM_conditino_for_hermiticity_of_lz 를 만족함을 보여라.
+:::
+
+</div></br>
+
+:::{.solution}
+@eq-QM_conditino_for_hermiticity_of_lz 에서 부분적분을 이용하면
+
+$$
+\begin{aligned}
+\text{[LHS]} &= (-i\hbar)\int_0^\infty \rho \, d\rho \left[\Psi_1^\ast(\rho,\, 2\pi)\Psi_2(0,\, 2\pi) - \Psi_1^\ast(\rho,\,0) \Psi_2(\rho,\,0)\right] \\
+&\qquad \qquad  + (i\hbar) \int_0^\infty \int_0^{2\pi} \Psi_2 \dfrac{\partial \Psi_1^\ast}{\partial \phi} \, \rho\, d\rho\, d\phi \\
+&= (-i\hbar)\int_0^\infty \rho \, d\rho \left[\Psi_1^\ast(\rho,\, 2\pi) \Psi_2(0,\, 2\pi) - \Psi_1^\ast(\rho,\,0) \Psi_2(\rho,\,0)\right] + \text{[RHS]}
+\end{aligned}
+$$
+
+이다. $\text{[LHS]}= \text{[RHS]}$ 이어야 하므로
+
+$$
+\int_0^\infty \rho \, d\rho \left(\Psi_1^\ast(\rho,\, 2\pi) \Psi_2(0,\, 2\pi) - \Psi_1^\ast(\rho,\,0) \Psi_2(\rho,\,0)\right) = 0
+$$
+
+이어야 한다. $\Psi_i(\rho,\,0) = \Psi_i (\rho,\, 2\pi)$ 라면 위 식이 $0$ 임은 쉽게 알 수 있다.
+:::
+
+</br>
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-shankar_12_3_2}
+#### Shankar 12.3.2
+
+$l_z$ 에 대한 제한조건을 다른 관점에서 볼 수 있다. 두 허용된 $l_z$ 값 $l_1,\,l_2$ 의 중첩을 생각하자.
+
+$$
+\Psi(\rho,\,\phi) = A(\rho) e^{i\phi l_1/\hbar} + B(\rho) e^{i\phi l_2/\hbar}.
+$$
+
+$2\pi$ 회전에 대해 우리는 같은 물리적인 상태를 얻어야 한다는 조건으로부터 $l_1-l_2 = m\hbar,\, m\in \mathbb{Z}$ 이어야 함을 보여라. 허용된 $l_z$ 는 $0$ 을 중심으로 대칭적이어야 한다는 것으로부터 이 $m$ 값은 $\ldots,\,-3\hbar/2, \, -\hbar/2,\, \hbar/2,\, 3\hbar/2,\,\ldots$ 이거나 $\ldots,\,-2\hbar,\, -\hbar,\,0,\, \hbar,\, 2\hbar,\ldots$ 이어야 한다는 것을 보여라.
+:::
+
+</div></br>
+
+::: {.solution}
+
+물리적으로 같은 상태라는 것은 $\Psi(\rho,\, \phi +2 \pi) = \Psi(\rho,\, \phi)$ 가 아니라 어떤 $\alpha \in \mathbb{C},\, |c|=1$ 에 대해 $\Psi(\rho,\,\phi+2\pi) = \alpha \Psi (\rho ,\, \phi)$ 이어야 한다는 것을 의미한다. 이로부터
+
+$$
+\begin{aligned}
+\Psi(\rho,\, \phi+2\pi) &= A(\rho) e^{i\phi l_1/\hbar} e^{2i\pi l_1\hbar} + B(\rho) e^{i\phi l_2/\hbar} e^{2i\pi l_2/\hbar} \\
+&= e^{2i\pi l_2/\hbar}\left(A(\rho)e^{i\phi l_1/\hbar} e^{2i\pi (l_1-l_2)/\hbar} + B(\rho)e^{i\phi l_2/\hbar}\right) 
+\end{aligned}
+$$
+
+이므로 $e^{2\pi (l_1-l_2)/\hbar}=1$, 즉 어떤 $m\in \mathbb{Z}$ 에 대해 $l_1-l_2 = m\hbar$ 이어야 한다.
+
+$l_2$ 가 허용된 값이라면 $-l_2$ 도 허용된 값이며, 어떤 정수 $n$ 에 대해 $l_1+l_2 = n\hbar$ 이어야 한다. 이 경우
+
+$$
+l_1 = \dfrac{(m+n)\hbar}{2},\qquad l_2 = \dfrac{(n-m)\hbar}{2}
+$$
+
+이다.
+
+$l_2=-l_1$ 이라면 $l_1 = \dfrac{m\hbar}{2}$ 이다. 어떤 짝수인 $m_0=2n_0$ 에 대해 $l_1=n_0\hbar$ 라고 하자. 만약 $l = m_0+1$ 이 허용된 값이라면 $l-l_1$ 이 $\hbar$ 의 정수배 이어야 하지만 $l-l_1=\hbar/2$ 로 조건에 위배된다. 이것을 확장시켜 가 보면 어떤 $l_1$ 이 $\hbar$ 의 정수배라면 허용된 $l_1$ 은 모두 $\hbar$ 의 정수배이며, $l_1$ 이 $\hbar$ 의 반정수배($-3/2,\, -1/2,/,1/2,/,3/2$ 등) 라면 허용된 $l_1$ 은 모두 $\hbar$ 의 반정수배라는 것을 알 수 있다.
+:::
+
+</br>
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-shankar_12_3_3}
+#### Shankar 12.3.3
+
+입자가 아래의 파동방정식으로 기술된다고 하자.
+
+$$
+\Psi(\rho,\, \phi) = A e^{-\rho^2/2\Delta^2} \cos^2\phi
+$$ 이 때 $l_z=0,\, 2\hbar,\, -2\hbar$ 에 대해 입자가 $l_z$ 상태에서 발견될 확률 $P(l_z)$ 를 구하라.
+:::
+
+</div></br>
+
+:::{.solution}
+
+$\cos^2\phi$ 를 $\Phi_m(\phi)$ 로 전개하면 상수 $c= \sqrt{2\pi}/4$ 에 대해 
+
+$$
+\begin{aligned}
+\cos^2\phi &= \dfrac{\cos 2\phi +1}{2} = -\dfrac{1}{2} + \dfrac{e^{2i\phi}}{4} + \dfrac{e^{-2i\phi}}{4} \\
+&= c ( -2\Phi_0(\phi) + \Phi_2(\phi) + \Phi_{-2}(\phi))
+\end{aligned}
+$$
+
+이므로,
+
+$$
+P(l_z=0) = \dfrac{1}{3},\, P(l_z=2)= P(l_z=-2)= \dfrac{1}{6}
+$$
+
+이다.
+:::
+
+</br>
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-shankar_12_3_4}
+#### Shankar 12.3.4
+
+입자의 파동함수가 아래와 같다.
+
+$$
+\Psi (\rho,\,\phi) = Ae^{-\rho^2/2\Delta^2} \left(\dfrac{\rho}{\Delta} \cos \phi + \sin \phi\right).
+$$
+
+이 때 $P(l_z=\hbar) = P(l_z=-\hbar)= \dfrac{1}{2}$ 임을 보여라.
+:::
+
+</div></br>
+
+::: {.solution}
+$$
+\begin{aligned}
+\dfrac{\rho}{\Delta}\cos\phi + \sin \phi &= \dfrac{\rho}{\Delta}\dfrac{e^{i\phi}+ e^{-i\phi}}{2} - \dfrac{i e^{i\phi} - ie^{-i\phi}}{2} \\
+&= \sqrt{2\pi}\left(\dfrac{\rho}{\Delta} - \dfrac{i}{2}\right) \Phi_1(\phi) + \sqrt{2\pi}\left(\dfrac{\rho}{\Delta} + \dfrac{i}{2}\right)\Phi_{-1}(\phi)  
+\end{aligned}
+$$
+
+이며 $\Phi_1$ 과 $\Phi_2$ 의 계수의 절대값이 같기 때문에, 그리고 $l_z=\pm\hbar$ 만이 허용되므로 두 상태의 확률은 같다.
+:::
+
+</br>
+
+## 3차원에서의 각운동량
 

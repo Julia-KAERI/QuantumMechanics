@@ -461,6 +461,41 @@ $$
 
 수학적으로 $1$ 차원 $N$ 입자 시스템과 $N$ 차원 $1$ 입자 시스템은 동등하다. 
 
+
+</br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-shankar_10_2_2}
+
+#### Shankar 10.2.2
+
+2차원 진동자의 해밀토니안은 다음과 같다.
+
+$$
+H = \dfrac{p_x^2+p_y^2}{2m} + \dfrac{m\omega_x^2}{2}x^2 + \dfrac{m\omega_y^2}{2}y^2.
+$$
+
+($1$) 허용된 에너지가 다음과 같음을 보여라.
+
+$$
+E=\left(n_x + \frac{1}{2}\right)\hbar \omega_x + \left(n_y + \frac{1}{2}\right)\hbar \omega_y,\qquad n_x,\,n_y = 0,\,1,\,2,\ldots
+$$ 
+
+($2$) 단일 조화진동자의 파동함수를 이용하여 위의 에너지 고유상태에 대한 파동함수를 알아보라. 이 파동함수는 패리티 변환($x\to -x,\, y \to -y$) 에 대해 even/odd 여부는 $n=n_x+n_y$ 에만 의존함을 보여라.
+
+:::
+
+</div></br>
+
+::: {.solution}
+
+($1$) $H_x = \dfrac{p_x^2}{2m} + \dfrac{m\omega_x^2}{2}x^2,\, H_y=\dfrac{p_y^2}{2m} + \dfrac{m\omega_y^2}{2}x^2$ 에 대해 $H=H_x+H_y$ 이며 분리가능한 해밀토니안이다. 
+
+($2$) @eq-QM_sho_parity_of_hermite_polynomials 으로 부터 자명하다.
+
+
+:::
+
 </br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
@@ -492,7 +527,7 @@ $$
 \langle x,\,y,\,z|n\rangle = \sum_{n_x+n_y+n_z=n} c_{n_x, n_y, n_z}\langle x|n_x\rangle \langle y|n_y\rangle \langle z| n_z\rangle
 $$
 
-이다. @eq-QM_sho_energy_eigenstate_with_hermite_polynomial 과 @eq-QM_generator_of_hermite_polynomial 로 부터 $\langle -x|n_x\rangle = (-1)^{n_x} \langle x|n_x\rangle$ 임을 안다. 따라서,
+이다. @eq-QM_sho_energy_eigenstate_with_hermite_polynomial 과 @eq-QM_sho_generator_of_hermite_polynomial 로 부터 $\langle -x|n_x\rangle = (-1)^{n_x} \langle x|n_x\rangle$ 임을 안다. 따라서,
 
 $$
 \langle -x,\,-y,\,-z|n\rangle = (-1)^n \langle x,\,y,\,z|n\rangle

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.42">
+<meta name="generator" content="quarto-1.6.43">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -37,7 +37,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-d4d76bf8491c20bad77d141916dc28e1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap-b467865d89f01302b3bb45791fa41ab5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
@@ -699,7 +699,7 @@ P(\omega) = \sum_{k=1}^n |\langle \omega,\, k|\psi\rangle|^2
 </section>
 <section id="sec-QM_commutativity_and_noncommutativity_of_operator" class="level3" data-number="4.3.15">
 <h3 data-number="4.3.15" class="anchored" data-anchor-id="sec-QM_commutativity_and_noncommutativity_of_operator"><span class="header-section-number">4.3.15</span> 연산자의 교환관계</h3>
-<p>우리가 <span class="math inline">\(\Omega\)</span> 를 측정하고 곧바로 <span class="math inline">\(\Lambda\)</span> 를 측정했을 때와 <span class="math inline">\(\Lambda\)</span> 를 측정하고 <span class="math inline">\(\Omega\)</span> 를 측정 했을 때 같은 결과를 기대 할 수 있을까? 답을 먼저 말하자면 일반적으로 그렇지 않다는 것이다. 이것은 양자역학이 기술되는 벡터공간의 일반적인 특징이다. <a href="../../src/CHM/mathematical_foundation.html#sec-CHM_compatible_operators">Compatible operators</a> 와 <a href="../CHM/mathematical_foundation.html#prp-CHM_uncertainty_1" class="quarto-xref">명제&nbsp;<span>1.5</span></a> 를 보라.</p>
+<p>우리가 <span class="math inline">\(\Omega\)</span> 를 측정하고 곧바로 <span class="math inline">\(\Lambda\)</span> 를 측정했을 때와 <span class="math inline">\(\Lambda\)</span> 를 측정하고 <span class="math inline">\(\Omega\)</span> 를 측정 했을 때 같은 결과를 기대 할 수 있을까? 답을 먼저 말하자면 일반적으로 그렇지 않다는 것이다. 이것은 양자역학이 기술되는 벡터공간의 일반적인 특징이다. <a href="../../src/CHM/mathematical_foundation.html#sec-CHM_compatible_operators">Compatible operators</a> 와 <a href="../CHM/mathematical_foundation.html#prp-CHM_uncertainty_1" class="quarto-xref">명제&nbsp;<span>1.8</span></a> 를 보라.</p>
 <p>두 연산자 <span class="math inline">\(\Omega,\, \Lambda\)</span> 에 대해 <span class="math inline">\([\Omega,\, \Lambda] := \Omega \Lambda - \Lambda \Omega\)</span> 로 정의되는 <span class="math inline">\([\,,\,]: \mathscr{H}\times \mathscr{H} \to \mathscr{H}\)</span> 를 <strong>교환자(commutator)</strong> 라고 한다. <span class="math inline">\([\Omega,\, \Lambda]=0\)</span> 일 때 두 연산자 <span class="math inline">\(\Omega,\, \Lambda\)</span> 는 <strong>compatible</strong> 하다고 하고 그렇지 않을 경우 <strong>incompatible</strong> 하다고 한다.</p>
 <p><br></p>
 <section id="두가지-경우" class="level4">
@@ -819,7 +819,7 @@ P(\omega) = |\langle \omega|\psi\rangle|^2 = \langle \psi|\omega\rangle \langle 
 <p><span class="math display">\[
 \psi_p (x) = A e^{ipx/\hbar}.
 \]</span></p>
-<p>정규화 조건 <span class="math inline">\(\langle p'|p\rangle = \delta (p-p')\)</span> 과 <a href="../CHM/mathematical_foundation.html#prp-CHM_properties_of_dirac_delta_function" class="quarto-xref">명제&nbsp;<span>1.6</span></a> 의 (<span class="math inline">\(7\)</span>) 로부터</p>
+<p>정규화 조건 <span class="math inline">\(\langle p'|p\rangle = \delta (p-p')\)</span> 과 <a href="../CHM/mathematical_foundation.html#prp-CHM_properties_of_dirac_delta_function" class="quarto-xref">명제&nbsp;<span>1.9</span></a> 의 (<span class="math inline">\(7\)</span>) 로부터</p>
 <p><span class="math display">\[
 \delta(p-p') = \int_{-\infty}^\infty \psi_{p'}^\ast (x) \, \psi_p(x) dx = |A|^2\int_{-\infty}^\infty e^{i(p-p')/\hbar}\, dx =2\pi \hbar^2 {|A|^2}\delta(p-p')
 \]</span></p>
@@ -938,7 +938,7 @@ P(x)\,dx = |\psi(x)|^2\, dx  = \dfrac{e^{-(x-a)^2/\Delta^2}}{\sqrt{\pi \Delta^2}
 <p><span class="math display">\[
 \psi_p(x) = \dfrac{1}{\sqrt{2\pi\hbar}}e^{ipx/\hbar}
 \]</span></p>
-<div class="page-columns page-full"><p>이것은 1차원 평면파이며 1 이 아닌 <span class="math inline">\(\delta(p-p')\)</span> 로 정규화된다<span class="math inline">\(^\ast\)</span>(<a href="../CHM/mathematical_foundation.html#prp-CHM_properties_of_dirac_delta_function" class="quarto-xref">명제&nbsp;<span>1.6</span></a> 의 (<span class="math inline">\(7\)</span>)).  이 평면파는 전체 공간에서 균일한 확률로 존재하며, 따라서 어떤 특정한 공간상의 유한한 구역에서 발견될 확률은 <span class="math inline">\(0\)</span> 에 가깝다. 우주가 유한하다면 <span class="math inline">\(0\)</span> 은 아니다. 이건은 매우 기묘한 조건이며, 따라서 어떤 물리적으로 실재하며 유의미한 상황도 기술할 수 없다. 즉 엄격한 의미에서라면 정확히 정의된 운동량에 대한 고유상태는 실재로 존재하지 않는다.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="math inline">\(^\ast\)</span> Shankar 는 이런 파동함수를 <em>improper wave vector</em> 라고 한다</span></div></div>
+<div class="page-columns page-full"><p>이것은 1차원 평면파이며 1 이 아닌 <span class="math inline">\(\delta(p-p')\)</span> 로 정규화된다<span class="math inline">\(^\ast\)</span>(<a href="../CHM/mathematical_foundation.html#prp-CHM_properties_of_dirac_delta_function" class="quarto-xref">명제&nbsp;<span>1.9</span></a> 의 (<span class="math inline">\(7\)</span>)).  이 평면파는 전체 공간에서 균일한 확률로 존재하며, 따라서 어떤 특정한 공간상의 유한한 구역에서 발견될 확률은 <span class="math inline">\(0\)</span> 에 가깝다. 우주가 유한하다면 <span class="math inline">\(0\)</span> 은 아니다. 이건은 매우 기묘한 조건이며, 따라서 어떤 물리적으로 실재하며 유의미한 상황도 기술할 수 없다. 즉 엄격한 의미에서라면 정확히 정의된 운동량에 대한 고유상태는 실재로 존재하지 않는다.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="math inline">\(^\ast\)</span> Shankar 는 이런 파동함수를 <em>improper wave vector</em> 라고 한다</span></div></div>
 <p>우리는 앞서 가우시안 모양의 파동함수에 대해 알아보았다. 만약 <span class="math inline">\(\Delta P\)</span> 가 <span class="math inline">\(p_0\)</span> 를 중심으로 매우 작은 <span class="math inline">\(\Delta P\)</span> 를 갖는 가우시안 파동함수라고 생각해보자. 즉</p>
 <p><span class="math display">\[
 \phi(p)= \dfrac{1}{(\pi \Delta^2)^{1/4}} \exp \left(- \dfrac{(p-p_0)^2}{2\Delta^2}\right)

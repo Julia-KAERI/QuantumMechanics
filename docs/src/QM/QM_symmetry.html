@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.42">
+<meta name="generator" content="quarto-1.6.43">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -57,7 +57,7 @@ div.csl-indent {
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-d4d76bf8491c20bad77d141916dc28e1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap-b467865d89f01302b3bb45791fa41ab5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
@@ -348,9 +348,8 @@ window.Quarto = {
   <li><a href="#passive-transform-으로-본-translation" id="toc-passive-transform-으로-본-translation" class="nav-link" data-scroll-target="#passive-transform-으로-본-translation"><span class="header-section-number">11.1.5</span> Passive transform 으로 본 translation</a></li>
   <li><a href="#sec-QM_symmetry_canonical_transform_and_unitary_transform" id="toc-sec-QM_symmetry_canonical_transform_and_unitary_transform" class="nav-link" data-scroll-target="#sec-QM_symmetry_canonical_transform_and_unitary_transform"><span class="header-section-number">11.1.6</span> 고전역학의 정준변환과 양자역학의 unitary 변환</a></li>
   <li><a href="#finite-translation" id="toc-finite-translation" class="nav-link" data-scroll-target="#finite-translation"><span class="header-section-number">11.1.7</span> Finite Translation</a></li>
-  <li><a href="#수학적인-보충" id="toc-수학적인-보충" class="nav-link" data-scroll-target="#수학적인-보충"><span class="header-section-number">11.1.8</span> 수학적인 보충</a></li>
-  <li><a href="#다입자-시스템의-경우" id="toc-다입자-시스템의-경우" class="nav-link" data-scroll-target="#다입자-시스템의-경우"><span class="header-section-number">11.1.9</span> 다입자 시스템의 경우</a></li>
-  <li><a href="#translational-invariance-의-의미" id="toc-translational-invariance-의-의미" class="nav-link" data-scroll-target="#translational-invariance-의-의미"><span class="header-section-number">11.1.10</span> Translational Invariance 의 의미</a></li>
+  <li><a href="#sec-QM_symmetry_translation_invariance_in_many_particles_system" id="toc-sec-QM_symmetry_translation_invariance_in_many_particles_system" class="nav-link" data-scroll-target="#sec-QM_symmetry_translation_invariance_in_many_particles_system"><span class="header-section-number">11.1.8</span> 다입자 시스템의 경우</a></li>
+  <li><a href="#sec-QM_symmetry_implication_of_translational_invariance" id="toc-sec-QM_symmetry_implication_of_translational_invariance" class="nav-link" data-scroll-target="#sec-QM_symmetry_implication_of_translational_invariance"><span class="header-section-number">11.1.9</span> Translational Invariance 의 의미</a></li>
   </ul></li>
   <li><a href="#time-translational-invariance" id="toc-time-translational-invariance" class="nav-link" data-scroll-target="#time-translational-invariance"><span class="header-section-number">11.2</span> Time Translational invariance</a></li>
   <li><a href="#parity-invariance" id="toc-parity-invariance" class="nav-link" data-scroll-target="#parity-invariance"><span class="header-section-number">11.3</span> Parity Invariance</a>
@@ -360,7 +359,11 @@ window.Quarto = {
   <li><a href="#parity-붕괴" id="toc-parity-붕괴" class="nav-link" data-scroll-target="#parity-붕괴"><span class="header-section-number">11.3.3</span> Parity 붕괴</a></li>
   <li><a href="#연습문제" id="toc-연습문제" class="nav-link" data-scroll-target="#연습문제"><span class="header-section-number">11.3.4</span> 연습문제</a></li>
   </ul></li>
-  <li><a href="#time-reversal-symmetry" id="toc-time-reversal-symmetry" class="nav-link" data-scroll-target="#time-reversal-symmetry"><span class="header-section-number">11.4</span> Time Reversal Symmetry</a></li>
+  <li><a href="#time-reversal-symmetry" id="toc-time-reversal-symmetry" class="nav-link" data-scroll-target="#time-reversal-symmetry"><span class="header-section-number">11.4</span> Time Reversal Symmetry</a>
+  <ul class="collapse">
+  <li><a href="#시간-역전의-고전역학적-관점" id="toc-시간-역전의-고전역학적-관점" class="nav-link" data-scroll-target="#시간-역전의-고전역학적-관점"><span class="header-section-number">11.4.1</span> 시간 역전의 고전역학적 관점</a></li>
+  <li><a href="#시간-역전의-양자역학적-관점" id="toc-시간-역전의-양자역학적-관점" class="nav-link" data-scroll-target="#시간-역전의-양자역학적-관점"><span class="header-section-number">11.4.2</span> 시간 역전의 양자역학적 관점</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -713,15 +716,21 @@ T\left(\dfrac{a}{N}\right) = I - \dfrac{ia}{\hbar N}P
 <p><span class="math display">\[
 T(a) = \lim_{N \to \infty} \left[T\left(\dfrac{a}{N}\right)\right]^N = \lim_{N \to \infty} \left[I - \dfrac{ia}{\hbar N}P\right]^N = e^{-iaP/\hbar}
 \]</span></p>
-<p>이다. 물론 <span class="math inline">\(P\)</span> 는 연산자이므로 함부로 대수적인</p>
+<p>이다. 물론 <span class="math inline">\(P\)</span> 는 연산자이므로 함부로 대수적인 exponential 의 정의</p>
 <p><span class="math display">\[
 \lim_{N \to \infty} \left(1 - \dfrac{a}{N}\right)^N =e^{-a}
 \]</span></p>
 <p>를 사용해서는 안되지만 이 경우 계산에 관련된 것이 연산자 <span class="math inline">\(P\)</span> 와 스칼라 값 뿐이며, 따라서 관계된 모든 값에 대해 <span class="math inline">\(P\)</span> 와의 commutativity 가 성립하기 때문에 <span class="math inline">\(T(a) =e^{-iaP/\hbar}\)</span> 이게 된다.</p>
+<p><span id="eq-QM_symmetry_finite_translation"><span class="math display">\[
+\boxed{T(a) = \exp \left(-\dfrac{iaP}{\hbar}\right)}.
+\tag{11.10}\]</span></span></p>
+<p>일단 <span class="math inline">\(T(a)\)</span> 가 유니타리 인 것은 <span class="math inline">\(P\)</span> 가 에르미트 연산자임을 이용하면 쉽게 보일 수 있다. 또한 Translation 연산자는 <span class="math inline">\(T(a)T(b) = T(a+b)\)</span> 가 성립해야 한다는 것이 자명하다. 이것은 양자역학과는 무관하며 오히려 우주의 공간적 성질과 관련이 있다. 일단 확인해 보기로 하자.</p>
+<p><span class="math display">\[
+T(a)T(b) = e^{-iaP/\hbar}e^{-ibP/\hbar}= e^{-i(a+b)P/\hbar} = T(a+b)
+\]</span></p>
 <p><br></p>
-</section>
-<section id="수학적인-보충" class="level3" data-number="11.1.8">
-<h3 data-number="11.1.8" class="anchored" data-anchor-id="수학적인-보충"><span class="header-section-number">11.1.8</span> 수학적인 보충</h3>
+<section id="수학적인-보충" class="level4">
+<h4 class="anchored" data-anchor-id="수학적인-보충"><strong>수학적인 보충</strong></h4>
 <p><a href="../CHM/some_proofs.html#prp-part3_Baker_Hausdorff_Lemma" class="quarto-xref">명제&nbsp;<span>3.2</span></a> (Baker-Housdorff lemma) 에 따라 다음이 성립한다.</p>
 <p><span class="math display">\[
 e^{-A}Be^A = B + [B,\,A] + \dfrac{1}{2!}[[B,\,A],\,A] + \cdots
@@ -732,12 +741,12 @@ e^{-A}Be^A = B + [B,\,A] + \dfrac{1}{2!}[[B,\,A],\,A] + \cdots
 T^\dagger(a) \Omega T(a) &amp;= e^{iaP/\hbar}\Omega e^{-iaP/\hbar} \\
 &amp;= \Omega - \dfrac{ai}{\hbar}[\Omega,\, P] - \dfrac{a^2}{2\hbar^2}[[\Omega,\, P],\,P] + \cdots
 \end{aligned}
-\tag{11.10}\]</span></span></p>
+\tag{11.11}\]</span></span></p>
 <p>임을 안다.</p>
 <br>
 <div class="border" style="background-color:#F2F4F4  ;padding:5px;">
 <div id="exm-QM_symmetry_transformation_of_lagrangian" class="theorem example">
-<p><span class="theorem-title"><strong>예제 11.2</strong></span> <a href="#eq-part3_transformation_of_operator_by_translation" class="quarto-xref">식&nbsp;<span>11.10</span></a> 에서 <span class="math inline">\(\Omega = X^2\)</span> 일 경우 직관적으로 <span class="math inline">\(T^\dagger(a)X^2T(a) = (X+aI)^2\)</span> 임을 안다. 이를 수학적으로 보이자.</p>
+<p><span class="theorem-title"><strong>예제 11.2</strong></span> <a href="#eq-part3_transformation_of_operator_by_translation" class="quarto-xref">식&nbsp;<span>11.11</span></a> 에서 <span class="math inline">\(\Omega = X^2\)</span> 일 경우 직관적으로 <span class="math inline">\(T^\dagger(a)X^2T(a) = (X+aI)^2\)</span> 임을 안다. 이를 수학적으로 보이자.</p>
 <p><span class="math display">\[
 \begin{aligned}
 \left[X^2,\, P\right] &amp;= X[X,\,P] + [X,\,P]X = 2i\hbar X, \\
@@ -806,12 +815,13 @@ T^\dagger(a) X^2 T(a) &amp;= X^2 +2aX + a^2I = (X+aI)^2
 </div>
 <p><br></p>
 </section>
-<section id="다입자-시스템의-경우" class="level3" data-number="11.1.9">
-<h3 data-number="11.1.9" class="anchored" data-anchor-id="다입자-시스템의-경우"><span class="header-section-number">11.1.9</span> 다입자 시스템의 경우</h3>
-<p>입자가 하나 이상인 시스테의 경우 infinitesimal translation <span class="math inline">\(T_\varepsilon\)</span> 을 다음과 같이 정의한다.</p>
-<p><span class="math display">\[
+</section>
+<section id="sec-QM_symmetry_translation_invariance_in_many_particles_system" class="level3" data-number="11.1.8">
+<h3 data-number="11.1.8" class="anchored" data-anchor-id="sec-QM_symmetry_translation_invariance_in_many_particles_system"><span class="header-section-number">11.1.8</span> 다입자 시스템의 경우</h3>
+<p>입자가 하나 이상인 시스템의 경우 infinitesimal translation <span class="math inline">\(T_\varepsilon\)</span> 을 다음과 같이 정의한다.</p>
+<p><span id="eq-QM_symmetry_infinitesima_translation_for_many_particles_system"><span class="math display">\[
 \langle x_1,\ldots,x_N | T_\varepsilon |\Psi\rangle = \Psi (x_1-\varepsilon,\ldots,\, x_N-\varepsilon)
-\]</span></p>
+\tag{11.12}\]</span></span></p>
 <p><span class="math inline">\(T_\varepsilon\)</span> 에서 <span class="math inline">\(\varepsilon \to 0\)</span> 인 극한에서 <span class="math inline">\(T=I\)</span> 이므로 어떤 generator <span class="math inline">\(P\)</span> 를 생각하여 <span class="math inline">\(\varepsilon\)</span> 에 대한 1차항까지 고려하면 <span class="math inline">\(T=I - \dfrac{i\varepsilon}{\hbar}P\)</span> 라고 놓을 수 있다. 이제 위 식의 양변을 <span class="math inline">\(\varepsilon\)</span> 에 대한 1차항까지 비교하면</p>
 <p><span class="math display">\[
 \begin{aligned}
@@ -819,61 +829,80 @@ T^\dagger(a) X^2 T(a) &amp;= X^2 +2aX + a^2I = (X+aI)^2
 &amp;= \Psi(x_1,\ldots,,x_N) - \left(\dfrac{i\varepsilon}{\hbar}\right)\sum_{j=1}^N P_j\Psi(x)
 \end{aligned}
 \]</span></p>
-<p>이므로</p>
+<p>이므로 총 각운동량 <span class="math inline">\(P\)</span> 를 고전역학에서와 같이 개별 각운동량의 합으로 <span class="math inline">\(P=\sum_j P_j\)</span> 로 정의한다면</p>
 <p><span class="math display">\[
 T_\varepsilon = I - \dfrac{i\varepsilon}{\hbar} \sum_{j=1}^N P_j = I - \dfrac{i\varepsilon}{\hbar}P
 \]</span></p>
-<p>라 놓을 수 있다.</p>
-<p><span class="math display">\[
-P = \sum_j P_j
-\]</span></p>
-<p>는 총 운동량(total momentum) 이라고 부를 수 있다는 것을 알 수 있다. 이로부터 <span class="math inline">\(T_\varepsilon\)</span> 에 대해 해밀토니안이 불변이면 총 각운동량이 보존된다는 것을 알 수 있다.</p>
+<p>라 놓을 수 있다. 이로부터 <span class="math inline">\(T_\varepsilon\)</span> 에 대해 해밀토니안이 불변이면 총 각운동량이 보존된다는 것을 알 수 있다.</p>
 <p><br></p>
 </section>
-<section id="translational-invariance-의-의미" class="level3" data-number="11.1.10">
-<h3 data-number="11.1.10" class="anchored" data-anchor-id="translational-invariance-의-의미"><span class="header-section-number">11.1.10</span> Translational Invariance 의 의미</h3>
-<p><span class="math inline">\(T(a)\)</span> 는 유니타리이므로 translation 에 대해 해밀토니안이 불변이라면 <span class="math inline">\(T(a)^\dagger HT=H\)</span> 로부터 <span class="math inline">\(T(a)H=HT(a)\)</span> 이다. 이로부터 <span class="math inline">\(T(a)U(t)=U(t)T(a)\)</span> 임을 알 수 있다. <span class="math inline">\(t=0\)</span> 에 <span class="math inline">\(|\Psi(0)\rangle\)</span> 과 <span class="math inline">\(T(a)|\Psi(0)\rangle\)</span> 인 상태를 준비했다면 <span class="math inline">\(T(a)U(t)|\Psi(0)\rangle = U(t)\left(T(a)|\Psi(0)\rangle\right)\)</span> 이다. 즉 <span class="math inline">\(x=0\)</span> 인 관찰자가 <span class="math inline">\(|\Psi(0)\rangle\)</span> 의 시간에 대한 변화를 보는 것과 <span class="math inline">\(x=a\)</span> 에서의 관찰자가 <span class="math inline">\(T(a)|\Psi(0)\rangle\)</span> 의 시간에 대한 변화를 보는 것은 상대적인 위치의 차이를 제외하면 동일하는 것을 알 수 있다.</p>
+<section id="sec-QM_symmetry_implication_of_translational_invariance" class="level3" data-number="11.1.9">
+<h3 data-number="11.1.9" class="anchored" data-anchor-id="sec-QM_symmetry_implication_of_translational_invariance"><span class="header-section-number">11.1.9</span> Translational Invariance 의 의미</h3>
+<p><span class="math inline">\(T(a)\)</span> 는 유니타리이므로 translation 에 대해 해밀토니안이 불변이라면 <span class="math inline">\(T(a)^\dagger HT(a)=H\)</span> 로부터 <span class="math inline">\(T(a)H=HT(a)\)</span> 임을 안다. 이로부터 <span class="math inline">\(T(a)U(t)=U(t)T(a)\)</span> 임을 알 수 있다. <span class="math inline">\(t=0\)</span> 에 <span class="math inline">\(|\Psi(0)\rangle\)</span> 과 <span class="math inline">\(T(a)|\Psi(0)\rangle\)</span> 인 상태를 준비했다면 <span class="math inline">\(T(a)U(t)|\Psi(0)\rangle = U(t)\left(T(a)|\Psi(0)\rangle\right)\)</span> 이다. 즉 <span class="math inline">\(x=0\)</span> 인 관찰자가 <span class="math inline">\(|\Psi(0)\rangle\)</span> 의 시간에 대한 변화를 보는 것과 <span class="math inline">\(x=a\)</span> 에서의 관찰자가 <span class="math inline">\(T(a)|\Psi(0)\rangle\)</span> 의 시간에 대한 변화를 보는 것은 상대적인 위치의 차이를 제외하면 동일하는 것을 알 수 있다.</p>
 <p>우리가 지금까지 발견한 모든 기본적인 상호작용은 translational invariance 의 성질을 가지며 이는 근원적인 의미에서 공간의 균일성(homogeneity) 를 의미하며, 물리적으로는 운동량 보존으로 나타난다.</p>
 <p><br></p>
 </section>
 </section>
 <section id="time-translational-invariance" class="level2" data-number="11.2">
 <h2 data-number="11.2" class="anchored" data-anchor-id="time-translational-invariance"><span class="header-section-number">11.2</span> Time Translational invariance</h2>
-<p>고전적으로 공간의 균일성이 운동량 보존으로 나타난다면 시간의 균일성은 해밀토니안의 보존으로 나타나는데 이것은 양자세계에서도 마찬가지이다. 시간에 대한 infinitesimal translation 을 생각하자. 시간 <span class="math inline">\(t_1\)</span> 에 <span class="math inline">\(|\Psi_0\rangle\)</span> 의 상태로 준비되었다고 하자. Infinitesimal time <span class="math inline">\(\varepsilon\)</span> 후의 상태는</p>
+<p>고전적으로 공간의 균일성이 운동량 보존으로 나타난다면 시간의 균일성은 해밀토니안의 보존으로 나타나는데 이것은 양자세계에서도 마찬가지이다. 시간에 대한 infinitesimal translation 을 생각하자. 시간 <span class="math inline">\(t_1\)</span> 에 <span class="math inline">\(|\Psi_0\rangle\)</span> 의 상태로 준비되었다고 하자. Infinitesimal time <span class="math inline">\(\varepsilon\)</span> 후의 상태를 <span class="math inline">\(\varepsilon\)</span> 에 대한 1차항까지 표현하면 다음과 같다.</p>
 <p><span class="math display">\[
 |\Psi(t_1+\varepsilon)\rangle = \left[I - \dfrac{i\varepsilon}{\hbar} H(t_1)\right] |\Psi_0\rangle
 \]</span></p>
-<hr>
+<p>우리가 같은 초기 상티 <span class="math inline">\(|\Psi_0\rangle\)</span> 에 대해 <span class="math inline">\(t_2\)</span> 의 시간에 똑같은 실험을 수행한다면</p>
+<p><span class="math display">\[
+|\Psi(t_2+\varepsilon)\rangle = \left[I - \dfrac{i\varepsilon}{\hbar} H(t_2)\right] |\Psi_0\rangle
+\]</span></p>
+<p>이며 <span class="math inline">\(|\Psi(t_1+\varepsilon)\rangle\)</span> 과 <span class="math inline">\(|\Psi(t_2+\varepsilon)\rangle\)</span> 이 같을 조건은</p>
+<p><span class="math display">\[
+0 = \Psi(t_1+\varepsilon)\rangle - |\Psi(t_2+\varepsilon)\rangle = \left(-\dfrac{i\varepsilon}{\hbar}\right)[H(t_2)-H(t_1)]|\Psi_0\rangle
+\]</span></p>
+<p>이다. 임의의 초기 상태 <span class="math inline">\(|\Psi_0\rangle\)</span> 에 대해 성립해야 하므로</p>
+<p><span class="math display">\[
+H(t_2)=H(t_1)
+\]</span></p>
+<p>이며, <span class="math inline">\(t_1\)</span> 과 <span class="math inline">\(t_2\)</span> 는 임의의 시간이므로 <span class="math inline">\(H\)</span> 는 시간에 대해 독립적이어야 한다. 즉,</p>
+<p><span class="math display">\[
+\dfrac{dH}{dt}=0
+\]</span></p>
+<p>이어야 한다. 에렌페스트의 정리 <span class="math inline">\(i\hbar \langle\dot{\Omega} \rangle = \langle [\Omega,\, H] \rangle\)</span> 로부터</p>
+<p><span class="math display">\[
+\langle \dot{H}\rangle = 0
+\]</span></p>
+<p>을 얻는다. 위 식이 에너지 보존 법칙이다.</p>
 <p><br></p>
 </section>
 <section id="parity-invariance" class="level2" data-number="11.3">
 <h2 data-number="11.3" class="anchored" data-anchor-id="parity-invariance"><span class="header-section-number">11.3</span> Parity Invariance</h2>
+<p>고전적으로 패리티 변환은 어떤 정해진 원점에 대해 아래와 같은 변환이다.</p>
+<p><span id="eq-QM_symmetry_classical_parity"><span class="math display">\[
+\boldsymbol{x} \to -\boldsymbol{x},\qquad \boldsymbol{p} \to -\boldsymbol{p}.
+\tag{11.13}\]</span></span></p>
+<p>공간 혹은 시간에서의 translation 과는 달리 parity 변환은 이산적인 변환이다.</p>
+<p><br></p>
 <section id="active-transformation-의-관점에서" class="level3" data-number="11.3.1">
 <h3 data-number="11.3.1" class="anchored" data-anchor-id="active-transformation-의-관점에서"><span class="header-section-number">11.3.1</span> Active transformation 의 관점에서</h3>
-<p>고전적으로 parity 변환은 다음과 같은 변환이다. <span id="eq-part3_classical_parity"><span class="math display">\[
-x \longrightarrow -x,\qquad p \longrightarrow -p
-\tag{11.11}\]</span></span></p>
-<p>시간, 공간 에 대한 translation 그리고 잠시 후에 다룰 회전에 대한 변환은 연속적인 변환이지만 Parity 는 불연속적인 변환이며 이는 양자이론에서도 마찬가지이다. 양자이론에에서의 parity 변환은 <span class="math inline">\(\Pi\)</span> 연산자로 표기하며 다음과 같이 정의된다.</p>
+<p>양자이론에에서의 parity 변환은 <span class="math inline">\(\Pi\)</span> 연산자로 표기하며 다음과 같이 정의된다.</p>
 <p><span id="eq-part3_quantum_parity"><span class="math display">\[
-\Pi|x\rangle = |-x\rangle.
-\tag{11.12}\]</span></span></p>
+\Pi|\boldsymbol{x}\rangle = |-\boldsymbol{x}\rangle.
+\tag{11.14}\]</span></span></p>
 <p>이로부터,</p>
 <p><span class="math display">\[
 \begin{aligned}
-\langle x|\Pi|\Psi\rangle &amp;= \int \langle x|\Pi |x'\rangle \langle x'|\Psi\rangle\, dx' = \int \langle x|-x'\rangle\, \Psi(x') = \int \delta(x+x')\Psi(x')\, dx' \\
+\langle \boldsymbol{x}|\Pi|\Psi\rangle &amp;= \int \langle \boldsymbol{x}|\Pi |\boldsymbol{x}'\rangle \langle \boldsymbol{x}'|\Psi\rangle\, d\boldsymbol{x}' = \int \langle \boldsymbol{x}|-\boldsymbol{x}'\rangle\, \Psi(\boldsymbol{x}') d\boldsymbol{x}' = \int \delta(\boldsymbol{x}+\boldsymbol{x}')\Psi(\boldsymbol{x}')\, d\boldsymbol{x}' \\
 &amp;= \Psi(-x)
 \end{aligned}
 \]</span></p>
 <p>을 얻는다. 또한</p>
 <p><span class="math display">\[
 \begin{aligned}
-\Pi |p\rangle &amp;= \int |x\rangle \langle x|\Pi| x'\rangle \langle x'|p\rangle \, dx\,dx' = \int |x\rangle \langle x|-x'\rangle \langle x'|p\rangle \, dx\,dx'  \\
-&amp;= \int |x\rangle \delta (x'+x) \langle x'|p\rangle \, dx\, dx' = \int|x\rangle \langle -x|p\rangle \,dx
+\Pi |\boldsymbol{p}\rangle &amp;= \int |\boldsymbol{x}\rangle \langle \boldsymbol{x}|\Pi| \boldsymbol{x}'\rangle \langle \boldsymbol{x}'|\boldsymbol{p}\rangle \, d\boldsymbol{x}\,d\boldsymbol{x}' = \int |\boldsymbol{x}\rangle \langle \boldsymbol{x}|-\boldsymbol{x}'\rangle \langle \boldsymbol{x}'|\boldsymbol{p}\rangle \, d\boldsymbol{x}\,d\boldsymbol{x}'  \\
+&amp;= \int |\boldsymbol{x}\rangle \delta (\boldsymbol{x}'+\boldsymbol{x}) \langle  \boldsymbol{x}'|\boldsymbol{p}\rangle \, d\boldsymbol{x}\, d\boldsymbol{x}' = \int|\boldsymbol{x}\rangle \langle -\boldsymbol{x}|\boldsymbol{p}\rangle \,d\boldsymbol{x}
 \end{aligned}
 \]</span></p>
-<p>인데 <span class="math inline">\(\langle x|p\rangle = (2\pi \hbar)^{-1/2}e^{-ipx/\hbar}\)</span> 이므로 <span class="math inline">\(\langle -x|p\rangle = \langle x|-p\rangle\)</span> 이다. 즉,</p>
+<p>인데 <span class="math inline">\(\langle \boldsymbol{x}|\boldsymbol{p}\rangle = (2\pi \hbar)^{-3/2}e^{-i\boldsymbol{p\cdot x}/\hbar}\)</span> 이므로 <span class="math inline">\(\langle -\boldsymbol{x}|\boldsymbol{p}\rangle = \langle \boldsymbol{x}|-\boldsymbol{p}\rangle\)</span> 이다. 즉,</p>
 <p><span class="math display">\[
-\Pi |p\rangle = \int |x\rangle \langle x|-p\rangle\,dx = |-p\rangle
+\Pi |\boldsymbol{p}\rangle = \int |\boldsymbol{x}\rangle \langle \boldsymbol{x}|-\boldsymbol{p}\rangle\,d\boldsymbol{x} = |-\boldsymbol{p}\rangle
 \]</span></p>
 <p>이다. 이로부터 우리는 <span class="math inline">\(\Pi\)</span> 연산자가 고전적인 parity 변환과 동등하다는 것을 알 수 있다.</p>
 <br>
@@ -884,21 +913,22 @@ x \longrightarrow -x,\qquad p \longrightarrow -p
 <p>  (<span class="math inline">\(2\)</span>) <span class="math inline">\(\Pi\)</span> 는 에르미트이며 유니타리인 연산자이다.</p>
 <p>  (<span class="math inline">\(3\)</span>) <span class="math inline">\(\Pi\)</span> 의 고유값은 <span class="math inline">\(\pm 1\)</span> 이다.</p>
 </div>
+</div>
+<p><br></p>
 <div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(1\)</span>) <span class="math inline">\(\Pi^2|x\rangle = \Pi |-x\rangle = |x\rangle\)</span> 이므로 <span class="math inline">\(\Pi^2=I\)</span> 이다.</p>
+<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(1\)</span>) <span class="math inline">\(\Pi^2|\boldsymbol{x}\rangle = \Pi |-\boldsymbol{x}\rangle = |\boldsymbol{x}\rangle\)</span> 이므로 <span class="math inline">\(\Pi^2=I\)</span> 이다.</p>
 <p>(<span class="math inline">\(2\)</span>) 우선 에르미트 임을 보이자.</p>
 <p><span class="math display">\[
 \begin{aligned}
-\langle x'|\Pi | x\rangle &amp;= \langle x'|-x\rangle = \delta (x'+x), \\
-\overline{\langle x|\Pi|x'\rangle} &amp;= \delta^\ast (x'+x) = \delta (x'+x)
+\langle \boldsymbol{x}'|\Pi | \boldsymbol{x}\rangle &amp;= \langle \boldsymbol{x}'|-\boldsymbol{x}\rangle = \delta (\boldsymbol{x}'+\boldsymbol{x}), \\
+\overline{\langle \boldsymbol{x}|\Pi|\boldsymbol{x}'\rangle} &amp;= \delta^\ast (\boldsymbol{x}'+\boldsymbol{x}) = \delta (\boldsymbol{x}'+\boldsymbol{x})
 \end{aligned}
 \]</span></p>
-<p>이며 <span class="math inline">\(\overline{\langle x|\Pi|x'\rangle} = \langle x'|\Pi^\dagger |x\rangle\)</span> 이므로 <span class="math inline">\(\Pi = \Pi^\dagger\)</span> 이다. 따라서 <span class="math inline">\(\Pi\)</span> 는 에르미트 연산자이다. 그리고 <span class="math inline">\(I=\Pi^2 = \Pi^\dagger \Pi\)</span> 이므로 <span class="math inline">\(\Pi\)</span> 는 유니타리이다.</p>
+<p>이며 <span class="math inline">\(\overline{\langle \boldsymbol{x}|\Pi|\boldsymbol{x}'\rangle} = \langle \boldsymbol{x}'|\Pi^\dagger |\boldsymbol{x}\rangle\)</span> 이므로 <span class="math inline">\(\Pi = \Pi^\dagger\)</span> 이다. 따라서 <span class="math inline">\(\Pi\)</span> 는 에르미트 연산자이다. 그리고 <span class="math inline">\(I=\Pi^2 = \Pi^\dagger \Pi\)</span> 이므로 <span class="math inline">\(\Pi\)</span> 는 유니타리이다.</p>
 <p>(<span class="math inline">\(3\)</span>) <span class="math inline">\(|\pi\rangle\)</span> 을 <span class="math inline">\(\Pi\)</span> 의 고유상태라고 하자. <span class="math inline">\(\Pi^2|\pi\rangle = |\pi\rangle\)</span> 이므로 <span class="math inline">\(\Pi\)</span> 의 고유값은 <span class="math inline">\(\pm 1\)</span> 이다.</p>
 </div>
-</div>
 <p><br></p>
-<p>위의 연습문제에서 보았듯이 parity 연산자의 고유값은 <span class="math inline">\(\pm 1\)</span> 이다. 이 경우 고유값이 <span class="math inline">\(+1\)</span> 인 고유상태를 <strong>even parity</strong> 라고 하고 <span class="math inline">\(-1\)</span> 인 고유상태를 <strong>odd parity</strong> 라고 한다. <span class="math inline">\(\Psi(x)\)</span> 에 대해 <span class="math inline">\(\Psi(-x)= \Psi(x)\)</span> 이면 even parity 파동함수이며 <span class="math inline">\(\Psi(-x)=-\Psi(x)\)</span> 이면 odd parity 파동함수이다.</p>
+<p>위의 연습문제에서 보았듯이 parity 연산자의 고유값은 <span class="math inline">\(\pm 1\)</span> 이다. 이 경우 고유값이 <span class="math inline">\(+1\)</span> 인 고유상태를 <strong>even parity</strong> 라고 하고 <span class="math inline">\(-1\)</span> 인 고유상태를 <strong>odd parity</strong> 라고 한다. <span class="math inline">\(\Psi(\boldsymbol{x})\)</span> 에 대해 <span class="math inline">\(\Psi(-\boldsymbol{x})= \Psi(\boldsymbol{x})\)</span> 이면 even parity 파동함수이며 <span class="math inline">\(\Psi(-\boldsymbol{x})=-\Psi(\boldsymbol{x})\)</span> 이면 odd parity 파동함수이다.</p>
 <br>
 <div class="border" style="background-color:#F2F4F4  ;padding:5px;">
 <div id="exm-parity_in_other_basis" class="theorem example">
@@ -1005,7 +1035,53 @@ i\hbar \langle \dot P\rangle =  \langle [P,\, H]\rangle = \left\langle \dfrac{-i
 </section>
 <section id="time-reversal-symmetry" class="level2" data-number="11.4">
 <h2 data-number="11.4" class="anchored" data-anchor-id="time-reversal-symmetry"><span class="header-section-number">11.4</span> Time Reversal Symmetry</h2>
-<p>– to be done –</p>
+<section id="시간-역전의-고전역학적-관점" class="level3" data-number="11.4.1">
+<h3 data-number="11.4.1" class="anchored" data-anchor-id="시간-역전의-고전역학적-관점"><span class="header-section-number">11.4.1</span> 시간 역전의 고전역학적 관점</h3>
+<p>고전물리학적 관점에서 원래의 상태 <span class="math inline">\(x(t),\, p(t)\)</span> 에 대해 <span class="math inline">\(t=0\)</span> 에서 시간 역전을 시킬 때 시간 역전된 상태를 <span class="math inline">\(x_r(t),\, p_r(t)\)</span> 라고 하자. 그렇다면 우선</p>
+<p><span class="math display">\[
+x_r(t) = x(-t)
+\]</span></p>
+<p>이며,</p>
+<p><span class="math display">\[
+\dot{x}_r(t) = \dfrac{d x_r(t)}{dt} = \dfrac{d x(-t)}{d(t)} = - \dfrac{dx(-t)}{d(-t)} = - \dot{x}(-t)
+\]</span></p>
+<p>이고, 뉴턴의 제 2 법칙을 생각하자. 그리고 힘 <span class="math inline">\(F\)</span> 가 <span class="math inline">\(x\)</span> 에만 의존하며 <span class="math inline">\(\dot{x}\)</span> 에 독립적인 경우를 생각하자.</p>
+<p><span class="math display">\[
+m \dfrac{d^2x_r(t)}{dt^2} = F(x_r)
+\]</span></p>
+<p>은 시간 역전에 대해 <span class="math display">\[
+m \dfrac{d^2 x_r(t)}{dt^2} = m \dfrac{d^2 x(-t)}{d(-t)^2} = F(x(-t)) = F(x_r(t))
+\]</span></p>
+<p>이다. 즉 뉴턴의 제 2 법칙은 힘이 위치에만 의존할 경우 시간역전에 대해 불변(Time reversal invarance, TRI) 이다. 그러나 힘이 속도에 의존할 경우 즉,</p>
+<p><span class="math display">\[
+F= F(x,\, \dot{x})
+\]</span></p>
+<p>일 경우</p>
+<p><span class="math display">\[
+m \dfrac{d^2 x_r(t)}{dt^2} = F(x_r(t), - \dot{x}_r(t))
+\]</span></p>
+<p>이며 따라서 TRI 가 아니다.</p>
+<p><br></p>
+</section>
+<section id="시간-역전의-양자역학적-관점" class="level3" data-number="11.4.2">
+<h3 data-number="11.4.2" class="anchored" data-anchor-id="시간-역전의-양자역학적-관점"><span class="header-section-number">11.4.2</span> 시간 역전의 양자역학적 관점</h3>
+<p>시간 독립적인 슈뢰딩거 방정식을 생각하자. 이 때 <span class="math inline">\(H=H(x)\)</span> 인 경우만 생각한다.</p>
+<p><span class="math display">\[
+i\hbar \dfrac{\partial \Psi (x,\,t)}{\partial t} = H(x)\Psi(x,\,t).
+\]</span></p>
+<p>시간 역전된 파동함수 <span class="math inline">\(\Psi(x,\,-t)=\Psi_r(x,\,t)\)</span> 에 대한 슈뢰딩거 방정식을 얻어보자. <span class="math inline">\(t\to -t\)</span> 변환에 대해</p>
+<p><span class="math display">\[
+-i\hbar \dfrac{\partial \Psi_r(x,\,t)}{\partial t} = H(x) \Psi_r(x,\,t)
+\]</span></p>
+<p>이며, 양 변에 Hermite conjugate 를 취하면</p>
+<p><span class="math display">\[
+i\hbar \dfrac{\partial \Psi_r^\ast (x,\, t)}{\partial t} = H(x) \Psi^\ast_r (x,\, t)
+\]</span></p>
+<p>이다. 즉 <span class="math inline">\(\Psi_r^\ast(x,\,t)\)</span> 와 <span class="math inline">\(\Psi(x,\,t)\)</span> 는 같은 슈뢰딩거 방정식을 만족하며 따라서 <span class="math inline">\(\Psi_r(x,\,t) = \Psi^\ast (x,\,t)\)</span> 임을 알 수 있다. 즉 시간 역전 변환은</p>
+<p><span class="math display">\[
+\Psi(x,\,t) \longrightarrow \Psi^\ast(x,\,t)
+\]</span></p>
+<p>임을 알 수 있다.</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
@@ -1013,6 +1089,7 @@ i\hbar \langle \dot P\rangle =  \langle [P,\, H]\rangle = \left\langle \dfrac{-i
 Shankar, R. 1994. <em>Principles of Quantum Mechanics</em>. Springer. <a href="https://books.google.co.kr/books?id=2zypV5EbKuIC">https://books.google.co.kr/books?id=2zypV5EbKuIC</a>.
 </div>
 </div>
+</section>
 </section>
 
 </main> <!-- /main -->

@@ -23,7 +23,7 @@ $$
 
 $$
 H = \dfrac{P^2}{2m} + \dfrac{1}{2}m\omega^2X^2
-$$ {#eq-QM_1d_sho}
+$$ {#eq-QM_sho_1d_sho}
 
 </br>
 
@@ -45,26 +45,26 @@ $$
 
 </br>
 
-이제 @eq-QM_1d_sho 로 주어진 시간독립 슈뢰딩거 방정식을 풀어보자. 여기에는 두가지 방법이 있다. 하나는 $X$ 기저에서 (혹은 $P$ 기저에서) 멱급수를 이용하여 미분방정식을 푸는 것이고 다른 하나는 아주 독특한 사다리 연산자(ladder operator) 를 도입하는 것이다. 여기서는 후자를 통해 단순조화진동자 문제에 접근한다.
+이제 @eq-QM_sho_1d_sho 로 주어진 시간독립 슈뢰딩거 방정식을 풀어보자. 여기에는 두가지 방법이 있다. 하나는 $X$ 기저에서 (혹은 $P$ 기저에서) 멱급수를 이용하여 미분방정식을 푸는 것이고 다른 하나는 아주 독특한 사다리 연산자(ladder operator) 를 도입하는 것이다. 여기서는 후자를 통해 단순조화진동자 문제에 접근한다.
 
 </br>
 
 ## 사다리 연산자를 이용한 방법
 
 
-### 사다리 연산자와 해밀토니안 {#sec-QM_ladder_operator_and_hamiltonian}
+### 사다리 연산자와 해밀토니안 {#sec-QM_sho_ladder_operator_and_hamiltonian}
 
 $X$, $P$ 에 대해 연산자 $a$ 를 다음과 같이 정의한다. 
 
 $$
 a = \left(\dfrac{m\omega}{2\hbar}\right)^{1/2} X + i \left(\dfrac{1}{2m\omega \hbar}\right)^{1/2} P.
-$$ {#eq-QM_ladder_operator_a}
+$$ {#eq-QM_sho_ladder_operator_a}
 
 그렇다면 $a$ 의 hermitian conjugate $a^\dagger$ 는 다음과 같다.
 
 $$
 a^\dagger = \left(\dfrac{m\omega}{2\hbar}\right)^{1/2} X - i \left(\dfrac{1}{2m\omega \hbar}\right)^{1/2} P
-$$ {#eq-QM_ladder_operator_a_dagger}
+$$ {#eq-QM_sho_ladder_operator_a_dagger}
 
 우리는 $[X,\,P] = i\hbar I$ 임을 안다. 이로부터, 
 
@@ -100,7 +100,7 @@ $$
 \left[ a,\, H\right] &= \hbar\omega (aa^\dagger a - a^\dagger a a) = \hbar \omega[a, a^\dagger] a = \hbar\omega a, \\[0.2em]
 \left[ a^\dagger, H\right] &=\hbar\omega (a^\dagger a^\dagger a - a^\dagger a a^\dagger) =\hbar \omega a^\dagger \left[ a^\dagger, a\right] = -\hbar \omega a^\dagger
 \end{aligned}
-$$ {#eq-QM_commutator_for_ladder_and_hamiltonian}
+$$ {#eq-QM_sho_commutator_for_ladder_and_hamiltonian}
 
 $H$ 에 대해 에너지 $E$ 를 갖는 고유상태 $|E\rangle$ 를 생각하자. 즉 $H|E\rangle = E|E\rangle$ 이다. 이로부터,
 
@@ -109,7 +109,7 @@ $$
 Ha|E\rangle &= \left(aH - \hbar \omega a\right) |E\rangle = (E-\hbar \omega)a|E\rangle, \\[0.2em]
 Ha^\dagger |E\rangle &= \left(a^\dagger H + \hbar \omega a^\dagger\right)|E\rangle = (E+\hbar \omega)a^\dagger |E\rangle
 \end{aligned}
-$$ {#eq-QM_commutator_for_ladder_and_hamiltonian_2}
+$$ {#eq-QM_sho_commutator_for_ladder_and_hamiltonian_2}
 
 를 얻는다. 즉 $a|E\rangle$ 은 고유값 $E-\hbar \omega$ 를 갖는 $H$ 의 고유상태이며 $a^\dagger |E\rangle$ 은 고유값 $E+\hbar\omega$ 를 갖는 $H$ 의 고유상태이다. 여기서 $a$ 와 $a^\dagger$ 를 사다리 연산자라고 부르는 이유가 밝혀진다. $a$ 는 에너지의 고유상태를 $\hbar \omega$ 만큼 낮은 에너지의 고유상태로 보내는 연산자이고 $a^\dagger$ 는 에너지의 고유상태를 $\hbar \omega$ 만큼 높은 에너지의 고유상태로 보내는 연산자이다. 이때문에 $a$ 를 **하강 연산자(lowering operator)**, $a^\dagger$ 를 **상승 연산자(raising operator)** 라고 한다. 
 
@@ -180,7 +180,7 @@ $$
 
 $$
 a|n\rangle = \sqrt{n}|n-1\rangle,\qquad a^\dagger|n\rangle = \sqrt{n+1}|n+1\rangle
-$$ {#eq-QM_property_of_ladder_operator}
+$$ {#eq-QM_sho_property_of_ladder_operator}
 
 이다. 
 
@@ -191,7 +191,7 @@ $$
 \langle n'|a|n\rangle &= \sqrt{n}\langle n'|n-1\rangle = \sqrt{n}\delta_{n',n-1}, \\
 \langle n'|a^\dagger |n\rangle &= \sqrt{n+1} \langle n'|n+1\rangle = \sqrt{n+1}\delta_{n', n+1}
 \end{aligned}
-$$ {#eq-QM_property_of_ladder_operator_2}
+$$ {#eq-QM_sho_property_of_ladder_operator_2}
 
 이 성립한다. 
 
@@ -205,7 +205,7 @@ $$
 
 $$
 \boxed{|n\rangle = \dfrac{\left(a^\dagger\right)^n |0\rangle}{\sqrt{n!}}}
-$$ {#eq-QM_energy_eigenstate_from_ground_state_in_sho}
+$$ {#eq-QM_sho_energy_eigenstate_from_ground_state_in_sho}
 
 이다.
 
@@ -214,7 +214,7 @@ $$ {#eq-QM_energy_eigenstate_from_ground_state_in_sho}
 
 ### 사다리 연산자와 $X$, $P$
 
-사다리 연산자는 $X,\,P$ 에 대해 @eq-QM_ladder_operator_a 와 @eq-QM_ladder_operator_a_dagger 로 정의되었다. 그렇다면 $X,\,P$ 를 사다리 연산자에 대해 다음과 같이 표현 할 수 있다. 
+사다리 연산자는 $X,\,P$ 에 대해 @eq-QM_sho_ladder_operator_a 와 @eq-QM_sho_ladder_operator_a_dagger 로 정의되었다. 그렇다면 $X,\,P$ 를 사다리 연산자에 대해 다음과 같이 표현 할 수 있다. 
 
 $$
 \begin{aligned}
@@ -455,7 +455,7 @@ $\langle a(t)\rangle = e^{-i\omega t}\langle a(0)\rangle$ 이며 $\langle a^\dag
 
 ::: {.solution}
 
-에렌페스트 정리를 이용한다. @eq-QM_commutator_for_ladder_and_hamiltonian 로부터
+에렌페스트 정리를 이용한다. @eq-QM_sho_commutator_for_ladder_and_hamiltonian 로부터
 $$
 \dfrac{d}{dt}\langle a(t) \rangle = -\dfrac{i}{\hbar} \langle [a,H]\rangle = -i \omega \langle a(t) \rangle
 $$
@@ -584,7 +584,7 @@ $$
 
 ### $X$ 기저에서의 고유함수와 에르미트 다항식 {#sec-QM_SHO_hermite_polynomials}
 
-이제 사다리 연산자를 이용한 에너지 기저에서 $X$ 기저에 대한 표현으로 변환시키는 것을 알아보자. 우리는 $a|0\rangle = 0$ 임을 안다. 또한 @eq-QM_ladder_operator_a 와 @eq-QM_ladder_operator_a_dagger  에서 보았듯이
+이제 사다리 연산자를 이용한 에너지 기저에서 $X$ 기저에 대한 표현으로 변환시키는 것을 알아보자. 우리는 $a|0\rangle = 0$ 임을 안다. 또한 @eq-QM_sho_ladder_operator_a 와 @eq-QM_sho_ladder_operator_a_dagger  에서 보았듯이
 
 $$
 \begin{aligned}
@@ -634,7 +634,7 @@ $$
 |n\rangle = \dfrac{\left(a^\dagger\right)^n |0\rangle}{\sqrt{n!}}
 $$
 
-임을 안다.(@eq-QM_energy_eigenstate_from_ground_state_in_sho) 이로부터 $\Psi_n(x) = \langle x|n\rangle$ 을 얻는다.
+임을 안다.(@eq-QM_sho_energy_eigenstate_from_ground_state_in_sho) 이로부터 $\Psi_n(x) = \langle x|n\rangle$ 을 얻는다.
 
 $$
 \begin{aligned}
@@ -664,17 +664,17 @@ $$
 
 $$
 H_n(\xi) = e^{\xi^2/2}\left(\xi - \dfrac{d}{d\xi}\right)^n e^{-\xi^2/2}
-$$ {#eq-QM_generator_of_hermite_polynomial}
+$$ {#eq-QM_sho_generator_of_hermite_polynomial}
 
 이다. 
 
 </br>
 
-### 에르미트 다항식
+### 에르미트 다항식 {#sec-QM_sho_hermite_polynomial}
 
-#### Recursion relations 
+#### **Recurssion relations** 
 
-에르미트 다항식에 대해 알아보자. 우선 @eq-QM_generator_of_hermite_polynomial 로 정의된 에르미트 다항식의 첫 4 함수를 정의대로 계산해보면 다음과 같다.(여기서는 변수를 $\xi$ 에서 $y$ 로 변경한다.)
+에르미트 다항식에 대해 알아보자. 우선 @eq-QM_sho_generator_of_hermite_polynomial 로 정의된 에르미트 다항식의 첫 4 함수를 정의대로 계산해보면 다음과 같다.(여기서는 변수를 $\xi$ 에서 $y$ 로 변경한다.)
 
 $$
 \begin{aligned}
@@ -715,10 +715,10 @@ $$
 
 $$
 H'_n(y) = 2nH_{n-1}(y).
-$$  {#eq-QM_hermite_polynomial_recurssion_relation_1}
+$$  {#eq-QM_sho_hermite_polynomial_recurssion_relation_1}
 
 
-또한 @eq-QM_generator_of_hermite_polynomial 로부터 다음의 결과를 얻을 수 있다.
+또한 @eq-QM_sho_generator_of_hermite_polynomial 로부터 다음의 결과를 얻을 수 있다.
 $$
 \begin{aligned}
 H_{n+1}(y) &= e^{y^2/2} \left(y-\dfrac{d}{dy}\right)^{n+1} e^{-y^2/2} \\
@@ -732,18 +732,18 @@ $$
 
 $$
 H'_n(y) = 2yH_n(y) - H_{n+1}(y)
-$$ {#eq-QM_hermite_polynomial_recurssion_relation_2}
+$$ {#eq-QM_sho_hermite_polynomial_recurssion_relation_2}
 
 
-그리고 @eq-QM_hermite_polynomial_recurssion_relation_1 과 @eq-QM_hermite_polynomial_recurssion_relation_2 로 부터 다음의 점화식을 얻을 수 있다.
+그리고 @eq-QM_sho_hermite_polynomial_recurssion_relation_1 과 @eq-QM_sho_hermite_polynomial_recurssion_relation_2 로 부터 다음의 점화식을 얻을 수 있다.
 
 $$
 H_{n+1}(y) = 2yH_n(y) - 2nH_{n-1}(y).
-$$ {#eq-QM_hermite_polynomial_recurssion_relation_3}
+$$ {#eq-QM_sho_hermite_polynomial_recurssion_relation_3}
 
 </br>
 
-#### 직교성
+#### **직교성**
 
 우리는 $\langle n|m\rangle = \delta_{nm}$ 이라는 것을 안다. $y=\left(\dfrac{m\omega}{\hbar}\right)^{1/2}x$ 임을 고려하면 이 직교성으로부터,
 
@@ -758,7 +758,19 @@ $$
 
 $$
 \int_{-\infty}^\infty H_n (y)\, H_{m}(y) \, dy = (\sqrt{\pi} 2^n n!)\delta_{nm} 
-$$ {#eq-QM_orthogonality_of_hermite_polynomials}
+$$ {#eq-QM_sho_orthogonality_of_hermite_polynomials}
+
+</br>
+
+#### **Parity**
+
+@eq-QM_sho_generator_of_hermite_polynomial 로 부터
+
+$$
+H_n (-\xi) = (-1)^n H_n(\xi)
+$${#eq-QM_sho_parity_of_hermite_polynomials}
+
+임을 안다. 그리고 양의 정수 $m$ 에 대해 $H_{2m-1} (0)=0$ 임도 안다.
 
 
 </br>
@@ -774,6 +786,7 @@ $$ {#eq-QM_orthogonality_of_hermite_polynomials}
 ### 연습문제
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
 ::: {#exr-shankar_7_5_1}
 
 $P$ 기저에서의 바닥상태의 파동함수 $\Psi_0(p)$ 를 구하라.
@@ -840,7 +853,7 @@ $$
 
 ::: {.solution}
 
-$x=0$ 에서의 경계조건은 $\Psi(0) = 0$ 이다. @eq-QM_sho_hermite_polynomial_first_4 과 @eq-QM_hermite_polynomial_recurssion_relation_3 로부터 에르미트 다항식의 유용한 성질을 얻을 수 있다. $H_0(y)$ 부터 $H_3(y)$ 까지 보면 $H_n(y)$ 에서 $n$ 이 짝수이면 짝함수(even function), $n$ 이 홀수 이면 홀함수 인 것 같다. 이제 @eq-QM_hermite_polynomial_recurssion_relation_3 를 이용하여 보이자. $n$ 보다 작거나 같은 정수에 대해 이 명제가 성립한다고 가정하자. @eq-QM_hermite_polynomial_recurssion_relation_3 로부터
+$x=0$ 에서의 경계조건은 $\Psi(0) = 0$ 이다. @eq-QM_sho_hermite_polynomial_first_4 과 @eq-QM_sho_hermite_polynomial_recurssion_relation_3 로부터 에르미트 다항식의 유용한 성질을 얻을 수 있다. $H_0(y)$ 부터 $H_3(y)$ 까지 보면 $H_n(y)$ 에서 $n$ 이 짝수이면 짝함수(even function), $n$ 이 홀수 이면 홀함수 인 것 같다. 이제 @eq-QM_sho_hermite_polynomial_recurssion_relation_3 를 이용하여 보이자. $n$ 보다 작거나 같은 정수에 대해 이 명제가 성립한다고 가정하자. @eq-QM_sho_hermite_polynomial_recurssion_relation_3 로부터
 
 $$
 H_{n+1}(-y) = 2(-y)H_n(-y) - 2nH_{n-1}(-y)
@@ -848,7 +861,7 @@ $$
 
 이며 $n+1$ 이 짝수이면 $n$, $n-1$ 은 각각 홀수와 짝수이고 $H_n$ 과 $H_{n-1}$ 은 각각 홀함수, 짝함수이며, $H_{n+1}(-y) = 2yH_n(y) -2nH_{n-1}(y) = H_{n+1}(y)$ 이다. 같은 방법으로 $n+1$ 이 홀수이면 $H_{n+1}(-y) = -H_{n+1}(y)$ 라는 것을 보일 수 있다. 
 
-이제 $H_{n}(y)$ 의 상수항을 생각하자. $n$ 이 홀수이면 홀함수 이므로 상수항이 $0$ 이다. 역시 @eq-QM_hermite_polynomial_recurssion_relation_3 에서
+이제 $H_{n}(y)$ 의 상수항을 생각하자. $n$ 이 홀수이면 홀함수 이므로 상수항이 $0$ 이다. 역시 @eq-QM_sho_hermite_polynomial_recurssion_relation_3 에서
 
 $$
 H_{2n+2}(y) = 2yH_{2n+1}(y) - (4n+2)H_{2n}(y)

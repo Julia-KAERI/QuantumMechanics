@@ -441,7 +441,7 @@ $$
 $(q,\,p)\mapsto (Q,\,P)$ 정준변환에서 $\omega (q,\,p)= \overline{\omega}(Q,\,P)$ 이므로 phase space 의 좌표계를 알면 되므로 이제 $\overline{\omega}$ 와 같은 표기는 사용하지 않기로 하자. @thm-CHM_symmetry_invariance_of_poisson_bracket_under_cannonical_transformation 에서 $\theta = \mathcal{H}$ 에 대해서도 성립한다. 따라서,
 
 $$
-\dot{\omega} = \{\omega \mathcal{H}\}_{q,\,p} = \{\omega,\, \mathcal{H}\}_{Q,\,P}
+\dot{\omega} = \{\omega,\, \mathcal{H}\}_{q,\,p} = \{\omega,\, \mathcal{H}\}_{Q,\,P}
 $$
 
 이다. 즉 운동에너지 혹은 특정 방향에 대한 각운동량의 시간에 대한 변화량은 phase space의 좌표 변환에 대해 불변이다. 

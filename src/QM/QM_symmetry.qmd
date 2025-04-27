@@ -481,7 +481,7 @@ $$
 T(a) = \lim_{N \to \infty} \left[T\left(\dfrac{a}{N}\right)\right]^N = \lim_{N \to \infty} \left[I - \dfrac{ia}{\hbar N}P\right]^N = e^{-iaP/\hbar}
 $$
 
-이다. 물론 $P$ 는 연산자이므로 함부로 대수적인
+이다. 물론 $P$ 는 연산자이므로 함부로 대수적인 exponential 의 정의
 
 $$
 \lim_{N \to \infty} \left(1 - \dfrac{a}{N}\right)^N =e^{-a}
@@ -489,10 +489,20 @@ $$
  
 를 사용해서는 안되지만 이 경우 계산에 관련된 것이 연산자 $P$ 와 스칼라 값 뿐이며, 따라서 관계된 모든 값에 대해 $P$ 와의 commutativity 가 성립하기 때문에 $T(a) =e^{-iaP/\hbar}$ 이게 된다.
 
+$$
+\boxed{T(a) = \exp \left(-\dfrac{iaP}{\hbar}\right)}.
+$$ {#eq-QM_symmetry_finite_translation}
+
+일단 $T(a)$ 가 유니타리 인 것은 $P$ 가 에르미트 연산자임을 이용하면 쉽게 보일 수 있다. 또한 Translation 연산자는 $T(a)T(b) = T(a+b)$ 가 성립해야 한다는 것이 자명하다. 이것은 양자역학과는 무관하며 오히려 우주의 공간적 성질과 관련이 있다. 일단 확인해 보기로 하자.
+
+$$
+T(a)T(b) = e^{-iaP/\hbar}e^{-ibP/\hbar}= e^{-i(a+b)P/\hbar} = T(a+b)
+$$
+
 
 </br>
 
-### 수학적인 보충
+#### **수학적인 보충**
 
 @prp-part3_Baker_Hausdorff_Lemma (Baker-Housdorff lemma) 에 따라 다음이 성립한다.
 
@@ -577,8 +587,6 @@ $$
 
 을 생각하자. 
 
-
-
 :::
 
 ::: {.solution}
@@ -615,13 +623,13 @@ $$
 
 </div></br>
 
-### 다입자 시스템의 경우
+### 다입자 시스템의 경우 {#sec-QM_symmetry_translation_invariance_in_many_particles_system}
 
-입자가 하나 이상인 시스테의 경우 infinitesimal translation $T_\varepsilon$ 을 다음과 같이 정의한다.
+입자가 하나 이상인 시스템의 경우 infinitesimal translation $T_\varepsilon$ 을 다음과 같이 정의한다.
 
 $$
 \langle x_1,\ldots,x_N | T_\varepsilon |\Psi\rangle = \Psi (x_1-\varepsilon,\ldots,\, x_N-\varepsilon)
-$$
+$$ {#eq-QM_symmetry_infinitesima_translation_for_many_particles_system}
 
 $T_\varepsilon$ 에서 $\varepsilon \to 0$ 인 극한에서 $T=I$ 이므로 어떤 generator $P$ 를 생각하여 $\varepsilon$ 에 대한 1차항까지 고려하면 $T=I - \dfrac{i\varepsilon}{\hbar}P$ 라고 놓을 수 있다. 이제 위 식의 양변을 $\varepsilon$ 에 대한 1차항까지 비교하면
 
@@ -633,25 +641,19 @@ $$
 \end{aligned}
 $$
 
-이므로 
+이므로 총 각운동량 $P$ 를 고전역학에서와 같이 개별 각운동량의 합으로 $P=\sum_j P_j$ 로 정의한다면
 
 $$
 T_\varepsilon = I - \dfrac{i\varepsilon}{\hbar} \sum_{j=1}^N P_j = I - \dfrac{i\varepsilon}{\hbar}P
 $$
 
-라 놓을 수 있다. 
-
-$$
-P = \sum_j P_j
-$$
-
-는 총 운동량(total momentum) 이라고 부를 수 있다는 것을 알 수 있다. 이로부터 $T_\varepsilon$ 에 대해 해밀토니안이 불변이면 총 각운동량이 보존된다는 것을 알 수 있다.
+라 놓을 수 있다. 이로부터 $T_\varepsilon$ 에 대해 해밀토니안이 불변이면 총 각운동량이 보존된다는 것을 알 수 있다.
 
 </br>
 
-### Translational Invariance 의 의미
+### Translational Invariance 의 의미 {#sec-QM_symmetry_implication_of_translational_invariance}
 
-$T(a)$ 는 유니타리이므로 translation 에 대해 해밀토니안이 불변이라면 $T(a)^\dagger HT=H$ 로부터 $T(a)H=HT(a)$ 이다. 이로부터 $T(a)U(t)=U(t)T(a)$ 임을 알 수 있다. $t=0$ 에 $|\Psi(0)\rangle$ 과 $T(a)|\Psi(0)\rangle$ 인 상태를 준비했다면 $T(a)U(t)|\Psi(0)\rangle = U(t)\left(T(a)|\Psi(0)\rangle\right)$ 이다. 즉 $x=0$ 인 관찰자가 $|\Psi(0)\rangle$ 의 시간에 대한 변화를 보는 것과 $x=a$ 에서의 관찰자가 $T(a)|\Psi(0)\rangle$ 의 시간에 대한 변화를 보는 것은 상대적인 위치의 차이를 제외하면 동일하는 것을 알 수 있다. 
+$T(a)$ 는 유니타리이므로 translation 에 대해 해밀토니안이 불변이라면 $T(a)^\dagger HT(a)=H$ 로부터 $T(a)H=HT(a)$ 임을 안다. 이로부터 $T(a)U(t)=U(t)T(a)$ 임을 알 수 있다. $t=0$ 에 $|\Psi(0)\rangle$ 과 $T(a)|\Psi(0)\rangle$ 인 상태를 준비했다면 $T(a)U(t)|\Psi(0)\rangle = U(t)\left(T(a)|\Psi(0)\rangle\right)$ 이다. 즉 $x=0$ 인 관찰자가 $|\Psi(0)\rangle$ 의 시간에 대한 변화를 보는 것과 $x=a$ 에서의 관찰자가 $T(a)|\Psi(0)\rangle$ 의 시간에 대한 변화를 보는 것은 상대적인 위치의 차이를 제외하면 동일하는 것을 알 수 있다. 
 
 우리가 지금까지 발견한 모든 기본적인 상호작용은 translational invariance 의 성질을 가지며 이는 근원적인 의미에서 공간의 균일성(homogeneity) 를 의미하며, 물리적으로는 운동량 보존으로 나타난다.
 
@@ -659,38 +661,72 @@ $T(a)$ 는 유니타리이므로 translation 에 대해 해밀토니안이 불�
 
 ## Time Translational invariance
 
-고전적으로 공간의 균일성이 운동량 보존으로 나타난다면 시간의 균일성은 해밀토니안의 보존으로 나타나는데 이것은 양자세계에서도 마찬가지이다. 시간에 대한 infinitesimal translation 을 생각하자. 시간 $t_1$ 에 $|\Psi_0\rangle$ 의 상태로 준비되었다고 하자. Infinitesimal time $\varepsilon$ 후의 상태는
+고전적으로 공간의 균일성이 운동량 보존으로 나타난다면 시간의 균일성은 해밀토니안의 보존으로 나타나는데 이것은 양자세계에서도 마찬가지이다. 시간에 대한 infinitesimal translation 을 생각하자. 시간 $t_1$ 에 $|\Psi_0\rangle$ 의 상태로 준비되었다고 하자. Infinitesimal time $\varepsilon$ 후의 상태를 $\varepsilon$ 에 대한 1차항까지 표현하면 다음과 같다.
 
 $$
 |\Psi(t_1+\varepsilon)\rangle = \left[I - \dfrac{i\varepsilon}{\hbar} H(t_1)\right] |\Psi_0\rangle
 $$
 
+우리가 같은 초기 상티 $|\Psi_0\rangle$ 에 대해 $t_2$ 의 시간에 똑같은 실험을 수행한다면
 
----
+$$
+|\Psi(t_2+\varepsilon)\rangle = \left[I - \dfrac{i\varepsilon}{\hbar} H(t_2)\right] |\Psi_0\rangle
+$$
 
+이며 $|\Psi(t_1+\varepsilon)\rangle$ 과 $|\Psi(t_2+\varepsilon)\rangle$ 이 같을 조건은
+
+$$
+0 = \Psi(t_1+\varepsilon)\rangle - |\Psi(t_2+\varepsilon)\rangle = \left(-\dfrac{i\varepsilon}{\hbar}\right)[H(t_2)-H(t_1)]|\Psi_0\rangle
+$$
+
+이다. 임의의 초기 상태 $|\Psi_0\rangle$ 에 대해 성립해야 하므로
+
+$$
+H(t_2)=H(t_1)
+$$
+
+이며, $t_1$ 과 $t_2$ 는 임의의 시간이므로 $H$ 는 시간에 대해 독립적이어야 한다. 즉,
+
+$$
+\dfrac{dH}{dt}=0
+$$
+
+이어야 한다. 에렌페스트의 정리 $i\hbar \langle\dot{\Omega} \rangle = \langle [\Omega,\, H] \rangle$ 로부터
+
+$$
+\langle \dot{H}\rangle = 0
+$$
+
+을 얻는다. 위 식이 에너지 보존 법칙이다.
 
 </br>
 
 ## Parity Invariance
 
+고전적으로 패리티 변환은 어떤 정해진 원점에 대해 아래와 같은 변환이다.
+
+$$
+\bf{x} \to -\bf{x},\qquad \bf{p} \to -\bf{p}.
+$$ {#eq-QM_symmetry_classical_parity}
+
+공간 혹은 시간에서의 translation 과는 달리 parity 변환은 이산적인 변환이다. 
+
+
+</br>
+
 ### Active transformation 의 관점에서
 
-고전적으로 parity 변환은 다음과 같은 변환이다.
-$$
-x \longrightarrow -x,\qquad p \longrightarrow -p
-$$ {#eq-part3_classical_parity}
-
-시간, 공간 에 대한 translation 그리고 잠시 후에 다룰 회전에 대한 변환은 연속적인 변환이지만 Parity 는 불연속적인 변환이며 이는 양자이론에서도 마찬가지이다. 양자이론에에서의 parity 변환은 $\Pi$ 연산자로 표기하며 다음과 같이 정의된다.
+양자이론에에서의 parity 변환은 $\Pi$ 연산자로 표기하며 다음과 같이 정의된다.
 
 $$
-\Pi|x\rangle = |-x\rangle.
+\Pi|\bf{x}\rangle = |-\bf{x}\rangle.
 $$ {#eq-part3_quantum_parity}
 
 이로부터,
 
 $$
 \begin{aligned}
-\langle x|\Pi|\Psi\rangle &= \int \langle x|\Pi |x'\rangle \langle x'|\Psi\rangle\, dx' = \int \langle x|-x'\rangle\, \Psi(x') = \int \delta(x+x')\Psi(x')\, dx' \\
+\langle \bf{x}|\Pi|\Psi\rangle &= \int \langle \bf{x}|\Pi |\bf{x}'\rangle \langle \bf{x}'|\Psi\rangle\, d\bf{x}' = \int \langle \bf{x}|-\bf{x}'\rangle\, \Psi(\bf{x}') d\bf{x}' = \int \delta(\bf{x}+\bf{x}')\Psi(\bf{x}')\, d\bf{x}' \\
 &= \Psi(-x)
 \end{aligned}
 $$
@@ -699,15 +735,15 @@ $$
 
 $$
 \begin{aligned}
-\Pi |p\rangle &= \int |x\rangle \langle x|\Pi| x'\rangle \langle x'|p\rangle \, dx\,dx' = \int |x\rangle \langle x|-x'\rangle \langle x'|p\rangle \, dx\,dx'  \\
-&= \int |x\rangle \delta (x'+x) \langle x'|p\rangle \, dx\, dx' = \int|x\rangle \langle -x|p\rangle \,dx
+\Pi |\bf{p}\rangle &= \int |\bf{x}\rangle \langle \bf{x}|\Pi| \bf{x}'\rangle \langle \bf{x}'|\bf{p}\rangle \, d\bf{x}\,d\bf{x}' = \int |\bf{x}\rangle \langle \bf{x}|-\bf{x}'\rangle \langle \bf{x}'|\bf{p}\rangle \, d\bf{x}\,d\bf{x}'  \\
+&= \int |\bf{x}\rangle \delta (\bf{x}'+\bf{x}) \langle  \bf{x}'|\bf{p}\rangle \, d\bf{x}\, d\bf{x}' = \int|\bf{x}\rangle \langle -\bf{x}|\bf{p}\rangle \,d\bf{x}
 \end{aligned}
 $$
 
-인데 $\langle x|p\rangle = (2\pi \hbar)^{-1/2}e^{-ipx/\hbar}$ 이므로 $\langle -x|p\rangle = \langle x|-p\rangle$ 이다. 즉,
+인데 $\langle \bf{x}|\bf{p}\rangle = (2\pi \hbar)^{-3/2}e^{-i\bf{p\cdot x}/\hbar}$ 이므로 $\langle -\bf{x}|\bf{p}\rangle = \langle \bf{x}|-\bf{p}\rangle$ 이다. 즉,
 
 $$
-\Pi |p\rangle = \int |x\rangle \langle x|-p\rangle\,dx = |-p\rangle
+\Pi |\bf{p}\rangle = \int |\bf{x}\rangle \langle \bf{x}|-\bf{p}\rangle\,d\bf{x} = |-\bf{p}\rangle
 $$
 
 이다. 이로부터 우리는 $\Pi$ 연산자가 고전적인 parity 변환과 동등하다는 것을 알 수 있다.
@@ -725,31 +761,32 @@ Parity operator $\Pi$ 는 다음의 성질을 가진다는 것을 보여라.
 
 &emsp; ($3$) $\Pi$ 의 고유값은 $\pm 1$ 이다.
 
-
 :::
+
+</div></br>
 
 ::: {.solution}
 
-($1$) $\Pi^2|x\rangle = \Pi |-x\rangle = |x\rangle$ 이므로 $\Pi^2=I$ 이다.
+($1$) $\Pi^2|\bf{x}\rangle = \Pi |-\bf{x}\rangle = |\bf{x}\rangle$ 이므로 $\Pi^2=I$ 이다.
 
 ($2$) 우선 에르미트 임을 보이자.
 
 $$
 \begin{aligned}
-\langle x'|\Pi | x\rangle &= \langle x'|-x\rangle = \delta (x'+x), \\
-\overline{\langle x|\Pi|x'\rangle} &= \delta^\ast (x'+x) = \delta (x'+x)
+\langle \bf{x}'|\Pi | \bf{x}\rangle &= \langle \bf{x}'|-\bf{x}\rangle = \delta (\bf{x}'+\bf{x}), \\
+\overline{\langle \bf{x}|\Pi|\bf{x}'\rangle} &= \delta^\ast (\bf{x}'+\bf{x}) = \delta (\bf{x}'+\bf{x})
 \end{aligned}
 $$
 
-이며 $\overline{\langle x|\Pi|x'\rangle} = \langle x'|\Pi^\dagger |x\rangle$ 이므로 $\Pi = \Pi^\dagger$ 이다. 따라서 $\Pi$ 는 에르미트 연산자이다. 그리고 $I=\Pi^2 = \Pi^\dagger \Pi$ 이므로 $\Pi$ 는 유니타리이다. 
+이며 $\overline{\langle \bf{x}|\Pi|\bf{x}'\rangle} = \langle \bf{x}'|\Pi^\dagger |\bf{x}\rangle$ 이므로 $\Pi = \Pi^\dagger$ 이다. 따라서 $\Pi$ 는 에르미트 연산자이다. 그리고 $I=\Pi^2 = \Pi^\dagger \Pi$ 이므로 $\Pi$ 는 유니타리이다. 
 
 ($3$) $|\pi\rangle$ 을 $\Pi$ 의 고유상태라고 하자. $\Pi^2|\pi\rangle = |\pi\rangle$ 이므로 $\Pi$ 의 고유값은 $\pm 1$ 이다.
 
 :::
 
-</div></br>
+</br>
 
-위의 연습문제에서 보았듯이 parity 연산자의 고유값은 $\pm 1$ 이다. 이 경우 고유값이 $+1$ 인 고유상태를 **even parity** 라고 하고 $-1$ 인 고유상태를 **odd parity** 라고 한다. $\Psi(x)$ 에 대해 $\Psi(-x)= \Psi(x)$ 이면 even parity 파동함수이며 $\Psi(-x)=-\Psi(x)$ 이면 odd parity 파동함수이다. 
+위의 연습문제에서 보았듯이 parity 연산자의 고유값은 $\pm 1$ 이다. 이 경우 고유값이 $+1$ 인 고유상태를 **even parity** 라고 하고 $-1$ 인 고유상태를 **odd parity** 라고 한다. $\Psi(\bf{x})$ 에 대해 $\Psi(-\bf{x})= \Psi(\bf{x})$ 이면 even parity 파동함수이며 $\Psi(-\bf{x})=-\Psi(\bf{x})$ 이면 odd parity 파동함수이다. 
 
 
 </br><div class="border" style="background-color:#F2F4F4  ;padding:5px;">
@@ -905,5 +942,71 @@ see @fig-beta_decay_and_parity
 
 ## Time Reversal Symmetry
 
--- to be done --
+### 시간 역전의 고전역학적 관점
 
+고전물리학적 관점에서 원래의 상태 $x(t),\, p(t)$ 에 대해 $t=0$ 에서 시간 역전을 시킬 때 시간 역전된 상태를 $x_r(t),\, p_r(t)$ 라고 하자. 그렇다면 우선
+
+$$
+x_r(t) = x(-t)
+$$
+
+이며,
+
+$$
+\dot{x}_r(t) = \dfrac{d x_r(t)}{dt} = \dfrac{d x(-t)}{d(t)} = - \dfrac{dx(-t)}{d(-t)} = - \dot{x}(-t)
+$$
+
+이고, 뉴턴의 제 2 법칙을 생각하자. 그리고 힘 $F$ 가 $x$ 에만 의존하며 $\dot{x}$ 에 독립적인 경우를 생각하자.
+
+$$
+m \dfrac{d^2x_r(t)}{dt^2} = F(x_r)
+$$
+
+은 시간 역전에 대해
+$$
+m \dfrac{d^2 x_r(t)}{dt^2} = m \dfrac{d^2 x(-t)}{d(-t)^2} = F(x(-t)) = F(x_r(t))
+$$
+
+이다. 즉 뉴턴의 제 2 법칙은 힘이 위치에만 의존할 경우 시간역전에 대해 불변(Time reversal invarance, TRI) 이다. 그러나 힘이 속도에 의존할 경우 즉,
+
+$$
+F= F(x,\, \dot{x})
+$$
+
+일 경우
+
+$$
+m \dfrac{d^2 x_r(t)}{dt^2} = F(x_r(t), - \dot{x}_r(t))
+$$
+
+이며 따라서 TRI 가 아니다.
+
+</br>
+
+### 시간 역전의 양자역학적 관점
+
+시간 독립적인 슈뢰딩거 방정식을 생각하자. 이 때 $H=H(x)$ 인 경우만 생각한다.
+
+$$
+i\hbar \dfrac{\partial \Psi (x,\,t)}{\partial t} = H(x)\Psi(x,\,t).
+$$
+
+시간 역전된 파동함수 $\Psi(x,\,-t)=\Psi_r(x,\,t)$ 에 대한 슈뢰딩거 방정식을 얻어보자. $t\to -t$ 변환에 대해
+
+$$
+-i\hbar \dfrac{\partial \Psi_r(x,\,t)}{\partial t} = H(x) \Psi_r(x,\,t)
+$$
+
+이며, 양 변에 Hermite conjugate 를 취하면
+
+$$
+i\hbar \dfrac{\partial \Psi_r^\ast (x,\, t)}{\partial t} = H(x) \Psi^\ast_r (x,\, t)
+$$
+
+이다. 즉 $\Psi_r^\ast(x,\,t)$ 와 $\Psi(x,\,t)$ 는 같은 슈뢰딩거 방정식을 만족하며 따라서 $\Psi_r(x,\,t) = \Psi^\ast (x,\,t)$ 임을 알 수 있다. 즉 시간 역전 변환은
+
+$$
+\Psi(x,\,t) \longrightarrow \Psi^\ast(x,\,t)
+$$
+
+임을 알 수 있다. 

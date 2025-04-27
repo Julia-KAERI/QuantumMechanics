@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.42">
+<meta name="generator" content="quarto-1.6.43">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -37,7 +37,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-d4d76bf8491c20bad77d141916dc28e1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap-b467865d89f01302b3bb45791fa41ab5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
@@ -322,7 +322,7 @@ window.Quarto = {
   <li><a href="#단순조화진동자는-왜-중요한가" id="toc-단순조화진동자는-왜-중요한가" class="nav-link active" data-scroll-target="#단순조화진동자는-왜-중요한가"><span class="header-section-number">7.1</span> 단순조화진동자는 왜 중요한가</a></li>
   <li><a href="#사다리-연산자를-이용한-방법" id="toc-사다리-연산자를-이용한-방법" class="nav-link" data-scroll-target="#사다리-연산자를-이용한-방법"><span class="header-section-number">7.2</span> 사다리 연산자를 이용한 방법</a>
   <ul class="collapse">
-  <li><a href="#sec-QM_ladder_operator_and_hamiltonian" id="toc-sec-QM_ladder_operator_and_hamiltonian" class="nav-link" data-scroll-target="#sec-QM_ladder_operator_and_hamiltonian"><span class="header-section-number">7.2.1</span> 사다리 연산자와 해밀토니안</a></li>
+  <li><a href="#sec-QM_sho_ladder_operator_and_hamiltonian" id="toc-sec-QM_sho_ladder_operator_and_hamiltonian" class="nav-link" data-scroll-target="#sec-QM_sho_ladder_operator_and_hamiltonian"><span class="header-section-number">7.2.1</span> 사다리 연산자와 해밀토니안</a></li>
   <li><a href="#사다리-연산자의-성질" id="toc-사다리-연산자의-성질" class="nav-link" data-scroll-target="#사다리-연산자의-성질"><span class="header-section-number">7.2.2</span> 사다리 연산자의 성질</a></li>
   <li><a href="#사다리-연산자와-x-p" id="toc-사다리-연산자와-x-p" class="nav-link" data-scroll-target="#사다리-연산자와-x-p"><span class="header-section-number">7.2.3</span> 사다리 연산자와 <span class="math inline">\(X\)</span>, <span class="math inline">\(P\)</span></a></li>
   <li><a href="#연습문제" id="toc-연습문제" class="nav-link" data-scroll-target="#연습문제"><span class="header-section-number">7.2.4</span> 연습문제</a></li>
@@ -330,7 +330,7 @@ window.Quarto = {
   <li><a href="#x-기저에서의-고유함수" id="toc-x-기저에서의-고유함수" class="nav-link" data-scroll-target="#x-기저에서의-고유함수"><span class="header-section-number">7.3</span> <span class="math inline">\(X\)</span> 기저에서의 고유함수</a>
   <ul class="collapse">
   <li><a href="#sec-QM_SHO_hermite_polynomials" id="toc-sec-QM_SHO_hermite_polynomials" class="nav-link" data-scroll-target="#sec-QM_SHO_hermite_polynomials"><span class="header-section-number">7.3.1</span> <span class="math inline">\(X\)</span> 기저에서의 고유함수와 에르미트 다항식</a></li>
-  <li><a href="#에르미트-다항식" id="toc-에르미트-다항식" class="nav-link" data-scroll-target="#에르미트-다항식"><span class="header-section-number">7.3.2</span> 에르미트 다항식</a></li>
+  <li><a href="#sec-QM_sho_hermite_polynomial" id="toc-sec-QM_sho_hermite_polynomial" class="nav-link" data-scroll-target="#sec-QM_sho_hermite_polynomial"><span class="header-section-number">7.3.2</span> 에르미트 다항식</a></li>
   <li><a href="#차원-단순조화진동자의-에너지-고유함수" id="toc-차원-단순조화진동자의-에너지-고유함수" class="nav-link" data-scroll-target="#차원-단순조화진동자의-에너지-고유함수"><span class="header-section-number">7.3.3</span> 1차원 단순조화진동자의 에너지 고유함수</a></li>
   <li><a href="#연습문제-1" id="toc-연습문제-1" class="nav-link" data-scroll-target="#연습문제-1"><span class="header-section-number">7.3.4</span> 연습문제</a></li>
   </ul></li>
@@ -364,7 +364,7 @@ V(x) = V(x_0) + \dfrac{1}{2} V''(x_0)(x-x_0)^2 + \dfrac{1}{6}V'''(x_0)(x-x_0)^3 
 <p>이다. 우리가 관심 있는 영역이 <span class="math inline">\(x_0\)</span> 주위의 좁은 영역일 경우 이 시스템은 조화진동자 문제가 된다.</p>
 <p><br></p>
 <p>이제 <span class="math inline">\(V(x) = \dfrac{1}{2}m\omega^2X^2\)</span> 으로 주어진 1차원 조화진동자를 생각하자.</p>
-<p><span id="eq-QM_1d_sho"><span class="math display">\[
+<p><span id="eq-QM_sho_1d_sho"><span class="math display">\[
 H = \dfrac{P^2}{2m} + \dfrac{1}{2}m\omega^2X^2
 \tag{7.1}\]</span></span></p>
 <p><br></p>
@@ -378,19 +378,19 @@ H = \dfrac{P^2}{2m} + \dfrac{1}{2}m\omega^2X^2
 </div>
 </div>
 <p><br></p>
-<p>이제 <a href="#eq-QM_1d_sho" class="quarto-xref">식&nbsp;<span>7.1</span></a> 로 주어진 시간독립 슈뢰딩거 방정식을 풀어보자. 여기에는 두가지 방법이 있다. 하나는 <span class="math inline">\(X\)</span> 기저에서 (혹은 <span class="math inline">\(P\)</span> 기저에서) 멱급수를 이용하여 미분방정식을 푸는 것이고 다른 하나는 아주 독특한 사다리 연산자(ladder operator) 를 도입하는 것이다. 여기서는 후자를 통해 단순조화진동자 문제에 접근한다.</p>
+<p>이제 <a href="#eq-QM_sho_1d_sho" class="quarto-xref">식&nbsp;<span>7.1</span></a> 로 주어진 시간독립 슈뢰딩거 방정식을 풀어보자. 여기에는 두가지 방법이 있다. 하나는 <span class="math inline">\(X\)</span> 기저에서 (혹은 <span class="math inline">\(P\)</span> 기저에서) 멱급수를 이용하여 미분방정식을 푸는 것이고 다른 하나는 아주 독특한 사다리 연산자(ladder operator) 를 도입하는 것이다. 여기서는 후자를 통해 단순조화진동자 문제에 접근한다.</p>
 <p><br></p>
 </section>
 <section id="사다리-연산자를-이용한-방법" class="level2" data-number="7.2">
 <h2 data-number="7.2" class="anchored" data-anchor-id="사다리-연산자를-이용한-방법"><span class="header-section-number">7.2</span> 사다리 연산자를 이용한 방법</h2>
-<section id="sec-QM_ladder_operator_and_hamiltonian" class="level3" data-number="7.2.1">
-<h3 data-number="7.2.1" class="anchored" data-anchor-id="sec-QM_ladder_operator_and_hamiltonian"><span class="header-section-number">7.2.1</span> 사다리 연산자와 해밀토니안</h3>
+<section id="sec-QM_sho_ladder_operator_and_hamiltonian" class="level3" data-number="7.2.1">
+<h3 data-number="7.2.1" class="anchored" data-anchor-id="sec-QM_sho_ladder_operator_and_hamiltonian"><span class="header-section-number">7.2.1</span> 사다리 연산자와 해밀토니안</h3>
 <p><span class="math inline">\(X\)</span>, <span class="math inline">\(P\)</span> 에 대해 연산자 <span class="math inline">\(a\)</span> 를 다음과 같이 정의한다.</p>
-<p><span id="eq-QM_ladder_operator_a"><span class="math display">\[
+<p><span id="eq-QM_sho_ladder_operator_a"><span class="math display">\[
 a = \left(\dfrac{m\omega}{2\hbar}\right)^{1/2} X + i \left(\dfrac{1}{2m\omega \hbar}\right)^{1/2} P.
 \tag{7.2}\]</span></span></p>
 <p>그렇다면 <span class="math inline">\(a\)</span> 의 hermitian conjugate <span class="math inline">\(a^\dagger\)</span> 는 다음과 같다.</p>
-<p><span id="eq-QM_ladder_operator_a_dagger"><span class="math display">\[
+<p><span id="eq-QM_sho_ladder_operator_a_dagger"><span class="math display">\[
 a^\dagger = \left(\dfrac{m\omega}{2\hbar}\right)^{1/2} X - i \left(\dfrac{1}{2m\omega \hbar}\right)^{1/2} P
 \tag{7.3}\]</span></span></p>
 <p>우리는 <span class="math inline">\([X,\,P] = i\hbar I\)</span> 임을 안다. 이로부터,</p>
@@ -414,14 +414,14 @@ a^\dagger a = \left(\dfrac{m\omega}{2\hbar}\right)X^2 + \dfrac{1}{2m\omega \hbar
 <section id="사다리-연산자의-성질" class="level3" data-number="7.2.2">
 <h3 data-number="7.2.2" class="anchored" data-anchor-id="사다리-연산자의-성질"><span class="header-section-number">7.2.2</span> 사다리 연산자의 성질</h3>
 <p><a href="#eq-QM_sho_hamiltonian_using_ladder" class="quarto-xref">식&nbsp;<span>7.5</span></a> 와 <a href="#eq-QM_sho_commutator_of_ladder_operator" class="quarto-xref">식&nbsp;<span>7.4</span></a> 로부터 우리는 다음을 보일 수 있다.</p>
-<p><span id="eq-QM_commutator_for_ladder_and_hamiltonian"><span class="math display">\[
+<p><span id="eq-QM_sho_commutator_for_ladder_and_hamiltonian"><span class="math display">\[
 \begin{aligned}
 \left[ a,\, H\right] &amp;= \hbar\omega (aa^\dagger a - a^\dagger a a) = \hbar \omega[a, a^\dagger] a = \hbar\omega a, \\[0.2em]
 \left[ a^\dagger, H\right] &amp;=\hbar\omega (a^\dagger a^\dagger a - a^\dagger a a^\dagger) =\hbar \omega a^\dagger \left[ a^\dagger, a\right] = -\hbar \omega a^\dagger
 \end{aligned}
 \tag{7.6}\]</span></span></p>
 <p><span class="math inline">\(H\)</span> 에 대해 에너지 <span class="math inline">\(E\)</span> 를 갖는 고유상태 <span class="math inline">\(|E\rangle\)</span> 를 생각하자. 즉 <span class="math inline">\(H|E\rangle = E|E\rangle\)</span> 이다. 이로부터,</p>
-<p><span id="eq-QM_commutator_for_ladder_and_hamiltonian_2"><span class="math display">\[
+<p><span id="eq-QM_sho_commutator_for_ladder_and_hamiltonian_2"><span class="math display">\[
 \begin{aligned}
 Ha|E\rangle &amp;= \left(aH - \hbar \omega a\right) |E\rangle = (E-\hbar \omega)a|E\rangle, \\[0.2em]
 Ha^\dagger |E\rangle &amp;= \left(a^\dagger H + \hbar \omega a^\dagger\right)|E\rangle = (E+\hbar \omega)a^\dagger |E\rangle
@@ -470,12 +470,12 @@ H|n\rangle = \hbar \omega \left(a^\dagger a+ \dfrac{1}{2}I\right) |n\rangle = \h
 \langle n|n|n\rangle = n
 \]</span></p>
 <p>이므로 <span class="math inline">\(|c_n|^2=n\)</span> 을 만족해야 한다는 것을 안다. 이 경우 임의의 <span class="math inline">\(\phi \in \mathbb{R}\)</span> 에 대해 <span class="math inline">\(c_n = \sqrt{n}e^{i\phi}\)</span> 이면 된다. 보통 <span class="math inline">\(\phi=0\)</span> 으로 놓으며 이 경우,</p>
-<p><span id="eq-QM_property_of_ladder_operator"><span class="math display">\[
+<p><span id="eq-QM_sho_property_of_ladder_operator"><span class="math display">\[
 a|n\rangle = \sqrt{n}|n-1\rangle,\qquad a^\dagger|n\rangle = \sqrt{n+1}|n+1\rangle
 \tag{7.8}\]</span></span></p>
 <p>이다.</p>
 <p>모든 <span class="math inline">\(|n\rangle\)</span> 은 bound state 이며 1차원 bound state 는 dengeneracy 가 없다. 즉 서로 다른 에너지를 갖는 단순조화진동자의 에너지 고유상태 <span class="math inline">\(|n\rangle\)</span> 에 대해 <span class="math inline">\(\langle n'|n\rangle = \delta_{nn'}\)</span> 이 성립한다. 따라서,</p>
-<p><span id="eq-QM_property_of_ladder_operator_2"><span class="math display">\[
+<p><span id="eq-QM_sho_property_of_ladder_operator_2"><span class="math display">\[
 \begin{aligned}
 \langle n'|a|n\rangle &amp;= \sqrt{n}\langle n'|n-1\rangle = \sqrt{n}\delta_{n',n-1}, \\
 \langle n'|a^\dagger |n\rangle &amp;= \sqrt{n+1} \langle n'|n+1\rangle = \sqrt{n+1}\delta_{n', n+1}
@@ -487,7 +487,7 @@ a|n\rangle = \sqrt{n}|n-1\rangle,\qquad a^\dagger|n\rangle = \sqrt{n+1}|n+1\rang
 \left(a^\dagger\right)^n|0\rangle = \sqrt{n!}|0\rangle
 \]</span></p>
 <p>이므로,</p>
-<p><span id="eq-QM_energy_eigenstate_from_ground_state_in_sho"><span class="math display">\[
+<p><span id="eq-QM_sho_energy_eigenstate_from_ground_state_in_sho"><span class="math display">\[
 \boxed{|n\rangle = \dfrac{\left(a^\dagger\right)^n |0\rangle}{\sqrt{n!}}}
 \tag{7.10}\]</span></span></p>
 <p>이다.</p>
@@ -495,7 +495,7 @@ a|n\rangle = \sqrt{n}|n-1\rangle,\qquad a^\dagger|n\rangle = \sqrt{n+1}|n+1\rang
 </section>
 <section id="사다리-연산자와-x-p" class="level3" data-number="7.2.3">
 <h3 data-number="7.2.3" class="anchored" data-anchor-id="사다리-연산자와-x-p"><span class="header-section-number">7.2.3</span> 사다리 연산자와 <span class="math inline">\(X\)</span>, <span class="math inline">\(P\)</span></h3>
-<p>사다리 연산자는 <span class="math inline">\(X,\,P\)</span> 에 대해 <a href="#eq-QM_ladder_operator_a" class="quarto-xref">식&nbsp;<span>7.2</span></a> 와 <a href="#eq-QM_ladder_operator_a_dagger" class="quarto-xref">식&nbsp;<span>7.3</span></a> 로 정의되었다. 그렇다면 <span class="math inline">\(X,\,P\)</span> 를 사다리 연산자에 대해 다음과 같이 표현 할 수 있다.</p>
+<p>사다리 연산자는 <span class="math inline">\(X,\,P\)</span> 에 대해 <a href="#eq-QM_sho_ladder_operator_a" class="quarto-xref">식&nbsp;<span>7.2</span></a> 와 <a href="#eq-QM_sho_ladder_operator_a_dagger" class="quarto-xref">식&nbsp;<span>7.3</span></a> 로 정의되었다. 그렇다면 <span class="math inline">\(X,\,P\)</span> 를 사다리 연산자에 대해 다음과 같이 표현 할 수 있다.</p>
 <p><span id="eq-QM_sho_x_and_p_with_ladder_operator"><span class="math display">\[
 \begin{aligned}
 X&amp; = \left(\dfrac{\hbar}{2m\omega}\right)^{1/2} \left( a+a^\dagger \right), \\
@@ -653,7 +653,7 @@ P&amp;= i \left(\dfrac{m\omega \hbar}{2}\right)^{1/2} \left(a^\dagger - a\right)
 </div>
 <p><br></p>
 <div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span>에렌페스트 정리를 이용한다. <a href="#eq-QM_commutator_for_ladder_and_hamiltonian" class="quarto-xref">식&nbsp;<span>7.6</span></a> 로부터 <span class="math display">\[
+<p><span class="proof-title"><em>(해답)</em>. </span>에렌페스트 정리를 이용한다. <a href="#eq-QM_sho_commutator_for_ladder_and_hamiltonian" class="quarto-xref">식&nbsp;<span>7.6</span></a> 로부터 <span class="math display">\[
 \dfrac{d}{dt}\langle a(t) \rangle = -\dfrac{i}{\hbar} \langle [a,H]\rangle = -i \omega \langle a(t) \rangle
 \]</span></p>
 <p>이므로 <span class="math inline">\(\langle a(t) \rangle = e^{-i\omega t}\langle a(0)\rangle\)</span> 이다. 같은 방법으로 <span class="math inline">\(\langle a^\dagger (t) \rangle = e^{i\omega t}\langle a^\dagger (0)\rangle\)</span> 임을 보일 수 있다.</p>
@@ -746,7 +746,7 @@ P &amp;\to -i\hbar \dfrac{d}{dx} + f(x)
 <h2 data-number="7.3" class="anchored" data-anchor-id="x-기저에서의-고유함수"><span class="header-section-number">7.3</span> <span class="math inline">\(X\)</span> 기저에서의 고유함수</h2>
 <section id="sec-QM_SHO_hermite_polynomials" class="level3" data-number="7.3.1">
 <h3 data-number="7.3.1" class="anchored" data-anchor-id="sec-QM_SHO_hermite_polynomials"><span class="header-section-number">7.3.1</span> <span class="math inline">\(X\)</span> 기저에서의 고유함수와 에르미트 다항식</h3>
-<p>이제 사다리 연산자를 이용한 에너지 기저에서 <span class="math inline">\(X\)</span> 기저에 대한 표현으로 변환시키는 것을 알아보자. 우리는 <span class="math inline">\(a|0\rangle = 0\)</span> 임을 안다. 또한 <a href="#eq-QM_ladder_operator_a" class="quarto-xref">식&nbsp;<span>7.2</span></a> 와 <a href="#eq-QM_ladder_operator_a_dagger" class="quarto-xref">식&nbsp;<span>7.3</span></a> 에서 보았듯이</p>
+<p>이제 사다리 연산자를 이용한 에너지 기저에서 <span class="math inline">\(X\)</span> 기저에 대한 표현으로 변환시키는 것을 알아보자. 우리는 <span class="math inline">\(a|0\rangle = 0\)</span> 임을 안다. 또한 <a href="#eq-QM_sho_ladder_operator_a" class="quarto-xref">식&nbsp;<span>7.2</span></a> 와 <a href="#eq-QM_sho_ladder_operator_a_dagger" class="quarto-xref">식&nbsp;<span>7.3</span></a> 에서 보았듯이</p>
 <p><span class="math display">\[
 \begin{aligned}
 a &amp;= \left(\dfrac{m\omega}{2\hbar}\right)^{1/2} X + i \left(\dfrac{1}{2m\omega \hbar}\right)^{1/2} P, \\
@@ -780,7 +780,7 @@ a^\dagger &amp;= \left(\dfrac{m\omega}{2\hbar}\right)^{1/2} X -i \left(\dfrac{1}
 <p><span class="math display">\[
 |n\rangle = \dfrac{\left(a^\dagger\right)^n |0\rangle}{\sqrt{n!}}
 \]</span></p>
-<p>임을 안다.(<a href="#eq-QM_energy_eigenstate_from_ground_state_in_sho" class="quarto-xref">식&nbsp;<span>7.10</span></a>) 이로부터 <span class="math inline">\(\Psi_n(x) = \langle x|n\rangle\)</span> 을 얻는다.</p>
+<p>임을 안다.(<a href="#eq-QM_sho_energy_eigenstate_from_ground_state_in_sho" class="quarto-xref">식&nbsp;<span>7.10</span></a>) 이로부터 <span class="math inline">\(\Psi_n(x) = \langle x|n\rangle\)</span> 을 얻는다.</p>
 <p><span class="math display">\[
 \begin{aligned}
 \Psi_n(x) = \langle x|n\rangle = \dfrac{1}{\sqrt{n!}}\left[\left(\dfrac{m\omega}{2\hbar}\right)^{1/2} x - \left(\dfrac{\hbar}{2m\omega}\right)^{1/2}\dfrac{d}{dx}\right]^n \Psi_0 (x),
@@ -799,17 +799,17 @@ a^\dagger &amp;= \left(\dfrac{m\omega}{2\hbar}\right)^{1/2} X -i \left(\dfrac{1}
 H_n(\xi) \, e^{-\xi^2/2} = \left(\xi - \dfrac{d}{d\xi}\right)^n e^{-\xi^2/2}
 \]</span></p>
 <p>이므로,</p>
-<p><span id="eq-QM_generator_of_hermite_polynomial"><span class="math display">\[
+<p><span id="eq-QM_sho_generator_of_hermite_polynomial"><span class="math display">\[
 H_n(\xi) = e^{\xi^2/2}\left(\xi - \dfrac{d}{d\xi}\right)^n e^{-\xi^2/2}
 \tag{7.17}\]</span></span></p>
 <p>이다.</p>
 <p><br></p>
 </section>
-<section id="에르미트-다항식" class="level3" data-number="7.3.2">
-<h3 data-number="7.3.2" class="anchored" data-anchor-id="에르미트-다항식"><span class="header-section-number">7.3.2</span> 에르미트 다항식</h3>
-<section id="recursion-relations" class="level4">
-<h4 class="anchored" data-anchor-id="recursion-relations">Recursion relations</h4>
-<p>에르미트 다항식에 대해 알아보자. 우선 <a href="#eq-QM_generator_of_hermite_polynomial" class="quarto-xref">식&nbsp;<span>7.17</span></a> 로 정의된 에르미트 다항식의 첫 4 함수를 정의대로 계산해보면 다음과 같다.(여기서는 변수를 <span class="math inline">\(\xi\)</span> 에서 <span class="math inline">\(y\)</span> 로 변경한다.)</p>
+<section id="sec-QM_sho_hermite_polynomial" class="level3" data-number="7.3.2">
+<h3 data-number="7.3.2" class="anchored" data-anchor-id="sec-QM_sho_hermite_polynomial"><span class="header-section-number">7.3.2</span> 에르미트 다항식</h3>
+<section id="recurssion-relations" class="level4">
+<h4 class="anchored" data-anchor-id="recurssion-relations"><strong>Recurssion relations</strong></h4>
+<p>에르미트 다항식에 대해 알아보자. 우선 <a href="#eq-QM_sho_generator_of_hermite_polynomial" class="quarto-xref">식&nbsp;<span>7.17</span></a> 로 정의된 에르미트 다항식의 첫 4 함수를 정의대로 계산해보면 다음과 같다.(여기서는 변수를 <span class="math inline">\(\xi\)</span> 에서 <span class="math inline">\(y\)</span> 로 변경한다.)</p>
 <p><span id="eq-QM_sho_hermite_polynomial_first_4"><span class="math display">\[
 \begin{aligned}
 H_0(y) &amp;= 1, \\[0.2em]
@@ -836,10 +836,10 @@ a = \dfrac{1}{\sqrt{2}}\left(\xi + \dfrac{d}{d\xi}\right),\qquad  a^\dagger = \d
 \left(y-\dfrac{d}{dy}\right) H_n(y) e^{-y^2/2} = 2n H_{n-1}(y)e^{-y^2/2}
 \]</span></p>
 <p>이며 다음 관계를 얻을 수 있다.</p>
-<p><span id="eq-QM_hermite_polynomial_recurssion_relation_1"><span class="math display">\[
+<p><span id="eq-QM_sho_hermite_polynomial_recurssion_relation_1"><span class="math display">\[
 H'_n(y) = 2nH_{n-1}(y).
 \tag{7.19}\]</span></span></p>
-<p>또한 <a href="#eq-QM_generator_of_hermite_polynomial" class="quarto-xref">식&nbsp;<span>7.17</span></a> 로부터 다음의 결과를 얻을 수 있다. <span class="math display">\[
+<p>또한 <a href="#eq-QM_sho_generator_of_hermite_polynomial" class="quarto-xref">식&nbsp;<span>7.17</span></a> 로부터 다음의 결과를 얻을 수 있다. <span class="math display">\[
 \begin{aligned}
 H_{n+1}(y) &amp;= e^{y^2/2} \left(y-\dfrac{d}{dy}\right)^{n+1} e^{-y^2/2} \\
 &amp;= e^{y^2} \left(y-\dfrac{d}{dy}\right) e^{-y^2/2} e^{y^2/2}\left(y-\dfrac{d}{dy}\right)^{n} e^{-y^2/2} \\
@@ -848,17 +848,17 @@ H_{n+1}(y) &amp;= e^{y^2/2} \left(y-\dfrac{d}{dy}\right)^{n+1} e^{-y^2/2} \\
 \end{aligned}
 \]</span></p>
 <p>즉,</p>
-<p><span id="eq-QM_hermite_polynomial_recurssion_relation_2"><span class="math display">\[
+<p><span id="eq-QM_sho_hermite_polynomial_recurssion_relation_2"><span class="math display">\[
 H'_n(y) = 2yH_n(y) - H_{n+1}(y)
 \tag{7.20}\]</span></span></p>
-<p>그리고 <a href="#eq-QM_hermite_polynomial_recurssion_relation_1" class="quarto-xref">식&nbsp;<span>7.19</span></a> 과 <a href="#eq-QM_hermite_polynomial_recurssion_relation_2" class="quarto-xref">식&nbsp;<span>7.20</span></a> 로 부터 다음의 점화식을 얻을 수 있다.</p>
-<p><span id="eq-QM_hermite_polynomial_recurssion_relation_3"><span class="math display">\[
+<p>그리고 <a href="#eq-QM_sho_hermite_polynomial_recurssion_relation_1" class="quarto-xref">식&nbsp;<span>7.19</span></a> 과 <a href="#eq-QM_sho_hermite_polynomial_recurssion_relation_2" class="quarto-xref">식&nbsp;<span>7.20</span></a> 로 부터 다음의 점화식을 얻을 수 있다.</p>
+<p><span id="eq-QM_sho_hermite_polynomial_recurssion_relation_3"><span class="math display">\[
 H_{n+1}(y) = 2yH_n(y) - 2nH_{n-1}(y).
 \tag{7.21}\]</span></span></p>
 <p><br></p>
 </section>
 <section id="직교성" class="level4">
-<h4 class="anchored" data-anchor-id="직교성">직교성</h4>
+<h4 class="anchored" data-anchor-id="직교성"><strong>직교성</strong></h4>
 <p>우리는 <span class="math inline">\(\langle n|m\rangle = \delta_{nm}\)</span> 이라는 것을 안다. <span class="math inline">\(y=\left(\dfrac{m\omega}{\hbar}\right)^{1/2}x\)</span> 임을 고려하면 이 직교성으로부터,</p>
 <p><span class="math display">\[
 \begin{aligned}
@@ -867,9 +867,18 @@ H_{n+1}(y) = 2yH_n(y) - 2nH_{n-1}(y).
 \end{aligned}
 \]</span></p>
 <p>이다. 이를 이용하면 에르미트 다항식의 직교성을 다음과 같이 얻을 수 있다.</p>
-<p><span id="eq-QM_orthogonality_of_hermite_polynomials"><span class="math display">\[
+<p><span id="eq-QM_sho_orthogonality_of_hermite_polynomials"><span class="math display">\[
 \int_{-\infty}^\infty H_n (y)\, H_{m}(y) \, dy = (\sqrt{\pi} 2^n n!)\delta_{nm}
 \tag{7.22}\]</span></span></p>
+<p><br></p>
+</section>
+<section id="parity" class="level4">
+<h4 class="anchored" data-anchor-id="parity"><strong>Parity</strong></h4>
+<p><a href="#eq-QM_sho_generator_of_hermite_polynomial" class="quarto-xref">식&nbsp;<span>7.17</span></a> 로 부터</p>
+<p><span id="eq-QM_sho_parity_of_hermite_polynomials"><span class="math display">\[
+H_n (-\xi) = (-1)^n H_n(\xi)
+\tag{7.23}\]</span></span></p>
+<p>임을 안다. 그리고 양의 정수 <span class="math inline">\(m\)</span> 에 대해 <span class="math inline">\(H_{2m-1} (0)=0\)</span> 임도 안다.</p>
 <p><br></p>
 </section>
 </section>
@@ -931,12 +940,12 @@ V(x) = \left\{\begin{array}{ll}\dfrac{1}{2}m\omega^2x^2, &amp;;\qquad x&gt;0 \\ 
 </div>
 <p><br></p>
 <div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(x=0\)</span> 에서의 경계조건은 <span class="math inline">\(\Psi(0) = 0\)</span> 이다. <a href="#eq-QM_sho_hermite_polynomial_first_4" class="quarto-xref">식&nbsp;<span>7.18</span></a> 과 <a href="#eq-QM_hermite_polynomial_recurssion_relation_3" class="quarto-xref">식&nbsp;<span>7.21</span></a> 로부터 에르미트 다항식의 유용한 성질을 얻을 수 있다. <span class="math inline">\(H_0(y)\)</span> 부터 <span class="math inline">\(H_3(y)\)</span> 까지 보면 <span class="math inline">\(H_n(y)\)</span> 에서 <span class="math inline">\(n\)</span> 이 짝수이면 짝함수(even function), <span class="math inline">\(n\)</span> 이 홀수 이면 홀함수 인 것 같다. 이제 <a href="#eq-QM_hermite_polynomial_recurssion_relation_3" class="quarto-xref">식&nbsp;<span>7.21</span></a> 를 이용하여 보이자. <span class="math inline">\(n\)</span> 보다 작거나 같은 정수에 대해 이 명제가 성립한다고 가정하자. <a href="#eq-QM_hermite_polynomial_recurssion_relation_3" class="quarto-xref">식&nbsp;<span>7.21</span></a> 로부터</p>
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(x=0\)</span> 에서의 경계조건은 <span class="math inline">\(\Psi(0) = 0\)</span> 이다. <a href="#eq-QM_sho_hermite_polynomial_first_4" class="quarto-xref">식&nbsp;<span>7.18</span></a> 과 <a href="#eq-QM_sho_hermite_polynomial_recurssion_relation_3" class="quarto-xref">식&nbsp;<span>7.21</span></a> 로부터 에르미트 다항식의 유용한 성질을 얻을 수 있다. <span class="math inline">\(H_0(y)\)</span> 부터 <span class="math inline">\(H_3(y)\)</span> 까지 보면 <span class="math inline">\(H_n(y)\)</span> 에서 <span class="math inline">\(n\)</span> 이 짝수이면 짝함수(even function), <span class="math inline">\(n\)</span> 이 홀수 이면 홀함수 인 것 같다. 이제 <a href="#eq-QM_sho_hermite_polynomial_recurssion_relation_3" class="quarto-xref">식&nbsp;<span>7.21</span></a> 를 이용하여 보이자. <span class="math inline">\(n\)</span> 보다 작거나 같은 정수에 대해 이 명제가 성립한다고 가정하자. <a href="#eq-QM_sho_hermite_polynomial_recurssion_relation_3" class="quarto-xref">식&nbsp;<span>7.21</span></a> 로부터</p>
 <p><span class="math display">\[
 H_{n+1}(-y) = 2(-y)H_n(-y) - 2nH_{n-1}(-y)
 \]</span></p>
 <p>이며 <span class="math inline">\(n+1\)</span> 이 짝수이면 <span class="math inline">\(n\)</span>, <span class="math inline">\(n-1\)</span> 은 각각 홀수와 짝수이고 <span class="math inline">\(H_n\)</span> 과 <span class="math inline">\(H_{n-1}\)</span> 은 각각 홀함수, 짝함수이며, <span class="math inline">\(H_{n+1}(-y) = 2yH_n(y) -2nH_{n-1}(y) = H_{n+1}(y)\)</span> 이다. 같은 방법으로 <span class="math inline">\(n+1\)</span> 이 홀수이면 <span class="math inline">\(H_{n+1}(-y) = -H_{n+1}(y)\)</span> 라는 것을 보일 수 있다.</p>
-<p>이제 <span class="math inline">\(H_{n}(y)\)</span> 의 상수항을 생각하자. <span class="math inline">\(n\)</span> 이 홀수이면 홀함수 이므로 상수항이 <span class="math inline">\(0\)</span> 이다. 역시 <a href="#eq-QM_hermite_polynomial_recurssion_relation_3" class="quarto-xref">식&nbsp;<span>7.21</span></a> 에서</p>
+<p>이제 <span class="math inline">\(H_{n}(y)\)</span> 의 상수항을 생각하자. <span class="math inline">\(n\)</span> 이 홀수이면 홀함수 이므로 상수항이 <span class="math inline">\(0\)</span> 이다. 역시 <a href="#eq-QM_sho_hermite_polynomial_recurssion_relation_3" class="quarto-xref">식&nbsp;<span>7.21</span></a> 에서</p>
 <p><span class="math display">\[
 H_{2n+2}(y) = 2yH_{2n+1}(y) - (4n+2)H_{2n}(y)
 \]</span></p>
