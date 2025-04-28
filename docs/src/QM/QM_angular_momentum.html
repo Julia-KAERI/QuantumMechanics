@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.43">
+<meta name="generator" content="quarto-1.6.42">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -37,7 +37,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-d4d76bf8491c20bad77d141916dc28e1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap-b467865d89f01302b3bb45791fa41ab5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
@@ -339,7 +339,10 @@ window.Quarto = {
   <li><a href="#rotational-invariant-문제" id="toc-rotational-invariant-문제" class="nav-link" data-scroll-target="#rotational-invariant-문제"><span class="header-section-number">12.3.2</span> Rotational Invariant 문제</a></li>
   <li><a href="#연습문제-1" id="toc-연습문제-1" class="nav-link" data-scroll-target="#연습문제-1">연습문제</a></li>
   </ul></li>
-  <li><a href="#차원에서의-각운동량" id="toc-차원에서의-각운동량" class="nav-link" data-scroll-target="#차원에서의-각운동량"><span class="header-section-number">12.4</span> 3차원에서의 각운동량</a></li>
+  <li><a href="#차원에서의-각운동량" id="toc-차원에서의-각운동량" class="nav-link" data-scroll-target="#차원에서의-각운동량"><span class="header-section-number">12.4</span> 3차원에서의 각운동량</a>
+  <ul class="collapse">
+  <li><a href="#sec-QM_angular_momentum_angular_momentum_operators" id="toc-sec-QM_angular_momentum_angular_momentum_operators" class="nav-link" data-scroll-target="#sec-QM_angular_momentum_angular_momentum_operators"><span class="header-section-number">12.4.1</span> 각운동량 연산자</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -1057,8 +1060,101 @@ P(l_z=0) = \dfrac{1}{3},\, P(l_z=2)= P(l_z=-2)= \dfrac{1}{6}
 </section>
 <section id="차원에서의-각운동량" class="level2" data-number="12.4">
 <h2 data-number="12.4" class="anchored" data-anchor-id="차원에서의-각운동량"><span class="header-section-number">12.4</span> 3차원에서의 각운동량</h2>
+<section id="sec-QM_angular_momentum_angular_momentum_operators" class="level3" data-number="12.4.1">
+<h3 data-number="12.4.1" class="anchored" data-anchor-id="sec-QM_angular_momentum_angular_momentum_operators"><span class="header-section-number">12.4.1</span> 각운동량 연산자</h3>
+<p><span class="math inline">\(L_z = XP_y-YP_x\)</span> 로부터 <span class="math inline">\(x,\, y\)</span> 축에 대한 회전의 generator 로서의 <span class="math inline">\(L_x,\, L_y\)</span> 를 다음과 같이 정의 할 수 있다.</p>
+<p><span id="eq-QM_angular_momentum_three_angular_momentums"><span class="math display">\[
+L_x := YP_z - ZP_y,\qquad L_y :=ZP_x-XP_z,\qquad L_z := XP_y-YP_z.
+\tag{12.35}\]</span></span></p>
+<p>이 정의의 consistency 를 확인해보자. 3차원 공간에서 한 점을 잡아 <span class="math inline">\(R(\varepsilon \hat{\boldsymbol{e}}_x)\)</span>, <span class="math inline">\(R(\varepsilon_y \hat{\boldsymbol{e}}_y)\)</span>, <span class="math inline">\(R(-\varepsilon \hat{\boldsymbol{e}}_x)\)</span>, <span class="math inline">\(R(-\varepsilon_y \hat{\boldsymbol{e}}_y)\)</span> 의 순서로 infinitesimal rotation 을 수행할 때 다음과 같다는 것을 보일 수 있다. (<a href="#exr-shankar_12_4_2" class="quarto-xref">연습문제&nbsp;<span>12.13</span></a>)</p>
+<p><span id="eq-QM_angular_momentum_consistency_check_for_3d_rotation"><span class="math display">\[
+R(-\varepsilon_y \hat{\boldsymbol{e}}_y)R(-\varepsilon_x \hat{\boldsymbol{e}}_x) R(\varepsilon_y \hat{\boldsymbol{e}}_y)R(\varepsilon_x \hat{\boldsymbol{e}}_x) = R(-\varepsilon_x \varepsilon_y \hat{\boldsymbol{e}}_z)
+\tag{12.36}\]</span></span></p>
+<p>이로부터 양자 연산자 <span class="math inline">\(U[R]\)</span> 은 다음을 만족한다는 것을 알 수 있다.</p>
+<p><span id="eq-QM_angular_momentum_consistency_check_for_3d_rotation_2"><span class="math display">\[
+U[R(-\varepsilon_y \hat{\boldsymbol{e}}_y)] U[R(-\varepsilon_x \hat{\boldsymbol{e}}_x)] U[R(\varepsilon_y \hat{\boldsymbol{e}}_y)] U[R(\varepsilon_x \hat{\boldsymbol{e}}_x)] = U[R(-\varepsilon_x \varepsilon_y \hat{\boldsymbol{e}}_z)]
+\tag{12.37}\]</span></span></p>
+<p>이로부터 우리는 아래의 관계를 얻을 수 있다. (<a href="#exr-shankar_12_4_2" class="quarto-xref">연습문제&nbsp;<span>12.13</span></a>)</p>
+<p><span id="eq-QM_angular_momentum_consistency_check_for_3d_rotation_3"><span class="math display">\[
+[L_x,\,L_y] = i\hbar L_z
+\tag{12.38}\]</span></span></p>
+<p>공간의 대칭성을 생각하면 우리는 다음과 같은 일반적인 관계를 얻을 수 있다.</p>
+<p><span id="eq-QM_angular_momentum_commutation_relation"><span class="math display">\[
+\boxed{[L_i,\, L_j] = i\hbar \sum_{k=1}^3\varepsilon_{ijk}L_k} .
+\tag{12.39}\]</span></span></p>
+<p><br></p>
+<p>이제 총 각운동량 연산자 <span class="math inline">\(L^2\)</span> 를 다음과 같이 정의하자.</p>
+<p><span id="eq-QM_angular_momentum_definition_of_total_angular_momentum"><span class="math display">\[
+L^2 = L_x^2+L_y^2+L_z^2.
+\tag{12.40}\]</span></span></p>
+<p>이 때 다음이 성립한다.</p>
+<p><span id="eq-QM_angular_momentum_commutation_relation_of_total_angular_momentum_and_angular_momentum"><span class="math display">\[
+\boxed{[L^2,\, L_i] = 0,\qquad i=x,\,y,\,z}.
+\tag{12.41}\]</span></span></p>
+<br>
+<div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+<div id="exm-QM_angular_momentum_commutation_relation_of_total_angular_momentum" class="theorem example">
+<p><span class="theorem-title"><strong>예제 12.2</strong></span> <span class="math inline">\([L^2,\, L_i]=0\)</span> 임을 보이자. 우선 <span class="math inline">\([L_z^2,\,L_z]=0\)</span> 이므로, <span class="math display">\[
+\begin{aligned}
+\;[L^2,\,L_z] &amp;= [L_x^2,\,L_z] + [L_y^2,\, L_z] = -i\hbar(L_xL_y + L_yL_x) +i\hbar(L_xL_y + L_yL_x) =0
+\end{aligned}
+\]</span></p>
+<p>이다. 같은 방법으로 <span class="math inline">\([L^2,\,L_x]=[L^2,\,L_y]=0\)</span> 임을 보일 수 있다.</p>
+</div>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-shankar_12_4_1" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 12.12 (Shankar 12.4.1)</strong></span> (<span class="math inline">\(1\)</span>) <span class="math inline">\(\boldsymbol{c}=\boldsymbol{a}\times \boldsymbol{b}\)</span> 일 때 <span class="math inline">\(\displaystyle c_i = \sum_{j=1}^3 \sum_{k=1}^3 \varepsilon_{ijk} a_j b_k\)</span> 임을 보여라.</p>
+<p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(U_1,\,U_2,\,U_3\)</span> 가 포텐셜의 영향을 받는 단일 입자의 에너지 고유함수라고 하자. 이 포텐셜에서의 세 페르미온 입자가 각각 <span class="math inline">\(U_1,\,U_2,\,U_3\)</span> 의 파동함수를 가질 때 <span class="math inline">\(\varepsilon_{ijk}\)</span> 를 사용하여 파동함수 <span class="math inline">\(\Psi_A(x_1,\,x_2,\,x_3)\)</span> 를 기술하라.</p>
+</div>
+</div>
+<p><br></p>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(1\)</span>) trivial</p>
+<p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(\Psi_A(x_1,\,x_2,\,x_3) = \sum_{i,\,j,\,k=1}^3 \varepsilon_{ijk} U_1(x_i)U_2(x_j)U_3(x_k)\)</span></p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-shankar_12_4_2" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 12.13 (Shankar 12.4.2)</strong></span> (<span class="math inline">\(1\)</span>) <a href="#eq-QM_angular_momentum_consistency_check_for_3d_rotation" class="quarto-xref">식&nbsp;<span>12.36</span></a> 가 성립함을 보여라.</p>
+<p>(<span class="math inline">\(2\)</span>) <a href="#eq-QM_angular_momentum_consistency_check_for_3d_rotation_2" class="quarto-xref">식&nbsp;<span>12.37</span></a> 로부터 <a href="#eq-QM_angular_momentum_consistency_check_for_3d_rotation_3" class="quarto-xref">식&nbsp;<span>12.38</span></a> 을 유도하라.</p>
+</div>
+</div>
+<p><br></p>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(1\)</span>) <span class="math inline">\(R(\varepsilon_x \hat{\boldsymbol{e}}_x) = \begin{bmatrix} 1 &amp; 0 &amp; 0 \\ 0 &amp; \cos \varepsilon_x &amp; - \sin \varepsilon_x \\ 0 &amp; \sin \varepsilon_x &amp; \cos \varepsilon_x\end{bmatrix} \approx \begin{bmatrix} 1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; - \varepsilon_x \\ 0 &amp; \varepsilon_x &amp; 1\end{bmatrix}\)</span>, <span class="math inline">\(R(\varepsilon_y \hat{\boldsymbol{e}})\approx \begin{bmatrix} 1 &amp; 0 &amp; \varepsilon_y \\ 0 &amp; 1 &amp;0 \\ -\varepsilon_y &amp; 0 &amp; 1\end{bmatrix}\)</span></p>
+<p>이므로,</p>
+<p><span class="math display">\[
+\begin{aligned}
+R(-\varepsilon_y \hat{\boldsymbol{e}}_y)&amp;R(-\varepsilon_x \hat{\boldsymbol{e}}_x) R(\varepsilon_y \hat{\boldsymbol{e}}_y)R(\varepsilon_x \hat{\boldsymbol{e}}_x)\\[0.4em]
+&amp;=  \begin{bmatrix} 1 &amp; 0 &amp; -\varepsilon_y \\ 0 &amp; 1 &amp;0 \\ \varepsilon_y &amp; 0 &amp; 1\end{bmatrix}\begin{bmatrix} 1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp;  \varepsilon_x \\ 0 &amp; -\varepsilon_x &amp; 1\end{bmatrix}\begin{bmatrix} 1 &amp; 0 &amp; \varepsilon_y \\ 0 &amp; 1 &amp;0 \\ -\varepsilon_y &amp; 0 &amp; 1\end{bmatrix}\begin{bmatrix} 1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; - \varepsilon_x \\ 0 &amp; \varepsilon_x &amp; 1\end{bmatrix} \\[0.4em]
+&amp;= \begin{bmatrix} 1 &amp; \varepsilon_x\varepsilon_y &amp; -\varepsilon_y \\ 0 &amp; 1 &amp;  \varepsilon_x \\ \varepsilon_y  &amp; -\varepsilon_x &amp; 1\end{bmatrix} \begin{bmatrix} 1 &amp; \varepsilon_x \varepsilon_y  &amp; \varepsilon_y \\ 0 &amp; 1 &amp;  -\varepsilon_x \\ -\varepsilon_y &amp; \varepsilon_x &amp; 1\end{bmatrix} \\[0.4em]
+&amp;=\begin{bmatrix} 1 + \varepsilon_y^2 + \varepsilon_x^2\varepsilon_y^2 &amp; \varepsilon_x \varepsilon_y &amp; - \varepsilon_x^2 \varepsilon_y \\ -\varepsilon_x\varepsilon_y &amp; 1+\varepsilon_x^2 &amp; 0\\ 0 &amp; \varepsilon_x \varepsilon_y^2 &amp; 1+\varepsilon_x^2 + \varepsilon_y^2\end{bmatrix}
+\approx \begin{bmatrix} 1 &amp; \varepsilon_x \varepsilon_y &amp; 0 \\ -\varepsilon_x \varepsilon_y &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1\end{bmatrix} = R(-\varepsilon_x \varepsilon_y \hat{\boldsymbol{e}}_z)
+\end{aligned}
+\]</span></p>
+<p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(U[R(\varepsilon_x \hat{\boldsymbol{e}}_x)] = I - \dfrac{i\varepsilon_x L_x}{\hbar}\)</span>, <span class="math inline">\(U[R(\varepsilon_y \hat{\boldsymbol{e}}_y)] = I - \dfrac{i\varepsilon_y L_y}{\hbar}\)</span> 에 대해</p>
+<p><span class="math display">\[
+\begin{aligned}
+U[R(-\varepsilon_y \hat{\boldsymbol{e}}_y)] &amp;U[R(-\varepsilon_x \hat{\boldsymbol{e}}_x)] U[R(\varepsilon_y \hat{\boldsymbol{e}}_y)] U[R(\varepsilon_x \hat{\boldsymbol{e}}_x)] \\[0.4em]
+&amp;= \left(I + \dfrac{i\varepsilon_y L_y}{\hbar}\right) \left(I + \dfrac{i\varepsilon_x L_x}{\hbar}\right)\left(I- \dfrac{i\varepsilon_y L_y}{\hbar}\right) \left(I - \dfrac{i\varepsilon_x L_x}{\hbar}\right) \\[0.4em]
+&amp;= I - \dfrac{\varepsilon_x \varepsilon_y L_yL_x}{\hbar^2} + \dfrac{\varepsilon_x\varepsilon_y L_xL_y}{\hbar^2} + O(\varepsilon_x^2) + O(\varepsilon_y^2) \\[0.3em]
+&amp;= I + \dfrac{\varepsilon_x \varepsilon_y [L_x,\, L_y]}{\hbar^2}
+\end{aligned}
+\]</span></p>
+<p>이며,</p>
+<p><span class="math display">\[
+U[R(-\varepsilon_x \varepsilon_y \hat{\boldsymbol{e}}_z)] = I + \dfrac{i \varepsilon_x\varepsilon_i L_z}{\hbar}
+\]</span></p>
+<p>이므로 위의 두 식을 이용하면 다음을 얻는다.</p>
+<p><span class="math display">\[
+[L_x,\,L_y] = i\hbar L_z.
+\]</span></p>
+</div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
