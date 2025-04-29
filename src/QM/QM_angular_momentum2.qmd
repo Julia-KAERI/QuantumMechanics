@@ -432,4 +432,4 @@ $$
 \alpha = \hbar^2\left(\dfrac{k}{2}\right)\left(\dfrac{k}{2}+1\right)
 $$
 
-이다. 
+이다. 여기서 $L^2$ 의 고유값 $\alpha > (\beta_\max)^2$ 이므로 우리가 생각했던 조건에 어긋나지 않는다.
