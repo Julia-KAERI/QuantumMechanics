@@ -445,7 +445,7 @@ $$
 
 ## $L_z$ 고유값 문제
 
-### $L_z$ 의 고유값과 파동함수
+### $L_z$ 의 고유값과 파동함수 {#sec-QM_angular_momentum_eigenvalue_of_Lz_and_its_wavefunction}
 
 해밀토니안 $H$ 가 rotational invariant 하다면, 즉 $[L_z,\,H]=0$ 이라면 $H$ 와 $L_z$ 에 대한 공통 고유켓이 힐베르트 공간의 기저가 된다. $L_z$ 의 고유켓 $|l_z\rangle$ 이 다음을 만족한다고 하자.
 

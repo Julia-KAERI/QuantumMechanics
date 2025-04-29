@@ -334,6 +334,8 @@ $$
 
 ## $L^2$ 와 $L_z$ 의 고유값 문제
 
+### $L^2$ 과 $L_z$ 의 고유값과 각운동량 {#sec-QM_angular_momentum_eigenvalues_of_Lsq_and_L_z}
+
 $L^2$ 와 $L_z$ 의 고유상태를 $|\alpha\beta\rangle$ 이라고 하자. 즉
 
 $$
@@ -432,4 +434,8 @@ $$
 \alpha = \hbar^2\left(\dfrac{k}{2}\right)\left(\dfrac{k}{2}+1\right)
 $$
 
-이다. 여기서 $L^2$ 의 고유값 $\alpha > (\beta_\max)^2$ 이므로 우리가 생각했던 조건에 어긋나지 않는다.
+이다. 여기서 $L^2$ 의 고유값 $\alpha > (\beta_\max)^2$ 이므로 우리가 생각했던 조건에 어긋나지 않는다. 이제 이 $\beta_\text{max}$ 를 **이 상태의 각운동량 (angular momentum of the state)** 이라고 한다. 
+
+여기서 한가지 중요한 것을 짚고 넘어가야 한다. 우리는 앞서 @sec-QM_angular_momentum_eigenvalue_of_Lz_and_its_wavefunction 에서 각운동량 연산자
+
+
