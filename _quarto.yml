@@ -27,6 +27,7 @@ book:
       - src/QM/QM_N_DoF_system.qmd
       - src/QM/QM_symmetry.qmd
       - src/QM/QM_angular_momentum.qmd
+      - src/QM/QM_angular_momentum2.qmd
       - src/QM/QM_sakurai_problems.qmd
     # - part : src/part3/part3.qmd
     #   chapters:

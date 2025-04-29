@@ -1,0 +1,435 @@
+---
+title: "3차원에서의 각운동량"
+number-sections: true
+number-depth: 3
+crossref:
+  chapters: true
+---
+
+{{< include ../latexmacros.qmd >}}
+
+## 3차원에서의 각운동량
+
+### 각운동량 연산자 {#sec-QM_angular_momentum_angular_momentum_operators}
+
+$L_z = XP_y-YP_x$ 로부터 $x,\, y$ 축에 대한 회전의 generator 로서의 $L_x,\, L_y$ 를 다음과 같이 정의 할 수 있다.
+
+$$
+L_x := YP_z - ZP_y,\qquad L_y :=ZP_x-XP_z,\qquad L_z := XP_y-YP_z.
+$$ {#eq-QM_angular_momentum_three_angular_momentums}
+
+이 정의의 consistency 를 확인해보자. 3차원 공간에서 한 점을 잡아 $R(\varepsilon \hat{\bf{e}}_x)$, $R(\varepsilon_y \hat{\bf{e}}_y)$, $R(-\varepsilon \hat{\bf{e}}_x)$, $R(-\varepsilon_y \hat{\bf{e}}_y)$ 의 순서로 infinitesimal rotation 을 수행할 때 다음과 같다는 것을 보일 수 있다. (@exr-shankar_12_4_2)
+
+$$
+R(-\varepsilon_y \hat{\bf{e}}_y)R(-\varepsilon_x \hat{\bf{e}}_x) R(\varepsilon_y \hat{\bf{e}}_y)R(\varepsilon_x \hat{\bf{e}}_x) = R(-\varepsilon_x \varepsilon_y \hat{\bf{e}}_z)
+$$ {#eq-QM_angular_momentum_consistency_check_for_3d_rotation}
+
+이로부터 양자 연산자 $U[R]$ 은 다음을 만족한다는 것을 알 수 있다.
+
+$$
+U[R(-\varepsilon_y \hat{\bf{e}}_y)] U[R(-\varepsilon_x \hat{\bf{e}}_x)] U[R(\varepsilon_y \hat{\bf{e}}_y)] U[R(\varepsilon_x \hat{\bf{e}}_x)] = U[R(-\varepsilon_x \varepsilon_y \hat{\bf{e}}_z)]
+$$ {#eq-QM_angular_momentum_consistency_check_for_3d_rotation_2}
+
+이로부터 우리는 아래의 관계를 얻을 수 있다. (@exr-shankar_12_4_2)
+
+$$
+[L_x,\,L_y] = i\hbar L_z
+$${#eq-QM_angular_momentum_consistency_check_for_3d_rotation_3}
+
+공간의 대칭성을 생각하면 우리는 다음과 같은 일반적인 관계를 얻을 수 있다.
+
+$$
+\boxed{[L_i,\, L_j] = i\hbar \sum_{k=1}^3\varepsilon_{ijk}L_k} .
+$$ {#eq-QM_angular_momentum_commutation_relation}
+
+</br>
+
+이제 총 각운동량 연산자 $L^2$ 를 다음과 같이 정의하자.
+
+$$
+L^2 = L_x^2+L_y^2+L_z^2.
+$$ {#eq-QM_angular_momentum_definition_of_total_angular_momentum}
+
+이 때 다음이 성립한다.
+
+$$
+\boxed{[L^2,\, L_i] = 0,\qquad i=x,\,y,\,z}.
+$$ {#eq-QM_angular_momentum_commutation_relation_of_total_angular_momentum_and_angular_momentum}
+
+</br>
+<div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+
+::: {#exm-QM_angular_momentum_commutation_relation_of_total_angular_momentum}
+
+$[L^2,\, L_i]=0$ 임을 보이자. 우선 $[L_z^2,\,L_z]=0$ 이므로,
+$$
+\begin{aligned}
+\;[L^2,\,L_z] &= [L_x^2,\,L_z] + [L_y^2,\, L_z] = -i\hbar(L_xL_y + L_yL_x) +i\hbar(L_xL_y + L_yL_x) =0
+\end{aligned}
+$$
+
+이다. 같은 방법으로 $[L^2,\,L_x]=[L^2,\,L_y]=0$ 임을 보일 수 있다.
+
+:::
+</div>
+
+</br>
+
+### 유한 회전 연산자 {#sec-QM_angular_momentum_finite_rotation_in_3d}
+
+이제 미소각(infinitesimal angle) 이 아닌 어떤 정해진 각도에 대한 회전을 생각하고 이런 회전을 유한 회전이라고 하자. 어떤 축을 중심으로 한 유한회전은 finite translation 과 마찬가지로 특정한 축에 대한 연속적인 미소회전으로 간주 할 수 있다. 회전축의 방향과 회전각을 벡터 $\bf{\theta}$ 로 표현하자. 즉 $\hat{\bf{\theta}}$ 방향을 회전축으로 하여 $\theta = |\bf{\theta}|$ 만큼의 회전을 의미한다. $\bf{\theta}=\theta_z \hat{\bf{e}}_z$ 에 대한 회전, 즉 $z$ 축에 대한 $\theta$ 만큼의 회전은 @eq-QM_angular_momentum_finite_rotation_in_2d 로부터 다음과 같다는 것을 알 수 있다.
+
+
+$$
+U[R(\theta_z \hat{\bf{e}}_z)] = e^{-i\theta_z L_z/\hbar}
+$$
+
+이제 우리는 임의의 $\bf{\theta}$ 에 대한 회전이 다음과 같다는 것을 보일 것이다.
+
+$$
+\boxed{U[R(\bf{\theta})] = \lim_{N \to \infty} \left(I - \dfrac{i}{\hbar}\dfrac{\theta}{N} \hat{\bf{\theta}}\bf{\cdot L}\right)^N = e^{-i\bf{\theta \cdot L}/\hbar} }.
+$$ {#eq-QM_angular_momentum_finite_rotation_in_3d}
+
+
+
+</br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-shankar_12_4_3}
+#### Shankar 12.4.3
+
+$\hat{\bf{\theta}}\bf{\cdot L}$ 이 $\hat{\bf{\theta}}$ 와 평행한 축으로의 회전에 대한 generator 임을 보이자. $\delta \bf{\theta}$ 를 $\bf{\theta}$ 와 평행한 미소각 회전이라고 하자.
+
+($1$) 위치 벡터 $\bf{r}$ 이 $\delta \bf{\theta}$ 만큼 회전한다면 그 위치는 $\bf{r} + \delta \bf{\theta}\times \bf{r}$ 로 변환된다는 것을 보여라.
+
+($2$) ($1$) 의 결과를 이용하여 $\delta \theta = |\delta \bf{\theta}|$ 에 대한 일차항까지만 고려했을 때
+
+$$
+\Psi(\bf{r})  \xrightarrow[{\;U[R(\delta \bf{\theta})]\;}]{} \Psi(\bf{r} - \delta \bf{\theta} \times \bf{r}) = \Psi(\bf{r})- (\delta \bf{\theta}\times \bf{r})\bf{\cdot} \nabla \Psi
+$$
+
+임을 보여라. 이를 $U[R(\delta \bf{\theta})] = I - (i\delta \theta/\hbar)L_{\hat{\bf{\theta}}}$ 와 비교하여 $L_\hat{\bf{\theta}}=\hat{\bf{\theta}}\bf{\cdot L}$ 임을 보여라.
+
+:::
+
+</div></br>
+
+::: {.solution}
+
+($1$) trivial 
+
+($2$) $U[R]|\bf{r}\rangle = |\bf{r}+\delta \bf{\theta}\times \bf{r}\rangle$ 이므로 
+
+$$
+\begin{aligned}
+\langle \bf{r}|U[R(\delta \bf{\theta})]|\Psi\rangle &= \int \langle \bf{r}|U[R(\delta \bf{\theta})]|\bf{r}'\rangle \langle \bf{r}'|\Psi\rangle \,d^3\bf{r}' = \int \langle \bf{r}|\bf{r}'+ \delta \bf{\theta}\times \bf{r}'\rangle\langle \bf{r}'|\Psi\rangle \\[0.3em]
+&= \int \delta(\bf{r}-\bf{r}'-\delta \bf{\theta} \times \bf{r}')\Psi(\bf{r}')\,d^3\bf{r}'
+\end{aligned}
+$$
+
+이다. $\bf{r} = \bf{r}'+ \delta \bf{\theta}\times \bf{r}'$ 이며 이로부터
+
+$$
+\begin{aligned}
+\bf{r}-\delta \bf{\theta} \times \bf{r}  &= \bf{r}'+ \delta \bf{\theta}\times \bf{r}' -\delta \bf{\theta}\times (\bf{r}'-\delta \bf{\theta}\times \bf{r}') \\[0.3em]
+&=\bf{r}' - \delta \bf{\theta}(\delta \bf{\theta\cdot r}) + \bf{r}\|\delta\bf{\theta}\|^2 = \bf{r}' + O(\|\delta \bf{\theta}\|^2)\bf{a}
+\end{aligned}
+$$
+
+이므로 $\|\delta \bf{\theta}\|$ 의 1차항 까지만 생각한다면 $\bf{r}' = \bf{r} -\delta\bf{\theta \cdot r}$ 로 놓을 수 있다. 따라서
+
+$$
+\langle \bf{r}|U[R(\delta \bf{\theta})]|\Psi\rangle = \Psi(\bf{r}-\delta \bf{\theta}\times \bf{r}) = \Psi(\bf{r}) - (\delta \bf{\theta} \times \bf{r})\bf{\cdot} \nabla \Psi
+$$
+
+이다. 문제의 $U[R(\delta \bf{\theta})] = I - (i\delta \theta/\hbar)L_{\hat{\bf{\theta}}}$ 와 비교하면,
+
+$$
+\langle \bf{r}|\left(I - \dfrac{i\delta \theta}{\hbar}L_{\hat{\bf{\theta}}}\right)|\Psi\rangle = \Psi(\bf{r}) - \dfrac{i\delta \theta}{\hbar}\langle \bf{r}|L_{\hat{\bf{\theta}}}|\Psi\rangle
+$$
+
+이므로 
+
+$$
+\langle \bf{r}|L_\hat{\bf{\theta}}|\Psi\rangle = -i\hbar (\hat{\bf{\theta}}\times \bf{r})\cdot \nabla \Psi = \hat{\bf{\theta} \cdot} (\bf{r} \times (-i\hbar \nabla)) \Psi = (\hat{\bf{\theta}}\bf{\cdot L}) \Psi(\bf{r})
+$$
+
+이다. 따라서 $L_\hat{\bf{\theta}}=\hat{\bf{\theta}}\bf{\cdot L}$ 이다.
+
+:::
+
+</br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-shankar_12_4_4}
+#### Shankar 12.4.4
+
+벡터 연산자 $\bf{V}$ 는 $\bf{V}$ 의 각각의 성분이 아래 식과 같이 변환되는 연산자이다.
+
+$$
+U^\dagger[R]V_iU[R] = \sum_j R_{ij}V_j
+$$ {#eq-QM_angular_momentum_exr_shakar_12_4_4_1}
+
+($1$) 미소 회전 $\delta \bf{\theta}$ 에 대해 위의 연습문제의 기저에서 다음이 성립함을 보여라.
+
+$$
+\sum_{j} R_{ij}V_j = V_i + (\delta \bf{\theta} \times \bf{V})_{i} = V_i+V_i \sum_j \sum_k \varepsilon_{ijk} (\delta \bf{\theta})_j V_k.
+$${#eq-QM_angular_momentum_exr_shakar_12_4_4_2}
+
+($2$) @eq-QM_angular_momentum_exr_shakar_12_4_4_1 의 좌변에 $U[R]= I - (i/\hbar)\delta \bf{\theta \cdot L}$ 을 대입하여 다음이 성립함을 보여라.
+
+$$
+[V_i,\, L_j] = i\hbar \sum_k \varepsilon_{ijk} V_k
+$${#eq-QM_angular_momentum_exr_shakar_12_4_4_3}
+
+이것은 @eq-QM_angular_momentum_exr_shakar_12_4_4_1 과 동등한 벡터연산자의 정의이다. $\bf{V}=\bf{L}$ 로 놓는다면 우리는 $\bf{L}$ 의 성분에 대한 commutation relation 을 얻는다.
+
+:::
+
+</div></br>
+
+::: {.solution}
+
+($1$)
+
+$$
+\begin{aligned}
+U^\dagger[R]V_iU[R] &= V_i + (\delta \bf{\theta}\times \bf{V})_i = V_i + \sum_{j,\,k=1}^3 \varepsilon_{ijk}(\delta \bf{\theta})_j V_k
+\end{aligned}
+$$
+
+
+($2$) 
+
+$$
+\begin{aligned}
+\left(I + \dfrac{i (\delta \bf{\theta \cdot L})}{\hbar}\right)V_i\left(I - \dfrac{i (\delta \bf{\theta \cdot L})}{\hbar}\right) &= V_i + i (\delta \bf{\theta \cdot L})V_i - i V_i (\delta \bf{\theta \cdot L}) \\[0.3em]
+&= V_i + \sum_j (i/\hbar)(\delta \bf{\theta})_j[L_j,\,V_i]
+\end{aligned}
+$$
+
+이므로 
+
+$$
+-\dfrac{i}{\hbar}(\delta \bf{\theta})_j [V_i,\,L_j] =  \sum_k \varepsilon_{ijk}(\delta \bf{\theta})_j V_k
+$$
+
+이다. 따라서
+
+$$
+[V_i,\,L_j] = i\hbar \sum_k\varepsilon_{ijk} V_k
+$$
+
+이다.
+
+:::
+
+</br>
+
+### 회전에 대해 불변인 해밀토니안 {#sec-QM_angular_symmetry_hamiltonian_invariant_under_rotation}
+
+임의의 회전 $R$ 에 대해 해밀토니안이 불변이면
+
+$$
+U^\dagger [R]HU[R]=H
+$$
+
+이며 따라서
+
+$$
+[H,\, L_i] = 0,\qquad i=x,\,y,\,z
+$$
+
+이고, $L^2=L_x^2+L_y^2+L_z^2$ 이므로
+
+$$
+[H,\, L^2] = 0
+$$
+
+이다. 우리는 이미 $[L^2,\,L_i]=0$ 임을 알고 있다. $L_x,\,L_y,\,L_z$ 는 서로 commute 하지 않으므로 회전에 대해 불변인 해밀토니안에 대해서는 $H,\, L^2$ 와 함께 $L_x,\,L_y,\,L_z$ 가운데 하나를 선택하여 공통의 고유상태로 이루어진 기절르 구성 할 수 있는데 보통은 $L_z$ 를 선택한다. 즉 일반적으로 $H,\, L^2,\, L_z$ 의 공통 고유상태를 다룬다.
+
+
+### 연습문제 {.unnumbered}
+
+</br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-shankar_12_4_1}
+#### Shankar 12.4.1
+
+($1$) $\bf{c}=\bf{a}\times \bf{b}$ 일 때 $\displaystyle c_i = \sum_{j=1}^3 \sum_{k=1}^3 \varepsilon_{ijk} a_j b_k$ 임을 보여라.
+
+($2$) $U_1,\,U_2,\,U_3$ 가 포텐셜의 영향을 받는 단일 입자의 에너지 고유함수라고 하자. 이 포텐셜에서의 세 페르미온 입자가 각각 $U_1,\,U_2,\,U_3$ 의 파동함수를 가질 때 $\varepsilon_{ijk}$ 를 사용하여 파동함수 $\Psi_A(x_1,\,x_2,\,x_3)$ 를 기술하라.
+
+:::
+
+</div></br>
+
+::: {.solution}
+
+($1$) trivial
+
+($2$) $\Psi_A(x_1,\,x_2,\,x_3) = \dfrac{1}{\sqrt{6}}\sum_{i,\,j,\,k=1}^3 \varepsilon_{ijk} U_1(x_i)U_2(x_j)U_3(x_k)$
+
+
+:::
+
+</br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-shankar_12_4_2}
+#### Shankar 12.4.2
+
+($1$) @eq-QM_angular_momentum_consistency_check_for_3d_rotation 가 성립함을 보여라.
+
+($2$) @eq-QM_angular_momentum_consistency_check_for_3d_rotation_2 로부터 @eq-QM_angular_momentum_consistency_check_for_3d_rotation_3 을 유도하라.
+
+:::
+
+</div></br>
+
+::: {.solution}
+
+($1$) $R(\varepsilon_x \hat{\bf{e}}_x) = \begin{bmatrix} 1 & 0 & 0 \\ 0 & \cos \varepsilon_x & - \sin \varepsilon_x \\ 0 & \sin \varepsilon_x & \cos \varepsilon_x\end{bmatrix} \approx \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & - \varepsilon_x \\ 0 & \varepsilon_x & 1\end{bmatrix}$, $R(\varepsilon_y \hat{\bf{e}})\approx \begin{bmatrix} 1 & 0 & \varepsilon_y \\ 0 & 1 &0 \\ -\varepsilon_y & 0 & 1\end{bmatrix}$
+
+이므로,
+
+$$
+\begin{aligned}
+R(-\varepsilon_y \hat{\bf{e}}_y)&R(-\varepsilon_x \hat{\bf{e}}_x) R(\varepsilon_y \hat{\bf{e}}_y)R(\varepsilon_x \hat{\bf{e}}_x)\\[0.4em]
+&=  \begin{bmatrix} 1 & 0 & -\varepsilon_y \\ 0 & 1 &0 \\ \varepsilon_y & 0 & 1\end{bmatrix}\begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 &  \varepsilon_x \\ 0 & -\varepsilon_x & 1\end{bmatrix}\begin{bmatrix} 1 & 0 & \varepsilon_y \\ 0 & 1 &0 \\ -\varepsilon_y & 0 & 1\end{bmatrix}\begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & - \varepsilon_x \\ 0 & \varepsilon_x & 1\end{bmatrix} \\[0.4em]
+&= \begin{bmatrix} 1 & \varepsilon_x\varepsilon_y & -\varepsilon_y \\ 0 & 1 &  \varepsilon_x \\ \varepsilon_y  & -\varepsilon_x & 1\end{bmatrix} \begin{bmatrix} 1 & \varepsilon_x \varepsilon_y  & \varepsilon_y \\ 0 & 1 &  -\varepsilon_x \\ -\varepsilon_y & \varepsilon_x & 1\end{bmatrix} \\[0.4em]
+&=\begin{bmatrix} 1 + \varepsilon_y^2 + \varepsilon_x^2\varepsilon_y^2 & \varepsilon_x \varepsilon_y & - \varepsilon_x^2 \varepsilon_y \\ -\varepsilon_x\varepsilon_y & 1+\varepsilon_x^2 & 0\\ 0 & \varepsilon_x \varepsilon_y^2 & 1+\varepsilon_x^2 + \varepsilon_y^2\end{bmatrix}
+\approx \begin{bmatrix} 1 & \varepsilon_x \varepsilon_y & 0 \\ -\varepsilon_x \varepsilon_y & 1 & 0 \\ 0 & 0 & 1\end{bmatrix} = R(-\varepsilon_x \varepsilon_y \hat{\bf{e}}_z)
+\end{aligned} 
+$$
+
+
+($2$) $U[R(\varepsilon_x \hat{\bf{e}}_x)] = I - \dfrac{i\varepsilon_x L_x}{\hbar}$, $U[R(\varepsilon_y \hat{\bf{e}}_y)] = I - \dfrac{i\varepsilon_y L_y}{\hbar}$ 에 대해
+
+$$
+\begin{aligned}
+U[R(-\varepsilon_y \hat{\bf{e}}_y)] &U[R(-\varepsilon_x \hat{\bf{e}}_x)] U[R(\varepsilon_y \hat{\bf{e}}_y)] U[R(\varepsilon_x \hat{\bf{e}}_x)] \\[0.4em]
+&= \left(I + \dfrac{i\varepsilon_y L_y}{\hbar}\right) \left(I + \dfrac{i\varepsilon_x L_x}{\hbar}\right)\left(I- \dfrac{i\varepsilon_y L_y}{\hbar}\right) \left(I - \dfrac{i\varepsilon_x L_x}{\hbar}\right) \\[0.4em]
+&= I - \dfrac{\varepsilon_x \varepsilon_y L_yL_x}{\hbar^2} + \dfrac{\varepsilon_x\varepsilon_y L_xL_y}{\hbar^2} + O(\varepsilon_x^2) + O(\varepsilon_y^2) \\[0.3em]
+&= I + \dfrac{\varepsilon_x \varepsilon_y [L_x,\, L_y]}{\hbar^2} 
+\end{aligned}
+$$
+
+이며,
+
+$$
+U[R(-\varepsilon_x \varepsilon_y \hat{\bf{e}}_z)] = I + \dfrac{i \varepsilon_x\varepsilon_i L_z}{\hbar}
+$$
+
+이므로 위의 두 식을 이용하면 다음을 얻는다.
+
+$$
+[L_x,\,L_y] = i\hbar L_z.
+$$
+
+:::
+
+</br>
+
+## $L^2$ 와 $L_z$ 의 고유값 문제
+
+$L^2$ 와 $L_z$ 의 고유상태를 $|\alpha\beta\rangle$ 이라고 하자. 즉
+
+$$
+L^2|\alpha\beta\rangle = \alpha |\alpha\beta\rangle ,\qquad L_z |\alpha\beta\rangle = \beta|\alpha\beta\rangle
+$$ {#eq-QM_angular_momentum_eigenvalue_0}
+
+라고 하자. 이제 상승 연산자 $L_+$ 와 하강 연산자 $L_-$ 를 다음과 같이 정의한다.
+
+$$
+L_\pm = L_x \pm iL_y.
+$$ {#eq-QM_angular_momentum_raisng_lowering_opertors}
+
+그렇다면 다음이 성립한다는 것을 쉽게 보일 수 있다.
+
+$$
+[L_z,\, L_\pm] = \pm \hbar L_{\pm}.
+$${#eq-QM_angular_momentum_commutation_relation_betwee_Lz_and_Lpm}
+
+$$
+[L^2,\, L_{\pm}]=0.
+$${#eq-QM_angular_momentum_commutation_relation_betwee_Lsq_and_Lpm}
+
+이제 @eq-QM_angular_momentum_commutation_relation_betwee_Lz_and_Lpm 로부터
+
+$$
+\begin{aligned}
+L_z \left(L_+|\alpha\beta\rangle\right) = L_+(L_z + \hbar)|\alpha\beta\rangle = L_+ (\beta+\hbar)|\alpha\beta\rangle
+\end{aligned}
+$$
+
+임을 안다. 또한 @eq-QM_angular_momentum_commutation_relation_betwee_Lsq_and_Lpm 로 부터
+
+$$
+L^2L_+|\alpha\beta\rangle = L_+L^2|\alpha\beta \rangle = \alpha L_+|\alpha\beta\rangle
+$$
+
+임을 안다. 즉 $L_+|\alpha\beta\rangle$ 은 $\beta+\hbar$ 를 고유값으로 갖는 $L_z$ 의 고유상태이며 $\alpha$ 를 고유값으로 갖는 $L_2$ 의 고유상태이다. 즉
+
+$$
+L_+|\alpha\beta\rangle = c_+(\alpha,\, \beta)|\alpha,\beta+\hbar\rangle
+$$ {#eq-QM_angular_momentum_state_after_raising_operator}
+
+이다. 같은 방법으로 $L_-|\alpha\beta\rangle$ 은 $\beta-\hbar$ 를 고유값으로 갖는 $L_z$ 의 고유상태이며 동시에 $\alpha$ 를 고유값으로 갖는 $L^2$ 의 고유상태라는 것을 보일 수 있다. 즉,
+
+$$
+L_-|\alpha\beta\rangle =c_-(\alpha,\,\beta)|\alpha ,\beta-\hbar\rangle
+$${#eq-QM_angular_momentum_state_after_lowering_operator}
+
+이다.
+
+그런데 이것은 문제가 있다. $L_z(L_\pm)^k|\alpha\beta \rangle = c_\pm|\alpha, \beta\pm k\hbar\rangle$ 이며 이는 $L_z$ 의 고유값이 무한히 커지거나 작아질 수 있다는 것을 의미한다. 그런데 $L^2$ 의 값은 $\alpha$ 로 고정되어 있으므로 벡터의 부분의 크기가 전체 크기보다 커진다는 문제가 발생한다. 양자역학적으로는
+
+$$
+\langle \alpha \beta | L^2-L_z^2|\alpha\beta\rangle = \langle \alpha \beta | L_x^2+L_y^2|\alpha\beta\rangle
+$$
+
+이며 따라서 $L^2-L_z^2 \ge 0$ 이어야 한다. 즉 $\alpha - \beta^2\ge 0$ 이어야 한다. $\beta$ 값의 상한과 하한이 존재하므로, 이를 $\beta_\text{max},\, \beta_\text{min}$ 이라고 하자. 이 경우
+
+$$
+L_+ |\alpha \beta_\text{max}\rangle = 0,\qquad L_-|\alpha \beta_\text{min}\rangle = 0
+$$
+
+이어야 한다. 우선 $\beta_\text{max}$ 의 경우를 보자. $L_-L_+ = L^2-L_z^2-\hbar L_z$ 이므로
+
+$$
+(L^2-L_z^2-\hbar L_z)|\alpha \beta_\text{max}\rangle = 0 \implies (\alpha - \beta_\text{max}^2 -\hbar \beta_\text{max})|\alpha\beta_\text{max}\rangle = 0
+$$
+
+이어야 한다. 즉
+
+$$
+\alpha = \beta_\text{max} (\beta_\text{max}+\hbar)
+$${#eq-QM_angular_momentum_lsq_and_lmax}
+
+이어야 한다. 이제 $L_+L_- = L^2-L_z^2 +\hbar L_z$ 를 $|\alpha\beta_\text{min}\rangle$ 에 적용하면 $L_+L_-|\alpha \beta_\text{min}\rangle = 0$ 으로부터
+
+$$
+\alpha = \beta_\text{min}(\beta_\text{min}-\hbar)
+$${#eq-QM_angular_momentum_lsq_and_lmin}
+
+를 얻는다. @eq-QM_angular_momentum_lsq_and_lmax 와 @eq-QM_angular_momentum_lsq_and_lmin 으로부터
+
+$$
+\beta_\text{min}= - \beta_\text{max}
+$$
+
+임을 안다. 이제 $(L_-)^k|\alpha \beta_{\text{max}}\rangle = c|\alpha \beta_{\text{min}}\rangle$ 이라고 하자. $\beta_\text{max}-k\hbar = \beta_\text{min}= - \beta_\text{max}$ 이므로
+
+$$
+\beta_\text{max}= \dfrac{k\hbar}{2}
+$$
+
+이며
+
+$$
+\alpha = \hbar^2\left(\dfrac{k}{2}\right)\left(\dfrac{k}{2}+1\right)
+$$
+
+이다. 
