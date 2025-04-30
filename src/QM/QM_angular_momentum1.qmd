@@ -12,7 +12,7 @@ crossref:
 
 ## 2차원에서의 Translation
 
-### 임의의 방향에 대한 Translation
+### 임의의 방향에 대한 Translation {#sec-QM_angular_momentum_translation}
 
 2차원에서의 회전을 다루기에 앞서 2 차원에서의 운동량 연산자를 다루기로 하자. $x$, $y$ 축에 대한 infinitesimal translation 의 generator 로서 $P_x,\,P_y$ 는 coordinate basis 에서 각각 다음과 같이 표현된다.
 
@@ -30,23 +30,25 @@ $$
 
 $$
 P_n := \hat{\boldsymbol{n}}\cdot \boldsymbol{P}
-$$ {#eq-part3_momentum_operator_for_arbitrary_direction}
+$$ {#eq-QM_angular_momentum_momentum_operator_for_arbitrary_direction}
 
 로 표현된다. $P_n$ 은 $\hat{\boldsymbol{n}}$ 방향으로의 infinitesimal translation 의 generator 이다. 따라서 $\boldsymbol{a}$ 만큼의 translation $T(\boldsymbol{a})$ 는 다음과 같다.
 
 $$
 T(\boldsymbol{a}) := e^{-iaP_a/\hbar} = e^{-i\boldsymbol{a}\cdot \boldsymbol{P}/\hbar}
-$$ {#eq-part3_translation_operator_for_arbitrary_direction}
+$$ {#eq-QM_angular_momentum_translation_operator_for_arbitrary_direction}
 
 </br>
 
 <div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+
 ::: {#exm-QM_addition_of_translation_for_arbitrary_direction}
-@eq-part3_translation_operator_for_arbitrary_direction 에서
+
+@eq-QM_angular_momentum_translation_operator_for_arbitrary_direction 에서
 
 $$
 T(\boldsymbol{a})T(\boldsymbol{b}) = e^{i\boldsymbol{a}\cdot \boldsymbol{P}/\hbar}e^{i\boldsymbol{b}\cdot \boldsymbol{P}/\hbar} = e^{i(\boldsymbol{a}+\boldsymbol{b})\cdot \boldsymbol{P}/\hbar} = T(\boldsymbol{a}+\boldsymbol{b})
-$$ {#eq-part3_addition_of_translation_for_arbitrary_diraction}
+$$ {#eq-QM_angular_momentum_addition_of_translation_for_arbitrary_diraction}
 
 이다.
 :::
@@ -112,39 +114,39 @@ $$
 \langle P_x\rangle_R &= \langle P_x\rangle \cos \phi_0 - \langle P_y\rangle \sin \phi_0, \\[0.2em]
 \langle P_y\rangle_R &= \langle P_x\rangle \sin \phi_0 + \langle P_y\rangle \cos \phi_0.
 \end{aligned}
-$$ {#eq-QM_change_of_expectation_for_rotation_in_d2}
+$$ {#eq-QM_angular_momentum_change_of_expectation_for_rotation_in_d2}
 
 이제 $P$ 의 $|x\rangle$ 에 대한 작용과 유사하게 위치 켓에 대해
 
 $$
 U[R]|x,\,y\rangle = |x \cos \phi_0-y \sin \phi_0,\, x\sin \phi_0 + y \cos \phi_0\rangle
-$$ {#eq-QM_rotation_applied_to_position_eigenket}
+$$ {#eq-QM_angular_momentum_rotation_applied_to_position_eigenket}
 
 라고 할 수 있을 것이다.
 
 </br>
 
-### $U[R]$ 을 명시적으로 구하기
+### $U[R]$ 을 명시적으로 구하기 {#sec-QM_angular_momentum_UR_in_2d}
 
 Infinitesimal rotaiton $\varepsilon_z \hat{\boldsymbol{e}}_3$ 을 생각하자. 이 경우 $\varepsilon_z$ 에 대한 1차 근사로
 
 $$
 U[R(\varepsilon_z \hat{\boldsymbol{e}}_3)] = I - \dfrac{i\varepsilon_z L_z}{\hbar}
-$$ {#eq-QM_infinitesimal_rotation_operator_in_2d}
+$$ {#eq-QM_angular_momentum_infinitesimal_rotation_operator_in_2d}
 
 로 놓을 수 있다. 여기서 $L_z$ 는 infinitesimal rotation 에 대한 generator 이며 (아직까지는!!!) 어떤 물리적 값과의 연관성도 없다. 따라서
 
 $$
 \langle x,\,y|U[R]|\Psi\rangle = \langle x,\,y| I - \dfrac{i\varepsilon_z L_z}{\hbar}|\Psi\rangle
-$$ {#eq-QM_infinitesimal_rotation_in_2d}
+$$ {#eq-QM_angular_momentum_infinitesimal_rotation_in_2d}
 
 이 $\varepsilon_z$ 에 대한 1차 근사로 성립해야 한다.
 
-또한 @eq-QM_rotation_applied_to_position_eigenket 을 infinitesimal rotation 에 적용하면,
+또한 @eq-QM_angular_momentum_rotation_applied_to_position_eigenket 을 infinitesimal rotation 에 적용하면,
 
 $$
 U[R]|x,\,y\rangle = |x - \varepsilon_z y,\, \varepsilon_z x + y\rangle
-$$ {#eq-QM_infinitesimal_rotation_applied_to_position_eigenket}
+$$ {#eq-QM_angular_momentum_infinitesimal_rotation_applied_to_position_eigenket}
 
 이다. 위 식으로부터
 
@@ -179,9 +181,9 @@ $$
 
 $$
 L_z = -i\hbar (X \partial_y - Y\partial_x) = XP_y - YP_x
-$$ {#eq-part3_Lz_in_coordinate_basis}
+$$ {#eq-QM_angular_momentum_Lz_in_coordinate_basis}
 
-이다. 운동량 기저에서 @eq-part3_Lz_in_coordinate_basis 는
+이다. 운동량 기저에서 @eq-QM_angular_momentum_Lz_in_coordinate_basis 는
 
 $$
 L_z = i\hbar \left(\dfrac{\partial}{\partial p_x} p_y - \dfrac{\partial}{\partial p_y}p_x\right)
@@ -199,7 +201,7 @@ $$
 \langle p_x,\,p_y|I - \dfrac{i\varepsilon_z}{\hbar}L_z|\Psi\rangle = \Psi (p_x + \varepsilon_z p_y,\, p_y - \varepsilon_z p_x)
 $$
 
-이며, 따라서 @eq-QM_change_of_expectation_for_rotation_in_d2 에서의 $\langle P_x\rangle_R$ 과 $\langle P_y\rangle_R$ 에 관한 식이 성립한다는 것을 알 수 있다. 즉 우리는 infinitesimal rotation 의 generator $L_z$ 를 구했다. 덤으로 고전역학에서의 $z$ 방향으로의 각운동량
+이며, 따라서 @eq-QM_angular_momentum_change_of_expectation_for_rotation_in_d2 에서의 $\langle P_x\rangle_R$ 과 $\langle P_y\rangle_R$ 에 관한 식이 성립한다는 것을 알 수 있다. 즉 우리는 infinitesimal rotation 의 generator $L_z$ 를 구했다. 덤으로 고전역학에서의 $z$ 방향으로의 각운동량
 
 $$
 l_z = xp_y - yp_x
@@ -209,7 +211,7 @@ $$
 
 </br>
 
-### Commutation Relation
+### Commutation Relation {#sec-QM_angular_momentum_commutation_relation}
 
 이제 passive transform 의 관점으로 돌아와 보자. $\varepsilon_z$ 만큼의 infinitesimal rotation 을 생각하면,
 
@@ -220,7 +222,7 @@ U^\dagger[R] Y U[R] &= Y + \varepsilon_z X,\\[0.4em]
 U^\dagger[R] P_x U[R] &= P_x - \varepsilon_z P_y, \\[0.4em]
 U^\dagger[R] P_y U[R] &= P_y + \varepsilon_z P_x,\\
 \end{aligned}
-$$ {#eq-part3_rotation_in_passive_point_of_view}
+$$ {#eq-QM_angular_momentum_rotation_in_passive_point_of_view}
 
 이며,
 
@@ -228,7 +230,7 @@ $$
 U^\dagger[R]XU[R]= \left( I + \dfrac{i\varepsilon_z L_z}{\hbar}\right)X\left( I - \dfrac{i\varepsilon_z L_z}{\hbar}\right) \approx X - \dfrac{i\varepsilon}{\hbar}[X,\, L_z]
 $$
 
-와 유사한 계산을 @eq-part3_rotation_in_passive_point_of_view 에 적용하면 다음의 관계를 얻는다.
+와 유사한 계산을 @eq-QM_angular_momentum_rotation_in_passive_point_of_view 에 적용하면 다음의 관계를 얻는다.
 
 $$
 \begin{aligned}
@@ -237,7 +239,7 @@ $$
 [P_x,\, L_z] & = -i\hbar P_y \\[0.4em]
 [P_y,\,L_z] &= i\hbar P_x
 \end{aligned}
-$$ {#eq-part3_commutation_relation_for_angular_momentum}
+$$ {#eq-QM_angular_momentum_commutation_relation_for_angular_momentum}
 
 </br>
 
@@ -246,13 +248,13 @@ $$ {#eq-part3_commutation_relation_for_angular_momentum}
 ::: {#exr-shankar_12_2_2}
 #### Shankar 12.2.2
 
-@eq-part3_commutation_relation_for_angular_momentum 를 유도하는 과정에서 우리는 $L_z = XP_y-YP_x$ 를 사용하지 않았다. @eq-part3_commutation_relation_for_angular_momentum 로부터 $L_z = XP_y-YP_x$ 를 유도하라.
+@eq-QM_angular_momentum_commutation_relation_for_angular_momentum 를 유도하는 과정에서 우리는 $L_z = XP_y-YP_x$ 를 사용하지 않았다. @eq-QM_angular_momentum_commutation_relation_for_angular_momentum 로부터 $L_z = XP_y-YP_x$ 를 유도하라.
 :::
 
 </div></br>
 
 :::{.solution}
-일단 $L_z=XP_y-YP_x$ 라는 것이 @eq-part3_commutation_relation_for_angular_momentum 과 양립함을 보이자.
+일단 $L_z=XP_y-YP_x$ 라는 것이 @eq-QM_angular_momentum_commutation_relation_for_angular_momentum 과 양립함을 보이자.
 
 $$
 \begin{aligned}
@@ -366,19 +368,19 @@ $$
 
 </br>
 
-### 물리적인 해석
+### 물리적인 해석 {#sec-QM_angular_momentum_physical_interpretation_of_rotation}
 
 지금까지 $L_z$ 연산자를 구했으며 이것은 고전역학의 $z$ 방향에 대한 각운동량의 양자역학 버젼임을 알았다. 만약 $H$ 가 회전 $U[R]$ 에 대해 불변이라면, 즉 $U^\dagger [R]HU[R] = H$ 라면 $[U[R],\, H]= 0$ 이며 infinitesimal rotation 에 대해서도 성립해야 하므로 아래의 commutation relation 이 성립한다.
 
 $$
 [L_z,\, H]=0.
-$$ {#eq-QM_commutation_relation_by_rotational_invariance}
+$$ {#eq-QM_angular_momentum_commutation_relation_by_rotational_invariance}
 
 누차 언급했듯이 힐베르트공간이 $L_z$ 와 $H$ 의 공통 고유상태를 기저로 갖는다는 것도 알 수 있다.
 
 </br>
 
-### Consistency Check
+### Consistency Check {#sec-QM_angular_momentum_consistency_check_of_rotation_in_2d}
 
 $\delta_z$ 만큼의 $z$ 축에 대한 미소회전과 $\bf{\varepsilon} = \varepsilon_x\hat{\bf{e}}_1 + \varepsilon_y \hat{\bf{e}}_2$ 만큼의 $xy$ 평면상의 infinitesimal translation 을 생각하자. 그리고 아래와 같은 네 연산의 곱을 생각하자.
 
@@ -425,7 +427,7 @@ $$
 
 </br>
 
-### 벡터 연산자
+### 벡터 연산자 {#sec-QM_angular_momentum_vector_operator}
 
 $\boldsymbol{V} = \sum_i V_i \hat{\boldsymbol{e}}_i$ 로 주어진 연산자를 생각하자. 어떤 회전 연산자 $U$ 에 대해 위치 $X_i$ 가 paasive transform 에서 다음과 같이 변환된다고 하자.
 
@@ -451,21 +453,21 @@ $$
 
 $$
 L_z |l_z\rangle = l_z |l_z\rangle.
-$$ {#eq-QM_eigenket_of_lz}
+$$ {#eq-QM_angular_momentum_eigenket_of_lz}
 
 위 식은 좌표기저에서 아래의 미분방정식으로 표현된다.
 
 $$
 -i\hbar \dfrac{\partial \Psi_{l_z}(\rho,\, \phi)}{\partial \phi} = l_z \Psi_{l_z}(\rho,\, \phi).
-$$ {#eq-QM_lz_diff_eq}
+$$ {#eq-QM_angular_momentum_lz_diff_eq}
 
 위 미분방정식의 해는 다음 식으로 표현된다.
 
 $$
 \Psi_{l_z}(\rho,\,\phi) = R(\rho) e^{il_z \phi/\hbar}.
-$$ {#eq-QM_eigenfunction_of_lz_1}
+$$ {#eq-QM_angular_momentum_eigenfunction_of_lz_1}
 
-여기서 $R(\rho)$ 는 $\rho$ 에만 의존하는 함수이며 $\int R(\rho)\rho\,d\rho$ 를 얻을 수 있는 함수이다. 즉 정규화 가능한 함수이어야 한다. 일단 $R(\rho)$ 에 대해서는 접어두고 @eq-QM_eigenfunction_of_lz_1 의 $e^{il_z\phi/\hbar}$ 만 생각하기로 하자. 일견 $l_z$ 에 대한 제한조건은 없는 듯이 보인다. 심지어는 복소수 일 수도 있다. $P$ 의 고유벡터인 $e^{ipx/\hbar}$ 의 경우 파동함수가 bounded 되어야 한다는 조건으로부터 $P$ 의 고유값 $p$ 가 실수임을 주장 할 수 있었다. 그러나 $\phi$ 는 $0$ 와 $2\pi$ 사이의 값만을 가지므로 $P$ 의 경우와 같은 주장을 할 수 없다. 그러나 $X,\,Y,\,P_x,\,P_y$ 가 모두 에르미트 연산자라는 조건과 $[X_i,\,P_j] = i\hbar \delta_{ij}$ 라는 조건으로부터
+여기서 $R(\rho)$ 는 $\rho$ 에만 의존하는 함수이며 $\int R(\rho)\rho\,d\rho$ 를 얻을 수 있는 함수이다. 즉 정규화 가능한 함수이어야 한다. 일단 $R(\rho)$ 에 대해서는 접어두고 @eq-QM_angular_momentum_eigenfunction_of_lz_1 의 $e^{il_z\phi/\hbar}$ 만 생각하기로 하자. 일견 $l_z$ 에 대한 제한조건은 없는 듯이 보인다. 심지어는 복소수 일 수도 있다. $P$ 의 고유벡터인 $e^{ipx/\hbar}$ 의 경우 파동함수가 bounded 되어야 한다는 조건으로부터 $P$ 의 고유값 $p$ 가 실수임을 주장 할 수 있었다. 그러나 $\phi$ 는 $0$ 와 $2\pi$ 사이의 값만을 가지므로 $P$ 의 경우와 같은 주장을 할 수 없다. 그러나 $X,\,Y,\,P_x,\,P_y$ 가 모두 에르미트 연산자라는 조건과 $[X_i,\,P_j] = i\hbar \delta_{ij}$ 라는 조건으로부터
 
 $$
 (L_z)^\dagger = (XP_y-YP_x)^\dagger = P_yX-P_xY = XP_y-YP_x = L_z
@@ -483,7 +485,7 @@ $$
 
 $$
 \int_0^\infty \int_0^{2\pi} \Psi_1^\ast \left(-i\hbar \dfrac{\partial}{\partial \phi}\right) \Psi_2\, \rho \,d\rho\,d\phi = \left[\int_0^\infty \int_0^{2\pi} \Psi_2^\ast \left(-i\hbar \dfrac{\partial}{\partial \phi}\right) \Psi_1\, \rho \,d\rho\,d\phi\right]^\ast
-$$ {#eq-QM_conditino_for_hermiticity_of_lz}
+$$ {#eq-QM_angular_momentum_condition_for_hermiticity_of_lz}
 
 이다. 여기서 $\Phi_1$ 과 $\Phi_2$ 가 모두
 
@@ -491,21 +493,21 @@ $$
 \Phi(\rho,\, 0) = \Phi(\rho,\, 2\pi)
 $$
 
-를 만족할 경우 @eq-QM_conditino_for_hermiticity_of_lz 의 성질을 가짐을 보일 수 있다.(@exr-shankar_12_3_1) 이로부터 $L_z$ 의 고유벡터는
+를 만족할 경우 @eq-QM_angular_momentum_condition_for_hermiticity_of_lz 의 성질을 가짐을 보일 수 있다.(@exr-shankar_12_3_1) 이로부터 $L_z$ 의 고유벡터는
 
 $$
 e^{i2\pi l_z/\hbar}=1
-$$ {#eq-QM_quantization_condition_of_lz}
+$$ {#eq-QM_angular_momentum_quantization_condition_of_lz}
 
 이어야 한다. 즉 $L_Z$ 의 고유값 $l_z$ 는
 
 $$
 l_z = m\hbar,\qquad m\in \mathbb{Z}
-$$ {#eq-quantization_of_lz}
+$$ {#eq-QM_angular_momentum_quantization_of_lz}
 
 이며 이 때 $m$ 을 **자기 양자수(magnetic quantum number)** 라고 한다.
 
-이제 @eq-QM_eigenfunction_of_lz_1 에 대해 생각해보자. $l_z$ 의 고유상태 이외의 $R(\rho)$ 항이 존재한다는 것은 $l_z$ 의 고유상태가 힐베르트 공간상의 한 점이 아니라 힐베르트 공간의 부분공간이라는 듯이다. 게다가 정규화 가능한 $R(\rho)$ 역시 무한차원에서 존재다. 이제 할 일은 $L_z$ 과 compatible 한 연산자를 찾아 공통의 고유상태로 기저를 구성하는 것이며 이후 회전에 대해 불변인 해밀토니안에서 어떻게 하는지 볼 것이다.
+이제 @eq-QM_angular_momentum_eigenfunction_of_lz_1 에 대해 생각해보자. $l_z$ 의 고유상태 이외의 $R(\rho)$ 항이 존재한다는 것은 $l_z$ 의 고유상태가 힐베르트 공간상의 한 점이 아니라 힐베르트 공간의 부분공간이라는 듯이다. 게다가 정규화 가능한 $R(\rho)$ 역시 무한차원에서 존재다. 이제 할 일은 $L_z$ 과 compatible 한 연산자를 찾아 공통의 고유상태로 기저를 구성하는 것이며 이후 회전에 대해 불변인 해밀토니안에서 어떻게 하는지 볼 것이다.
 
 $L_z$ 의 고유값 $m\hbar$ 에 대한 파동함수 $\Phi_m(\phi)$ 에 대한 정규화 조건은
 
@@ -517,17 +519,17 @@ $$
 
 $$
 \Phi_m(\phi) = \dfrac{1}{\sqrt{2\pi}}e^{im\phi}
-$$ {#eq-QM_wavefunction_of_lz_eigenstate}
+$$ {#eq-QM_angular_momentum_wavefunction_of_lz_eigenstate}
 
 </br>
 
-### Rotational Invariant 문제
+### Rotational Invariant 문제 {#sec-QM_angular_momentum_rotational_invariance_problem}
 
 많은 경우 포텐셜은 $V(\rho,\, \phi)= V(\rho)$ 이다. 이 경우 해밀토니안 $H$ 에 대한 고유값 문제는 다음 식의 해를 구하는 문제가 된다.
 
 $$
 \left[-\dfrac{\hbar^2}{2\mu} \left(\dfrac{\partial^2}{\partial^2\rho} + \dfrac{1}{\rho}\dfrac{\partial}{\partial \rho} + \dfrac{1}{\rho^2}\dfrac{\partial^2}{\partial \phi^2} \right) + V(\rho) \right] \Psi_E(\rho,\,\phi) = E\Psi_E(\rho,\, \phi).
-$$ {#eq-QM_hamiltonian_eigenvalue_for_radial_potential}
+$$ {#eq-QM_angular_momentum_hamiltonian_eigenvalue_for_radial_potential}
 
 여기서 $\mu$ 는 질량이다. ($m$ 은 magnetic quantum number 로 쓰기 때문에..) $[H,\, L_z] = 0$ 이므로 $H$ 와 $L_z$ 에 대한 공통의 고유벡터가 존재한다. $L_z$ 에 대한 고유값을 $m\hbar$ 라고 하면 $L_z$ 에 대항 고유함수는 아래와 같은 꼴을 가진다.
 
@@ -535,11 +537,11 @@ $$
 \Psi_{Em}(\rho,\, \phi) = R_{Em}(\rho) \Phi_m(\phi)
 $$
 
-여기서 @eq-QM_wavefunction_of_lz_eigenstate 의 $R(\rho),\, \Phi_m(\phi)$ 를 관계된 인덱스 $E,\,m$ 과 함께 기록했다. $R(\rho)$ 는 $E$, $m$ 과 관계가 있을 수 있으므로 두개의 인덱스를 모두 표기하기로 한다. 우리는 @eq-QM_angular_momentum_in_polar_coordinate 에서 $L_z = -i\hbar \partial/\partial \phi$ 임을 보였고 $L_z \Psi_m(\rho,\,\phi) = m \Psi_m(\rho,\,\phi)$ 임을 안다. 이를 @eq-QM_hamiltonian_eigenvalue_for_radial_potential 에 대임해보면 $\Phi_m(\phi)$ 는 $m^2$ 과 관련된 항만 남기고 소거되어 아래와 같이 된다.
+여기서 @eq-QM_angular_momentum_wavefunction_of_lz_eigenstate 의 $R(\rho),\, \Phi_m(\phi)$ 를 관계된 인덱스 $E,\,m$ 과 함께 기록했다. $R(\rho)$ 는 $E$, $m$ 과 관계가 있을 수 있으므로 두개의 인덱스를 모두 표기하기로 한다. 우리는 @eq-QM_angular_momentum_in_polar_coordinate 에서 $L_z = -i\hbar \partial/\partial \phi$ 임을 보였고 $L_z \Psi_m(\rho,\,\phi) = m \Psi_m(\rho,\,\phi)$ 임을 안다. 이를 @eq-QM_angular_momentum_hamiltonian_eigenvalue_for_radial_potential 에 대임해보면 $\Phi_m(\phi)$ 는 $m^2$ 과 관련된 항만 남기고 소거되어 아래와 같이 된다.
 
 $$
 \left[-\dfrac{\hbar^2}{2\mu} \left(\dfrac{\partial^2}{\partial^2\rho} + \dfrac{1}{\rho}\dfrac{\partial}{\partial \rho} -\dfrac{m^2}{\rho^2} \right) + V(\rho) \right] R_{Em}(\rho,\,\phi) = E R_{Em}(\rho,\, \phi)
-$$ {#eq-QM_radial_differential_equation}
+$$ {#eq-QM_angular_momentum_radial_differential_equation}
 
 즉 포텐셜이 raidal 에만 의존한다면 파동함수의 각 부분 $\Phi_m(\phi)$ 가 제외된 radial 부분만의 미분방정식만 남게 된다.
 
@@ -550,7 +552,7 @@ $$ {#eq-QM_radial_differential_equation}
 ::: {#exr-shankar_12_3_5}
 #### Shankar 12.3.5
 
-@eq-QM_radial_differential_equation 에서 각운동량이 repulsive potential 을 생성하는 것처럼 보인다. 그 gradiant 를 계산하고 원심력과 동일함을 보여라.
+@eq-QM_angular_momentum_radial_differential_equation 에서 각운동량이 repulsive potential 을 생성하는 것처럼 보인다. 그 gradiant 를 계산하고 원심력과 동일함을 보여라.
 :::
 
 </div></br>
@@ -638,7 +640,7 @@ $$
 
 ($1$) $U^\dagger H U = 0$ 이므로 $[H,\, L_z]=0$.
 
-($2$) @eq-QM_radial_differential_equation 을 사용하면
+($2$) @eq-QM_angular_momentum_radial_differential_equation 을 사용하면
 
 $$
 \left[-\dfrac{\hbar^2}{2\mu} \left(\dfrac{d^2}{d^2\rho} + \dfrac{1}{\rho}\dfrac{d}{d \rho} -\dfrac{m^2}{\rho^2} \right) + \dfrac{1}{2}\mu\omega^2 \rho^2 -E \right] R(\rho) =0
@@ -889,13 +891,13 @@ $$
 \Psi_i(\rho,\, 0) = \Psi_i(\rho,\, 2\pi)
 $$
 
-이 이면 @eq-QM_conditino_for_hermiticity_of_lz 를 만족함을 보여라.
+이 이면 @eq-QM_angular_momentum_condition_for_hermiticity_of_lz 를 만족함을 보여라.
 :::
 
 </div></br>
 
 :::{.solution}
-@eq-QM_conditino_for_hermiticity_of_lz 에서 부분적분을 이용하면
+@eq-QM_angular_momentum_condition_for_hermiticity_of_lz 에서 부분적분을 이용하면
 
 $$
 \begin{aligned}

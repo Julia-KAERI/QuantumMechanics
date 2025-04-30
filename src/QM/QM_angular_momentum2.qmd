@@ -436,6 +436,71 @@ $$
 
 이다. 여기서 $L^2$ 의 고유값 $\alpha > (\beta_\max)^2$ 이므로 우리가 생각했던 조건에 어긋나지 않는다. 이제 이 $\beta_\text{max}$ 를 **이 상태의 각운동량 (angular momentum of the state)** 이라고 한다. 
 
-여기서 한가지 중요한 것을 짚고 넘어가야 한다. 우리는 앞서 @sec-QM_angular_momentum_eigenvalue_of_Lz_and_its_wavefunction 에서 각운동량 연산자
+여기서 한가지 중요한 것을 짚고 넘어가야 한다. 
+
+&emsp;($i$) 우리는 앞서 [$L_z$ 의 고유값과 파동함수](QM_angular_momentum1.qmd#sec-QM_angular_momentum_eigenvalue_of_Lz_and_its_wavefunction) 에서 각운동량 연산자의 고유값이 $\hbar$ 의 정수배(@eq-QM_angular_momentum_quantization_of_lz)라는 것을 보였다. 
+
+&emsp;($ii$) 그러나 여기에서는 $\hbar/2$ 의 정수배이다. 
+
+($i$) 는 미분방정식과 그 경계조건으로 부터 나온 결론이다. 반면에 ($ii$) 는 commutation relation 만을 이용하여 얻은 결론이다. 이 commutation relation 은 파동함수가 무엇이든간에 3차원에서 3개의 generator 의 조합이 어떤 규칙을 따라야 하는지를 반영한 결과이다. 우리는 지금까지 스칼라 파동함수를 생각해 왔다. 즉 3차원 상의 점 $(x,\,y,\,z)$ 에 단 하나의 복소수값이 정해진다. 그러나 어떤 입자의 파동함수는 벡터정이라고 불리는, 즉
+
+$$
+\bf{\Psi}(x,\,y,\,z) = \Psi_x(x,\,y,\,z)\hat{\bf{e}}_x + \Psi_y(x,\,y,\,z)\hat{\bf{e}}_y + \Psi_z(x,\,y,\,z)\hat{\bf{e}}_z
+$$
+
+형태의 파동함수이다. 이 경우 각 $(x,\,y,\,z)$ 에 $\C^3$ 벡터가 정해진다. 벡터장 파동함수의 경우 스칼라 파동함수보다 더 복잡하다.
+
+![2차원에서의 Vector $\bf{\Psi}$ 에 대한 $\varepsilon_z$ 만큼의 미소 회전. ($a$) 우선 $(x,\,y)$ 에서의 벡터값을 $(x',\,y')$ 에 할당하고, ($b$) 이 벡터값을 다시 $\epsilon_z$ 만큼 회전시킨다.미분 연산자 $L_z$ 는 ($a$) 과정을 수행하고 $2\times 2$ 스핀 연산자 $S_z$ 는 ($b$) 과정을 수행한다.](figures/vector_field_1.png){#fig-QM_angular_momentum_vector_field width=300}
+
+스칼라 파동함수의 경우 $\delta \bf{\theta}$ 회전은 $(x,\,y,\,z)$ 에 지정된 스칼라값을 새로운 $(x',\,y',\,z')$ 에 지정하는 것이다. 벡터장 파동함수의 경우는 ($a$) $(x,\,y,\,z)$ 에 지정된 벡터를 $\delta \bf{\theta}$ 만큼 회전시키고, ($b$) 이 값을 새로운 $(x',\,y',\,z')$ 에 할당한다. 미분연산자 $L_x,\,L_y,\,L_z$ 는 ($b$) 의 기능만을 하며 ($a$) 의 기능은 $3\times 3$ 
+
+</br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-shankar_12_5_1}
+#### Shankar 12.5.1
+
+2차원 벡터장 $\bf{\Psi}(x,\,y)$ 을 생각하자. @fig-QM_angular_momentum_vector_field 에서와 같은 $\varepsilon_z \hat{\bf{e}}_z$ 만큼의 미소회전에 대해 다음과 같이 변환됨을 보여라.
+
+$$
+\begin{aligned}
+\Psi_x &\longrightarrow \Psi_x'=\Psi_x(x+\varepsilon_z y, y-\varepsilon_z x) - \Psi_y(x+\varepsilon_z, y-\varepsilon_z x)\varepsilon_z \\[0.3em]
+\Psi_y &\longrightarrow \Psi_y'=\Psi_x(x+\varepsilon_z y, y-\varepsilon_z x)\varepsilon_z + \Psi_y(x+\varepsilon_z, y-\varepsilon_z x).
+\end{aligned}
+$$
+
+그리고 $\varepsilon_z$ 에 대한 1차항 까지만 고려했을 때
+
+$$
+\begin{bmatrix} \Psi_x' \\ \Psi_y'\end{bmatrix} = \left(\begin{bmatrix} 1 & 0 \\ 0 & 1\end{bmatrix} - \dfrac{i\varepsilon_z}{\hbar}\begin{bmatrix} L_z & 0 \\ 0 & L_z\end{bmatrix} - \dfrac{i\varepsilon}{\hbar} \begin{bmatrix} 0 & -i\hbar \\ i\hbar & 0 \end{bmatrix}\right) \begin{bmatrix} \Psi_x \\ \Psi_y\end{bmatrix}
+$$
+
+이며, 따라서
+
+$$
+J_z = L_z^{(1)} \otimes I^{(2)} + I^{(1)} \otimes S_z^{(2)} = L_z + S_z
+$$
+
+임을 보여라. 여기서 $I^{(2)}$ 는 vector comoponents 에 대한 $2 \times 2$ 항등행렬이며 $I^{(1)}$ 은 $\Psi(x,\,y)$ 의 $(x,\,y)$ 에 대한 항등행렬이다. 이 예는 파동함수가 스칼라가 아닐 경우 $J_z = L_z+S_z$ 임을 보여주기 위한 예이며 반정수 고유값을 갖는 경우는 다음 장에서 다루기로 한다.
 
 
+:::
+
+</div></br>
+
+::: {.solution}
+
+$(x,\,y)\to (x',\,y')$ 변환은 $x' = x - \varepsilon_z y,\, y'=y + \varepsilon_z x$ 변환이다. 
+
+$$
+\begin{aligned}
+\bf{\Psi}(x,\,y) &= \Psi_x(x,\,y)\hat{\bf{e}}_x + \Psi_y(x,\,y)\hat{\bf{e}}_y \\[0.3em]
+&\longrightarrow \overline{\bf{\Psi}}(x,\,y) = \Psi_x(x+\varepsilon_z y,\, y-\varepsilon_z x)\hat{\bf{e}}_x + \Psi_y(x+\varepsilon_z y,\, y-\varepsilon_z x)\hat{\bf{e}}_y\\[0.3em]
+&\longrightarrow \bf{\Psi}'(x,\,y) = \left[\Psi_x(x+\varepsilon_z y,\, y-\varepsilon_z x) - \varepsilon_z  \Psi_y(x+\varepsilon_z y,\, y-\varepsilon_z x)\right] \hat{\bf{e}}_x \\[0.3em]
+&\qquad \qquad \qquad + \left[\varepsilon_z\Psi_x(x+\varepsilon_z y,\, y-\varepsilon_z x)+ \Psi_y(x+\varepsilon_z y,\, y-\varepsilon_z x)\right]\hat{\bf{e}}_y
+\end{aligned}
+$$
+
+
+
+:::
