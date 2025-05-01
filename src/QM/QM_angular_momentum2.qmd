@@ -42,6 +42,12 @@ $$
 \boxed{[L_i,\, L_j] = i\hbar \sum_{k=1}^3\varepsilon_{ijk}L_k} .
 $$ {#eq-QM_angular_momentum_commutation_relation}
 
+위 식은 다음과 같이 쓸 수 있다.
+
+$$
+\bf{L}\times \bf{L} = i\hbar \bf{L}
+$${#eq-QM_angular_momentum_commutation_relation_2}
+
 </br>
 
 이제 총 각운동량 연산자 $L^2$ 를 다음과 같이 정의하자.
@@ -452,7 +458,25 @@ $$
 
 ![2차원에서의 Vector $\bf{\Psi}$ 에 대한 $\varepsilon_z$ 만큼의 미소 회전. ($a$) 우선 $(x,\,y)$ 에서의 벡터값을 $(x',\,y')$ 에 할당하고, ($b$) 이 벡터값을 다시 $\epsilon_z$ 만큼 회전시킨다.미분 연산자 $L_z$ 는 ($a$) 과정을 수행하고 $2\times 2$ 스핀 연산자 $S_z$ 는 ($b$) 과정을 수행한다.](figures/vector_field_1.png){#fig-QM_angular_momentum_vector_field width=300}
 
-스칼라 파동함수의 경우 $\delta \bf{\theta}$ 회전은 $(x,\,y,\,z)$ 에 지정된 스칼라값을 새로운 $(x',\,y',\,z')$ 에 지정하는 것이다. 벡터장 파동함수의 경우는 ($a$) $(x,\,y,\,z)$ 에 지정된 벡터를 $\delta \bf{\theta}$ 만큼 회전시키고, ($b$) 이 값을 새로운 $(x',\,y',\,z')$ 에 할당한다. 미분연산자 $L_x,\,L_y,\,L_z$ 는 ($b$) 의 기능만을 하며 ($a$) 의 기능은 $3\times 3$ 
+스칼라 파동함수의 경우 $\delta \bf{\theta}$ 회전은 $(x,\,y,\,z)$ 에 지정된 스칼라값을 새로운 $(x',\,y',\,z')$ 에 지정하는 것이다. 벡터장 파동함수의 경우는 ($1$) $(x,\,y,\,z)$ 에 지정된 벡터를 $\delta \bf{\theta}$ 만큼 회전시키고, ($2$) 이 값을 새로운 $(x',\,y',\,z')$ 에 할당한다. 미분연산자 $L_x,\,L_y,\,L_z$ 는 ($2$) 의 기능만을 하며 ($1$) 의 기능은 $3\times 3$ 행렬 $S_x,\,S_y,\,S_z$ 에 의해 이루어진다. 즉 $S_x,\,S_y,\,S_z$ 는 $\Psi_x,\,\Psi_y,\, \Psi_z$ 를 섞는다. 이 경우 미소회전의 generator 는
+
+$$
+J_i = L_i + S_j
+$$
+
+형태이며 $L_i$ 가 ($2$) 의 기능을, $S_i$ 가 ($1$) 의 기능을 수행한다. (@exr-shankar_12_5_1 을 참고하라.) 이 때 $L_i$ 을 **궤도 각운동량(orbital angular momentum)**, $S_i$ 를 **스핀 각운동량(spin angular momentum)**, $J_i$ 를 **총 각운동량(total angular momentum)** 이라고 한다. 우리는 $S_i$ 와 $J_i$ 가 일반적인 경우에 어떤 형태인지는 아직 모르지만 $J_i$ 가 $L_i$ 와 같은 commutation relation 을 따를 것이라는 것을 알고 있다. 왜냐하면 이 commutation 규칙은 회전의 조합에 대한 규칙이며 회전되는 파동함수가 어떤 것이든간에 consistency 를 위해 만족해야 하기 때문이다. @eq-QM_angular_momentum_commutation_relation_2 와 같이 다음과 같이 쓸 수 있다.
+
+$$
+\bf{J}\times \bf{J} = i\hbar \bf{J}.
+$${#eq-QM_angular_momentum_J_commutation_relation_2}
+
+혹은
+
+$$
+\boxed{[J_i,\, J_j] = i\hbar \sum_{k=1}^3 \varepsilon_{ijk} J_k.}
+$${#eq-QM_angular_momentum_J_commutation_relation}
+
+이제 $\bf{L}$ 은 파동함수가 스칼라 함수일 경우에 대한 $\bf{J}$ 의 특별한 경우라고 볼 수 있다. 
 
 </br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
@@ -467,19 +491,19 @@ $$
 \Psi_x &\longrightarrow \Psi_x'=\Psi_x(x+\varepsilon_z y, y-\varepsilon_z x) - \Psi_y(x+\varepsilon_z, y-\varepsilon_z x)\varepsilon_z \\[0.3em]
 \Psi_y &\longrightarrow \Psi_y'=\Psi_x(x+\varepsilon_z y, y-\varepsilon_z x)\varepsilon_z + \Psi_y(x+\varepsilon_z, y-\varepsilon_z x).
 \end{aligned}
-$$
+$$ {#eq-QM_shankar_12_5_1_1}
 
 그리고 $\varepsilon_z$ 에 대한 1차항 까지만 고려했을 때
 
 $$
 \begin{bmatrix} \Psi_x' \\ \Psi_y'\end{bmatrix} = \left(\begin{bmatrix} 1 & 0 \\ 0 & 1\end{bmatrix} - \dfrac{i\varepsilon_z}{\hbar}\begin{bmatrix} L_z & 0 \\ 0 & L_z\end{bmatrix} - \dfrac{i\varepsilon}{\hbar} \begin{bmatrix} 0 & -i\hbar \\ i\hbar & 0 \end{bmatrix}\right) \begin{bmatrix} \Psi_x \\ \Psi_y\end{bmatrix}
-$$
+$$ {#eq-QM_shankar_12_5_1_2}
 
 이며, 따라서
 
 $$
 J_z = L_z^{(1)} \otimes I^{(2)} + I^{(1)} \otimes S_z^{(2)} = L_z + S_z
-$$
+$$ {#eq-QM_shankar_12_5_1_3}
 
 임을 보여라. 여기서 $I^{(2)}$ 는 vector comoponents 에 대한 $2 \times 2$ 항등행렬이며 $I^{(1)}$ 은 $\Psi(x,\,y)$ 의 $(x,\,y)$ 에 대한 항등행렬이다. 이 예는 파동함수가 스칼라가 아닐 경우 $J_z = L_z+S_z$ 임을 보여주기 위한 예이며 반정수 고유값을 갖는 경우는 다음 장에서 다루기로 한다.
 
@@ -496,11 +520,113 @@ $$
 \begin{aligned}
 \bf{\Psi}(x,\,y) &= \Psi_x(x,\,y)\hat{\bf{e}}_x + \Psi_y(x,\,y)\hat{\bf{e}}_y \\[0.3em]
 &\longrightarrow \overline{\bf{\Psi}}(x,\,y) = \Psi_x(x+\varepsilon_z y,\, y-\varepsilon_z x)\hat{\bf{e}}_x + \Psi_y(x+\varepsilon_z y,\, y-\varepsilon_z x)\hat{\bf{e}}_y\\[0.3em]
-&\longrightarrow \bf{\Psi}'(x,\,y) = \left[\Psi_x(x+\varepsilon_z y,\, y-\varepsilon_z x) - \varepsilon_z  \Psi_y(x+\varepsilon_z y,\, y-\varepsilon_z x)\right] \hat{\bf{e}}_x \\[0.3em]
-&\qquad \qquad \qquad + \left[\varepsilon_z\Psi_x(x+\varepsilon_z y,\, y-\varepsilon_z x)+ \Psi_y(x+\varepsilon_z y,\, y-\varepsilon_z x)\right]\hat{\bf{e}}_y
+&\longrightarrow \bf{\Psi}'(x,\,y) = \left[\Psi_x(x+\varepsilon_z y,\, y-\varepsilon_z x)_x - \varepsilon_z  \Psi_y(x+\varepsilon_z y,\, y-\varepsilon_z x)\right] \hat{\bf{e}}_x \\[0.3em]
+&\qquad \qquad \qquad + \left[\varepsilon_z\Psi_x(x+\varepsilon_z y,\, y-\varepsilon_z x) + \Psi_y(x+\varepsilon_z y,\, y-\varepsilon_z x)\right]\hat{\bf{e}}_y
 \end{aligned}
 $$
 
+이므로 @eq-QM_shankar_12_5_1_1 이 성립한다. 또한 
 
+$$
+\psi(x+\varepsilon_z y,\, y-\varepsilon_z x)=  \psi(x,\,y) + \varepsilon_z(y\partial_x \psi - x\partial_y \psi) = \psi(x,\,y) -\dfrac{i\varepsilon_z}{\hbar}L_z \psi(x,\,y)
+$$
+
+이므로 $\varepsilon_z$ 의 1차항까지만 고려하면
+
+$$
+\begin{aligned}
+\Psi'_x(x,\,y) &= \Psi_x(x,\,y) -\dfrac{i\varepsilon_z}{\hbar}L_z \Psi_x(x,\,y) -\varepsilon_z \Psi_y(x,\,y)\\[0.3em]
+\Psi'_y (x,\,y) &= \Psi_y(x,\,y) - \dfrac{i\varepsilon_z}{\hbar}L_z \Psi_y(x,\,y) + \varepsilon_z \Psi_y(x,\,y)
+\end{aligned}
+$$
+
+이다. 이를 행렬 형태로 표현하면 @eq-QM_shankar_12_5_1_2 이며, $S_z = \begin{bmatrix} 0 & -i\hbar \\ i\hbar & 0 \end{bmatrix}$ 로 정의하면 @eq-QM_shankar_12_5_1_3 이다.
 
 :::
+
+</br>
+
+### 총 각운동량의 성질 {#sec-QM_angular_momentum_basic_properties_of_J}
+
+이제 [$L^2$ 과 $L_z$ 의 고유값과 각운동량](#sec-QM_angular_momentum_eigenvalues_of_Lsq_and_L_z) 다루었던 것을 $J$ 기준으로 다시 정리하는 것으로부터 시작하자. 우리는 총 각운동량 $J$ 에 대해 다음이 성립한다는 것을 안다.
+
+$$
+\begin{aligned}
+J^2 |jm\rangle &= j(j+1)\hbar^2|jm\rangle ,\qquad &&j=0,\,\dfrac{1}{2},\, 1,\, \dfrac{3}{2},\ldots, \\[0.3em]
+J_z |jm\rangle &= m\hbar|jm\rangle,\qquad  &&m = -j,\, -(j-1), \ldots,\, (j-1),\, j.
+\end{aligned}
+$$ {#eq-QM_angular_momentum_eigenvalue_of_J}
+
+이 때 $j$ 를 이 상태의 각운동량이라고 한다. 또한 $m$ 은 $j$ 에 따라 정수 혹은 반정수가 될 수 있다. 또한 상승/하강 연산자를 다음과 같이 정의 할 수 있다.
+
+$$
+J_{\pm} = J_x \pm iJ_y.
+$$ {#eq-QM_angular_momentum_definition_of_Jpm}
+
+그리고
+
+$$
+J_\pm |jm\rangle = c_{\pm}(j,m)|j,\, m\pm 1\rangle
+$$ {#eq-QM_angular_momentum_Jpm_on_jm_state}
+
+임을 안다. $(J_\pm)^\dagger = J_\mp$ 이므로
+
+$$
+\langle jm|J_- = (c_+(j,m))^\ast \langle j,m+1|
+$$
+
+이며 
+
+$$
+\langle jm|J_-J_+|jm\rangle = |c_+(j,m)|^2\langle j,m+1|j,m+1\rangle =  |c_+(j,m)|^2
+$$
+
+이다. 또한 
+
+$$
+J_-J_+ = (J_x-iJ_y)(J_x+iJ_y) = J_x^2+J_y^2 +i[J_x,J_y] = J^2-J_z^2 -\hbar J_z
+$$
+
+이므로
+
+$$
+\langle jm|J_-J_+|jm\rangle = \langle jm|( J^2-J_z^2 -\hbar J_z)|jm\rangle = \hbar^2(j-m)(j+m+1)
+$$
+
+이며, 따라서 임의의 $\chi\in \R$ 에 대해 
+
+$$
+c_+(j,\,m) = \hbar\sqrt{(j-m)(j+m+1)}e^{i\chi}
+$$
+
+로 놓을 수 있다. 일반적인 관례상 $\chi=0$ 으로 놓아 다음과 같이 사용한다.
+
+$$
+c_+(j,\,m) = \hbar\sqrt{(j-m)(j+m+1)}.
+$$ {#eq-QM_angular_momemtum_coefficient_of_Jplus}
+
+같은 방법으로 $c_-(j,m)$ 가 아래와 같음을 보일 수 있다.
+
+$$
+c_-(j,\,m) = \hbar\sqrt{(j+m)(j-m+1)}.
+$$ {#eq-QM_angular_momemtum_coefficient_of_Jminus}
+
+위의 두 식으로부터 $J_+|jj\rangle = J_-|j(-j)\rangle = 0$ 임을 보일 수 있다. 이제 $J_x,\, J_y$ 가 $|jm\rangle$ 기저에 대해 어떻게 작용하는지 알아보자. $J_x = (J_++J_-)/2$ 이며 $J_-=(J_+-J_-)/(2i)$ 이므로,
+
+$$
+\begin{aligned}
+\langle j'm' & |J_x|jm\rangle = \langle j'm'|\dfrac{J_++J_-}{2}|jm\rangle \\
+&= \dfrac{\hbar}{2} \left[\sqrt{(j-m)(j+m+1)}\delta_{jj'}\delta_{m',m+1} + \sqrt{(j+m)(j-m+1)}\delta_{jj'}\delta_{m'm-1}\right]
+\end{aligned}
+$${#eq-QM_angular_momemtum_operation_of_Jx}
+
+이며,
+
+$$
+\begin{aligned}
+\langle j'm' & |J_y|jm\rangle = \langle j'm'|\dfrac{J_+-J_-}{2i}|jm\rangle \\
+&= \dfrac{\hbar}{2i} \left[\sqrt{(j-m)(j+m+1)}\delta_{jj'}\delta_{m',m+1} - \sqrt{(j+m)(j-m+1)}\delta_{jj'}\delta_{m'm-1}\right]
+\end{aligned}
+$${#eq-QM_angular_momemtum_operation_of_Jy}
+
+이다. 

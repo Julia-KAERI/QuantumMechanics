@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.42">
+<meta name="generator" content="quarto-1.6.43">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -37,7 +37,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-d4d76bf8491c20bad77d141916dc28e1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap-b467865d89f01302b3bb45791fa41ab5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
@@ -335,6 +335,7 @@ window.Quarto = {
   <li><a href="#l2-와-l_z-의-고유값-문제" id="toc-l2-와-l_z-의-고유값-문제" class="nav-link" data-scroll-target="#l2-와-l_z-의-고유값-문제"><span class="header-section-number">13.2</span> <span class="math inline">\(L^2\)</span> 와 <span class="math inline">\(L_z\)</span> 의 고유값 문제</a>
   <ul class="collapse">
   <li><a href="#sec-QM_angular_momentum_eigenvalues_of_Lsq_and_L_z" id="toc-sec-QM_angular_momentum_eigenvalues_of_Lsq_and_L_z" class="nav-link" data-scroll-target="#sec-QM_angular_momentum_eigenvalues_of_Lsq_and_L_z"><span class="header-section-number">13.2.1</span> <span class="math inline">\(L^2\)</span> 과 <span class="math inline">\(L_z\)</span> 의 고유값과 각운동량</a></li>
+  <li><a href="#sec-QM_angular_momentum_basic_properties_of_J" id="toc-sec-QM_angular_momentum_basic_properties_of_J" class="nav-link" data-scroll-target="#sec-QM_angular_momentum_basic_properties_of_J"><span class="header-section-number">13.2.2</span> 총 각운동량의 성질</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -381,15 +382,19 @@ U[R(-\varepsilon_y \hat{\boldsymbol{e}}_y)] U[R(-\varepsilon_x \hat{\boldsymbol{
 <p><span id="eq-QM_angular_momentum_commutation_relation"><span class="math display">\[
 \boxed{[L_i,\, L_j] = i\hbar \sum_{k=1}^3\varepsilon_{ijk}L_k} .
 \tag{13.5}\]</span></span></p>
+<p>위 식은 다음과 같이 쓸 수 있다.</p>
+<p><span id="eq-QM_angular_momentum_commutation_relation_2"><span class="math display">\[
+\boldsymbol{L}\times \boldsymbol{L} = i\hbar \boldsymbol{L}
+\tag{13.6}\]</span></span></p>
 <p><br></p>
 <p>이제 총 각운동량 연산자 <span class="math inline">\(L^2\)</span> 를 다음과 같이 정의하자.</p>
 <p><span id="eq-QM_angular_momentum_definition_of_total_angular_momentum"><span class="math display">\[
 L^2 = L_x^2+L_y^2+L_z^2.
-\tag{13.6}\]</span></span></p>
+\tag{13.7}\]</span></span></p>
 <p>이 때 다음이 성립한다.</p>
 <p><span id="eq-QM_angular_momentum_commutation_relation_of_total_angular_momentum_and_angular_momentum"><span class="math display">\[
 \boxed{[L^2,\, L_i] = 0,\qquad i=x,\,y,\,z}.
-\tag{13.7}\]</span></span></p>
+\tag{13.8}\]</span></span></p>
 <br>
 <div class="border" style="background-color:#F2F4F4  ;padding:5px;">
 <div id="exm-QM_angular_momentum_commutation_relation_of_total_angular_momentum" class="theorem example">
@@ -412,7 +417,7 @@ U[R(\theta_z \hat{\boldsymbol{e}}_z)] = e^{-i\theta_z L_z/\hbar}
 <p>이제 우리는 임의의 <span class="math inline">\(\boldsymbol{\theta}\)</span> 에 대한 회전이 다음과 같다는 것을 보일 것이다.</p>
 <p><span id="eq-QM_angular_momentum_finite_rotation_in_3d"><span class="math display">\[
 \boxed{U[R(\boldsymbol{\theta})] = \lim_{N \to \infty} \left(I - \dfrac{i}{\hbar}\dfrac{\theta}{N} \hat{\boldsymbol{\theta}}\boldsymbol{\cdot L}\right)^N = e^{-i\boldsymbol{\theta \cdot L}/\hbar} }.
-\tag{13.8}\]</span></span></p>
+\tag{13.9}\]</span></span></p>
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-shankar_12_4_3" class="theorem exercise">
@@ -462,16 +467,16 @@ U[R(\theta_z \hat{\boldsymbol{e}}_z)] = e^{-i\theta_z L_z/\hbar}
 <p><span class="theorem-title"><strong>연습문제 13.2 (Shankar 12.4.4)</strong></span> 벡터 연산자 <span class="math inline">\(\boldsymbol{V}\)</span> 는 <span class="math inline">\(\boldsymbol{V}\)</span> 의 각각의 성분이 아래 식과 같이 변환되는 연산자이다.</p>
 <p><span id="eq-QM_angular_momentum_exr_shakar_12_4_4_1"><span class="math display">\[
 U^\dagger[R]V_iU[R] = \sum_j R_{ij}V_j
-\tag{13.9}\]</span></span></p>
+\tag{13.10}\]</span></span></p>
 <p>(<span class="math inline">\(1\)</span>) 미소 회전 <span class="math inline">\(\delta \boldsymbol{\theta}\)</span> 에 대해 위의 연습문제의 기저에서 다음이 성립함을 보여라.</p>
 <p><span id="eq-QM_angular_momentum_exr_shakar_12_4_4_2"><span class="math display">\[
 \sum_{j} R_{ij}V_j = V_i + (\delta \boldsymbol{\theta} \times \boldsymbol{V})_{i} = V_i+V_i \sum_j \sum_k \varepsilon_{ijk} (\delta \boldsymbol{\theta})_j V_k.
-\tag{13.10}\]</span></span></p>
-<p>(<span class="math inline">\(2\)</span>) <a href="#eq-QM_angular_momentum_exr_shakar_12_4_4_1" class="quarto-xref">식&nbsp;<span>13.9</span></a> 의 좌변에 <span class="math inline">\(U[R]= I - (i/\hbar)\delta \boldsymbol{\theta \cdot L}\)</span> 을 대입하여 다음이 성립함을 보여라.</p>
+\tag{13.11}\]</span></span></p>
+<p>(<span class="math inline">\(2\)</span>) <a href="#eq-QM_angular_momentum_exr_shakar_12_4_4_1" class="quarto-xref">식&nbsp;<span>13.10</span></a> 의 좌변에 <span class="math inline">\(U[R]= I - (i/\hbar)\delta \boldsymbol{\theta \cdot L}\)</span> 을 대입하여 다음이 성립함을 보여라.</p>
 <p><span id="eq-QM_angular_momentum_exr_shakar_12_4_4_3"><span class="math display">\[
 [V_i,\, L_j] = i\hbar \sum_k \varepsilon_{ijk} V_k
-\tag{13.11}\]</span></span></p>
-<p>이것은 <a href="#eq-QM_angular_momentum_exr_shakar_12_4_4_1" class="quarto-xref">식&nbsp;<span>13.9</span></a> 과 동등한 벡터연산자의 정의이다. <span class="math inline">\(\boldsymbol{V}=\boldsymbol{L}\)</span> 로 놓는다면 우리는 <span class="math inline">\(\boldsymbol{L}\)</span> 의 성분에 대한 commutation relation 을 얻는다.</p>
+\tag{13.12}\]</span></span></p>
+<p>이것은 <a href="#eq-QM_angular_momentum_exr_shakar_12_4_4_1" class="quarto-xref">식&nbsp;<span>13.10</span></a> 과 동등한 벡터연산자의 정의이다. <span class="math inline">\(\boldsymbol{V}=\boldsymbol{L}\)</span> 로 놓는다면 우리는 <span class="math inline">\(\boldsymbol{L}\)</span> 의 성분에 대한 commutation relation 을 얻는다.</p>
 </div>
 </div>
 <p><br></p>
@@ -579,36 +584,36 @@ U[R(-\varepsilon_x \varepsilon_y \hat{\boldsymbol{e}}_z)] = I + \dfrac{i \vareps
 <p><span class="math inline">\(L^2\)</span> 와 <span class="math inline">\(L_z\)</span> 의 고유상태를 <span class="math inline">\(|\alpha\beta\rangle\)</span> 이라고 하자. 즉</p>
 <p><span id="eq-QM_angular_momentum_eigenvalue_0"><span class="math display">\[
 L^2|\alpha\beta\rangle = \alpha |\alpha\beta\rangle ,\qquad L_z |\alpha\beta\rangle = \beta|\alpha\beta\rangle
-\tag{13.12}\]</span></span></p>
+\tag{13.13}\]</span></span></p>
 <p>라고 하자. 이제 상승 연산자 <span class="math inline">\(L_+\)</span> 와 하강 연산자 <span class="math inline">\(L_-\)</span> 를 다음과 같이 정의한다.</p>
 <p><span id="eq-QM_angular_momentum_raisng_lowering_opertors"><span class="math display">\[
 L_\pm = L_x \pm iL_y.
-\tag{13.13}\]</span></span></p>
+\tag{13.14}\]</span></span></p>
 <p>그렇다면 다음이 성립한다는 것을 쉽게 보일 수 있다.</p>
 <p><span id="eq-QM_angular_momentum_commutation_relation_betwee_Lz_and_Lpm"><span class="math display">\[
 [L_z,\, L_\pm] = \pm \hbar L_{\pm}.
-\tag{13.14}\]</span></span></p>
+\tag{13.15}\]</span></span></p>
 <p><span id="eq-QM_angular_momentum_commutation_relation_betwee_Lsq_and_Lpm"><span class="math display">\[
 [L^2,\, L_{\pm}]=0.
-\tag{13.15}\]</span></span></p>
-<p>이제 <a href="#eq-QM_angular_momentum_commutation_relation_betwee_Lz_and_Lpm" class="quarto-xref">식&nbsp;<span>13.14</span></a> 로부터</p>
+\tag{13.16}\]</span></span></p>
+<p>이제 <a href="#eq-QM_angular_momentum_commutation_relation_betwee_Lz_and_Lpm" class="quarto-xref">식&nbsp;<span>13.15</span></a> 로부터</p>
 <p><span class="math display">\[
 \begin{aligned}
 L_z \left(L_+|\alpha\beta\rangle\right) = L_+(L_z + \hbar)|\alpha\beta\rangle = L_+ (\beta+\hbar)|\alpha\beta\rangle
 \end{aligned}
 \]</span></p>
-<p>임을 안다. 또한 <a href="#eq-QM_angular_momentum_commutation_relation_betwee_Lsq_and_Lpm" class="quarto-xref">식&nbsp;<span>13.15</span></a> 로 부터</p>
+<p>임을 안다. 또한 <a href="#eq-QM_angular_momentum_commutation_relation_betwee_Lsq_and_Lpm" class="quarto-xref">식&nbsp;<span>13.16</span></a> 로 부터</p>
 <p><span class="math display">\[
 L^2L_+|\alpha\beta\rangle = L_+L^2|\alpha\beta \rangle = \alpha L_+|\alpha\beta\rangle
 \]</span></p>
 <p>임을 안다. 즉 <span class="math inline">\(L_+|\alpha\beta\rangle\)</span> 은 <span class="math inline">\(\beta+\hbar\)</span> 를 고유값으로 갖는 <span class="math inline">\(L_z\)</span> 의 고유상태이며 <span class="math inline">\(\alpha\)</span> 를 고유값으로 갖는 <span class="math inline">\(L_2\)</span> 의 고유상태이다. 즉</p>
 <p><span id="eq-QM_angular_momentum_state_after_raising_operator"><span class="math display">\[
 L_+|\alpha\beta\rangle = c_+(\alpha,\, \beta)|\alpha,\beta+\hbar\rangle
-\tag{13.16}\]</span></span></p>
+\tag{13.17}\]</span></span></p>
 <p>이다. 같은 방법으로 <span class="math inline">\(L_-|\alpha\beta\rangle\)</span> 은 <span class="math inline">\(\beta-\hbar\)</span> 를 고유값으로 갖는 <span class="math inline">\(L_z\)</span> 의 고유상태이며 동시에 <span class="math inline">\(\alpha\)</span> 를 고유값으로 갖는 <span class="math inline">\(L^2\)</span> 의 고유상태라는 것을 보일 수 있다. 즉,</p>
 <p><span id="eq-QM_angular_momentum_state_after_lowering_operator"><span class="math display">\[
 L_-|\alpha\beta\rangle =c_-(\alpha,\,\beta)|\alpha ,\beta-\hbar\rangle
-\tag{13.17}\]</span></span></p>
+\tag{13.18}\]</span></span></p>
 <p>이다.</p>
 <p>그런데 이것은 문제가 있다. <span class="math inline">\(L_z(L_\pm)^k|\alpha\beta \rangle = c_\pm|\alpha, \beta\pm k\hbar\rangle\)</span> 이며 이는 <span class="math inline">\(L_z\)</span> 의 고유값이 무한히 커지거나 작아질 수 있다는 것을 의미한다. 그런데 <span class="math inline">\(L^2\)</span> 의 값은 <span class="math inline">\(\alpha\)</span> 로 고정되어 있으므로 벡터의 부분의 크기가 전체 크기보다 커진다는 문제가 발생한다. 양자역학적으로는</p>
 <p><span class="math display">\[
@@ -625,12 +630,12 @@ L_+ |\alpha \beta_\text{max}\rangle = 0,\qquad L_-|\alpha \beta_\text{min}\rangl
 <p>이어야 한다. 즉</p>
 <p><span id="eq-QM_angular_momentum_lsq_and_lmax"><span class="math display">\[
 \alpha = \beta_\text{max} (\beta_\text{max}+\hbar)
-\tag{13.18}\]</span></span></p>
+\tag{13.19}\]</span></span></p>
 <p>이어야 한다. 이제 <span class="math inline">\(L_+L_- = L^2-L_z^2 +\hbar L_z\)</span> 를 <span class="math inline">\(|\alpha\beta_\text{min}\rangle\)</span> 에 적용하면 <span class="math inline">\(L_+L_-|\alpha \beta_\text{min}\rangle = 0\)</span> 으로부터</p>
 <p><span id="eq-QM_angular_momentum_lsq_and_lmin"><span class="math display">\[
 \alpha = \beta_\text{min}(\beta_\text{min}-\hbar)
-\tag{13.19}\]</span></span></p>
-<p>를 얻는다. <a href="#eq-QM_angular_momentum_lsq_and_lmax" class="quarto-xref">식&nbsp;<span>13.18</span></a> 와 <a href="#eq-QM_angular_momentum_lsq_and_lmin" class="quarto-xref">식&nbsp;<span>13.19</span></a> 으로부터</p>
+\tag{13.20}\]</span></span></p>
+<p>를 얻는다. <a href="#eq-QM_angular_momentum_lsq_and_lmax" class="quarto-xref">식&nbsp;<span>13.19</span></a> 와 <a href="#eq-QM_angular_momentum_lsq_and_lmin" class="quarto-xref">식&nbsp;<span>13.20</span></a> 으로부터</p>
 <p><span class="math display">\[
 \beta_\text{min}= - \beta_\text{max}
 \]</span></p>
@@ -644,7 +649,7 @@ L_+ |\alpha \beta_\text{max}\rangle = 0,\qquad L_-|\alpha \beta_\text{min}\rangl
 \]</span></p>
 <p>이다. 여기서 <span class="math inline">\(L^2\)</span> 의 고유값 <span class="math inline">\(\alpha &gt; (\beta_\max)^2\)</span> 이므로 우리가 생각했던 조건에 어긋나지 않는다. 이제 이 <span class="math inline">\(\beta_\text{max}\)</span> 를 <strong>이 상태의 각운동량 (angular momentum of the state)</strong> 이라고 한다.</p>
 <p>여기서 한가지 중요한 것을 짚고 넘어가야 한다.</p>
-<p> (<span class="math inline">\(i\)</span>) 우리는 앞서 <a href="../../src/QM/QM_angular_momentum1.html#sec-QM_angular_momentum_eigenvalue_of_Lz_and_its_wavefunction"><span class="math inline">\(L_z\)</span> 의 고유값과 파동함수</a> 에서 각운동량 연산자의 고유값이 <span class="math inline">\(\hbar\)</span> 의 정수배(<a href="QM_angular_momentum1.html#eq-QM_angular_momentum_quantization_of_lz" class="quarto-xref">식&nbsp;<span>12.23</span></a>)라는 것을 보였다.</p>
+<p> (<span class="math inline">\(i\)</span>) 우리는 앞서 <a href="../../src/QM/QM_angular_momentum1.html#sec-QM_angular_momentum_eigenvalue_of_Lz_and_its_wavefunction"><span class="math inline">\(L_z\)</span> 의 고유값과 파동함수</a> 에서 각운동량 연산자의 고유값이 <span class="math inline">\(\hbar\)</span> 의 정수배(<span class="quarto-unresolved-ref">?eq-QM_angular_momentum_quantization_of_lz</span>)라는 것을 보였다.</p>
 <p> (<span class="math inline">\(ii\)</span>) 그러나 여기에서는 <span class="math inline">\(\hbar/2\)</span> 의 정수배이다.</p>
 <p>(<span class="math inline">\(i\)</span>) 는 미분방정식과 그 경계조건으로 부터 나온 결론이다. 반면에 (<span class="math inline">\(ii\)</span>) 는 commutation relation 만을 이용하여 얻은 결론이다. 이 commutation relation 은 파동함수가 무엇이든간에 3차원에서 3개의 generator 의 조합이 어떤 규칙을 따라야 하는지를 반영한 결과이다. 우리는 지금까지 스칼라 파동함수를 생각해 왔다. 즉 3차원 상의 점 <span class="math inline">\((x,\,y,\,z)\)</span> 에 단 하나의 복소수값이 정해진다. 그러나 어떤 입자의 파동함수는 벡터정이라고 불리는, 즉</p>
 <p><span class="math display">\[
@@ -661,25 +666,37 @@ L_+ |\alpha \beta_\text{max}\rangle = 0,\qquad L_-|\alpha \beta_\text{min}\rangl
 </figcaption>
 </figure>
 </div>
-<p>스칼라 파동함수의 경우 <span class="math inline">\(\delta \boldsymbol{\theta}\)</span> 회전은 <span class="math inline">\((x,\,y,\,z)\)</span> 에 지정된 스칼라값을 새로운 <span class="math inline">\((x',\,y',\,z')\)</span> 에 지정하는 것이다. 벡터장 파동함수의 경우는 (<span class="math inline">\(a\)</span>) <span class="math inline">\((x,\,y,\,z)\)</span> 에 지정된 벡터를 <span class="math inline">\(\delta \boldsymbol{\theta}\)</span> 만큼 회전시키고, (<span class="math inline">\(b\)</span>) 이 값을 새로운 <span class="math inline">\((x',\,y',\,z')\)</span> 에 할당한다. 미분연산자 <span class="math inline">\(L_x,\,L_y,\,L_z\)</span> 는 (<span class="math inline">\(b\)</span>) 의 기능만을 하며 (<span class="math inline">\(a\)</span>) 의 기능은 <span class="math inline">\(3\times 3\)</span></p>
+<p>스칼라 파동함수의 경우 <span class="math inline">\(\delta \boldsymbol{\theta}\)</span> 회전은 <span class="math inline">\((x,\,y,\,z)\)</span> 에 지정된 스칼라값을 새로운 <span class="math inline">\((x',\,y',\,z')\)</span> 에 지정하는 것이다. 벡터장 파동함수의 경우는 (<span class="math inline">\(1\)</span>) <span class="math inline">\((x,\,y,\,z)\)</span> 에 지정된 벡터를 <span class="math inline">\(\delta \boldsymbol{\theta}\)</span> 만큼 회전시키고, (<span class="math inline">\(2\)</span>) 이 값을 새로운 <span class="math inline">\((x',\,y',\,z')\)</span> 에 할당한다. 미분연산자 <span class="math inline">\(L_x,\,L_y,\,L_z\)</span> 는 (<span class="math inline">\(2\)</span>) 의 기능만을 하며 (<span class="math inline">\(1\)</span>) 의 기능은 <span class="math inline">\(3\times 3\)</span> 행렬 <span class="math inline">\(S_x,\,S_y,\,S_z\)</span> 에 의해 이루어진다. 즉 <span class="math inline">\(S_x,\,S_y,\,S_z\)</span> 는 <span class="math inline">\(\Psi_x,\,\Psi_y,\, \Psi_z\)</span> 를 섞는다. 이 경우 미소회전의 generator 는</p>
+<p><span class="math display">\[
+J_i = L_i + S_j
+\]</span></p>
+<p>형태이며 <span class="math inline">\(L_i\)</span> 가 (<span class="math inline">\(2\)</span>) 의 기능을, <span class="math inline">\(S_i\)</span> 가 (<span class="math inline">\(1\)</span>) 의 기능을 수행한다. (<a href="#exr-shankar_12_5_1" class="quarto-xref">연습문제&nbsp;<span>13.5</span></a> 을 참고하라.) 이 때 <span class="math inline">\(L_i\)</span> 을 <strong>궤도 각운동량(orbital angular momentum)</strong>, <span class="math inline">\(S_i\)</span> 를 <strong>스핀 각운동량(spin angular momentum)</strong>, <span class="math inline">\(J_i\)</span> 를 <strong>총 각운동량(total angular momentum)</strong> 이라고 한다. 우리는 <span class="math inline">\(S_i\)</span> 와 <span class="math inline">\(J_i\)</span> 가 일반적인 경우에 어떤 형태인지는 아직 모르지만 <span class="math inline">\(J_i\)</span> 가 <span class="math inline">\(L_i\)</span> 와 같은 commutation relation 을 따를 것이라는 것을 알고 있다. 왜냐하면 이 commutation 규칙은 회전의 조합에 대한 규칙이며 회전되는 파동함수가 어떤 것이든간에 consistency 를 위해 만족해야 하기 때문이다. <a href="#eq-QM_angular_momentum_commutation_relation_2" class="quarto-xref">식&nbsp;<span>13.6</span></a> 와 같이 다음과 같이 쓸 수 있다.</p>
+<p><span id="eq-QM_angular_momentum_J_commutation_relation_2"><span class="math display">\[
+\boldsymbol{J}\times \boldsymbol{J} = i\hbar \boldsymbol{J}.
+\tag{13.21}\]</span></span></p>
+<p>혹은</p>
+<p><span id="eq-QM_angular_momentum_J_commutation_relation"><span class="math display">\[
+\boxed{[J_i,\, J_j] = i\hbar \sum_{k=1}^3 \varepsilon_{ijk} J_k.}
+\tag{13.22}\]</span></span></p>
+<p>이제 <span class="math inline">\(\boldsymbol{L}\)</span> 은 파동함수가 스칼라 함수일 경우에 대한 <span class="math inline">\(\boldsymbol{J}\)</span> 의 특별한 경우라고 볼 수 있다.</p>
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-shankar_12_5_1" class="theorem exercise">
 <p><span class="theorem-title"><strong>연습문제 13.5 (Shankar 12.5.1)</strong></span> 2차원 벡터장 <span class="math inline">\(\boldsymbol{\Psi}(x,\,y)\)</span> 을 생각하자. <a href="#fig-QM_angular_momentum_vector_field" class="quarto-xref">그림&nbsp;<span>13.1</span></a> 에서와 같은 <span class="math inline">\(\varepsilon_z \hat{\boldsymbol{e}}_z\)</span> 만큼의 미소회전에 대해 다음과 같이 변환됨을 보여라.</p>
-<p><span class="math display">\[
+<p><span id="eq-QM_shankar_12_5_1_1"><span class="math display">\[
 \begin{aligned}
 \Psi_x &amp;\longrightarrow \Psi_x'=\Psi_x(x+\varepsilon_z y, y-\varepsilon_z x) - \Psi_y(x+\varepsilon_z, y-\varepsilon_z x)\varepsilon_z \\[0.3em]
 \Psi_y &amp;\longrightarrow \Psi_y'=\Psi_x(x+\varepsilon_z y, y-\varepsilon_z x)\varepsilon_z + \Psi_y(x+\varepsilon_z, y-\varepsilon_z x).
 \end{aligned}
-\]</span></p>
+\tag{13.23}\]</span></span></p>
 <p>그리고 <span class="math inline">\(\varepsilon_z\)</span> 에 대한 1차항 까지만 고려했을 때</p>
-<p><span class="math display">\[
+<p><span id="eq-QM_shankar_12_5_1_2"><span class="math display">\[
 \begin{bmatrix} \Psi_x' \\ \Psi_y'\end{bmatrix} = \left(\begin{bmatrix} 1 &amp; 0 \\ 0 &amp; 1\end{bmatrix} - \dfrac{i\varepsilon_z}{\hbar}\begin{bmatrix} L_z &amp; 0 \\ 0 &amp; L_z\end{bmatrix} - \dfrac{i\varepsilon}{\hbar} \begin{bmatrix} 0 &amp; -i\hbar \\ i\hbar &amp; 0 \end{bmatrix}\right) \begin{bmatrix} \Psi_x \\ \Psi_y\end{bmatrix}
-\]</span></p>
+\tag{13.24}\]</span></span></p>
 <p>이며, 따라서</p>
-<p><span class="math display">\[
+<p><span id="eq-QM_shankar_12_5_1_3"><span class="math display">\[
 J_z = L_z^{(1)} \otimes I^{(2)} + I^{(1)} \otimes S_z^{(2)} = L_z + S_z
-\]</span></p>
+\tag{13.25}\]</span></span></p>
 <p>임을 보여라. 여기서 <span class="math inline">\(I^{(2)}\)</span> 는 vector comoponents 에 대한 <span class="math inline">\(2 \times 2\)</span> 항등행렬이며 <span class="math inline">\(I^{(1)}\)</span> 은 <span class="math inline">\(\Psi(x,\,y)\)</span> 의 <span class="math inline">\((x,\,y)\)</span> 에 대한 항등행렬이다. 이 예는 파동함수가 스칼라가 아닐 경우 <span class="math inline">\(J_z = L_z+S_z\)</span> 임을 보여주기 위한 예이며 반정수 고유값을 갖는 경우는 다음 장에서 다루기로 한다.</p>
 </div>
 </div>
@@ -690,11 +707,85 @@ J_z = L_z^{(1)} \otimes I^{(2)} + I^{(1)} \otimes S_z^{(2)} = L_z + S_z
 \begin{aligned}
 \boldsymbol{\Psi}(x,\,y) &amp;= \Psi_x(x,\,y)\hat{\boldsymbol{e}}_x + \Psi_y(x,\,y)\hat{\boldsymbol{e}}_y \\[0.3em]
 &amp;\longrightarrow \overline{\boldsymbol{\Psi}}(x,\,y) = \Psi_x(x+\varepsilon_z y,\, y-\varepsilon_z x)\hat{\boldsymbol{e}}_x + \Psi_y(x+\varepsilon_z y,\, y-\varepsilon_z x)\hat{\boldsymbol{e}}_y\\[0.3em]
-&amp;\longrightarrow \boldsymbol{\Psi}'(x,\,y) = \left[\Psi_x(x+\varepsilon_z y,\, y-\varepsilon_z x) - \varepsilon_z  \Psi_y(x+\varepsilon_z y,\, y-\varepsilon_z x)\right] \hat{\boldsymbol{e}}_x \\[0.3em]
-&amp;\qquad \qquad \qquad + \left[\varepsilon_z\Psi_x(x+\varepsilon_z y,\, y-\varepsilon_z x)+ \Psi_y(x+\varepsilon_z y,\, y-\varepsilon_z x)\right]\hat{\boldsymbol{e}}_y
+&amp;\longrightarrow \boldsymbol{\Psi}'(x,\,y) = \left[\Psi_x(x+\varepsilon_z y,\, y-\varepsilon_z x)_x - \varepsilon_z  \Psi_y(x+\varepsilon_z y,\, y-\varepsilon_z x)\right] \hat{\boldsymbol{e}}_x \\[0.3em]
+&amp;\qquad \qquad \qquad + \left[\varepsilon_z\Psi_x(x+\varepsilon_z y,\, y-\varepsilon_z x) + \Psi_y(x+\varepsilon_z y,\, y-\varepsilon_z x)\right]\hat{\boldsymbol{e}}_y
 \end{aligned}
 \]</span></p>
+<p>이므로 <a href="#eq-QM_shankar_12_5_1_1" class="quarto-xref">식&nbsp;<span>13.23</span></a> 이 성립한다. 또한</p>
+<p><span class="math display">\[
+\psi(x+\varepsilon_z y,\, y-\varepsilon_z x)=  \psi(x,\,y) + \varepsilon_z(y\partial_x \psi - x\partial_y \psi) = \psi(x,\,y) -\dfrac{i\varepsilon_z}{\hbar}L_z \psi(x,\,y)
+\]</span></p>
+<p>이므로 <span class="math inline">\(\varepsilon_z\)</span> 의 1차항까지만 고려하면</p>
+<p><span class="math display">\[
+\begin{aligned}
+\Psi'_x(x,\,y) &amp;= \Psi_x(x,\,y) -\dfrac{i\varepsilon_z}{\hbar}L_z \Psi_x(x,\,y) -\varepsilon_z \Psi_y(x,\,y)\\[0.3em]
+\Psi'_y (x,\,y) &amp;= \Psi_y(x,\,y) - \dfrac{i\varepsilon_z}{\hbar}L_z \Psi_y(x,\,y) + \varepsilon_z \Psi_y(x,\,y)
+\end{aligned}
+\]</span></p>
+<p>이다. 이를 행렬 형태로 표현하면 <a href="#eq-QM_shankar_12_5_1_2" class="quarto-xref">식&nbsp;<span>13.24</span></a> 이며, <span class="math inline">\(S_z = \begin{bmatrix} 0 &amp; -i\hbar \\ i\hbar &amp; 0 \end{bmatrix}\)</span> 로 정의하면 <a href="#eq-QM_shankar_12_5_1_3" class="quarto-xref">식&nbsp;<span>13.25</span></a> 이다.</p>
 </div>
+<p><br></p>
+</section>
+<section id="sec-QM_angular_momentum_basic_properties_of_J" class="level3" data-number="13.2.2">
+<h3 data-number="13.2.2" class="anchored" data-anchor-id="sec-QM_angular_momentum_basic_properties_of_J"><span class="header-section-number">13.2.2</span> 총 각운동량의 성질</h3>
+<p>이제 <a href="#sec-QM_angular_momentum_eigenvalues_of_Lsq_and_L_z"><span class="math inline">\(L^2\)</span> 과 <span class="math inline">\(L_z\)</span> 의 고유값과 각운동량</a> 다루었던 것을 <span class="math inline">\(J\)</span> 기준으로 다시 정리하는 것으로부터 시작하자. 우리는 총 각운동량 <span class="math inline">\(J\)</span> 에 대해 다음이 성립한다는 것을 안다.</p>
+<p><span id="eq-QM_angular_momentum_eigenvalue_of_J"><span class="math display">\[
+\begin{aligned}
+J^2 |jm\rangle &amp;= j(j+1)\hbar^2|jm\rangle ,\qquad &amp;&amp;j=0,\,\dfrac{1}{2},\, 1,\, \dfrac{3}{2},\ldots, \\[0.3em]
+J_z |jm\rangle &amp;= m\hbar|jm\rangle,\qquad  &amp;&amp;m = -j,\, -(j-1), \ldots,\, (j-1),\, j.
+\end{aligned}
+\tag{13.26}\]</span></span></p>
+<p>이 때 <span class="math inline">\(j\)</span> 를 이 상태의 각운동량이라고 한다. 또한 <span class="math inline">\(m\)</span> 은 <span class="math inline">\(j\)</span> 에 따라 정수 혹은 반정수가 될 수 있다. 또한 상승/하강 연산자를 다음과 같이 정의 할 수 있다.</p>
+<p><span id="eq-QM_angular_momentum_definition_of_Jpm"><span class="math display">\[
+J_{\pm} = J_x \pm iJ_y.
+\tag{13.27}\]</span></span></p>
+<p>그리고</p>
+<p><span id="eq-QM_angular_momentum_Jpm_on_jm_state"><span class="math display">\[
+J_\pm |jm\rangle = c_{\pm}(j,m)|j,\, m\pm 1\rangle
+\tag{13.28}\]</span></span></p>
+<p>임을 안다. <span class="math inline">\((J_\pm)^\dagger = J_\mp\)</span> 이므로</p>
+<p><span class="math display">\[
+\langle jm|J_- = (c_+(j,m))^\ast \langle j,m+1|
+\]</span></p>
+<p>이며</p>
+<p><span class="math display">\[
+\langle jm|J_-J_+|jm\rangle = |c_+(j,m)|^2\langle j,m+1|j,m+1\rangle =  |c_+(j,m)|^2
+\]</span></p>
+<p>이다. 또한</p>
+<p><span class="math display">\[
+J_-J_+ = (J_x-iJ_y)(J_x+iJ_y) = J_x^2+J_y^2 +i[J_x,J_y] = J^2-J_z^2 -\hbar J_z
+\]</span></p>
+<p>이므로</p>
+<p><span class="math display">\[
+\langle jm|J_-J_+|jm\rangle = \langle jm|( J^2-J_z^2 -\hbar J_z)|jm\rangle = \hbar^2(j-m)(j+m+1)
+\]</span></p>
+<p>이며, 따라서 임의의 <span class="math inline">\(\chi\in \mathbb{R}\)</span> 에 대해</p>
+<p><span class="math display">\[
+c_+(j,\,m) = \hbar\sqrt{(j-m)(j+m+1)}e^{i\chi}
+\]</span></p>
+<p>로 놓을 수 있다. 일반적인 관례상 <span class="math inline">\(\chi=0\)</span> 으로 놓아 다음과 같이 사용한다.</p>
+<p><span id="eq-QM_angular_momemtum_coefficient_of_Jplus"><span class="math display">\[
+c_+(j,\,m) = \hbar\sqrt{(j-m)(j+m+1)}.
+\tag{13.29}\]</span></span></p>
+<p>같은 방법으로 <span class="math inline">\(c_-(j,m)\)</span> 가 아래와 같음을 보일 수 있다.</p>
+<p><span id="eq-QM_angular_momemtum_coefficient_of_Jminus"><span class="math display">\[
+c_-(j,\,m) = \hbar\sqrt{(j+m)(j-m+1)}.
+\tag{13.30}\]</span></span></p>
+<p>위의 두 식으로부터 <span class="math inline">\(J_+|jj\rangle = J_-|j(-j)\rangle = 0\)</span> 임을 보일 수 있다. 이제 <span class="math inline">\(J_x,\, J_y\)</span> 가 <span class="math inline">\(|jm\rangle\)</span> 기저에 대해 어떻게 작용하는지 알아보자. <span class="math inline">\(J_x = (J_++J_-)/2\)</span> 이며 <span class="math inline">\(J_-=(J_+-J_-)/(2i)\)</span> 이므로,</p>
+<p><span id="eq-QM_angular_momemtum_operation_of_Jx"><span class="math display">\[
+\begin{aligned}
+\langle j'm' &amp; |J_x|jm\rangle = \langle j'm'|\dfrac{J_++J_-}{2}|jm\rangle \\
+&amp;= \dfrac{\hbar}{2} \left[\sqrt{(j-m)(j+m+1)}\delta_{jj'}\delta_{m',m+1} + \sqrt{(j+m)(j-m+1)}\delta_{jj'}\delta_{m'm-1}\right]
+\end{aligned}
+\tag{13.31}\]</span></span></p>
+<p>이며,</p>
+<p><span id="eq-QM_angular_momemtum_operation_of_Jy"><span class="math display">\[
+\begin{aligned}
+\langle j'm' &amp; |J_y|jm\rangle = \langle j'm'|\dfrac{J_+-J_-}{2i}|jm\rangle \\
+&amp;= \dfrac{\hbar}{2i} \left[\sqrt{(j-m)(j+m+1)}\delta_{jj'}\delta_{m',m+1} - \sqrt{(j+m)(j-m+1)}\delta_{jj'}\delta_{m'm-1}\right]
+\end{aligned}
+\tag{13.32}\]</span></span></p>
+<p>이다.</p>
 
 
 </section>
