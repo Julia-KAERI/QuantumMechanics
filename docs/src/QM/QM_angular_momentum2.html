@@ -649,7 +649,7 @@ L_+ |\alpha \beta_\text{max}\rangle = 0,\qquad L_-|\alpha \beta_\text{min}\rangl
 \]</span></p>
 <p>이다. 여기서 <span class="math inline">\(L^2\)</span> 의 고유값 <span class="math inline">\(\alpha &gt; (\beta_\max)^2\)</span> 이므로 우리가 생각했던 조건에 어긋나지 않는다. 이제 이 <span class="math inline">\(\beta_\text{max}\)</span> 를 <strong>이 상태의 각운동량 (angular momentum of the state)</strong> 이라고 한다.</p>
 <p>여기서 한가지 중요한 것을 짚고 넘어가야 한다.</p>
-<p> (<span class="math inline">\(i\)</span>) 우리는 앞서 <a href="../../src/QM/QM_angular_momentum1.html#sec-QM_angular_momentum_eigenvalue_of_Lz_and_its_wavefunction"><span class="math inline">\(L_z\)</span> 의 고유값과 파동함수</a> 에서 각운동량 연산자의 고유값이 <span class="math inline">\(\hbar\)</span> 의 정수배(<span class="quarto-unresolved-ref">?eq-QM_angular_momentum_quantization_of_lz</span>)라는 것을 보였다.</p>
+<p> (<span class="math inline">\(i\)</span>) 우리는 앞서 <a href="../../src/QM/QM_angular_momentum1.html#sec-QM_angular_momentum_eigenvalue_of_Lz_and_its_wavefunction"><span class="math inline">\(L_z\)</span> 의 고유값과 파동함수</a> 에서 각운동량 연산자의 고유값이 <span class="math inline">\(\hbar\)</span> 의 정수배(<a href="QM_angular_momentum1.html#eq-QM_angular_momentum_quantization_of_lz" class="quarto-xref">식&nbsp;<span>12.23</span></a>) 라는 것을 보였다.</p>
 <p> (<span class="math inline">\(ii\)</span>) 그러나 여기에서는 <span class="math inline">\(\hbar/2\)</span> 의 정수배이다.</p>
 <p>(<span class="math inline">\(i\)</span>) 는 미분방정식과 그 경계조건으로 부터 나온 결론이다. 반면에 (<span class="math inline">\(ii\)</span>) 는 commutation relation 만을 이용하여 얻은 결론이다. 이 commutation relation 은 파동함수가 무엇이든간에 3차원에서 3개의 generator 의 조합이 어떤 규칙을 따라야 하는지를 반영한 결과이다. 우리는 지금까지 스칼라 파동함수를 생각해 왔다. 즉 3차원 상의 점 <span class="math inline">\((x,\,y,\,z)\)</span> 에 단 하나의 복소수값이 정해진다. 그러나 어떤 입자의 파동함수는 벡터정이라고 불리는, 즉</p>
 <p><span class="math display">\[
@@ -786,6 +786,54 @@ c_-(j,\,m) = \hbar\sqrt{(j+m)(j-m+1)}.
 \end{aligned}
 \tag{13.32}\]</span></span></p>
 <p>이다.</p>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-shankar_12_5_2" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 13.6 (Shankar 12.5.2)</strong></span> (<span class="math inline">\(1\)</span>) <span class="math inline">\(2\times 2\)</span> 행렬 <span class="math inline">\(J^{(1/2)}_x\)</span>, <span class="math inline">\(J^{(1/2)}_y\)</span>, <span class="math inline">\(J^{(1/2)}_z\)</span> 을 구하고 <span class="math inline">\([J^{(1/2)}_x,\, J^{(1,2)}_y] = i\hbar J^{(1/2)}_z\)</span> 임을 보여라.</p>
+<p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(J_i^{(1)}\)</span> 에 대해 (<span class="math inline">\(1\)</span>) 을 하라. 여기서 행렬은 <span class="math inline">\(3\times 3\)</span> 행렬이다.</p>
+<p>(<span class="math inline">\(3\)</span>) <span class="math inline">\(J_i^{(3/2)}\)</span> 에 대해 (<span class="math inline">\(1\)</span>) 을 하라. 여기서 행렬은 <span class="math inline">\(4\times 4\)</span> 행렬이다.</p>
+</div>
+</div>
+<p><br></p>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(1\)</span>) <span class="math inline">\(|1/2,\, 1/2\rangle,\, |1/2,\, -1/2\rangle\)</span> 기저에 대해 <a href="#eq-QM_angular_momemtum_coefficient_of_Jplus" class="quarto-xref">식&nbsp;<span>13.29</span></a>, <a href="#eq-QM_angular_momemtum_coefficient_of_Jminus" class="quarto-xref">식&nbsp;<span>13.30</span></a> 를 이용하여 구하자. 우선 <span class="math inline">\(J_z=\dfrac{\hbar}{2}\begin{bmatrix} -1 &amp; 0 \\ 0 &amp; 1 \end{bmatrix}\)</span> 이며 <span class="math inline">\(J_x,\, J_y\)</span> 의 대각성분은 <span class="math inline">\(0\)</span> 이고</p>
+<p><span class="math display">\[
+\begin{aligned}
+\langle 1/2,1/2|J_x|1/2,-1/2\rangle &amp;= \dfrac{\hbar}{2}, \\[0.3em]
+\langle 1/2,1/2|J_y|1/2,-1/2\rangle &amp;= -\dfrac{i\hbar}{2}, \\[0.3em]
+\langle 1/2,-1/2|J_x|1/2, 1/2\rangle &amp;= \dfrac{\hbar}{2}, \\[0.3em]
+\langle 1/2, -1/2|J_x|1/2, 1/2\rangle &amp;= \dfrac{i\hbar}{2}, \\[0.3em]
+\end{aligned}
+\]</span></p>
+<p>이므로</p>
+<p><span class="math display">\[
+J_x = \dfrac{\hbar}{2}\begin{bmatrix} 0 &amp; 1 \\ 1 &amp; 0\end{bmatrix},\qquad J_y = \dfrac{\hbar}{2} \begin{bmatrix} 0 &amp; -i \\ i &amp; 0 \end{bmatrix}, \qquad [J_x,\, J_y] = \dfrac{i\hbar^2}{2}\begin{bmatrix} -1 &amp; 0 \\ 0 &amp; 1\end{bmatrix} = i\hbar J_z
+\]</span></p>
+<p>이다.</p>
+<p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(j=1\)</span> 인 경우 <span class="math inline">\(J_z = \hbar \begin{bmatrix} -1 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 1\end{bmatrix}\)</span> 이며,</p>
+<p><span class="math display">\[
+J_x =\dfrac{\hbar}{2}\begin{bmatrix} 0 &amp; \sqrt{2} &amp; 0 \\ \sqrt{2} &amp; 0 &amp; \sqrt{2} \\ 0 &amp; \sqrt{2} &amp; 0 \end{bmatrix}, \qquad J_y = \dfrac{\hbar}{2}\begin{bmatrix}  0 &amp; -\sqrt{2}i &amp; 0 \\ \sqrt{2}i &amp; 0 &amp; -\sqrt{2}i \\ 0 &amp; \sqrt{2}i &amp; 0\end{bmatrix}
+\]</span></p>
+<p>로부터 <span class="math inline">\([J_x,\,J_y] = i\hbar J_z\)</span> 임을 보일 수 있다.</p>
+<p>(<span class="math inline">\(3\)</span>) …</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-shankar_12_5_3" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 13.7 (Shankar 12.5.3)</strong></span> (<span class="math inline">\(1\)</span>) <span class="math inline">\(|jm\rangle\)</span> 상태에서 <span class="math inline">\(\langle J_x\rangle = \langle J_y\rangle = 0\)</span> 임을 보여라.</p>
+<p>(<span class="math inline">\(2\)</span>) 이 상태에서 <span class="math inline">\(\langle J_x^2 \rangle = \langle J_y^2\rangle = \frac{\hbar^2}{2}[j(j+1)-m^2]\)</span> 임을 보여라.</p>
+<p>(<span class="math inline">\(3\)</span>) (<span class="math inline">\(2\)</span>) 의 결과 <span class="math inline">\(\Delta J_x \cdot \Delta J_y\)</span> 가 <a href="QM_classical_limit.html#eq-QM_uncertainty_derivation_of_uncertianty_relation_1" class="quarto-xref">식&nbsp;<span>6.11</span></a> 의 부등식을 만족함을 보여라.</p>
+<p>(<span class="math inline">\(4\)</span>) <span class="math inline">\(\Delta J_x \cdot \Delta J_y\)</span> 불확정성의 최소값은 <span class="math inline">\(|j,\pm j\rangle\)</span> 일 때 임을 보여라.</p>
+</div>
+</div>
+<p><br></p>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(1\)</span>) <a href="#eq-QM_angular_momemtum_coefficient_of_Jplus" class="quarto-xref">식&nbsp;<span>13.29</span></a> and <a href="#eq-QM_angular_momemtum_coefficient_of_Jminus" class="quarto-xref">식&nbsp;<span>13.30</span></a></p>
+<p>(<span class="math inline">\(2\)</span>)</p>
+<p><span class="math display">\[
+\langle jm|J_x^2|jm\rangle = \dfrac{\hbar^2}{4}\langle jm|(J_+J_- + J_-J_+)|jm\rangle =
+\]</span></p>
+</div>
 
 
 </section>

@@ -96,8 +96,6 @@ $$
 \boxed{U[R(\bf{\theta})] = \lim_{N \to \infty} \left(I - \dfrac{i}{\hbar}\dfrac{\theta}{N} \hat{\bf{\theta}}\bf{\cdot L}\right)^N = e^{-i\bf{\theta \cdot L}/\hbar} }.
 $$ {#eq-QM_angular_momentum_finite_rotation_in_3d}
 
-
-
 </br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
@@ -444,7 +442,7 @@ $$
 
 여기서 한가지 중요한 것을 짚고 넘어가야 한다. 
 
-&emsp;($i$) 우리는 앞서 [$L_z$ 의 고유값과 파동함수](QM_angular_momentum1.qmd#sec-QM_angular_momentum_eigenvalue_of_Lz_and_its_wavefunction) 에서 각운동량 연산자의 고유값이 $\hbar$ 의 정수배(@eq-QM_angular_momentum_quantization_of_lz)라는 것을 보였다. 
+&emsp;($i$) 우리는 앞서 [$L_z$ 의 고유값과 파동함수](QM_angular_momentum1.qmd#sec-QM_angular_momentum_eigenvalue_of_Lz_and_its_wavefunction) 에서 각운동량 연산자의 고유값이 $\hbar$ 의 정수배(@eq-QM_angular_momentum_quantization_of_lz) 라는 것을 보였다. 
 
 &emsp;($ii$) 그러나 여기에서는 $\hbar/2$ 의 정수배이다. 
 
@@ -630,3 +628,83 @@ $$
 $${#eq-QM_angular_momemtum_operation_of_Jy}
 
 이다. 
+
+</br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-shankar_12_5_2}
+#### Shankar 12.5.2
+
+($1$) $2\times 2$ 행렬 $J^{(1/2)}_x$, $J^{(1/2)}_y$, $J^{(1/2)}_z$ 을 구하고 $[J^{(1/2)}_x,\, J^{(1,2)}_y] = i\hbar J^{(1/2)}_z$ 임을 보여라.
+
+($2$) $J_i^{(1)}$ 에 대해 ($1$) 을 하라. 여기서 행렬은 $3\times 3$ 행렬이다.
+
+($3$) $J_i^{(3/2)}$ 에 대해 ($1$) 을 하라. 여기서 행렬은 $4\times 4$ 행렬이다.
+
+:::
+
+</div></br>
+
+::: {.solution}
+
+($1$) $|1/2,\, 1/2\rangle,\, |1/2,\, -1/2\rangle$ 기저에 대해 @eq-QM_angular_momemtum_coefficient_of_Jplus, @eq-QM_angular_momemtum_coefficient_of_Jminus 를 이용하여 구하자. 우선 $J_z=\dfrac{\hbar}{2}\begin{bmatrix} -1 & 0 \\ 0 & 1 \end{bmatrix}$ 이며 $J_x,\, J_y$ 의 대각성분은 $0$ 이고
+
+$$
+\begin{aligned}
+\langle 1/2,1/2|J_x|1/2,-1/2\rangle &= \dfrac{\hbar}{2}, \\[0.3em] 
+\langle 1/2,1/2|J_y|1/2,-1/2\rangle &= -\dfrac{i\hbar}{2}, \\[0.3em]
+\langle 1/2,-1/2|J_x|1/2, 1/2\rangle &= \dfrac{\hbar}{2}, \\[0.3em]
+\langle 1/2, -1/2|J_x|1/2, 1/2\rangle &= \dfrac{i\hbar}{2}, \\[0.3em]
+\end{aligned}
+$$
+
+이므로 
+
+$$
+J_x = \dfrac{\hbar}{2}\begin{bmatrix} 0 & 1 \\ 1 & 0\end{bmatrix},\qquad J_y = \dfrac{\hbar}{2} \begin{bmatrix} 0 & -i \\ i & 0 \end{bmatrix}, \qquad [J_x,\, J_y] = \dfrac{i\hbar^2}{2}\begin{bmatrix} -1 & 0 \\ 0 & 1\end{bmatrix} = i\hbar J_z
+$$
+
+이다.
+
+($2$) $j=1$ 인 경우 $J_z = \hbar \begin{bmatrix} -1 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 1\end{bmatrix}$ 이며,
+
+$$
+J_x =\dfrac{\hbar}{2}\begin{bmatrix} 0 & \sqrt{2} & 0 \\ \sqrt{2} & 0 & \sqrt{2} \\ 0 & \sqrt{2} & 0 \end{bmatrix}, \qquad J_y = \dfrac{\hbar}{2}\begin{bmatrix}  0 & -\sqrt{2}i & 0 \\ \sqrt{2}i & 0 & -\sqrt{2}i \\ 0 & \sqrt{2}i & 0\end{bmatrix}
+$$
+
+로부터 $[J_x,\,J_y] = i\hbar J_z$ 임을 보일 수 있다.
+
+
+($3$) ...
+:::
+
+
+</br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-shankar_12_5_3}
+#### Shankar 12.5.3
+
+($1$) $|jm\rangle$ 상태에서 $\langle J_x\rangle = \langle J_y\rangle = 0$ 임을 보여라.
+
+($2$) 이 상태에서 $\langle J_x^2 \rangle = \langle J_y^2\rangle = \frac{\hbar^2}{2}[j(j+1)-m^2]$ 임을 보여라.
+
+($3$) ($2$) 의 결과 $\Delta J_x \cdot \Delta J_y$ 가 @eq-QM_uncertainty_derivation_of_uncertianty_relation_1 의 부등식을 만족함을 보여라.
+
+($4$) $\Delta J_x \cdot \Delta J_y$ 불확정성의 최소값은 $|j,\pm j\rangle$ 일 때 임을 보여라.
+
+:::
+
+</div></br>
+
+::: {.solution}
+
+($1$) @eq-QM_angular_momemtum_coefficient_of_Jplus and @eq-QM_angular_momemtum_coefficient_of_Jminus 
+
+($2$) 
+
+$$
+\langle jm|J_x^2|jm\rangle = \dfrac{\hbar^2}{4}\langle jm|(J_+J_- + J_-J_+)|jm\rangle = 
+$$
+
+:::
