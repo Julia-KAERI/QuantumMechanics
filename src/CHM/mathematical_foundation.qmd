@@ -36,7 +36,7 @@ $$
 
 ::: {.callout-important icon="false"}
 
-#### 브라켓 표기법
+#### **브라켓 표기법**
 
 1. 벡터는 $|\phi\rangle$ 과 같이 표기하며 **켓(ket)** 라고 한다. $|\phi\rangle$ 에 대한 스칼라 $c$ 곱은 $c|\phi\rangle$ 과 같이 표기한다. 선형결합은 $c_1|\phi_1\rangle + c_2|\phi_2\rangle + \cdots$ 와 같이 표현한다. 캣의 집합으로 표현되는 힐베르트 공간을 **켓 공간(ket space)** 라고 한다.
 
