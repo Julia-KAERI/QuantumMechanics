@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.27">
+<meta name="generator" content="quarto-1.9.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>12&nbsp; 회전불변과 2차원에서의 각운동량 – 양자 역학</title>
+<title>13&nbsp; 회전불변과 2차원에서의 각운동량 – 양자 역학</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -34,15 +37,14 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../src/QM/QM_symmetry.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-3e2728906df7980cb53b491a61d13d7e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-221f8d40ef94b7d7736ec4c1e420c32a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -72,7 +74,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -112,7 +114,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/QM/QM.html">II. 양자역학</a></li><li class="breadcrumb-item"><a href="../../src/QM/QM_angular_momentum1.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">회전불변과 2차원에서의 각운동량</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/QM/QM.html">II. 양자역학</a></li><li class="breadcrumb-item"><a href="../../src/QM/QM_angular_momentum1.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">회전불변과 2차원에서의 각운동량</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -124,8 +126,8 @@ window.Quarto = {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/QM/QM.html">II. 양자역학</a></li><li class="breadcrumb-item"><a href="../../src/QM/QM_angular_momentum1.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">회전불변과 2차원에서의 각운동량</span></a></li></ol></nav>
-      <h1 class="title"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">회전불변과 2차원에서의 각운동량</span></h1>
+    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/QM/QM.html">II. 양자역학</a></li><li class="breadcrumb-item"><a href="../../src/QM/QM_angular_momentum1.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">회전불변과 2차원에서의 각운동량</span></a></li></ol></nav>
+      <h1 class="title"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">회전불변과 2차원에서의 각운동량</span></h1>
                       </div>
   </div>
     
@@ -170,20 +172,26 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../src/CHM/history.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">양자 역학 연표</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../src/CHM/mathematical_foundation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">힐베르트 공간과 브라켓 표기법</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">힐베르트 공간과 브라켓 표기법</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/CHM/CHM_symmetry_in_classical_mechanics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">고전역학에서의 대칭</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">고전역학에서의 대칭</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/CHM/some_proofs.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">몇몇 증명들</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">몇몇 증명들</span></span></a>
   </div>
 </li>
       </ul>
@@ -200,67 +208,67 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/QM/QM_foundation_of_quantum_theory.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">고전 물리학의 붕괴와 양자 원리</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">고전 물리학의 붕괴와 양자 원리</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/QM/QM_1d_bound_state.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">1차원 문제 I : 자유입자와 Bound state</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">1차원 문제 I : 자유입자와 Bound state</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/QM/QM_classical_limit.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">고전적인 극한과 불확정성 원리</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">고전적인 극한과 불확정성 원리</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/QM/QM_harmonic_oscillator.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">단순조화진동자</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">단순조화진동자</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/QM/QM_1d_scattering.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">1차원 산란</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">1차원 산란</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/QM/QM_path_integral_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">경로적분 I</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">경로적분 I</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/QM/QM_N_DoF_system.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">N 자유도 시스템</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">N 자유도 시스템</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/QM/QM_symmetry.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">대칭</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">대칭</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/QM/QM_angular_momentum1.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">회전불변과 2차원에서의 각운동량</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">회전불변과 2차원에서의 각운동량</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/QM/QM_angular_momentum2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">3차원에서의 각운동량</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">3차원에서의 각운동량</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/QM/QM_sakurai_problems.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Sakurai (Rev.&nbsp;Ed.) Problems</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Sakurai (Rev.&nbsp;Ed.) Problems</span></span></a>
   </div>
 </li>
       </ul>
@@ -277,7 +285,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/QC/01_introduction.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
       </ul>
@@ -294,19 +302,19 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/AUX/entanglement.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">양자 얽힘</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">양자 얽힘</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/AUX/quantum_state.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">양자 상태</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">양자 상태</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/AUX/JSBell_against_measurement.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Against Measurement - J. S. Bell</span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Against Measurement - J. S. Bell</span></span></a>
   </div>
 </li>
       </ul>
@@ -327,24 +335,24 @@ window.Quarto = {
     <h2 id="toc-title">목차</h2>
    
   <ul>
-  <li><a href="#차원에서의-translation" id="toc-차원에서의-translation" class="nav-link active" data-scroll-target="#차원에서의-translation"><span class="header-section-number">12.1</span> 2차원에서의 Translation</a>
+  <li><a href="#차원에서의-translation" id="toc-차원에서의-translation" class="nav-link active" data-scroll-target="#차원에서의-translation"><span class="header-section-number">13.1</span> 2차원에서의 Translation</a>
   <ul class="collapse">
-  <li><a href="#sec-QM_angular_momentum_translation" id="toc-sec-QM_angular_momentum_translation" class="nav-link" data-scroll-target="#sec-QM_angular_momentum_translation"><span class="header-section-number">12.1.1</span> 임의의 방향에 대한 Translation</a></li>
+  <li><a href="#sec-QM_angular_momentum_translation" id="toc-sec-QM_angular_momentum_translation" class="nav-link" data-scroll-target="#sec-QM_angular_momentum_translation"><span class="header-section-number">13.1.1</span> 임의의 방향에 대한 Translation</a></li>
   <li><a href="#연습문제" id="toc-연습문제" class="nav-link" data-scroll-target="#연습문제">연습문제</a></li>
   </ul></li>
-  <li><a href="#차원에서의-회전" id="toc-차원에서의-회전" class="nav-link" data-scroll-target="#차원에서의-회전"><span class="header-section-number">12.2</span> 2차원에서의 회전</a>
+  <li><a href="#차원에서의-회전" id="toc-차원에서의-회전" class="nav-link" data-scroll-target="#차원에서의-회전"><span class="header-section-number">13.2</span> 2차원에서의 회전</a>
   <ul class="collapse">
-  <li><a href="#sec-QM_angular_momentum_UR_in_2d" id="toc-sec-QM_angular_momentum_UR_in_2d" class="nav-link" data-scroll-target="#sec-QM_angular_momentum_UR_in_2d"><span class="header-section-number">12.2.1</span> <span class="math inline">\(U[R]\)</span> 을 명시적으로 구하기</a></li>
-  <li><a href="#sec-QM_angular_momentum_commutation_relation" id="toc-sec-QM_angular_momentum_commutation_relation" class="nav-link" data-scroll-target="#sec-QM_angular_momentum_commutation_relation"><span class="header-section-number">12.2.2</span> Commutation Relation</a></li>
-  <li><a href="#유한-회전" id="toc-유한-회전" class="nav-link" data-scroll-target="#유한-회전"><span class="header-section-number">12.2.3</span> 유한 회전</a></li>
-  <li><a href="#sec-QM_angular_momentum_physical_interpretation_of_rotation" id="toc-sec-QM_angular_momentum_physical_interpretation_of_rotation" class="nav-link" data-scroll-target="#sec-QM_angular_momentum_physical_interpretation_of_rotation"><span class="header-section-number">12.2.4</span> 물리적인 해석</a></li>
-  <li><a href="#sec-QM_angular_momentum_consistency_check_of_rotation_in_2d" id="toc-sec-QM_angular_momentum_consistency_check_of_rotation_in_2d" class="nav-link" data-scroll-target="#sec-QM_angular_momentum_consistency_check_of_rotation_in_2d"><span class="header-section-number">12.2.5</span> Consistency Check</a></li>
-  <li><a href="#sec-QM_angular_momentum_vector_operator" id="toc-sec-QM_angular_momentum_vector_operator" class="nav-link" data-scroll-target="#sec-QM_angular_momentum_vector_operator"><span class="header-section-number">12.2.6</span> 벡터 연산자</a></li>
+  <li><a href="#sec-QM_angular_momentum_UR_in_2d" id="toc-sec-QM_angular_momentum_UR_in_2d" class="nav-link" data-scroll-target="#sec-QM_angular_momentum_UR_in_2d"><span class="header-section-number">13.2.1</span> <span class="math inline">\(U[R]\)</span> 을 명시적으로 구하기</a></li>
+  <li><a href="#sec-QM_angular_momentum_commutation_relation" id="toc-sec-QM_angular_momentum_commutation_relation" class="nav-link" data-scroll-target="#sec-QM_angular_momentum_commutation_relation"><span class="header-section-number">13.2.2</span> Commutation Relation</a></li>
+  <li><a href="#유한-회전" id="toc-유한-회전" class="nav-link" data-scroll-target="#유한-회전"><span class="header-section-number">13.2.3</span> 유한 회전</a></li>
+  <li><a href="#sec-QM_angular_momentum_physical_interpretation_of_rotation" id="toc-sec-QM_angular_momentum_physical_interpretation_of_rotation" class="nav-link" data-scroll-target="#sec-QM_angular_momentum_physical_interpretation_of_rotation"><span class="header-section-number">13.2.4</span> 물리적인 해석</a></li>
+  <li><a href="#sec-QM_angular_momentum_consistency_check_of_rotation_in_2d" id="toc-sec-QM_angular_momentum_consistency_check_of_rotation_in_2d" class="nav-link" data-scroll-target="#sec-QM_angular_momentum_consistency_check_of_rotation_in_2d"><span class="header-section-number">13.2.5</span> Consistency Check</a></li>
+  <li><a href="#sec-QM_angular_momentum_vector_operator" id="toc-sec-QM_angular_momentum_vector_operator" class="nav-link" data-scroll-target="#sec-QM_angular_momentum_vector_operator"><span class="header-section-number">13.2.6</span> 벡터 연산자</a></li>
   </ul></li>
-  <li><a href="#l_z-고유값-문제" id="toc-l_z-고유값-문제" class="nav-link" data-scroll-target="#l_z-고유값-문제"><span class="header-section-number">12.3</span> <span class="math inline">\(L_z\)</span> 고유값 문제</a>
+  <li><a href="#l_z-고유값-문제" id="toc-l_z-고유값-문제" class="nav-link" data-scroll-target="#l_z-고유값-문제"><span class="header-section-number">13.3</span> <span class="math inline">\(L_z\)</span> 고유값 문제</a>
   <ul class="collapse">
-  <li><a href="#sec-QM_angular_momentum_eigenvalue_of_Lz_and_its_wavefunction" id="toc-sec-QM_angular_momentum_eigenvalue_of_Lz_and_its_wavefunction" class="nav-link" data-scroll-target="#sec-QM_angular_momentum_eigenvalue_of_Lz_and_its_wavefunction"><span class="header-section-number">12.3.1</span> <span class="math inline">\(L_z\)</span> 의 고유값과 파동함수</a></li>
-  <li><a href="#sec-QM_angular_momentum_rotational_invariance_problem" id="toc-sec-QM_angular_momentum_rotational_invariance_problem" class="nav-link" data-scroll-target="#sec-QM_angular_momentum_rotational_invariance_problem"><span class="header-section-number">12.3.2</span> Rotational Invariant 문제</a></li>
+  <li><a href="#sec-QM_angular_momentum_eigenvalue_of_Lz_and_its_wavefunction" id="toc-sec-QM_angular_momentum_eigenvalue_of_Lz_and_its_wavefunction" class="nav-link" data-scroll-target="#sec-QM_angular_momentum_eigenvalue_of_Lz_and_its_wavefunction"><span class="header-section-number">13.3.1</span> <span class="math inline">\(L_z\)</span> 의 고유값과 파동함수</a></li>
+  <li><a href="#sec-QM_angular_momentum_rotational_invariance_problem" id="toc-sec-QM_angular_momentum_rotational_invariance_problem" class="nav-link" data-scroll-target="#sec-QM_angular_momentum_rotational_invariance_problem"><span class="header-section-number">13.3.2</span> Rotational Invariant 문제</a></li>
   <li><a href="#연습문제-1" id="toc-연습문제-1" class="nav-link" data-scroll-target="#연습문제-1">연습문제</a></li>
   </ul></li>
   </ul>
@@ -359,7 +367,7 @@ window.Quarto = {
 
 <div class="hidden">
 <p>%</p>
-%
+<p>%</p>
 <!-- \newcommand{\hom}{\text{Hom}}
 \newcommand{\iso}{\text{Iso}}
 \newcommand{\aut}{\text{Aut}} -->
@@ -369,10 +377,10 @@ window.Quarto = {
 \]</span></p>
 </div>
 <p><br></p>
-<section id="차원에서의-translation" class="level2" data-number="12.1">
-<h2 data-number="12.1" class="anchored" data-anchor-id="차원에서의-translation"><span class="header-section-number">12.1</span> 2차원에서의 Translation</h2>
-<section id="sec-QM_angular_momentum_translation" class="level3" data-number="12.1.1">
-<h3 data-number="12.1.1" class="anchored" data-anchor-id="sec-QM_angular_momentum_translation"><span class="header-section-number">12.1.1</span> 임의의 방향에 대한 Translation</h3>
+<section id="차원에서의-translation" class="level2" data-number="13.1">
+<h2 data-number="13.1" class="anchored" data-anchor-id="차원에서의-translation"><span class="header-section-number">13.1</span> 2차원에서의 Translation</h2>
+<section id="sec-QM_angular_momentum_translation" class="level3" data-number="13.1.1">
+<h3 data-number="13.1.1" class="anchored" data-anchor-id="sec-QM_angular_momentum_translation"><span class="header-section-number">13.1.1</span> 임의의 방향에 대한 Translation</h3>
 <p>2차원에서의 회전을 다루기에 앞서 2 차원에서의 운동량 연산자를 다루기로 하자. <span class="math inline">\(x\)</span>, <span class="math inline">\(y\)</span> 축에 대한 infinitesimal translation 의 generator 로서 <span class="math inline">\(P_x,\,P_y\)</span> 는 coordinate basis 에서 각각 다음과 같이 표현된다.</p>
 <p><span class="math display">\[
 P_x \to -i\hbar \partial_x,\qquad P_y \to -i\hbar \partial_y
@@ -384,18 +392,18 @@ P_x \to -i\hbar \partial_x,\qquad P_y \to -i\hbar \partial_y
 <p>로 표현 될 수 있다. 실제로 <span class="math inline">\(x,\,y\)</span> 방향은 다른 방향에 비해 특별할 것이 없으므로 임의의 방향벡터 <span class="math inline">\(\hat{\boldsymbol{n}}\)</span> 에 대해</p>
 <p><span id="eq-QM_angular_momentum_momentum_operator_for_arbitrary_direction"><span class="math display">\[
 P_n := \hat{\boldsymbol{n}}\cdot \boldsymbol{P}
-\tag{12.1}\]</span></span></p>
+\tag{13.1}\]</span></span></p>
 <p>로 표현된다. <span class="math inline">\(P_n\)</span> 은 <span class="math inline">\(\hat{\boldsymbol{n}}\)</span> 방향으로의 infinitesimal translation 의 generator 이다. 따라서 <span class="math inline">\(\boldsymbol{a}\)</span> 만큼의 translation <span class="math inline">\(T(\boldsymbol{a})\)</span> 는 다음과 같다.</p>
 <p><span id="eq-QM_angular_momentum_translation_operator_for_arbitrary_direction"><span class="math display">\[
 T(\boldsymbol{a}) := e^{-iaP_a/\hbar} = e^{-i\boldsymbol{a}\cdot \boldsymbol{P}/\hbar}
-\tag{12.2}\]</span></span></p>
+\tag{13.2}\]</span></span></p>
 <p><br></p>
 <div class="border" style="background-color:#F2F4F4  ;padding:5px;">
 <div id="exm-QM_addition_of_translation_for_arbitrary_direction" class="theorem example">
-<p><span class="theorem-title"><strong>예제 12.1</strong></span> <a href="#eq-QM_angular_momentum_translation_operator_for_arbitrary_direction" class="quarto-xref">식&nbsp;<span>12.2</span></a> 에서</p>
+<p><span class="theorem-title"><strong>예제 13.1</strong></span> <a href="#eq-QM_angular_momentum_translation_operator_for_arbitrary_direction" class="quarto-xref">식&nbsp;<span>13.2</span></a> 에서</p>
 <p><span id="eq-QM_angular_momentum_addition_of_translation_for_arbitrary_diraction"><span class="math display">\[
 T(\boldsymbol{a})T(\boldsymbol{b}) = e^{i\boldsymbol{a}\cdot \boldsymbol{P}/\hbar}e^{i\boldsymbol{b}\cdot \boldsymbol{P}/\hbar} = e^{i(\boldsymbol{a}+\boldsymbol{b})\cdot \boldsymbol{P}/\hbar} = T(\boldsymbol{a}+\boldsymbol{b})
-\tag{12.3}\]</span></span></p>
+\tag{13.3}\]</span></span></p>
 <p>이다.</p>
 </div>
 </div>
@@ -405,7 +413,7 @@ T(\boldsymbol{a})T(\boldsymbol{b}) = e^{i\boldsymbol{a}\cdot \boldsymbol{P}/\hba
 <h3 class="unnumbered anchored" data-anchor-id="연습문제">연습문제</h3>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-shankar_12_1_1" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 12.1 (Shankar 12.1.1)</strong></span> <span class="math inline">\(\hat{\boldsymbol{a}} = \boldsymbol{a}/\|\boldsymbol{a}\|\)</span> 라고 하자. <span class="math inline">\(\hat{\boldsymbol{a}}\cdot \boldsymbol{P}\)</span> 가 <span class="math inline">\(\boldsymbol{a}\)</span> 방향으로의 infinitesimal translation 의 generator 임을 다음 관계를 이용하여 보여라.</p>
+<p><span class="theorem-title"><strong>연습문제 13.1 (Shankar 12.1.1)</strong></span> <span class="math inline">\(\hat{\boldsymbol{a}} = \boldsymbol{a}/\|\boldsymbol{a}\|\)</span> 라고 하자. <span class="math inline">\(\hat{\boldsymbol{a}}\cdot \boldsymbol{P}\)</span> 가 <span class="math inline">\(\boldsymbol{a}\)</span> 방향으로의 infinitesimal translation 의 generator 임을 다음 관계를 이용하여 보여라.</p>
 <p><span class="math display">\[
 \langle x,\,y| I - \dfrac{i}{\hbar} \delta \boldsymbol{a} \cdot \boldsymbol{P}|\Psi\rangle = \Psi (x-\delta a_x,\, y-\delta a_y)
 \]</span></p>
@@ -434,8 +442,8 @@ I - \dfrac{i}{\hbar}\delta \boldsymbol{a}\cdot \boldsymbol{P}
 <p><br></p>
 </section>
 </section>
-<section id="차원에서의-회전" class="level2" data-number="12.2">
-<h2 data-number="12.2" class="anchored" data-anchor-id="차원에서의-회전"><span class="header-section-number">12.2</span> 2차원에서의 회전</h2>
+<section id="차원에서의-회전" class="level2" data-number="13.2">
+<h2 data-number="13.2" class="anchored" data-anchor-id="차원에서의-회전"><span class="header-section-number">13.2</span> 2차원에서의 회전</h2>
 <p>3차원에서 <span class="math inline">\(xy\)</span> 평면에서의 <span class="math inline">\(\phi_0\)</span> 만큼의 회전은 <span class="math inline">\(\phi_0\hat{\boldsymbol{e}}_3\)</span> 벡터로 표현 할 수 있으며 이에 대한 연산자를 <span class="math inline">\(R(\phi_0 \hat{\boldsymbol{e}}_3)\)</span> 라고 표기하기로 하자. <span class="math inline">\(T(\boldsymbol{a})\)</span> 가 힐베르트 공간에서의 <span class="math inline">\(\boldsymbol{a}\)</span> 만큼의 translation 을 표현하듯이 힐베르트 공간에서의 <span class="math inline">\(\phi_i \hat{\boldsymbol{e}}_3\)</span> 만큼의 회전을 <span class="math inline">\(U[R(\phi_0 \hat{\boldsymbol{e}}_3)]\)</span> 라고 표기하기로 하자. 앞으로는 임의의 회전 방향을 다루게 될텐데 어쨋든 회전 각도와 방향이 정해져 있거나, 회전 각도나 방향에 무관한게 성립하는 성질을 다룰 때는 표기를 <span class="math inline">\(R\)</span> 로 하기로 하자. Active transform 관점에서 <span class="math inline">\(U[R]|\Psi\rangle\)</span> 은 <span class="math inline">\(|\Psi\rangle\)</span> 가 회전된 상태를 의미한다. 표기를 단순화 하기 위해 <span class="math inline">\(|\Psi_R\rangle := U[R]|\Psi\rangle\)</span> 로, 연산자 <span class="math inline">\(A\)</span> 에 대해 <span class="math inline">\(\langle A\rangle_R := \langle \Psi_R|A|\Psi_R\rangle\)</span> 이라고 표기하기로 하자.</p>
 <p><span class="math inline">\(|\Psi_R\rangle\)</span> 에 대해 다음이 성립해야 한다.</p>
 <p><span id="eq-QM_angular_momentum_change_of_expectation_for_rotation_in_d2"><span class="math display">\[
@@ -445,28 +453,28 @@ I - \dfrac{i}{\hbar}\delta \boldsymbol{a}\cdot \boldsymbol{P}
 \langle P_x\rangle_R &amp;= \langle P_x\rangle \cos \phi_0 - \langle P_y\rangle \sin \phi_0, \\[0.2em]
 \langle P_y\rangle_R &amp;= \langle P_x\rangle \sin \phi_0 + \langle P_y\rangle \cos \phi_0.
 \end{aligned}
-\tag{12.4}\]</span></span></p>
+\tag{13.4}\]</span></span></p>
 <p>이제 <span class="math inline">\(P\)</span> 의 <span class="math inline">\(|x\rangle\)</span> 에 대한 작용과 유사하게 위치 켓에 대해</p>
 <p><span id="eq-QM_angular_momentum_rotation_applied_to_position_eigenket"><span class="math display">\[
 U[R]|x,\,y\rangle = |x \cos \phi_0-y \sin \phi_0,\, x\sin \phi_0 + y \cos \phi_0\rangle
-\tag{12.5}\]</span></span></p>
+\tag{13.5}\]</span></span></p>
 <p>라고 할 수 있을 것이다.</p>
 <p><br></p>
-<section id="sec-QM_angular_momentum_UR_in_2d" class="level3" data-number="12.2.1">
-<h3 data-number="12.2.1" class="anchored" data-anchor-id="sec-QM_angular_momentum_UR_in_2d"><span class="header-section-number">12.2.1</span> <span class="math inline">\(U[R]\)</span> 을 명시적으로 구하기</h3>
+<section id="sec-QM_angular_momentum_UR_in_2d" class="level3" data-number="13.2.1">
+<h3 data-number="13.2.1" class="anchored" data-anchor-id="sec-QM_angular_momentum_UR_in_2d"><span class="header-section-number">13.2.1</span> <span class="math inline">\(U[R]\)</span> 을 명시적으로 구하기</h3>
 <p>Infinitesimal rotaiton <span class="math inline">\(\varepsilon_z \hat{\boldsymbol{e}}_3\)</span> 을 생각하자. 이 경우 <span class="math inline">\(\varepsilon_z\)</span> 에 대한 1차 근사로</p>
 <p><span id="eq-QM_angular_momentum_infinitesimal_rotation_operator_in_2d"><span class="math display">\[
 U[R(\varepsilon_z \hat{\boldsymbol{e}}_3)] = I - \dfrac{i\varepsilon_z L_z}{\hbar}
-\tag{12.6}\]</span></span></p>
+\tag{13.6}\]</span></span></p>
 <p>로 놓을 수 있다. 여기서 <span class="math inline">\(L_z\)</span> 는 infinitesimal rotation 에 대한 generator 이며 (아직까지는!!!) 어떤 물리적 값과의 연관성도 없다. 따라서</p>
 <p><span id="eq-QM_angular_momentum_infinitesimal_rotation_in_2d"><span class="math display">\[
 \langle x,\,y|U[R]|\Psi\rangle = \langle x,\,y| I - \dfrac{i\varepsilon_z L_z}{\hbar}|\Psi\rangle
-\tag{12.7}\]</span></span></p>
+\tag{13.7}\]</span></span></p>
 <p>이 <span class="math inline">\(\varepsilon_z\)</span> 에 대한 1차 근사로 성립해야 한다.</p>
-<p>또한 <a href="#eq-QM_angular_momentum_rotation_applied_to_position_eigenket" class="quarto-xref">식&nbsp;<span>12.5</span></a> 을 infinitesimal rotation 에 적용하면,</p>
+<p>또한 <a href="#eq-QM_angular_momentum_rotation_applied_to_position_eigenket" class="quarto-xref">식&nbsp;<span>13.5</span></a> 을 infinitesimal rotation 에 적용하면,</p>
 <p><span id="eq-QM_angular_momentum_infinitesimal_rotation_applied_to_position_eigenket"><span class="math display">\[
 U[R]|x,\,y\rangle = |x - \varepsilon_z y,\, \varepsilon_z x + y\rangle
-\tag{12.8}\]</span></span></p>
+\tag{13.8}\]</span></span></p>
 <p>이다. 위 식으로부터</p>
 <p><span class="math display">\[
 \begin{aligned}
@@ -491,8 +499,8 @@ U[R]|x,\,y\rangle = |x - \varepsilon_z y,\, \varepsilon_z x + y\rangle
 <p>이므로 <span class="math inline">\(L_z\)</span> 는 좌표기저에서</p>
 <p><span id="eq-QM_angular_momentum_Lz_in_coordinate_basis"><span class="math display">\[
 L_z = -i\hbar (X \partial_y - Y\partial_x) = XP_y - YP_x
-\tag{12.9}\]</span></span></p>
-<p>이다. 운동량 기저에서 <a href="#eq-QM_angular_momentum_Lz_in_coordinate_basis" class="quarto-xref">식&nbsp;<span>12.9</span></a> 는</p>
+\tag{13.9}\]</span></span></p>
+<p>이다. 운동량 기저에서 <a href="#eq-QM_angular_momentum_Lz_in_coordinate_basis" class="quarto-xref">식&nbsp;<span>13.9</span></a> 는</p>
 <p><span class="math display">\[
 L_z = i\hbar \left(\dfrac{\partial}{\partial p_x} p_y - \dfrac{\partial}{\partial p_y}p_x\right)
 \]</span></p>
@@ -504,15 +512,15 @@ L_z = i\hbar \left(\dfrac{\partial}{\partial p_x} p_y - \dfrac{\partial}{\partia
 <p><span class="math display">\[
 \langle p_x,\,p_y|I - \dfrac{i\varepsilon_z}{\hbar}L_z|\Psi\rangle = \Psi (p_x + \varepsilon_z p_y,\, p_y - \varepsilon_z p_x)
 \]</span></p>
-<p>이며, 따라서 <a href="#eq-QM_angular_momentum_change_of_expectation_for_rotation_in_d2" class="quarto-xref">식&nbsp;<span>12.4</span></a> 에서의 <span class="math inline">\(\langle P_x\rangle_R\)</span> 과 <span class="math inline">\(\langle P_y\rangle_R\)</span> 에 관한 식이 성립한다는 것을 알 수 있다. 즉 우리는 infinitesimal rotation 의 generator <span class="math inline">\(L_z\)</span> 를 구했다. 덤으로 고전역학에서의 <span class="math inline">\(z\)</span> 방향으로의 각운동량</p>
+<p>이며, 따라서 <a href="#eq-QM_angular_momentum_change_of_expectation_for_rotation_in_d2" class="quarto-xref">식&nbsp;<span>13.4</span></a> 에서의 <span class="math inline">\(\langle P_x\rangle_R\)</span> 과 <span class="math inline">\(\langle P_y\rangle_R\)</span> 에 관한 식이 성립한다는 것을 알 수 있다. 즉 우리는 infinitesimal rotation 의 generator <span class="math inline">\(L_z\)</span> 를 구했다. 덤으로 고전역학에서의 <span class="math inline">\(z\)</span> 방향으로의 각운동량</p>
 <p><span class="math display">\[
 l_z = xp_y - yp_x
 \]</span></p>
 <p>과의 상보성도 알 수 있다.</p>
 <p><br></p>
 </section>
-<section id="sec-QM_angular_momentum_commutation_relation" class="level3" data-number="12.2.2">
-<h3 data-number="12.2.2" class="anchored" data-anchor-id="sec-QM_angular_momentum_commutation_relation"><span class="header-section-number">12.2.2</span> Commutation Relation</h3>
+<section id="sec-QM_angular_momentum_commutation_relation" class="level3" data-number="13.2.2">
+<h3 data-number="13.2.2" class="anchored" data-anchor-id="sec-QM_angular_momentum_commutation_relation"><span class="header-section-number">13.2.2</span> Commutation Relation</h3>
 <p>이제 passive transform 의 관점으로 돌아와 보자. <span class="math inline">\(\varepsilon_z\)</span> 만큼의 infinitesimal rotation 을 생각하면,</p>
 <p><span id="eq-QM_angular_momentum_rotation_in_passive_point_of_view"><span class="math display">\[
 \begin{aligned}
@@ -521,12 +529,12 @@ U^\dagger[R] Y U[R] &amp;= Y + \varepsilon_z X,\\[0.4em]
 U^\dagger[R] P_x U[R] &amp;= P_x - \varepsilon_z P_y, \\[0.4em]
 U^\dagger[R] P_y U[R] &amp;= P_y + \varepsilon_z P_x,\\
 \end{aligned}
-\tag{12.10}\]</span></span></p>
+\tag{13.10}\]</span></span></p>
 <p>이며,</p>
 <p><span class="math display">\[
 U^\dagger[R]XU[R]= \left( I + \dfrac{i\varepsilon_z L_z}{\hbar}\right)X\left( I - \dfrac{i\varepsilon_z L_z}{\hbar}\right) \approx X - \dfrac{i\varepsilon}{\hbar}[X,\, L_z]
 \]</span></p>
-<p>와 유사한 계산을 <a href="#eq-QM_angular_momentum_rotation_in_passive_point_of_view" class="quarto-xref">식&nbsp;<span>12.10</span></a> 에 적용하면 다음의 관계를 얻는다.</p>
+<p>와 유사한 계산을 <a href="#eq-QM_angular_momentum_rotation_in_passive_point_of_view" class="quarto-xref">식&nbsp;<span>13.10</span></a> 에 적용하면 다음의 관계를 얻는다.</p>
 <p><span id="eq-QM_angular_momentum_commutation_relation_for_angular_momentum"><span class="math display">\[
 \begin{aligned}
 \left[X,\, L_z\right] &amp;= -i\hbar Y, \\[0.4em]
@@ -534,16 +542,16 @@ U^\dagger[R]XU[R]= \left( I + \dfrac{i\varepsilon_z L_z}{\hbar}\right)X\left( I 
 [P_x,\, L_z] &amp; = -i\hbar P_y \\[0.4em]
 [P_y,\,L_z] &amp;= i\hbar P_x
 \end{aligned}
-\tag{12.11}\]</span></span></p>
+\tag{13.11}\]</span></span></p>
 <p><br></p>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-shankar_12_2_2" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 12.2 (Shankar 12.2.2)</strong></span> <a href="#eq-QM_angular_momentum_commutation_relation_for_angular_momentum" class="quarto-xref">식&nbsp;<span>12.11</span></a> 를 유도하는 과정에서 우리는 <span class="math inline">\(L_z = XP_y-YP_x\)</span> 를 사용하지 않았다. <a href="#eq-QM_angular_momentum_commutation_relation_for_angular_momentum" class="quarto-xref">식&nbsp;<span>12.11</span></a> 로부터 <span class="math inline">\(L_z = XP_y-YP_x\)</span> 를 유도하라.</p>
+<p><span class="theorem-title"><strong>연습문제 13.2 (Shankar 12.2.2)</strong></span> <a href="#eq-QM_angular_momentum_commutation_relation_for_angular_momentum" class="quarto-xref">식&nbsp;<span>13.11</span></a> 를 유도하는 과정에서 우리는 <span class="math inline">\(L_z = XP_y-YP_x\)</span> 를 사용하지 않았다. <a href="#eq-QM_angular_momentum_commutation_relation_for_angular_momentum" class="quarto-xref">식&nbsp;<span>13.11</span></a> 로부터 <span class="math inline">\(L_z = XP_y-YP_x\)</span> 를 유도하라.</p>
 </div>
 </div>
 <p><br></p>
 <div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span>일단 <span class="math inline">\(L_z=XP_y-YP_x\)</span> 라는 것이 <a href="#eq-QM_angular_momentum_commutation_relation_for_angular_momentum" class="quarto-xref">식&nbsp;<span>12.11</span></a> 과 양립함을 보이자.</p>
+<p><span class="proof-title"><em>(해답)</em>. </span>일단 <span class="math inline">\(L_z=XP_y-YP_x\)</span> 라는 것이 <a href="#eq-QM_angular_momentum_commutation_relation_for_angular_momentum" class="quarto-xref">식&nbsp;<span>13.11</span></a> 과 양립함을 보이자.</p>
 <p><span class="math display">\[
 \begin{aligned}
 \left[ X,\, XP_y-YP_x\right] &amp;= [X,\, XP_y] - [X,\, YP_x] \\
@@ -584,21 +592,21 @@ L_z = XP_y - YP_x
 </div>
 <p><br></p>
 </section>
-<section id="유한-회전" class="level3" data-number="12.2.3">
-<h3 data-number="12.2.3" class="anchored" data-anchor-id="유한-회전"><span class="header-section-number">12.2.3</span> 유한 회전</h3>
+<section id="유한-회전" class="level3" data-number="13.2.3">
+<h3 data-number="13.2.3" class="anchored" data-anchor-id="유한-회전"><span class="header-section-number">13.2.3</span> 유한 회전</h3>
 <p>이제 infinitesimal rotation 이 아닌 finite rotation 을 생각하자. Infinitesimal translation 으로부터 finite translation 을 얻는 것처럼 다음과 같이 하여 finite rotation <span class="math inline">\(U[R(\phi_0 \hat{\boldsymbol{e}}_3)]\)</span> 을 얻을 수 있다.</p>
 <p><span id="eq-QM_angular_momentum_finite_rotation_in_2d"><span class="math display">\[
 U[R(\phi_0 \hat{\boldsymbol{e}}_3)] = \lim_{N \to \infty} \left(I -\dfrac{i}{\hbar} \dfrac{\phi_0}{N}L_z\right)^N = e^{-i\phi_0 L_z/\hbar}.
-\tag{12.12}\]</span></span></p>
+\tag{13.12}\]</span></span></p>
 <p><br></p>
-<p><span class="math inline">\(L_z = -i\hbar (XP_y-YP_x)\)</span> 가 어떻게 회전을 generate 하는지는 극좌표계에서 보면 쉽게 이해 할 수 있다. 다음 <a href="#exr-shankar_12_2_3" class="quarto-xref">연습문제&nbsp;<span>12.3</span></a> 를 보자.</p>
+<p><span class="math inline">\(L_z = -i\hbar (XP_y-YP_x)\)</span> 가 어떻게 회전을 generate 하는지는 극좌표계에서 보면 쉽게 이해 할 수 있다. 다음 <a href="#exr-shankar_12_2_3" class="quarto-xref">연습문제&nbsp;<span>13.3</span></a> 를 보자.</p>
 <p><br></p>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-shankar_12_2_3" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 12.3 (Shankar 12.2.3)</strong></span> <span class="math inline">\(L_z = -i\hbar \left(x \partial_y - y \partial_x\right)\)</span> 를 극좌표계에서 표현하면</p>
+<p><span class="theorem-title"><strong>연습문제 13.3 (Shankar 12.2.3)</strong></span> <span class="math inline">\(L_z = -i\hbar \left(x \partial_y - y \partial_x\right)\)</span> 를 극좌표계에서 표현하면</p>
 <p><span id="eq-QM_angular_momentum_in_polar_coordinate"><span class="math display">\[
 L_z = -i\hbar \dfrac{\partial}{\partial \phi}
-\tag{12.13}\]</span></span></p>
+\tag{13.13}\]</span></span></p>
 <p>임을 보여라.</p>
 </div>
 </div>
@@ -623,21 +631,21 @@ U[R(\phi_1\hat{\boldsymbol{e}}_3)]U[R(\phi_2\hat{\boldsymbol{e}}_3)] = U[R((\phi
 \]</span></p>
 <p><br></p>
 </section>
-<section id="sec-QM_angular_momentum_physical_interpretation_of_rotation" class="level3" data-number="12.2.4">
-<h3 data-number="12.2.4" class="anchored" data-anchor-id="sec-QM_angular_momentum_physical_interpretation_of_rotation"><span class="header-section-number">12.2.4</span> 물리적인 해석</h3>
+<section id="sec-QM_angular_momentum_physical_interpretation_of_rotation" class="level3" data-number="13.2.4">
+<h3 data-number="13.2.4" class="anchored" data-anchor-id="sec-QM_angular_momentum_physical_interpretation_of_rotation"><span class="header-section-number">13.2.4</span> 물리적인 해석</h3>
 <p>지금까지 <span class="math inline">\(L_z\)</span> 연산자를 구했으며 이것은 고전역학의 <span class="math inline">\(z\)</span> 방향에 대한 각운동량의 양자역학 버젼임을 알았다. 만약 <span class="math inline">\(H\)</span> 가 회전 <span class="math inline">\(U[R]\)</span> 에 대해 불변이라면, 즉 <span class="math inline">\(U^\dagger [R]HU[R] = H\)</span> 라면 <span class="math inline">\([U[R],\, H]= 0\)</span> 이며 infinitesimal rotation 에 대해서도 성립해야 하므로 아래의 commutation relation 이 성립한다.</p>
 <p><span id="eq-QM_angular_momentum_commutation_relation_by_rotational_invariance"><span class="math display">\[
 [L_z,\, H]=0.
-\tag{12.14}\]</span></span></p>
+\tag{13.14}\]</span></span></p>
 <p>누차 언급했듯이 힐베르트공간이 <span class="math inline">\(L_z\)</span> 와 <span class="math inline">\(H\)</span> 의 공통 고유상태를 기저로 갖는다는 것도 알 수 있다.</p>
 <p><br></p>
 </section>
-<section id="sec-QM_angular_momentum_consistency_check_of_rotation_in_2d" class="level3" data-number="12.2.5">
-<h3 data-number="12.2.5" class="anchored" data-anchor-id="sec-QM_angular_momentum_consistency_check_of_rotation_in_2d"><span class="header-section-number">12.2.5</span> Consistency Check</h3>
+<section id="sec-QM_angular_momentum_consistency_check_of_rotation_in_2d" class="level3" data-number="13.2.5">
+<h3 data-number="13.2.5" class="anchored" data-anchor-id="sec-QM_angular_momentum_consistency_check_of_rotation_in_2d"><span class="header-section-number">13.2.5</span> Consistency Check</h3>
 <p><span class="math inline">\(\delta_z\)</span> 만큼의 <span class="math inline">\(z\)</span> 축에 대한 미소회전과 <span class="math inline">\(\boldsymbol{\varepsilon} = \varepsilon_x\hat{\boldsymbol{e}}_1 + \varepsilon_y \hat{\boldsymbol{e}}_2\)</span> 만큼의 <span class="math inline">\(xy\)</span> 평면상의 infinitesimal translation 을 생각하자. 그리고 아래와 같은 네 연산의 곱을 생각하자.</p>
 <p><span id="eq-QM_angular_momentum_consistency_0"><span class="math display">\[
 U[R(-\delta_z \hat{\boldsymbol{e}}_3)] T(-\boldsymbol{\varepsilon}) U[R(\delta_z \hat{\boldsymbol{e}}_3)] T(\boldsymbol{\varepsilon})
-\tag{12.15}\]</span></span></p>
+\tag{13.15}\]</span></span></p>
 <p><span class="math inline">\(xy\)</span> 평면상의 점은 위의 변환에 대해 다음과 같이 변한다.</p>
 <p><span class="math display">\[
 \begin{aligned}
@@ -645,14 +653,14 @@ U[R(-\delta_z \hat{\boldsymbol{e}}_3)] T(-\boldsymbol{\varepsilon}) U[R(\delta_z
 &amp; \xrightarrow[\;-\boldsymbol{\varepsilon}\;]{} \begin{bmatrix} x-(y+\varepsilon_y)\delta_z \\ (x+\varepsilon_x) \delta_z + y\end{bmatrix}\xrightarrow[\;R(\delta_z \hat{\boldsymbol{e}}_3)\;]{} \begin{bmatrix} x-\varepsilon_y \delta_z \\ y+ \varepsilon_x \delta_z \end{bmatrix}.
 \end{aligned}
 \]</span></p>
-<p>위 식의 진행에서 <span class="math inline">\(\varepsilon_x^2,\, \varepsilon_y^2,\, \delta_z^2\)</span> 항은 무시했지만 교차되는 <span class="math inline">\(\varepsilon_y\delta_z\)</span>, <span class="math inline">\(\varepsilon_x\delta_z\)</span> 는 남겨 놓았다. 그 이유는 이 교차항들이 운동량 연산자와 commute 하지 않기 때문이다. 어쨌든 <a href="#eq-QM_angular_momentum_consistency_0" class="quarto-xref">식&nbsp;<span>12.15</span></a> 은 다음과 같다.</p>
+<p>위 식의 진행에서 <span class="math inline">\(\varepsilon_x^2,\, \varepsilon_y^2,\, \delta_z^2\)</span> 항은 무시했지만 교차되는 <span class="math inline">\(\varepsilon_y\delta_z\)</span>, <span class="math inline">\(\varepsilon_x\delta_z\)</span> 는 남겨 놓았다. 그 이유는 이 교차항들이 운동량 연산자와 commute 하지 않기 때문이다. 어쨌든 <a href="#eq-QM_angular_momentum_consistency_0" class="quarto-xref">식&nbsp;<span>13.15</span></a> 은 다음과 같다.</p>
 <p><span id="eq-QM_angular_momentum_consistency_1"><span class="math display">\[
 U[R(-\delta_z \hat{\boldsymbol{e}}_3)] T(-\boldsymbol{\varepsilon}) U[R(\delta_z \hat{\boldsymbol{e}}_3)] T(\boldsymbol{\varepsilon}) = T(-\varepsilon_y \delta_z,\, \varepsilon_x \delta_z).
-\tag{12.16}\]</span></span></p>
+\tag{13.16}\]</span></span></p>
 <p>여기서 우변은</p>
 <p><span id="eq-QM_angular_momentum_consistency_2"><span class="math display">\[
 I + \dfrac{i(\varepsilon_y \delta_z P_x - \varepsilon_x \delta_z P_y)}{\hbar}
-\tag{12.17}\]</span></span></p>
+\tag{13.17}\]</span></span></p>
 <p>이며 좌변은</p>
 <p><span class="math display">\[
 \begin{aligned}
@@ -661,14 +669,14 @@ I + \dfrac{i(\varepsilon_y \delta_z P_x - \varepsilon_x \delta_z P_y)}{\hbar}
 &amp;= I + \dfrac{\varepsilon_x \delta_z}{\hbar^2}[P_x, L_z] +\dfrac{\varepsilon_y \delta_z}{\hbar^2}[P_y,\,L_z]  
 \end{aligned}
 \]</span></p>
-<p>이므로 <a href="#eq-QM_angular_momentum_consistency_2" class="quarto-xref">식&nbsp;<span>12.17</span></a> 와 비교하면 아래와 같은 조건을 얻는다.</p>
+<p>이므로 <a href="#eq-QM_angular_momentum_consistency_2" class="quarto-xref">식&nbsp;<span>13.17</span></a> 와 비교하면 아래와 같은 조건을 얻는다.</p>
 <p><span class="math display">\[
 [P_x,\, L_z ] = -i\hbar P_y,\qquad [P_y,\, L_z] = i\hbar P_x
 \]</span></p>
 <p><br></p>
 </section>
-<section id="sec-QM_angular_momentum_vector_operator" class="level3" data-number="12.2.6">
-<h3 data-number="12.2.6" class="anchored" data-anchor-id="sec-QM_angular_momentum_vector_operator"><span class="header-section-number">12.2.6</span> 벡터 연산자</h3>
+<section id="sec-QM_angular_momentum_vector_operator" class="level3" data-number="13.2.6">
+<h3 data-number="13.2.6" class="anchored" data-anchor-id="sec-QM_angular_momentum_vector_operator"><span class="header-section-number">13.2.6</span> 벡터 연산자</h3>
 <p><span class="math inline">\(\boldsymbol{V} = \sum_i V_i \hat{\boldsymbol{e}}_i\)</span> 로 주어진 연산자를 생각하자. 어떤 회전 연산자 <span class="math inline">\(U\)</span> 에 대해 위치 <span class="math inline">\(X_i\)</span> 가 paasive transform 에서 다음과 같이 변환된다고 하자.</p>
 <p><span class="math display">\[
 U^\dagger X_i U = \sum_j R_{ij}X_j
@@ -681,23 +689,23 @@ U^\dagger V_i U = \sum_j R_{ij}V_j
 <p><br></p>
 </section>
 </section>
-<section id="l_z-고유값-문제" class="level2" data-number="12.3">
-<h2 data-number="12.3" class="anchored" data-anchor-id="l_z-고유값-문제"><span class="header-section-number">12.3</span> <span class="math inline">\(L_z\)</span> 고유값 문제</h2>
-<section id="sec-QM_angular_momentum_eigenvalue_of_Lz_and_its_wavefunction" class="level3" data-number="12.3.1">
-<h3 data-number="12.3.1" class="anchored" data-anchor-id="sec-QM_angular_momentum_eigenvalue_of_Lz_and_its_wavefunction"><span class="header-section-number">12.3.1</span> <span class="math inline">\(L_z\)</span> 의 고유값과 파동함수</h3>
+<section id="l_z-고유값-문제" class="level2" data-number="13.3">
+<h2 data-number="13.3" class="anchored" data-anchor-id="l_z-고유값-문제"><span class="header-section-number">13.3</span> <span class="math inline">\(L_z\)</span> 고유값 문제</h2>
+<section id="sec-QM_angular_momentum_eigenvalue_of_Lz_and_its_wavefunction" class="level3" data-number="13.3.1">
+<h3 data-number="13.3.1" class="anchored" data-anchor-id="sec-QM_angular_momentum_eigenvalue_of_Lz_and_its_wavefunction"><span class="header-section-number">13.3.1</span> <span class="math inline">\(L_z\)</span> 의 고유값과 파동함수</h3>
 <p>해밀토니안 <span class="math inline">\(H\)</span> 가 rotational invariant 하다면, 즉 <span class="math inline">\([L_z,\,H]=0\)</span> 이라면 <span class="math inline">\(H\)</span> 와 <span class="math inline">\(L_z\)</span> 에 대한 공통 고유켓이 힐베르트 공간의 기저가 된다. <span class="math inline">\(L_z\)</span> 의 고유켓 <span class="math inline">\(|l_z\rangle\)</span> 이 다음을 만족한다고 하자.</p>
 <p><span id="eq-QM_angular_momentum_eigenket_of_lz"><span class="math display">\[
 L_z |l_z\rangle = l_z |l_z\rangle.
-\tag{12.18}\]</span></span></p>
+\tag{13.18}\]</span></span></p>
 <p>위 식은 좌표기저에서 아래의 미분방정식으로 표현된다.</p>
 <p><span id="eq-QM_angular_momentum_lz_diff_eq"><span class="math display">\[
 -i\hbar \dfrac{\partial \Psi_{l_z}(\rho,\, \phi)}{\partial \phi} = l_z \Psi_{l_z}(\rho,\, \phi).
-\tag{12.19}\]</span></span></p>
+\tag{13.19}\]</span></span></p>
 <p>위 미분방정식의 해는 다음 식으로 표현된다.</p>
 <p><span id="eq-QM_angular_momentum_eigenfunction_of_lz_1"><span class="math display">\[
 \Psi_{l_z}(\rho,\,\phi) = R(\rho) e^{il_z \phi/\hbar}.
-\tag{12.20}\]</span></span></p>
-<p>여기서 <span class="math inline">\(R(\rho)\)</span> 는 <span class="math inline">\(\rho\)</span> 에만 의존하는 함수이며 <span class="math inline">\(\int R(\rho)\rho\,d\rho\)</span> 를 얻을 수 있는 함수이다. 즉 정규화 가능한 함수이어야 한다. 일단 <span class="math inline">\(R(\rho)\)</span> 에 대해서는 접어두고 <a href="#eq-QM_angular_momentum_eigenfunction_of_lz_1" class="quarto-xref">식&nbsp;<span>12.20</span></a> 의 <span class="math inline">\(e^{il_z\phi/\hbar}\)</span> 만 생각하기로 하자. 일견 <span class="math inline">\(l_z\)</span> 에 대한 제한조건은 없는 듯이 보인다. 심지어는 복소수 일 수도 있다. <span class="math inline">\(P\)</span> 의 고유벡터인 <span class="math inline">\(e^{ipx/\hbar}\)</span> 의 경우 파동함수가 bounded 되어야 한다는 조건으로부터 <span class="math inline">\(P\)</span> 의 고유값 <span class="math inline">\(p\)</span> 가 실수임을 주장 할 수 있었다. 그러나 <span class="math inline">\(\phi\)</span> 는 <span class="math inline">\(0\)</span> 와 <span class="math inline">\(2\pi\)</span> 사이의 값만을 가지므로 <span class="math inline">\(P\)</span> 의 경우와 같은 주장을 할 수 없다. 그러나 <span class="math inline">\(X,\,Y,\,P_x,\,P_y\)</span> 가 모두 에르미트 연산자라는 조건과 <span class="math inline">\([X_i,\,P_j] = i\hbar \delta_{ij}\)</span> 라는 조건으로부터</p>
+\tag{13.20}\]</span></span></p>
+<p>여기서 <span class="math inline">\(R(\rho)\)</span> 는 <span class="math inline">\(\rho\)</span> 에만 의존하는 함수이며 <span class="math inline">\(\int R(\rho)\rho\,d\rho\)</span> 를 얻을 수 있는 함수이다. 즉 정규화 가능한 함수이어야 한다. 일단 <span class="math inline">\(R(\rho)\)</span> 에 대해서는 접어두고 <a href="#eq-QM_angular_momentum_eigenfunction_of_lz_1" class="quarto-xref">식&nbsp;<span>13.20</span></a> 의 <span class="math inline">\(e^{il_z\phi/\hbar}\)</span> 만 생각하기로 하자. 일견 <span class="math inline">\(l_z\)</span> 에 대한 제한조건은 없는 듯이 보인다. 심지어는 복소수 일 수도 있다. <span class="math inline">\(P\)</span> 의 고유벡터인 <span class="math inline">\(e^{ipx/\hbar}\)</span> 의 경우 파동함수가 bounded 되어야 한다는 조건으로부터 <span class="math inline">\(P\)</span> 의 고유값 <span class="math inline">\(p\)</span> 가 실수임을 주장 할 수 있었다. 그러나 <span class="math inline">\(\phi\)</span> 는 <span class="math inline">\(0\)</span> 와 <span class="math inline">\(2\pi\)</span> 사이의 값만을 가지므로 <span class="math inline">\(P\)</span> 의 경우와 같은 주장을 할 수 없다. 그러나 <span class="math inline">\(X,\,Y,\,P_x,\,P_y\)</span> 가 모두 에르미트 연산자라는 조건과 <span class="math inline">\([X_i,\,P_j] = i\hbar \delta_{ij}\)</span> 라는 조건으로부터</p>
 <p><span class="math display">\[
 (L_z)^\dagger = (XP_y-YP_x)^\dagger = P_yX-P_xY = XP_y-YP_x = L_z
 \]</span></p>
@@ -709,21 +717,21 @@ L_z |l_z\rangle = l_z |l_z\rangle.
 <p>이다. 즉,</p>
 <p><span id="eq-QM_angular_momentum_condition_for_hermiticity_of_lz"><span class="math display">\[
 \int_0^\infty \int_0^{2\pi} \Psi_1^\ast \left(-i\hbar \dfrac{\partial}{\partial \phi}\right) \Psi_2\, \rho \,d\rho\,d\phi = \left[\int_0^\infty \int_0^{2\pi} \Psi_2^\ast \left(-i\hbar \dfrac{\partial}{\partial \phi}\right) \Psi_1\, \rho \,d\rho\,d\phi\right]^\ast
-\tag{12.21}\]</span></span></p>
+\tag{13.21}\]</span></span></p>
 <p>이다. 여기서 <span class="math inline">\(\Phi_1\)</span> 과 <span class="math inline">\(\Phi_2\)</span> 가 모두</p>
 <p><span class="math display">\[
 \Phi(\rho,\, 0) = \Phi(\rho,\, 2\pi)
 \]</span></p>
-<p>를 만족할 경우 <a href="#eq-QM_angular_momentum_condition_for_hermiticity_of_lz" class="quarto-xref">식&nbsp;<span>12.21</span></a> 의 성질을 가짐을 보일 수 있다.(<a href="#exr-shankar_12_3_1" class="quarto-xref">연습문제&nbsp;<span>12.8</span></a>) 이로부터 <span class="math inline">\(L_z\)</span> 의 고유벡터는</p>
+<p>를 만족할 경우 <a href="#eq-QM_angular_momentum_condition_for_hermiticity_of_lz" class="quarto-xref">식&nbsp;<span>13.21</span></a> 의 성질을 가짐을 보일 수 있다.(<a href="#exr-shankar_12_3_1" class="quarto-xref">연습문제&nbsp;<span>13.8</span></a>) 이로부터 <span class="math inline">\(L_z\)</span> 의 고유벡터는</p>
 <p><span id="eq-QM_angular_momentum_quantization_condition_of_lz"><span class="math display">\[
 e^{i2\pi l_z/\hbar}=1
-\tag{12.22}\]</span></span></p>
+\tag{13.22}\]</span></span></p>
 <p>이어야 한다. 즉 <span class="math inline">\(L_Z\)</span> 의 고유값 <span class="math inline">\(l_z\)</span> 는</p>
 <p><span id="eq-QM_angular_momentum_quantization_of_lz"><span class="math display">\[
 l_z = m\hbar,\qquad m\in \mathbb{Z}
-\tag{12.23}\]</span></span></p>
+\tag{13.23}\]</span></span></p>
 <p>이며 이 때 <span class="math inline">\(m\)</span> 을 <strong>자기 양자수(magnetic quantum number)</strong> 라고 한다.</p>
-<p>이제 <a href="#eq-QM_angular_momentum_eigenfunction_of_lz_1" class="quarto-xref">식&nbsp;<span>12.20</span></a> 에 대해 생각해보자. <span class="math inline">\(l_z\)</span> 의 고유상태 이외의 <span class="math inline">\(R(\rho)\)</span> 항이 존재한다는 것은 <span class="math inline">\(l_z\)</span> 의 고유상태가 힐베르트 공간상의 한 점이 아니라 힐베르트 공간의 부분공간이라는 듯이다. 게다가 정규화 가능한 <span class="math inline">\(R(\rho)\)</span> 역시 무한차원에서 존재다. 이제 할 일은 <span class="math inline">\(L_z\)</span> 과 compatible 한 연산자를 찾아 공통의 고유상태로 기저를 구성하는 것이며 이후 회전에 대해 불변인 해밀토니안에서 어떻게 하는지 볼 것이다.</p>
+<p>이제 <a href="#eq-QM_angular_momentum_eigenfunction_of_lz_1" class="quarto-xref">식&nbsp;<span>13.20</span></a> 에 대해 생각해보자. <span class="math inline">\(l_z\)</span> 의 고유상태 이외의 <span class="math inline">\(R(\rho)\)</span> 항이 존재한다는 것은 <span class="math inline">\(l_z\)</span> 의 고유상태가 힐베르트 공간상의 한 점이 아니라 힐베르트 공간의 부분공간이라는 듯이다. 게다가 정규화 가능한 <span class="math inline">\(R(\rho)\)</span> 역시 무한차원에서 존재다. 이제 할 일은 <span class="math inline">\(L_z\)</span> 과 compatible 한 연산자를 찾아 공통의 고유상태로 기저를 구성하는 것이며 이후 회전에 대해 불변인 해밀토니안에서 어떻게 하는지 볼 것이다.</p>
 <p><span class="math inline">\(L_z\)</span> 의 고유값 <span class="math inline">\(m\hbar\)</span> 에 대한 파동함수 <span class="math inline">\(\Phi_m(\phi)\)</span> 에 대한 정규화 조건은</p>
 <p><span class="math display">\[
 \int_0^{2\pi} \Phi^\ast_m(\phi)\Phi_{m'}(\phi)\, d\phi =\delta_{mm'}
@@ -731,28 +739,28 @@ l_z = m\hbar,\qquad m\in \mathbb{Z}
 <p>이며 이를 고려하면 <span class="math inline">\(\Phi_m(\phi)\)</span> 를 다음과 같이 쓸 수 있다.</p>
 <p><span id="eq-QM_angular_momentum_wavefunction_of_lz_eigenstate"><span class="math display">\[
 \Phi_m(\phi) = \dfrac{1}{\sqrt{2\pi}}e^{im\phi}
-\tag{12.24}\]</span></span></p>
+\tag{13.24}\]</span></span></p>
 <p><br></p>
 </section>
-<section id="sec-QM_angular_momentum_rotational_invariance_problem" class="level3" data-number="12.3.2">
-<h3 data-number="12.3.2" class="anchored" data-anchor-id="sec-QM_angular_momentum_rotational_invariance_problem"><span class="header-section-number">12.3.2</span> Rotational Invariant 문제</h3>
+<section id="sec-QM_angular_momentum_rotational_invariance_problem" class="level3" data-number="13.3.2">
+<h3 data-number="13.3.2" class="anchored" data-anchor-id="sec-QM_angular_momentum_rotational_invariance_problem"><span class="header-section-number">13.3.2</span> Rotational Invariant 문제</h3>
 <p>많은 경우 포텐셜은 <span class="math inline">\(V(\rho,\, \phi)= V(\rho)\)</span> 이다. 이 경우 해밀토니안 <span class="math inline">\(H\)</span> 에 대한 고유값 문제는 다음 식의 해를 구하는 문제가 된다.</p>
 <p><span id="eq-QM_angular_momentum_hamiltonian_eigenvalue_for_radial_potential"><span class="math display">\[
 \left[-\dfrac{\hbar^2}{2\mu} \left(\dfrac{\partial^2}{\partial^2\rho} + \dfrac{1}{\rho}\dfrac{\partial}{\partial \rho} + \dfrac{1}{\rho^2}\dfrac{\partial^2}{\partial \phi^2} \right) + V(\rho) \right] \Psi_E(\rho,\,\phi) = E\Psi_E(\rho,\, \phi).
-\tag{12.25}\]</span></span></p>
+\tag{13.25}\]</span></span></p>
 <p>여기서 <span class="math inline">\(\mu\)</span> 는 질량이다. (<span class="math inline">\(m\)</span> 은 magnetic quantum number 로 쓰기 때문에..) <span class="math inline">\([H,\, L_z] = 0\)</span> 이므로 <span class="math inline">\(H\)</span> 와 <span class="math inline">\(L_z\)</span> 에 대한 공통의 고유벡터가 존재한다. <span class="math inline">\(L_z\)</span> 에 대한 고유값을 <span class="math inline">\(m\hbar\)</span> 라고 하면 <span class="math inline">\(L_z\)</span> 에 대항 고유함수는 아래와 같은 꼴을 가진다.</p>
 <p><span class="math display">\[
 \Psi_{Em}(\rho,\, \phi) = R_{Em}(\rho) \Phi_m(\phi)
 \]</span></p>
-<p>여기서 <a href="#eq-QM_angular_momentum_wavefunction_of_lz_eigenstate" class="quarto-xref">식&nbsp;<span>12.24</span></a> 의 <span class="math inline">\(R(\rho),\, \Phi_m(\phi)\)</span> 를 관계된 인덱스 <span class="math inline">\(E,\,m\)</span> 과 함께 기록했다. <span class="math inline">\(R(\rho)\)</span> 는 <span class="math inline">\(E\)</span>, <span class="math inline">\(m\)</span> 과 관계가 있을 수 있으므로 두개의 인덱스를 모두 표기하기로 한다. 우리는 <a href="#eq-QM_angular_momentum_in_polar_coordinate" class="quarto-xref">식&nbsp;<span>12.13</span></a> 에서 <span class="math inline">\(L_z = -i\hbar \partial/\partial \phi\)</span> 임을 보였고 <span class="math inline">\(L_z \Psi_m(\rho,\,\phi) = m \Psi_m(\rho,\,\phi)\)</span> 임을 안다. 이를 <a href="#eq-QM_angular_momentum_hamiltonian_eigenvalue_for_radial_potential" class="quarto-xref">식&nbsp;<span>12.25</span></a> 에 대임해보면 <span class="math inline">\(\Phi_m(\phi)\)</span> 는 <span class="math inline">\(m^2\)</span> 과 관련된 항만 남기고 소거되어 아래와 같이 된다.</p>
+<p>여기서 <a href="#eq-QM_angular_momentum_wavefunction_of_lz_eigenstate" class="quarto-xref">식&nbsp;<span>13.24</span></a> 의 <span class="math inline">\(R(\rho),\, \Phi_m(\phi)\)</span> 를 관계된 인덱스 <span class="math inline">\(E,\,m\)</span> 과 함께 기록했다. <span class="math inline">\(R(\rho)\)</span> 는 <span class="math inline">\(E\)</span>, <span class="math inline">\(m\)</span> 과 관계가 있을 수 있으므로 두개의 인덱스를 모두 표기하기로 한다. 우리는 <a href="#eq-QM_angular_momentum_in_polar_coordinate" class="quarto-xref">식&nbsp;<span>13.13</span></a> 에서 <span class="math inline">\(L_z = -i\hbar \partial/\partial \phi\)</span> 임을 보였고 <span class="math inline">\(L_z \Psi_m(\rho,\,\phi) = m \Psi_m(\rho,\,\phi)\)</span> 임을 안다. 이를 <a href="#eq-QM_angular_momentum_hamiltonian_eigenvalue_for_radial_potential" class="quarto-xref">식&nbsp;<span>13.25</span></a> 에 대임해보면 <span class="math inline">\(\Phi_m(\phi)\)</span> 는 <span class="math inline">\(m^2\)</span> 과 관련된 항만 남기고 소거되어 아래와 같이 된다.</p>
 <p><span id="eq-QM_angular_momentum_radial_differential_equation"><span class="math display">\[
 \left[-\dfrac{\hbar^2}{2\mu} \left(\dfrac{\partial^2}{\partial^2\rho} + \dfrac{1}{\rho}\dfrac{\partial}{\partial \rho} -\dfrac{m^2}{\rho^2} \right) + V(\rho) \right] R_{Em}(\rho,\,\phi) = E R_{Em}(\rho,\, \phi)
-\tag{12.26}\]</span></span></p>
+\tag{13.26}\]</span></span></p>
 <p>즉 포텐셜이 raidal 에만 의존한다면 파동함수의 각 부분 <span class="math inline">\(\Phi_m(\phi)\)</span> 가 제외된 radial 부분만의 미분방정식만 남게 된다.</p>
 <p><br></p>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-shankar_12_3_5" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 12.4 (Shankar 12.3.5)</strong></span> <a href="#eq-QM_angular_momentum_radial_differential_equation" class="quarto-xref">식&nbsp;<span>12.26</span></a> 에서 각운동량이 repulsive potential 을 생성하는 것처럼 보인다. 그 gradiant 를 계산하고 원심력과 동일함을 보여라.</p>
+<p><span class="theorem-title"><strong>연습문제 13.4 (Shankar 12.3.5)</strong></span> <a href="#eq-QM_angular_momentum_radial_differential_equation" class="quarto-xref">식&nbsp;<span>13.26</span></a> 에서 각운동량이 repulsive potential 을 생성하는 것처럼 보인다. 그 gradiant 를 계산하고 원심력과 동일함을 보여라.</p>
 </div>
 </div>
 <p><br></p>
@@ -766,7 +774,7 @@ l_z = m\hbar,\qquad m\in \mathbb{Z}
 <p><br></p>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-shankar_12_3_6" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 12.5 (Shankar 12.3.6)</strong></span> 질량 <span class="math inline">\(m\)</span> 인 입자가 반지름 <span class="math inline">\(a\)</span> 인 원에 제한되어 있으며 해밀토니안은 <span class="math inline">\(H=\dfrac{L_z^2}{2\mu a^2}\)</span> 이다. <span class="math inline">\(H\)</span> 에 대한 고유값 문제를 풀고 그 deneneracy 를 논하라.</p>
+<p><span class="theorem-title"><strong>연습문제 13.5 (Shankar 12.3.6)</strong></span> 질량 <span class="math inline">\(m\)</span> 인 입자가 반지름 <span class="math inline">\(a\)</span> 인 원에 제한되어 있으며 해밀토니안은 <span class="math inline">\(H=\dfrac{L_z^2}{2\mu a^2}\)</span> 이다. <span class="math inline">\(H\)</span> 에 대한 고유값 문제를 풀고 그 deneneracy 를 논하라.</p>
 </div>
 </div>
 <p><br></p>
@@ -776,10 +784,10 @@ l_z = m\hbar,\qquad m\in \mathbb{Z}
 <p><br></p>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-shankar_12_3_7" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 12.6 (Shankar 12.3.7)</strong></span> 아래와 같은 해밀토니안이 주어졌다.</p>
+<p><span class="theorem-title"><strong>연습문제 13.6 (Shankar 12.3.7)</strong></span> 아래와 같은 해밀토니안이 주어졌다.</p>
 <p><span id="eq-QM_shankar_12_3_7_1"><span class="math display">\[
 H = \dfrac{P_x^2+P_y^2}{2\mu} + \dfrac{1}{2}\mu \omega^2 (X^2+Y^2).
-\tag{12.27}\]</span></span></p>
+\tag{13.27}\]</span></span></p>
 <p>(<span class="math inline">\(1\)</span>) <span class="math inline">\([H,\,L_z]=0\)</span> 임을 보이고 <span class="math inline">\(H\)</span> 에 대한 고유값 문제를 <span class="math inline">\(R_{Em}(\rho)\)</span> 에 대한 미분방정식이 문제가 됨을 보여라</p>
 <p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(\rho \to 0\)</span> 극한에서 <span class="math inline">\(R_{Em}(\rho) \to \rho^{|m|}\)</span> 이 됨을 보여라.</p>
 <p>(<span class="math inline">\(3\)</span>) 비슷한 방법으로 <span class="math inline">\(\rho \to \infty\)</span> 극한에서 <span class="math inline">\(R_{Em}(\rho) \to e^{-\mu\omega \rho^2/2\hbar}\)</span> 임을 보여라.</p>
@@ -788,7 +796,7 @@ H = \dfrac{P_x^2+P_y^2}{2\mu} + \dfrac{1}{2}\mu \omega^2 (X^2+Y^2).
 <p>(<span class="math inline">\(5\)</span>) <span class="math inline">\(R\)</span> 에 대한 방정식을 <span class="math inline">\(U\)</span> 에 대한 방정식으로 전환하면 다음과 같다는 것을 보여라.</p>
 <p><span id="eq-QM_shankar_12_3_7_2"><span class="math display">\[
 U'' + \left[\left(\dfrac{2|m|+1}{y} \right) - 2y\right] U' + (2\varepsilon - 2|m| -2)U = 0
-\tag{12.28}\]</span></span></p>
+\tag{13.28}\]</span></span></p>
 <p>(<span class="math inline">\(6\)</span>) <span class="math inline">\(U\)</span> 를 멱급수로 <span class="math inline">\(U(y) = \sum_{r=0}^\infty C_r y^r\)</span> 과 같이 전개하면 2개의 항으로 이루어진 점화식을 얻을 수 있다는 것을 보여라.</p>
 <p>(<span class="math inline">\(7\)</span>) 점화식을 얻고 <span class="math inline">\(y \to \infty\)</span> 극한에서 <span class="math inline">\(U(y)\)</span> 가 우리가 생각하는 미분방정식의 해가 되려면 어떤 항에서 종료되어야 한다는 것을 보여라. <span class="math inline">\(\varepsilon = r+|m|+1\)</span> 이면 <span class="math inline">\(r\)</span> 개의 항 후에 급수가 종료됨을 보여라. <span class="math inline">\(r\)</span> 이 짝수여야 한다는 것도 보여라. (<span class="math inline">\(r\)</span> 이 홀수이면 <span class="math inline">\(\rho \to \infty\)</span> 극한에서 <span class="math inline">\(R\)</span> 이 <span class="math inline">\(\rho^{|m|}\)</span> 처럼 행동하지 않는다). 최종적으로</p>
 <p><span class="math display">\[
@@ -799,7 +807,7 @@ E= (2k+|m|+1)\hbar \omega,\qquad k=0,\,1,\,2,\ldots
 E_n = (n+1)\hbar \omega
 \]</span></p>
 <p>이다.</p>
-<p>(<span class="math inline">\(8\)</span>) 주어진 <span class="math inline">\(n\)</span> 에 대해 가능한 <span class="math inline">\(|m|\)</span> 값은 무엇인가? 정해진 <span class="math inline">\(n\)</span> 에 대해 <span class="math inline">\(n+1\)</span> 개의 degeneracy 가 있음을 보여라. 이것을 데카르트 좌표계에서의 결과(<a href="QM_N_DoF_system.html#exr-shankar_10_2_2" class="quarto-xref">연습문제&nbsp;<span>10.3</span></a>) 와 비교하라.</p>
+<p>(<span class="math inline">\(8\)</span>) 주어진 <span class="math inline">\(n\)</span> 에 대해 가능한 <span class="math inline">\(|m|\)</span> 값은 무엇인가? 정해진 <span class="math inline">\(n\)</span> 에 대해 <span class="math inline">\(n+1\)</span> 개의 degeneracy 가 있음을 보여라. 이것을 데카르트 좌표계에서의 결과(<a href="QM_N_DoF_system.html#exr-shankar_10_2_2" class="quarto-xref">연습문제&nbsp;<span>11.3</span></a>) 와 비교하라.</p>
 <p>(<span class="math inline">\(9\)</span>) <span class="math inline">\(n=0,\,n=1\)</span> 에 해당하는 모든 정규화된 고유함수를 쓰라.</p>
 <p>(<span class="math inline">\(10\)</span>) <span class="math inline">\(n=0\)</span> 일 때의 파동함수는 데카르트 좌표계에서의 해당하는 파동함수와 일치해야 함을 보여라. 두 <span class="math inline">\(n=1\)</span> 의 해는 해당하는 데카르트 좌표계의 파동함수의 선형 결합임을 보여라. 이 상태의 parity 는 데카르트 좌표계에서와 같이 <span class="math inline">\((-1)^n\)</span> 임을 보여라.</p>
 </div>
@@ -807,11 +815,11 @@ E_n = (n+1)\hbar \omega
 <p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(1\)</span>) <span class="math inline">\(U^\dagger H U = 0\)</span> 이므로 <span class="math inline">\([H,\, L_z]=0\)</span>.</p>
-<p>(<span class="math inline">\(2\)</span>) <a href="#eq-QM_angular_momentum_radial_differential_equation" class="quarto-xref">식&nbsp;<span>12.26</span></a> 을 사용하면</p>
+<p>(<span class="math inline">\(2\)</span>) <a href="#eq-QM_angular_momentum_radial_differential_equation" class="quarto-xref">식&nbsp;<span>13.26</span></a> 을 사용하면</p>
 <p><span id="eq-QM_shankar_12_3_7_3"><span class="math display">\[
 \left[-\dfrac{\hbar^2}{2\mu} \left(\dfrac{d^2}{d^2\rho} + \dfrac{1}{\rho}\dfrac{d}{d \rho} -\dfrac{m^2}{\rho^2} \right) + \dfrac{1}{2}\mu\omega^2 \rho^2 -E \right] R(\rho) =0
-\tag{12.29}\]</span></span></p>
-<p>을 만족해야 한다. <span class="math inline">\(\rho\to 0\)</span> 인 극한에서 <span class="math inline">\(R(\rho) \approx \rho^k\)</span> 라고 하자. 파동함수는 연속이어야 하므로 <span class="math inline">\(R(\rho)\)</span> 는 원점에서 finite 해야 하며 따라서 <span class="math inline">\(k&gt;0\)</span> 이어야 한다. <span class="math inline">\(R(\rho) \approx \rho^k\)</span> 에 대해 <a href="#eq-QM_shankar_12_3_7_3" class="quarto-xref">식&nbsp;<span>12.29</span></a> 은</p>
+\tag{13.29}\]</span></span></p>
+<p>을 만족해야 한다. <span class="math inline">\(\rho\to 0\)</span> 인 극한에서 <span class="math inline">\(R(\rho) \approx \rho^k\)</span> 라고 하자. 파동함수는 연속이어야 하므로 <span class="math inline">\(R(\rho)\)</span> 는 원점에서 finite 해야 하며 따라서 <span class="math inline">\(k&gt;0\)</span> 이어야 한다. <span class="math inline">\(R(\rho) \approx \rho^k\)</span> 에 대해 <a href="#eq-QM_shankar_12_3_7_3" class="quarto-xref">식&nbsp;<span>13.29</span></a> 은</p>
 <p><span class="math display">\[
 \left[-\dfrac{\hbar^2}{2m} \left(k(k-1)\rho^{k-2} +k\rho^{k-2}-m^2\rho^{k-2}\right) + \dfrac{\mu \omega^2\rho^{k+2}}{2} - E\rho^{k}\right] \approx 0
 \]</span></p>
@@ -820,27 +828,27 @@ E_n = (n+1)\hbar \omega
 0 = k(k-1) + k^2 - m^2 = (k-m)(k+m)
 \]</span></p>
 <p>이므로 <span class="math inline">\(k= |m|\)</span> 이어야 한다. 즉 <span class="math inline">\(\rho \approx 0\)</span> 근처에서 <span class="math inline">\(R(\rho) \approx \rho^{|m|}\)</span> 이어야 한다.</p>
-<p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(\rho \to \infty\)</span> 극한에서 <span class="math inline">\(R(\rho \to \infty) = 0\)</span> 이어야 하며, 위의 미분방정식 <a href="#eq-QM_shankar_12_3_7_3" class="quarto-xref">식&nbsp;<span>12.29</span></a> 은</p>
+<p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(\rho \to \infty\)</span> 극한에서 <span class="math inline">\(R(\rho \to \infty) = 0\)</span> 이어야 하며, 위의 미분방정식 <a href="#eq-QM_shankar_12_3_7_3" class="quarto-xref">식&nbsp;<span>13.29</span></a> 은</p>
 <p><span class="math display">\[
 \dfrac{d^2 R}{d\rho^2} - \dfrac{\mu^2 \omega^2}{\hbar^2} \rho^2 R(\rho) + \dfrac{2\mu E}{\hbar^2}R(\rho)= 0
 \]</span></p>
 <p>이다. 그런데 <span class="math inline">\(\rho \to \infty\)</span> 극한에서 <span class="math inline">\(|\rho^2 R(\rho) | \gg |R(\rho)|\)</span> 이므로</p>
 <p><span id="eq-QM_shankar_12_3_7_4"><span class="math display">\[
 \dfrac{d^2 R}{d \rho^2} - \dfrac{\mu^2 \omega^2}{\hbar^2} \rho^2 R(\rho) = 0
-\tag{12.30}\]</span></span></p>
+\tag{13.30}\]</span></span></p>
 <p>으로 생각 할 수 있다. 위 방정식은 1차원 단순조화 진동자의 미분방정식과 같은 형태이므로 1차원 단순조화진동자의 해를 참고 할 수 있다. 1차원 단순조화진동자의 해는 에르미트 다항식과 <span class="math inline">\(e^{-\alpha^2x^2}\)</span> 의 곱 형태이며 <span class="math inline">\(x\to \infty\)</span> 영역에서 <span class="math inline">\(e^{-\alpha^2x^2}\)</span> 이 dominant 하다. 따라서</p>
 <p><span id="eq-QM_shankar_12_3_7_5"><span class="math display">\[
 R(\rho) \approx e^{-\mu \omega \rho^2/\hbar}
-\tag{12.31}\]</span></span></p>
-<p>라고 놓을 수 있다. 이 식을 <a href="#eq-QM_shankar_12_3_7_4" class="quarto-xref">식&nbsp;<span>12.30</span></a> 의 좌변에 넣으면</p>
+\tag{13.31}\]</span></span></p>
+<p>라고 놓을 수 있다. 이 식을 <a href="#eq-QM_shankar_12_3_7_4" class="quarto-xref">식&nbsp;<span>13.30</span></a> 의 좌변에 넣으면</p>
 <p><span class="math display">\[
 \dfrac{d^2 R}{d\rho^2} - \dfrac{\mu^2 \omega^2}{\hbar^2} \rho^2 R(\rho) - \dfrac{\mu \omega}{\hbar} R(\rho)
 \]</span></p>
-<p>이 되는데 앞서 보았듯이 <span class="math inline">\(\rho \to \infty\)</span> 극한에서 <span class="math inline">\(|\rho^2 R(\rho) | \gg |R(\rho)|\)</span> 이므로 근사적으로 <a href="#eq-QM_shankar_12_3_7_4" class="quarto-xref">식&nbsp;<span>12.30</span></a> 를 만족한다고 볼 수 있다.</p>
-<p>(<span class="math inline">\(4\)</span>) <span class="math inline">\(\varepsilon = E/\hbar\omega\)</span> 와 <span class="math inline">\(y=\sqrt{\mu \omega/\hbar} \rho\)</span> 에 대해 <a href="#eq-QM_shankar_12_3_7_3" class="quarto-xref">식&nbsp;<span>12.29</span></a> 은</p>
+<p>이 되는데 앞서 보았듯이 <span class="math inline">\(\rho \to \infty\)</span> 극한에서 <span class="math inline">\(|\rho^2 R(\rho) | \gg |R(\rho)|\)</span> 이므로 근사적으로 <a href="#eq-QM_shankar_12_3_7_4" class="quarto-xref">식&nbsp;<span>13.30</span></a> 를 만족한다고 볼 수 있다.</p>
+<p>(<span class="math inline">\(4\)</span>) <span class="math inline">\(\varepsilon = E/\hbar\omega\)</span> 와 <span class="math inline">\(y=\sqrt{\mu \omega/\hbar} \rho\)</span> 에 대해 <a href="#eq-QM_shankar_12_3_7_3" class="quarto-xref">식&nbsp;<span>13.29</span></a> 은</p>
 <p><span id="eq-QM_shankar_12_3_7_6"><span class="math display">\[
 \left[-\dfrac{1}{2}\left(\dfrac{d^2}{d y^2} + \dfrac{1}{y} \dfrac{d}{d y} - \dfrac{m^2}{y^2}\right) + \dfrac{y^2}{2} -\varepsilon\right] R(y) = 0
-\tag{12.32}\]</span></span></p>
+\tag{13.32}\]</span></span></p>
 <p>(<span class="math inline">\(5\)</span>) <span class="math inline">\(R(y) = y^{|m|} e^{-y^2/2} U(y)\)</span> 라고 하자.</p>
 <p><span class="math display">\[
 \begin{aligned}
@@ -857,14 +865,14 @@ R''(y) + &amp;\dfrac{R'(y)}{y} - \dfrac{m^2R(y)}{y^2} -y^2R(y)  \\
 &amp;= y^{|m|}e^{-y^2/2} \left[ U''(y) + \left(\dfrac{2|m|+1}{y}-2y\right)U'(y) - (|m|+1) U(y)\right]
 \end{aligned}
 \]</span></p>
-<p>이므로 <a href="#eq-QM_shankar_12_3_7_6" class="quarto-xref">식&nbsp;<span>12.32</span></a> 은</p>
+<p>이므로 <a href="#eq-QM_shankar_12_3_7_6" class="quarto-xref">식&nbsp;<span>13.32</span></a> 은</p>
 <p><span class="math display">\[
 y^{|m|} e^{-y^2/2}\left[ U''(y) + \left(\dfrac{2|m|+1}{y}-2y\right)U'(y) + (2\varepsilon - 2|m|-2) U(y)\right] = 0
 \]</span></p>
 <p>이 된다. 따라서 <span class="math inline">\(U\)</span> 에 대한 미분방정식은</p>
 <p><span id="eq-QM_shankar_12_3_7_7"><span class="math display">\[
 U''(y) + \left(\dfrac{2|m|+1}{y}-2y\right)U'(y) + (2\varepsilon - 2|m|-2) U(y)= 0
-\tag{12.33}\]</span></span></p>
+\tag{13.33}\]</span></span></p>
 <p>이다.</p>
 <p>(<span class="math inline">\(6\)</span>) <span class="math inline">\(\displaystyle U(y) = \sum_{r=0}^{\infty} C_r y^r\)</span> 의 멱급수 전개를 사용하면</p>
 <p><span class="math display">\[
@@ -876,7 +884,7 @@ U''(y) + \left(\dfrac{2|m|+1}{y}-2y\right)U'(y) + (2\varepsilon - 2|m|-2) U(y)= 
 <p>이므로,</p>
 <p><span id="eq-QM_shankar_12_3_7_8"><span class="math display">\[
 C_{r+2} =-\dfrac{2(\varepsilon - |m| -r -1)} {(r+2)(2|m|+r+2)} C_r,\qquad C_1=0
-\tag{12.34}\]</span></span></p>
+\tag{13.34}\]</span></span></p>
 <p>의 점화식을 얻는다. 즉 홀수인 <span class="math inline">\(r\)</span> 에 대해 <span class="math inline">\(C_r=0\)</span> 이다.</p>
 <p>(<span class="math inline">\(7\)</span>) 충분히 큰 <span class="math inline">\(r\)</span> 에 대해 <span class="math inline">\(C_{r+2} \approx \dfrac{2}{r}C_r\)</span> 이며 따라서 <span class="math inline">\(C_{2n} \approx \dfrac{1}{ n!}C_0\)</span> 이고</p>
 <p><span class="math display">\[
@@ -885,7 +893,7 @@ U(y) \approx \sum_{r=0}^\infty \dfrac{1}{n!}y^{2r} = e^{y^2}
 <p>이다. 이로부터 <span class="math display">\[
 R(y) \approx y^{|m|} e^{-y^2/2} e^{y^2} = y^{|m|} e^{y^2/2}
 \]</span></p>
-<p>이므로 <span class="math inline">\(y\to \infty\)</span> 조건에서 발산한다. 이것은 허용되지 않으므로 <a href="#eq-QM_shankar_12_3_7_8" class="quarto-xref">식&nbsp;<span>12.34</span></a> 로부터 어떤 짝수 <span class="math inline">\(r\)</span> 에 대해 <span class="math inline">\(\varepsilon = |m|+r+1\)</span> 이어야 한다. 즉 어떤 <span class="math inline">\(k\ge 0,\,k\in \mathbb{Z}\)</span> 에 대해</p>
+<p>이므로 <span class="math inline">\(y\to \infty\)</span> 조건에서 발산한다. 이것은 허용되지 않으므로 <a href="#eq-QM_shankar_12_3_7_8" class="quarto-xref">식&nbsp;<span>13.34</span></a> 로부터 어떤 짝수 <span class="math inline">\(r\)</span> 에 대해 <span class="math inline">\(\varepsilon = |m|+r+1\)</span> 이어야 한다. 즉 어떤 <span class="math inline">\(k\ge 0,\,k\in \mathbb{Z}\)</span> 에 대해</p>
 <p><span class="math display">\[
 E = (|m| + 2k + 1)\hbar \omega ,\, k=0,\,1,\,2\ldots
 \]</span></p>
@@ -894,7 +902,7 @@ E = (|m| + 2k + 1)\hbar \omega ,\, k=0,\,1,\,2\ldots
 E = (n+1)\hbar \omega
 \]</span></p>
 <p>이다.</p>
-<p>(<span class="math inline">\(8\)</span>) <span class="math inline">\(n\)</span> 이 짝수이면 <span class="math inline">\(m=0,\,\pm 2,\,\pm 4,\ldots,\, \pm n\)</span> 까지 가능하다. <span class="math inline">\(n\)</span> 이 홀수이면 <span class="math inline">\(\pm 1,\,\pm 3,\,\ldots,\,\pm n\)</span> 까지 가능하다. 이 때 가능한 <span class="math inline">\(m\)</span> 값의 개수는 <span class="math inline">\(n+1\)</span> 이다. <a href="QM_N_DoF_system.html#exr-shankar_10_2_2" class="quarto-xref">연습문제&nbsp;<span>10.3</span></a> 의 경우 <span class="math inline">\(n=n_x+n_y\)</span> 에 대해 가능한 <span class="math inline">\((n_x,\,n_y)\)</span> 의 가지수는 <span class="math inline">\(n+1\)</span> 이므로 일치한다.</p>
+<p>(<span class="math inline">\(8\)</span>) <span class="math inline">\(n\)</span> 이 짝수이면 <span class="math inline">\(m=0,\,\pm 2,\,\pm 4,\ldots,\, \pm n\)</span> 까지 가능하다. <span class="math inline">\(n\)</span> 이 홀수이면 <span class="math inline">\(\pm 1,\,\pm 3,\,\ldots,\,\pm n\)</span> 까지 가능하다. 이 때 가능한 <span class="math inline">\(m\)</span> 값의 개수는 <span class="math inline">\(n+1\)</span> 이다. <a href="QM_N_DoF_system.html#exr-shankar_10_2_2" class="quarto-xref">연습문제&nbsp;<span>11.3</span></a> 의 경우 <span class="math inline">\(n=n_x+n_y\)</span> 에 대해 가능한 <span class="math inline">\((n_x,\,n_y)\)</span> 의 가지수는 <span class="math inline">\(n+1\)</span> 이므로 일치한다.</p>
 <p>(<span class="math inline">\(9\)</span>) <span class="math inline">\(n,\, m\)</span> 에 의해 상태를 정할 수 있으며 이 상태를 <span class="math inline">\(|\Psi_{n,\,m}\rangle\)</span> 로 표기하자. <span class="math inline">\(n=0\)</span> 이면 <span class="math inline">\(k=|m|=0\)</span> 이므로, <span class="math inline">\(R_0(y) = C_0e^{-y^2}\)</span> 이고</p>
 <p><span class="math display">\[
 \Phi_{0,\,0}(\rho,\,\phi) = \sqrt{\dfrac{\mu \omega}{\pi \hbar}}e^{-\mu \omega \rho^2/2\hbar}
@@ -909,7 +917,7 @@ E = (n+1)\hbar \omega
 <p><br></p>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-shankar_12_3_8" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 12.7 (Shankar 12.3.8)</strong></span> 질량 <span class="math inline">\(\mu\)</span>, 전하 <span class="math inline">\(q\)</span> 를 가진 입자가 아래의 벡터포텐셜 <span class="math inline">\(\boldsymbol{A}\)</span> 의 영향을 받는다.</p>
+<p><span class="theorem-title"><strong>연습문제 13.7 (Shankar 12.3.8)</strong></span> 질량 <span class="math inline">\(\mu\)</span>, 전하 <span class="math inline">\(q\)</span> 를 가진 입자가 아래의 벡터포텐셜 <span class="math inline">\(\boldsymbol{A}\)</span> 의 영향을 받는다.</p>
 <p><span class="math display">\[
 \boldsymbol{A} = \dfrac{B}{2}(-y\hat{\boldsymbol{e}}_y + x\hat{\boldsymbol{e}}_x).
 \]</span></p>
@@ -948,7 +956,7 @@ H &amp;= \dfrac{P_x^2+P_y^2}{2\mu} + \dfrac{\mu (\omega_0/2)^2(X^2+Y^2) }{2} + \
 &amp;= H_O\left(\dfrac{\omega_0}{2},\, \mu\right) - \dfrac{\omega_0}{2}L_z
 \end{aligned}
 \]</span></p>
-<p>또한 <span class="math inline">\([P_x^2,\,L_z]=[P_y^2,\,L_z]= [X^2,\,L_z]=[Y^2,\,L_z] = 0\)</span> 이므로 <span class="math inline">\([H_O,\,L_z]=0\)</span> 이다. 따라서 <span class="math inline">\(H_O\)</span> 를 대각화하는 기저는 <span class="math inline">\(H\)</span> 를 대각화한다. <a href="#exr-shankar_12_3_7" class="quarto-xref">연습문제&nbsp;<span>12.6</span></a> 로 부터 <span class="math inline">\(H_O\)</span> 의 에너지값 <span class="math inline">\(E_0\)</span> 는</p>
+<p>또한 <span class="math inline">\([P_x^2,\,L_z]=[P_y^2,\,L_z]= [X^2,\,L_z]=[Y^2,\,L_z] = 0\)</span> 이므로 <span class="math inline">\([H_O,\,L_z]=0\)</span> 이다. 따라서 <span class="math inline">\(H_O\)</span> 를 대각화하는 기저는 <span class="math inline">\(H\)</span> 를 대각화한다. <a href="#exr-shankar_12_3_7" class="quarto-xref">연습문제&nbsp;<span>13.6</span></a> 로 부터 <span class="math inline">\(H_O\)</span> 의 에너지값 <span class="math inline">\(E_0\)</span> 는</p>
 <p><span class="math display">\[
 E_0 = \left(2k+|m| + 1\right)\dfrac{h\hbar \omega_0}{2} = \left(k+ \dfrac{|m|}{2}+ \dfrac{1}{2}\right)\hbar \omega_0
 \]</span></p>
@@ -965,16 +973,16 @@ E = E_0 - \dfrac{\omega_0}{2}\hbar m = \left(k+ \dfrac{|m|}{2} - \dfrac{m}{2} +\
 <p><br></p>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-shankar_12_3_1" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 12.8 (Shankar 12.3.1)</strong></span> <span class="math inline">\(\Psi_1,\, \Psi_2\)</span> 가 모두</p>
+<p><span class="theorem-title"><strong>연습문제 13.8 (Shankar 12.3.1)</strong></span> <span class="math inline">\(\Psi_1,\, \Psi_2\)</span> 가 모두</p>
 <p><span class="math display">\[
 \Psi_i(\rho,\, 0) = \Psi_i(\rho,\, 2\pi)
 \]</span></p>
-<p>이 이면 <a href="#eq-QM_angular_momentum_condition_for_hermiticity_of_lz" class="quarto-xref">식&nbsp;<span>12.21</span></a> 를 만족함을 보여라.</p>
+<p>이 이면 <a href="#eq-QM_angular_momentum_condition_for_hermiticity_of_lz" class="quarto-xref">식&nbsp;<span>13.21</span></a> 를 만족함을 보여라.</p>
 </div>
 </div>
 <p><br></p>
 <div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span><a href="#eq-QM_angular_momentum_condition_for_hermiticity_of_lz" class="quarto-xref">식&nbsp;<span>12.21</span></a> 에서 부분적분을 이용하면</p>
+<p><span class="proof-title"><em>(해답)</em>. </span><a href="#eq-QM_angular_momentum_condition_for_hermiticity_of_lz" class="quarto-xref">식&nbsp;<span>13.21</span></a> 에서 부분적분을 이용하면</p>
 <p><span class="math display">\[
 \begin{aligned}
 \text{[LHS]} &amp;= (-i\hbar)\int_0^\infty \rho \, d\rho \left[\Psi_1^\ast(\rho,\, 2\pi)\Psi_2(0,\, 2\pi) - \Psi_1^\ast(\rho,\,0) \Psi_2(\rho,\,0)\right] \\
@@ -991,7 +999,7 @@ E = E_0 - \dfrac{\omega_0}{2}\hbar m = \left(k+ \dfrac{|m|}{2} - \dfrac{m}{2} +\
 <p><br></p>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-shankar_12_3_2" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 12.9 (Shankar 12.3.2)</strong></span> <span class="math inline">\(l_z\)</span> 에 대한 제한조건을 다른 관점에서 볼 수 있다. 두 허용된 <span class="math inline">\(l_z\)</span> 값 <span class="math inline">\(l_1,\,l_2\)</span> 의 중첩을 생각하자.</p>
+<p><span class="theorem-title"><strong>연습문제 13.9 (Shankar 12.3.2)</strong></span> <span class="math inline">\(l_z\)</span> 에 대한 제한조건을 다른 관점에서 볼 수 있다. 두 허용된 <span class="math inline">\(l_z\)</span> 값 <span class="math inline">\(l_1,\,l_2\)</span> 의 중첩을 생각하자.</p>
 <p><span class="math display">\[
 \Psi(\rho,\,\phi) = A(\rho) e^{i\phi l_1/\hbar} + B(\rho) e^{i\phi l_2/\hbar}.
 \]</span></p>
@@ -1018,7 +1026,7 @@ l_1 = \dfrac{(m+n)\hbar}{2},\qquad l_2 = \dfrac{(n-m)\hbar}{2}
 <p><br></p>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-shankar_12_3_3" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 12.10 (Shankar 12.3.3)</strong></span> 입자가 아래의 파동방정식으로 기술된다고 하자.</p>
+<p><span class="theorem-title"><strong>연습문제 13.10 (Shankar 12.3.3)</strong></span> 입자가 아래의 파동방정식으로 기술된다고 하자.</p>
 <p><span class="math display">\[
 \Psi(\rho,\, \phi) = A e^{-\rho^2/2\Delta^2} \cos^2\phi
 \]</span> 이 때 <span class="math inline">\(l_z=0,\, 2\hbar,\, -2\hbar\)</span> 에 대해 입자가 <span class="math inline">\(l_z\)</span> 상태에서 발견될 확률 <span class="math inline">\(P(l_z)\)</span> 를 구하라.</p>
@@ -1042,7 +1050,7 @@ P(l_z=0) = \dfrac{1}{3},\, P(l_z=2)= P(l_z=-2)= \dfrac{1}{6}
 <p><br></p>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-shankar_12_3_4" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 12.11 (Shankar 12.3.4)</strong></span> 입자의 파동함수가 아래와 같다.</p>
+<p><span class="theorem-title"><strong>연습문제 13.11 (Shankar 12.3.4)</strong></span> 입자의 파동함수가 아래와 같다.</p>
 <p><span class="math display">\[
 \Psi (\rho,\,\phi) = Ae^{-\rho^2/2\Delta^2} \left(\dfrac{\rho}{\Delta} \cos \phi + \sin \phi\right).
 \]</span></p>
@@ -1469,12 +1477,12 @@ P(l_z=0) = \dfrac{1}{3},\, P(l_z=2)= P(l_z=-2)= \dfrac{1}{6}
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../../src/QM/QM_symmetry.html" class="pagination-link" aria-label="대칭">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">대칭</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">대칭</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="../../src/QM/QM_angular_momentum2.html" class="pagination-link" aria-label="3차원에서의 각운동량">
-        <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">3차원에서의 각운동량</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">3차원에서의 각운동량</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

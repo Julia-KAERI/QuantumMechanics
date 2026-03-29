@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.27">
+<meta name="generator" content="quarto-1.9.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>5&nbsp; 1차원 문제 I : 자유입자와 Bound state – 양자 역학</title>
+<title>6&nbsp; 1차원 문제 I : 자유입자와 Bound state – 양자 역학</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -34,15 +37,14 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../src/QM/QM_foundation_of_quantum_theory.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-3e2728906df7980cb53b491a61d13d7e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-221f8d40ef94b7d7736ec4c1e420c32a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -72,7 +74,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -112,7 +114,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/QM/QM.html">II. 양자역학</a></li><li class="breadcrumb-item"><a href="../../src/QM/QM_1d_bound_state.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">1차원 문제 I : 자유입자와 Bound state</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/QM/QM.html">II. 양자역학</a></li><li class="breadcrumb-item"><a href="../../src/QM/QM_1d_bound_state.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">1차원 문제 I : 자유입자와 Bound state</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -124,8 +126,8 @@ window.Quarto = {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/QM/QM.html">II. 양자역학</a></li><li class="breadcrumb-item"><a href="../../src/QM/QM_1d_bound_state.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">1차원 문제 I : 자유입자와 Bound state</span></a></li></ol></nav>
-      <h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">1차원 문제 I : 자유입자와 Bound state</span></h1>
+    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/QM/QM.html">II. 양자역학</a></li><li class="breadcrumb-item"><a href="../../src/QM/QM_1d_bound_state.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">1차원 문제 I : 자유입자와 Bound state</span></a></li></ol></nav>
+      <h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">1차원 문제 I : 자유입자와 Bound state</span></h1>
                       </div>
   </div>
     
@@ -170,20 +172,26 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../src/CHM/history.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">양자 역학 연표</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../src/CHM/mathematical_foundation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">힐베르트 공간과 브라켓 표기법</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">힐베르트 공간과 브라켓 표기법</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/CHM/CHM_symmetry_in_classical_mechanics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">고전역학에서의 대칭</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">고전역학에서의 대칭</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/CHM/some_proofs.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">몇몇 증명들</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">몇몇 증명들</span></span></a>
   </div>
 </li>
       </ul>
@@ -200,67 +208,67 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/QM/QM_foundation_of_quantum_theory.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">고전 물리학의 붕괴와 양자 원리</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">고전 물리학의 붕괴와 양자 원리</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/QM/QM_1d_bound_state.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">1차원 문제 I : 자유입자와 Bound state</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">1차원 문제 I : 자유입자와 Bound state</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/QM/QM_classical_limit.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">고전적인 극한과 불확정성 원리</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">고전적인 극한과 불확정성 원리</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/QM/QM_harmonic_oscillator.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">단순조화진동자</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">단순조화진동자</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/QM/QM_1d_scattering.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">1차원 산란</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">1차원 산란</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/QM/QM_path_integral_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">경로적분 I</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">경로적분 I</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/QM/QM_N_DoF_system.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">N 자유도 시스템</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">N 자유도 시스템</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/QM/QM_symmetry.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">대칭</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">대칭</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/QM/QM_angular_momentum1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">회전불변과 2차원에서의 각운동량</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">회전불변과 2차원에서의 각운동량</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/QM/QM_angular_momentum2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">3차원에서의 각운동량</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">3차원에서의 각운동량</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/QM/QM_sakurai_problems.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Sakurai (Rev.&nbsp;Ed.) Problems</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Sakurai (Rev.&nbsp;Ed.) Problems</span></span></a>
   </div>
 </li>
       </ul>
@@ -277,7 +285,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/QC/01_introduction.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
       </ul>
@@ -294,19 +302,19 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/AUX/entanglement.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">양자 얽힘</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">양자 얽힘</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/AUX/quantum_state.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">양자 상태</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">양자 상태</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/AUX/JSBell_against_measurement.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Against Measurement - J. S. Bell</span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Against Measurement - J. S. Bell</span></span></a>
   </div>
 </li>
       </ul>
@@ -327,23 +335,23 @@ window.Quarto = {
     <h2 id="toc-title">목차</h2>
    
   <ul>
-  <li><a href="#자유-입자" id="toc-자유-입자" class="nav-link active" data-scroll-target="#자유-입자"><span class="header-section-number">5.1</span> 자유 입자</a>
+  <li><a href="#자유-입자" id="toc-자유-입자" class="nav-link active" data-scroll-target="#자유-입자"><span class="header-section-number">6.1</span> 자유 입자</a>
   <ul class="collapse">
-  <li><a href="#sec-QM_free_particle_and_time_evolution" id="toc-sec-QM_free_particle_and_time_evolution" class="nav-link" data-scroll-target="#sec-QM_free_particle_and_time_evolution"><span class="header-section-number">5.1.1</span> 자유 입자 문제의 해와 시간 전개</a></li>
-  <li><a href="#국소화된-자유입자의-시간전개" id="toc-국소화된-자유입자의-시간전개" class="nav-link" data-scroll-target="#국소화된-자유입자의-시간전개"><span class="header-section-number">5.1.2</span> 국소화된 자유입자의 시간전개</a></li>
-  <li><a href="#sec-evolution_of_gaussian_packet" id="toc-sec-evolution_of_gaussian_packet" class="nav-link" data-scroll-target="#sec-evolution_of_gaussian_packet"><span class="header-section-number">5.1.3</span> 가우시안 wave packet 의 시간 전개</a></li>
-  <li><a href="#에너지-고유함수의-일반적인-특징" id="toc-에너지-고유함수의-일반적인-특징" class="nav-link" data-scroll-target="#에너지-고유함수의-일반적인-특징"><span class="header-section-number">5.1.4</span> 에너지 고유함수의 일반적인 특징</a></li>
+  <li><a href="#sec-QM_free_particle_and_time_evolution" id="toc-sec-QM_free_particle_and_time_evolution" class="nav-link" data-scroll-target="#sec-QM_free_particle_and_time_evolution"><span class="header-section-number">6.1.1</span> 자유 입자 문제의 해와 시간 전개</a></li>
+  <li><a href="#국소화된-자유입자의-시간전개" id="toc-국소화된-자유입자의-시간전개" class="nav-link" data-scroll-target="#국소화된-자유입자의-시간전개"><span class="header-section-number">6.1.2</span> 국소화된 자유입자의 시간전개</a></li>
+  <li><a href="#sec-evolution_of_gaussian_packet" id="toc-sec-evolution_of_gaussian_packet" class="nav-link" data-scroll-target="#sec-evolution_of_gaussian_packet"><span class="header-section-number">6.1.3</span> 가우시안 wave packet 의 시간 전개</a></li>
+  <li><a href="#에너지-고유함수의-일반적인-특징" id="toc-에너지-고유함수의-일반적인-특징" class="nav-link" data-scroll-target="#에너지-고유함수의-일반적인-특징"><span class="header-section-number">6.1.4</span> 에너지 고유함수의 일반적인 특징</a></li>
   </ul></li>
-  <li><a href="#포테셜-우물" id="toc-포테셜-우물" class="nav-link" data-scroll-target="#포테셜-우물"><span class="header-section-number">5.2</span> 포테셜 우물</a>
+  <li><a href="#포테셜-우물" id="toc-포테셜-우물" class="nav-link" data-scroll-target="#포테셜-우물"><span class="header-section-number">6.2</span> 포테셜 우물</a>
   <ul class="collapse">
-  <li><a href="#sec-QM_infinite_potential_well" id="toc-sec-QM_infinite_potential_well" class="nav-link" data-scroll-target="#sec-QM_infinite_potential_well"><span class="header-section-number">5.2.1</span> 무한 포텐셜 우물</a></li>
-  <li><a href="#sec-QM_potential_well" id="toc-sec-QM_potential_well" class="nav-link" data-scroll-target="#sec-QM_potential_well"><span class="header-section-number">5.2.2</span> 포텐셜 우물</a></li>
-  <li><a href="#sec-QM_bound_state_and_energy_quantization" id="toc-sec-QM_bound_state_and_energy_quantization" class="nav-link" data-scroll-target="#sec-QM_bound_state_and_energy_quantization"><span class="header-section-number">5.2.3</span> Bound state 와 에너지 양자화</a></li>
-  <li><a href="#sec-QM_ground_state_energy" id="toc-sec-QM_ground_state_energy" class="nav-link" data-scroll-target="#sec-QM_ground_state_energy"><span class="header-section-number">5.2.4</span> 바닥상태 에너지</a></li>
+  <li><a href="#sec-QM_infinite_potential_well" id="toc-sec-QM_infinite_potential_well" class="nav-link" data-scroll-target="#sec-QM_infinite_potential_well"><span class="header-section-number">6.2.1</span> 무한 포텐셜 우물</a></li>
+  <li><a href="#sec-QM_potential_well" id="toc-sec-QM_potential_well" class="nav-link" data-scroll-target="#sec-QM_potential_well"><span class="header-section-number">6.2.2</span> 포텐셜 우물</a></li>
+  <li><a href="#sec-QM_bound_state_and_energy_quantization" id="toc-sec-QM_bound_state_and_energy_quantization" class="nav-link" data-scroll-target="#sec-QM_bound_state_and_energy_quantization"><span class="header-section-number">6.2.3</span> Bound state 와 에너지 양자화</a></li>
+  <li><a href="#sec-QM_ground_state_energy" id="toc-sec-QM_ground_state_energy" class="nav-link" data-scroll-target="#sec-QM_ground_state_energy"><span class="header-section-number">6.2.4</span> 바닥상태 에너지</a></li>
   <li><a href="#연습문제" id="toc-연습문제" class="nav-link" data-scroll-target="#연습문제">연습문제</a></li>
   </ul></li>
-  <li><a href="#확률-흐름-밀도와-연속-방정식" id="toc-확률-흐름-밀도와-연속-방정식" class="nav-link" data-scroll-target="#확률-흐름-밀도와-연속-방정식"><span class="header-section-number">5.3</span> 확률 흐름 밀도와 연속 방정식</a></li>
-  <li><a href="#중요한-정리" id="toc-중요한-정리" class="nav-link" data-scroll-target="#중요한-정리"><span class="header-section-number">5.4</span> 중요한 정리</a></li>
+  <li><a href="#확률-흐름-밀도와-연속-방정식" id="toc-확률-흐름-밀도와-연속-방정식" class="nav-link" data-scroll-target="#확률-흐름-밀도와-연속-방정식"><span class="header-section-number">6.3</span> 확률 흐름 밀도와 연속 방정식</a></li>
+  <li><a href="#중요한-정리" id="toc-중요한-정리" class="nav-link" data-scroll-target="#중요한-정리"><span class="header-section-number">6.4</span> 중요한 정리</a></li>
   </ul>
 </nav>
     </div>
@@ -356,7 +364,7 @@ window.Quarto = {
 
 <div class="hidden">
 <p>%</p>
-%
+<p>%</p>
 <!-- \newcommand{\hom}{\text{Hom}}
 \newcommand{\iso}{\text{Iso}}
 \newcommand{\aut}{\text{Aut}} -->
@@ -365,35 +373,35 @@ window.Quarto = {
 \DeclareMathOperator*{\argmax}{argmax}
 \]</span></p>
 </div>
-<section id="자유-입자" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="자유-입자"><span class="header-section-number">5.1</span> 자유 입자</h2>
-<section id="sec-QM_free_particle_and_time_evolution" class="level3" data-number="5.1.1">
-<h3 data-number="5.1.1" class="anchored" data-anchor-id="sec-QM_free_particle_and_time_evolution"><span class="header-section-number">5.1.1</span> 자유 입자 문제의 해와 시간 전개</h3>
+<section id="자유-입자" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="자유-입자"><span class="header-section-number">6.1</span> 자유 입자</h2>
+<section id="sec-QM_free_particle_and_time_evolution" class="level3" data-number="6.1.1">
+<h3 data-number="6.1.1" class="anchored" data-anchor-id="sec-QM_free_particle_and_time_evolution"><span class="header-section-number">6.1.1</span> 자유 입자 문제의 해와 시간 전개</h3>
 <p>가장 간단한 자유입자의 경우 슈뢰딩거 방정식은 다음과 같다.</p>
 <p><span id="eq-QM_schroedinger_equation_for_free_particle"><span class="math display">\[
 i\hbar \dfrac{\partial |\psi\rangle}{\partial t} = H|\psi\rangle = \dfrac{P^2}{2m}|\psi\rangle.
-\tag{5.1}\]</span></span></p>
+\tag{6.1}\]</span></span></p>
 <p>해밀토니안이 <span class="math inline">\(P\)</span> 만의 함수이므로 <span class="math inline">\(P\)</span> 의 고유벡터 <span class="math inline">\(|p\rangle\)</span> 기저로 풀면</p>
 <p><span id="eq-QM_schroedinger_equation_for_free_particle_in_momentum_space"><span class="math display">\[
 H|p\rangle = \dfrac{p^2}{2m}|p\rangle
-\tag{5.2}\]</span></span></p>
+\tag{6.2}\]</span></span></p>
 <p>이다. 또한 <span class="math inline">\(E\)</span> 를 <span class="math inline">\(H\)</span> 의 고유값으로 갖는 고유벡터를 <span class="math inline">\(|E\rangle\)</span> 이라고 하면</p>
 <p><span id="eq-QM_schroedinger_equation_for_free_particle_in_energy_space"><span class="math display">\[
 H|E\rangle = E|E\rangle
-\tag{5.3}\]</span></span></p>
+\tag{6.3}\]</span></span></p>
 <p>이며 이로부터 <span class="math inline">\(p = \pm \sqrt{2mE}\)</span> 를 얻는다. 즉 각각의 <span class="math inline">\(|E\rangle\)</span> 상태는 <span class="math inline">\(|p=+\sqrt{2mE}\rangle\)</span> 상태와 <span class="math inline">\(|p=-\sqrt{2mE}\rangle\)</span> 상태의 선형결합으로 표현 할 수 있다. 이렇게 해밀토니안 <span class="math inline">\(H\)</span> 와 commute 한 연산자 <span class="math inline">\(A\)</span> 에 대해 <span class="math inline">\(H\)</span> 의 어떤 고유상태가 <span class="math inline">\(A\)</span> 의 서로 다른 고유상태가 섞여 있는 <strong>축퇴 상태(degenerated state)</strong> 이고 아래와 같이</p>
 <p><span id="eq-QM_solution_of_free_particle_in_momentum_space"><span class="math display">\[
 |E\rangle = a |p=+\sqrt{2mE}\rangle + b|p=-\sqrt{2mE}\rangle,\, \qquad a,\,b\in \mathbb{C},\, |a|^2+|b|^2=1
-\tag{5.4}\]</span></span></p>
+\tag{6.4}\]</span></span></p>
 <p>로 표현 할 수 있다. 또한 이 때의 시간 전개 연산자는</p>
 <p><span id="eq-QM_time_evolution_of_free_particle"><span class="math display">\[
 \mathcal{U}(t) = \int_{-\infty}^\infty |p\rangle \langle p| e^{-ip^2 t/2m\hbar}\, dp
-\tag{5.5}\]</span></span></p>
+\tag{6.5}\]</span></span></p>
 <p>이다.</p>
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-QM_shankar_5_1_1" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 5.1</strong></span> <a href="#eq-QM_time_evolution_of_free_particle" class="quarto-xref">식&nbsp;<span>5.5</span></a> 은 <span class="math inline">\(E\)</span> 에 대한 적분과 <span class="math inline">\(\pm\)</span> 인덱스에 대한 합을 이용하여 아래 식과 같음을 보여라.</p>
+<p><span class="theorem-title"><strong>연습문제 6.1</strong></span> <a href="#eq-QM_time_evolution_of_free_particle" class="quarto-xref">식&nbsp;<span>6.5</span></a> 은 <span class="math inline">\(E\)</span> 에 대한 적분과 <span class="math inline">\(\pm\)</span> 인덱스에 대한 합을 이용하여 아래 식과 같음을 보여라.</p>
 <p><span class="math display">\[
 \mathcal{U}(t) = \sum_{\alpha = \pm} \int_0^\infty \left(\dfrac{m}{\sqrt{2mE}}\right) |E,\alpha\rangle \langle E,\alpha| e^{-iEt/\hbar}\, dE
 \]</span></p>
@@ -401,12 +409,12 @@ H|E\rangle = E|E\rangle
 </div>
 <p><br></p>
 <div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(|p&gt;0\rangle = |E,\, +\rangle,\, |p&lt;0\rangle = |E,\, -\rangle\)</span>, <span class="math inline">\(dp = \sqrt{\dfrac{2m}{2E}}dE\)</span> 임을 이용하여 <a href="#eq-QM_time_evolution_of_free_particle" class="quarto-xref">식&nbsp;<span>5.5</span></a> 의 적분 변수를 <span class="math inline">\(p\to E\)</span> 로 변경하면 된다.</p>
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(|p&gt;0\rangle = |E,\, +\rangle,\, |p&lt;0\rangle = |E,\, -\rangle\)</span>, <span class="math inline">\(dp = \sqrt{\dfrac{2m}{2E}}dE\)</span> 임을 이용하여 <a href="#eq-QM_time_evolution_of_free_particle" class="quarto-xref">식&nbsp;<span>6.5</span></a> 의 적분 변수를 <span class="math inline">\(p\to E\)</span> 로 변경하면 된다.</p>
 </div>
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-QM_shankar_5_1_2" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 5.2</strong></span> <a href="#eq-QM_schroedinger_equation_for_free_particle_in_energy_space" class="quarto-xref">식&nbsp;<span>5.3</span></a> 를 해를 위치 기저 에서 구하고 <a href="#eq-QM_solution_of_free_particle_in_momentum_space" class="quarto-xref">식&nbsp;<span>5.4</span></a> 를 다시 얻어라. 즉 에너지가 <span class="math inline">\(E\)</span> 일 때의 일반해는</p>
+<p><span class="theorem-title"><strong>연습문제 6.2</strong></span> <a href="#eq-QM_schroedinger_equation_for_free_particle_in_energy_space" class="quarto-xref">식&nbsp;<span>6.3</span></a> 를 해를 위치 기저 에서 구하고 <a href="#eq-QM_solution_of_free_particle_in_momentum_space" class="quarto-xref">식&nbsp;<span>6.4</span></a> 를 다시 얻어라. 즉 에너지가 <span class="math inline">\(E\)</span> 일 때의 일반해는</p>
 <p><span class="math display">\[
 \psi_E(x) = \beta \exp \left(\dfrac{i\sqrt{2mE}x}{\hbar}\right)+ \gamma \exp \left(-\dfrac{i\sqrt{2mE}x}{\hbar}\right)
 \]</span></p>
@@ -425,7 +433,7 @@ H|E\rangle = E|E\rangle
 &amp;= \dfrac{1}{2\pi \hbar} \int_{-\infty}^\infty e^{ip(x-x')} e^{-2p^2t/2m\hbar}\, dp \\
 &amp;= \left(\dfrac{m}{2\pi \hbar i t}\right)^{1/2} e^{im(x-x')^2/2\hbar t}
 \end{aligned}
-\tag{5.6}\]</span></span></p>
+\tag{6.6}\]</span></span></p>
 <p>이다. 따라서 <span class="math inline">\(t=0\)</span> 일 때 <span class="math inline">\(\psi(x',\,t=0)\)</span> 인 상태였다면</p>
 <p><span class="math display">\[
 \psi(x,\,t) = \langle x|\psi(t)\rangle = \int\langle x|\mathcal{U}(t)|x'\rangle \langle x'|\psi(0)\rangle \, dx' = \int \mathcal{U}(x,t;x',0) \, \psi(x',\,0)\, dx'
@@ -433,21 +441,21 @@ H|E\rangle = E|E\rangle
 <p>을 통해 <span class="math inline">\(\psi(x,\,t)\)</span> 를 알 수 있다.</p>
 <p><br></p>
 </section>
-<section id="국소화된-자유입자의-시간전개" class="level3" data-number="5.1.2">
-<h3 data-number="5.1.2" class="anchored" data-anchor-id="국소화된-자유입자의-시간전개"><span class="header-section-number">5.1.2</span> 국소화된 자유입자의 시간전개</h3>
+<section id="국소화된-자유입자의-시간전개" class="level3" data-number="6.1.2">
+<h3 data-number="6.1.2" class="anchored" data-anchor-id="국소화된-자유입자의-시간전개"><span class="header-section-number">6.1.2</span> 국소화된 자유입자의 시간전개</h3>
 <p>가장 단적인 예로 <span class="math inline">\(\psi (x',\,0)= \delta (x'-x'_0)\)</span> 라면, 즉 <span class="math inline">\(t=0\)</span> 일 때 <span class="math inline">\(x'=x'_0\)</span> 로 국소화 되어 있었다면</p>
 <p><span class="math display">\[
 \psi(x,\,t) =  \mathcal{U}(x,t;x',0)
 \]</span></p>
-<p>이다. <a href="#eq-QM_time_evolution_of_operator_for_free_particle_in_X_basis" class="quarto-xref">식&nbsp;<span>5.6</span></a> 를 통해 알 수 있듯이 <span class="math inline">\(t=0\)</span> 일 때 국소화 되어 있던 입자는 시간이 지날수록 공간상으로 넓게 퍼지게 된다.</p>
+<p>이다. <a href="#eq-QM_time_evolution_of_operator_for_free_particle_in_X_basis" class="quarto-xref">식&nbsp;<span>6.6</span></a> 를 통해 알 수 있듯이 <span class="math inline">\(t=0\)</span> 일 때 국소화 되어 있던 입자는 시간이 지날수록 공간상으로 넓게 퍼지게 된다.</p>
 <p><br></p>
 </section>
-<section id="sec-evolution_of_gaussian_packet" class="level3" data-number="5.1.3">
-<h3 data-number="5.1.3" class="anchored" data-anchor-id="sec-evolution_of_gaussian_packet"><span class="header-section-number">5.1.3</span> 가우시안 wave packet 의 시간 전개</h3>
+<section id="sec-evolution_of_gaussian_packet" class="level3" data-number="6.1.3">
+<h3 data-number="6.1.3" class="anchored" data-anchor-id="sec-evolution_of_gaussian_packet"><span class="header-section-number">6.1.3</span> 가우시안 wave packet 의 시간 전개</h3>
 <p><span class="math inline">\(\Psi(x,\,0)\)</span> 이 가우시안 wave packet 이라고 하자. 즉</p>
 <p><span id="eq-QM_gaussian_wave_packet_with_definite_momentum"><span class="math display">\[
 \Psi (x,\,0) = e^{ip_0x/\hbar} \dfrac{e^{-x^2/2\Delta^2}}{(\pi \Delta^2)^{1/4}}
-\tag{5.7}\]</span></span></p>
+\tag{6.7}\]</span></span></p>
 <p>라고 하자. 이 패킷에 대해 다음은 쉽게 알 수 있다.</p>
 <p><span class="math display">\[
 \begin{aligned}
@@ -456,12 +464,12 @@ H|E\rangle = E|E\rangle
 \langle P(t=0) \rangle &amp;= p_0, \\
 \Delta P(t=0) &amp;= \hbar/(\sqrt{2}\Delta).
 \end{aligned}
-\]</span> <a href="#eq-QM_time_evolution_of_operator_for_free_particle_in_X_basis" class="quarto-xref">식&nbsp;<span>5.6</span></a> 와 <a href="#eq-QM_gaussian_wave_packet_with_definite_momentum" class="quarto-xref">식&nbsp;<span>5.7</span></a> 를 통해</p>
+\]</span> <a href="#eq-QM_time_evolution_of_operator_for_free_particle_in_X_basis" class="quarto-xref">식&nbsp;<span>6.6</span></a> 와 <a href="#eq-QM_gaussian_wave_packet_with_definite_momentum" class="quarto-xref">식&nbsp;<span>6.7</span></a> 를 통해</p>
 <p><span id="eq-gaussian_wavepacket_1"><span class="math display">\[
 \begin{aligned}
 \Psi(x,\,t) &amp;=\left[\sqrt{\pi}\left(\Delta + \dfrac{i\hbar t}{m\Delta}\right)\right]^{-1/2} \, \exp \left[\dfrac{- (x-p_0 t/m)^2}{2\Delta^2 (1+i\hbar t/m\Delta^2)}\right] \, \exp \left[\dfrac{ip_0}{\hbar} \left(x- \dfrac{p_0t}{2m}\right)\right]
 \end{aligned}
-\tag{5.8}\]</span></span></p>
+\tag{6.8}\]</span></span></p>
 <p>을 얻으며, 확률밀도 <span class="math inline">\(P(x,\,t)\)</span> 는</p>
 <p><span class="math display">\[
 P(x,\,t) = |\psi(x,\,t)|^2 = \dfrac{1}{[\pi (\Delta^2 + \hbar^2 t^2/m^2\Delta^2)]^{1/2}} \exp \left[- \dfrac{(x-(p_0/m)t)^2}{\Delta^2 + \hbar^2t^2/m^2\Delta^2}\right]
@@ -470,14 +478,14 @@ P(x,\,t) = |\psi(x,\,t)|^2 = \dfrac{1}{[\pi (\Delta^2 + \hbar^2 t^2/m^2\Delta^2)
 <p><br></p>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-QM_gaussian_wave_packet" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 5.3</strong></span> <a href="#eq-QM_gaussian_wave_packet_with_definite_momentum" class="quarto-xref">식&nbsp;<span>5.7</span></a> 로 주어진 웨이브 페킷에 대해 다음을 보여라.</p>
+<p><span class="theorem-title"><strong>연습문제 6.3</strong></span> <a href="#eq-QM_gaussian_wave_packet_with_definite_momentum" class="quarto-xref">식&nbsp;<span>6.7</span></a> 로 주어진 웨이브 페킷에 대해 다음을 보여라.</p>
 <p>  (<span class="math inline">\(1\)</span>) <span class="math inline">\(\langle P\rangle = p_0,\, \langle X\rangle = \dfrac{\langle P\rangle t}{m}\)</span>.</p>
 <p>  (<span class="math inline">\(2\)</span>) 패킷의 폭 <span class="math inline">\(\Delta X\)</span> 는 시간에 대해 다음과 같이 변한다. <span class="math inline">\(\Delta X(t) = \dfrac{\Delta}{\sqrt{2}} \left(1+ \dfrac{\hbar^2 t^2}{m^2\Delta^4}\right)^{1/2}\)</span></p>
 </div>
 </div>
 <p><br></p>
 <div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span><a href="#eq-gaussian_wavepacket_1" class="quarto-xref">식&nbsp;<span>5.8</span></a> 에서 맨 앞의 상수 텀을 <span class="math inline">\(A\)</span>, 두번제 익스포넨셜의 <span class="math inline">\(-(x-p_0t/m)^2\)</span> 에 대한 텀을 <span class="math inline">\(f(x,\,t)\)</span>, 그리고 익스포넨셜의 <span class="math inline">\((x-p_0t/2m)\)</span> 에 대한 텀을 <span class="math inline">\(g(x,\,t)\)</span> 라고 하자. 즉 <span class="math inline">\(\psi(x,\,t) = Af(x,\,t)\,g(x,\,t)\)</span> 라고 하자. <span class="math inline">\(|g(x,\,t)|=1\)</span> 이며 <span class="math inline">\(|A|^2\int |f(x,\,t)|^2\,dx=1\)</span> 임을 안다.</p>
+<p><span class="proof-title"><em>(해답)</em>. </span><a href="#eq-gaussian_wavepacket_1" class="quarto-xref">식&nbsp;<span>6.8</span></a> 에서 맨 앞의 상수 텀을 <span class="math inline">\(A\)</span>, 두번제 익스포넨셜의 <span class="math inline">\(-(x-p_0t/m)^2\)</span> 에 대한 텀을 <span class="math inline">\(f(x,\,t)\)</span>, 그리고 익스포넨셜의 <span class="math inline">\((x-p_0t/2m)\)</span> 에 대한 텀을 <span class="math inline">\(g(x,\,t)\)</span> 라고 하자. 즉 <span class="math inline">\(\psi(x,\,t) = Af(x,\,t)\,g(x,\,t)\)</span> 라고 하자. <span class="math inline">\(|g(x,\,t)|=1\)</span> 이며 <span class="math inline">\(|A|^2\int |f(x,\,t)|^2\,dx=1\)</span> 임을 안다.</p>
 <p>(<span class="math inline">\(1\)</span>) <span class="math inline">\(\langle P(t)\rangle\)</span> 을 계산한다.</p>
 <p><span class="math display">\[
 \begin{aligned}
@@ -504,12 +512,12 @@ P(x,\,t) = |\psi(x,\,t)|^2 = \dfrac{1}{[\pi (\Delta^2 + \hbar^2 t^2/m^2\Delta^2)
 <p>(<span class="math inline">\(2\)</span>) …</p>
 </div>
 <p><br></p>
-<p><a href="#exr-QM_gaussian_wave_packet" class="quarto-xref">연습문제&nbsp;<span>5.3</span></a> 의 (<span class="math inline">\(1\)</span>) 을 보자. 우리는 고전역학에서 <span class="math inline">\(t=0\)</span> 일 때 <span class="math inline">\(x=0\)</span> 인 자유입자는 <span class="math inline">\(x=pt/m\)</span> 를 따른다는 것을 안다. 양자역학에서는 통계적으로 <span class="math inline">\(X\)</span> 의 기대값 <span class="math inline">\(\langle X\rangle\)</span> 과 <span class="math inline">\(P\)</span> 의 기대값 <span class="math inline">\(\langle P\rangle\)</span> 사이에 <span class="math inline">\(\langle X\rangle = \langle P\rangle t/m\)</span> 의 관계를 갖는데 이것은 <strong>에렌페스트 정리(Ehrenfest theorem)</strong> 의 결과중 하나이다.</p>
-<p><a href="#exr-QM_gaussian_wave_packet" class="quarto-xref">연습문제&nbsp;<span>5.3</span></a> 의 (<span class="math inline">\(2\)</span>) 는 웨이프 패킷의 폭, 즉 위치에 대한 불확정성이 시간에 따라 점점 증가함을 보여준다. 다음의 예를 보자</p>
+<p><a href="#exr-QM_gaussian_wave_packet" class="quarto-xref">연습문제&nbsp;<span>6.3</span></a> 의 (<span class="math inline">\(1\)</span>) 을 보자. 우리는 고전역학에서 <span class="math inline">\(t=0\)</span> 일 때 <span class="math inline">\(x=0\)</span> 인 자유입자는 <span class="math inline">\(x=pt/m\)</span> 를 따른다는 것을 안다. 양자역학에서는 통계적으로 <span class="math inline">\(X\)</span> 의 기대값 <span class="math inline">\(\langle X\rangle\)</span> 과 <span class="math inline">\(P\)</span> 의 기대값 <span class="math inline">\(\langle P\rangle\)</span> 사이에 <span class="math inline">\(\langle X\rangle = \langle P\rangle t/m\)</span> 의 관계를 갖는데 이것은 <strong>에렌페스트 정리(Ehrenfest theorem)</strong> 의 결과중 하나이다.</p>
+<p><a href="#exr-QM_gaussian_wave_packet" class="quarto-xref">연습문제&nbsp;<span>6.3</span></a> 의 (<span class="math inline">\(2\)</span>) 는 웨이프 패킷의 폭, 즉 위치에 대한 불확정성이 시간에 따라 점점 증가함을 보여준다. 다음의 예를 보자</p>
 <p><br></p>
 <div class="border" style="background-color:#F2F4F4  ;padding:5px;">
 <div id="exm-macroscopic_propagation" class="theorem example">
-<p><span class="theorem-title"><strong>예제 5.1</strong></span> 질량 1 <span class="math inline">\(g\)</span> 인 입자가 <span class="math inline">\(t=0\)</span> 에서 양성자 폭 만큼인 <span class="math inline">\(10^{-15}\, \text{m}\)</span> 만큼의 폭으로 위치가 정해져있다. 이 때 속도의 불확정성 <span class="math inline">\(\Delta v\)</span> 는</p>
+<p><span class="theorem-title"><strong>예제 6.1</strong></span> 질량 1 <span class="math inline">\(g\)</span> 인 입자가 <span class="math inline">\(t=0\)</span> 에서 양성자 폭 만큼인 <span class="math inline">\(10^{-15}\, \text{m}\)</span> 만큼의 폭으로 위치가 정해져있다. 이 때 속도의 불확정성 <span class="math inline">\(\Delta v\)</span> 는</p>
 <p><span class="math display">\[
 \Delta v(t=0) \approx \dfrac{\hbar}{\sqrt{2} m\Delta} \approx 10^{-16}\, \text{m/sec}
 \]</span></p>
@@ -523,15 +531,15 @@ t \approx 430,000 \text{ year}
 <p><br></p>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-QM_shankar_5_1_3" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 5.4 (가우시안 패킷 문제에 대한 다른 접근)</strong></span> 자유입자에 대해 <span class="math inline">\(\mathcal{U}(t) = e^{-iHt/\hbar}\)</span> 이며 <span class="math inline">\(p = -i\hbar \dfrac{d}{dx}\)</span> 이므로</p>
+<p><span class="theorem-title"><strong>연습문제 6.4 (가우시안 패킷 문제에 대한 다른 접근)</strong></span> 자유입자에 대해 <span class="math inline">\(\mathcal{U}(t) = e^{-iHt/\hbar}\)</span> 이며 <span class="math inline">\(p = -i\hbar \dfrac{d}{dx}\)</span> 이므로</p>
 <p><span id="eq-QM_another_form_of_gaussian_packet"><span class="math display">\[
 \mathcal{U}(t) = \exp \left[\dfrac{i}{\hbar} \left(\dfrac{\hbar^2 t}{2m} \dfrac{d^2}{dx^2}\right)\right] = \sum_{k=0}^\infty \dfrac{1}{k!} \left(\dfrac{i\hbar t}{2m}\right)^k\dfrac{d^{2k}}{dx^{2k}}
-\tag{5.9}\]</span></span></p>
-<p>로 쓸 수 있다. 초기 상태를 <a href="#eq-QM_gaussian_wave_packet_with_definite_momentum" class="quarto-xref">식&nbsp;<span>5.7</span></a> 에서 <span class="math inline">\(p_0=0\)</span>, <span class="math inline">\(\Delta =1\)</span> 로 잡으면</p>
+\tag{6.9}\]</span></span></p>
+<p>로 쓸 수 있다. 초기 상태를 <a href="#eq-QM_gaussian_wave_packet_with_definite_momentum" class="quarto-xref">식&nbsp;<span>6.7</span></a> 에서 <span class="math inline">\(p_0=0\)</span>, <span class="math inline">\(\Delta =1\)</span> 로 잡으면</p>
 <p><span class="math display">\[
 \psi(x,\,0) = \dfrac{e^{-x^2/2}}{\pi^{1/4}}
 \]</span></p>
-<p>이다. <a href="#eq-QM_another_form_of_gaussian_packet" class="quarto-xref">식&nbsp;<span>5.9</span></a> 를 이용하여 <span class="math inline">\(\psi(x,\,t)\)</span> 를 구하고 <a href="#eq-gaussian_wavepacket_1" class="quarto-xref">식&nbsp;<span>5.8</span></a> 와 비교하라</p>
+<p>이다. <a href="#eq-QM_another_form_of_gaussian_packet" class="quarto-xref">식&nbsp;<span>6.9</span></a> 를 이용하여 <span class="math inline">\(\psi(x,\,t)\)</span> 를 구하고 <a href="#eq-gaussian_wavepacket_1" class="quarto-xref">식&nbsp;<span>6.8</span></a> 와 비교하라</p>
 </div>
 </div>
 <p><br></p>
@@ -593,7 +601,7 @@ t \approx 430,000 \text{ year}
 <p><br></p>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-shankar_5_1_4" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 5.5</strong></span> 아래와 같은 파동함수를 생각하자.</p>
+<p><span class="theorem-title"><strong>연습문제 6.5</strong></span> 아래와 같은 파동함수를 생각하자.</p>
 <p><span class="math display">\[
 \psi(x,\,0) = \left\{\begin{array}{ll} \sin \left(\dfrac{\pi x}{L}\right), \qquad &amp; |x|\le \dfrac{L}{2} \\ 0 &amp;|x|&gt;\dfrac{L}{2}\end{array}\right. .
 \]</span></p>
@@ -618,8 +626,8 @@ t \approx 430,000 \text{ year}
 </div>
 <p><br></p>
 </section>
-<section id="에너지-고유함수의-일반적인-특징" class="level3" data-number="5.1.4">
-<h3 data-number="5.1.4" class="anchored" data-anchor-id="에너지-고유함수의-일반적인-특징"><span class="header-section-number">5.1.4</span> 에너지 고유함수의 일반적인 특징</h3>
+<section id="에너지-고유함수의-일반적인-특징" class="level3" data-number="6.1.4">
+<h3 data-number="6.1.4" class="anchored" data-anchor-id="에너지-고유함수의-일반적인-특징"><span class="header-section-number">6.1.4</span> 에너지 고유함수의 일반적인 특징</h3>
 <p>포텐셜 <span class="math inline">\(V(x)\)</span> 에 대한 시간 독립 슈뢰딩거 방정식의 해는 다음을 만족한다.</p>
 <p><span class="math display">\[\
 \dfrac{d^2\psi(x)}{dx^2} = - \dfrac{2m(E-V(x))}{\hbar^2}\psi(x)
@@ -628,38 +636,38 @@ t \approx 430,000 \text{ year}
 <p><br></p>
 </section>
 </section>
-<section id="포테셜-우물" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="포테셜-우물"><span class="header-section-number">5.2</span> 포테셜 우물</h2>
-<section id="sec-QM_infinite_potential_well" class="level3" data-number="5.2.1">
-<h3 data-number="5.2.1" class="anchored" data-anchor-id="sec-QM_infinite_potential_well"><span class="header-section-number">5.2.1</span> 무한 포텐셜 우물</h3>
+<section id="포테셜-우물" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="포테셜-우물"><span class="header-section-number">6.2</span> 포테셜 우물</h2>
+<section id="sec-QM_infinite_potential_well" class="level3" data-number="6.2.1">
+<h3 data-number="6.2.1" class="anchored" data-anchor-id="sec-QM_infinite_potential_well"><span class="header-section-number">6.2.1</span> 무한 포텐셜 우물</h3>
 <div id="fig-QM_infinite_potential_well" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-QM_infinite_potential_well-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="figures/infinite_potential_well.png" class="img-fluid figure-img" width="600">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-QM_infinite_potential_well-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-그림&nbsp;5.1: (좌) 무한 포텐셜 우물, (우) 가장 낮은 두 파동함수
+그림&nbsp;6.1: (좌) 무한 포텐셜 우물, (우) 가장 낮은 두 파동함수
 </figcaption>
 </figure>
 </div>
-<p>포텐셜 <span class="math inline">\(V(x)\)</span> 가 다음과 같이 주어졌다고 하자. (<a href="#fig-QM_infinite_potential_well" class="quarto-xref">그림&nbsp;<span>5.1</span></a>)</p>
+<p>포텐셜 <span class="math inline">\(V(x)\)</span> 가 다음과 같이 주어졌다고 하자. (<a href="#fig-QM_infinite_potential_well" class="quarto-xref">그림&nbsp;<span>6.1</span></a>)</p>
 <p><span class="math display">\[
 V(x) = \left\{\begin{array}{ll}  0, \qquad &amp; |x|&lt;\dfrac{L}{2} \\ \infty, &amp; |x|\ge\dfrac{L}{2} \end{array} \right.
 \]</span></p>
 <p>이 때 <span class="math inline">\(X\)</span> 기저에서의 슈뢰딩거 방정식은 다음과 같다.</p>
 <p><span id="eq-QM_particle_in_box_1"><span class="math display">\[
 \dfrac{d^2 \psi(x)}{dx^2} + \dfrac{2m[E-V(x)]}{\hbar^2}\psi(x) = 0
-\tag{5.10}\]</span></span></p>
-<p>구간을 <span class="math inline">\(V(x)\)</span> 의 특성에 따라 <a href="#fig-QM_infinite_potential_well" class="quarto-xref">그림&nbsp;<span>5.1</span></a> 과 같이 <span class="math inline">\(\rm{I},\, \rm{II},\, \rm{III}\)</span> 으로 나누자. <span class="math inline">\(\rm{I},\, \rm{III}\)</span> 구간에서의 해 <span class="math inline">\(\psi_\infty(x)\)</span>를 우선 구해보자. <span class="math inline">\(V_0 &gt;E\)</span> 에 대해</p>
+\tag{6.10}\]</span></span></p>
+<p>구간을 <span class="math inline">\(V(x)\)</span> 의 특성에 따라 <a href="#fig-QM_infinite_potential_well" class="quarto-xref">그림&nbsp;<span>6.1</span></a> 과 같이 <span class="math inline">\(\rm{I},\, \rm{II},\, \rm{III}\)</span> 으로 나누자. <span class="math inline">\(\rm{I},\, \rm{III}\)</span> 구간에서의 해 <span class="math inline">\(\psi_\infty(x)\)</span>를 우선 구해보자. <span class="math inline">\(V_0 &gt;E\)</span> 에 대해</p>
 <p><span class="math display">\[
 \dfrac{d^2\psi_\infty(x)}{dx^2} + \dfrac{2m(E-V_0)}{\hbar^2} \psi_\infty(x)=0
 \]</span></p>
 <p>의 해는 <span class="math inline">\(\kappa = \sqrt{2m(V_0-E)/\hbar^2}\)</span> 에 대해</p>
 <p><span id="eq-QM_particle_in_box_2"><span class="math display">\[
 \psi_\infty(x) = Ae^{\kappa x} + Be^{-\kappa x}
-\tag{5.11}\]</span></span></p>
+\tag{6.11}\]</span></span></p>
 <p>이다. 우선 <span class="math inline">\(x \ge L/2\)</span> 인 <span class="math inline">\(\rm{III}\)</span> 구간에서의 파동함수 <span class="math inline">\(\psi_{\rm{III}}(x)\)</span> 를 생각해보자. <span class="math inline">\(V_0 \to \infty\)</span> 극한을 취하면 <span class="math inline">\(A=0\)</span> 이 되어야지만 <span class="math inline">\(\psi_\rm{III}(x)\)</span> 가 유의미한 함수가 되며 <span class="math inline">\(e^{-\kappa x} \to 0\)</span> 이 된다. 즉 <span class="math inline">\(\psi_\rm{III}(x) = 0\)</span> 이다. 마찬가지로 <span class="math inline">\(\rm{I}\)</span> 구간에서의 파동함수 <span class="math inline">\(\psi_\rm{I}(x) = 0\)</span> 이 되어야만 한다.</p>
-<p>이제 <span class="math inline">\(\rm{II}\)</span> 구간의 파동함수 <span class="math inline">\(\psi_{\rm{II}(x)}\)</span> 를 생각해보자. <span class="math inline">\(k = \sqrt{2mE/\hbar^2}\)</span> 라고 하면 <a href="#eq-QM_particle_in_box_1" class="quarto-xref">식&nbsp;<span>5.10</span></a> 의 해는</p>
+<p>이제 <span class="math inline">\(\rm{II}\)</span> 구간의 파동함수 <span class="math inline">\(\psi_{\rm{II}(x)}\)</span> 를 생각해보자. <span class="math inline">\(k = \sqrt{2mE/\hbar^2}\)</span> 라고 하면 <a href="#eq-QM_particle_in_box_1" class="quarto-xref">식&nbsp;<span>6.10</span></a> 의 해는</p>
 <p><span class="math display">\[
 \psi_{\rm{II}}(x) = Ae^{ikx} + Be^{-ikx}
 \]</span></p>
@@ -674,33 +682,33 @@ kL = n\pi,\qquad A= (-1)^n B \qquad ;n\in \mathbb{Z}
 <p>이어야 한다. 이것을 만족시키는 <span class="math inline">\(\psi(x)\)</span> 를 구하고 정규화 (<span class="math inline">\(\int |\psi(x)|^2\,dx=1\)</span>) 시키면 다음과 같은 해를 구한다. 각각의 <span class="math inline">\(n\)</span> 에 대한 해를 <span class="math inline">\(\psi_n(x)\)</span> 라고 하였다.</p>
 <p><span id="eq-QM_wavefunction_of_infinite_potential_wall"><span class="math display">\[
 \psi_n (x) = \left\{ \begin{array}{ll} \sqrt{\dfrac{2}{L}} \sin \left(\dfrac{n \pi x}{L}\right), \qquad &amp;n \text{ is even} \\  \sqrt{\dfrac{2}{L}} \cos \left(\dfrac{n \pi x}{L}\right) &amp;n \text{ is odd} \end{array}\right.
-\tag{5.12}\]</span></span></p>
+\tag{6.12}\]</span></span></p>
 <p><span class="math inline">\(n\)</span> 이 짝수이면 <span class="math inline">\(\psi_n(-x) = -\psi_n(x)\)</span> 이며 <span class="math inline">\(n\)</span> 이 홀수이면 <span class="math inline">\(\psi_n(-x) = \psi_n(x)\)</span> 이다. 즉 <span class="math inline">\(n\)</span> 이 짝수이면 <span class="math inline">\(\psi_n(x)\)</span> 는 홀함수(odd function) 이며 <span class="math inline">\(n\)</span> 이 홀수이면 짝함수(even function) 이다. 경계조건에 의해 <span class="math inline">\(k= \sqrt{2mE/\hbar^2}\)</span> 은 <span class="math inline">\(kL=n\pi\)</span> 를 만족해야 한다. 따라서 <span class="math inline">\(H\)</span> 의 고유값은 <span class="math inline">\(n\in \mathbb{Z}\)</span> 에 대해</p>
 <p><span id="eq-QM_energy_eigenvalues_of_infinite_potentail_wall"><span class="math display">\[
 E_n = \dfrac{\hbar^2 \pi^2 n^2}{2mL^2}
-\tag{5.13}\]</span></span></p>
+\tag{6.13}\]</span></span></p>
 <p>이다. 즉 박스 안의 입자가 가질 수 있는 에너지는 불연속적이다. 이렇게 어떤 동역학적인 값에 대해 불연속적인 값만 허용될 때 이를 <strong>양자화(quantization)</strong> 라고 한다. 또한 파동함수는 <span class="math inline">\(|x|&lt;L/2\)</span> 영역에서만 <span class="math inline">\(0\)</span> 이 아닌 값을 갖는다. 이렇게 파동함수 <span class="math inline">\(\psi(x)\)</span> 가</p>
 <p><span class="math display">\[
 \lim_{|x| \to \infty} \psi (x) = 0
 \]</span></p>
-<p>일 때 이 상태를 <strong>bound state</strong> 라고 한다. 고전적인 bound state 는 <span class="math inline">\(V(x)\)</span> 가 <span class="math inline">\(E\)</span> 보다 작은 영역이 국소화 되어 있을 때 발생하며, 양자역학도 마찬가지다. 더군다나 양자역학에서는 bound state 의 에너지는 필연적으로 양자화된다(see <a href="#sec-QM_bound_state_and_energy_quantization" class="quarto-xref"><span> 5.2.3</span></a>).</p>
+<p>일 때 이 상태를 <strong>bound state</strong> 라고 한다. 고전적인 bound state 는 <span class="math inline">\(V(x)\)</span> 가 <span class="math inline">\(E\)</span> 보다 작은 영역이 국소화 되어 있을 때 발생하며, 양자역학도 마찬가지다. 더군다나 양자역학에서는 bound state 의 에너지는 필연적으로 양자화된다(see <a href="#sec-QM_bound_state_and_energy_quantization" class="quarto-xref"><span> 6.2.3</span></a>).</p>
 <p><br></p>
 </section>
-<section id="sec-QM_potential_well" class="level3" data-number="5.2.2">
-<h3 data-number="5.2.2" class="anchored" data-anchor-id="sec-QM_potential_well"><span class="header-section-number">5.2.2</span> 포텐셜 우물</h3>
+<section id="sec-QM_potential_well" class="level3" data-number="6.2.2">
+<h3 data-number="6.2.2" class="anchored" data-anchor-id="sec-QM_potential_well"><span class="header-section-number">6.2.2</span> 포텐셜 우물</h3>
 <div id="fig-potential_well" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-potential_well-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="figures/potential_well.png" class="img-fluid figure-img" width="300">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-potential_well-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-그림&nbsp;5.2: 포텐셜 우물
+그림&nbsp;6.2: 포텐셜 우물
 </figcaption>
 </figure>
 </div>
 <p>포텐셜 <span class="math inline">\(V(x)\)</span> 가 <span class="math inline">\(V_0&gt;0\)</span> 에 대해 다음과 같이 주어졌다고 하자. <span id="eq-QM_1d_potential_wall_potential"><span class="math display">\[
 V(x) = \left\{\begin{array}{ll}  0, \qquad &amp; |x|&lt;a \\ V_0, &amp; |x|\ge a \end{array} \right.
-\tag{5.14}\]</span></span></p>
+\tag{6.14}\]</span></span></p>
 <p><span class="math inline">\(0&lt;E&lt;V_0\)</span> 인 경우를 생각해보자 이 경우 <span class="math inline">\(\rm{I}\)</span> 과 <span class="math inline">\(\rm{III}\)</span> 은 고전적으로 금지된 영역이다. 그러나 무한 포텐셜 우물에서와는 다르게 <span class="math inline">\(\rm{I}\)</span> 과 <span class="math inline">\(\rm{III}\)</span> 의 파동함수는 <span class="math inline">\(0\)</span> 이 아니며 <span class="math inline">\(\kappa = \sqrt{2m(V_0-E)/\hbar^2}\)</span>, <span class="math inline">\(k=\sqrt{2mE}/\hbar^2\)</span> 에 대해 아래와 같다.</p>
 <p><span id="eq-QM_1d_potential_wall_initial_wave_function"><span class="math display">\[
 \begin{aligned}
@@ -708,7 +716,7 @@ V(x) = \left\{\begin{array}{ll}  0, \qquad &amp; |x|&lt;a \\ V_0, &amp; |x|\ge a
 \psi_{\rm{II}}(x) &amp;= A\cos (k x) + B \sin (k x), \\[0.3em]
 \psi_\rm{III}(x) &amp;= A_3 e^{-\kappa x}.
 \end{aligned}
-\tag{5.15}\]</span></span></p>
+\tag{6.15}\]</span></span></p>
 <p>이제 파동함수와 그 도함수의 연속 조건으로부터</p>
 <p><span id="eq-QM_1d_potential_wall_boundary_condition_1"><span class="math display">\[
 \begin{aligned}
@@ -717,21 +725,21 @@ A_1 e^{-\kappa a} &amp;= A \cos (-ka) + B \sin (-k a), \\
 A_3 e^{-k\kappa a} &amp;= A \cos (ka) + B \sin (k a), \\
 -\kappa A_3 e^{-\kappa a} &amp; = -kA \sin (k a) + kB \cos (k a)
 \end{aligned}
-\tag{5.16}\]</span></span></p>
+\tag{6.16}\]</span></span></p>
 <p>첫번째 두 식과 마지막 두 식으로부터,</p>
 <p><span id="eq-QM_1d_potential_wall_boundary_condition_2"><span class="math display">\[
 \begin{aligned}
 \kappa (A \cos (k a) - B \sin (k a)) &amp;= k(A \sin (k a) + B \cos (k a)), \\
 -\kappa (A \cos (k a) + B \sin (k a)) &amp;= -k (A\sin (k a) - B \cos (k a))
 \end{aligned}
-\tag{5.17}\]</span></span></p>
+\tag{6.17}\]</span></span></p>
 <p>를 얻는다. 두 식의 양변을 빼주면 <span class="math inline">\(B=0,\, \kappa \cos (ka) = k \sin (ka)\)</span> 을 얻으며, 두 식의 양변을 더하면 <span class="math inline">\(A=0,\,\kappa \sin (ka) = -k \cos (ka)\)</span> 을 얻는다. 즉 경계조건으로부터 다음 두 조건중 하나를 만족해야 한다는 것을 안다.</p>
 <p>  (<span class="math inline">\(1\)</span>) <span class="math inline">\(\kappa = k \tan (ka)\)</span>, <span class="math inline">\(\psi_{\rm{II}}(x) = A \cos (kx)\)</span>,</p>
 <p>  (<span class="math inline">\(2\)</span>) <span class="math inline">\(\kappa = -k \cot (ka)\)</span>, <span class="math inline">\(\psi_{\rm{II}}(x) = B \sin (kx)\)</span></p>
 <p>여기서 (<span class="math inline">\(1\)</span>) 은 짝함수 해이며 (<span class="math inline">\(2\)</span>) 는 홀함수 해이다. 또한 우리는 <span class="math inline">\(\kappa^2 + k^2 = 2mV_0/\hbar^2\)</span> 임을 안다. <span class="math inline">\(\kappa &gt;0\)</span> 이므로</p>
 <p><span id="eq-QM_1d_potential_wall_descrete_condition"><span class="math display">\[
 \kappa = \sqrt{2mV_0/\hbar^2 - k^2}
-\tag{5.18}\]</span></span></p>
+\tag{6.18}\]</span></span></p>
 <p>를 만족해야 한다. 아래 그림은 짝함수(<span class="math inline">\((a)\)</span>) 와 홀함수(<span class="math inline">\((b)\)</span>) 의 경우에 대해 허용된 <span class="math inline">\(\kappa\)</span> 값을 보여준다. 즉 무한 포텐셜 우물이 아닌 일반적인 포텐셜 우물이더라도 bound state 일 때 에너지가 양자화 된다는 것을 안다.</p>
 <div id="fig-QM_energy_qunatization_of_potential_well" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -739,7 +747,7 @@ A_3 e^{-k\kappa a} &amp;= A \cos (ka) + B \sin (k a), \\
 <img src="figures/solution_of_potential_well.png" class="img-fluid figure-img" width="800">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-QM_energy_qunatization_of_potential_well-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-그림&nbsp;5.3: (<span class="math inline">\(a\)</span>) 짝함수의 경우에서의 허용된 <span class="math inline">\(\kappa\)</span> 값 (<span class="math inline">\(b\)</span>) 홀함수의 경우 허용된 <span class="math inline">\(\kappa\)</span> 값. 스케일을 위해 가로축을 <span class="math inline">\(ka\)</span> 로, 세로축을 <span class="math inline">\(\kappa a\)</span> 로 잡았다.
+그림&nbsp;6.3: (<span class="math inline">\(a\)</span>) 짝함수의 경우에서의 허용된 <span class="math inline">\(\kappa\)</span> 값 (<span class="math inline">\(b\)</span>) 홀함수의 경우 허용된 <span class="math inline">\(\kappa\)</span> 값. 스케일을 위해 가로축을 <span class="math inline">\(ka\)</span> 로, 세로축을 <span class="math inline">\(\kappa a\)</span> 로 잡았다.
 </figcaption>
 </figure>
 </div>
@@ -750,8 +758,8 @@ A_3 e^{-k\kappa a} &amp;= A \cos (ka) + B \sin (k a), \\
 <p>지금까지 <span class="math inline">\(E&lt;V_0\)</span> 인 경우를 살펴보았다. <span class="math inline">\(E&gt;V_0\)</span> 인 경우는 그 해가 모두 <span class="math inline">\(\sin\)</span> 함수와 <span class="math inline">\(\cos\)</span> 함수의 중첩이기 때문에 파동함수가 전 영역에 걸쳐 있으며 에너지도 양자화 되지 않는데. 이것을 보이는것은 어렵지 않다.</p>
 <p><br></p>
 </section>
-<section id="sec-QM_bound_state_and_energy_quantization" class="level3" data-number="5.2.3">
-<h3 data-number="5.2.3" class="anchored" data-anchor-id="sec-QM_bound_state_and_energy_quantization"><span class="header-section-number">5.2.3</span> Bound state 와 에너지 양자화</h3>
+<section id="sec-QM_bound_state_and_energy_quantization" class="level3" data-number="6.2.3">
+<h3 data-number="6.2.3" class="anchored" data-anchor-id="sec-QM_bound_state_and_energy_quantization"><span class="header-section-number">6.2.3</span> Bound state 와 에너지 양자화</h3>
 <p>앞서의 무한포텐셜 우물과 포텐셜 우물의 경우 상태가 bound state 일 경우 에너지가 양자화된다. 이것은 일반적으로 bound state 에서 성립하는데 여기서는 이것을 보이고자 한다. 엄밀한 수학적 증명은 아니며 일종의 스케치이다.</p>
 <p>정해진 <span class="math inline">\(E\)</span> 에 대해 <span class="math inline">\(V(x)\)</span> 는 유한하며 다음의 성질을 가진다고 가정하자.</p>
 <p><span class="math display">\[
@@ -765,13 +773,13 @@ A_3 e^{-k\kappa a} &amp;= A \cos (ka) + B \sin (k a), \\
 <p>  (<span class="math inline">\(1\)</span>) 양 끝단의 파동방정식은 <span class="math inline">\(\kappa_1&gt;0,\, \kappa_{N}&gt;0\)</span> 에 대해 <span class="math inline">\(\psi_1(x) = A_1 e^{\kappa_1 x}\)</span>, <span class="math inline">\(\psi_{N}(x) = A_{N}e^{-\kappa_N x}\)</span> 이며,</p>
 <p>  (<span class="math inline">\(2\)</span>) 양 끝단이 아닌 경우 <span class="math inline">\(V_i &lt; E\)</span> 이면 <span class="math inline">\(\psi_i(x) = A_i e^{ik_i x} + B_i e^{-k_ix}\)</span> 이다.</p>
 <p>  (<span class="math inline">\(3\)</span>) 역시 양 끝단이 아닌경우 <span class="math inline">\(V_i &gt; E\)</span> 이면 <span class="math inline">\(\psi_i (x) = A_i e^{\kappa_i x}+ B_i e^{-\kappa_i x}\)</span> 이다.</p>
-<p>양 끝단을 기술하는 파동함수 <span class="math inline">\(\psi_1\)</span> 과 <span class="math inline">\(\psi_N\)</span> 은 각각 하나의 미지수 <span class="math inline">\(A_1,\,A_N\)</span> 를 가진다. 그 외의 구간에서는 두개의 미지수 <span class="math inline">\(A_i\)</span> 와 <span class="math inline">\(B_i\)</span> 를 가진다. 이 미지수는 파동함수 <span class="math inline">\(\psi_i(x)\)</span> 와 그 미분인 <span class="math inline">\(\psi'_i(x)\)</span> 가 인접한 <span class="math inline">\(\psi_{i-1}(x),\, \psi'_{i-1}(x)\)</span> 그리고 <span class="math inline">\(\psi_{i+1}(x),\, \psi'_{i+1}(x)\)</span> 와 연속이어야 한다는 조건으로부터 결정 될 수 있다. 즉 우리는 <span class="math inline">\(2\times (N-2)+ 2 = 2N-2\)</span> 개의 미지수에 대해 <span class="math inline">\(2N-2\)</span> 개의 경계조건을 가진다. 앞서의 포텐셜 우물에서의 <a href="#eq-QM_1d_potential_wall_boundary_condition_1" class="quarto-xref">식&nbsp;<span>5.16</span></a> 와 같은 식이다. 이로부터 <span class="math inline">\(2N-2\)</span> 개의 미지수에 대한 <span class="math inline">\(QA=0\)</span> 꼴의 선형방정식을 얻는다. 여기서 <span class="math inline">\(A \in \mathbb{C}^{2N-2}\)</span> 의 값에 어떤 <span class="math inline">\(0\)</span> 이 아닌 값을 곱하더라도 식은 성립하며, 이를 이용하여 파동함수를 정규화 하는데 사용 할 수 있지만 고유값을 구하는데는 사용하지 않는 값이다.</p>
-<p>우리는 <span class="math inline">\(2N-2\)</span> 개의 <span class="math inline">\(\kappa_i\)</span> 혹은 <span class="math inline">\(k_i\)</span> 값을 가지고 있으며, 허용된 값들은 연속이다. 여기에 <a href="#eq-QM_1d_potential_wall_descrete_condition" class="quarto-xref">식&nbsp;<span>5.18</span></a> 와 같은 조건이 추가되면서 연속의 조건이 깨지게 된다.</p>
+<p>양 끝단을 기술하는 파동함수 <span class="math inline">\(\psi_1\)</span> 과 <span class="math inline">\(\psi_N\)</span> 은 각각 하나의 미지수 <span class="math inline">\(A_1,\,A_N\)</span> 를 가진다. 그 외의 구간에서는 두개의 미지수 <span class="math inline">\(A_i\)</span> 와 <span class="math inline">\(B_i\)</span> 를 가진다. 이 미지수는 파동함수 <span class="math inline">\(\psi_i(x)\)</span> 와 그 미분인 <span class="math inline">\(\psi'_i(x)\)</span> 가 인접한 <span class="math inline">\(\psi_{i-1}(x),\, \psi'_{i-1}(x)\)</span> 그리고 <span class="math inline">\(\psi_{i+1}(x),\, \psi'_{i+1}(x)\)</span> 와 연속이어야 한다는 조건으로부터 결정 될 수 있다. 즉 우리는 <span class="math inline">\(2\times (N-2)+ 2 = 2N-2\)</span> 개의 미지수에 대해 <span class="math inline">\(2N-2\)</span> 개의 경계조건을 가진다. 앞서의 포텐셜 우물에서의 <a href="#eq-QM_1d_potential_wall_boundary_condition_1" class="quarto-xref">식&nbsp;<span>6.16</span></a> 와 같은 식이다. 이로부터 <span class="math inline">\(2N-2\)</span> 개의 미지수에 대한 <span class="math inline">\(QA=0\)</span> 꼴의 선형방정식을 얻는다. 여기서 <span class="math inline">\(A \in \mathbb{C}^{2N-2}\)</span> 의 값에 어떤 <span class="math inline">\(0\)</span> 이 아닌 값을 곱하더라도 식은 성립하며, 이를 이용하여 파동함수를 정규화 하는데 사용 할 수 있지만 고유값을 구하는데는 사용하지 않는 값이다.</p>
+<p>우리는 <span class="math inline">\(2N-2\)</span> 개의 <span class="math inline">\(\kappa_i\)</span> 혹은 <span class="math inline">\(k_i\)</span> 값을 가지고 있으며, 허용된 값들은 연속이다. 여기에 <a href="#eq-QM_1d_potential_wall_descrete_condition" class="quarto-xref">식&nbsp;<span>6.18</span></a> 와 같은 조건이 추가되면서 연속의 조건이 깨지게 된다.</p>
 <p>1차원 bound state 의 양자화는 <span class="math inline">\(\lim_{|x|\to \infty} V(x) &gt; E\)</span> 인 경우에만 성립하는 것이 아니다. 뒤에 보겠지만 <span class="math inline">\(V(x) = \dfrac{1}{2}m\omega^2 x^2\)</span> 으로 주어지는 단순조화진동자의 경우에도 에너지는 양자화 되어 있다. <span class="math inline">\(V(x) \to \infty\)</span> 이므로 파동함수는 <span class="math inline">\(V(x)\le E\)</span> 인 영역에 훨씬 더 강하게 bound 되어 있다.</p>
 <p><br></p>
 </section>
-<section id="sec-QM_ground_state_energy" class="level3" data-number="5.2.4">
-<h3 data-number="5.2.4" class="anchored" data-anchor-id="sec-QM_ground_state_energy"><span class="header-section-number">5.2.4</span> 바닥상태 에너지</h3>
+<section id="sec-QM_ground_state_energy" class="level3" data-number="6.2.4">
+<h3 data-number="6.2.4" class="anchored" data-anchor-id="sec-QM_ground_state_energy"><span class="header-section-number">6.2.4</span> 바닥상태 에너지</h3>
 <p>포텐셜 우물에서 또 하나의 중요한 특징중의 하나는 가장 낮은 에너지가 <span class="math inline">\(0\)</span> 이 아니라는 것이다. 고전적으로는 입자의 에너지가 <span class="math inline">\(0\)</span> 인 경우가 가능한데 이것은 입자가 정지해 있을 경우이다. 그러나 양자상태에서는 이것이 불가능한데 이는 불확정성의 원리 때문이다. 이것을 살펴 보자. 우선 해밀토니안에서 시작한다.</p>
 <p><span class="math display">\[
 H = \dfrac{P^2}{2m}
@@ -803,7 +811,7 @@ E_0\ge \langle H\rangle \ge \dfrac{\hbar^2}{2mL^2}
 <h3 class="unnumbered anchored" data-anchor-id="연습문제">연습문제</h3>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-QM_potential_wall_1" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 5.6</strong></span> 무한 포텐셜 우물의 파동함수 <span class="math inline">\(\psi_n(x)\)</span>(<a href="#eq-QM_wavefunction_of_infinite_potential_wall" class="quarto-xref">식&nbsp;<span>5.12</span></a>) 에 대한 시간전개 연산자 <span class="math inline">\(U(t)\)</span> 를 구하고 이것을 <span class="math inline">\(X\)</span> 의 기저로 표현하라.</p>
+<p><span class="theorem-title"><strong>연습문제 6.6</strong></span> 무한 포텐셜 우물의 파동함수 <span class="math inline">\(\psi_n(x)\)</span>(<a href="#eq-QM_wavefunction_of_infinite_potential_wall" class="quarto-xref">식&nbsp;<span>6.12</span></a>) 에 대한 시간전개 연산자 <span class="math inline">\(U(t)\)</span> 를 구하고 이것을 <span class="math inline">\(X\)</span> 의 기저로 표현하라.</p>
 </div>
 </div>
 <p><br></p>
@@ -824,7 +832,7 @@ U (t) = \sum_{n=1}^\infty |n \rangle \langle n| \exp^{-iE_n t /\hbar}
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-shankar_5_2_2" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 5.7 (Shankar 5.2.2)</strong></span> (<span class="math inline">\(a\)</span>) <span class="math inline">\(|\psi\rangle\)</span> 이 정규화된 상태이고 <span class="math inline">\(E_0\)</span> 가 <span class="math inline">\(H\)</span> 의 가장 작은 고유값일 때 <span class="math inline">\(\langle \psi |H |\psi\rangle \ge E_0\)</span> 임을 보여라.</p>
+<p><span class="theorem-title"><strong>연습문제 6.7 (Shankar 5.2.2)</strong></span> (<span class="math inline">\(a\)</span>) <span class="math inline">\(|\psi\rangle\)</span> 이 정규화된 상태이고 <span class="math inline">\(E_0\)</span> 가 <span class="math inline">\(H\)</span> 의 가장 작은 고유값일 때 <span class="math inline">\(\langle \psi |H |\psi\rangle \ge E_0\)</span> 임을 보여라.</p>
 <p>(<span class="math inline">\(b\)</span>) 1차원에서의 attractive potential 이 있는 시스템은 최소한 하나의 bound state 를 가진다는 것을 보여라. <span class="math inline">\(\lim_{|x|\to\infty} V(x) = 0\)</span> 으로 간주하라.</p>
 </div>
 </div>
@@ -874,7 +882,7 @@ E(\alpha_0) =  - \dfrac{mv_0^2}{\pi \hbar^2} &lt;0
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-shankar_5_2_3" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 5.8 (Shanker 5.2.3)</strong></span> <span class="math inline">\(V(x) = -aV_0 \delta (x)\)</span> 인 경우를 생각하자. 이 때 에너지 <span class="math inline">\(E=-\dfrac{ma^2V_0^2}{2\hbar^2}\)</span> 인 bound state 가 존재한다는 것을 보여라. 다른 bound state 가 존재하는가?</p>
+<p><span class="theorem-title"><strong>연습문제 6.8 (Shanker 5.2.3)</strong></span> <span class="math inline">\(V(x) = -aV_0 \delta (x)\)</span> 인 경우를 생각하자. 이 때 에너지 <span class="math inline">\(E=-\dfrac{ma^2V_0^2}{2\hbar^2}\)</span> 인 bound state 가 존재한다는 것을 보여라. 다른 bound state 가 존재하는가?</p>
 </div>
 </div>
 <p><br></p>
@@ -926,7 +934,7 @@ E=-\dfrac{\hbar^2 \kappa^2}{2m} = - \dfrac{ma^2V_0^2}{2\hbar^2}
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-shankar_5_2_4" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 5.9 (Shankar 5.2.4)</strong></span> 폭 <span class="math inline">\(L\)</span> 인 무한 포텐셜 우물에 입자가 <span class="math inline">\(|n\rangle\)</span> 상태에 있다고 하자. 벽을 천천히 안쪽으로 밀 때 벽이 받는 힘 <span class="math inline">\(F=-\partial E/\partial L\)</span> 을 구하라. 단 입자는 <span class="math inline">\(|n\rangle\)</span> 상태를 유지하고 있다고 가정한다. 에너지가 <span class="math inline">\(E_n\)</span> 인 고전적인 입자를 생각할 때 입자의 속도를 구하고, 주어진 벽에 충돌하는 진동수를 구하라. 그리고 각 충돌마다의 충격량과 이로부터 평균적인 힘을 구하라. 이를 앞서 계산한 <span class="math inline">\(-\partial E/\partial L\)</span> 과 비교하라.</p>
+<p><span class="theorem-title"><strong>연습문제 6.9 (Shankar 5.2.4)</strong></span> 폭 <span class="math inline">\(L\)</span> 인 무한 포텐셜 우물에 입자가 <span class="math inline">\(|n\rangle\)</span> 상태에 있다고 하자. 벽을 천천히 안쪽으로 밀 때 벽이 받는 힘 <span class="math inline">\(F=-\partial E/\partial L\)</span> 을 구하라. 단 입자는 <span class="math inline">\(|n\rangle\)</span> 상태를 유지하고 있다고 가정한다. 에너지가 <span class="math inline">\(E_n\)</span> 인 고전적인 입자를 생각할 때 입자의 속도를 구하고, 주어진 벽에 충돌하는 진동수를 구하라. 그리고 각 충돌마다의 충격량과 이로부터 평균적인 힘을 구하라. 이를 앞서 계산한 <span class="math inline">\(-\partial E/\partial L\)</span> 과 비교하라.</p>
 </div>
 </div>
 <p><br></p>
@@ -943,16 +951,16 @@ F=-\dfrac{\partial E}{\partial L} =  \dfrac{\hbar^2 \pi^2 n^2}{mL^3}
 <p><br></p>
 </section>
 </section>
-<section id="확률-흐름-밀도와-연속-방정식" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="확률-흐름-밀도와-연속-방정식"><span class="header-section-number">5.3</span> 확률 흐름 밀도와 연속 방정식</h2>
+<section id="확률-흐름-밀도와-연속-방정식" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="확률-흐름-밀도와-연속-방정식"><span class="header-section-number">6.3</span> 확률 흐름 밀도와 연속 방정식</h2>
 <p>고전 전자기학을 생각하자. 우주 전체의 전하량은 일정하다고 가정되고 있으며, 국소적인 전하량의 밀도와 전류 사이에는 다음과 같은 연속방정식(continuity equation)이 성립한다는 것을 안다.</p>
 <p><span id="eq-QM_classical_continuity_equation_of_charge"><span class="math display">\[
 \dfrac{\partial \rho (\boldsymbol{r},\,t)}{\partial t} = - \nabla \cdot \boldsymbol{j}
-\tag{5.19}\]</span></span></p>
+\tag{6.19}\]</span></span></p>
 <p>여기서 <span class="math inline">\(\rho\)</span> 는 전하 밀도이고 <span class="math inline">\(\boldsymbol{j}\)</span> 는 전류 밀도이다. 이것을 표면 <span class="math inline">\(S\)</span> 로 둘러쌓인 부피 <span class="math inline">\(V\)</span> 에 대해 적분하면</p>
 <p><span id="eq-QM_classical_continuity_equation_of_charge_2"><span class="math display">\[
 \dfrac{d}{dt} \int_V \rho(\boldsymbol{r},t)\, d^3 \boldsymbol{r} = - \int_V \nabla \cdot \boldsymbol{j} \, d^3 \boldsymbol{r} = -\oint_S \boldsymbol{j} \cdot d\boldsymbol{S}
-\tag{5.20}\]</span></span></p>
+\tag{6.20}\]</span></span></p>
 <p>이다. 이 식은 부피 <span class="math inline">\(V\)</span> 안의 전하량의 시간에 대한 변화는 부피 <span class="math inline">\(V\)</span> 의 표면 <span class="math inline">\(S\)</span> 로 출입하는 전류의 흐름으로 설명된다는 의미이다.</p>
 <p><br></p>
 <p>양자역학에서는 상태의 내적은 (정규화되었다면) 항상 <span class="math inline">\(1\)</span> 이다. 즉</p>
@@ -979,19 +987,19 @@ i\hbar \dfrac{\partial }{\partial t}(\Psi ^\ast \Psi) &amp;= - \dfrac{\hbar^2}{2
 <p><span class="math display">\[
 \dfrac{\partial P}{\partial t} = -\dfrac{\hbar}{2mi} \nabla (\Psi^\ast \nabla \Psi i- \Psi \nabla \Psi^\ast)
 \]</span></p>
-<p>를 얻는다. <a href="#eq-QM_classical_continuity_equation_of_charge_2" class="quarto-xref">식&nbsp;<span>5.20</span></a> 와의 유사성을 생각하면</p>
+<p>를 얻는다. <a href="#eq-QM_classical_continuity_equation_of_charge_2" class="quarto-xref">식&nbsp;<span>6.20</span></a> 와의 유사성을 생각하면</p>
 <p><span id="eq-QM_definition_of_probability_current_density"><span class="math display">\[
 \boldsymbol{j} := \dfrac{\hbar}{2mi} (\Psi^\ast \nabla \Psi - \Psi \nabla \Psi^\ast)
-\tag{5.21}\]</span></span></p>
+\tag{6.21}\]</span></span></p>
 <p>에 대해</p>
 <p><span id="eq-QM_continuity_equation_of_probability"><span class="math display">\[
 \dfrac{\partial P}{\partial t} = \nabla \cdot \boldsymbol{j}
-\tag{5.22}\]</span></span></p>
-<p>를 얻게 된다. 이 때 <span class="math inline">\(\boldsymbol{j}\)</span> 를 <strong>확률 흐름 밀도(probability current density)</strong> 라고 하고 <a href="#eq-QM_continuity_equation_of_probability" class="quarto-xref">식&nbsp;<span>5.22</span></a> 를 <strong>연속 방정식(continuity equation)</strong> 이라고 한다.</p>
+\tag{6.22}\]</span></span></p>
+<p>를 얻게 된다. 이 때 <span class="math inline">\(\boldsymbol{j}\)</span> 를 <strong>확률 흐름 밀도(probability current density)</strong> 라고 하고 <a href="#eq-QM_continuity_equation_of_probability" class="quarto-xref">식&nbsp;<span>6.22</span></a> 를 <strong>연속 방정식(continuity equation)</strong> 이라고 한다.</p>
 <p><br></p>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-shankar_5_3_1" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 5.10 (Shankar 5.3.1)</strong></span> 실함수 <span class="math inline">\(V_r,\, V_i\)</span> 에 대해 포텐셜 <span class="math inline">\(V = V_r - iV_i\)</span> 가 주어졌다고 하자. 그리고 <span class="math inline">\(V_i\)</span> 는 상수함수라고 하자. 이에 대한 해밀토니안 <span class="math inline">\(H\)</span> 는 에르미트인가? 이 포텐셜에 대해 연속방정식을 적용하여 입자를 발견할 총 확률(total probability) 이 <span class="math inline">\(e^{-2V_it/\hbar}\)</span> 로 감소함을 보여라. 이런 복소 포텐셜은 입자가 흠수되는 과정에 적용된다.</p>
+<p><span class="theorem-title"><strong>연습문제 6.10 (Shankar 5.3.1)</strong></span> 실함수 <span class="math inline">\(V_r,\, V_i\)</span> 에 대해 포텐셜 <span class="math inline">\(V = V_r - iV_i\)</span> 가 주어졌다고 하자. 그리고 <span class="math inline">\(V_i\)</span> 는 상수함수라고 하자. 이에 대한 해밀토니안 <span class="math inline">\(H\)</span> 는 에르미트인가? 이 포텐셜에 대해 연속방정식을 적용하여 입자를 발견할 총 확률(total probability) 이 <span class="math inline">\(e^{-2V_it/\hbar}\)</span> 로 감소함을 보여라. 이런 복소 포텐셜은 입자가 흠수되는 과정에 적용된다.</p>
 </div>
 </div>
 <p><br></p>
@@ -1028,7 +1036,7 @@ i\hbar \dfrac{dP(t)}{dt} = -2iV_i P(t)
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-shankar_5_3_2" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 5.11 (Shankar 5.3.2)</strong></span> 실함수 <span class="math inline">\(\tilde{\Psi}\)</span> 와 상수 <span class="math inline">\(c\)</span> 에 대해 <span class="math inline">\(\Psi = c\tilde{\Psi}\)</span> 에 대한 <span class="math inline">\(\boldsymbol{j}=0\)</span> 임을 보여라. 여기서 <span class="math inline">\(c\)</span> 는 실수이거나 복소수 일 수 있다.</p>
+<p><span class="theorem-title"><strong>연습문제 6.11 (Shankar 5.3.2)</strong></span> 실함수 <span class="math inline">\(\tilde{\Psi}\)</span> 와 상수 <span class="math inline">\(c\)</span> 에 대해 <span class="math inline">\(\Psi = c\tilde{\Psi}\)</span> 에 대한 <span class="math inline">\(\boldsymbol{j}=0\)</span> 임을 보여라. 여기서 <span class="math inline">\(c\)</span> 는 실수이거나 복소수 일 수 있다.</p>
 </div>
 </div>
 <p><br></p>
@@ -1040,11 +1048,11 @@ i\hbar \dfrac{dP(t)}{dt} = -2iV_i P(t)
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-shankar_5_3_3" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 5.12 (Shankar 5.3.3)</strong></span> 파동함수 <span class="math inline">\(\Psi_\boldsymbol{p}\)</span> 가 아래와 같이 주어졌다.</p>
+<p><span class="theorem-title"><strong>연습문제 6.12 (Shankar 5.3.3)</strong></span> 파동함수 <span class="math inline">\(\Psi_\boldsymbol{p}\)</span> 가 아래와 같이 주어졌다.</p>
 <p><span class="math display">\[
 \Psi_\boldsymbol{p} =  \left(\dfrac{1}{2\pi \hbar}\right)^{3/2} e^{i(\boldsymbol{p \cdot r})/\hbar}.
 \]</span></p>
-<p>이 때 <span class="math inline">\(\boldsymbol{j}\)</span> 와 <span class="math inline">\(P\)</span> 를 구하고 전자기 방정식 <span class="math inline">\(\boldsymbol{j}= \rho \boldsymbol{v}\)</span> 와 비교하라. 여기서 <span class="math inline">\(\boldsymbol{v}\)</span> 는 속도이다. <span class="math inline">\(\rho\)</span> 와 <span class="math inline">\(\boldsymbol{j}\)</span> 는 상수이며 따라서 <a href="#eq-QM_continuity_equation_of_probability" class="quarto-xref">식&nbsp;<span>5.22</span></a> 가 자동작으로 만족된다.</p>
+<p>이 때 <span class="math inline">\(\boldsymbol{j}\)</span> 와 <span class="math inline">\(P\)</span> 를 구하고 전자기 방정식 <span class="math inline">\(\boldsymbol{j}= \rho \boldsymbol{v}\)</span> 와 비교하라. 여기서 <span class="math inline">\(\boldsymbol{v}\)</span> 는 속도이다. <span class="math inline">\(\rho\)</span> 와 <span class="math inline">\(\boldsymbol{j}\)</span> 는 상수이며 따라서 <a href="#eq-QM_continuity_equation_of_probability" class="quarto-xref">식&nbsp;<span>6.22</span></a> 가 자동작으로 만족된다.</p>
 </div>
 </div>
 <p><br></p>
@@ -1072,7 +1080,7 @@ P \psi_\boldsymbol{p} = -i\hbar \nabla \Psi_\boldsymbol{p} = \boldsymbol{p}\Psi_
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-shankar_5_3_4" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 5.13 (Shakar 5.3.4)</strong></span> 1차원에서의 <span class="math inline">\(\psi = Ae^{ipx/\hbar} + Be^{-ipx/\hbar}\)</span> 를 생각하자. <span class="math inline">\(j = (|A|^2-|B|^2)p/m\)</span> 임을 보여라.</p>
+<p><span class="theorem-title"><strong>연습문제 6.13 (Shakar 5.3.4)</strong></span> 1차원에서의 <span class="math inline">\(\psi = Ae^{ipx/\hbar} + Be^{-ipx/\hbar}\)</span> 를 생각하자. <span class="math inline">\(j = (|A|^2-|B|^2)p/m\)</span> 임을 보여라.</p>
 </div>
 </div>
 <p><br></p>
@@ -1088,12 +1096,12 @@ j &amp;= \dfrac{\hbar}{2mi}\left[(\overline{A}e^{-ipx/\hbar} + \overline{B}e^{ip
 </div>
 <p><br></p>
 </section>
-<section id="중요한-정리" class="level2" data-number="5.4">
-<h2 data-number="5.4" class="anchored" data-anchor-id="중요한-정리"><span class="header-section-number">5.4</span> 중요한 정리</h2>
+<section id="중요한-정리" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="중요한-정리"><span class="header-section-number">6.4</span> 중요한 정리</h2>
 <p>여기서는 앞서 다루지 않았지만 중요한 사항을 정리한다.</p>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="thm-QM_no_degeneracy_in_1d_bound_state" class="theorem">
-<p><span class="theorem-title"><strong>정리 5.1</strong></span> 1차원 bound state 에는 축퇴가 없다.</p>
+<p><span class="theorem-title"><strong>정리 6.1</strong></span> 1차원 bound state 에는 축퇴가 없다.</p>
 </div>
 </div>
 <p><br></p>
@@ -1126,7 +1134,7 @@ j &amp;= \dfrac{\hbar}{2mi}\left[(\overline{A}e^{-ipx/\hbar} + \overline{B}e^{ip
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="thm-QM_eigenfunction_of_H_is_pure_real_function_in_X_basis" class="theorem">
-<p><span class="theorem-title"><strong>정리 5.2</strong></span> 해밀토니안 <span class="math inline">\(H\)</span> 의 고유상태는 <span class="math inline">\(X\)</span> 기저에서 실함수로 표현 될 수 있다. 즉 실함수에 <span class="math inline">\(c\in \mathbb{C}\)</span> 를 곱한 꼴이다.</p>
+<p><span class="theorem-title"><strong>정리 6.2</strong></span> 해밀토니안 <span class="math inline">\(H\)</span> 의 고유상태는 <span class="math inline">\(X\)</span> 기저에서 실함수로 표현 될 수 있다. 즉 실함수에 <span class="math inline">\(c\in \mathbb{C}\)</span> 를 곱한 꼴이다.</p>
 </div>
 </div>
 <p><br></p>
@@ -1549,12 +1557,12 @@ j &amp;= \dfrac{\hbar}{2mi}\left[(\overline{A}e^{-ipx/\hbar} + \overline{B}e^{ip
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../../src/QM/QM_foundation_of_quantum_theory.html" class="pagination-link" aria-label="고전 물리학의 붕괴와 양자 원리">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">고전 물리학의 붕괴와 양자 원리</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">고전 물리학의 붕괴와 양자 원리</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="../../src/QM/QM_classical_limit.html" class="pagination-link" aria-label="고전적인 극한과 불확정성 원리">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">고전적인 극한과 불확정성 원리</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">고전적인 극한과 불확정성 원리</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

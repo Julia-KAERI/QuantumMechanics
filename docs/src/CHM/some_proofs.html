@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.27">
+<meta name="generator" content="quarto-1.9.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>3&nbsp; 몇몇 증명들 – 양자 역학</title>
+<title>4&nbsp; 몇몇 증명들 – 양자 역학</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -34,15 +37,14 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../src/CHM/CHM_symmetry_in_classical_mechanics.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-3e2728906df7980cb53b491a61d13d7e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-221f8d40ef94b7d7736ec4c1e420c32a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -72,7 +74,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -112,7 +114,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/CHM/CHM.html">I. 고전적, 역사적, 수학적 주제들</a></li><li class="breadcrumb-item"><a href="../../src/CHM/some_proofs.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">몇몇 증명들</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/CHM/CHM.html">I. 고전적, 역사적, 수학적 주제들</a></li><li class="breadcrumb-item"><a href="../../src/CHM/some_proofs.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">몇몇 증명들</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -124,8 +126,8 @@ window.Quarto = {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/CHM/CHM.html">I. 고전적, 역사적, 수학적 주제들</a></li><li class="breadcrumb-item"><a href="../../src/CHM/some_proofs.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">몇몇 증명들</span></a></li></ol></nav>
-      <h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">몇몇 증명들</span></h1>
+    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/CHM/CHM.html">I. 고전적, 역사적, 수학적 주제들</a></li><li class="breadcrumb-item"><a href="../../src/CHM/some_proofs.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">몇몇 증명들</span></a></li></ol></nav>
+      <h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">몇몇 증명들</span></h1>
                       </div>
   </div>
     
@@ -170,20 +172,26 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../src/CHM/history.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">양자 역학 연표</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../src/CHM/mathematical_foundation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">힐베르트 공간과 브라켓 표기법</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">힐베르트 공간과 브라켓 표기법</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/CHM/CHM_symmetry_in_classical_mechanics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">고전역학에서의 대칭</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">고전역학에서의 대칭</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/CHM/some_proofs.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">몇몇 증명들</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">몇몇 증명들</span></span></a>
   </div>
 </li>
       </ul>
@@ -200,67 +208,67 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/QM/QM_foundation_of_quantum_theory.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">고전 물리학의 붕괴와 양자 원리</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">고전 물리학의 붕괴와 양자 원리</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/QM/QM_1d_bound_state.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">1차원 문제 I : 자유입자와 Bound state</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">1차원 문제 I : 자유입자와 Bound state</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/QM/QM_classical_limit.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">고전적인 극한과 불확정성 원리</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">고전적인 극한과 불확정성 원리</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/QM/QM_harmonic_oscillator.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">단순조화진동자</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">단순조화진동자</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/QM/QM_1d_scattering.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">1차원 산란</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">1차원 산란</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/QM/QM_path_integral_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">경로적분 I</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">경로적분 I</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/QM/QM_N_DoF_system.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">N 자유도 시스템</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">N 자유도 시스템</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/QM/QM_symmetry.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">대칭</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">대칭</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/QM/QM_angular_momentum1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">회전불변과 2차원에서의 각운동량</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">회전불변과 2차원에서의 각운동량</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/QM/QM_angular_momentum2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">3차원에서의 각운동량</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">3차원에서의 각운동량</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/QM/QM_sakurai_problems.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Sakurai (Rev.&nbsp;Ed.) Problems</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Sakurai (Rev.&nbsp;Ed.) Problems</span></span></a>
   </div>
 </li>
       </ul>
@@ -277,7 +285,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/QC/01_introduction.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
       </ul>
@@ -294,19 +302,19 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/AUX/entanglement.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">양자 얽힘</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">양자 얽힘</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/AUX/quantum_state.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">양자 상태</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">양자 상태</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/AUX/JSBell_against_measurement.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Against Measurement - J. S. Bell</span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Against Measurement - J. S. Bell</span></span></a>
   </div>
 </li>
       </ul>
@@ -334,7 +342,7 @@ window.Quarto = {
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="prp-part3_exponent_of_operator_1" class="theorem proposition">
-<p><span class="theorem-title"><strong>명제 3.1</strong></span> 힐베르트 공간 <span class="math inline">\(\mathscr{H}\)</span> 에서 정의된 연산자 <span class="math inline">\(M,\, N\)</span> 에 대해 다음 <span class="math inline">\([M,\,N]=0\)</span> 이면 <span class="math inline">\(e^{M+N} =e^M e^N\)</span> 이다.</p>
+<p><span class="theorem-title"><strong>명제 4.1</strong></span> 힐베르트 공간 <span class="math inline">\(\mathscr{H}\)</span> 에서 정의된 연산자 <span class="math inline">\(M,\, N\)</span> 에 대해 다음 <span class="math inline">\([M,\,N]=0\)</span> 이면 <span class="math inline">\(e^{M+N} =e^M e^N\)</span> 이다.</p>
 </div>
 </div>
 <p><br></p>
@@ -353,18 +361,18 @@ window.Quarto = {
 <p>행렬에 대한 다음 상미분 방정식과 초기조건이 주어져 있다고 하자.</p>
 <p><span id="eq-exp_op_1"><span class="math display">\[
 \dfrac{dX}{dt}=(M+N)X \qquad \text{with }X(0)=I
-\tag{3.1}\]</span></span></p>
+\tag{4.1}\]</span></span></p>
 <p>이 미분방정식에 대한 유일해는 다음과 같다.</p>
 <p><span id="eq-exp_op_2"><span class="math display">\[
 X(t)=e^{(𝑀+𝑁)𝑡}
-\tag{3.2}\]</span></span></p>
+\tag{4.2}\]</span></span></p>
 <p>이다. 이제</p>
 <p><span id="eq-exp_op_3"><span class="math display">\[
 Y(t)=e^{Mt}e^{Nt}
-\tag{3.3}\]</span></span></p>
+\tag{4.3}\]</span></span></p>
 <p>라고 하자. 그렇다면 <span id="eq-exp_op_4"><span class="math display">\[
 \dfrac{dY}{dt}=\dfrac{d(e^{𝑀𝑡})}{dt} e^{Nt} + e^{Mt}\dfrac{d(e^{Nt})}{dt}= Me^{Mt}e^{Nt} + e^{Mt}Ne^{Nt}
-\tag{3.4}\]</span></span></p>
+\tag{4.4}\]</span></span></p>
 <p>이다. <span class="math inline">\([M,\,N]= MN-NM=0\)</span> 이므로 <span class="math inline">\([e^{Mt},\, N]=0\)</span> 이며 따라서</p>
 <p><span class="math display">\[
 \dfrac{dY}{dt} = Me^{Mt} e^{Nt} + Ne^{Mt}e^{Nt} = (M+N)Y
@@ -382,7 +390,7 @@ e^{(M+N)t} = e^{Mt} e^{Nt}
 <p><br></p>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="prp-part3_Baker_Hausdorff_Lemma" class="theorem proposition">
-<p><span class="theorem-title"><strong>명제 3.2 (Baker-Hausdorff Lemma)</strong></span> <span class="math inline">\(\lambda\)</span> 가 실수일 때 다음이 성립한다. <span class="math display">\[
+<p><span class="theorem-title"><strong>명제 4.2 (Baker-Hausdorff Lemma)</strong></span> <span class="math inline">\(\lambda\)</span> 가 실수일 때 다음이 성립한다. <span class="math display">\[
 \begin{aligned}
 e^{iG\lambda}Ae^{-iG\lambda} &amp;= A + i\lambda [G,\,A] + \dfrac{(i\lambda)^2}{2!} [G,\,[G,\,A]] +\cdots  \\
 &amp;\qquad + \dfrac{(i\lambda)^n}{n!} \underbrace{[G,\,[G,\,[G,\cdots [G}_{n\text{ times}},\,A]]]] + \cdots
@@ -406,22 +414,22 @@ e^{iG\lambda}Ae^{-iG\lambda} &amp;= A + i\lambda [G,\,A] + \dfrac{(i\lambda)^2}{
 <p><span class="math inline">\(A,\,B\)</span> 가 힐베르트 공간 <span class="math inline">\(\mathscr{H}\)</span> 에서 정의된 연산자라고 하자. 에르미트여부는 상관 없다. 선형연산자에 대한 상미분 방정식</p>
 <p><span id="eq-baker_1"><span class="math display">\[
 \dfrac{dX}{d\lambda} = [B,\,X]
-\tag{3.5}\]</span></span></p>
+\tag{4.5}\]</span></span></p>
 <p>가 초기조건 <span class="math inline">\(X(0)=A\)</span> 를 만족한다고 하자. 그렇다면</p>
 <p><span id="eq-baker_2"><span class="math display">\[
 X(\lambda) = e^{\lambda B}Ae^{-\lambda B}
-\tag{3.6}\]</span></span></p>
+\tag{4.6}\]</span></span></p>
 <p>는 이 미분방정식의 해라는 것을 보일 수 있다.</p>
 <p><span id="eq-baker_3"><span class="math display">\[
 \begin{aligned}
 \dfrac{dX}{d\lambda} = Be^{\lambda B} A e^{-\lambda B} - e^{\lambda B} A e^{-\lambda B}B = [B,\,X]
 \end{aligned}
-\tag{3.7}\]</span></span></p>
+\tag{4.7}\]</span></span></p>
 <p>이며 <span class="math inline">\(X(0)=A\)</span> 이기 때문이다.</p>
 <p>임의의 <span class="math inline">\(B\in \mathcal{L}(\mathscr{H})\)</span> 에 대해 <span class="math inline">\(\phi_B:\mathcal{L}(\mathscr{H}) \to \mathcal{L}(\mathscr{H})\)</span> 를 다음과 같이 정의하자.</p>
 <p><span id="eq-baker_4"><span class="math display">\[
 \phi_B(A) = [B,\, A]
-\tag{3.8}\]</span></span></p>
+\tag{4.8}\]</span></span></p>
 <p>연산자 노름 <span class="math inline">\(\| \cdot \|\)</span> 에 대해</p>
 <p><span class="math display">\[
 \begin{aligned}
@@ -862,7 +870,7 @@ Y(\lambda) = \sum_{n=0}^\infty \dfrac{\lambda^n}{n!} {\phi_B}^n (A) = e^{\lambda
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../../src/CHM/CHM_symmetry_in_classical_mechanics.html" class="pagination-link" aria-label="고전역학에서의 대칭">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">고전역학에서의 대칭</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">고전역학에서의 대칭</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

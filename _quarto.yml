@@ -13,6 +13,7 @@ book:
     - index.qmd
     - part: src/CHM/CHM.qmd
       chapters:
+      - src/CHM/history.qmd
       - src/CHM/mathematical_foundation.qmd
       - src/CHM/CHM_symmetry_in_classical_mechanics.qmd
       - src/CHM/some_proofs.qmd

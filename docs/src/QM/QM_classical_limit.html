@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.27">
+<meta name="generator" content="quarto-1.9.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>6&nbsp; 고전적인 극한과 불확정성 원리 – 양자 역학</title>
+<title>7&nbsp; 고전적인 극한과 불확정성 원리 – 양자 역학</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -34,15 +37,14 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../src/QM/QM_1d_bound_state.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-3e2728906df7980cb53b491a61d13d7e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-221f8d40ef94b7d7736ec4c1e420c32a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -72,7 +74,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -112,7 +114,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/QM/QM.html">II. 양자역학</a></li><li class="breadcrumb-item"><a href="../../src/QM/QM_classical_limit.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">고전적인 극한과 불확정성 원리</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/QM/QM.html">II. 양자역학</a></li><li class="breadcrumb-item"><a href="../../src/QM/QM_classical_limit.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">고전적인 극한과 불확정성 원리</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -124,8 +126,8 @@ window.Quarto = {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/QM/QM.html">II. 양자역학</a></li><li class="breadcrumb-item"><a href="../../src/QM/QM_classical_limit.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">고전적인 극한과 불확정성 원리</span></a></li></ol></nav>
-      <h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">고전적인 극한과 불확정성 원리</span></h1>
+    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/QM/QM.html">II. 양자역학</a></li><li class="breadcrumb-item"><a href="../../src/QM/QM_classical_limit.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">고전적인 극한과 불확정성 원리</span></a></li></ol></nav>
+      <h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">고전적인 극한과 불확정성 원리</span></h1>
                       </div>
   </div>
     
@@ -170,20 +172,26 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../src/CHM/history.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">양자 역학 연표</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../src/CHM/mathematical_foundation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">힐베르트 공간과 브라켓 표기법</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">힐베르트 공간과 브라켓 표기법</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/CHM/CHM_symmetry_in_classical_mechanics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">고전역학에서의 대칭</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">고전역학에서의 대칭</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/CHM/some_proofs.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">몇몇 증명들</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">몇몇 증명들</span></span></a>
   </div>
 </li>
       </ul>
@@ -200,67 +208,67 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/QM/QM_foundation_of_quantum_theory.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">고전 물리학의 붕괴와 양자 원리</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">고전 물리학의 붕괴와 양자 원리</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/QM/QM_1d_bound_state.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">1차원 문제 I : 자유입자와 Bound state</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">1차원 문제 I : 자유입자와 Bound state</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/QM/QM_classical_limit.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">고전적인 극한과 불확정성 원리</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">고전적인 극한과 불확정성 원리</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/QM/QM_harmonic_oscillator.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">단순조화진동자</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">단순조화진동자</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/QM/QM_1d_scattering.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">1차원 산란</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">1차원 산란</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/QM/QM_path_integral_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">경로적분 I</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">경로적분 I</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/QM/QM_N_DoF_system.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">N 자유도 시스템</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">N 자유도 시스템</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/QM/QM_symmetry.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">대칭</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">대칭</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/QM/QM_angular_momentum1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">회전불변과 2차원에서의 각운동량</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">회전불변과 2차원에서의 각운동량</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/QM/QM_angular_momentum2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">3차원에서의 각운동량</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">3차원에서의 각운동량</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/QM/QM_sakurai_problems.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Sakurai (Rev.&nbsp;Ed.) Problems</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Sakurai (Rev.&nbsp;Ed.) Problems</span></span></a>
   </div>
 </li>
       </ul>
@@ -277,7 +285,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/QC/01_introduction.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
       </ul>
@@ -294,19 +302,19 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/AUX/entanglement.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">양자 얽힘</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">양자 얽힘</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/AUX/quantum_state.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">양자 상태</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">양자 상태</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/AUX/JSBell_against_measurement.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Against Measurement - J. S. Bell</span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Against Measurement - J. S. Bell</span></span></a>
   </div>
 </li>
       </ul>
@@ -327,18 +335,18 @@ window.Quarto = {
     <h2 id="toc-title">목차</h2>
    
   <ul>
-  <li><a href="#sec-QM_ehrenfest_theorem" id="toc-sec-QM_ehrenfest_theorem" class="nav-link active" data-scroll-target="#sec-QM_ehrenfest_theorem"><span class="header-section-number">6.1</span> 에렌페스트 정리</a>
+  <li><a href="#sec-QM_ehrenfest_theorem" id="toc-sec-QM_ehrenfest_theorem" class="nav-link active" data-scroll-target="#sec-QM_ehrenfest_theorem"><span class="header-section-number">7.1</span> 에렌페스트 정리</a>
   <ul class="collapse">
-  <li><a href="#seq-QM_classical_1d_case" id="toc-seq-QM_classical_1d_case" class="nav-link" data-scroll-target="#seq-QM_classical_1d_case"><span class="header-section-number">6.1.1</span> 1차원 포텐셜의 경우</a></li>
-  <li><a href="#거시시적인-계에서" id="toc-거시시적인-계에서" class="nav-link" data-scroll-target="#거시시적인-계에서"><span class="header-section-number">6.1.2</span> 거시시적인 계에서</a></li>
+  <li><a href="#seq-QM_classical_1d_case" id="toc-seq-QM_classical_1d_case" class="nav-link" data-scroll-target="#seq-QM_classical_1d_case"><span class="header-section-number">7.1.1</span> 1차원 포텐셜의 경우</a></li>
+  <li><a href="#거시시적인-계에서" id="toc-거시시적인-계에서" class="nav-link" data-scroll-target="#거시시적인-계에서"><span class="header-section-number">7.1.2</span> 거시시적인 계에서</a></li>
   </ul></li>
-  <li><a href="#하이젠베르그의-불확정성-원리" id="toc-하이젠베르그의-불확정성-원리" class="nav-link" data-scroll-target="#하이젠베르그의-불확정성-원리"><span class="header-section-number">6.2</span> 하이젠베르그의 불확정성 원리</a>
+  <li><a href="#하이젠베르그의-불확정성-원리" id="toc-하이젠베르그의-불확정성-원리" class="nav-link" data-scroll-target="#하이젠베르그의-불확정성-원리"><span class="header-section-number">7.2</span> 하이젠베르그의 불확정성 원리</a>
   <ul class="collapse">
-  <li><a href="#sec-QM_uncertainty" id="toc-sec-QM_uncertainty" class="nav-link" data-scroll-target="#sec-QM_uncertainty"><span class="header-section-number">6.2.1</span> 불확정성</a></li>
-  <li><a href="#sec-QM_derivation_of_uncertainty_relation" id="toc-sec-QM_derivation_of_uncertainty_relation" class="nav-link" data-scroll-target="#sec-QM_derivation_of_uncertainty_relation"><span class="header-section-number">6.2.2</span> 불확정성의 유도</a></li>
-  <li><a href="#sec-QM_uncertainty_minimum_uncertainty_packet" id="toc-sec-QM_uncertainty_minimum_uncertainty_packet" class="nav-link" data-scroll-target="#sec-QM_uncertainty_minimum_uncertainty_packet"><span class="header-section-number">6.2.3</span> 불확정성을 최소화 하는 패킷</a></li>
-  <li><a href="#sec-QM_uncertainty_uncertainty_principle" id="toc-sec-QM_uncertainty_uncertainty_principle" class="nav-link" data-scroll-target="#sec-QM_uncertainty_uncertainty_principle"><span class="header-section-number">6.2.4</span> 불확정성의 원리의 응용</a></li>
-  <li><a href="#sec-QM_uncertainty_energy_time" id="toc-sec-QM_uncertainty_energy_time" class="nav-link" data-scroll-target="#sec-QM_uncertainty_energy_time"><span class="header-section-number">6.2.5</span> 에너지-시간 불확정성</a></li>
+  <li><a href="#sec-QM_uncertainty" id="toc-sec-QM_uncertainty" class="nav-link" data-scroll-target="#sec-QM_uncertainty"><span class="header-section-number">7.2.1</span> 불확정성</a></li>
+  <li><a href="#sec-QM_derivation_of_uncertainty_relation" id="toc-sec-QM_derivation_of_uncertainty_relation" class="nav-link" data-scroll-target="#sec-QM_derivation_of_uncertainty_relation"><span class="header-section-number">7.2.2</span> 불확정성의 유도</a></li>
+  <li><a href="#sec-QM_uncertainty_minimum_uncertainty_packet" id="toc-sec-QM_uncertainty_minimum_uncertainty_packet" class="nav-link" data-scroll-target="#sec-QM_uncertainty_minimum_uncertainty_packet"><span class="header-section-number">7.2.3</span> 불확정성을 최소화 하는 패킷</a></li>
+  <li><a href="#sec-QM_uncertainty_uncertainty_principle" id="toc-sec-QM_uncertainty_uncertainty_principle" class="nav-link" data-scroll-target="#sec-QM_uncertainty_uncertainty_principle"><span class="header-section-number">7.2.4</span> 불확정성의 원리의 응용</a></li>
+  <li><a href="#sec-QM_uncertainty_energy_time" id="toc-sec-QM_uncertainty_energy_time" class="nav-link" data-scroll-target="#sec-QM_uncertainty_energy_time"><span class="header-section-number">7.2.5</span> 에너지-시간 불확정성</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -352,7 +360,7 @@ window.Quarto = {
 
 <div class="hidden">
 <p>%</p>
-%
+<p>%</p>
 <!-- \newcommand{\hom}{\text{Hom}}
 \newcommand{\iso}{\text{Iso}}
 \newcommand{\aut}{\text{Aut}} -->
@@ -361,36 +369,36 @@ window.Quarto = {
 \DeclareMathOperator*{\argmax}{argmax}
 \]</span></p>
 </div>
-<section id="sec-QM_ehrenfest_theorem" class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" data-anchor-id="sec-QM_ehrenfest_theorem"><span class="header-section-number">6.1</span> 에렌페스트 정리</h2>
+<section id="sec-QM_ehrenfest_theorem" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="sec-QM_ehrenfest_theorem"><span class="header-section-number">7.1</span> 에렌페스트 정리</h2>
 <p>양자역학의 거시적인 극한이 고전역학이어야 한다는 것은 당연하다. 여기서는 바로 이것에 다루기로 한다. 연신자 <span class="math inline">\(\Omega\)</span> 에 대한 양자역학의 기대값 <span class="math inline">\(\langle \Omega\rangle\)</span> 대해 다음이 성립한다.</p>
 <p><span id="eq-QM_classica_limit_1"><span class="math display">\[
 \dfrac{d}{dt}\langle \Omega \rangle = \dfrac{d}{dt} \langle \psi |\Omega |\psi\rangle = \langle \dot{\psi}|\Omega |\psi\rangle + \langle \psi |\dot{\Omega}| \psi \rangle + \langle \psi |\Omega |\dot{\psi}\rangle
-\tag{6.1}\]</span></span></p>
+\tag{7.1}\]</span></span></p>
 <p>여기서 <span class="math inline">\(\Omega\)</span> 에 명시적인 시간의존성이 없다고 가정하자. 즉 <span class="math inline">\(\partial \Omega/\partial t = 0\)</span> 라고 가정하자. 슈뢰딩거 방정식</p>
 <p><span id="eq-QM_classica_limit_2"><span class="math display">\[
 i\hbar |\dot{\psi}\rangle = H |\psi\rangle,\qquad  -i\hbar \langle\dot{\psi} | = \langle \psi |H
-\tag{6.2}\]</span></span></p>
+\tag{7.2}\]</span></span></p>
 <p>를 적용하면,</p>
 <p><span id="eq-QM_classica_limit_3"><span class="math display">\[
 \dfrac{d}{dt}\langle \Omega \rangle = -\dfrac{i}{\hbar} \langle \psi | (-H\Omega + \Omega H)|\psi = -\dfrac{i}{\hbar} \langle \psi | [\Omega,\, H]|\psi \rangle
-\tag{6.3}\]</span></span></p>
+\tag{7.3}\]</span></span></p>
 <p>을 얻는다. 이를 <strong>에렌페스트 정리(Ehrenfest’s theorem)</strong> 이라고 한다. 고전역학에서 동역학 변수 <span class="math inline">\(\omega\)</span> 와 해밀토니안 <span class="math inline">\(H\)</span>, 그리고 푸아송 브라켓 <span class="math inline">\(\{\,,\,\}\)</span> 에 대해</p>
 <p><span class="math display">\[
 \dfrac{d\omega}{dt} = \{ \omega,\, H\} = \sum_i \left(\dfrac{\partial \omega}{\partial q_i}\dfrac{\partial H}{\partial p_i} -\dfrac{\partial \omega}{\partial p_i}\dfrac{\partial H}{\partial q_i}  \right)
 \]</span></p>
 <p>가 성립한다는 것을 기억하라.</p>
 <p><br></p>
-<section id="seq-QM_classical_1d_case" class="level3" data-number="6.1.1">
-<h3 data-number="6.1.1" class="anchored" data-anchor-id="seq-QM_classical_1d_case"><span class="header-section-number">6.1.1</span> 1차원 포텐셜의 경우</h3>
+<section id="seq-QM_classical_1d_case" class="level3" data-number="7.1.1">
+<h3 data-number="7.1.1" class="anchored" data-anchor-id="seq-QM_classical_1d_case"><span class="header-section-number">7.1.1</span> 1차원 포텐셜의 경우</h3>
 <p>우선 1차원에서 생각해보자. 해밀토니안이 다음과 같다고 하자.</p>
 <p><span id="eq-QM_classical_limit_1d_hamiltonian"><span class="math display">\[
 H =\dfrac{P^2}{2m}+ V(X).
-\tag{6.4}\]</span></span></p>
-<p><span class="math inline">\(\Omega=X\)</span> 일 때 <a href="#eq-QM_classica_limit_3" class="quarto-xref">식&nbsp;<span>6.3</span></a> 은 다음과 같다.</p>
+\tag{7.4}\]</span></span></p>
+<p><span class="math inline">\(\Omega=X\)</span> 일 때 <a href="#eq-QM_classica_limit_3" class="quarto-xref">식&nbsp;<span>7.3</span></a> 은 다음과 같다.</p>
 <p><span id="eq-QM_classical_limit_dot_x_1"><span class="math display">\[
 \dfrac{d}{dt}\langle X\rangle = -\dfrac{i}{\hbar} \langle \psi | [X,\, H]| \psi\rangle = \left(-\dfrac{i}{2m\hbar}\right) \langle [X,\,P^2]\rangle
-\tag{6.5}\]</span></span></p>
+\tag{7.5}\]</span></span></p>
 <p>여기서</p>
 <p><span class="math display">\[
 [X,\,P^2]=P[X,\,P] + [X,\,P]P = 2i\hbar P
@@ -398,17 +406,17 @@ H =\dfrac{P^2}{2m}+ V(X).
 <p>이므로,</p>
 <p><span id="eq-QM_classical_limit_dot_x_2"><span class="math display">\[
 \dfrac{d}{dt}\langle X \rangle = \dfrac{\langle P\rangle}{m}
-\tag{6.6}\]</span></span></p>
+\tag{7.6}\]</span></span></p>
 <p>이다. 고전역학의 <span class="math inline">\(\dot{x} = p/m\)</span> 를 기억하라.</p>
-<p>좀 다른 방식으로 접근해보자. <a href="#eq-QM_classical_limit_1d_hamiltonian" class="quarto-xref">식&nbsp;<span>6.4</span></a> 로 부터</p>
+<p>좀 다른 방식으로 접근해보자. <a href="#eq-QM_classical_limit_1d_hamiltonian" class="quarto-xref">식&nbsp;<span>7.4</span></a> 로 부터</p>
 <p><span class="math display">\[
 \dfrac{P}{m} = \dfrac{\partial H}{\partial P}
 \]</span></p>
 <p>임을 안다. 즉,</p>
 <p><span id="eq-QM_classical_limit_dot_x_3"><span class="math display">\[
 \dfrac{d}{dt}\langle X\rangle = \left \langle \dfrac{\partial H}{\partial P}\right \rangle
-\tag{6.7}\]</span></span></p>
-<p>이다. 이제 <a href="#eq-QM_classica_limit_3" class="quarto-xref">식&nbsp;<span>6.3</span></a> 에서 <span class="math inline">\(\Omega = P\)</span> 로 놓고 생각해보자.</p>
+\tag{7.7}\]</span></span></p>
+<p>이다. 이제 <a href="#eq-QM_classica_limit_3" class="quarto-xref">식&nbsp;<span>7.3</span></a> 에서 <span class="math inline">\(\Omega = P\)</span> 로 놓고 생각해보자.</p>
 <p><span class="math display">\[
 \dfrac{d}{dt} \langle P\rangle = \left(-\dfrac{i}{\hbar}\right) \langle [ P,\, H] \rangle = - \dfrac{i}{\hbar} \langle [P,\, V(X)]\rangle
 \]</span></p>
@@ -419,21 +427,21 @@ H =\dfrac{P^2}{2m}+ V(X).
 <p>이므로,</p>
 <p><span id="eq-QM_classical_limit_dot_p"><span class="math display">\[
 \dfrac{d}{dt}\langle P\rangle = - \dfrac{dV(x)}{dx}= \left\langle -\dfrac{\partial H}{\partial X}\right\rangle
-\tag{6.8}\]</span></span></p>
-<p>이다. 식 <a href="#eq-QM_classical_limit_dot_x_3" class="quarto-xref">식&nbsp;<span>6.7</span></a> 과 <a href="#eq-QM_classical_limit_dot_p" class="quarto-xref">식&nbsp;<span>6.8</span></a> 은 해밀토니안 <span class="math inline">\(\mathcal{H}\)</span> 에 대한 고전적인 해밀튼 방정식</p>
+\tag{7.8}\]</span></span></p>
+<p>이다. 식 <a href="#eq-QM_classical_limit_dot_x_3" class="quarto-xref">식&nbsp;<span>7.7</span></a> 과 <a href="#eq-QM_classical_limit_dot_p" class="quarto-xref">식&nbsp;<span>7.8</span></a> 은 해밀토니안 <span class="math inline">\(\mathcal{H}\)</span> 에 대한 고전적인 해밀튼 방정식</p>
 <p><span id="eq-QM_classical_hamilton_equation"><span class="math display">\[
 \dot{x} = \dfrac{\partial \mathcal{H}}{\partial p},\qquad\dot{q} = - \dfrac{\partial \mathcal{H}}{\partial q}
-\tag{6.9}\]</span></span></p>
+\tag{7.9}\]</span></span></p>
 <p>와 매우 닮았다. 이제 양자역학의 방정식이 거시계에 어떻게 적용되는지 알아보기로 하자.</p>
 <p><br></p>
 </section>
-<section id="거시시적인-계에서" class="level3" data-number="6.1.2">
-<h3 data-number="6.1.2" class="anchored" data-anchor-id="거시시적인-계에서"><span class="header-section-number">6.1.2</span> 거시시적인 계에서</h3>
+<section id="거시시적인-계에서" class="level3" data-number="7.1.2">
+<h3 data-number="7.1.2" class="anchored" data-anchor-id="거시시적인-계에서"><span class="header-section-number">7.1.2</span> 거시시적인 계에서</h3>
 <p>일단 질량 <span class="math inline">\(1\, \text{g}\)</span> 인 입자를 생각하자. 고전적인 극한에서 생각해야 하기 때문에 입자의 위치와 운동량이 상대적으로 잘 정의된 가우시안 웨이브 패킷을 생각하자. 이 상태를 <span class="math inline">\(|x_0\,p_0\,\Delta\rangle\)</span> 로 표기하자. 이 패킷은 <span class="math inline">\(\langle X\rangle = x_0\)</span>, <span class="math inline">\(\langle P\rangle = p_0\)</span>, <span class="math inline">\(\Delta X = \Delta,\, \Delta P \approx \hbar/\Delta\)</span> 의 성질을 가진다고 하자. 그리고 <span class="math inline">\(\Delta\)</span> 와 <span class="math inline">\(\hbar/\Delta\)</span> 가 각각 거시계의 기준으로 매우 작다고 생각하자. 우리는 이미 <a href="../../src/QM/QM_1d_bound_state.html#sec-evolution_of_gaussian_packet">가우시안 wavepacket 의 시간 전개</a> 에서 이것이 가능함을 안다. 즉 아래의 <span class="math inline">\(\Psi(x,\,0)\)</span> 은 주어진 조건을 만족한다.</p>
 <p><span class="math display">\[
 \Psi(x,0) = e^{ip_0x/\hbar} \dfrac{e^{-(x-x_0)^2/2\Delta^2}}{(\pi \Delta^2)^{1/4}}.
 \]</span></p>
-<p>이 때 <span class="math inline">\(\Delta \approx 10^{-15}\, \text{m}\)</span> 이라고 하면(이 크기는 양성자의 크기와 유사하다) <span class="math inline">\(\Delta P \approx 10^{-19}\, \text{kg m}/\text{sec}\)</span> 이다. <span class="math inline">\(m=1\, \text{g}\)</span> 일 경우 속도의 uncertainty <span class="math inline">\(\Delta V \approx 10^{-16}\, \text{m}/\text{sec}\)</span> 이므로 실험에서 측정 할 수 있는 정밀도보다 크게 작다. 이 경우 거시적으로는 위치와 운동량이 <span class="math inline">\(x_0,\, p_0\)</span> 로 잘 정의되어 있다고 볼 수 있다. <a href="#eq-QM_classical_limit_dot_x_3" class="quarto-xref">식&nbsp;<span>6.7</span></a> 와 <a href="#eq-QM_classical_limit_dot_p" class="quarto-xref">식&nbsp;<span>6.8</span></a> 에서 <span class="math inline">\(\langle \cdots \rangle\)</span> 은 함수에 대한 평균인데 이것을 평균에 대한 함수로 바꾼다면 고전적인 해밀튼 방정식 <a href="#eq-QM_classical_hamilton_equation" class="quarto-xref">식&nbsp;<span>6.9</span></a> 와 같아진다.</p>
+<p>이 때 <span class="math inline">\(\Delta \approx 10^{-15}\, \text{m}\)</span> 이라고 하면(이 크기는 양성자의 크기와 유사하다) <span class="math inline">\(\Delta P \approx 10^{-19}\, \text{kg m}/\text{sec}\)</span> 이다. <span class="math inline">\(m=1\, \text{g}\)</span> 일 경우 속도의 uncertainty <span class="math inline">\(\Delta V \approx 10^{-16}\, \text{m}/\text{sec}\)</span> 이므로 실험에서 측정 할 수 있는 정밀도보다 크게 작다. 이 경우 거시적으로는 위치와 운동량이 <span class="math inline">\(x_0,\, p_0\)</span> 로 잘 정의되어 있다고 볼 수 있다. <a href="#eq-QM_classical_limit_dot_x_3" class="quarto-xref">식&nbsp;<span>7.7</span></a> 와 <a href="#eq-QM_classical_limit_dot_p" class="quarto-xref">식&nbsp;<span>7.8</span></a> 에서 <span class="math inline">\(\langle \cdots \rangle\)</span> 은 함수에 대한 평균인데 이것을 평균에 대한 함수로 바꾼다면 고전적인 해밀튼 방정식 <a href="#eq-QM_classical_hamilton_equation" class="quarto-xref">식&nbsp;<span>7.9</span></a> 와 같아진다.</p>
 <p><span class="math display">\[
 \begin{aligned}
 \dot{x}_0 &amp;= \dfrac{d}{dt}\langle X \rangle = \left \langle \dfrac{\partial H}{\partial P}\right \rangle  \approx \left.\dfrac{\partial H}{\partial P}\right|_{X=x_0,\, P=p_0} = \dfrac{\partial \mathcal{H}(x_0,\, p_0)}{\partial p_0} \\[0.4em]
@@ -460,26 +468,26 @@ V'(x) = V'(x_0) + V''(x_0)(x-x_0) + \dfrac{1}{2} V'''(x_0)(x-x_0)^2 + \cdots
 <p><br></p>
 <section id="wave-packet-spreading" class="level4">
 <h4 class="anchored" data-anchor-id="wave-packet-spreading"><strong>Wave packet spreading</strong></h4>
-<p>가우시안 패킷은 시간이 지남에 따라 <span class="math inline">\(\Delta X\)</span> 가 커진다. <a href="QM_1d_bound_state.html#exm-macroscopic_propagation" class="quarto-xref">예제&nbsp;<span>5.1</span></a> 에서 보았듯이 <span class="math inline">\(\Delta X=10^{-15}\,\text{m}\)</span>, <span class="math inline">\(\Delta P \approx 10^{19} \, \text{kg m}/\text{sec}\)</span> 인 경우 wave packet 이 퍼져서 <span class="math inline">\(\Delta X\approx 1.0\times 10^{-3}\, \text{m}= 1 \, \text{mm}\)</span> 가 되는데 <span class="math inline">\(400,000\)</span> 년 이상 걸리긴 하지만 말이다.</p>
+<p>가우시안 패킷은 시간이 지남에 따라 <span class="math inline">\(\Delta X\)</span> 가 커진다. <a href="QM_1d_bound_state.html#exm-macroscopic_propagation" class="quarto-xref">예제&nbsp;<span>6.1</span></a> 에서 보았듯이 <span class="math inline">\(\Delta X=10^{-15}\,\text{m}\)</span>, <span class="math inline">\(\Delta P \approx 10^{19} \, \text{kg m}/\text{sec}\)</span> 인 경우 wave packet 이 퍼져서 <span class="math inline">\(\Delta X\approx 1.0\times 10^{-3}\, \text{m}= 1 \, \text{mm}\)</span> 가 되는데 <span class="math inline">\(400,000\)</span> 년 이상 걸리긴 하지만 말이다.</p>
 <p><br></p>
 </section>
 </section>
 </section>
-<section id="하이젠베르그의-불확정성-원리" class="level2" data-number="6.2">
-<h2 data-number="6.2" class="anchored" data-anchor-id="하이젠베르그의-불확정성-원리"><span class="header-section-number">6.2</span> 하이젠베르그의 불확정성 원리</h2>
-<section id="sec-QM_uncertainty" class="level3" data-number="6.2.1">
-<h3 data-number="6.2.1" class="anchored" data-anchor-id="sec-QM_uncertainty"><span class="header-section-number">6.2.1</span> 불확정성</h3>
+<section id="하이젠베르그의-불확정성-원리" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="하이젠베르그의-불확정성-원리"><span class="header-section-number">7.2</span> 하이젠베르그의 불확정성 원리</h2>
+<section id="sec-QM_uncertainty" class="level3" data-number="7.2.1">
+<h3 data-number="7.2.1" class="anchored" data-anchor-id="sec-QM_uncertainty"><span class="header-section-number">7.2.1</span> 불확정성</h3>
 <p>고전역학에서의 상태는 위치 <span class="math inline">\(\boldsymbol{x}\)</span> 와 운동량 <span class="math inline">\(\boldsymbol{p}\)</span> 에 의해 결정되며 상태가 <span class="math inline">\((\boldsymbol{x}_0,\, \boldsymbol{p}_0)\)</span> 로 정해졌다면 어떤 동역학 변수 <span class="math inline">\(\omega(\boldsymbol{x},\, \boldsymbol{p})\)</span> 에 대해서도 <span class="math inline">\(\omega(\boldsymbol{x}_0,\, \boldsymbol{p}_0)\)</span> 의 정해진 값을 가진다. 그러나 양자역학에서는 주어진 상태 <span class="math inline">\(|\Psi\rangle\)</span> 에 대해 <span class="math inline">\(\Omega\)</span> 측정을 했을 때의 값은 확률로 주어진다. 그리고 확률 분포는 기대값, 즉 평균값 <span class="math inline">\(\langle \Omega \rangle = \langle \Psi |\Omega |\Psi \rangle\)</span> 과 불확정도(uncertainty), 즉 표준편차 <span class="math inline">\(\Delta \Omega\)</span> 에 의해 특정지어진다.</p>
 <p><span class="math inline">\(|\Psi\rangle\)</span> 이 <span class="math inline">\(\Omega\)</span> 의 고유상태로 고유값 <span class="math inline">\(\omega\)</span> 를 가진다면 <span class="math inline">\(\Omega |\Psi\rangle = \omega |\psi \rangle\)</span> 이며 따라서 <span class="math inline">\(\Delta \Omega = 0\)</span> 이다.</p>
 <p>두 에르미트 연산자 <span class="math inline">\(\Omega,\, \Lambda\)</span> 를 생각하자. 임의의 상태에 대해 두 연산자에 대한 불확정도 <span class="math inline">\(\Delta \Omega\)</span> 와 <span class="math inline">\(\Delta \Lambda\)</span> 를 생각 할 수 있다. 여기서는 하이젠베르그의 불확정성의 원리에 대해 알아볼 것이다. 이 불확정성의 원리는 두 불확정도의 곱 <span class="math inline">\(\Delta \Omega \cdot \Delta \Lambda\)</span> 의 하한을 정한다. 일반적으로 이 하한은 상태 뿐만 아니라 연산자에 의존한다. 또한 어떤 경우에는 이 불확정성이 상태에 무관하개 정해지기도 한다. 이 불확정성을 유도하는 과정에서 이런 관계가 존재하는 조건을 명확하게 할 할 것이다.</p>
 <p><br></p>
 </section>
-<section id="sec-QM_derivation_of_uncertainty_relation" class="level3" data-number="6.2.2">
-<h3 data-number="6.2.2" class="anchored" data-anchor-id="sec-QM_derivation_of_uncertainty_relation"><span class="header-section-number">6.2.2</span> 불확정성의 유도</h3>
+<section id="sec-QM_derivation_of_uncertainty_relation" class="level3" data-number="7.2.2">
+<h3 data-number="7.2.2" class="anchored" data-anchor-id="sec-QM_derivation_of_uncertainty_relation"><span class="header-section-number">7.2.2</span> 불확정성의 유도</h3>
 <p>두 에르미트 연산자 <span class="math inline">\(\Omega,\, \Lambda\)</span> 의 교환관계가 다음과 같다고 하자.</p>
 <p><span id="eq-QM_uncertainty_nonzero_commutator"><span class="math display">\[
 [\Omega,\, \Lambda] = i\Gamma.
-\tag{6.10}\]</span></span></p>
+\tag{7.10}\]</span></span></p>
 <p>이 때 <span class="math inline">\(\Gamma\)</span> 역시 에르미트 연산자임을 보일 수 있다. <span class="math display">\[
 \Gamma^\dagger = \left((-i)[\Omega,\, \Lambda]\right)^\dagger = i(\Omega \Lambda - \Lambda\Omega)^\dagger = i(\Lambda \Omega - \Omega \Lambda) = \Gamma.
 \]</span></p>
@@ -491,7 +499,7 @@ V'(x) = V'(x_0) + V''(x_0)(x-x_0) + \dfrac{1}{2} V'''(x_0)(x-x_0)^2 + \cdots
 &amp;\ge \left|\langle (\Omega - \langle \Omega \rangle)\Psi| (\Lambda - \langle \Lambda \rangle)\Psi\rangle \right|^2 \\[0.3em]
 &amp;= \left|\langle \Psi |(\Omega -\langle \Omega \rangle)(\Lambda - \langle \Lambda \rangle) |\Psi\rangle\right|^2
 \end{aligned}
-\tag{6.11}\]</span></span></p>
+\tag{7.11}\]</span></span></p>
 <p>을 얻는다.</p>
 <p>임의의 연산자 <span class="math inline">\(A,\,B\)</span> 에 대해</p>
 <p><span class="math display">\[
@@ -507,7 +515,7 @@ AB = \dfrac{AB+BA}{2}+ \dfrac{AB-BA}{2} = \dfrac{1}{2} \left\{ A,\, B\right\} + 
 \;[A,\,B] &amp;= [\Omega -\langle \Omega \rangle,\, \Lambda -\langle \Lambda \rangle] = [\Omega,\, \Lambda] = i\Gamma
 \end{aligned}
 \]</span></p>
-<p>임을 알 수 있다. <a href="#eq-QM_uncertainty_derivation_of_uncertianty_relation_1" class="quarto-xref">식&nbsp;<span>6.11</span></a> 로부터</p>
+<p>임을 알 수 있다. <a href="#eq-QM_uncertainty_derivation_of_uncertianty_relation_1" class="quarto-xref">식&nbsp;<span>7.11</span></a> 로부터</p>
 <p><span class="math display">\[
 \begin{aligned}
 (\Delta \Omega)^2 (\Delta \Lambda)^2 \ge \left|\langle \Psi|AB|\Psi \rangle\right|^2 &amp;= \dfrac{1}{4}\left|\langle \Psi | \{A,\,B\} + [A,\,B]|\Psi\rangle \right|^2 \\[0.3em]
@@ -517,40 +525,40 @@ AB = \dfrac{AB+BA}{2}+ \dfrac{AB-BA}{2} = \dfrac{1}{2} \left\{ A,\, B\right\} + 
 <p>임을 안다. <span class="math inline">\(\{A,\,B\}\)</span> 와 <span class="math inline">\(\Gamma\)</span> 가 에르미트 연산자이므로</p>
 <p><span id="eq-QM_uncertainty_derivation_of_uncertianty_relation_2"><span class="math display">\[
 (\Delta \Omega)^2 (\Delta \Lambda)^2 \ge \dfrac{1}{4} \langle \Psi|\{\Omega - \langle \Omega \rangle,\, \Lambda - \langle \Lambda \rangle\}|\Psi\rangle^2 + \dfrac{1}{4}\langle \Psi |\Gamma |\Psi \rangle^2
-\tag{6.12}\]</span></span></p>
+\tag{7.12}\]</span></span></p>
 <p>이다. <span class="math inline">\(\{\cdots \}\)</span> 관련 항은 항상 양수이며 <span class="math inline">\([\Omega,\, \Gamma] = i\Gamma\)</span> 이므로</p>
 <p><span id="eq-QM_uncertianty_uncertainty_relation"><span class="math display">\[
 (\Delta \Omega)(\Delta \Gamma) \ge \dfrac{1}{2}|\langle \Psi |\Gamma |\Psi\rangle|
-\tag{6.13}\]</span></span></p>
+\tag{7.13}\]</span></span></p>
 <p>이 성립한다. 이를 불확정성 관계라고 한다. 위 식에서 등식이 성립하는 경우는 아래의 두 조건을 모두 만족하는 경우 뿐이다.</p>
 <p><span id="eq-QM_uncertianty_uncertainty_relation_2"><span class="math display">\[\begin{aligned}
 &amp;(1)&amp;&amp; \langle \Psi|\{\Omega - \langle \Omega \rangle,\, \Lambda - \langle \Lambda \rangle\}|\Psi\rangle=0,\\[0.3em]
 &amp;(2)&amp;&amp;\exists c\in \mathbb{C},\, \text{s. t. } (\Omega - \langle \Omega)|\Psi\rangle = c(\Lambda - \langle \Lambda \rangle)|\Psi\rangle.
 \end{aligned}
-\tag{6.14}\]</span></span></p>
-<p>여기서 <span class="math inline">\((1)\)</span> 조건은 <a href="#eq-QM_uncertainty_derivation_of_uncertianty_relation_1" class="quarto-xref">식&nbsp;<span>6.11</span></a> 의 코시-슈바르츠 부등식 조건으로 부터 나온다.</p>
+\tag{7.14}\]</span></span></p>
+<p>여기서 <span class="math inline">\((1)\)</span> 조건은 <a href="#eq-QM_uncertainty_derivation_of_uncertianty_relation_1" class="quarto-xref">식&nbsp;<span>7.11</span></a> 의 코시-슈바르츠 부등식 조건으로 부터 나온다.</p>
 <p><br></p>
 </section>
-<section id="sec-QM_uncertainty_minimum_uncertainty_packet" class="level3" data-number="6.2.3">
-<h3 data-number="6.2.3" class="anchored" data-anchor-id="sec-QM_uncertainty_minimum_uncertainty_packet"><span class="header-section-number">6.2.3</span> 불확정성을 최소화 하는 패킷</h3>
-<p><span class="math inline">\(X,\,P\)</span> 의 불확정성을 최소화 하는 1차원 파동함수 <span class="math inline">\(\Psi(x)\)</span> 를 구해보자. <a href="#eq-QM_uncertianty_uncertainty_relation_2" class="quarto-xref">식&nbsp;<span>6.14</span></a> 의 <span class="math inline">\((2)\)</span> 로부터,</p>
+<section id="sec-QM_uncertainty_minimum_uncertainty_packet" class="level3" data-number="7.2.3">
+<h3 data-number="7.2.3" class="anchored" data-anchor-id="sec-QM_uncertainty_minimum_uncertainty_packet"><span class="header-section-number">7.2.3</span> 불확정성을 최소화 하는 패킷</h3>
+<p><span class="math inline">\(X,\,P\)</span> 의 불확정성을 최소화 하는 1차원 파동함수 <span class="math inline">\(\Psi(x)\)</span> 를 구해보자. <a href="#eq-QM_uncertianty_uncertainty_relation_2" class="quarto-xref">식&nbsp;<span>7.14</span></a> 의 <span class="math inline">\((2)\)</span> 로부터,</p>
 <p><span id="eq-QM_uncertainty_minimal_packet_1"><span class="math display">\[
 (P-\langle P\rangle) |\Psi\rangle = c(X-\langle X\rangle)|\Psi\rangle
-\tag{6.15}\]</span></span></p>
+\tag{7.15}\]</span></span></p>
 <p>이어야 한다. <span class="math inline">\(X\)</span> 기저에서 아래와 같은 미분방정식이다.</p>
 <p><span class="math display">\[
 \left(- i\hbar\dfrac{d}{dx} - \langle P\rangle\right) \Psi(x) = c(x-\langle X\rangle)\Psi(x)
 \]</span></p>
 <p>를 만족해야 한다. 일반성을 잃지 않고 <span class="math inline">\(\langle X \rangle = 0\)</span> 으로 놓을 수 있다. 그렇다면 이 방정식의 해는 <span id="eq-QM_uncertainty_minimal_packet_2"><span class="math display">\[
 \Psi(x) = \Psi(0) e^{i\langle P\rangle x/\hbar} e^{icx^2/2\hbar}
-\tag{6.16}\]</span></span></p>
-<p>이다. 이제 <a href="#eq-QM_uncertianty_uncertainty_relation_2" class="quarto-xref">식&nbsp;<span>6.14</span></a> 의 <span class="math inline">\((1)\)</span> 를 생각하자. 그리고 <span class="math inline">\(\langle X\rangle = 0\)</span> 을 다시 이용하면 <span class="math inline">\(|\Psi\rangle\)</span> 은 아래 식을 만족해야 한다.</p>
+\tag{7.16}\]</span></span></p>
+<p>이다. 이제 <a href="#eq-QM_uncertianty_uncertainty_relation_2" class="quarto-xref">식&nbsp;<span>7.14</span></a> 의 <span class="math inline">\((1)\)</span> 를 생각하자. 그리고 <span class="math inline">\(\langle X\rangle = 0\)</span> 을 다시 이용하면 <span class="math inline">\(|\Psi\rangle\)</span> 은 아래 식을 만족해야 한다.</p>
 <p><span class="math display">\[
 \begin{aligned}
 &amp;\langle \Psi | (P-\langle P\rangle) X + X(P-\langle P\rangle) |\Psi\rangle = 0.
 \end{aligned}
 \]</span></p>
-<p><a href="#eq-QM_uncertainty_minimal_packet_1" class="quarto-xref">식&nbsp;<span>6.15</span></a> 의 adjoint 는</p>
+<p><a href="#eq-QM_uncertainty_minimal_packet_1" class="quarto-xref">식&nbsp;<span>7.15</span></a> 의 adjoint 는</p>
 <p><span class="math display">\[
 \langle \Psi | (P-\langle P\rangle) = c^\ast \langle \Psi |(X-\langle X\rangle)
 \]</span></p>
@@ -562,15 +570,15 @@ AB = \dfrac{AB+BA}{2}+ \dfrac{AB-BA}{2} = \dfrac{1}{2} \left\{ A,\, B\right\} + 
 <p><span class="math display">\[
 (c+c^\ast) \langle \Psi|X^2|\Psi\rangle = 0
 \]</span></p>
-<p>이다. <span class="math inline">\(c = i\alpha\)</span> (<span class="math inline">\(\alpha \in \mathbb{R}\)</span>) 라고 놓자. 그렇다면 <a href="#eq-QM_uncertainty_minimal_packet_2" class="quarto-xref">식&nbsp;<span>6.16</span></a> 는 아래와 같이 쓸 수 있다.</p>
+<p>이다. <span class="math inline">\(c = i\alpha\)</span> (<span class="math inline">\(\alpha \in \mathbb{R}\)</span>) 라고 놓자. 그렇다면 <a href="#eq-QM_uncertainty_minimal_packet_2" class="quarto-xref">식&nbsp;<span>7.16</span></a> 는 아래와 같이 쓸 수 있다.</p>
 <p><span id="eq-QM_uncertainty_minimal_packet_3"><span class="math display">\[
 \Psi(x) = \Psi(0) e^{i\langle P\rangle x/\hbar} e^{-\alpha x^2/2\hbar}.
-\tag{6.17}\]</span></span></p>
+\tag{7.17}\]</span></span></p>
 <p>여기서 <span class="math inline">\(\alpha &gt; 0\)</span> 이어야 <span class="math inline">\(\Psi(x)\)</span> 가 정규화 가능하다. 이 파동함수는 가우시안 형태를 가지며, <span class="math inline">\(X\)</span> 와 <span class="math inline">\(P\)</span> 의 불확정성을 최소화하는 상태를 나타낸다. 이를 <strong>최소 불확정성 패킷(minimum uncertainty packet)</strong> 이라고 한다.</p>
 <p><br></p>
 </section>
-<section id="sec-QM_uncertainty_uncertainty_principle" class="level3" data-number="6.2.4">
-<h3 data-number="6.2.4" class="anchored" data-anchor-id="sec-QM_uncertainty_uncertainty_principle"><span class="header-section-number">6.2.4</span> 불확정성의 원리의 응용</h3>
+<section id="sec-QM_uncertainty_uncertainty_principle" class="level3" data-number="7.2.4">
+<h3 data-number="7.2.4" class="anchored" data-anchor-id="sec-QM_uncertainty_uncertainty_principle"><span class="header-section-number">7.2.4</span> 불확정성의 원리의 응용</h3>
 <p>이제 불확정성의 원리를 사용하여 바닥상태 에너지와 바닥상태 패동함수의 분포에 대해 알아 볼 수 있다. 수소원자의 경우를 생각해보자. 수소원자에서 양성자를 고정시켰을 때의 해밀토니안은 다음과 같다.</p>
 <p><span class="math display">\[
 H = \dfrac{P_x^2+P_y^2+P_z^2}{2m} - \dfrac{e^2}{(X^2+Y^2+Z^2)^{1/2}}
@@ -627,7 +635,7 @@ H = \dfrac{P_x^2+P_y^2+P_z^2}{2m} - \dfrac{e^2}{(X^2+Y^2+Z^2)^{1/2}}
 <p><br></p>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-QM_shankar_9_4_1" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 6.1 (Shankar 9.4.1)</strong></span> 뒤의 단순조화진동자에서 <span class="math inline">\(|n=1\rangle\)</span> 상태에 대해</p>
+<p><span class="theorem-title"><strong>연습문제 7.1 (Shankar 9.4.1)</strong></span> 뒤의 단순조화진동자에서 <span class="math inline">\(|n=1\rangle\)</span> 상태에 대해</p>
 <p><span class="math display">\[
 \left \langle \dfrac{1}{X^2}\right \rangle \simeq \dfrac{1}{\langle X^2\rangle} \simeq \dfrac{m\omega}{\hbar}
 \]</span></p>
@@ -636,14 +644,14 @@ H = \dfrac{P_x^2+P_y^2+P_z^2}{2m} - \dfrac{e^2}{(X^2+Y^2+Z^2)^{1/2}}
 </div>
 <p><br></p>
 <div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span><a href="QM_harmonic_oscillator.html#eq-QM_sho_xi" class="quarto-xref">식&nbsp;<span>7.14</span></a>, <a href="QM_harmonic_oscillator.html#eq-QM_sho_energy_eigenstate_with_hermite_polynomial" class="quarto-xref">식&nbsp;<span>7.16</span></a>, <a href="QM_harmonic_oscillator.html#eq-QM_sho_hermite_polynomial_first_4" class="quarto-xref">식&nbsp;<span>7.18</span></a> 를 생각하자. <span class="math inline">\(\alpha = \sqrt{m\omega/\hbar}\)</span> 라고 하면 <span class="math inline">\(\xi = \alpha x\)</span> 이며, <span class="math display">\[
+<p><span class="proof-title"><em>(해답)</em>. </span><a href="QM_harmonic_oscillator.html#eq-QM_sho_xi" class="quarto-xref">식&nbsp;<span>8.14</span></a>, <a href="QM_harmonic_oscillator.html#eq-QM_sho_energy_eigenstate_with_hermite_polynomial" class="quarto-xref">식&nbsp;<span>8.16</span></a>, <a href="QM_harmonic_oscillator.html#eq-QM_sho_hermite_polynomial_first_4" class="quarto-xref">식&nbsp;<span>8.18</span></a> 를 생각하자. <span class="math inline">\(\alpha = \sqrt{m\omega/\hbar}\)</span> 라고 하면 <span class="math inline">\(\xi = \alpha x\)</span> 이며, <span class="math display">\[
 \begin{aligned}
 \left \langle \dfrac{1}{X^2}\right \rangle &amp;= \left(\dfrac{m\omega}{4\pi \hbar}\right)^{1/2} \int_{-\infty}^\infty \dfrac{1}{x^2} (4\alpha^2x^2) e^{-\alpha^2x^2} \, dx \\
 &amp;=  \left(\dfrac{m\omega}{4\pi \hbar}\right)^{1/2} 4\alpha^2 \int_{-\infty}^\infty e^{-\alpha^2x^2} \\
 &amp;=  \left(\dfrac{m\omega}{4\pi \hbar}\right)^{1/2} 4\sqrt{\pi} \alpha =\dfrac{2m\omega}{\hbar}
 \end{aligned}
 \]</span></p>
-<p>또한 <a href="QM_harmonic_oscillator.html#eq-QM_sho_x_and_p_with_ladder_operator_3" class="quarto-xref">식&nbsp;<span>7.13</span></a> 로부터 <span class="math inline">\(\langle 1|X^2 |1\rangle = \dfrac{3\hbar}{2m\omega}\)</span> 이므로</p>
+<p>또한 <a href="QM_harmonic_oscillator.html#eq-QM_sho_x_and_p_with_ladder_operator_3" class="quarto-xref">식&nbsp;<span>8.13</span></a> 로부터 <span class="math inline">\(\langle 1|X^2 |1\rangle = \dfrac{3\hbar}{2m\omega}\)</span> 이므로</p>
 <p><span class="math display">\[
 \dfrac{1}{\langle X^2\rangle} = \dfrac{2m\omega}{3\hbar}
 \]</span> 이다.</p>
@@ -651,7 +659,7 @@ H = \dfrac{P_x^2+P_y^2+P_z^2}{2m} - \dfrac{e^2}{(X^2+Y^2+Z^2)^{1/2}}
 <p><br></p>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-QM_shankar_9_4_2" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 6.2 (Shankar 9.4.2)</strong></span> (<span class="math inline">\(1\)</span>) 아래의 파동함수는 수소원자의 바닥상태의 그것이다. 이 파동함수가 정규화되어 있다는 것을 보여라.</p>
+<p><span class="theorem-title"><strong>연습문제 7.2 (Shankar 9.4.2)</strong></span> (<span class="math inline">\(1\)</span>) 아래의 파동함수는 수소원자의 바닥상태의 그것이다. 이 파동함수가 정규화되어 있다는 것을 보여라.</p>
 <p><span class="math display">\[
 \Psi(r) = \dfrac{1}{\sqrt{\pi a_0^3}}e^{-r/a_0},\qquad r=\sqrt{x^2+y^2+z^2}.
 \]</span></p>
@@ -690,7 +698,7 @@ H = \dfrac{P_x^2+P_y^2+P_z^2}{2m} - \dfrac{e^2}{(X^2+Y^2+Z^2)^{1/2}}
 <p><br></p>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-QM_shankar_9_4_3" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 6.3 (Shankar 9.4.3)</strong></span> 수소 원자가 3차원 시스템이라는 것을 잊고 다음과 같은 1차원 시스템이라고 생각하자.</p>
+<p><span class="theorem-title"><strong>연습문제 7.3 (Shankar 9.4.3)</strong></span> 수소 원자가 3차원 시스템이라는 것을 잊고 다음과 같은 1차원 시스템이라고 생각하자.</p>
 <p><span class="math display">\[
 H = \dfrac{P^2}{2m}- \dfrac{e^2}{(R^2)^{1/2}},\qquad (P^2=P_x^2+P_y^2+P_z^2,\; R^2=X^2+Y^2+Z^2).
 \]</span></p>
@@ -711,12 +719,12 @@ H \ge \dfrac{2me^4}{\hbar^2} - \dfrac{4me^4}{\hbar^2} = - \dfrac{2me^4}{\hbar^2}
 <p><br></p>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-QM_shankar_9_4_4" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 6.4 (Shankar 9.4.4)</strong></span> <span class="math inline">\(T=\dfrac{P^2}{2m}\)</span> 에 대해 <span class="math inline">\(\Delta T \cdot \Delta X\)</span> 를 구하라. 왜 이 관계는 유명하지 않을까?</p>
+<p><span class="theorem-title"><strong>연습문제 7.4 (Shankar 9.4.4)</strong></span> <span class="math inline">\(T=\dfrac{P^2}{2m}\)</span> 에 대해 <span class="math inline">\(\Delta T \cdot \Delta X\)</span> 를 구하라. 왜 이 관계는 유명하지 않을까?</p>
 </div>
 </div>
 <p><br></p>
 <div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span><a href="#eq-QM_uncertainty_derivation_of_uncertianty_relation_2" class="quarto-xref">식&nbsp;<span>6.12</span></a> 을 생각하자. 우선 <span class="math display">\[
+<p><span class="proof-title"><em>(해답)</em>. </span><a href="#eq-QM_uncertainty_derivation_of_uncertianty_relation_2" class="quarto-xref">식&nbsp;<span>7.12</span></a> 을 생각하자. 우선 <span class="math display">\[
 [T,\,X] = \dfrac{1}{2m}[P^2,\, X]= \dfrac{1}{2m}\left(P[P, X] - [X, P] P\right) = - \dfrac{i\hbar}{m}P
 \]</span></p>
 <p>이다. <span class="math display">\[
@@ -726,8 +734,8 @@ H \ge \dfrac{2me^4}{\hbar^2} - \dfrac{4me^4}{\hbar^2} = - \dfrac{2me^4}{\hbar^2}
 </div>
 <p><br></p>
 </section>
-<section id="sec-QM_uncertainty_energy_time" class="level3" data-number="6.2.5">
-<h3 data-number="6.2.5" class="anchored" data-anchor-id="sec-QM_uncertainty_energy_time"><span class="header-section-number">6.2.5</span> 에너지-시간 불확정성</h3>
+<section id="sec-QM_uncertainty_energy_time" class="level3" data-number="7.2.5">
+<h3 data-number="7.2.5" class="anchored" data-anchor-id="sec-QM_uncertainty_energy_time"><span class="header-section-number">7.2.5</span> 에너지-시간 불확정성</h3>
 <!-- 에너지와 시간에 관한 아래와 같은 불확정 관계가 존재한다.
 
 $$
@@ -1149,12 +1157,12 @@ $$ {#eq-QM_uncertianty_energy_time}
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../../src/QM/QM_1d_bound_state.html" class="pagination-link" aria-label="1차원 문제 I : 자유입자와 Bound state">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">1차원 문제 I : 자유입자와 Bound state</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">1차원 문제 I : 자유입자와 Bound state</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="../../src/QM/QM_harmonic_oscillator.html" class="pagination-link" aria-label="단순조화진동자">
-        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">단순조화진동자</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">단순조화진동자</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.27">
+<meta name="generator" content="quarto-1.9.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>11&nbsp; 대칭 – 양자 역학</title>
+<title>12&nbsp; 대칭 – 양자 역학</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -24,7 +27,6 @@ ul.task-list li input[type="checkbox"] {
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
-  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -54,15 +56,14 @@ div.csl-indent {
 <link href="../../src/QM/QM_N_DoF_system.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-3e2728906df7980cb53b491a61d13d7e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-221f8d40ef94b7d7736ec4c1e420c32a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -92,7 +93,7 @@ div.csl-indent {
 }</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -132,7 +133,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/QM/QM.html">II. 양자역학</a></li><li class="breadcrumb-item"><a href="../../src/QM/QM_symmetry.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">대칭</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/QM/QM.html">II. 양자역학</a></li><li class="breadcrumb-item"><a href="../../src/QM/QM_symmetry.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">대칭</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -144,8 +145,8 @@ window.Quarto = {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/QM/QM.html">II. 양자역학</a></li><li class="breadcrumb-item"><a href="../../src/QM/QM_symmetry.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">대칭</span></a></li></ol></nav>
-      <h1 class="title"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">대칭</span></h1>
+    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/QM/QM.html">II. 양자역학</a></li><li class="breadcrumb-item"><a href="../../src/QM/QM_symmetry.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">대칭</span></a></li></ol></nav>
+      <h1 class="title"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">대칭</span></h1>
                       </div>
   </div>
     
@@ -190,20 +191,26 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../src/CHM/history.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">양자 역학 연표</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../src/CHM/mathematical_foundation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">힐베르트 공간과 브라켓 표기법</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">힐베르트 공간과 브라켓 표기법</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/CHM/CHM_symmetry_in_classical_mechanics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">고전역학에서의 대칭</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">고전역학에서의 대칭</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/CHM/some_proofs.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">몇몇 증명들</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">몇몇 증명들</span></span></a>
   </div>
 </li>
       </ul>
@@ -220,67 +227,67 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/QM/QM_foundation_of_quantum_theory.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">고전 물리학의 붕괴와 양자 원리</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">고전 물리학의 붕괴와 양자 원리</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/QM/QM_1d_bound_state.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">1차원 문제 I : 자유입자와 Bound state</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">1차원 문제 I : 자유입자와 Bound state</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/QM/QM_classical_limit.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">고전적인 극한과 불확정성 원리</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">고전적인 극한과 불확정성 원리</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/QM/QM_harmonic_oscillator.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">단순조화진동자</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">단순조화진동자</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/QM/QM_1d_scattering.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">1차원 산란</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">1차원 산란</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/QM/QM_path_integral_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">경로적분 I</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">경로적분 I</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/QM/QM_N_DoF_system.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">N 자유도 시스템</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">N 자유도 시스템</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/QM/QM_symmetry.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">대칭</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">대칭</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/QM/QM_angular_momentum1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">회전불변과 2차원에서의 각운동량</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">회전불변과 2차원에서의 각운동량</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/QM/QM_angular_momentum2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">3차원에서의 각운동량</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">3차원에서의 각운동량</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/QM/QM_sakurai_problems.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Sakurai (Rev.&nbsp;Ed.) Problems</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Sakurai (Rev.&nbsp;Ed.) Problems</span></span></a>
   </div>
 </li>
       </ul>
@@ -297,7 +304,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/QC/01_introduction.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
       </ul>
@@ -314,19 +321,19 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/AUX/entanglement.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">양자 얽힘</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">양자 얽힘</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/AUX/quantum_state.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">양자 상태</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">양자 상태</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/AUX/JSBell_against_measurement.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Against Measurement - J. S. Bell</span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Against Measurement - J. S. Bell</span></span></a>
   </div>
 </li>
       </ul>
@@ -347,30 +354,30 @@ window.Quarto = {
     <h2 id="toc-title">목차</h2>
    
   <ul>
-  <li><a href="#양자-이론에서의-translational-invariance" id="toc-양자-이론에서의-translational-invariance" class="nav-link active" data-scroll-target="#양자-이론에서의-translational-invariance"><span class="header-section-number">11.1</span> 양자 이론에서의 translational invariance</a>
+  <li><a href="#양자-이론에서의-translational-invariance" id="toc-양자-이론에서의-translational-invariance" class="nav-link active" data-scroll-target="#양자-이론에서의-translational-invariance"><span class="header-section-number">12.1</span> 양자 이론에서의 translational invariance</a>
   <ul class="collapse">
-  <li><a href="#sec-QM_symmetry_translation" id="toc-sec-QM_symmetry_translation" class="nav-link" data-scroll-target="#sec-QM_symmetry_translation"><span class="header-section-number">11.1.1</span> 양자역학에서의 Translation</a></li>
-  <li><a href="#sec-QM_symmetry_non_uniquiness_of_translation" id="toc-sec-QM_symmetry_non_uniquiness_of_translation" class="nav-link" data-scroll-target="#sec-QM_symmetry_non_uniquiness_of_translation"><span class="header-section-number">11.1.2</span> Translation 은 유일하지 않다</a></li>
-  <li><a href="#t_varepsilon-의-성질" id="toc-t_varepsilon-의-성질" class="nav-link" data-scroll-target="#t_varepsilon-의-성질"><span class="header-section-number">11.1.3</span> <span class="math inline">\(T_\varepsilon\)</span> 의 성질</a></li>
-  <li><a href="#sec-QM_symmetry_translational_invariance" id="toc-sec-QM_symmetry_translational_invariance" class="nav-link" data-scroll-target="#sec-QM_symmetry_translational_invariance"><span class="header-section-number">11.1.4</span> Translational Invariance 와 Translation 의 Generator</a></li>
-  <li><a href="#passive-transform-으로-본-translation" id="toc-passive-transform-으로-본-translation" class="nav-link" data-scroll-target="#passive-transform-으로-본-translation"><span class="header-section-number">11.1.5</span> Passive transform 으로 본 translation</a></li>
-  <li><a href="#sec-QM_symmetry_canonical_transform_and_unitary_transform" id="toc-sec-QM_symmetry_canonical_transform_and_unitary_transform" class="nav-link" data-scroll-target="#sec-QM_symmetry_canonical_transform_and_unitary_transform"><span class="header-section-number">11.1.6</span> 고전역학의 정준변환과 양자역학의 unitary 변환</a></li>
-  <li><a href="#finite-translation" id="toc-finite-translation" class="nav-link" data-scroll-target="#finite-translation"><span class="header-section-number">11.1.7</span> Finite Translation</a></li>
-  <li><a href="#sec-QM_symmetry_translation_invariance_in_many_particles_system" id="toc-sec-QM_symmetry_translation_invariance_in_many_particles_system" class="nav-link" data-scroll-target="#sec-QM_symmetry_translation_invariance_in_many_particles_system"><span class="header-section-number">11.1.8</span> 다입자 시스템의 경우</a></li>
-  <li><a href="#sec-QM_symmetry_implication_of_translational_invariance" id="toc-sec-QM_symmetry_implication_of_translational_invariance" class="nav-link" data-scroll-target="#sec-QM_symmetry_implication_of_translational_invariance"><span class="header-section-number">11.1.9</span> Translational Invariance 의 의미</a></li>
+  <li><a href="#sec-QM_symmetry_translation" id="toc-sec-QM_symmetry_translation" class="nav-link" data-scroll-target="#sec-QM_symmetry_translation"><span class="header-section-number">12.1.1</span> 양자역학에서의 Translation</a></li>
+  <li><a href="#sec-QM_symmetry_non_uniquiness_of_translation" id="toc-sec-QM_symmetry_non_uniquiness_of_translation" class="nav-link" data-scroll-target="#sec-QM_symmetry_non_uniquiness_of_translation"><span class="header-section-number">12.1.2</span> Translation 은 유일하지 않다</a></li>
+  <li><a href="#t_varepsilon-의-성질" id="toc-t_varepsilon-의-성질" class="nav-link" data-scroll-target="#t_varepsilon-의-성질"><span class="header-section-number">12.1.3</span> <span class="math inline">\(T_\varepsilon\)</span> 의 성질</a></li>
+  <li><a href="#sec-QM_symmetry_translational_invariance" id="toc-sec-QM_symmetry_translational_invariance" class="nav-link" data-scroll-target="#sec-QM_symmetry_translational_invariance"><span class="header-section-number">12.1.4</span> Translational Invariance 와 Translation 의 Generator</a></li>
+  <li><a href="#passive-transform-으로-본-translation" id="toc-passive-transform-으로-본-translation" class="nav-link" data-scroll-target="#passive-transform-으로-본-translation"><span class="header-section-number">12.1.5</span> Passive transform 으로 본 translation</a></li>
+  <li><a href="#sec-QM_symmetry_canonical_transform_and_unitary_transform" id="toc-sec-QM_symmetry_canonical_transform_and_unitary_transform" class="nav-link" data-scroll-target="#sec-QM_symmetry_canonical_transform_and_unitary_transform"><span class="header-section-number">12.1.6</span> 고전역학의 정준변환과 양자역학의 unitary 변환</a></li>
+  <li><a href="#finite-translation" id="toc-finite-translation" class="nav-link" data-scroll-target="#finite-translation"><span class="header-section-number">12.1.7</span> Finite Translation</a></li>
+  <li><a href="#sec-QM_symmetry_translation_invariance_in_many_particles_system" id="toc-sec-QM_symmetry_translation_invariance_in_many_particles_system" class="nav-link" data-scroll-target="#sec-QM_symmetry_translation_invariance_in_many_particles_system"><span class="header-section-number">12.1.8</span> 다입자 시스템의 경우</a></li>
+  <li><a href="#sec-QM_symmetry_implication_of_translational_invariance" id="toc-sec-QM_symmetry_implication_of_translational_invariance" class="nav-link" data-scroll-target="#sec-QM_symmetry_implication_of_translational_invariance"><span class="header-section-number">12.1.9</span> Translational Invariance 의 의미</a></li>
   </ul></li>
-  <li><a href="#time-translational-invariance" id="toc-time-translational-invariance" class="nav-link" data-scroll-target="#time-translational-invariance"><span class="header-section-number">11.2</span> Time Translational invariance</a></li>
-  <li><a href="#parity-invariance" id="toc-parity-invariance" class="nav-link" data-scroll-target="#parity-invariance"><span class="header-section-number">11.3</span> Parity Invariance</a>
+  <li><a href="#time-translational-invariance" id="toc-time-translational-invariance" class="nav-link" data-scroll-target="#time-translational-invariance"><span class="header-section-number">12.2</span> Time Translational invariance</a></li>
+  <li><a href="#parity-invariance" id="toc-parity-invariance" class="nav-link" data-scroll-target="#parity-invariance"><span class="header-section-number">12.3</span> Parity Invariance</a>
   <ul class="collapse">
-  <li><a href="#active-transformation-의-관점에서" id="toc-active-transformation-의-관점에서" class="nav-link" data-scroll-target="#active-transformation-의-관점에서"><span class="header-section-number">11.3.1</span> Active transformation 의 관점에서</a></li>
-  <li><a href="#passive-transform-의-관점에서" id="toc-passive-transform-의-관점에서" class="nav-link" data-scroll-target="#passive-transform-의-관점에서"><span class="header-section-number">11.3.2</span> Passive transform 의 관점에서</a></li>
-  <li><a href="#parity-붕괴" id="toc-parity-붕괴" class="nav-link" data-scroll-target="#parity-붕괴"><span class="header-section-number">11.3.3</span> Parity 붕괴</a></li>
-  <li><a href="#연습문제" id="toc-연습문제" class="nav-link" data-scroll-target="#연습문제"><span class="header-section-number">11.3.4</span> 연습문제</a></li>
+  <li><a href="#active-transformation-의-관점에서" id="toc-active-transformation-의-관점에서" class="nav-link" data-scroll-target="#active-transformation-의-관점에서"><span class="header-section-number">12.3.1</span> Active transformation 의 관점에서</a></li>
+  <li><a href="#passive-transform-의-관점에서" id="toc-passive-transform-의-관점에서" class="nav-link" data-scroll-target="#passive-transform-의-관점에서"><span class="header-section-number">12.3.2</span> Passive transform 의 관점에서</a></li>
+  <li><a href="#parity-붕괴" id="toc-parity-붕괴" class="nav-link" data-scroll-target="#parity-붕괴"><span class="header-section-number">12.3.3</span> Parity 붕괴</a></li>
+  <li><a href="#연습문제" id="toc-연습문제" class="nav-link" data-scroll-target="#연습문제"><span class="header-section-number">12.3.4</span> 연습문제</a></li>
   </ul></li>
-  <li><a href="#time-reversal-symmetry" id="toc-time-reversal-symmetry" class="nav-link" data-scroll-target="#time-reversal-symmetry"><span class="header-section-number">11.4</span> Time Reversal Symmetry</a>
+  <li><a href="#time-reversal-symmetry" id="toc-time-reversal-symmetry" class="nav-link" data-scroll-target="#time-reversal-symmetry"><span class="header-section-number">12.4</span> Time Reversal Symmetry</a>
   <ul class="collapse">
-  <li><a href="#시간-역전의-고전역학적-관점" id="toc-시간-역전의-고전역학적-관점" class="nav-link" data-scroll-target="#시간-역전의-고전역학적-관점"><span class="header-section-number">11.4.1</span> 시간 역전의 고전역학적 관점</a></li>
-  <li><a href="#시간-역전의-양자역학적-관점" id="toc-시간-역전의-양자역학적-관점" class="nav-link" data-scroll-target="#시간-역전의-양자역학적-관점"><span class="header-section-number">11.4.2</span> 시간 역전의 양자역학적 관점</a></li>
+  <li><a href="#시간-역전의-고전역학적-관점" id="toc-시간-역전의-고전역학적-관점" class="nav-link" data-scroll-target="#시간-역전의-고전역학적-관점"><span class="header-section-number">12.4.1</span> 시간 역전의 고전역학적 관점</a></li>
+  <li><a href="#시간-역전의-양자역학적-관점" id="toc-시간-역전의-양자역학적-관점" class="nav-link" data-scroll-target="#시간-역전의-양자역학적-관점"><span class="header-section-number">12.4.2</span> 시간 역전의 양자역학적 관점</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -384,7 +391,7 @@ window.Quarto = {
 
 <div class="hidden">
 <p>%</p>
-%
+<p>%</p>
 <!-- \newcommand{\hom}{\text{Hom}}
 \newcommand{\iso}{\text{Iso}}
 \newcommand{\aut}{\text{Aut}} -->
@@ -405,22 +412,22 @@ window.Quarto = {
 </div>
 <div class="callout-body-container callout-body">
 <p>우리는 고전역학의 해밀토니안 <span class="math inline">\(\mathcal{H}\)</span> 에 대해 다음이 성립한다는 것을 안다.</p>
-<p>(<span class="math inline">\(1\)</span>) 동역학 변수 <span class="math inline">\(g(\boldsymbol{q},\,\boldsymbol{p})\)</span> 에 의한 infinitesimal canonical transformation 에 대해 해밀토니안이 변하지 않으면 <span class="math inline">\(g\)</span> 는 보존된다. (<a href="../CHM/CHM_symmetry_in_classical_mechanics.html#thm-CHM_symmetry_constant_of_motion" class="quarto-xref">정리&nbsp;<span>2.2</span></a>)</p>
-<p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(\mathcal{H}\)</span> 가 불변인 canonical transformation 에 의한 운동방정식의 해의 변환은 역시 운동방정식의 해이다. (<a href="../CHM/CHM_symmetry_in_classical_mechanics.html#thm-CHM_symmetry_canonital_transoformation_and_solution_of_equation_of_motion" class="quarto-xref">정리&nbsp;<span>2.3</span></a>)</p>
+<p>(<span class="math inline">\(1\)</span>) 동역학 변수 <span class="math inline">\(g(\boldsymbol{q},\,\boldsymbol{p})\)</span> 에 의한 infinitesimal canonical transformation 에 대해 해밀토니안이 변하지 않으면 <span class="math inline">\(g\)</span> 는 보존된다. (<a href="../CHM/CHM_symmetry_in_classical_mechanics.html#thm-CHM_symmetry_constant_of_motion" class="quarto-xref">정리&nbsp;<span>3.2</span></a>)</p>
+<p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(\mathcal{H}\)</span> 가 불변인 canonical transformation 에 의한 운동방정식의 해의 변환은 역시 운동방정식의 해이다. (<a href="../CHM/CHM_symmetry_in_classical_mechanics.html#thm-CHM_symmetry_canonital_transoformation_and_solution_of_equation_of_motion" class="quarto-xref">정리&nbsp;<span>3.3</span></a>)</p>
 </div>
 </div>
 <p><br></p>
-<section id="양자-이론에서의-translational-invariance" class="level2" data-number="11.1">
-<h2 data-number="11.1" class="anchored" data-anchor-id="양자-이론에서의-translational-invariance"><span class="header-section-number">11.1</span> 양자 이론에서의 translational invariance</h2>
-<section id="sec-QM_symmetry_translation" class="level3" data-number="11.1.1">
-<h3 data-number="11.1.1" class="anchored" data-anchor-id="sec-QM_symmetry_translation"><span class="header-section-number">11.1.1</span> 양자역학에서의 Translation</h3>
+<section id="양자-이론에서의-translational-invariance" class="level2" data-number="12.1">
+<h2 data-number="12.1" class="anchored" data-anchor-id="양자-이론에서의-translational-invariance"><span class="header-section-number">12.1</span> 양자 이론에서의 translational invariance</h2>
+<section id="sec-QM_symmetry_translation" class="level3" data-number="12.1.1">
+<h3 data-number="12.1.1" class="anchored" data-anchor-id="sec-QM_symmetry_translation"><span class="header-section-number">12.1.1</span> 양자역학에서의 Translation</h3>
 <p>양자역학에서 translational invariance, 즉 어떤 translation 에 대한 해밀토니안 <span class="math inline">\(H\)</span> 의 invariance 를 어떻게 정의할 것인가? 양자역학에서는 어떤 상태의 입자의 위치나 에너지는 잘 정의된 물리량이 아니며, 따라서 위치에서의 infinetsimal translation 에 대한 해밀토니안의 불변성도 정의 할 수 없다. 그러나 고전역학에서 정의된 어떤 양은 양자역학에서의 기대값에 상응하도록 되어있는 경우가 많다는 것을 고려하면, 양자역학에서의 translational invariance 는 (그것을 생각해야 한다면) 경로의 기대값에 대한 infinitesimal transformation 에 대한 것이어야 할 것이다. 즉, 변환에 의해 위치와 운동량의 기대값이 아래와 같이 변해야 한다.</p>
 <p><span id="eq-QM_infinitesimal_translation"><span class="math display">\[
 \begin{aligned}
 \langle X \rangle &amp;\to \langle X\rangle + \varepsilon,\\[0.3em]
 \langle P \rangle &amp;\to \langle P \rangle
 \end{aligned}
-\tag{11.1}\]</span></span></p>
+\tag{12.1}\]</span></span></p>
 <p>고전역학에서의 변환과 같이 여기에 두가지 방법이 있다. 상태를 변환시키는 active transformation 과 <span class="math inline">\(X,\,P\)</span> 연산자를 변화시키는 passive transformation.</p>
 <p><br></p>
 <section id="active-transformation" class="level4">
@@ -458,7 +465,7 @@ P &amp; \to T^\dagger_\varepsilon PT_{\varepsilon} = P
 <p>이미 알겠지만 능동적 변환과 수동적 변환은 동일한 현상에 대한 다른 수학적 표현법일 따름이다. 이제 우리는 <span class="math inline">\(T_\varepsilon\)</span> 을 구해보도록 하자. 일단 active transformation 의 관점을 따르기로 한다. 우선 <span class="math inline">\(X\)</span> 기저에서 <span class="math inline">\(|x\rangle\)</span> 상태에 있는 입자에 대해</p>
 <p><span id="eq-QM_symmetry_translation_in_position_basis"><span class="math display">\[
 T_{\varepsilon}|x\rangle = |x+\varepsilon\rangle
-\tag{11.2}\]</span></span></p>
+\tag{12.2}\]</span></span></p>
 <p>라고 할 수 있다. <span class="math inline">\(|x\rangle\)</span> 와 <span class="math inline">\(|x+\varepsilon\rangle\)</span> 는 둘 다 <span class="math inline">\(X\)</span> 에 대한 정규직교기저벡터 이다. 즉 <span class="math inline">\(T_\varepsilon\)</span> 은 유니타리 연산자이다. 이제 <span class="math inline">\(|\Psi_\varepsilon \rangle = T_\varepsilon |\Psi\rangle\)</span> 을 생각해보자.</p>
 <p><span class="math display">\[
 \begin{aligned}
@@ -473,7 +480,7 @@ T_{\varepsilon}|x\rangle = |x+\varepsilon\rangle
 <p>이다. 즉 파동함수 <span class="math inline">\(\Psi (x) = \langle x|\Psi\rangle\)</span> 에 대해</p>
 <p><span id="eq-QM_symmetry_change_of_wave_fucntion_by_translation"><span class="math display">\[
 \Psi_\varepsilon (x) = \langle x|T_\varepsilon |\Psi\rangle = \Psi(x-\varepsilon)
-\tag{11.3}\]</span></span></p>
+\tag{12.3}\]</span></span></p>
 <p>이며 이것은 파동함수의 translation 을 의미한다는 것을 알 수 있다. 또한,</p>
 <p><span class="math display">\[
 \begin{aligned}
@@ -485,8 +492,8 @@ T_{\varepsilon}|x\rangle = |x+\varepsilon\rangle
 <p><br></p>
 </section>
 </section>
-<section id="sec-QM_symmetry_non_uniquiness_of_translation" class="level3" data-number="11.1.2">
-<h3 data-number="11.1.2" class="anchored" data-anchor-id="sec-QM_symmetry_non_uniquiness_of_translation"><span class="header-section-number">11.1.2</span> Translation 은 유일하지 않다</h3>
+<section id="sec-QM_symmetry_non_uniquiness_of_translation" class="level3" data-number="12.1.2">
+<h3 data-number="12.1.2" class="anchored" data-anchor-id="sec-QM_symmetry_non_uniquiness_of_translation"><span class="header-section-number">12.1.2</span> Translation 은 유일하지 않다</h3>
 <p>여기서 한가지 짚고 넘어가야 할 것이 있다. 고전역학에서는 <span class="math inline">\(x\)</span> 와 <span class="math inline">\(p\)</span> 는 독립적이며 고전역학에서의 translation 은</p>
 <p><span class="math display">\[
 \begin{aligned}
@@ -523,13 +530,13 @@ T_{\varepsilon} |x\rangle = e^{i\varepsilon g(x)/\hbar}|x+\varepsilon\rangle
 <p>이다. 즉 우리가 <span class="math inline">\(T_\varepsilon |x\rangle = |x+\varepsilon\rangle\)</span> 을 선택한 것은 <span class="math inline">\(\langle X\rangle \to \langle X\rangle + \varepsilon,\, \langle P \rangle \to \langle P \rangle\)</span> 인 변환을 선택한 것이다.</p>
 <p><br></p>
 </section>
-<section id="t_varepsilon-의-성질" class="level3" data-number="11.1.3">
-<h3 data-number="11.1.3" class="anchored" data-anchor-id="t_varepsilon-의-성질"><span class="header-section-number">11.1.3</span> <span class="math inline">\(T_\varepsilon\)</span> 의 성질</h3>
+<section id="t_varepsilon-의-성질" class="level3" data-number="12.1.3">
+<h3 data-number="12.1.3" class="anchored" data-anchor-id="t_varepsilon-의-성질"><span class="header-section-number">12.1.3</span> <span class="math inline">\(T_\varepsilon\)</span> 의 성질</h3>
 <p>이제 <span class="math inline">\(X\)</span> 기저에 대한 <span class="math inline">\(T_\varepsilon\)</span> 을 정의했으므로 <span class="math inline">\(T_\varepsilon\)</span> 에 대한 몇가지 성질을 알아보자.</p>
 <p><br></p>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="prp-QM_symmetry_properties_of_translation_operator" class="theorem proposition">
-<p><span class="theorem-title"><strong>명제 11.1</strong></span> Infinitesimal translation operator <span class="math inline">\(T_\varepsilon\)</span> 에 대해 다음을 보여라.</p>
+<p><span class="theorem-title"><strong>명제 12.1</strong></span> Infinitesimal translation operator <span class="math inline">\(T_\varepsilon\)</span> 에 대해 다음을 보여라.</p>
 <p> (<span class="math inline">\(1\)</span>) <span class="math inline">\(T_\varepsilon\)</span> 은 unitary 이다.</p>
 <p> (<span class="math inline">\(2\)</span>) <span class="math inline">\(T_{\varepsilon_1} T_{\varepsilon_2} = T_{\varepsilon_1+ \varepsilon_2}\)</span> 이다.</p>
 <p> (<span class="math inline">\(3\)</span>) <span class="math inline">\(T^\dagger_\varepsilon = T_{-\varepsilon} = {T_\varepsilon}^{-1}\)</span> 이다.</p>
@@ -546,8 +553,8 @@ T_{\varepsilon} |x\rangle = e^{i\varepsilon g(x)/\hbar}|x+\varepsilon\rangle
 </div>
 <p><br></p>
 </section>
-<section id="sec-QM_symmetry_translational_invariance" class="level3" data-number="11.1.4">
-<h3 data-number="11.1.4" class="anchored" data-anchor-id="sec-QM_symmetry_translational_invariance"><span class="header-section-number">11.1.4</span> Translational Invariance 와 Translation 의 Generator</h3>
+<section id="sec-QM_symmetry_translational_invariance" class="level3" data-number="12.1.4">
+<h3 data-number="12.1.4" class="anchored" data-anchor-id="sec-QM_symmetry_translational_invariance"><span class="header-section-number">12.1.4</span> Translational Invariance 와 Translation 의 Generator</h3>
 <p>양자역학에서의 translation 을 정의했으므로 우리는 translational invariance 를 정의 할 수 있다. 즉 <span class="math inline">\(|\Psi_\varepsilon\rangle = T_\varepsilon|\Psi\rangle\)</span> 에 대해</p>
 <p><span class="math display">\[
 \langle \Psi| H |\Psi\rangle = \langle \Psi_\varepsilon | H |\Psi_\varepsilon \rangle
@@ -555,12 +562,12 @@ T_{\varepsilon} |x\rangle = e^{i\varepsilon g(x)/\hbar}|x+\varepsilon\rangle
 <p>일 때 해밀토니안 <span class="math inline">\(H\)</span> 가 translatinal invariance 라고 한다. 이제 <span class="math inline">\(T_{\varepsilon}\)</span> 을 명확하게 구성해 보자. <span class="math inline">\(\varepsilon=0\)</span> 일 때 <span class="math inline">\(T_{\varepsilon} = I\)</span> 이므로 <span class="math inline">\(\varepsilon\)</span> 의 1차항까지 전개하여</p>
 <p><span id="eq-QM_translation_operator"><span class="math display">\[
 T_{\varepsilon}= I-\dfrac{i\varepsilon}{\hbar}G
-\tag{11.4}\]</span></span></p>
-<p>라고 하자. <a href="#eq-QM_translation_operator" class="quarto-xref">식&nbsp;<span>11.4</span></a> 는 근사식이며 많은 계산에서 <span class="math inline">\(\varepsilon\)</span> 에 대한 1차식까지만의 결과가 사용되기 때문에 편리하다. 이 때 <span class="math inline">\(G\)</span> 는 translation 의 generator 라고 한다. 이 때 <span class="math inline">\(G\)</span> 는 에르미트 연산자이다.</p>
+\tag{12.4}\]</span></span></p>
+<p>라고 하자. <a href="#eq-QM_translation_operator" class="quarto-xref">식&nbsp;<span>12.4</span></a> 는 근사식이며 많은 계산에서 <span class="math inline">\(\varepsilon\)</span> 에 대한 1차식까지만의 결과가 사용되기 때문에 편리하다. 이 때 <span class="math inline">\(G\)</span> 는 translation 의 generator 라고 한다. 이 때 <span class="math inline">\(G\)</span> 는 에르미트 연산자이다.</p>
 <br>
 <div class="border" style="background-color:#F2F4F4  ;padding:5px;">
 <div id="exm-shankar_11_2_2" class="theorem example">
-<p><span class="theorem-title"><strong>예제 11.1 (Shankar 11.2.2)</strong></span> <span class="math inline">\(T_\varepsilon\)</span> 이 유니타리 임을 이용하여 <a href="#eq-QM_translation_operator" class="quarto-xref">식&nbsp;<span>11.4</span></a> 의 <span class="math inline">\(G\)</span> 는 에르미트 임을 보이자. <span class="math inline">\(T^\dagger_{\varepsilon} T_{\varepsilon}= I\)</span> 이므로,</p>
+<p><span class="theorem-title"><strong>예제 12.1 (Shankar 11.2.2)</strong></span> <span class="math inline">\(T_\varepsilon\)</span> 이 유니타리 임을 이용하여 <a href="#eq-QM_translation_operator" class="quarto-xref">식&nbsp;<span>12.4</span></a> 의 <span class="math inline">\(G\)</span> 는 에르미트 임을 보이자. <span class="math inline">\(T^\dagger_{\varepsilon} T_{\varepsilon}= I\)</span> 이므로,</p>
 <p><span class="math display">\[
 T^\dagger T = I - \dfrac{i\varepsilon}{\hbar}(G-G^\dagger) + o(\varepsilon^2) = I
 \]</span></p>
@@ -593,36 +600,36 @@ T_{\varepsilon} = I - \dfrac{i\varepsilon}{h}P
 <p>이므로 <span class="math inline">\(\langle \Psi_\varepsilon| H |\Psi_\varepsilon \rangle = \langle \Psi | H |\Psi \rangle\)</span> 로부터 <span class="math inline">\([P,\, H] = 0\)</span> 을 얻는다. 즉 <span class="math inline">\(\langle \dot{P}\rangle = 0\)</span> 이므로 <span class="math inline">\(P\)</span> 는 보존된다.</p>
 <p><br></p>
 </section>
-<section id="passive-transform-으로-본-translation" class="level3" data-number="11.1.5">
-<h3 data-number="11.1.5" class="anchored" data-anchor-id="passive-transform-으로-본-translation"><span class="header-section-number">11.1.5</span> Passive transform 으로 본 translation</h3>
+<section id="passive-transform-으로-본-translation" class="level3" data-number="12.1.5">
+<h3 data-number="12.1.5" class="anchored" data-anchor-id="passive-transform-으로-본-translation"><span class="header-section-number">12.1.5</span> Passive transform 으로 본 translation</h3>
 <p>Translation <span class="math inline">\(T_\varepsilon\)</span> 이 연산자에 적용된다면</p>
 <p><span id="eq-QM_transilation_in_passive_transform"><span class="math display">\[
 T_\varepsilon^\dagger XT_\varepsilon = X + \varepsilon I,\qquad T^\dagger_\varepsilon P T = P
-\tag{11.5}\]</span></span></p>
+\tag{12.5}\]</span></span></p>
 <p>이다. <span class="math inline">\(T^\dagger_\varepsilon X T_\varepsilon\)</span> 은 원점이 <span class="math inline">\(\varepsilon\)</span> 만큼 이동되었을 때의 위치연산자이다. 이것을 다시</p>
 <p><span id="eq-QM_translation_form_2"><span class="math display">\[
 T_\varepsilon = I - \dfrac{i\varepsilon}{\hbar}G
-\tag{11.6}\]</span></span></p>
-<p>라고 쓰자. <a href="#eq-QM_transilation_in_passive_transform" class="quarto-xref">식&nbsp;<span>11.5</span></a> 와 <a href="#eq-QM_translation_form_2" class="quarto-xref">식&nbsp;<span>11.6</span></a>, 그리고 <span class="math inline">\(G^\dagger = G\)</span> 로부터</p>
+\tag{12.6}\]</span></span></p>
+<p>라고 쓰자. <a href="#eq-QM_transilation_in_passive_transform" class="quarto-xref">식&nbsp;<span>12.5</span></a> 와 <a href="#eq-QM_translation_form_2" class="quarto-xref">식&nbsp;<span>12.6</span></a>, 그리고 <span class="math inline">\(G^\dagger = G\)</span> 로부터</p>
 <p><span class="math display">\[
 X+\varepsilon I = \left(I + \dfrac{i\varepsilon}{\hbar}G\right)X\left(I - \dfrac{i\varepsilon}{\hbar}G\right) = X - \dfrac{i\varepsilon}{\hbar} [X,\,G] + o(\varepsilon^2)
 \]</span></p>
 <p>를 얻는다. 즉 <span class="math inline">\([X,\,G] = i\hbar I\)</span> 이므로 우리는</p>
 <p><span id="eq-QM_form_of_G"><span class="math display">\[
 G=P+f(X)
-\tag{11.7}\]</span></span></p>
+\tag{12.7}\]</span></span></p>
 <p>라는 것을 알 수 있다. 또한 <span class="math inline">\(T^\dagger_\varepsilon P T = P\)</span> 로부터</p>
 <p><span class="math display">\[
 P = P - \dfrac{i\varepsilon}{\hbar}[P,\,G]
 \]</span></p>
-<p>이므로 <span class="math inline">\([P,\,G] = 0\)</span> 임을 알 수 있다. 그렇다면 <span class="math inline">\(G=P+\text{const}\)</span> 형태이며, <a href="#eq-QM_form_of_G" class="quarto-xref">식&nbsp;<span>11.7</span></a> 에서 <span class="math inline">\(f(X) = \text{const}\)</span> 임을 알 수 있으며, 우리는 상수항을 <span class="math inline">\(0\)</span> 으로 선택하여</p>
+<p>이므로 <span class="math inline">\([P,\,G] = 0\)</span> 임을 알 수 있다. 그렇다면 <span class="math inline">\(G=P+\text{const}\)</span> 형태이며, <a href="#eq-QM_form_of_G" class="quarto-xref">식&nbsp;<span>12.7</span></a> 에서 <span class="math inline">\(f(X) = \text{const}\)</span> 임을 알 수 있으며, 우리는 상수항을 <span class="math inline">\(0\)</span> 으로 선택하여</p>
 <p><span class="math display">\[
 T_\varepsilon = I - \dfrac{i\varepsilon}{h} P
 \]</span></p>
 <p>라고 할 수 있다.</p>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="prp-QM_symmetry_unitary_operation_on_dynamic_varialble" class="theorem proposition">
-<p><span class="theorem-title"><strong>명제 11.2</strong></span> <span class="math inline">\(X,\, P\)</span> 의 power series 로 표현 될 수 있는 연산자 <span class="math inline">\(\Omega (X,\,P)\)</span> 에 Unitary transform <span class="math inline">\(U\)</span> 이 적용 될 경우</p>
+<p><span class="theorem-title"><strong>명제 12.2</strong></span> <span class="math inline">\(X,\, P\)</span> 의 power series 로 표현 될 수 있는 연산자 <span class="math inline">\(\Omega (X,\,P)\)</span> 에 Unitary transform <span class="math inline">\(U\)</span> 이 적용 될 경우</p>
 <p><span class="math display">\[
 U^\dagger \Omega (X,\,P) U = \Omega (U^\dagger XU,\, U^\dagger PU)
 \]</span></p>
@@ -657,16 +664,16 @@ H(X+\varepsilon,\, P) = H(X,\,P)
 <p>을 의미한다.</p>
 <p><br></p>
 </section>
-<section id="sec-QM_symmetry_canonical_transform_and_unitary_transform" class="level3" data-number="11.1.6">
-<h3 data-number="11.1.6" class="anchored" data-anchor-id="sec-QM_symmetry_canonical_transform_and_unitary_transform"><span class="header-section-number">11.1.6</span> 고전역학의 정준변환과 양자역학의 unitary 변환</h3>
+<section id="sec-QM_symmetry_canonical_transform_and_unitary_transform" class="level3" data-number="12.1.6">
+<h3 data-number="12.1.6" class="anchored" data-anchor-id="sec-QM_symmetry_canonical_transform_and_unitary_transform"><span class="header-section-number">12.1.6</span> 고전역학의 정준변환과 양자역학의 unitary 변환</h3>
 <p>Passive transformation 관점은 고전역학에서의 동역학 변수를 다루는 것과 비슷하기 대문에 양자역학과 고전역학을 비교하는데 유리한 점이 있다. 실제로 고전역학의 정준변환 (canonical transformation) 과 양자역학의 unitary 변환 사이에는 밀접한 관련이 있다. 이제 <span class="math inline">\(\delta X\)</span> 와 <span class="math inline">\(\delta P\)</span> 를 다음과 같이 정의하자.</p>
 <p><span id="eq-QM_symmetry_cannonical_unitary_1"><span class="math display">\[
 \begin{aligned}
 \delta X &amp;:= T^\dagger_\varepsilon XT_\varepsilon -X,\\[0.3em]
 \delta P &amp;:= T^\dagger_\varepsilon P T_\varepsilon - P.
 \end{aligned}
-\tag{11.8}\]</span></span></p>
-<p>우리는 이미 <a href="#eq-QM_transilation_in_passive_transform" class="quarto-xref">식&nbsp;<span>11.5</span></a> 로부터 다음을 안다.</p>
+\tag{12.8}\]</span></span></p>
+<p>우리는 이미 <a href="#eq-QM_transilation_in_passive_transform" class="quarto-xref">식&nbsp;<span>12.5</span></a> 로부터 다음을 안다.</p>
 <p><span class="math display">\[
 \delta X = \varepsilon I,\qquad \delta P = 0.
 \]</span></p>
@@ -688,7 +695,7 @@ H(X+\varepsilon,\, P) = H(X,\,P)
 \]</span></p>
 <p>이라면 <span class="math inline">\([H,\,P]=0\)</span> 이며, 띠라서 에렌페스트 정리로부터 <span class="math inline">\(\langle \dot{P}\rangle = 0\)</span> 을 얻는다. 고전적으로는</p>
 <p><span id="eq-QM_symmetry_invariance_of_hamiltonian_to_translation"><span class="math display">\[\delta \mathcal{H} = \varepsilon \{\mathcal{H},\, p\} = 0
-\tag{11.9}\]</span></span></p>
+\tag{12.9}\]</span></span></p>
 <p>으로부터 <span class="math inline">\(\dot{p} = \{p,\, \mathcal{H}\} = 0\)</span> 을 얻은 것이다. 이것을 일반화 시켜 보자면 고전역학에서 <span class="math inline">\(g(x,\,p)\)</span> 에 의해 generated 되는 infinitesimal 정준 변환</p>
 <p><span class="math display">\[
 \delta \omega = \varepsilon \{\omega,\, g\}
@@ -703,19 +710,19 @@ H(X+\varepsilon,\, P) = H(X,\,P)
 <li>finite canonical transformation 의 경우</li>
 <li>infinitesimal 버젼이 존재하지 않는 regular canonical transformation 의 경우</li>
 </ul>
-<p>후자의 대표적인 사례로는 <a href="QM_N_DoF_system.html#exr-shankar_10_1_3" class="quarto-xref">연습문제&nbsp;<span>10.2</span></a> 의 예가 있다. <span class="math inline">\(x_1,\,x_2,\, p_1,\, p_2\)</span> 를 <span class="math inline">\(x_{I},\, x_{II},\, p_{I},\, p_{II}\)</span> 로 변환시키는 것을 생각하라. 어떤 유니타리 변환 <span class="math inline">\(U\)</span> 에 대해 <span class="math inline">\(U^\dagger X_1 U = X_{I}\)</span> 이며 <span class="math inline">\(U^\dagger X_2 U = X_{II}\)</span> 이다. 만약 이 변환이 regular 변환이 아니라면 이런 유니타리 변환이 존재하지 않는다.</p>
+<p>후자의 대표적인 사례로는 <a href="QM_N_DoF_system.html#exr-shankar_10_1_3" class="quarto-xref">연습문제&nbsp;<span>11.2</span></a> 의 예가 있다. <span class="math inline">\(x_1,\,x_2,\, p_1,\, p_2\)</span> 를 <span class="math inline">\(x_{I},\, x_{II},\, p_{I},\, p_{II}\)</span> 로 변환시키는 것을 생각하라. 어떤 유니타리 변환 <span class="math inline">\(U\)</span> 에 대해 <span class="math inline">\(U^\dagger X_1 U = X_{I}\)</span> 이며 <span class="math inline">\(U^\dagger X_2 U = X_{II}\)</span> 이다. 만약 이 변환이 regular 변환이 아니라면 이런 유니타리 변환이 존재하지 않는다.</p>
 <p>이제 우리는 두가지 과정이 동등한 이유에 대해 파악 할 수 있다.</p>
 <p> (<span class="math inline">\(1\)</span>) 고전물리 수준에서 정준변환을 수행하고 양자화를 수행하는 과정.</p>
 <p> (<span class="math inline">\(2\)</span>) 양자화를 수행하고 유니타리 변환을 수행하는 과정.</p>
 <p>양자역학에서의 유니타리변환은 고전물리에서의 정준변환과 동등하기 때문이다. 따라서 위의 두 과정의 결과물은 같다.</p>
-<p>이제 translational invariance 문제로 돌아오자. Translational invariance of hamiltonian 은 <a href="#eq-QM_symmetry_invariance_of_hamiltonian_to_translation" class="quarto-xref">식&nbsp;<span>11.9</span></a> 이 성립함을 의미하며 이것은 <span class="math inline">\(H\)</span> 와 <span class="math inline">\(P\)</span> 의 동시 고유상태로 시스템을 기술 할 수 있다는 것을 의미한다. 어떤 상태가 이런 상태로 시작했다면 즉 <span class="math inline">\([P,\, H]=0\)</span> 이었다면 <span class="math inline">\([P,\, U(t)]=0\)</span> 이므로 <span class="math inline">\(P\)</span> 는 시간에 대해 변하지 않는다.</p>
+<p>이제 translational invariance 문제로 돌아오자. Translational invariance of hamiltonian 은 <a href="#eq-QM_symmetry_invariance_of_hamiltonian_to_translation" class="quarto-xref">식&nbsp;<span>12.9</span></a> 이 성립함을 의미하며 이것은 <span class="math inline">\(H\)</span> 와 <span class="math inline">\(P\)</span> 의 동시 고유상태로 시스템을 기술 할 수 있다는 것을 의미한다. 어떤 상태가 이런 상태로 시작했다면 즉 <span class="math inline">\([P,\, H]=0\)</span> 이었다면 <span class="math inline">\([P,\, U(t)]=0\)</span> 이므로 <span class="math inline">\(P\)</span> 는 시간에 대해 변하지 않는다.</p>
 <p><span class="math display">\[
 PU(t) |p\rangle = U(t) P|\rangle = pU(t)|p\rangle.
 \]</span></p>
 <p><br></p>
 </section>
-<section id="finite-translation" class="level3" data-number="11.1.7">
-<h3 data-number="11.1.7" class="anchored" data-anchor-id="finite-translation"><span class="header-section-number">11.1.7</span> Finite Translation</h3>
+<section id="finite-translation" class="level3" data-number="12.1.7">
+<h3 data-number="12.1.7" class="anchored" data-anchor-id="finite-translation"><span class="header-section-number">12.1.7</span> Finite Translation</h3>
 <p>이제 infinitesimal 한 경우가 아닌 finite translation 의 경우를 살펴 보자. <span class="math inline">\(a\)</span> 만큼의 translation 을 <span class="math inline">\(T(a)\)</span> 라고 표기한다. <span class="math inline">\(a\)</span> 만큼의 finite translation 을 생각하고 <span class="math inline">\([0,\,a]\)</span> 구간을 <span class="math inline">\(N\)</span> 개의 같은 크기의 부분구간으로 나누자. 즉 한 부분구간의 크기는 <span class="math inline">\(a/N\)</span> 이 된다. 그렇다면 <span class="math inline">\(N \to \infty\)</span> 극한에서 <span class="math inline">\(a/N\)</span> 만큼의 translation 은 infinitesimal translation 이 되며</p>
 <p><span class="math display">\[
 T\left(\dfrac{a}{N}\right) = I - \dfrac{ia}{\hbar N}P
@@ -731,7 +738,7 @@ T(a) = \lim_{N \to \infty} \left[T\left(\dfrac{a}{N}\right)\right]^N = \lim_{N \
 <p>를 사용해서는 안되지만 이 경우 계산에 관련된 것이 연산자 <span class="math inline">\(P\)</span> 와 스칼라 값 뿐이며, 따라서 관계된 모든 값에 대해 <span class="math inline">\(P\)</span> 와의 commutativity 가 성립하기 때문에 <span class="math inline">\(T(a) =e^{-iaP/\hbar}\)</span> 이게 된다.</p>
 <p><span id="eq-QM_symmetry_finite_translation"><span class="math display">\[
 \boxed{T(a) = \exp \left(-\dfrac{iaP}{\hbar}\right)}.
-\tag{11.10}\]</span></span></p>
+\tag{12.10}\]</span></span></p>
 <p>일단 <span class="math inline">\(T(a)\)</span> 가 유니타리 인 것은 <span class="math inline">\(P\)</span> 가 에르미트 연산자임을 이용하면 쉽게 보일 수 있다. 또한 Translation 연산자는 <span class="math inline">\(T(a)T(b) = T(a+b)\)</span> 가 성립해야 한다는 것이 자명하다. 이것은 양자역학과는 무관하며 오히려 우주의 공간적 성질과 관련이 있다. 일단 확인해 보기로 하자.</p>
 <p><span class="math display">\[
 T(a)T(b) = e^{-iaP/\hbar}e^{-ibP/\hbar}= e^{-i(a+b)P/\hbar} = T(a+b)
@@ -739,7 +746,7 @@ T(a)T(b) = e^{-iaP/\hbar}e^{-ibP/\hbar}= e^{-i(a+b)P/\hbar} = T(a+b)
 <p><br></p>
 <section id="수학적인-보충" class="level4">
 <h4 class="anchored" data-anchor-id="수학적인-보충"><strong>수학적인 보충</strong></h4>
-<p><a href="../CHM/some_proofs.html#prp-part3_Baker_Hausdorff_Lemma" class="quarto-xref">명제&nbsp;<span>3.2</span></a> (Baker-Housdorff lemma) 에 따라 다음이 성립한다.</p>
+<p><a href="../CHM/some_proofs.html#prp-part3_Baker_Hausdorff_Lemma" class="quarto-xref">명제&nbsp;<span>4.2</span></a> (Baker-Housdorff lemma) 에 따라 다음이 성립한다.</p>
 <p><span class="math display">\[
 e^{-A}Be^A = B + [B,\,A] + \dfrac{1}{2!}[[B,\,A],\,A] + \cdots
 \]</span></p>
@@ -749,12 +756,12 @@ e^{-A}Be^A = B + [B,\,A] + \dfrac{1}{2!}[[B,\,A],\,A] + \cdots
 T^\dagger(a) \Omega T(a) &amp;= e^{iaP/\hbar}\Omega e^{-iaP/\hbar} \\
 &amp;= \Omega - \dfrac{ai}{\hbar}[\Omega,\, P] - \dfrac{a^2}{2\hbar^2}[[\Omega,\, P],\,P] + \cdots
 \end{aligned}
-\tag{11.11}\]</span></span></p>
+\tag{12.11}\]</span></span></p>
 <p>임을 안다.</p>
 <br>
 <div class="border" style="background-color:#F2F4F4  ;padding:5px;">
 <div id="exm-QM_symmetry_transformation_of_lagrangian" class="theorem example">
-<p><span class="theorem-title"><strong>예제 11.2</strong></span> <a href="#eq-part3_transformation_of_operator_by_translation" class="quarto-xref">식&nbsp;<span>11.11</span></a> 에서 <span class="math inline">\(\Omega = X^2\)</span> 일 경우 직관적으로 <span class="math inline">\(T^\dagger(a)X^2T(a) = (X+aI)^2\)</span> 임을 안다. 이를 수학적으로 보이자.</p>
+<p><span class="theorem-title"><strong>예제 12.2</strong></span> <a href="#eq-part3_transformation_of_operator_by_translation" class="quarto-xref">식&nbsp;<span>12.11</span></a> 에서 <span class="math inline">\(\Omega = X^2\)</span> 일 경우 직관적으로 <span class="math inline">\(T^\dagger(a)X^2T(a) = (X+aI)^2\)</span> 임을 안다. 이를 수학적으로 보이자.</p>
 <p><span class="math display">\[
 \begin{aligned}
 \left[X^2,\, P\right] &amp;= X[X,\,P] + [X,\,P]X = 2i\hbar X, \\
@@ -791,7 +798,7 @@ T^\dagger(a) X^2 T(a) &amp;= X^2 +2aX + a^2I = (X+aI)^2
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-shankar_11_2_3" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 11.1 (Shankar 11.2.3)</strong></span> <span class="math inline">\((x,\,y) \mapsto (\overline{x},\, \overline{y})\)</span> 에서의 Infinitesimal rotation</p>
+<p><span class="theorem-title"><strong>연습문제 12.1 (Shankar 11.2.3)</strong></span> <span class="math inline">\((x,\,y) \mapsto (\overline{x},\, \overline{y})\)</span> 에서의 Infinitesimal rotation</p>
 <p><span class="math display">\[
 \overline{x} = x \cos \varepsilon - y \sin \varepsilon,\qquad \overline{y} = x \sin \varepsilon + y \cos \varepsilon
 \]</span></p>
@@ -824,12 +831,12 @@ T^\dagger(a) X^2 T(a) &amp;= X^2 +2aX + a^2I = (X+aI)^2
 <p><br></p>
 </section>
 </section>
-<section id="sec-QM_symmetry_translation_invariance_in_many_particles_system" class="level3" data-number="11.1.8">
-<h3 data-number="11.1.8" class="anchored" data-anchor-id="sec-QM_symmetry_translation_invariance_in_many_particles_system"><span class="header-section-number">11.1.8</span> 다입자 시스템의 경우</h3>
+<section id="sec-QM_symmetry_translation_invariance_in_many_particles_system" class="level3" data-number="12.1.8">
+<h3 data-number="12.1.8" class="anchored" data-anchor-id="sec-QM_symmetry_translation_invariance_in_many_particles_system"><span class="header-section-number">12.1.8</span> 다입자 시스템의 경우</h3>
 <p>입자가 하나 이상인 시스템의 경우 infinitesimal translation <span class="math inline">\(T_\varepsilon\)</span> 을 다음과 같이 정의한다.</p>
 <p><span id="eq-QM_symmetry_infinitesima_translation_for_many_particles_system"><span class="math display">\[
 \langle x_1,\ldots,x_N | T_\varepsilon |\Psi\rangle = \Psi (x_1-\varepsilon,\ldots,\, x_N-\varepsilon)
-\tag{11.12}\]</span></span></p>
+\tag{12.12}\]</span></span></p>
 <p><span class="math inline">\(T_\varepsilon\)</span> 에서 <span class="math inline">\(\varepsilon \to 0\)</span> 인 극한에서 <span class="math inline">\(T=I\)</span> 이므로 어떤 generator <span class="math inline">\(P\)</span> 를 생각하여 <span class="math inline">\(\varepsilon\)</span> 에 대한 1차항까지 고려하면 <span class="math inline">\(T=I - \dfrac{i\varepsilon}{\hbar}P\)</span> 라고 놓을 수 있다. 이제 위 식의 양변을 <span class="math inline">\(\varepsilon\)</span> 에 대한 1차항까지 비교하면</p>
 <p><span class="math display">\[
 \begin{aligned}
@@ -844,15 +851,15 @@ T_\varepsilon = I - \dfrac{i\varepsilon}{\hbar} \sum_{j=1}^N P_j = I - \dfrac{i\
 <p>라 놓을 수 있다. 이로부터 <span class="math inline">\(T_\varepsilon\)</span> 에 대해 해밀토니안이 불변이면 총 각운동량이 보존된다는 것을 알 수 있다.</p>
 <p><br></p>
 </section>
-<section id="sec-QM_symmetry_implication_of_translational_invariance" class="level3" data-number="11.1.9">
-<h3 data-number="11.1.9" class="anchored" data-anchor-id="sec-QM_symmetry_implication_of_translational_invariance"><span class="header-section-number">11.1.9</span> Translational Invariance 의 의미</h3>
+<section id="sec-QM_symmetry_implication_of_translational_invariance" class="level3" data-number="12.1.9">
+<h3 data-number="12.1.9" class="anchored" data-anchor-id="sec-QM_symmetry_implication_of_translational_invariance"><span class="header-section-number">12.1.9</span> Translational Invariance 의 의미</h3>
 <p><span class="math inline">\(T(a)\)</span> 는 유니타리이므로 translation 에 대해 해밀토니안이 불변이라면 <span class="math inline">\(T(a)^\dagger HT(a)=H\)</span> 로부터 <span class="math inline">\(T(a)H=HT(a)\)</span> 임을 안다. 이로부터 <span class="math inline">\(T(a)U(t)=U(t)T(a)\)</span> 임을 알 수 있다. <span class="math inline">\(t=0\)</span> 에 <span class="math inline">\(|\Psi(0)\rangle\)</span> 과 <span class="math inline">\(T(a)|\Psi(0)\rangle\)</span> 인 상태를 준비했다면 <span class="math inline">\(T(a)U(t)|\Psi(0)\rangle = U(t)\left(T(a)|\Psi(0)\rangle\right)\)</span> 이다. 즉 <span class="math inline">\(x=0\)</span> 인 관찰자가 <span class="math inline">\(|\Psi(0)\rangle\)</span> 의 시간에 대한 변화를 보는 것과 <span class="math inline">\(x=a\)</span> 에서의 관찰자가 <span class="math inline">\(T(a)|\Psi(0)\rangle\)</span> 의 시간에 대한 변화를 보는 것은 상대적인 위치의 차이를 제외하면 동일하는 것을 알 수 있다.</p>
 <p>우리가 지금까지 발견한 모든 기본적인 상호작용은 translational invariance 의 성질을 가지며 이는 근원적인 의미에서 공간의 균일성(homogeneity) 를 의미하며, 물리적으로는 운동량 보존으로 나타난다.</p>
 <p><br></p>
 </section>
 </section>
-<section id="time-translational-invariance" class="level2" data-number="11.2">
-<h2 data-number="11.2" class="anchored" data-anchor-id="time-translational-invariance"><span class="header-section-number">11.2</span> Time Translational invariance</h2>
+<section id="time-translational-invariance" class="level2" data-number="12.2">
+<h2 data-number="12.2" class="anchored" data-anchor-id="time-translational-invariance"><span class="header-section-number">12.2</span> Time Translational invariance</h2>
 <p>고전적으로 공간의 균일성이 운동량 보존으로 나타난다면 시간의 균일성은 해밀토니안의 보존으로 나타나는데 이것은 양자세계에서도 마찬가지이다. 시간에 대한 infinitesimal translation 을 생각하자. 시간 <span class="math inline">\(t_1\)</span> 에 <span class="math inline">\(|\Psi_0\rangle\)</span> 의 상태로 준비되었다고 하자. Infinitesimal time <span class="math inline">\(\varepsilon\)</span> 후의 상태를 <span class="math inline">\(\varepsilon\)</span> 에 대한 1차항까지 표현하면 다음과 같다.</p>
 <p><span class="math display">\[
 |\Psi(t_1+\varepsilon)\rangle = \left[I - \dfrac{i\varepsilon}{\hbar} H(t_1)\right] |\Psi_0\rangle
@@ -880,20 +887,20 @@ H(t_2)=H(t_1)
 <p>을 얻는다. 위 식이 에너지 보존 법칙이다.</p>
 <p><br></p>
 </section>
-<section id="parity-invariance" class="level2" data-number="11.3">
-<h2 data-number="11.3" class="anchored" data-anchor-id="parity-invariance"><span class="header-section-number">11.3</span> Parity Invariance</h2>
+<section id="parity-invariance" class="level2" data-number="12.3">
+<h2 data-number="12.3" class="anchored" data-anchor-id="parity-invariance"><span class="header-section-number">12.3</span> Parity Invariance</h2>
 <p>고전적으로 패리티 변환은 어떤 정해진 원점에 대해 아래와 같은 변환이다.</p>
 <p><span id="eq-QM_symmetry_classical_parity"><span class="math display">\[
 \boldsymbol{x} \to -\boldsymbol{x},\qquad \boldsymbol{p} \to -\boldsymbol{p}.
-\tag{11.13}\]</span></span></p>
+\tag{12.13}\]</span></span></p>
 <p>공간 혹은 시간에서의 translation 과는 달리 parity 변환은 이산적인 변환이다.</p>
 <p><br></p>
-<section id="active-transformation-의-관점에서" class="level3" data-number="11.3.1">
-<h3 data-number="11.3.1" class="anchored" data-anchor-id="active-transformation-의-관점에서"><span class="header-section-number">11.3.1</span> Active transformation 의 관점에서</h3>
+<section id="active-transformation-의-관점에서" class="level3" data-number="12.3.1">
+<h3 data-number="12.3.1" class="anchored" data-anchor-id="active-transformation-의-관점에서"><span class="header-section-number">12.3.1</span> Active transformation 의 관점에서</h3>
 <p>양자이론에에서의 parity 변환은 <span class="math inline">\(\Pi\)</span> 연산자로 표기하며 다음과 같이 정의된다.</p>
 <p><span id="eq-part3_quantum_parity"><span class="math display">\[
 \Pi|\boldsymbol{x}\rangle = |-\boldsymbol{x}\rangle.
-\tag{11.14}\]</span></span></p>
+\tag{12.14}\]</span></span></p>
 <p>이로부터,</p>
 <p><span class="math display">\[
 \begin{aligned}
@@ -916,7 +923,7 @@ H(t_2)=H(t_1)
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-properties_of_parity_operator" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 11.2</strong></span> Parity operator <span class="math inline">\(\Pi\)</span> 는 다음의 성질을 가진다는 것을 보여라.</p>
+<p><span class="theorem-title"><strong>연습문제 12.2</strong></span> Parity operator <span class="math inline">\(\Pi\)</span> 는 다음의 성질을 가진다는 것을 보여라.</p>
 <p>  (<span class="math inline">\(1\)</span>) <span class="math inline">\(\Pi^2 = I\)</span>,</p>
 <p>  (<span class="math inline">\(2\)</span>) <span class="math inline">\(\Pi\)</span> 는 에르미트이며 유니타리인 연산자이다.</p>
 <p>  (<span class="math inline">\(3\)</span>) <span class="math inline">\(\Pi\)</span> 의 고유값은 <span class="math inline">\(\pm 1\)</span> 이다.</p>
@@ -940,7 +947,7 @@ H(t_2)=H(t_1)
 <br>
 <div class="border" style="background-color:#F2F4F4  ;padding:5px;">
 <div id="exm-parity_in_other_basis" class="theorem example">
-<p><span class="theorem-title"><strong>예제 11.3</strong></span> <span class="math inline">\(|\Psi\rangle\)</span> 이 <span class="math inline">\(\Pi\)</span> 의 고유상태라고 하자. 어떤 <span class="math inline">\(\Omega\)</span> 에 대한 기저로 표현된 파동함수 <span class="math inline">\(\Psi(\omega)\)</span> 역시 <span class="math inline">\(\omega\)</span> 에 대해 even 혹은 odd parity 를 가질까? <span class="math inline">\(|\Psi\rangle\)</span> 이 <span class="math inline">\(\Pi\)</span> 에 대해 even parity 를 갖는다고 하자. 즉 <span class="math inline">\(\Psi(-x)= \Psi(x)\)</span> 이다. 이에 대해</p>
+<p><span class="theorem-title"><strong>예제 12.3</strong></span> <span class="math inline">\(|\Psi\rangle\)</span> 이 <span class="math inline">\(\Pi\)</span> 의 고유상태라고 하자. 어떤 <span class="math inline">\(\Omega\)</span> 에 대한 기저로 표현된 파동함수 <span class="math inline">\(\Psi(\omega)\)</span> 역시 <span class="math inline">\(\omega\)</span> 에 대해 even 혹은 odd parity 를 가질까? <span class="math inline">\(|\Psi\rangle\)</span> 이 <span class="math inline">\(\Pi\)</span> 에 대해 even parity 를 갖는다고 하자. 즉 <span class="math inline">\(\Psi(-x)= \Psi(x)\)</span> 이다. 이에 대해</p>
 <p><span class="math display">\[
 \Psi (-\omega) = \int \langle -\omega |x\rangle \Psi(x)\, dx = -\int \langle -\omega|-x\rangle \Psi (-x)\, dx = -\int \langle -\omega |-x\rangle \Psi(x)\, dx
 \]</span></p>
@@ -950,8 +957,8 @@ H(t_2)=H(t_1)
 <p><br></p>
 <p><br></p>
 </section>
-<section id="passive-transform-의-관점에서" class="level3" data-number="11.3.2">
-<h3 data-number="11.3.2" class="anchored" data-anchor-id="passive-transform-의-관점에서"><span class="header-section-number">11.3.2</span> Passive transform 의 관점에서</h3>
+<section id="passive-transform-의-관점에서" class="level3" data-number="12.3.2">
+<h3 data-number="12.3.2" class="anchored" data-anchor-id="passive-transform-의-관점에서"><span class="header-section-number">12.3.2</span> Passive transform 의 관점에서</h3>
 <p>이제 partiy 연산자가 상태벡터가 아닌 다른 연산자에 작용하는 경우를 알아보자. Parity 연산자를 다음과 같이 정의할 수도 있다.</p>
 <p><span class="math display">\[
 \begin{aligned}
@@ -967,13 +974,13 @@ H(t_2)=H(t_1)
 <p>을 들 수 있다. 또한 <span class="math inline">\(H\)</span> 가 parity invariant 라면 <span class="math inline">\([\Pi,\,U(t)]=0\)</span> 이므로 시간이 지나도 상태의 parity 를 보존하게 된다.</p>
 <p><br></p>
 </section>
-<section id="parity-붕괴" class="level3" data-number="11.3.3">
-<h3 data-number="11.3.3" class="anchored" data-anchor-id="parity-붕괴"><span class="header-section-number">11.3.3</span> Parity 붕괴</h3>
+<section id="parity-붕괴" class="level3" data-number="12.3.3">
+<h3 data-number="12.3.3" class="anchored" data-anchor-id="parity-붕괴"><span class="header-section-number">12.3.3</span> Parity 붕괴</h3>
 <p>자연의 근본 법칙은 공간과 시간에 대한 translation (그리고 rotation) 에 대해 invariant 하지만 Parity 에 대해서는 그렇지 않다. 핵의 <span class="math inline">\(\beta\)</span>-붕괴를 설명하는 약한상호작용의 경우 어떻게 하더라도 parity-invariant 한 해밀토니안을 만들어 낼 수 없다는 것이 알려져 있다. 즉 초기상태를 <span class="math inline">\(|\Psi(0)\rangle\)</span> 과 <span class="math inline">\(\Pi |\Psi(0)\rangle\)</span> 로 준비했을 경우 <span class="math inline">\(\Pi U(t)|\Psi(0)\rangle\)</span> 은 <span class="math inline">\(U(t)\Pi|\Psi(0)\rangle\)</span> 과 다르다는 것이다. 다음과 같은 <span class="math inline">\(\beta\)</span> 붕괴 반응을 보자.</p>
 <p><span class="math display">\[
 {}^{60}\text{Co} \rightarrow {}^{60}\text{Ni} + e^- + \overline{\nu}
 \]</span></p>
-<p>여기서 <span class="math inline">\(e^-\)</span> 는 전자이고 <span class="math inline">\(\overline{\nu}\)</span> 는 반중성미자이다. 여기서 전자는 <span class="math inline">\({}^{60}\text{Co}\)</span> 의 스핀방향과 반대방향으로 나오는 것이 관측되었는데 이것이 parity 가 보존되지 않음을 보이는 것이다. <a href="#fig-beta_decay_and_parity" class="quarto-xref">그림&nbsp;<span>11.1</span></a> 를 보자</p>
+<p>여기서 <span class="math inline">\(e^-\)</span> 는 전자이고 <span class="math inline">\(\overline{\nu}\)</span> 는 반중성미자이다. 여기서 전자는 <span class="math inline">\({}^{60}\text{Co}\)</span> 의 스핀방향과 반대방향으로 나오는 것이 관측되었는데 이것이 parity 가 보존되지 않음을 보이는 것이다. <a href="#fig-beta_decay_and_parity" class="quarto-xref">그림&nbsp;<span>12.1</span></a> 를 보자</p>
 <p><br></p>
 <div id="fig-beta_decay_and_parity" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -981,7 +988,7 @@ H(t_2)=H(t_1)
 <img src="figures/parity.png" class="img-fluid figure-img" width="500">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-beta_decay_and_parity-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-그림&nbsp;11.1: 베타붕괴와 패리티 비보존
+그림&nbsp;12.1: 베타붕괴와 패리티 비보존
 </figcaption>
 </figure>
 </div>
@@ -989,12 +996,12 @@ H(t_2)=H(t_1)
 <p><span class="math inline">\(t=0\)</span> 에서<span class="math inline">\({}^{60}\text{Co}\)</span> 의 스핀이 <span class="math inline">\(z\)</span> 방향으로 정렬되었다고 하자.(실험 <span class="math inline">\(A\)</span>) 다른 관찰자는 실험 <span class="math inline">\(A\)</span> 와는 거울대칭이 되도록 실험을 설정했다고 하자. 스핀의 방향이 <span class="math inline">\(A\)</span> 와는 반대방향임에 주목하라. <span class="math inline">\(M\)</span> 은 <span class="math inline">\(A\)</span> 와 거울 대칭인 가상의 실험이다. 베타붕괴가 발생했을 때 <span class="math inline">\(A\)</span> 실험에서는 전자의 방향이 <span class="math inline">\({}^{60}\text{Co}\)</span> 스핀과 반대방향, 즉 <span class="math inline">\(-z\)</span> 방향의 속도를 갖는다. Parity 가 보존된다면 <span class="math inline">\(B\)</span> 실험에서도 <span class="math inline">\(-z\)</span> 방향으로 전자가 나와야겠지만(<span class="math inline">\(M\)</span> 실험) 실제로는 <span class="math inline">\(B\)</span> 와 같이 <span class="math inline">\(+z\)</span> 방향으로 전자가 나온다.</p>
 <p><br></p>
 </section>
-<section id="연습문제" class="level3" data-number="11.3.4">
-<h3 data-number="11.3.4" class="anchored" data-anchor-id="연습문제"><span class="header-section-number">11.3.4</span> 연습문제</h3>
+<section id="연습문제" class="level3" data-number="12.3.4">
+<h3 data-number="12.3.4" class="anchored" data-anchor-id="연습문제"><span class="header-section-number">12.3.4</span> 연습문제</h3>
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-QM_shankar_11_4_1" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 11.3 (Shankar 11.4.1)</strong></span> <span class="math inline">\([\Pi,\,H] = 0\)</span> 이라면 even/odd parity 를 가진 시작상태에 대해 그 패리티가 보존됨을 보여라.</p>
+<p><span class="theorem-title"><strong>연습문제 12.3 (Shankar 11.4.1)</strong></span> <span class="math inline">\([\Pi,\,H] = 0\)</span> 이라면 even/odd parity 를 가진 시작상태에 대해 그 패리티가 보존됨을 보여라.</p>
 </div>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\([\Pi,\,H]=0\)</span> 이라면 힐베르트 공간 <span class="math inline">\(\mathscr{H}\)</span> 가 <span class="math inline">\(\Pi,\, H\)</span> 의 공통 고유벡터로 된 기저를 갖는다. 이를 <span class="math inline">\(|\Psi_{E,\pi}\rangle\)</span> 이라고 하자. <span class="math inline">\(\Pi |\Psi_{E,\pi}(0)\rangle = \pi_{E,\,\pi}|\Psi_{E,\pi}(0)\rangle\)</span> 이라고 하자. <span class="math display">\[
@@ -1005,7 +1012,7 @@ H(t_2)=H(t_1)
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-QM_shankar_11_4_2" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 11.4 (Shankar 11.4.2)</strong></span> 아래와 같은 포텐셜의 입자를 생각하자.</p>
+<p><span class="theorem-title"><strong>연습문제 12.4 (Shankar 11.4.2)</strong></span> 아래와 같은 포텐셜의 입자를 생각하자.</p>
 <p><span class="math display">\[
 V(x) = V_0 \sin (2\pi x/a).
 \]</span></p>
@@ -1023,16 +1030,16 @@ i\hbar \langle \dot P\rangle =  \langle [P,\, H]\rangle = \left\langle \dfrac{-i
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-QM_shankar_11_4_3" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 11.5 (Shankar 11.4.3)</strong></span> 어떤 반응에서 전자의 스핀이 항상 운동량과 평행하다는 것을 알게 되었다. 패리티 보존이 깨진다는 것을 보여라.</p>
+<p><span class="theorem-title"><strong>연습문제 12.5 (Shankar 11.4.3)</strong></span> 어떤 반응에서 전자의 스핀이 항상 운동량과 평행하다는 것을 알게 되었다. 패리티 보존이 깨진다는 것을 보여라.</p>
 </div>
 <div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span>see <a href="#fig-beta_decay_and_parity" class="quarto-xref">그림&nbsp;<span>11.1</span></a></p>
+<p><span class="proof-title"><em>(해답)</em>. </span>see <a href="#fig-beta_decay_and_parity" class="quarto-xref">그림&nbsp;<span>12.1</span></a></p>
 </div>
 </div>
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-QM_shankar_11_4_4" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 11.6 (Shankar 11.4.4)</strong></span> 우리는 parity 를 거울 반사로 간주하였다. 1차원에서는 이것이 맞지만 고차원에서는</p>
+<p><span class="theorem-title"><strong>연습문제 12.6 (Shankar 11.4.4)</strong></span> 우리는 parity 를 거울 반사로 간주하였다. 1차원에서는 이것이 맞지만 고차원에서는</p>
 </div>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span></p>
@@ -1041,10 +1048,10 @@ i\hbar \langle \dot P\rangle =  \langle [P,\, H]\rangle = \left\langle \dfrac{-i
 <p><br></p>
 </section>
 </section>
-<section id="time-reversal-symmetry" class="level2" data-number="11.4">
-<h2 data-number="11.4" class="anchored" data-anchor-id="time-reversal-symmetry"><span class="header-section-number">11.4</span> Time Reversal Symmetry</h2>
-<section id="시간-역전의-고전역학적-관점" class="level3" data-number="11.4.1">
-<h3 data-number="11.4.1" class="anchored" data-anchor-id="시간-역전의-고전역학적-관점"><span class="header-section-number">11.4.1</span> 시간 역전의 고전역학적 관점</h3>
+<section id="time-reversal-symmetry" class="level2" data-number="12.4">
+<h2 data-number="12.4" class="anchored" data-anchor-id="time-reversal-symmetry"><span class="header-section-number">12.4</span> Time Reversal Symmetry</h2>
+<section id="시간-역전의-고전역학적-관점" class="level3" data-number="12.4.1">
+<h3 data-number="12.4.1" class="anchored" data-anchor-id="시간-역전의-고전역학적-관점"><span class="header-section-number">12.4.1</span> 시간 역전의 고전역학적 관점</h3>
 <p>고전물리학적 관점에서 원래의 상태 <span class="math inline">\(x(t),\, p(t)\)</span> 에 대해 <span class="math inline">\(t=0\)</span> 에서 시간 역전을 시킬 때 시간 역전된 상태를 <span class="math inline">\(x_r(t),\, p_r(t)\)</span> 라고 하자. 그렇다면 우선</p>
 <p><span class="math display">\[
 x_r(t) = x(-t)
@@ -1071,8 +1078,8 @@ m \dfrac{d^2 x_r(t)}{dt^2} = F(x_r(t), - \dot{x}_r(t))
 <p>이며 따라서 TRI 가 아니다.</p>
 <p><br></p>
 </section>
-<section id="시간-역전의-양자역학적-관점" class="level3" data-number="11.4.2">
-<h3 data-number="11.4.2" class="anchored" data-anchor-id="시간-역전의-양자역학적-관점"><span class="header-section-number">11.4.2</span> 시간 역전의 양자역학적 관점</h3>
+<section id="시간-역전의-양자역학적-관점" class="level3" data-number="12.4.2">
+<h3 data-number="12.4.2" class="anchored" data-anchor-id="시간-역전의-양자역학적-관점"><span class="header-section-number">12.4.2</span> 시간 역전의 양자역학적 관점</h3>
 <p>시간 독립적인 슈뢰딩거 방정식을 생각하자. 이 때 <span class="math inline">\(H=H(x)\)</span> 인 경우만 생각한다.</p>
 <p><span class="math display">\[
 i\hbar \dfrac{\partial \Psi (x,\,t)}{\partial t} = H(x)\Psi(x,\,t).
@@ -1092,7 +1099,7 @@ i\hbar \dfrac{\partial \Psi_r^\ast (x,\, t)}{\partial t} = H(x) \Psi^\ast_r (x,\
 <p>임을 알 수 있다.</p>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
 <div id="ref-Shankar1994" class="csl-entry" role="listitem">
 Shankar, R. 1994. <em>Principles of Quantum Mechanics</em>. Springer. <a href="https://books.google.co.kr/books?id=2zypV5EbKuIC">https://books.google.co.kr/books?id=2zypV5EbKuIC</a>.
 </div>
@@ -1504,12 +1511,12 @@ Shankar, R. 1994. <em>Principles of Quantum Mechanics</em>. Springer. <a href="h
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../../src/QM/QM_N_DoF_system.html" class="pagination-link" aria-label="N 자유도 시스템">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">N 자유도 시스템</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">N 자유도 시스템</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="../../src/QM/QM_angular_momentum1.html" class="pagination-link" aria-label="회전불변과 2차원에서의 각운동량">
-        <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">회전불변과 2차원에서의 각운동량</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">회전불변과 2차원에서의 각운동량</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
